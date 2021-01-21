@@ -39,7 +39,7 @@ class BA_Review extends BA_Builder_Module {
 						),
 					),
 					'button'  => esc_html__( 'Button', 'brain-divi-addons' ),
-					'borders' => esc_html__( 'Borders', 'brain-divi-addons' ),
+					'borders' => esc_html__( 'Border', 'brain-divi-addons' ),
 				),
 			),
 
@@ -160,7 +160,7 @@ class BA_Review extends BA_Builder_Module {
 				),
 			),
 
-			'is_new_window'          => array(
+			'is_new_window'         => array(
 				'label'           => esc_html__( 'Open Button link in new window', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',

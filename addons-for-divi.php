@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Brain Addons for Divi
+Plugin Name: Brain Addons for Divi Theme & Divi Builder
 Plugin URI:  https://brainaddons.com/
-Description: Brain Divi Addons is a library of unique and powerfull modules that works seamlessly with your favorite page builder.
-Version:     1.0.1
+Description: Brain Addons is a library of unique and powerfull modules that works seamlessly with your favorite page builder.
+Version:     1.0.2
 Author:      BrainAddons
 Author URI:  https://brainaddons.com/
 License:     GPL2
@@ -29,7 +29,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-Copyright 2020 BrainAddons <http://brainaddons.com>
+Copyright 2021 BrainAddons <https://brainaddons.com>
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'BRAIN_ADDONS_DEV_MODE', $_SERVER['REMOTE_ADDR'] == '127.0.0.1' );
-define( 'BRAIN_ADDONS_PLUGIN_VERSION', '1.0.1' );
+define( 'BRAIN_ADDONS_PLUGIN_VERSION', '1.0.2' );
 define( 'BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_ASSETS', trailingslashit( BRAIN_ADDONS_PLUGIN_URL . 'assets' ) );
@@ -72,6 +72,7 @@ if ( ! class_exists( 'BRAIN_ADDONS_PLUGIN' ) ) :
 		}
 
 		public function init_plugin() {
+
 			if ( is_admin() ) {
 				new Brain_Addons_Divi\Includes\Admin();
 			} else {

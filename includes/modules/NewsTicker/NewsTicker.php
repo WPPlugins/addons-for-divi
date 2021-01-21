@@ -107,6 +107,26 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'toggle_slug'      => 'content',
 				'computed_affects' => array( '__news' ),
 			),
+			'exclude_posts'      => array(
+				'label'            => esc_html__( 'Exclude news by IDs', 'brain-divi-addons-pro' ),
+				'description'      => esc_html__( 'eg. 10, 22, 19 etc. If this is used by IDs, Selected news will be ignored.', 'brain-divi-addons-pro' ),
+				'type'             => 'text',
+				'toggle_slug'      => 'content',
+				'computed_affects' => array( '__news' ),
+			),
+			'post_offset'        => array(
+				'label'            => esc_html__( 'News Offset', 'brain-divi-addons-pro' ),
+				'type'             => 'range',
+				'default'          => '0',
+				'unitless'         => true,
+				'range_settings'   => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'toggle_slug'      => 'content',
+				'computed_affects' => array( '__news' ),
+			),
 
 			// settings.
 			'title_pos'          => array(
@@ -121,7 +141,6 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 					'use_title' => 'on',
 				),
 			),
-
 			'speed'              => array(
 				'label'          => esc_html__( 'Moving Speed', 'brain-divi-addons' ),
 				'type'           => 'range',
@@ -135,7 +154,6 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				),
 				'toggle_slug'    => 'settings',
 			),
-
 			'slide_dir'          => array(
 				'label'            => esc_html__( 'Moving Direction', 'brain-divi-addons' ),
 				'type'             => 'text_align',
@@ -145,7 +163,6 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'default_on_front' => 'left',
 				'toggle_slug'      => 'settings',
 			),
-
 			'item_spacing'       => array(
 				'label'          => esc_html__( 'Item Spacing', 'brain-divi-addons' ),
 				'type'           => 'range',
@@ -159,7 +176,6 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				),
 				'toggle_slug'    => 'settings',
 			),
-
 			'pause_on_hover'     => array(
 				'label'           => esc_html__( 'Pause on Hover ', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
@@ -171,7 +187,6 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'default'         => 'on',
 				'toggle_slug'     => 'settings',
 			),
-
 			'use_bullet'         => array(
 				'label'           => esc_html__( 'Use Bullet Before Item', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
@@ -183,7 +198,6 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'default'         => 'off',
 				'toggle_slug'     => 'settings',
 			),
-
 			'bullet_color'       => array(
 				'label'       => esc_html__( 'Bullet Color', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
@@ -210,6 +224,8 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'computed_depends_on' => array(
 					'include_categories',
 					'news_count',
+					'exclude_posts',
+					'post_offset',
 					'order_by',
 					'order',
 				),
@@ -318,6 +334,8 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			'order_by'           => '',
 			'order'              => '',
 			'news_count'         => '',
+			'post_offset'        => '',
+			'exclude_posts'      => '',
 		);
 
 		$args               = wp_parse_args( $args, $defaults );
@@ -325,6 +343,8 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		$order_by           = $args['order_by'];
 		$order              = $args['order'];
 		$news_count         = $args['news_count'];
+		$exclude_posts      = $args['exclude_posts'];
+		$post_offset        = $args['post_offset'];
 
 		$query_args = array(
 			'posts_per_page' => intval( $news_count ),
@@ -332,7 +352,14 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			'post_status'    => 'publish',
 			'orderby'        => $order_by,
 			'order'          => $order,
+			'offset'         => intval( $post_offset ),
 		);
+
+		if ( ! empty( $exclude_posts ) ) {
+			$exclude_posts              = str_replace( ' ', '', $exclude_posts );
+			$exclude_posts              = explode( ',', $exclude_posts );
+			$query_args['post__not_in'] = $exclude_posts;
+		}
 
 		$post_id           = isset( $current_page['id'] ) ? (int) $current_page['id'] : 0;
 		$query_args['cat'] = implode( ',', self::filter_include_categories( $include_categories, $post_id ) );
@@ -350,7 +377,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		$output = ob_get_clean();
 
 		if ( ! $output ) {
-			$output = self::get_no_results_template( et_core_esc_previously( 'h3' ) );
+			$output = '<li>No News Found</li>';
 		}
 
 		return $output;
@@ -369,26 +396,26 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		$tag = ! empty( $this->props['link_option_url'] ) ? 'a' : 'div';
-
-		// Render CSS.
 		$this->render_css( $render_slug );
 
 		$include_categories = $this->props['include_categories'];
 		$order_by           = $this->props['order_by'];
 		$order              = $this->props['order'];
 		$news_count         = $this->props['news_count'];
+		$post_offset        = $this->props['post_offset'];
+		$exclude_posts      = $this->props['exclude_posts'];
 
 		$post_query_var = array(
 			'include_categories' => $include_categories,
 			'order_by'           => $order_by,
 			'order'              => $order,
 			'news_count'         => $news_count,
+			'post_offset'        => $post_offset,
+			'exclude_posts'      => $exclude_posts,
 		);
 
 		return sprintf(
-			'
-            <div class="ba-module ba-news-tricker">
+			'<div class="ba-module ba-news-tricker">
                 %1$s
                 <div id="parent" class="ba-news-container">
                     <ul class="ba-news-wrap">
@@ -462,7 +489,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				array(
 					'selector'    => '%%order_class%% .ba-news-title',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => $this->wdcprocess_margin_padding( $title_padding_tablet, 'padding', false ),
+					'declaration' => $this->process_margin_padding( $title_padding_tablet, 'padding', false ),
 				)
 			);
 		}

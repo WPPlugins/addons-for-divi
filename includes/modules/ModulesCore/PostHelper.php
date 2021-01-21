@@ -78,7 +78,6 @@ class BaPostHelper {
 			$content = preg_replace( '@\[audio[^\]]*?\].*?\[\/audio]@si', '', $content );
 			$content = preg_replace( '@\[embed[^\]]*?\].*?\[\/embed]@si', '', $content );
 			$content = wp_strip_all_tags( $content );
-			$content = et_strip_shortcodes( $content );
 			$content = et_builder_strip_dynamic_content( $content );
 			$content = apply_filters( 'et_truncate_post', $content, get_the_ID() );
 		} else {

@@ -182,7 +182,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_text_color'   => array(
 				'label'       => esc_html__( 'Text Color', 'brain-divi-addons' ),
-				'type'        => 'color',
+				'type'        => 'color-alpha',
 				'default'     => '#333',
 				'toggle_slug' => 'connector',
 				'tab_slug'    => 'advanced',
@@ -193,7 +193,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_bg'           => array(
 				'label'       => esc_html__( 'Background', 'brain-divi-addons' ),
-				'type'        => 'color',
+				'type'        => 'color-alpha',
 				'default'     => 'transparent',
 				'toggle_slug' => 'connector',
 				'tab_slug'    => 'advanced',
@@ -237,7 +237,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_border_color' => array(
 				'label'       => esc_html__( 'Connector Border Color', 'brain-divi-addons' ),
-				'type'        => 'color',
+				'type'        => 'color-alpha',
 				'default'     => 'transparent',
 				'toggle_slug' => 'connector',
 				'tab_slug'    => 'advanced',

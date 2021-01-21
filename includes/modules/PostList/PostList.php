@@ -22,7 +22,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'common'    => esc_html__( 'Common', 'brain-divi-addons' ),
+					'common'    => esc_html__( 'General', 'brain-divi-addons' ),
 					'list_icon' => esc_html__( 'List Icon', 'brain-divi-addons' ),
 					'image'     => esc_html__( 'Featured Image', 'brain-divi-addons' ),
 					'texts'     => array(
@@ -38,7 +38,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 						),
 					),
 					'meta'      => esc_html__( 'Meta', 'brain-divi-addons' ),
-					'border'    => esc_html__( 'Borders', 'brain-divi-addons' ),
+					'border'    => esc_html__( 'Border', 'brain-divi-addons' ),
 				),
 			),
 		);
@@ -47,9 +47,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 	public function get_fields() {
 
 		$fields = array(
-
-			// Content.
-			'post_type'          => array(
+			'post_type'             => array(
 				'label'            => esc_html__( 'Post Type', 'brain-divi-addons' ),
 				'type'             => 'select',
 				'option_category'  => 'configuration',
@@ -62,7 +60,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'default'          => 'post',
 			),
 
-			'include_categories' => array(
+			'include_categories'    => array(
 				'label'            => esc_html__( 'Included Categories', 'brain-divi-addons' ),
 				'type'             => 'categories',
 				'option_category'  => 'basic_option',
@@ -79,7 +77,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'order_by'           => array(
+			'order_by'              => array(
 				'label'            => esc_html__( 'Order By', 'brain-divi-addons' ),
 				'description'      => esc_html__( 'Choose how your posts should be ordered.', 'brain-divi-addons' ),
 				'type'             => 'select',
@@ -95,7 +93,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'computed_affects' => array( '__posts' ),
 			),
 
-			'order'              => array(
+			'order'                 => array(
 				'label'            => esc_html__( 'Sorted By', 'brain-divi-addons' ),
 				'description'      => esc_html__( 'Choose how your posts should be sorted.', 'brain-divi-addons' ),
 				'type'             => 'select',
@@ -111,7 +109,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'computed_affects' => array( '__posts' ),
 			),
 
-			'posts_number'       => array(
+			'posts_number'          => array(
 				'label'            => esc_html__( 'Post Count', 'brain-divi-addons' ),
 				'type'             => 'text',
 				'option_category'  => 'configuration',
@@ -122,9 +120,40 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'toggle_slug'      => 'content',
 				'default'          => 10,
 			),
-
+			'exclude_posts'         => array(
+				'label'            => esc_html__( 'Exclude posts by IDs', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'eg. 10, 22, 19 etc. If this is used by IDs, Selected Posts will be ignored.', 'brain-divi-addons' ),
+				'type'             => 'text',
+				'toggle_slug'      => 'content',
+				'computed_affects' => array( '__posts' ),
+			),
+			'post_offset'           => array(
+				'label'            => esc_html__( 'Post Offset', 'brain-divi-addons' ),
+				'type'             => 'range',
+				'default'          => '0',
+				'unitless'         => true,
+				'range_settings'   => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'toggle_slug'      => 'content',
+				'computed_affects' => array( '__posts' ),
+			),
+			'posts_only_with_image' => array(
+				'label'            => esc_html__( 'Post only With Thumbnail', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Enable to display posts only with thumbnail image', 'brain-divi-addons' ),
+				'type'             => 'yes_no_button',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
+					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+				),
+				'default'          => 'on',
+				'toggle_slug'      => 'content',
+				'computed_affects' => array( '__posts' ),
+			),
 			// Settings.
-			'show_thumb'         => array(
+			'show_thumb'            => array(
 				'label'            => esc_html__( 'Show Featured Image', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
@@ -137,7 +166,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'computed_affects' => array( '__posts' ),
 			),
 
-			'show_icon'          => array(
+			'show_icon'             => array(
 				'label'            => esc_html__( 'Show List Icon', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
@@ -153,7 +182,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'list_icon'          => array(
+			'list_icon'             => array(
 				'label'            => esc_html__( 'Select List Icon', 'brain-divi-addons' ),
 				'type'             => 'select_icon',
 				'option_category'  => 'basic_option',
@@ -165,7 +194,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'show_excerpt'       => array(
+			'show_excerpt'          => array(
 				'label'            => esc_html__( 'Show Excerpt', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
@@ -178,7 +207,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'computed_affects' => array( '__posts' ),
 			),
 
-			'excerpt_length'     => array(
+			'excerpt_length'        => array(
 				'label'            => esc_html__( 'Excerpt Length', 'brain-divi-addons' ),
 				'type'             => 'text',
 				'default'          => '150',
@@ -189,7 +218,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'show_author'        => array(
+			'show_author'           => array(
 				'label'            => esc_html__( 'Show Author', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
@@ -202,7 +231,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'computed_affects' => array( '__posts' ),
 			),
 
-			'show_date'          => array(
+			'show_date'             => array(
 				'label'            => esc_html__( 'Show Date', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
@@ -215,7 +244,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'computed_affects' => array( '__posts' ),
 			),
 
-			'date_format'        => array(
+			'date_format'           => array(
 				'label'            => esc_html__( 'Date Format', 'brain-divi-addons' ),
 				'type'             => 'text',
 				'default'          => 'M d, Y',
@@ -231,7 +260,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			// common.
-			'list_type'          => array(
+			'list_type'             => array(
 				'label'       => esc_html__( 'List Type', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'common',
@@ -243,7 +272,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'items'              => array(
+			'items'                 => array(
 				'label'          => esc_html__( 'Items per Row', 'brain-divi-addons' ),
 				'type'           => 'select',
 				'toggle_slug'    => 'common',
@@ -265,7 +294,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'item_spacing'       => array(
+			'item_spacing'          => array(
 				'label'          => esc_html__( 'Post Spacing', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '15px',
@@ -281,7 +310,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'tab_slug'       => 'advanced',
 			),
 
-			'item_padding'       => array(
+			'item_padding'          => array(
 				'label'          => __( 'Post Padding', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
@@ -290,7 +319,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'mobile_options' => true,
 			),
 
-			'alignment'          => array(
+			'alignment'             => array(
 				'label'        => __( 'Post Alignment', 'brain-divi-addons' ),
 				'type'         => 'text_align',
 				'options'      => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -301,7 +330,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			// list icon
-			'icon_size'          => array(
+			'icon_size'             => array(
 				'label'          => esc_html__( 'Icon Size', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '18px',
@@ -321,7 +350,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'icon_color'         => array(
+			'icon_color'            => array(
 				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
@@ -333,7 +362,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'icon_spacing'       => array(
+			'icon_spacing'          => array(
 				'label'          => esc_html__( 'Icon Spacing', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '20px',
@@ -354,7 +383,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			// image
-			'image_width'        => array(
+			'image_width'           => array(
 				'label'          => esc_html__( 'Image Width', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '60px',
@@ -373,7 +402,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'image_height'       => array(
+			'image_height'          => array(
 				'label'          => esc_html__( 'Image Height', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '60px',
@@ -392,7 +421,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
-			'image_spacing'      => array(
+			'image_spacing'         => array(
 				'label'          => esc_html__( 'Image Spacing', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '12px',
@@ -412,7 +441,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			// texts
-			'meta_spacing'       => array(
+			'meta_spacing'          => array(
 				'label'          => esc_html__( 'Meta Spacing Top', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '0px',
@@ -428,7 +457,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'tab_slug'       => 'advanced',
 			),
 
-			'excerpt_spacing'    => array(
+			'excerpt_spacing'       => array(
 				'label'          => esc_html__( 'Excerpt Spacing Top', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '0px',
@@ -445,7 +474,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'tab_slug'       => 'advanced',
 			),
 
-			'__posts'            => array(
+			'__posts'               => array(
 				'type'                => 'computed',
 				'computed_callback'   => array( 'BA_Post_List', 'get_post' ),
 				'computed_depends_on' => array(
@@ -454,6 +483,9 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 					'order_by',
 					'order',
 					'posts_number',
+					'post_offset',
+					'exclude_posts',
+					'posts_only_with_image',
 					'show_thumb',
 					'show_icon',
 					'list_icon',
@@ -615,36 +647,42 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 	static function get_post( $args = array(), $conditional_tags = array(), $current_page = array() ) {
 
 		$defaults = array(
-			'post_type'          => '',
-			'include_categories' => '',
-			'order_by'           => '',
-			'order'              => '',
-			'posts_number'       => '',
-			'show_thumb'         => '',
-			'show_icon'          => '',
-			'list_icon'          => '',
-			'show_excerpt'       => '',
-			'excerpt_length'     => '',
-			'show_author'        => '',
-			'show_date'          => '',
-			'date_format'        => '',
+			'post_type'             => '',
+			'include_categories'    => '',
+			'order_by'              => '',
+			'order'                 => '',
+			'posts_number'          => '',
+			'exclude_posts'         => '',
+			'post_offset'           => '',
+			'posts_only_with_image' => '',
+			'show_thumb'            => '',
+			'show_icon'             => '',
+			'list_icon'             => '',
+			'show_excerpt'          => '',
+			'excerpt_length'        => '',
+			'show_author'           => '',
+			'show_date'             => '',
+			'date_format'           => '',
 		);
 
-		$args               = wp_parse_args( $args, $defaults );
-		$post_type          = $args['post_type'];
-		$include_categories = $args['include_categories'];
-		$order_by           = $args['order_by'];
-		$order              = $args['order'];
-		$posts_number       = $args['posts_number'];
-		$show_thumb         = $args['show_thumb'];
-		$show_icon          = $args['show_icon'];
-		$list_icon          = esc_attr( et_pb_process_font_icon( $args['list_icon'] ) );
-		$list_icon          = ! empty( $list_icon ) ? $list_icon : '9';
-		$show_excerpt       = $args['show_excerpt'];
-		$excerpt_length     = $args['excerpt_length'];
-		$show_author        = $args['show_author'];
-		$show_date          = $args['show_date'];
-		$date_format        = $args['date_format'];
+		$args                  = wp_parse_args( $args, $defaults );
+		$post_type             = $args['post_type'];
+		$include_categories    = $args['include_categories'];
+		$order_by              = $args['order_by'];
+		$order                 = $args['order'];
+		$posts_number          = $args['posts_number'];
+		$post_offset           = $args['post_offset'];
+		$exclude_posts         = $args['exclude_posts'];
+		$posts_only_with_image = $args['posts_only_with_image'];
+		$show_thumb            = $args['show_thumb'];
+		$show_icon             = $args['show_icon'];
+		$list_icon             = esc_attr( et_pb_process_font_icon( $args['list_icon'] ) );
+		$list_icon             = ! empty( $list_icon ) ? $list_icon : '9';
+		$show_excerpt          = $args['show_excerpt'];
+		$excerpt_length        = $args['excerpt_length'];
+		$show_author           = $args['show_author'];
+		$show_date             = $args['show_date'];
+		$date_format           = $args['date_format'];
 
 		$query_args = array(
 			'posts_per_page' => intval( $posts_number ),
@@ -652,7 +690,18 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			'post_status'    => 'publish',
 			'orderby'        => $order_by,
 			'order'          => $order,
+			'offset'         => intval( $post_offset ),
 		);
+
+		if ( 'on' === $posts_only_with_image ) {
+			$query_args['meta_key'] = '_thumbnail_id';
+		}
+
+		if ( ! empty( $exclude_posts ) ) {
+			$exclude_posts              = str_replace( ' ', '', $exclude_posts );
+			$exclude_posts              = explode( ',', $exclude_posts );
+			$query_args['post__not_in'] = $exclude_posts;
+		}
 
 		$post_id = isset( $current_page['id'] ) ? (int) $current_page['id'] : 0;
 
@@ -667,64 +716,13 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		if ( $query->have_posts() ) :
 			while ( $query->have_posts() ) :
 				$query->the_post();
-
-				echo '<li class="ba-post-list-child">';
-					echo '<a class="ba-post-list-child-inner" href="' . get_the_permalink() . '">';
-
-						// Render Thumbnail.
-				if ( $show_thumb === 'on' ) {
-					echo '<figure class="ba-post-list-thumb">';
-						echo '<img class="ba-img-cover" src="' . get_the_post_thumbnail_url() . '" />';
-					echo '</figure>';
-				} else {
-					// Render Icon.
-					if ( $show_icon === 'on' ) {
-						echo '<div class="ba-post-list-icon">';
-							echo '<i class="ba-et-font-icon">' . $list_icon . '</i>';
-						echo '</div>';
-					}
-				}
-
-				echo '<div class="ba-post-list-content">';
-
-				echo ' <h3 class="ba-post-list-title">' . get_the_title() . '</h3>';
-
-				// Post meta.
-				if ( $show_author === 'on' || $show_date === 'on' ) {
-					echo '<div class="ba-post-list-meta">';
-
-					if ( $show_author === 'on' ) {
-						echo '<div class="ba-post-list-author">';
-							echo 'By ' . get_the_author();
-						echo '</div>';
-					}
-
-					if ( $show_author === 'on' && $show_date === 'on' ) {
-						echo '<span class="ba-separetor">|</span>';
-					}
-
-					if ( $show_date === 'on' ) {
-						echo ' <div class="ba-post-list-date">';
-							echo get_the_time( $date_format );
-						echo '</div>';
-					}
-
-					echo '</div>';
-				}
-
-				// Post Content.
-				if ( $show_excerpt === 'on' ) {
-					echo '<p class="ba-post-list-excerpt">' . BaPostHelper::get_post_excerpt( $excerpt_length ) . '</p>';
-				}
-
-						echo '</div>';
-					echo '</a>';
-				echo '</li>';
-
+				include 'templates/list-content.php';
 			endwhile;
 		endif;
 
-		if ( ! $output = ob_get_clean() ) {
+		$output = ob_get_clean();
+
+		if ( ! $output ) {
 			$output = self::get_no_results_template();
 		}
 
@@ -733,43 +731,47 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		// Render CSS
 		$this->render_css( $render_slug );
 
-		$list_type          = $this->props['list_type'];
-		$post_type          = $this->props['post_type'];
-		$include_categories = $this->props['include_categories'];
-		$order_by           = $this->props['order_by'];
-		$order              = $this->props['order'];
-		$posts_number       = $this->props['posts_number'];
-		$show_thumb         = $this->props['show_thumb'];
-		$show_icon          = $this->props['show_icon'];
-		$list_icon          = $this->props['list_icon'];
-		$show_excerpt       = $this->props['show_excerpt'];
-		$excerpt_length     = $this->props['excerpt_length'];
-		$show_author        = $this->props['show_author'];
-		$show_date          = $this->props['show_date'];
-		$date_format        = $this->props['date_format'];
+		$list_type             = $this->props['list_type'];
+		$post_type             = $this->props['post_type'];
+		$include_categories    = $this->props['include_categories'];
+		$order_by              = $this->props['order_by'];
+		$order                 = $this->props['order'];
+		$posts_number          = $this->props['posts_number'];
+		$exclude_posts         = $this->props['exclude_posts'];
+		$post_offset           = $this->props['post_offset'];
+		$posts_only_with_image = $this->props['posts_only_with_image'];
+		$show_thumb            = $this->props['show_thumb'];
+		$show_icon             = $this->props['show_icon'];
+		$list_icon             = $this->props['list_icon'];
+		$show_excerpt          = $this->props['show_excerpt'];
+		$excerpt_length        = $this->props['excerpt_length'];
+		$show_author           = $this->props['show_author'];
+		$show_date             = $this->props['show_date'];
+		$date_format           = $this->props['date_format'];
 
 		$post_query_var = array(
-			'post_type'          => $post_type,
-			'include_categories' => $include_categories,
-			'order_by'           => $order_by,
-			'order'              => $order,
-			'posts_number'       => $posts_number,
-			'show_thumb'         => $show_thumb,
-			'show_icon'          => $show_icon,
-			'list_icon'          => $list_icon,
-			'show_excerpt'       => $show_excerpt,
-			'excerpt_length'     => $excerpt_length,
-			'show_author'        => $show_author,
-			'show_date'          => $show_date,
-			'date_format'        => $date_format,
+			'post_type'             => $post_type,
+			'include_categories'    => $include_categories,
+			'order_by'              => $order_by,
+			'order'                 => $order,
+			'posts_number'          => $posts_number,
+			'exclude_posts'         => $exclude_posts,
+			'post_offset'           => $post_offset,
+			'posts_only_with_image' => $posts_only_with_image,
+			'show_thumb'            => $show_thumb,
+			'show_icon'             => $show_icon,
+			'list_icon'             => $list_icon,
+			'show_excerpt'          => $show_excerpt,
+			'excerpt_length'        => $excerpt_length,
+			'show_author'           => $show_author,
+			'show_date'             => $show_date,
+			'date_format'           => $date_format,
 		);
 
 		return sprintf(
-			'
-            <div class="ba-module ba-post-list type-%2$s">
+			'<div class="ba-module ba-post-list type-%2$s">
                 <ul class="ba-post-list-parent">
                     %1$s
                 </ul>
@@ -786,25 +788,14 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		$show_thumb                        = $this->props['show_thumb'];
 		$show_icon                         = $this->props['show_icon'];
 		$items                             = $this->props['items'];
+		$img_width_property                = 'flex';
 		$items_tablet                      = ! empty( $this->props['items_tablet'] ) ? $this->props['items_tablet'] : $items;
 		$items_phone                       = ! empty( $this->props['items_phone'] ) ? $this->props['items_phone'] : $items_tablet;
-		$items_last_edited                 = $this->props['items_last_edited'];
-		$items_responsive_status           = et_pb_get_responsive_status( $items_last_edited );
 		$item_spacing                      = $this->props['item_spacing'];
 		$item_spacing_tablet               = ! empty( $this->props['item_spacing_tablet'] ) ? $this->props['item_spacing_tablet'] : $item_spacing;
 		$item_spacing_phone                = ! empty( $this->props['item_spacing_phone'] ) ? $this->props['item_spacing_phone'] : $item_spacing_tablet;
 		$item_spacing_last_edited          = $this->props['item_spacing_last_edited'];
 		$item_spacing_responsive_status    = et_pb_get_responsive_status( $item_spacing_last_edited );
-		$image_width                       = $this->props['image_width'];
-		$image_width_tablet                = $this->props['image_width_tablet'];
-		$image_width_phone                 = $this->props['image_width_phone'];
-		$image_width_last_edited           = $this->props['image_width_last_edited'];
-		$image_width_responsive_status     = et_pb_get_responsive_status( $image_width_last_edited );
-		$image_height                      = $this->props['image_height'];
-		$image_height_tablet               = $this->props['image_height_tablet'];
-		$image_height_phone                = $this->props['image_height_phone'];
-		$image_height_last_edited          = $this->props['image_height_last_edited'];
-		$image_height_responsive_status    = et_pb_get_responsive_status( $image_height_last_edited );
 		$image_spacing                     = $this->props['image_spacing'];
 		$image_spacing_tablet              = $this->props['image_spacing_tablet'];
 		$image_spacing_phone               = $this->props['image_spacing_phone'];
@@ -838,7 +829,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		$item_padding_responsive_status    = et_pb_get_responsive_status( $item_padding_last_edited );
 
 		$spacing_term = 'bottom';
-		if ( $alignment === 'left' ) {
+		if ( 'left' === $alignment ) {
 			$spacing_term = 'right';
 
 			ET_Builder_Element::set_style(
@@ -848,7 +839,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 					'declaration' => 'align-items: flex-start;',
 				)
 			);
-		} elseif ( $alignment === 'right' ) {
+		} elseif ( 'right' === $alignment ) {
+			$spacing_term = 'left';
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -864,6 +856,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				)
 			);
 		} else {
+			$img_width_property = 'width';
+
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -897,7 +891,6 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		);
 
 		if ( $item_padding_tablet && $item_padding_responsive_status ) {
-
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -909,7 +902,6 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		}
 
 		if ( $item_padding_phone && $item_padding_responsive_status ) {
-
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -920,7 +912,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			);
 		}
 
-		if ( $list_type === 'grid' ) {
+		if ( 'grid' === $list_type ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -950,10 +942,9 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 					'selector'    => '%%order_class%% .ba-post-list-child',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf(
-						'
-                    flex: 0 0 calc(100%%/%1$s);
-                    max-width:calc(100%%/%1$s);
-                    padding:%2$s;',
+						'flex: 0 0 calc(100%%/%1$s);
+                    	max-width:calc(100%%/%1$s);
+                    	padding:%2$s;',
 						$items_tablet,
 						$item_spacing_tablet
 					),
@@ -975,10 +966,9 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 					'selector'    => '%%order_class%% .ba-post-list-child',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf(
-						'
-                    flex: 0 0 calc(100%%/%1$s);
-                    max-width:calc(100%%/%1$s);
-                    padding:%2$s;',
+						'flex: 0 0 calc(100%%/%1$s);
+						max-width:calc(100%%/%1$s);
+						padding:%2$s;',
 						$items_phone,
 						$item_spacing_phone
 					),
@@ -993,7 +983,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 					'declaration' => sprintf( 'margin: -%1$s;', $item_spacing_phone ),
 				)
 			);
-		} elseif ( $list_type === 'list' ) {
+		} elseif ( 'list' === $list_type ) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -1026,7 +1016,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			}
 		}
 
-		// texts
+		// texts.
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
@@ -1087,63 +1077,29 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			);
 		}
 
-		// thumbnail
-		if ( $show_thumb === 'on' ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
+		// Thumbnail.
+		if ( 'on' === $show_thumb ) {
+			$this->get_responsive_styles(
+				'image_width',
+				'%%order_class%% .ba-post-list-thumb',
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-thumb',
-					'declaration' => sprintf( 'height:%1$s;', $image_height ),
-				)
+					'primary'   => $img_width_property,
+					'important' => true,
+				),
+				array( 'default' => '60px' ),
+				$render_slug
 			);
-			if ( ! empty( $image_height_tablet ) && $image_height_responsive_status ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .ba-post-list-thumb',
-						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-						'declaration' => sprintf( 'height:%1$s;', $image_height_tablet ),
-					)
-				);
-			}
-			if ( ! empty( $image_height_phone ) && $image_height_responsive_status ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .ba-post-list-thumb',
-						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-						'declaration' => sprintf( 'height:%1$s;', $image_height_phone ),
-					)
-				);
-			}
 
-			ET_Builder_Element::set_style(
-				$render_slug,
+			$this->get_responsive_styles(
+				'image_height',
+				'%%order_class%% .ba-post-list-thumb',
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-thumb',
-					'declaration' => sprintf( 'flex:0 0 %1$s;', $image_width ),
-				)
+					'primary'   => 'height',
+					'important' => true,
+				),
+				array( 'default' => '60px' ),
+				$render_slug
 			);
-			if ( ! empty( $image_width_tablet ) && $image_width_responsive_status ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .ba-post-list-thumb',
-						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-						'declaration' => sprintf( 'flex:0 0 %1$s;', $image_width_tablet ),
-					)
-				);
-			}
-			if ( ! empty( $image_width_phone ) && $image_width_responsive_status ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .ba-post-list-thumb',
-						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-						'declaration' => sprintf( 'flex:0 0 %1$s;', $image_width_phone ),
-					)
-				);
-			}
 
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -1176,7 +1132,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			}
 		}
 
-		if ( $show_icon === 'on' ) {
+		if ( 'on' === $show_icon ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1237,7 +1193,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			}
 		}
 
-		// title bg
+		// Title bg.
 		$this->get_custom_bg_style( $render_slug, 'post', '%%order_class%% .ba-post-list-child a', '%%order_class%%:hover .ba-post-list-child a' );
 
 	}

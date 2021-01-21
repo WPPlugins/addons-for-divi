@@ -86,17 +86,17 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'content_width'         => array(
-				'label'           => esc_html__( 'Content Width', 'brain-divi-addons' ),
-				'type'            => 'range',
-				'option_category' => 'basic_option',
-				'default'         => '100%',
-				'range_settings'  => array(
+				'label'          => esc_html__( 'Content Width', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'mobile_options' => true,
+				'default'        => '100%',
+				'range_settings' => array(
 					'step' => 1,
 					'min'  => 0,
 					'max'  => 100,
 				),
-				'tab_slug'        => 'advanced',
-				'toggle_slug'     => 'content',
+				'tab_slug'       => 'advanced',
+				'toggle_slug'    => 'content',
 			),
 
 			'content_type'          => array(
@@ -148,6 +148,7 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 				'allowed_units'  => array( 'em', 'rem', 'px', 'cm', '%', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
 				'default_unit'   => 'px',
 				'default'        => '0px',
+				'mobile_options' => true,
 				'toggle_slug'    => 'content',
 				'tab_slug'       => 'advanced',
 				'range_settings' => array(
@@ -184,6 +185,7 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 				'default_unit'   => 'px',
 				'default'        => '0px',
 				'toggle_slug'    => 'content',
+				'mobile_options' => true,
 				'tab_slug'       => 'advanced',
 				'range_settings' => array(
 					'min'  => 0,
@@ -232,20 +234,20 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 
 			// Text.
 			'title_bottom_spacing'  => array(
-				'label'           => esc_html__( 'Title Spacing Bottom', 'brain-divi-addons' ),
-				'type'            => 'range',
-				'default'         => '5px',
-				'option_category' => 'basic_option',
-				'allowed_units'   => array( 'px' ),
-				'default_unit'    => 'px',
-				'range_settings'  => array(
+				'label'          => esc_html__( 'Title Spacing Bottom', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'default'        => '5px',
+				'mobile_options' => true,
+				'allowed_units'  => array( 'px' ),
+				'default_unit'   => 'px',
+				'range_settings' => array(
 					'min'  => 0,
 					'step' => 1,
 					'max'  => 100,
 				),
-				'toggle_slug'     => 'texts',
-				'tab_slug'        => 'advanced',
-				'sub_toggle'      => 'title_tab',
+				'toggle_slug'    => 'texts',
+				'tab_slug'       => 'advanced',
+				'sub_toggle'     => 'title_tab',
 			),
 
 		);
@@ -407,11 +409,7 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 		$content_pos_y                     = $this->props['content_pos_y'];
 		$content_type                      = $this->props['content_type'];
 		$content_alignment                 = $this->props['content_alignment'];
-		$content_offset_x                  = $this->props['content_offset_x'];
-		$content_offset_y                  = $this->props['content_offset_y'];
 		$content_position                  = $this->props['content_position'];
-		$content_width                     = $this->props['content_width'];
-		$title_bottom_spacing              = $this->props['title_bottom_spacing'];
 		$image_hover_animation             = $this->props['image_hover_animation'];
 		$image_height                      = $this->props['image_height'];
 		$image_height_tablet               = $this->props['image_height_tablet'];
@@ -443,7 +441,7 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 		);
 
 		// Image Height.
-		if ( $image_height !== 'auto' ) {
+		if ( 'auto' !== $image_height ) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -483,16 +481,16 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 		}
 
 		// Texts.
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-image-carousel-item h3, .et-db #et-boc %%order_class%% .ba-image-carousel-item h3',
-				'declaration' => sprintf( 'padding-bottom: %1$s;', $title_bottom_spacing ),
-			)
+		$this->get_responsive_styles(
+			'title_bottom_spacing',
+			'%%order_class%% .ba-image-carousel-item h3',
+			array( 'primary' => 'padding-bottom' ),
+			array( 'default' => '5px' ),
+			$render_slug
 		);
 
 		// Content.
-		if ( $content_type === 'absolute' ) {
+		if ( 'absolute' === $content_type ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -505,40 +503,48 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 				)
 			);
 
-			if ( $content_pos_x === 'flex-start' ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .content--absolute',
-						'declaration' => sprintf( 'padding-left: %1$s;', $content_offset_x ),
-					)
+			if ( 'flex-start' === $content_pos_x ) {
+
+				$this->get_responsive_styles(
+					'content_offset_x',
+					'%%order_class%% .content--absolute',
+					array( 'primary' => 'padding-left' ),
+					array( 'default' => '0px' ),
+					$render_slug
 				);
-			} elseif ( $content_pos_x === 'flex-end' ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .content--absolute',
-						'declaration' => sprintf( 'padding-right: %1$s;', $content_offset_x ),
-					)
+
+			} elseif ( 'flex-end' === $content_pos_x ) {
+
+				$this->get_responsive_styles(
+					'content_offset_x',
+					'%%order_class%% .content--absolute',
+					array( 'primary' => 'padding-right' ),
+					array( 'default' => '0px' ),
+					$render_slug
 				);
+
 			}
 
-			if ( $content_pos_y === 'flex-start' ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .content--absolute',
-						'declaration' => sprintf( 'padding-top: %1$s;', $content_offset_y ),
-					)
+			if ( 'flex-start' === $content_pos_y ) {
+
+				$this->get_responsive_styles(
+					'content_offset_y',
+					'%%order_class%% .content--absolute',
+					array( 'primary' => 'padding-top' ),
+					array( 'default' => '0px' ),
+					$render_slug
 				);
-			} elseif ( $content_pos_y === 'flex-end' ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .content--absolute',
-						'declaration' => sprintf( 'padding-bottom: %1$s;', $content_offset_y ),
-					)
+
+			} elseif ( 'flex-end' === $content_pos_y ) {
+
+				$this->get_responsive_styles(
+					'content_offset_y',
+					'%%order_class%% .content--absolute',
+					array( 'primary' => 'padding-bottom' ),
+					array( 'default' => '0px' ),
+					$render_slug
 				);
+
 			}
 		}
 
@@ -547,11 +553,18 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			array(
 				'selector'    => '%%order_class%% .ba-image-carousel-item .content .content-inner',
 				'declaration' => sprintf(
-					'width: %1$s; %2$s',
-					$content_width,
+					'%1$s',
 					$this->process_margin_padding( $content_padding, 'padding', false )
 				),
 			)
+		);
+
+		$this->get_responsive_styles(
+			'content_width',
+			'%%order_class%% .ba-image-carousel-item .content .content-inner',
+			array( 'primary' => 'width' ),
+			array( 'default' => '100%' ),
+			$render_slug
 		);
 
 		if ( $content_padding_tablet && $content_padding_responsive_status ) :

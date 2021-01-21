@@ -8,7 +8,7 @@ if ( ! function_exists( 'brainaddons_fs' ) ) {
 				array(
 					'id'             => '7135',
 					'slug'           => 'addons-for-divi',
-					'premium_slug'     => 'addons-for-divi-premium',
+					'premium_slug'   => 'addons-for-divi-premium',
 					'type'           => 'plugin',
 					'public_key'     => 'pk_c7283f055cecf2bc84f0c13a22b7c',
 					'is_premium'     => false,
@@ -26,12 +26,12 @@ if ( ! function_exists( 'brainaddons_fs' ) ) {
 	}
 
 	brainaddons_fs();
-	brainaddons_fs()->add_filter(
-		'plugin_icon',
-		function () {
-			return '';
-		}
-	);
+	// brainaddons_fs()->add_filter(
+	// 	'plugin_icon',
+	// 	function () {
+	// 		return '';
+	// 	}
+	// );
 
 	do_action( 'brainaddons_fs_loaded' );
 }

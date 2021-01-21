@@ -288,6 +288,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			);
 		}
 	}
+
 	protected function get_responsive_styles(
 		$opt_name,
 		$selector,
@@ -683,19 +684,19 @@ class BA_Builder_Module extends ET_Builder_Module {
 				'toggle_slug'     => $opt_slug,
 				'show_if'         => $show_if,
 			),
-			'overlay_hover_speed'    => array(
-				'label'           => esc_html__( 'Overlay Hover Speed', 'brain-divi-addons' ),
-				'type'            => 'range',
-				'fixed_unit'      => 'ms',
-				'default'         => '300ms',
-				'range_settings'  => array(
+			'overlay_hover_speed'  => array(
+				'label'          => esc_html__( 'Overlay Hover Speed', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'fixed_unit'     => 'ms',
+				'default'        => '300ms',
+				'range_settings' => array(
 					'min'  => 0,
 					'max'  => 5000,
 					'step' => 50,
 				),
-				'toggle_slug'     => $opt_slug,
-				'tab_slug'        => 'advanced',
-				'show_if'         => array_merge( array( 'overlay_on_hover' => 'on' ), $show_if ),
+				'toggle_slug'    => $opt_slug,
+				'tab_slug'       => 'advanced',
+				'show_if'        => array_merge( array( 'overlay_on_hover' => 'on' ), $show_if ),
 			),
 			'overlay_icon'         => array(
 				'label'           => esc_html__( 'Overlay Icon', 'brain-divi-addons' ),
@@ -703,7 +704,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				'option_category' => 'basic_option',
 				'toggle_slug'     => $opt_slug,
 				'tab_slug'        => 'advanced',
-				'show_if'         =>  $show_if ,
+				'show_if'         => $show_if,
 			),
 			'overlay_icon_color'   => array(
 				'label'       => esc_html__( 'Overlay Icon Color', 'brain-divi-addons' ),
@@ -715,33 +716,33 @@ class BA_Builder_Module extends ET_Builder_Module {
 				'hover'       => 'tabs',
 			),
 			'overlay_icon_size'    => array(
-				'label'           => esc_html__( 'Overlay Icon Size', 'brain-divi-addons' ),
-				'type'            => 'range',
-				'default'         => '32px',
-				'hover'           => 'tabs',
-				'range_settings'  => array(
+				'label'          => esc_html__( 'Overlay Icon Size', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'default'        => '32px',
+				'hover'          => 'tabs',
+				'range_settings' => array(
 					'min'  => 0,
 					'max'  => 200,
 					'step' => 1,
 				),
-				'toggle_slug'     => $opt_slug,
-				'tab_slug'        => 'advanced',
-				'show_if'         => $show_if,
+				'toggle_slug'    => $opt_slug,
+				'tab_slug'       => 'advanced',
+				'show_if'        => $show_if,
 			),
 			'overlay_icon_opacity' => array(
-				'label'           => esc_html__( 'Overlay Icon Opacity', 'brain-divi-addons' ),
-				'type'            => 'range',
-				'default'         => '1',
-				'unitless'        => true,
-				'range_settings'  => array(
+				'label'          => esc_html__( 'Overlay Icon Opacity', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'default'        => '1',
+				'unitless'       => true,
+				'range_settings' => array(
 					'min'  => 0,
 					'max'  => 1,
 					'step' => .02,
 				),
-				'toggle_slug'     => $opt_slug,
-				'tab_slug'        => 'advanced',
-				'show_if'         => $show_if,
-				'hover'           => 'tabs',
+				'toggle_slug'    => $opt_slug,
+				'tab_slug'       => 'advanced',
+				'show_if'        => $show_if,
+				'hover'          => 'tabs',
 			),
 
 		);
@@ -872,11 +873,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		$this->get_custom_bg_style( $render_slug, 'overlay', '%%order_class%% .ba-overlay', '' );
 	}
 
-	/**
-	 * Carouse Option Settings Fields
-	 *
-	 * @return array
-	 */
+
 	protected function get_carousel_option_fields( $supports = array(), $default = array(), $show_if = array() ) {
 		$aditional   = array();
 		$slide_count = isset( $default['slide_count'] ) ? $default['slide_count'] : '3';
@@ -1752,7 +1749,6 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 	}
 
-
 	protected function render_default_nav_css( $render_slug ) {
 
 		$nav_pos_y                   = $this->props['nav_pos_y'];
@@ -2185,61 +2181,52 @@ class BA_Builder_Module extends ET_Builder_Module {
 	}
 
 	protected function render_carousel_css( $render_slug ) {
-		// Props
-		$nav_height                   = $this->props['nav_height'];
-		$nav_height_tablet            = $this->props['nav_height_tablet'];
-		$nav_height_phone             = $this->props['nav_height_phone'];
-		$nav_height_last_edited       = $this->props['nav_height_last_edited'];
-		$nav_height_responsive_status = et_pb_get_responsive_status( $nav_height_last_edited );
 
-		$nav_width                   = $this->props['nav_width'];
-		$nav_width_tablet            = $this->props['nav_width_tablet'] ? $this->props['nav_width_tablet'] : $nav_width;
-		$nav_width_phone             = $this->props['nav_width_phone'] ? $this->props['nav_width_phone'] : $nav_width_tablet;
-		$nav_width_last_edited       = $this->props['nav_width_last_edited'];
-		$nav_width_responsive_status = et_pb_get_responsive_status( $nav_width_last_edited );
-
-		$nav_border_width       = $this->props['nav_border_width'];
-		$nav_border_style       = $this->props['nav_border_style'];
-		$nav_border_color       = $this->props['nav_border_color'];
-		$nav_border_color_hover = $this->get_hover_value( 'nav_border_color' );
-
-		$nav_color       = $this->props['nav_color'];
-		$nav_bg          = $this->props['nav_bg'];
-		$nav_skew        = $this->props['nav_skew'];
-		$nav_color_hover = $this->get_hover_value( 'nav_color' );
-		$nav_bg_hover    = $this->get_hover_value( 'nav_bg' );
-
-		$nav_icon_size_tablet            = $this->props['nav_icon_size_tablet'];
-		$nav_icon_size_phone             = $this->props['nav_icon_size_phone'];
-		$nav_icon_size_last_edited       = $this->props['nav_icon_size_last_edited'];
-		$nav_icon_size_responsive_status = et_pb_get_responsive_status( $nav_icon_size_last_edited );
-		$nav_icon_size                   = $this->props['nav_icon_size'];
-		$right_border_radius             = explode( '|', $this->props['right_border_radius'] );
-		$left_border_radius              = explode( '|', $this->props['left_border_radius'] );
-
-		$slide_spacing         = $this->props['slide_spacing'];
-		$use_both_side_spacing = $this->props['use_both_side_spacing'];
-		$custom_cursor         = $this->props['custom_cursor'];
-		$cursor_name           = $this->props['cursor_name'];
-		$is_variable_width     = $this->props['is_variable_width'];
-
-		$slide_width                   = $this->props['slide_width'];
-		$slide_width_tablet            = $this->props['slide_width_tablet'];
-		$slide_width_phone             = $this->props['slide_width_phone'];
-		$slide_width_last_edited       = $this->props['slide_width_last_edited'];
-		$slide_width_responsive_status = et_pb_get_responsive_status( $slide_width_last_edited );
-
-		$is_vertical    = $this->props['is_vertical'];
-		$nav_type       = $this->props['nav_type'];
-		$int_skew       = intval( $this->props['nav_skew'] );
-		$nav_skew_inner = $int_skew < 0 ? abs( $int_skew ) : '-' . abs( $int_skew );
-
-		$carousel_spacing_top                   = $this->props['carousel_spacing_top'];
-		$carousel_spacing_top_tablet            = $this->props['carousel_spacing_top_tablet'];
-		$carousel_spacing_top_phone             = $this->props['carousel_spacing_top_phone'];
-		$carousel_spacing_top_last_edited       = $this->props['carousel_spacing_top_last_edited'];
-		$carousel_spacing_top_responsive_status = et_pb_get_responsive_status( $carousel_spacing_top_last_edited );
-
+		$nav_height                                = $this->props['nav_height'];
+		$nav_height_tablet                         = $this->props['nav_height_tablet'];
+		$nav_height_phone                          = $this->props['nav_height_phone'];
+		$nav_height_last_edited                    = $this->props['nav_height_last_edited'];
+		$nav_height_responsive_status              = et_pb_get_responsive_status( $nav_height_last_edited );
+		$nav_width                                 = $this->props['nav_width'];
+		$nav_width_tablet                          = $this->props['nav_width_tablet'] ? $this->props['nav_width_tablet'] : $nav_width;
+		$nav_width_phone                           = $this->props['nav_width_phone'] ? $this->props['nav_width_phone'] : $nav_width_tablet;
+		$nav_width_last_edited                     = $this->props['nav_width_last_edited'];
+		$nav_width_responsive_status               = et_pb_get_responsive_status( $nav_width_last_edited );
+		$nav_border_width                          = $this->props['nav_border_width'];
+		$nav_border_style                          = $this->props['nav_border_style'];
+		$nav_border_color                          = $this->props['nav_border_color'];
+		$nav_border_color_hover                    = $this->get_hover_value( 'nav_border_color' );
+		$nav_color                                 = $this->props['nav_color'];
+		$nav_bg                                    = $this->props['nav_bg'];
+		$nav_skew                                  = $this->props['nav_skew'];
+		$nav_color_hover                           = $this->get_hover_value( 'nav_color' );
+		$nav_bg_hover                              = $this->get_hover_value( 'nav_bg' );
+		$nav_icon_size_tablet                      = $this->props['nav_icon_size_tablet'];
+		$nav_icon_size_phone                       = $this->props['nav_icon_size_phone'];
+		$nav_icon_size_last_edited                 = $this->props['nav_icon_size_last_edited'];
+		$nav_icon_size_responsive_status           = et_pb_get_responsive_status( $nav_icon_size_last_edited );
+		$nav_icon_size                             = $this->props['nav_icon_size'];
+		$right_border_radius                       = explode( '|', $this->props['right_border_radius'] );
+		$left_border_radius                        = explode( '|', $this->props['left_border_radius'] );
+		$slide_spacing                             = $this->props['slide_spacing'];
+		$use_both_side_spacing                     = $this->props['use_both_side_spacing'];
+		$custom_cursor                             = $this->props['custom_cursor'];
+		$cursor_name                               = $this->props['cursor_name'];
+		$is_variable_width                         = $this->props['is_variable_width'];
+		$slide_width                               = $this->props['slide_width'];
+		$slide_width_tablet                        = $this->props['slide_width_tablet'];
+		$slide_width_phone                         = $this->props['slide_width_phone'];
+		$slide_width_last_edited                   = $this->props['slide_width_last_edited'];
+		$slide_width_responsive_status             = et_pb_get_responsive_status( $slide_width_last_edited );
+		$is_vertical                               = $this->props['is_vertical'];
+		$nav_type                                  = $this->props['nav_type'];
+		$int_skew                                  = intval( $this->props['nav_skew'] );
+		$nav_skew_inner                            = $int_skew < 0 ? abs( $int_skew ) : '-' . abs( $int_skew );
+		$carousel_spacing_top                      = $this->props['carousel_spacing_top'];
+		$carousel_spacing_top_tablet               = $this->props['carousel_spacing_top_tablet'];
+		$carousel_spacing_top_phone                = $this->props['carousel_spacing_top_phone'];
+		$carousel_spacing_top_last_edited          = $this->props['carousel_spacing_top_last_edited'];
+		$carousel_spacing_top_responsive_status    = et_pb_get_responsive_status( $carousel_spacing_top_last_edited );
 		$animation_speed                           = $this->props['animation_speed'];
 		$carousel_spacing_bottom                   = $this->props['carousel_spacing_bottom'];
 		$carousel_spacing_bottom_tablet            = $this->props['carousel_spacing_bottom_tablet'];
@@ -2582,12 +2569,6 @@ class BA_Builder_Module extends ET_Builder_Module {
 		$this->render_pagination_css( $render_slug );
 	}
 
-
-	/**
-	 * Carousel Options For Front End
-	 *
-	 * @return void
-	 */
 	protected function get_carousel_options_data() {
 
 		$is_autoplay            = $this->props['is_autoplay'];
@@ -2685,7 +2666,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		$phone['breakpoint'] = 767;
 
 		if ( 'off' === $is_variable_width && ! empty( $slide_count_phone ) ) {
-			$phone['settings']['slidesToShow'] = $slide_count_phone;
+			$phone['settings']['slidesToShow'] = intval( $slide_count_phone );
 		}
 
 		if ( ! empty( $slide_to_scroll_phone ) ) {

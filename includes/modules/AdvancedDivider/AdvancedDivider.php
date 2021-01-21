@@ -59,11 +59,11 @@ class BA_Advanced_Divider extends BA_Builder_Module {
 				),
 			),
 			'title'             => array(
-				'label'       => esc_html__( 'Divider Text', 'brain-divi-addons' ),
-				'type'        => 'text',
-				'toggle_slug' => 'main_content',
+				'label'           => esc_html__( 'Divider Text', 'brain-divi-addons' ),
+				'type'            => 'text',
+				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
-				'show_if'     => array(
+				'show_if'         => array(
 					'active_element' => 'text',
 				),
 			),

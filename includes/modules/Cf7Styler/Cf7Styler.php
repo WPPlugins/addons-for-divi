@@ -169,9 +169,6 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 				'label'        => esc_html__( 'Form Header Background', 'brain-divi-addons' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
-				'show_if'      => array(
-					'use_form_header' => 'on',
-				),
 				'tab_slug'     => 'advanced',
 				'toggle_slug'  => 'form_header',
 				'sub_toggle'   => 'common_tab',
@@ -181,9 +178,6 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 				'label'          => esc_html__( 'Header Padding', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'default'        => '0px|0px|0px|0px',
-				'show_if'        => array(
-					'use_form_header' => 'on',
-				),
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'form_header',
 				'sub_toggle'     => 'common_tab',
@@ -200,9 +194,6 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 					'max'  => '100',
 					'step' => '1',
 				),
-				'show_if'        => array(
-					'use_form_header' => 'on',
-				),
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'form_header',
 				'sub_toggle'     => 'common_tab',
@@ -213,12 +204,29 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 				'type'         => 'color-alpha',
 				'default'      => '#efefef',
 				'custom_color' => true,
-				'show_if'      => array(
-					'use_form_header' => 'on',
-				),
 				'tab_slug'     => 'advanced',
 				'toggle_slug'  => 'form_header',
 				'sub_toggle'   => 'common_tab',
+			),
+
+			'form_header_icon_size'        => array(
+				'label'          => esc_html__( 'Header Icon Size', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'default_unit'   => 'px',
+				'default'        => '32px',
+				'mobile_options' => true,
+				'range_settings' => array(
+					'min'  => '0',
+					'max'  => '100',
+					'step' => '1',
+				),
+				'tab_slug'       => 'advanced',
+				'toggle_slug'    => 'form_header',
+				'sub_toggle'     => 'common_tab',
+				'show_if'        => array(
+					'use_form_header' => 'on',
+					'use_icon'        => 'on',
+				),
 			),
 
 			'form_header_icon_color'       => array(
@@ -1268,6 +1276,17 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 				'selector'    => '%%order_class%% .ba-form-header-icon span',
 				'declaration' => "color: {$form_header_icon_color}!important;",
 			)
+		);
+
+		$this->get_responsive_styles(
+			'form_header_icon_size',
+			'%%order_class%% .ba-form-header-icon span',
+			array(
+				'primary'   => 'font-size',
+				'important' => false,
+			),
+			array( 'default' => '32px' ),
+			$render_slug
 		);
 
 		ET_Builder_Element::set_style(

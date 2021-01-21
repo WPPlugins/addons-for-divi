@@ -44,6 +44,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 					),
 					'links'   => esc_html__( 'Social Links', 'brain-divi-addons' ),
 					'border'  => esc_html__( 'Border', 'brain-divi-addons' ),
+					'box_shadow'  => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
 				),
 			),
 		);
@@ -521,7 +522,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		$advanced_fields['fonts']['name'] = array(
 			'label'           => esc_html__( 'Name', 'brain-divi-addons' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-team-content h3, .et-db #et-boc %%order_class%% .ba-team-content h3',
+				'main'      => '%%order_class%% .ba-team-content h3',
 				'important' => 'all',
 			),
 			'important'       => 'all',
@@ -603,6 +604,15 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			'toggle_slug' => 'content',
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-team-content',
+				'important' => 'all',
+			),
+		);
+
+		$advanced_fields['box_shadow']['main'] = array(
+			'label'       => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+			'toggle_slug' => 'box_shadow',
+			'css'         => array(
+				'main'      => '%%order_class%% .ba-team',
 				'important' => 'all',
 			),
 		);
@@ -848,7 +858,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			$this->props['photo_hover_animation'],
 			( 'off' === $content_on_hover && 'photo' === $links_position ) ? $this->render_links() : '',
 			$overlay_icon,
-			join( $classes, ' ' )
+			join( ' ', $classes )
 		);
 	}
 
@@ -948,6 +958,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			array( 'default' => '0' ),
 			$render_slug
 		);
+
 		$this->get_responsive_styles(
 			'job_bottom_spacing',
 			'%%order_class%% .ba-job-title',

@@ -109,11 +109,11 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 				'toggle_slug' => 'logo_settings',
 				'default'     => 'zoom_in',
 				'options'     => array(
-					'no_hover'      => esc_html__( 'None', 'dp-divi-addons' ),
-					'zoom_in'       => esc_html__( 'Zoom In', 'dp-divi-addons' ),
-					'zoom_out'      => esc_html__( 'Zoom Out', 'dp-divi-addons' ),
-					'fade'          => esc_html__( 'Fade', 'dp-divi-addons' ),
-					'black_n_white' => esc_html__( 'Black and White', 'dp-divi-addons' ),
+					'no_hover'      => esc_html__( 'None', 'brain-divi-addons' ),
+					'zoom_in'       => esc_html__( 'Zoom In', 'brain-divi-addons' ),
+					'zoom_out'      => esc_html__( 'Zoom Out', 'brain-divi-addons' ),
+					'fade'          => esc_html__( 'Fade', 'brain-divi-addons' ),
+					'black_n_white' => esc_html__( 'Black and White', 'brain-divi-addons' ),
 				),
 			),
 		);

@@ -50,6 +50,21 @@ class BA_Testimonial extends BA_Builder_Module {
 
 	public function get_fields() {
 
+		$primary_fields = array(
+			'icon_placement' => array(
+				'label'       => esc_html__( 'Icon Placement', 'brain-divi-addons' ),
+				'type'        => 'select',
+				'toggle_slug' => 'quote_icon',
+				'tab_slug'    => 'advanced',
+				'default'     => 'background',
+				'options'     => array(
+					'_default'   => esc_html__( 'Default', 'brain-divi-addons' ),
+					'absolute'   => esc_html__( 'Absolute', 'brain-divi-addons' ),
+					'background' => esc_html__( 'Background', 'brain-divi-addons' ),
+				),
+			),
+		);
+
 		$fields = array(
 
 			'image'                  => array(
@@ -237,7 +252,6 @@ class BA_Testimonial extends BA_Builder_Module {
 				'dynamic_content' => 'url',
 
 			),
-
 			'company_url'            => array(
 				'label'           => esc_html__( 'Company URL', 'brain-divi-addons' ),
 				'type'            => 'text',
@@ -247,7 +261,7 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			),
 
-			// common.
+			// General.
 			'alignment'              => array(
 				'label'        => esc_html__( 'Content Alignment', 'brain-divi-addons' ),
 				'type'         => 'text_align',
@@ -257,68 +271,19 @@ class BA_Testimonial extends BA_Builder_Module {
 				'toggle_slug'  => 'common',
 				'tab_slug'     => 'advanced',
 			),
-
 			'content_padding'        => array(
-				'label'       => esc_html__( 'Content Padding', 'brain-divi-addons' ),
-				'type'        => 'custom_padding',
-				'default'     => '30px|30px|30px|30px',
-				'toggle_slug' => 'common',
-				'tab_slug'    => 'advanced',
-				'show_if'     => array(
+				'label'          => esc_html__( 'Content Padding', 'brain-divi-addons' ),
+				'type'           => 'custom_padding',
+				'default'        => '30px|30px|30px|30px',
+				'mobile_options' => true,
+				'toggle_slug'    => 'common',
+				'tab_slug'       => 'advanced',
+				'show_if'        => array(
 					'img_position' => array( 'left', 'right' ),
 				),
 			),
 
 			// Quote Icon.
-			'icon_placement'         => array(
-				'label'       => esc_html__( 'Icon Placement', 'brain-divi-addons' ),
-				'type'        => 'select',
-				'toggle_slug' => 'quote_icon',
-				'tab_slug'    => 'advanced',
-				'default'     => 'background',
-				'options'     => array(
-					'_default'   => esc_html__( 'Default', 'brain-divi-addons' ),
-					'absolute'   => esc_html__( 'Absolute', 'brain-divi-addons' ),
-					'background' => esc_html__( 'Background', 'brain-divi-addons' ),
-				),
-			),
-
-			'icon_pos_x'             => array(
-				'label'           => esc_html__( 'Icon Position X', 'brain-divi-addons' ),
-				'type'            => 'range',
-				'default'         => '0px',
-				'option_category' => 'basic_option',
-				'fixed_unit'      => 'px',
-				'range_settings'  => array(
-					'min'  => -500,
-					'step' => 1,
-					'max'  => 500,
-				),
-				'toggle_slug'     => 'quote_icon',
-				'tab_slug'        => 'advanced',
-				'show_if'         => array(
-					'icon_placement' => 'absolute',
-				),
-			),
-
-			'icon_pos_y'             => array(
-				'label'           => esc_html__( 'Icon Position Y', 'brain-divi-addons' ),
-				'type'            => 'range',
-				'default'         => '0px',
-				'option_category' => 'basic_option',
-				'fixed_unit'      => 'px',
-				'range_settings'  => array(
-					'min'  => -500,
-					'step' => 1,
-					'max'  => 500,
-				),
-				'toggle_slug'     => 'quote_icon',
-				'tab_slug'        => 'advanced',
-				'show_if'         => array(
-					'icon_placement' => 'absolute',
-				),
-			),
-
 			'icon_alignment'         => array(
 				'label'           => esc_html__( 'Icon Alignment', 'brain-divi-addons' ),
 				'type'            => 'text_align',
@@ -332,7 +297,6 @@ class BA_Testimonial extends BA_Builder_Module {
 					'icon_placement' => 'absolute',
 				),
 			),
-
 			'icon_color'             => array(
 				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
@@ -343,7 +307,6 @@ class BA_Testimonial extends BA_Builder_Module {
 					'use_custom_icon' => 'off',
 				),
 			),
-
 			'icon_bg'                => array(
 				'label'       => esc_html__( 'Icon Background', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
@@ -354,7 +317,6 @@ class BA_Testimonial extends BA_Builder_Module {
 					'use_custom_icon' => 'on',
 				),
 			),
-
 			'icon_size'              => array(
 				'label'           => esc_html__( 'Icon Size', 'brain-divi-addons' ),
 				'type'            => 'range',
@@ -370,7 +332,6 @@ class BA_Testimonial extends BA_Builder_Module {
 				'toggle_slug'     => 'quote_icon',
 				'tab_slug'        => 'advanced',
 			),
-
 			'icon_opacity'           => array(
 				'label'           => esc_html__( 'Icon Opacity', 'brain-divi-addons' ),
 				'type'            => 'range',
@@ -385,7 +346,6 @@ class BA_Testimonial extends BA_Builder_Module {
 				'toggle_slug'     => 'quote_icon',
 				'tab_slug'        => 'advanced',
 			),
-
 			'icon_padding'           => array(
 				'label'       => esc_html__( 'Icon Padding', 'brain-divi-addons' ),
 				'type'        => 'custom_padding',
@@ -396,7 +356,6 @@ class BA_Testimonial extends BA_Builder_Module {
 					'use_custom_icon' => 'off',
 				),
 			),
-
 			'icon_top_spacing'       => array(
 				'label'           => esc_html__( 'Icon Spacing Top', 'brain-divi-addons' ),
 				'type'            => 'range',
@@ -414,7 +373,6 @@ class BA_Testimonial extends BA_Builder_Module {
 					'icon_placement' => 'absolute',
 				),
 			),
-
 			'icon_bottom_spacing'    => array(
 				'label'           => esc_html__( 'Icon Spacing Bottom', 'brain-divi-addons' ),
 				'type'            => 'range',
@@ -826,10 +784,16 @@ class BA_Testimonial extends BA_Builder_Module {
 
 		);
 
+		$defaults      = array(
+			'position' => 'right_top',
+			'offset_x' => '15px',
+			'offset_y' => '15px',
+		);
+		$abs_quote     = $this->get_absolute_element_options( 'icon', 'Icon', 'quote_icon', $defaults, array( 'icon_placement' => 'absolute' ) );
 		$quote_icon_bg = $this->custom_background_fields( 'icon', 'Icon', 'advanced', 'quote_icon', array( 'color', 'gradient', 'hover' ), array( 'use_custom_icon' => 'off' ), '' );
 		$bubble_bg     = $this->custom_background_fields( 'bubble', 'Bubble', 'advanced', 'bubble', array( 'color', 'gradient', 'hover' ), array( 'review_design' => 'bubble' ), '#efefef' );
 
-		return array_merge( $bubble_bg, $fields, $quote_icon_bg );
+		return array_merge( $primary_fields, $bubble_bg, $abs_quote, $fields, $quote_icon_bg );
 	}
 
 	public function get_advanced_fields_config() {
@@ -1177,8 +1141,6 @@ class BA_Testimonial extends BA_Builder_Module {
 		$icon_padding           = $this->props['icon_padding'];
 		$icon_opacity           = $this->props['icon_opacity'];
 		$icon_placement         = $this->props['icon_placement'];
-		$icon_pos_y             = $this->props['icon_pos_y'];
-		$icon_pos_x             = $this->props['icon_pos_x'];
 		$img_position           = $this->props['img_position'];
 		$image_placement_alt    = $this->props['image_placement_alt'];
 		$img_offset_x           = $this->props['img_offset_x'];
@@ -1186,7 +1148,6 @@ class BA_Testimonial extends BA_Builder_Module {
 		$image_placement        = $this->props['image_placement'];
 		$img_is_center_y        = $this->props['img_is_center_y'];
 		$img_is_center_x        = $this->props['img_is_center_x'];
-		$content_padding        = $this->props['content_padding'];
 		$image__placement       = explode( '_', $image_placement );
 		$val_x                  = 0;
 		$val_y                  = 0;
@@ -1197,16 +1158,23 @@ class BA_Testimonial extends BA_Builder_Module {
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .ba-testimonial-content',
-					'declaration' => sprintf(
-						'
-                    flex: 1 1; %1$s',
-						$this->process_margin_padding( $content_padding, 'padding', false )
-					),
+					'declaration' => 'flex: 1 1;',
 				)
 			);
+
+			$this->get_responsive_styles(
+				'content_padding',
+				'%%order_class%% .ba-testimonial-content',
+				array(
+					'primary' => 'padding',
+				),
+				array( 'default' => '30px|30px|30px|30px' ),
+				$render_slug
+			);
+
 		}
 
-		// Quote Icon
+		// Quote Icon.
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
@@ -1309,13 +1277,7 @@ class BA_Testimonial extends BA_Builder_Module {
 				)
 			);
 		} else {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-icon-absolute',
-					'declaration' => sprintf( 'top: %1$s; left: %2$s;', $icon_pos_y, $icon_pos_x ),
-				)
-			);
+			$this->get_absolute_element_styles( $render_slug, 'icon', '%%order_class%% .ba-icon-absolute' );
 		}
 
 		// Image.
