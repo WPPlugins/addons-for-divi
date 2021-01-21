@@ -1,0 +1,449 @@
+<?php
+class BA_Image_Compare extends BA_Builder_Module {
+
+	protected $module_credits = array(
+		'module_uri' => 'https://divi.brainaddons.com/demo/image-compare/',
+		'author'     => 'BrainAddons',
+		'author_uri' => 'https://brainaddons.com/',
+	);
+
+	public function init() {
+
+		$this->name       = esc_html__( 'Brain Image Compare', 'brain-divi-addons' );
+		$this->slug       = 'ba_image_compare';
+		$this->vb_support = 'on';
+
+		$this->settings_modal_toggles = array(
+			'general'  => array(
+				'toggles' => array(
+					'before'      => esc_html__( 'Before', 'brain-divi-addons' ),
+					'after'       => esc_html__( 'After', 'brain-divi-addons' ),
+					'settings'    => esc_html__( 'Settings', 'brain-divi-addons' ),
+					'orientation' => esc_html__( 'Orientation', 'brain-divi-addons' ),
+					'handle'      => esc_html__( 'Comparison Handle', 'brain-divi-addons' ),
+				),
+			),
+
+			'advanced' => array(
+				'toggles' => array(
+					'label'  => esc_html__( 'Before/After Label', 'brain-divi-addons' ),
+					'handle' => esc_html__( 'Handle', 'brain-divi-addons' ),
+				),
+			),
+		);
+
+		$this->custom_css_fields = array(
+			'before_img'   => array(
+				'label'    => esc_html__( 'Before Image', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .twentytwenty-before',
+			),
+			'after_img'    => array(
+				'label'    => esc_html__( 'After Image', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .twentytwenty-after',
+			),
+			'before_label' => array(
+				'label'    => esc_html__( 'Before Label', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .twentytwenty-before-label',
+			),
+			'after_label'  => array(
+				'label'    => esc_html__( 'After Label', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .twentytwenty-after-label',
+			),
+		);
+	}
+
+	public function get_fields() {
+
+		$et_accent_color = et_builder_accent_color();
+
+		return array(
+
+			'before_img'      => array(
+				'label'              => esc_html__( 'Image', 'brain-divi-addons' ),
+				'type'               => 'upload',
+				'option_category'    => 'basic_option',
+				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload an image to display as before image', 'brain-divi-addons' ),
+				'hide_metadata'      => true,
+				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
+				'computed_affects'   => array( '__compare' ),
+				'toggle_slug'        => 'before',
+				'dynamic_content'    => 'image',
+			),
+
+			'before_label'    => array(
+				'default'          => 'Before',
+				'label'            => esc_html__( 'Before Label', 'brain-divi-addons' ),
+				'type'             => 'text',
+				'option_category'  => 'basic_option',
+				'description'      => esc_html__( 'Define the HTML ALT text for your image here.', '' ),
+				'computed_affects' => array( '__compare' ),
+				'toggle_slug'      => 'before',
+			),
+
+			'before_label_bg' => array(
+				'default'      => $et_accent_color,
+				'label'        => esc_html__( 'Before Label Background', 'brain-divi-addons' ),
+				'type'         => 'color-alpha',
+				'custom_color' => true,
+				'toggle_slug'  => 'before',
+			),
+
+			'after_img'       => array(
+				'label'              => esc_html__( 'Image', 'brain-divi-addons' ),
+				'type'               => 'upload',
+				'option_category'    => 'basic_option',
+				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
+				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload an image to display at as after image', 'brain-divi-addons' ),
+				'hide_metadata'      => true,
+				'computed_affects'   => array( '__compare' ),
+
+				'toggle_slug'        => 'after',
+				'dynamic_content'    => 'image',
+			),
+
+			'after_label'     => array(
+				'default'          => 'After',
+				'label'            => esc_html__( 'After Label', 'brain-divi-addons' ),
+				'type'             => 'text',
+				'option_category'  => 'basic_option',
+				'description'      => esc_html__( 'Define the HTML ALT text for your image here.', 'brain-divi-addons' ),
+				'computed_affects' => array( '__compare' ),
+				'toggle_slug'      => 'after',
+			),
+
+			'after_label_bg'  => array(
+				'default'      => $et_accent_color,
+				'label'        => esc_html__( 'After Label Background', 'brain-divi-addons' ),
+				'type'         => 'color-alpha',
+				'custom_color' => true,
+				'toggle_slug'  => 'after',
+			),
+
+			'orientation'     => array(
+				'label'            => esc_html__( 'Orientation', 'brain-divi-addons' ),
+				'type'             => 'select',
+				'option_category'  => 'layout',
+				'options'          => array(
+					'vertical'   => __( 'Vertical', 'brain-divi-addons' ),
+					'horizontal' => __( 'Horizontal', 'brain-divi-addons' ),
+				),
+				'computed_affects' => array( '__compare' ),
+				'default'          => 'horizontal',
+				'toggle_slug'      => 'settings',
+			),
+
+			'offset_pct'      => array(
+				'label'            => esc_html__( 'Handle Initial Offset', 'brain-divi-addons' ),
+				'type'             => 'select',
+				'option_category'  => 'layout',
+				'options'          => array(
+					'0.0' => __( '0.0', 'brain-divi-addons' ),
+					'0.1' => __( '0.1', 'brain-divi-addons' ),
+					'0.2' => __( '0.2', 'brain-divi-addons' ),
+					'0.3' => __( '0.3', 'brain-divi-addons' ),
+					'0.4' => __( '0.4', 'brain-divi-addons' ),
+					'0.5' => __( '0.5', 'brain-divi-addons' ),
+					'0.6' => __( '0.6', 'brain-divi-addons' ),
+					'0.7' => __( '0.7', 'brain-divi-addons' ),
+					'0.8' => __( '0.8', 'brain-divi-addons' ),
+					'0.9' => __( '0.9', 'brain-divi-addons' ),
+				),
+				'computed_affects' => array( '__compare' ),
+				'default'          => '0.5',
+				'toggle_slug'      => 'settings',
+			),
+
+			'move_on_hover'   => array(
+				'label'            => esc_html__( 'Move on Hover', 'brain-divi-addons' ),
+				'type'             => 'yes_no_button',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
+					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+				),
+				'computed_affects' => array( '__compare' ),
+				'default'          => 'off',
+				'toggle_slug'      => 'settings',
+			),
+
+			'overlay'         => array(
+				'label'            => esc_html__( 'Use Overlay on Hover', 'brain-divi-addons' ),
+				'type'             => 'yes_no_button',
+				'options'          => array(
+					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
+					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+				),
+				'computed_affects' => array( '__compare' ),
+				'default'          => 'on',
+				'toggle_slug'      => 'settings',
+			),
+
+			'show_label'      => array(
+				'label'       => esc_html__( 'Show Before/After Label', 'brain-divi-addons' ),
+				'type'        => 'select',
+				'options'     => array(
+					'always'   => __( 'Always', 'brain-divi-addons' ),
+					'on_hover' => __( 'On Hover', 'brain-divi-addons' ),
+				),
+				'default'     => 'always',
+				'toggle_slug' => 'settings',
+				'show_if'     => array(
+					'overlay' => 'on',
+				),
+			),
+
+			'label_radius'    => array(
+				'label'           => esc_html__( 'Label Border Radius', 'brain-divi-addons' ),
+				'type'            => 'range',
+				'default'         => '4px',
+				'option_category' => 'basic_option',
+				'fixed_unit'      => 'px',
+				'range_settings'  => array(
+					'min'  => 0,
+					'step' => 1,
+					'max'  => 100,
+				),
+				'toggle_slug'     => 'label',
+				'tab_slug'        => 'advanced',
+			),
+
+			'handle_color'    => array(
+				'default'      => '#ffffff',
+				'label'        => esc_html__( 'Handle Color', 'brain-divi-addons' ),
+				'type'         => 'color-alpha',
+				'custom_color' => true,
+				'toggle_slug'  => 'handle',
+				'tab_slug'     => 'advanced',
+			),
+
+			'__compare'       => array(
+				'type'                => 'computed',
+				'computed_callback'   => array( 'BA_Image_Compare', 'get_image_compare' ),
+				'computed_depends_on' => array(
+					'before_img',
+					'before_label',
+					'after_img',
+					'after_label',
+					'move_on_hover',
+					'offset_pct',
+					'orientation',
+					'overlay',
+					'show_label',
+				),
+				'computed_minimum'    => array(
+					'before_img',
+					'after_img',
+				),
+			),
+
+		);
+	}
+
+
+	public function get_advanced_fields_config() {
+
+		$advanced_fields         = array();
+		$advanced_fields['text'] = false;
+
+		$advanced_fields['fonts']['label'] = array(
+			'label'           => esc_html__( 'Label', 'brain-divi-addons' ),
+			'css'             => array(
+				'main'      => '%%order_class%% .twentytwenty-before-label:before, %%order_class%% .twentytwenty-after-label:before',
+				'important' => 'all',
+			),
+			'hide_text_align' => true,
+			'toggle_slug'     => 'label',
+		);
+
+		return $advanced_fields;
+	}
+
+	static function get_image_compare( $args = array() ) {
+
+		$defaults = array(
+			'before_img'   => '',
+			'after_img'    => '',
+			'before_label' => 'Before',
+			'after_label'  => 'After',
+			'overlay'      => '',
+		);
+
+		$args = wp_parse_args( $args, $defaults );
+
+		$before_img   = $args['before_img'];
+		$after_img    = $args['after_img'];
+		$before_label = $args['before_label'];
+		$after_label  = $args['after_label'];
+
+		$html = sprintf(
+			'
+			<img class="ba-before-img" style="position: absolute;" src=" %1$s " alt="%3$s"/>
+			<img class="ba-after-img" src=" %2$s " alt="%4$s"/>',
+			esc_attr( $before_img ),
+			esc_attr( $after_img ),
+			esc_attr( $before_label ),
+			esc_attr( $after_label )
+		);
+
+		return $html;
+	}
+
+	public function render( $attrs, $content = null, $render_slug ) {
+
+		$before_img    = $this->props['before_img'];
+		$after_img     = $this->props['after_img'];
+		$orientation   = $this->props['orientation'];
+		$before_label  = $this->props['before_label'];
+		$after_label   = $this->props['after_label'];
+		$move_on_hover = $this->props['move_on_hover'];
+		$offset_pct    = $this->props['offset_pct'];
+		$overlay       = $this->props['overlay'];
+		$order_class   = self::get_module_order_class( $render_slug );
+		$order_number  = str_replace( '_', '', str_replace( $this->slug, '', $order_class ) );
+
+		$this->apply_css( $render_slug );
+
+		$data_string = sprintf(
+			'data-orientation = "%1$s"
+			data-moveonhover = "%2$s"
+			data-beforelabel = "%3$s"
+			data-afterlabel = "%4$s"
+			data-offsetpct = "%5$s"
+			data-ordernumber = "%6$s"
+			data-overlay = "%7$s"',
+			$orientation,
+			$move_on_hover,
+			$before_label,
+			$after_label,
+			$offset_pct,
+			$order_number,
+			$overlay
+		);
+
+		ob_start();
+
+		$images = self::get_image_compare(
+			array(
+				'before_img'   => $before_img,
+				'after_img'    => $after_img,
+				'before_label' => $before_label,
+				'after_label'  => $after_label,
+			)
+		);
+
+		$html = sprintf(
+			'<div class="ba-image-compare" %2$s>
+				<div class="ba-image-compare-container">
+				 %1$s
+				</div>
+			</div>',
+			$images,
+			$data_string
+		);
+
+		ob_get_clean();
+
+		if ( ! empty( $before_img ) ) {
+			return $html;
+		}
+
+	}
+
+	public function apply_css( $render_slug ) {
+
+		$before_label_bg = $this->props['before_label_bg'];
+		$after_label_bg  = $this->props['after_label_bg'];
+		$show_label      = $this->props['show_label'];
+		$label_radius    = $this->props['label_radius'];
+		$handle_color    = $this->props['handle_color'];
+
+		// handle_color
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-horizontal .twentytwenty-handle:before, %%order_class%% .ba-image-compare .twentytwenty-horizontal .twentytwenty-handle:after, %%order_class%% ba-image-compare .twentytwenty-vertical .twentytwenty-handle:before, %%order_class%% .ba-image-compare .twentytwenty-vertical .twentytwenty-handle:after',
+				'declaration' => 'background:' . $handle_color . ';',
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-right-arrow',
+				'declaration' => 'border-left: 6px solid ' . $handle_color . ';',
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-left-arrow',
+				'declaration' => 'border-right: 6px solid ' . $handle_color . ';',
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-handle',
+				'declaration' => 'border: 3px solid ' . $handle_color . ';',
+			)
+		);
+
+		// handle_color end
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .twentytwenty-overlay div:before',
+				'declaration' => 'border-radius:' . $label_radius . ';',
+			)
+		);
+
+		if ( $show_label === 'on_hover' ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .twentytwenty-before-label, %%order_class%% .twentytwenty-after-label',
+					'declaration' => 'opacity:0;',
+				)
+			);
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%%:hover .twentytwenty-before-label, %%order_class%%:hover .twentytwenty-after-label',
+					'declaration' => 'opacity:1;',
+				)
+			);
+		}
+
+		if ( ! empty( $before_label_bg ) ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .twentytwenty-before-label:before',
+					'declaration' => sprintf( 'background-color: %1$s!important;', $before_label_bg ),
+				)
+			);
+		}
+
+		if ( ! empty( $after_label_bg ) ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .twentytwenty-after-label:before',
+					'declaration' => sprintf( 'background-color: %1$s!important;', esc_html( $after_label_bg ) ),
+				)
+			);
+		}
+
+	}
+}
+
+new BA_Image_Compare();

@@ -1,0 +1,5099 @@
+# Copyright (C) 2020 Divi People
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Brain Addons for Divi 0.0.1-beta\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/addons-for-divi\n"
+"POT-Creation-Date: 2020-10-30 18:33:12+00:00\n"
+"PO-Revision-Date: 2020-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n1.0.2\n"
+
+#: includes/modules/LogoGrid/LogoGrid.php:50
+#: includes/modules/ModulesCore/ModulesCore.php:969
+#: includes/modules/PostList/PostList.php:254
+#: includes/modules/Testimonial/Testimonial.php:101
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:50
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1026
+#: wporg/trunk/includes/modules/PostList/PostList.php:254
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:101
+msgid "1"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:51
+#: includes/modules/ModulesCore/ModulesCore.php:970
+#: includes/modules/PostList/PostList.php:255
+#: includes/modules/Testimonial/Testimonial.php:102
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:51
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1027
+#: wporg/trunk/includes/modules/PostList/PostList.php:255
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:102
+msgid "2"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:52
+#: includes/modules/ModulesCore/ModulesCore.php:971
+#: includes/modules/PostList/PostList.php:256
+#: includes/modules/Testimonial/Testimonial.php:103
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:52
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1028
+#: wporg/trunk/includes/modules/PostList/PostList.php:256
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:103
+msgid "3"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:53
+#: includes/modules/ModulesCore/ModulesCore.php:972
+#: includes/modules/PostList/PostList.php:257
+#: includes/modules/Testimonial/Testimonial.php:104
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:53
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1029
+#: wporg/trunk/includes/modules/PostList/PostList.php:257
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:104
+msgid "4"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:54
+#: includes/modules/ModulesCore/ModulesCore.php:973
+#: includes/modules/PostList/PostList.php:258
+#: includes/modules/Testimonial/Testimonial.php:105
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:54
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1030
+#: wporg/trunk/includes/modules/PostList/PostList.php:258
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:105
+msgid "5"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:55
+#: includes/modules/ModulesCore/ModulesCore.php:974
+#: includes/modules/PostList/PostList.php:259
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:55
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1031
+#: wporg/trunk/includes/modules/PostList/PostList.php:259
+msgid "6"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:56
+#: includes/modules/ModulesCore/ModulesCore.php:975
+#: includes/modules/PostList/PostList.php:260
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:56
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1032
+#: wporg/trunk/includes/modules/PostList/PostList.php:260
+msgid "7"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:57
+#: includes/modules/ModulesCore/ModulesCore.php:976
+#: includes/modules/PostList/PostList.php:261
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:57
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1033
+#: wporg/trunk/includes/modules/PostList/PostList.php:261
+msgid "8"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:58
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:58
+msgid "9"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:59
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:59
+msgid "10"
+msgstr ""
+
+#: includes/admin/view/admin-main.php:2 includes/admin/view/admin-main.php:5
+#: wporg/trunk/includes/admin/view/admin-main.php:2
+#: wporg/trunk/includes/admin/view/admin-main.php:5
+msgid "BrainAddons Options"
+msgstr ""
+
+#: includes/admin/view/admin-modules.php:67
+#: wporg/trunk/includes/admin/view/admin-modules.php:67
+msgid "Click and view demo"
+msgstr ""
+
+#: includes/admin/view/admin-modules.php:96
+#: wporg/trunk/includes/admin/view/admin-modules.php:96
+msgid "Save Settings"
+msgstr ""
+
+#: includes/admin.php:20 wporg/trunk/includes/admin.php:20
+msgid "BrianAddons"
+msgstr ""
+
+#: includes/admin.php:21 wporg/trunk/includes/admin.php:21
+msgid "BrainAddons"
+msgstr ""
+
+#: includes/admin.php:109 wporg/trunk/includes/admin.php:109
+msgid "Advanced Divider"
+msgstr ""
+
+#: includes/admin.php:116 includes/modules/Card/Card.php:468
+#: wporg/trunk/includes/admin.php:116
+#: wporg/trunk/includes/modules/Card/Card.php:468
+msgid "Card"
+msgstr ""
+
+#: includes/admin.php:123 wporg/trunk/includes/admin.php:123
+msgid "CF7 Styler"
+msgstr ""
+
+#: includes/admin.php:130 includes/modules/TwitterFeed/TwitterFeed.php:20
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:20
+#: wporg/trunk/includes/admin.php:130
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:20
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:20
+msgid "Twitter Feed"
+msgstr ""
+
+#: includes/admin.php:137 wporg/trunk/includes/admin.php:137
+msgid "Icon Box"
+msgstr ""
+
+#: includes/admin.php:144 wporg/trunk/includes/admin.php:144
+msgid "Logo Grid"
+msgstr ""
+
+#: includes/admin.php:151 wporg/trunk/includes/admin.php:151
+msgid "Image Compare"
+msgstr ""
+
+#: includes/admin.php:158 wporg/trunk/includes/admin.php:158
+msgid "Advanced Team"
+msgstr ""
+
+#: includes/admin.php:165 wporg/trunk/includes/admin.php:165
+msgid "Skill Bars"
+msgstr ""
+
+#: includes/admin.php:172 wporg/trunk/includes/admin.php:172
+msgid "Dual Button"
+msgstr ""
+
+#: includes/admin.php:179 wporg/trunk/includes/admin.php:179
+msgid "Video Popup"
+msgstr ""
+
+#: includes/admin.php:186 wporg/trunk/includes/admin.php:186
+msgid "Testimonial"
+msgstr ""
+
+#: includes/admin.php:193 wporg/trunk/includes/admin.php:193
+msgid "Info Box"
+msgstr ""
+
+#: includes/admin.php:200 includes/modules/ModulesCore/ModulesCore.php:1521
+#: includes/modules/Number/Number.php:24 includes/modules/Number/Number.php:39
+#: includes/modules/Number/Number.php:132
+#: includes/modules/Number/Number.php:191 wporg/trunk/includes/admin.php:200
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1578
+#: wporg/trunk/includes/modules/Number/Number.php:24
+#: wporg/trunk/includes/modules/Number/Number.php:39
+#: wporg/trunk/includes/modules/Number/Number.php:132
+#: wporg/trunk/includes/modules/Number/Number.php:191
+msgid "Number"
+msgstr ""
+
+#: includes/admin.php:207 wporg/trunk/includes/admin.php:207
+msgid "Scroll Image"
+msgstr ""
+
+#: includes/admin.php:214 wporg/trunk/includes/admin.php:214
+msgid "News Ticker"
+msgstr ""
+
+#: includes/admin.php:221 wporg/trunk/includes/admin.php:221
+msgid "Post List"
+msgstr ""
+
+#: includes/admin.php:228 wporg/trunk/includes/admin.php:228
+msgid "Twitter Feed Carousel"
+msgstr ""
+
+#: includes/admin.php:235 wporg/trunk/includes/admin.php:235
+msgid "Image Carousel"
+msgstr ""
+
+#: includes/admin.php:242 wporg/trunk/includes/admin.php:242
+msgid "Logo Carousel"
+msgstr ""
+
+#: includes/admin.php:249 includes/modules/Testimonial/Testimonial.php:41
+#: includes/modules/Testimonial/Testimonial.php:113
+#: includes/modules/Testimonial/Testimonial.php:953
+#: wporg/trunk/includes/admin.php:249
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:41
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:113
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:953
+msgid "Review"
+msgstr ""
+
+#: includes/admin.php:256 wporg/trunk/includes/admin.php:256
+msgid "Caldera Forms"
+msgstr ""
+
+#: includes/admin.php:263 wporg/trunk/includes/admin.php:263
+msgid "Gravity Forms"
+msgstr ""
+
+#: includes/admin.php:270 wporg/trunk/includes/admin.php:270
+msgid "WPForms"
+msgstr ""
+
+#: includes/admin.php:277 wporg/trunk/includes/admin.php:277
+msgid "Ninja Forms"
+msgstr ""
+
+#: includes/admin.php:284 wporg/trunk/includes/admin.php:284
+msgid "Animated Text"
+msgstr ""
+
+#: includes/admin.php:291 wporg/trunk/includes/admin.php:291
+msgid "Image Grid"
+msgstr ""
+
+#: includes/admin.php:298 includes/admin.php:356
+#: wporg/trunk/includes/admin.php:298 wporg/trunk/includes/admin.php:356
+msgid "Testimonial Carousel"
+msgstr ""
+
+#: includes/admin.php:305 wporg/trunk/includes/admin.php:305
+msgid "Business Hour"
+msgstr ""
+
+#: includes/admin.php:312 wporg/trunk/includes/admin.php:312
+msgid "Counter"
+msgstr ""
+
+#: includes/admin.php:319 wporg/trunk/includes/admin.php:319
+msgid "Facebook Feed"
+msgstr ""
+
+#: includes/admin.php:326 wporg/trunk/includes/admin.php:326
+msgid "Facebook Feed Carousel"
+msgstr ""
+
+#: includes/admin.php:342 wporg/trunk/includes/admin.php:342
+msgid "Advanced Heading"
+msgstr ""
+
+#: includes/admin.php:349 wporg/trunk/includes/admin.php:349
+msgid "Lottie"
+msgstr ""
+
+#: includes/admin.php:363 wporg/trunk/includes/admin.php:363
+msgid "Team Carousel"
+msgstr ""
+
+#: includes/admin.php:370 wporg/trunk/includes/admin.php:370
+msgid "Hover Box"
+msgstr ""
+
+#: includes/admin.php:377 wporg/trunk/includes/admin.php:377
+msgid "Image Masking"
+msgstr ""
+
+#: includes/admin.php:384 wporg/trunk/includes/admin.php:384
+msgid "List Group"
+msgstr ""
+
+#: includes/admin.php:391 wporg/trunk/includes/admin.php:391
+msgid "Price Menu"
+msgstr ""
+
+#: includes/admin.php:398 wporg/trunk/includes/admin.php:398
+msgid "Post Grid"
+msgstr ""
+
+#: includes/admin.php:405 wporg/trunk/includes/admin.php:405
+msgid "Post Tiles"
+msgstr ""
+
+#: includes/admin.php:412 wporg/trunk/includes/admin.php:412
+msgid "Post Carousel"
+msgstr ""
+
+#: includes/admin.php:419
+msgid "Post Masonry"
+msgstr ""
+
+#: includes/admin.php:426 wporg/trunk/includes/admin.php:419
+msgid "Smart Post"
+msgstr ""
+
+#: includes/admin.php:433 wporg/trunk/includes/admin.php:426
+msgid "Flipbox"
+msgstr ""
+
+#: includes/admin.php:440 wporg/trunk/includes/admin.php:433
+msgid "Hotspot"
+msgstr ""
+
+#: includes/admin.php:447 wporg/trunk/includes/admin.php:440
+msgid "Floating Image"
+msgstr ""
+
+#: includes/admin.php:492 wporg/trunk/includes/admin.php:485
+msgid "Display Condition"
+msgstr ""
+
+#: includes/admin.php:500 wporg/trunk/includes/admin.php:493
+msgid "White Label"
+msgstr ""
+
+#: includes/admin.php:508 wporg/trunk/includes/admin.php:501
+msgid "Login Designer"
+msgstr ""
+
+#: includes/admin.php:516 wporg/trunk/includes/admin.php:509
+msgid "Mega Menu"
+msgstr ""
+
+#: includes/admin.php:524 wporg/trunk/includes/admin.php:517
+msgid "Popup Builder"
+msgstr ""
+
+#: includes/admin.php:532 includes/modules/VideoPopup/VideoPopup.php:26
+#: wporg/trunk/includes/admin.php:525
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:26
+msgid "Popup"
+msgstr ""
+
+#: includes/admin.php:540 wporg/trunk/includes/admin.php:533
+msgid "Custom Header"
+msgstr ""
+
+#: includes/admin.php:548 wporg/trunk/includes/admin.php:541
+msgid "Custom Footer"
+msgstr ""
+
+#: includes/admin.php:556 wporg/trunk/includes/admin.php:549
+msgid "Mobile"
+msgstr ""
+
+#: includes/admin.php:564 wporg/trunk/includes/admin.php:557
+msgid "Unfiltered File Uploads"
+msgstr ""
+
+#: includes/admin.php:565 wporg/trunk/includes/admin.php:558
+msgid ""
+"Please note! Allowing uploads of any files (SVG & JSON included) is a "
+"potential security risk."
+msgstr ""
+
+#: includes/admin.php:572 wporg/trunk/includes/admin.php:565
+msgid "Custom Image Size"
+msgstr ""
+
+#: includes/admin.php:596 wporg/trunk/includes/admin.php:589
+msgid "Home"
+msgstr ""
+
+#: includes/admin.php:602 wporg/trunk/includes/admin.php:595
+msgid "Modules"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:14
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:14
+msgid "Brain Divider"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:19
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:19
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:27
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:606
+#: includes/modules/Card/Card.php:19 includes/modules/IconBox/IconBox.php:19
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:16
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:24
+#: includes/modules/InfoBox/InfoBox.php:20
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:17
+#: includes/modules/LogoGridChild/LogoGridChild.php:17
+#: includes/modules/NewsTicker/NewsTicker.php:19
+#: includes/modules/Number/Number.php:19
+#: includes/modules/PostList/PostList.php:19
+#: includes/modules/PostList/PostList.php:36
+#: includes/modules/PostList/PostList.php:574
+#: includes/modules/ScrollImage/ScrollImage.php:19
+#: includes/modules/Testimonial/Testimonial.php:19
+#: includes/modules/TwitterFeed/TwitterFeed.php:43
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:54
+#: includes/modules/VideoPopup/VideoPopup.php:19
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:19
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:19
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:27
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:606
+#: wporg/trunk/includes/modules/Card/Card.php:19
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:19
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:16
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:24
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:20
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:17
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:17
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:19
+#: wporg/trunk/includes/modules/Number/Number.php:19
+#: wporg/trunk/includes/modules/PostList/PostList.php:19
+#: wporg/trunk/includes/modules/PostList/PostList.php:36
+#: wporg/trunk/includes/modules/PostList/PostList.php:574
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:19
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:19
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:43
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:54
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:19
+msgid "Content"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:20
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:28
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:20
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:28
+msgid "Mask"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:25
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:25
+msgid "Divider"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:26
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:43
+#: includes/modules/Cf7Styler/Cf7Styler.php:40
+#: includes/modules/Cf7Styler/Cf7Styler.php:654
+#: includes/modules/DualButton/DualButton.php:137
+#: includes/modules/Number/Number.php:25
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:26
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:43
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:40
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:654
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:137
+#: wporg/trunk/includes/modules/Number/Number.php:25
+msgid "Text"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:27
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:27
+msgid "Icon/Image"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:38
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:38
+msgid "Choose an Element"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:44
+#: includes/modules/DualButton/DualButton.php:138
+#: includes/modules/IconBox/IconBox.php:25
+#: includes/modules/IconBox/IconBox.php:283
+#: includes/modules/InfoBox/InfoBox.php:198
+#: includes/modules/ScrollImage/ScrollImage.php:27
+#: includes/modules/ScrollImage/ScrollImage.php:252
+#: includes/modules/Testimonial/Testimonial.php:855
+#: includes/modules/VideoPopup/VideoPopup.php:25
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:44
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:138
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:25
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:280
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:198
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:27
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:252
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:855
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:25
+msgid "Icon"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:45
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:22
+#: includes/modules/ImageCompare/ImageCompare.php:62
+#: includes/modules/ImageCompare/ImageCompare.php:95
+#: includes/modules/InfoBox/InfoBox.php:196
+#: includes/modules/PostList/PostList.php:484
+#: includes/modules/Review/Review.php:504
+#: includes/modules/ScrollImage/ScrollImage.php:25
+#: includes/modules/Testimonial/Testimonial.php:835
+#: includes/modules/VideoPopup/VideoPopup.php:24
+#: includes/modules/VideoPopup/VideoPopup.php:37
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:45
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:22
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:62
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:95
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:196
+#: wporg/trunk/includes/modules/PostList/PostList.php:484
+#: wporg/trunk/includes/modules/Review/Review.php:504
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:25
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:835
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:24
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:37
+msgid "Image"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:50
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:48
+#: includes/modules/InfoBox/InfoBox.php:203
+#: includes/modules/Review/Review.php:103
+#: includes/modules/ScrollImage/ScrollImage.php:40
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:50
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:48
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:203
+#: wporg/trunk/includes/modules/Review/Review.php:103
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:40
+msgid "Upload Image"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:54
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:101
+#: includes/modules/Card/Card.php:83
+#: includes/modules/Cf7Styler/Cf7Styler.php:147
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:52
+#: includes/modules/ImageCompare/ImageCompare.php:65
+#: includes/modules/ImageCompare/ImageCompare.php:99
+#: includes/modules/InfoBox/InfoBox.php:207
+#: includes/modules/InfoBox/InfoBox.php:324
+#: includes/modules/Review/Review.php:106
+#: includes/modules/ScrollImage/ScrollImage.php:44
+#: includes/modules/Testimonial/Testimonial.php:59
+#: includes/modules/VideoPopup/VideoPopup.php:41
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:54
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:101
+#: wporg/trunk/includes/modules/Card/Card.php:80
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:147
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:52
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:65
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:99
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:207
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:324
+#: wporg/trunk/includes/modules/Review/Review.php:106
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:44
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:59
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:41
+msgid "Upload an image"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:55
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:102
+#: includes/modules/Card/Card.php:84
+#: includes/modules/Cf7Styler/Cf7Styler.php:148
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:53
+#: includes/modules/ImageCompare/ImageCompare.php:66
+#: includes/modules/ImageCompare/ImageCompare.php:100
+#: includes/modules/InfoBox/InfoBox.php:208
+#: includes/modules/InfoBox/InfoBox.php:325
+#: includes/modules/Review/Review.php:107
+#: includes/modules/ScrollImage/ScrollImage.php:45
+#: includes/modules/Testimonial/Testimonial.php:60
+#: includes/modules/Testimonial/Testimonial.php:153
+#: includes/modules/VideoPopup/VideoPopup.php:42
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:55
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:102
+#: wporg/trunk/includes/modules/Card/Card.php:81
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:148
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:53
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:66
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:100
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:208
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:325
+#: wporg/trunk/includes/modules/Review/Review.php:107
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:45
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:60
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:153
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:42
+msgid "Choose an Image"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:56
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:103
+#: includes/modules/Card/Card.php:85
+#: includes/modules/Cf7Styler/Cf7Styler.php:149
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:54
+#: includes/modules/ImageCompare/ImageCompare.php:67
+#: includes/modules/ImageCompare/ImageCompare.php:101
+#: includes/modules/InfoBox/InfoBox.php:209
+#: includes/modules/InfoBox/InfoBox.php:326
+#: includes/modules/Review/Review.php:108
+#: includes/modules/ScrollImage/ScrollImage.php:46
+#: includes/modules/Testimonial/Testimonial.php:61
+#: includes/modules/Testimonial/Testimonial.php:154
+#: includes/modules/VideoPopup/VideoPopup.php:43
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:56
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:103
+#: wporg/trunk/includes/modules/Card/Card.php:82
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:149
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:54
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:67
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:101
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:209
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:326
+#: wporg/trunk/includes/modules/Review/Review.php:108
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:46
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:61
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:154
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:43
+msgid "Set As Image"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:64
+#: includes/modules/Card/Card.php:34 includes/modules/Card/Card.php:428
+#: includes/modules/Cf7Styler/Cf7Styler.php:37
+#: includes/modules/Cf7Styler/Cf7Styler.php:641
+#: includes/modules/IconBox/IconBox.php:32
+#: includes/modules/IconBox/IconBox.php:103
+#: includes/modules/IconBox/IconBox.php:391
+#: includes/modules/ImageCarousel/ImageCarousel.php:85
+#: includes/modules/ImageCarousel/ImageCarousel.php:97
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:30
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:66
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:280
+#: includes/modules/InfoBox/InfoBox.php:29
+#: includes/modules/InfoBox/InfoBox.php:107
+#: includes/modules/LogoCarousel/LogoCarousel.php:134
+#: includes/modules/LogoCarousel/LogoCarousel.php:146
+#: includes/modules/NewsTicker/NewsTicker.php:81
+#: includes/modules/NewsTicker/NewsTicker.php:233
+#: includes/modules/NewsTicker/NewsTicker.php:272
+#: includes/modules/PostList/PostList.php:33
+#: includes/modules/PostList/PostList.php:91
+#: includes/modules/PostList/PostList.php:552
+#: includes/modules/Review/Review.php:445
+#: includes/modules/SkillBar/SkillBar.php:39
+#: includes/modules/Testimonial/Testimonial.php:38
+#: includes/modules/Testimonial/Testimonial.php:931
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:64
+#: wporg/trunk/includes/modules/Card/Card.php:34
+#: wporg/trunk/includes/modules/Card/Card.php:428
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:37
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:641
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:32
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:100
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:374
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:85
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:97
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:30
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:66
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:280
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:29
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:107
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:134
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:146
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:81
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:233
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:272
+#: wporg/trunk/includes/modules/PostList/PostList.php:33
+#: wporg/trunk/includes/modules/PostList/PostList.php:91
+#: wporg/trunk/includes/modules/PostList/PostList.php:552
+#: wporg/trunk/includes/modules/Review/Review.php:445
+#: wporg/trunk/includes/modules/SkillBar/SkillBar.php:39
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:38
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:931
+msgid "Title"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:73
+#: includes/modules/IconBox/IconBox.php:53
+#: includes/modules/InfoBox/InfoBox.php:235
+#: includes/modules/ScrollImage/ScrollImage.php:67
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:73
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:50
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:235
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:67
+msgid "Select Icon"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:83
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:83
+msgid "Use Text Mask"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:87
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:128
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:162
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:222
+#: includes/modules/Card/Card.php:62 includes/modules/Card/Card.php:122
+#: includes/modules/Card/Card.php:155 includes/modules/Card/Card.php:187
+#: includes/modules/Cf7Styler/Cf7Styler.php:89
+#: includes/modules/Cf7Styler/Cf7Styler.php:134
+#: includes/modules/Cf7Styler/Cf7Styler.php:271
+#: includes/modules/Cf7Styler/Cf7Styler.php:359
+#: includes/modules/IconBox/IconBox.php:67
+#: includes/modules/ImageCompare/ImageCompare.php:166
+#: includes/modules/ImageCompare/ImageCompare.php:178
+#: includes/modules/InfoBox/InfoBox.php:261
+#: includes/modules/InfoBox/InfoBox.php:293
+#: includes/modules/InfoBox/InfoBox.php:309
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:58
+#: includes/modules/ModulesCore/ModulesCore.php:421
+#: includes/modules/ModulesCore/ModulesCore.php:447
+#: includes/modules/ModulesCore/ModulesCore.php:880
+#: includes/modules/ModulesCore/ModulesCore.php:910
+#: includes/modules/ModulesCore/ModulesCore.php:925
+#: includes/modules/ModulesCore/ModulesCore.php:939
+#: includes/modules/ModulesCore/ModulesCore.php:1004
+#: includes/modules/ModulesCore/ModulesCore.php:1019
+#: includes/modules/ModulesCore/ModulesCore.php:1048
+#: includes/modules/ModulesCore/ModulesCore.php:1079
+#: includes/modules/ModulesCore/ModulesCore.php:1093
+#: includes/modules/ModulesCore/ModulesCore.php:1144
+#: includes/modules/ModulesCore/ModulesCore.php:1158
+#: includes/modules/ModulesCore/ModulesCore.php:1394
+#: includes/modules/ModulesCore/ModulesCore.php:1696
+#: includes/modules/ModulesCore/ModulesCore.php:1711
+#: includes/modules/NewsTicker/NewsTicker.php:44
+#: includes/modules/NewsTicker/NewsTicker.php:168
+#: includes/modules/NewsTicker/NewsTicker.php:180
+#: includes/modules/PostList/PostList.php:132
+#: includes/modules/PostList/PostList.php:145
+#: includes/modules/PostList/PostList.php:173
+#: includes/modules/PostList/PostList.php:197
+#: includes/modules/PostList/PostList.php:210
+#: includes/modules/Review/Review.php:95 includes/modules/Review/Review.php:147
+#: includes/modules/Review/Review.php:179
+#: includes/modules/ScrollImage/ScrollImage.php:61
+#: includes/modules/ScrollImage/ScrollImage.php:82
+#: includes/modules/ScrollImage/ScrollImage.php:113
+#: includes/modules/ScrollImage/ScrollImage.php:201
+#: includes/modules/SkillBarChild/SkillBarChild.php:53
+#: includes/modules/SkillBarChild/SkillBarChild.php:88
+#: includes/modules/Testimonial/Testimonial.php:88
+#: includes/modules/Testimonial/Testimonial.php:123
+#: includes/modules/Testimonial/Testimonial.php:167
+#: includes/modules/Testimonial/Testimonial.php:451
+#: includes/modules/Testimonial/Testimonial.php:481
+#: includes/modules/TwitterFeed/TwitterFeed.php:128
+#: includes/modules/TwitterFeed/TwitterFeed.php:140
+#: includes/modules/TwitterFeed/TwitterFeed.php:152
+#: includes/modules/TwitterFeed/TwitterFeed.php:164
+#: includes/modules/TwitterFeed/TwitterFeed.php:176
+#: includes/modules/TwitterFeed/TwitterFeed.php:188
+#: includes/modules/TwitterFeed/TwitterFeed.php:200
+#: includes/modules/TwitterFeed/TwitterFeed.php:212
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:166
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:178
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:190
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:202
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:214
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:226
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:238
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:250
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:87
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:128
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:162
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:222
+#: wporg/trunk/includes/modules/Card/Card.php:59
+#: wporg/trunk/includes/modules/Card/Card.php:113
+#: wporg/trunk/includes/modules/Card/Card.php:146
+#: wporg/trunk/includes/modules/Card/Card.php:178
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:89
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:134
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:271
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:359
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:64
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:166
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:178
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:261
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:293
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:309
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:58
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:421
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:447
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:937
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:967
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:982
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:996
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1061
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1076
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1105
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1136
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1150
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1201
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1215
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1451
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1753
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1768
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:44
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:168
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:180
+#: wporg/trunk/includes/modules/PostList/PostList.php:132
+#: wporg/trunk/includes/modules/PostList/PostList.php:145
+#: wporg/trunk/includes/modules/PostList/PostList.php:173
+#: wporg/trunk/includes/modules/PostList/PostList.php:197
+#: wporg/trunk/includes/modules/PostList/PostList.php:210
+#: wporg/trunk/includes/modules/Review/Review.php:95
+#: wporg/trunk/includes/modules/Review/Review.php:147
+#: wporg/trunk/includes/modules/Review/Review.php:179
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:61
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:82
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:113
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:201
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:53
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:88
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:88
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:123
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:167
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:451
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:481
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:128
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:140
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:152
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:164
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:176
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:188
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:200
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:212
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:166
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:178
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:190
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:202
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:214
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:226
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:238
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:250
+msgid "Yes"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:88
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:129
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:163
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:223
+#: includes/modules/Card/Card.php:63 includes/modules/Card/Card.php:123
+#: includes/modules/Card/Card.php:156 includes/modules/Card/Card.php:188
+#: includes/modules/Cf7Styler/Cf7Styler.php:90
+#: includes/modules/Cf7Styler/Cf7Styler.php:135
+#: includes/modules/Cf7Styler/Cf7Styler.php:272
+#: includes/modules/Cf7Styler/Cf7Styler.php:360
+#: includes/modules/IconBox/IconBox.php:68
+#: includes/modules/ImageCompare/ImageCompare.php:167
+#: includes/modules/ImageCompare/ImageCompare.php:179
+#: includes/modules/InfoBox/InfoBox.php:262
+#: includes/modules/InfoBox/InfoBox.php:294
+#: includes/modules/InfoBox/InfoBox.php:310
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:59
+#: includes/modules/ModulesCore/ModulesCore.php:422
+#: includes/modules/ModulesCore/ModulesCore.php:448
+#: includes/modules/ModulesCore/ModulesCore.php:881
+#: includes/modules/ModulesCore/ModulesCore.php:911
+#: includes/modules/ModulesCore/ModulesCore.php:926
+#: includes/modules/ModulesCore/ModulesCore.php:940
+#: includes/modules/ModulesCore/ModulesCore.php:1005
+#: includes/modules/ModulesCore/ModulesCore.php:1020
+#: includes/modules/ModulesCore/ModulesCore.php:1049
+#: includes/modules/ModulesCore/ModulesCore.php:1080
+#: includes/modules/ModulesCore/ModulesCore.php:1094
+#: includes/modules/ModulesCore/ModulesCore.php:1145
+#: includes/modules/ModulesCore/ModulesCore.php:1159
+#: includes/modules/ModulesCore/ModulesCore.php:1395
+#: includes/modules/ModulesCore/ModulesCore.php:1697
+#: includes/modules/ModulesCore/ModulesCore.php:1712
+#: includes/modules/NewsTicker/NewsTicker.php:45
+#: includes/modules/NewsTicker/NewsTicker.php:169
+#: includes/modules/NewsTicker/NewsTicker.php:181
+#: includes/modules/PostList/PostList.php:133
+#: includes/modules/PostList/PostList.php:146
+#: includes/modules/PostList/PostList.php:174
+#: includes/modules/PostList/PostList.php:198
+#: includes/modules/PostList/PostList.php:211
+#: includes/modules/Review/Review.php:96 includes/modules/Review/Review.php:148
+#: includes/modules/Review/Review.php:180
+#: includes/modules/ScrollImage/ScrollImage.php:62
+#: includes/modules/ScrollImage/ScrollImage.php:83
+#: includes/modules/ScrollImage/ScrollImage.php:114
+#: includes/modules/ScrollImage/ScrollImage.php:202
+#: includes/modules/SkillBarChild/SkillBarChild.php:54
+#: includes/modules/SkillBarChild/SkillBarChild.php:89
+#: includes/modules/Testimonial/Testimonial.php:89
+#: includes/modules/Testimonial/Testimonial.php:124
+#: includes/modules/Testimonial/Testimonial.php:168
+#: includes/modules/Testimonial/Testimonial.php:452
+#: includes/modules/Testimonial/Testimonial.php:482
+#: includes/modules/TwitterFeed/TwitterFeed.php:129
+#: includes/modules/TwitterFeed/TwitterFeed.php:141
+#: includes/modules/TwitterFeed/TwitterFeed.php:153
+#: includes/modules/TwitterFeed/TwitterFeed.php:165
+#: includes/modules/TwitterFeed/TwitterFeed.php:177
+#: includes/modules/TwitterFeed/TwitterFeed.php:189
+#: includes/modules/TwitterFeed/TwitterFeed.php:201
+#: includes/modules/TwitterFeed/TwitterFeed.php:213
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:167
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:179
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:191
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:203
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:215
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:227
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:239
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:251
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:88
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:129
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:163
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:223
+#: wporg/trunk/includes/modules/Card/Card.php:60
+#: wporg/trunk/includes/modules/Card/Card.php:114
+#: wporg/trunk/includes/modules/Card/Card.php:147
+#: wporg/trunk/includes/modules/Card/Card.php:179
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:90
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:135
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:272
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:360
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:65
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:167
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:179
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:262
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:294
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:310
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:59
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:422
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:448
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:938
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:968
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:983
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:997
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1062
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1077
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1106
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1137
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1151
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1202
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1216
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1452
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1754
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1769
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:45
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:169
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:181
+#: wporg/trunk/includes/modules/PostList/PostList.php:133
+#: wporg/trunk/includes/modules/PostList/PostList.php:146
+#: wporg/trunk/includes/modules/PostList/PostList.php:174
+#: wporg/trunk/includes/modules/PostList/PostList.php:198
+#: wporg/trunk/includes/modules/PostList/PostList.php:211
+#: wporg/trunk/includes/modules/Review/Review.php:96
+#: wporg/trunk/includes/modules/Review/Review.php:148
+#: wporg/trunk/includes/modules/Review/Review.php:180
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:62
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:83
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:114
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:202
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:54
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:89
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:89
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:124
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:168
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:452
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:482
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:129
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:141
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:153
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:165
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:177
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:189
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:201
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:213
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:167
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:179
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:191
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:203
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:215
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:227
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:239
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:251
+msgid "No"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:98
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:98
+msgid "Upload Mask Image"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:113
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:336
+#: includes/modules/InfoBox/InfoBox.php:378
+#: includes/modules/Testimonial/Testimonial.php:244
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:113
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:336
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:378
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:244
+msgid "Content Alignment"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:124
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:124
+msgid "Use Bottom Shape"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:137
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:137
+msgid "Select Shape"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:143
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:143
+msgid "Shape 1"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:144
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:144
+msgid "Shape 2"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:145
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:145
+msgid "Shape 3"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:146
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:146
+msgid "Shape 4"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:147
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:147
+msgid "Shape 5"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:148
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:148
+msgid "Shape 6"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:149
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:149
+msgid "Shape 7"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:150
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:150
+msgid "Shape 8"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:151
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:151
+msgid "Shape 9"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:152
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:152
+msgid "Shape 10"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:153
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:153
+msgid "Shape 11"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:154
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:154
+msgid "Shape 12"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:155
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:155
+msgid "Shape 13"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:156
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:156
+msgid "Shape 14"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:157
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:157
+msgid "Shape 15"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:158
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:158
+msgid "Shape 16"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:159
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:159
+msgid "Shape 17"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:160
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:160
+msgid "Shape 18"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:168
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:168
+msgid "Shape Width"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:186
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:186
+msgid "Shape Weight"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:203
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:203
+msgid "Shape Color"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:214
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:214
+msgid "Shape Margin"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:226
+#: includes/modules/ModulesCore/ModulesCore.php:1449
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:226
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1506
+msgid "Border Type"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:232
+#: includes/modules/InfoBox/InfoBox.php:486
+#: includes/modules/LogoCarousel/LogoCarousel.php:112
+#: includes/modules/LogoGrid/LogoGrid.php:98
+#: includes/modules/ModulesCore/ModulesCore.php:1172
+#: includes/modules/ModulesCore/ModulesCore.php:1464
+#: includes/modules/ModulesCore/ModulesCore.php:2770
+#: includes/modules/Review/Review.php:309
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:232
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:486
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:112
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:98
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1229
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1521
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2827
+#: wporg/trunk/includes/modules/Review/Review.php:309
+msgid "None"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:233
+#: includes/modules/ModulesCore/ModulesCore.php:1456
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:233
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1513
+msgid "Solid"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:234
+#: includes/modules/ModulesCore/ModulesCore.php:1459
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:234
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1516
+msgid "Double"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:235
+#: includes/modules/ModulesCore/ModulesCore.php:1458
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:235
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1515
+msgid "Dotted"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:236
+#: includes/modules/ModulesCore/ModulesCore.php:1457
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:236
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1514
+msgid "Dashed"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:237
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:237
+msgid "Curved"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:238
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:238
+msgid "Zigzag"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:246
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:246
+msgid "Border Spacing"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:264
+#: includes/modules/Cf7Styler/Cf7Styler.php:412
+#: includes/modules/ModulesCore/ModulesCore.php:1438
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:264
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:412
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1495
+msgid "Border Color"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:276
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:276
+msgid "Weight"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:295
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:407
+#: includes/modules/LogoCarousel/LogoCarousel.php:77
+#: includes/modules/LogoGrid/LogoGrid.php:33
+#: includes/modules/ModulesCore/ModulesCore.php:1259
+#: includes/modules/ModulesCore/ModulesCore.php:1579
+#: includes/modules/Number/Number.php:57
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:295
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:407
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:77
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:33
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1316
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1636
+#: wporg/trunk/includes/modules/Number/Number.php:57
+msgid "Height"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:318
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:357
+#: includes/modules/Card/Card.php:212 includes/modules/IconBox/IconBox.php:127
+#: includes/modules/InfoBox/InfoBox.php:399
+#: includes/modules/ModulesCore/ModulesCore.php:1312
+#: includes/modules/PostList/PostList.php:325
+#: includes/modules/ScrollImage/ScrollImage.php:211
+#: includes/modules/Testimonial/Testimonial.php:329
+#: includes/modules/VideoPopup/VideoPopup.php:112
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:318
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:357
+#: wporg/trunk/includes/modules/Card/Card.php:203
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:124
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:399
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1369
+#: wporg/trunk/includes/modules/PostList/PostList.php:325
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:211
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:329
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:112
+msgid "Icon Color"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:330
+#: includes/modules/InfoBox/InfoBox.php:411
+#: includes/modules/Testimonial/Testimonial.php:340
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:330
+#: wporg/trunk/includes/modules/Card/Card.php:214
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:411
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:340
+msgid "Icon Background"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:342
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:435
+#: includes/modules/Card/Card.php:223 includes/modules/IconBox/IconBox.php:169
+#: includes/modules/InfoBox/InfoBox.php:423
+#: includes/modules/ModulesCore/ModulesCore.php:1295
+#: includes/modules/PostList/PostList.php:305
+#: includes/modules/ScrollImage/ScrollImage.php:223
+#: includes/modules/Testimonial/Testimonial.php:348
+#: includes/modules/VideoPopup/VideoPopup.php:121
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:342
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:435
+#: wporg/trunk/includes/modules/Card/Card.php:225
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:166
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:423
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1352
+#: wporg/trunk/includes/modules/PostList/PostList.php:305
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:223
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:348
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:121
+msgid "Icon Size"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:360
+#: includes/modules/Card/Card.php:303 includes/modules/IconBox/IconBox.php:187
+#: includes/modules/InfoBox/InfoBox.php:515
+#: includes/modules/Testimonial/Testimonial.php:379
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:360
+#: wporg/trunk/includes/modules/Card/Card.php:305
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:184
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:515
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:379
+msgid "Icon Padding"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:371
+#: includes/modules/Card/Card.php:273 includes/modules/InfoBox/InfoBox.php:443
+#: includes/modules/PostList/PostList.php:358
+#: includes/modules/Review/Review.php:349
+#: includes/modules/Testimonial/Testimonial.php:539
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:371
+#: wporg/trunk/includes/modules/Card/Card.php:275
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:443
+#: wporg/trunk/includes/modules/PostList/PostList.php:358
+#: wporg/trunk/includes/modules/Review/Review.php:349
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:539
+msgid "Image Width"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:390
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:390
+msgid "Image Repeat"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:393
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:393
+msgid "Repeat"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:394
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:394
+msgid "No Repeat"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:406
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:406
+msgid "Image Size"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:409
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:409
+msgid "Actual Size"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:410
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:410
+msgid "Fit"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:422
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:422
+msgid "Image Position"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:425
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:237
+#: includes/modules/ModulesCore/ModulesCore.php:404
+#: includes/modules/Testimonial/Testimonial.php:433
+#: includes/modules/TwitterFeed/TwitterFeed.php:298
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:292
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:425
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:237
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:404
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:433
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:298
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:292
+msgid "Left Top"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:426
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:426
+msgid "Left Center"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:427
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:238
+#: includes/modules/ModulesCore/ModulesCore.php:405
+#: includes/modules/Testimonial/Testimonial.php:434
+#: includes/modules/TwitterFeed/TwitterFeed.php:299
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:293
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:427
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:238
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:405
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:434
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:299
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:293
+msgid "Left Bottom"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:428
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:239
+#: includes/modules/ModulesCore/ModulesCore.php:406
+#: includes/modules/Testimonial/Testimonial.php:435
+#: includes/modules/TwitterFeed/TwitterFeed.php:300
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:294
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:428
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:239
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:406
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:435
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:300
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:294
+msgid "Right Top"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:429
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:429
+msgid "Right Center"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:430
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:240
+#: includes/modules/ModulesCore/ModulesCore.php:407
+#: includes/modules/Testimonial/Testimonial.php:436
+#: includes/modules/TwitterFeed/TwitterFeed.php:301
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:295
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:430
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:240
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:407
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:436
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:301
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:295
+msgid "Right Bottom"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:431
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:431
+msgid "Center Top"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:432
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:432
+msgid "Center Center"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:433
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:433
+msgid " Center Bottom"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:434
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:434
+msgid "Custom Position"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:446
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:446
+msgid "Horizontal  Value"
+msgstr ""
+
+#: includes/modules/AdvancedDivider/AdvancedDivider.php:459
+#: wporg/trunk/includes/modules/AdvancedDivider/AdvancedDivider.php:459
+msgid "Vertical  Value"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:14
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:14
+msgid "Brain Team"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:20
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:45
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:20
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:45
+msgid "Social Links"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:21
+#: includes/modules/ImageCompare/ImageCompare.php:21
+#: includes/modules/NewsTicker/NewsTicker.php:20
+#: includes/modules/PostList/PostList.php:20
+#: includes/modules/ScrollImage/ScrollImage.php:20
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:21
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:21
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:20
+#: wporg/trunk/includes/modules/PostList/PostList.php:20
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:20
+msgid "Settings"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:28
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:57
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:645
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:28
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:57
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:645
+msgid "Photo"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:29
+#: includes/modules/Card/Card.php:27
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:23
+#: includes/modules/InfoBox/InfoBox.php:28
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:23
+#: includes/modules/ScrollImage/ScrollImage.php:26
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:29
+#: wporg/trunk/includes/modules/Card/Card.php:27
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:23
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:28
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:23
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:26
+msgid "Overlay"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:31
+#: includes/modules/Card/Card.php:30 includes/modules/IconBox/IconBox.php:28
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:26
+#: includes/modules/PostList/PostList.php:29
+#: includes/modules/Testimonial/Testimonial.php:31
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:31
+#: wporg/trunk/includes/modules/Card/Card.php:30
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:28
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:26
+#: wporg/trunk/includes/modules/PostList/PostList.php:29
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:31
+msgid "Texts"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:35
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:517
+#: includes/modules/SkillBarChild/SkillBarChild.php:61
+#: includes/modules/SkillBarChild/SkillBarChild.php:197
+#: includes/modules/Testimonial/Testimonial.php:35
+#: includes/modules/Testimonial/Testimonial.php:909
+#: includes/modules/TwitterFeed/TwitterFeed.php:35
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:46
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:35
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:517
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:61
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:197
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:35
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:909
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:35
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:46
+msgid "Name"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:38
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:90
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:540
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:38
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:90
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:540
+msgid "Job Title"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:41
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:560
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:41
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:560
+msgid "Bio"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:46
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:37
+#: includes/modules/LogoGridChild/LogoGridChild.php:23
+#: includes/modules/NewsTicker/NewsTicker.php:28
+#: includes/modules/Number/Number.php:26
+#: includes/modules/ScrollImage/ScrollImage.php:28
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:46
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:37
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:23
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:28
+#: wporg/trunk/includes/modules/Number/Number.php:26
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:28
+msgid "Border"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:60
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:60
+msgid "Upload a Photo"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:61
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:61
+msgid "Choose a Photo"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:62
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:62
+msgid "Set As Photo"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:73
+#: includes/modules/Card/Card.php:99 includes/modules/Review/Review.php:119
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:73
+#: wporg/trunk/includes/modules/Card/Card.php:96
+#: wporg/trunk/includes/modules/Review/Review.php:119
+msgid "Open Photo in Lightbox"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:78
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:78
+msgid "Photo Alt Text"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:84
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:84
+msgid "Member Name"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:96
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:96
+msgid "Member Bio"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:103
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:103
+msgid "Website URL"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:109
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:109
+msgid "Email Address"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:115
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:115
+msgid "Facebook URL"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:121
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:121
+msgid "Twitter URL"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:127
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:127
+msgid "Instagram URL"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:133
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:133
+msgid "Linkedin URL"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:139
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:139
+msgid "Github URL"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:145
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:145
+msgid "Behance URL"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:151
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:151
+msgid "Dribbble URL"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:158
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:158
+msgid "Show Content on Hover"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:170
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:170
+msgid "Content Hover Style"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:175
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:175
+msgid "Style 1"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:176
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:176
+msgid "Style 2"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:177
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:177
+msgid "Style 3"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:178
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:178
+msgid "Style 4"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:186
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:186
+msgid "Hover Animation Speed"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:203
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:203
+msgid "Social Links Hover Position"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:208
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:208
+msgid "Relative to the Content"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:209
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:209
+msgid "Relative to the Photo"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:218
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:218
+msgid "Use Absolute Photo Position"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:231
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:231
+msgid "Photo Position"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:248
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:248
+msgid "Photo Offset X"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:265
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:265
+msgid "Photo Offset Y"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:282
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:282
+msgid "Photo Width"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:297
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:297
+msgid "Photo Height"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:312
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:312
+msgid "Photo Alignment"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:326
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:326
+msgid "Photo Hover Animation"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:347
+#: includes/modules/Card/Card.php:374
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:200
+#: includes/modules/InfoBox/InfoBox.php:389
+#: includes/modules/Review/Review.php:423
+#: includes/modules/Testimonial/Testimonial.php:254
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:347
+#: wporg/trunk/includes/modules/Card/Card.php:376
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:200
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:389
+#: wporg/trunk/includes/modules/Review/Review.php:423
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:254
+msgid "Content Padding"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:366
+#: includes/modules/DualButton/DualButton.php:191
+#: includes/modules/ModulesCore/ModulesCore.php:1323
+#: includes/modules/ModulesCore/ModulesCore.php:1568
+#: includes/modules/ModulesCore/ModulesCore.php:1652
+#: includes/modules/Testimonial/Testimonial.php:274
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:366
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:191
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1380
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1625
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1709
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:274
+msgid "Background"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:375
+#: includes/modules/ModulesCore/ModulesCore.php:1352
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:375
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1409
+msgid "Spacing Between"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:389
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:389
+msgid "Top Spacing"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:421
+#: includes/modules/LogoCarousel/LogoCarousel.php:92
+#: includes/modules/ModulesCore/ModulesCore.php:1277
+#: includes/modules/ModulesCore/ModulesCore.php:1595
+#: includes/modules/ModulesCore/ModulesCore.php:1670
+#: includes/modules/Number/Number.php:71
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:421
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:92
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1334
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1652
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1727
+#: wporg/trunk/includes/modules/Number/Number.php:71
+msgid "Width"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:449
+#: includes/modules/ModulesCore/ModulesCore.php:1481
+#: includes/modules/ModulesCore/ModulesCore.php:1502
+#: includes/modules/ModulesCore/ModulesCore.php:1611
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:449
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1538
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1559
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1668
+msgid "Border Radius"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:466
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:483
+#: includes/modules/SkillBar/SkillBar.php:45
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:466
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:483
+#: wporg/trunk/includes/modules/SkillBar/SkillBar.php:45
+msgid "Spacing Bottom"
+msgstr ""
+
+#: includes/modules/AdvancedTeam/AdvancedTeam.php:597
+#: wporg/trunk/includes/modules/AdvancedTeam/AdvancedTeam.php:597
+msgid "Content Box Shadow"
+msgstr ""
+
+#: includes/modules/Card/Card.php:12
+#: wporg/trunk/includes/modules/Card/Card.php:12
+msgid "Brain Card"
+msgstr ""
+
+#: includes/modules/Card/Card.php:20 includes/modules/Card/Card.php:44
+#: includes/modules/Card/Card.php:528
+#: includes/modules/Cf7Styler/Cf7Styler.php:62
+#: includes/modules/Cf7Styler/Cf7Styler.php:667
+#: includes/modules/InfoBox/InfoBox.php:31
+#: includes/modules/InfoBox/InfoBox.php:175
+#: includes/modules/Review/Review.php:524
+#: wporg/trunk/includes/modules/Card/Card.php:20
+#: wporg/trunk/includes/modules/Card/Card.php:41
+#: wporg/trunk/includes/modules/Card/Card.php:528
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:62
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:667
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:31
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:175
+#: wporg/trunk/includes/modules/Review/Review.php:524
+msgid "Button"
+msgstr ""
+
+#: includes/modules/Card/Card.php:25
+#: includes/modules/Cf7Styler/Cf7Styler.php:28
+#: includes/modules/Cf7Styler/Cf7Styler.php:34
+#: includes/modules/DualButton/DualButton.php:38
+#: includes/modules/IconBox/IconBox.php:24
+#: includes/modules/ImageCarousel/ImageCarousel.php:42
+#: includes/modules/ImageCarousel/ImageCarousel.php:57
+#: includes/modules/InfoBox/InfoBox.php:26
+#: includes/modules/LogoCarousel/LogoCarousel.php:43
+#: includes/modules/LogoCarousel/LogoCarousel.php:58
+#: includes/modules/PostList/PostList.php:25
+#: includes/modules/Testimonial/Testimonial.php:26
+#: includes/modules/TwitterFeed/TwitterFeed.php:27
+#: wporg/trunk/includes/modules/Card/Card.php:25
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:28
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:34
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:38
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:24
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:42
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:57
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:26
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:43
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:58
+#: wporg/trunk/includes/modules/PostList/PostList.php:25
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:26
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:27
+msgid "Common"
+msgstr ""
+
+#: includes/modules/Card/Card.php:26 includes/modules/Card/Card.php:488
+#: wporg/trunk/includes/modules/Card/Card.php:26
+#: wporg/trunk/includes/modules/Card/Card.php:488
+msgid "Image/Icon"
+msgstr ""
+
+#: includes/modules/Card/Card.php:28 includes/modules/Card/Card.php:40
+#: includes/modules/Card/Card.php:406 includes/modules/Card/Card.php:509
+#: includes/modules/IconBox/IconBox.php:26
+#: includes/modules/IconBox/IconBox.php:38
+#: includes/modules/IconBox/IconBox.php:303
+#: includes/modules/IconBox/IconBox.php:433
+#: wporg/trunk/includes/modules/Card/Card.php:28
+#: wporg/trunk/includes/modules/Card/Card.php:406
+#: wporg/trunk/includes/modules/Card/Card.php:509
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:26
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:300
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:416
+msgid "Badge"
+msgstr ""
+
+#: includes/modules/Card/Card.php:37 includes/modules/Card/Card.php:144
+#: includes/modules/Card/Card.php:446 includes/modules/IconBox/IconBox.php:35
+#: includes/modules/IconBox/IconBox.php:109
+#: includes/modules/IconBox/IconBox.php:412
+#: includes/modules/Review/Review.php:136
+#: includes/modules/Review/Review.php:463
+#: includes/modules/TwitterFeed/TwitterFeed.php:47
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:58
+#: wporg/trunk/includes/modules/Card/Card.php:37
+#: wporg/trunk/includes/modules/Card/Card.php:135
+#: wporg/trunk/includes/modules/Card/Card.php:446
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:35
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:106
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:395
+#: wporg/trunk/includes/modules/Review/Review.php:136
+#: wporg/trunk/includes/modules/Review/Review.php:463
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:47
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:58
+msgid "Description"
+msgstr ""
+
+#: includes/modules/Card/Card.php:56
+#: includes/modules/Cf7Styler/Cf7Styler.php:131
+#: wporg/trunk/includes/modules/Card/Card.php:53
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:131
+msgid "Use Icon"
+msgstr ""
+
+#: includes/modules/Card/Card.php:68
+#: includes/modules/ModulesCore/ModulesCore.php:1471
+#: wporg/trunk/includes/modules/Card/Card.php:65
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1528
+msgid "Left Icon"
+msgstr ""
+
+#: includes/modules/Card/Card.php:79
+#: wporg/trunk/includes/modules/Card/Card.php:76
+msgid "Upload Card Image"
+msgstr ""
+
+#: includes/modules/Card/Card.php:107 includes/modules/IconBox/IconBox.php:88
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:60
+#: includes/modules/Review/Review.php:124
+#: includes/modules/ScrollImage/ScrollImage.php:50
+#: includes/modules/Testimonial/Testimonial.php:66
+#: wporg/trunk/includes/modules/Card/Card.php:101
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:85
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:60
+#: wporg/trunk/includes/modules/Review/Review.php:124
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:50
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:66
+msgid "Image Alt Text"
+msgstr ""
+
+#: includes/modules/Card/Card.php:116
+#: wporg/trunk/includes/modules/Card/Card.php:107
+msgid "Use Badge"
+msgstr ""
+
+#: includes/modules/Card/Card.php:128 includes/modules/IconBox/IconBox.php:97
+#: wporg/trunk/includes/modules/Card/Card.php:119
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:94
+msgid "Badge Text"
+msgstr ""
+
+#: includes/modules/Card/Card.php:138 includes/modules/InfoBox/InfoBox.php:245
+#: includes/modules/NewsTicker/NewsTicker.php:26
+#: includes/modules/NewsTicker/NewsTicker.php:52
+#: includes/modules/Review/Review.php:130
+#: wporg/trunk/includes/modules/Card/Card.php:129
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:245
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:26
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:52
+#: wporg/trunk/includes/modules/Review/Review.php:130
+msgid "Title Text"
+msgstr ""
+
+#: includes/modules/Card/Card.php:151 includes/modules/InfoBox/InfoBox.php:258
+#: includes/modules/Review/Review.php:143
+#: wporg/trunk/includes/modules/Card/Card.php:142
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:258
+#: wporg/trunk/includes/modules/Review/Review.php:143
+msgid "Use Button"
+msgstr ""
+
+#: includes/modules/Card/Card.php:163
+#: includes/modules/DualButton/DualButton.php:69
+#: includes/modules/DualButton/DualButton.php:99
+#: includes/modules/InfoBox/InfoBox.php:269
+#: includes/modules/Review/Review.php:155
+#: wporg/trunk/includes/modules/Card/Card.php:154
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:69
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:99
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:269
+#: wporg/trunk/includes/modules/Review/Review.php:155
+msgid "Button Text"
+msgstr ""
+
+#: includes/modules/Card/Card.php:173
+#: includes/modules/DualButton/DualButton.php:78
+#: includes/modules/DualButton/DualButton.php:108
+#: includes/modules/InfoBox/InfoBox.php:279
+#: includes/modules/Review/Review.php:165
+#: wporg/trunk/includes/modules/Card/Card.php:164
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:78
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:108
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:279
+#: wporg/trunk/includes/modules/Review/Review.php:165
+msgid "Button Link"
+msgstr ""
+
+#: includes/modules/Card/Card.php:183 includes/modules/InfoBox/InfoBox.php:289
+#: includes/modules/Review/Review.php:175
+#: wporg/trunk/includes/modules/Card/Card.php:174
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:289
+#: wporg/trunk/includes/modules/Review/Review.php:175
+msgid "Open Button link in new window"
+msgstr ""
+
+#: includes/modules/Card/Card.php:199 includes/modules/Review/Review.php:289
+#: wporg/trunk/includes/modules/Card/Card.php:190
+#: wporg/trunk/includes/modules/Review/Review.php:289
+msgid "Image/Icon Position"
+msgstr ""
+
+#: includes/modules/Card/Card.php:205
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:121
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:172
+#: includes/modules/LogoGrid/LogoGrid.php:128
+#: includes/modules/LogoGridChild/LogoGridChild.php:91
+#: includes/modules/ModulesCore/ModulesCore.php:1238
+#: includes/modules/Review/Review.php:295
+#: includes/modules/Testimonial/Testimonial.php:180
+#: includes/modules/Testimonial/Testimonial.php:191
+#: includes/modules/Testimonial/Testimonial.php:511
+#: wporg/trunk/includes/modules/Card/Card.php:196
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:121
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:172
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:128
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:91
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1295
+#: wporg/trunk/includes/modules/Review/Review.php:295
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:180
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:191
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:511
+msgid "Top"
+msgstr ""
+
+#: includes/modules/Card/Card.php:206
+#: includes/modules/Cf7Styler/Cf7Styler.php:283
+#: includes/modules/ImageCarousel/ImageCarousel.php:45
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:137
+#: includes/modules/LogoCarousel/LogoCarousel.php:46
+#: includes/modules/LogoGrid/LogoGrid.php:130
+#: includes/modules/LogoGridChild/LogoGridChild.php:93
+#: includes/modules/ModulesCore/ModulesCore.php:1252
+#: includes/modules/Review/Review.php:297
+#: includes/modules/Testimonial/Testimonial.php:192
+#: includes/modules/Testimonial/Testimonial.php:512
+#: includes/modules/Testimonial/Testimonial.php:780
+#: includes/modules/TwitterFeed/TwitterFeed.php:428
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:422
+#: wporg/trunk/includes/modules/Card/Card.php:197
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:283
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:45
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:137
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:46
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:130
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:93
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1309
+#: wporg/trunk/includes/modules/Review/Review.php:297
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:192
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:512
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:780
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:428
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:422
+msgid "Left"
+msgstr ""
+
+#: includes/modules/Card/Card.php:207
+#: includes/modules/Cf7Styler/Cf7Styler.php:285
+#: includes/modules/ImageCarousel/ImageCarousel.php:48
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:138
+#: includes/modules/LogoCarousel/LogoCarousel.php:49
+#: includes/modules/LogoGrid/LogoGrid.php:131
+#: includes/modules/LogoGridChild/LogoGridChild.php:94
+#: includes/modules/ModulesCore/ModulesCore.php:1253
+#: includes/modules/Review/Review.php:298
+#: includes/modules/Testimonial/Testimonial.php:193
+#: includes/modules/Testimonial/Testimonial.php:513
+#: includes/modules/Testimonial/Testimonial.php:781
+#: includes/modules/TwitterFeed/TwitterFeed.php:429
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:423
+#: wporg/trunk/includes/modules/Card/Card.php:198
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:285
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:48
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:138
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:49
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:131
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:94
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1310
+#: wporg/trunk/includes/modules/Review/Review.php:298
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:193
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:513
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:781
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:429
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:423
+msgid "Right"
+msgstr ""
+
+#: includes/modules/Card/Card.php:243
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:225
+#: includes/modules/Review/Review.php:303
+#: wporg/trunk/includes/modules/Card/Card.php:245
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:225
+#: wporg/trunk/includes/modules/Review/Review.php:303
+msgid "Image Hover Animation"
+msgstr ""
+
+#: includes/modules/Card/Card.php:255
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:209
+#: includes/modules/InfoBox/InfoBox.php:463
+#: includes/modules/PostList/PostList.php:377
+#: includes/modules/Review/Review.php:333
+#: includes/modules/ScrollImage/ScrollImage.php:181
+#: includes/modules/Testimonial/Testimonial.php:553
+#: includes/modules/VideoPopup/VideoPopup.php:97
+#: wporg/trunk/includes/modules/Card/Card.php:257
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:209
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:463
+#: wporg/trunk/includes/modules/PostList/PostList.php:377
+#: wporg/trunk/includes/modules/Review/Review.php:333
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:181
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:553
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:97
+msgid "Image Height"
+msgstr ""
+
+#: includes/modules/Card/Card.php:291 includes/modules/Review/Review.php:367
+#: wporg/trunk/includes/modules/Card/Card.php:293
+#: wporg/trunk/includes/modules/Review/Review.php:367
+msgid "Image Padding"
+msgstr ""
+
+#: includes/modules/Card/Card.php:316 includes/modules/Review/Review.php:377
+#: wporg/trunk/includes/modules/Card/Card.php:318
+#: wporg/trunk/includes/modules/Review/Review.php:377
+msgid "Spacing Top"
+msgstr ""
+
+#: includes/modules/Card/Card.php:332
+#: includes/modules/Cf7Styler/Cf7Styler.php:557
+#: includes/modules/IconBox/IconBox.php:241
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:235
+#: includes/modules/InfoBox/InfoBox.php:544
+#: includes/modules/Review/Review.php:393
+#: includes/modules/Testimonial/Testimonial.php:696
+#: wporg/trunk/includes/modules/Card/Card.php:334
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:557
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:238
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:235
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:544
+#: wporg/trunk/includes/modules/Review/Review.php:393
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:696
+msgid "Title Spacing Bottom"
+msgstr ""
+
+#: includes/modules/Card/Card.php:350
+#: wporg/trunk/includes/modules/Card/Card.php:352
+msgid "Wrapper Content Overflow"
+msgstr ""
+
+#: includes/modules/Card/Card.php:356
+#: wporg/trunk/includes/modules/Card/Card.php:358
+msgid "Hidden"
+msgstr ""
+
+#: includes/modules/Card/Card.php:357
+#: wporg/trunk/includes/modules/Card/Card.php:359
+msgid "Visible"
+msgstr ""
+
+#: includes/modules/Card/Card.php:362 includes/modules/IconBox/IconBox.php:230
+#: includes/modules/ModulesCore/ModulesCore.php:1527
+#: includes/modules/Number/Number.php:46 includes/modules/Review/Review.php:411
+#: includes/modules/TwitterFeed/TwitterFeed.php:372
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:366
+#: wporg/trunk/includes/modules/Card/Card.php:364
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:227
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1584
+#: wporg/trunk/includes/modules/Number/Number.php:46
+#: wporg/trunk/includes/modules/Review/Review.php:411
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:372
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:366
+msgid "Alignment"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:15
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:15
+msgid "Brain CF7 Styler"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:22
+#: includes/modules/ImageCarousel/ImageCarousel.php:25
+#: includes/modules/LogoCarousel/LogoCarousel.php:26
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:27
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:22
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:25
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:26
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:27
+msgid "General"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:30
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:30
+msgid "Form Header"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:45
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:45
+msgid "Form Text"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:49
+#: includes/modules/Cf7Styler/Cf7Styler.php:589
+#: includes/modules/Cf7Styler/Cf7Styler.php:691
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:49
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:589
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:691
+msgid "Field"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:52
+#: includes/modules/Cf7Styler/Cf7Styler.php:615
+#: includes/modules/ImageCompare/ImageCompare.php:255
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:52
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:615
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:255
+msgid "Label"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:56
+#: includes/modules/Cf7Styler/Cf7Styler.php:625
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:56
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:625
+msgid "Placeholder"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:60
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:60
+msgid "Fields"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:61
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:61
+msgid "Radio & Checkbox"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:63
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:63
+msgid "Message"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:70
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:70
+msgid "Form Fields"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:74
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:74
+msgid "Form Label"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:86
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:86
+msgid "Show Form Header"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:113
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:113
+msgid "Header Title"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:122
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:122
+msgid "Header Text"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:145
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:145
+msgid "Header Image"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:158
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:158
+msgid "Header Icon"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:169
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:169
+msgid "Form Header Background"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:181
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:181
+msgid "Header Padding"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:194
+#: includes/modules/TwitterFeed/TwitterFeed.php:406
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:400
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:194
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:406
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:400
+msgid "Bottom Spacing"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:212
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:212
+msgid "Header Image/Icon Background"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:225
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:225
+msgid "Header Icon Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:238
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:238
+msgid "Header Icon Padding"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:251
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:251
+msgid "Form Background"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:259
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:259
+msgid "Form Padding"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:268
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:268
+msgid "Fullwidth Button"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:280
+#: includes/modules/DualButton/DualButton.php:58
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:280
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:58
+msgid "Button Alignment"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:284
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:136
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:171
+#: includes/modules/Testimonial/Testimonial.php:782
+#: includes/modules/TwitterFeed/TwitterFeed.php:430
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:424
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:284
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:136
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:171
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:782
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:430
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:424
+msgid "Center"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:296
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:296
+msgid "Select Your Form"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:299
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:299
+msgid "Select a Form"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:307
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:307
+msgid "Form Field Background Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:316
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:316
+msgid "Form Field Active Border Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:324
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:324
+msgid "Form Field Spacing Bottom"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:339
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:339
+msgid "Form Label Spacing Bottom"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:355
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:355
+msgid "Enable Custom Styles"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:371
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:371
+msgid "Size"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:389
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:389
+msgid "Background Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:400
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:400
+msgid "Selected Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:424
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:424
+msgid "Border Size"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:442
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:442
+msgid "Label Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:454
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:454
+msgid "Message Text Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:462
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:462
+msgid "Message Background Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:470
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:470
+msgid "Border Highlight Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:479
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:479
+msgid "Success Message Text Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:487
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:487
+msgid "Success Message Background Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:495
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:495
+msgid "Success Border Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:504
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:504
+msgid "Error Message Text Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:512
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:512
+msgid "Error Message Background Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:520
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:520
+msgid "Error Border Color"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:528
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:528
+msgid "Message Padding"
+msgstr ""
+
+#: includes/modules/Cf7Styler/Cf7Styler.php:542
+#: wporg/trunk/includes/modules/Cf7Styler/Cf7Styler.php:542
+msgid "Message Margin Top"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:12
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:12
+msgid "Brain Dual Button"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:20
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:20
+msgid "Button Content"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:24
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:24
+msgid "Primary"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:27
+#: includes/modules/DualButton/DualButton.php:41
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:27
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:41
+msgid "Connector"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:30
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:30
+msgid "Secondary"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:39
+#: includes/modules/DualButton/DualButton.php:286
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:39
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:286
+msgid "Primary Button"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:40
+#: includes/modules/DualButton/DualButton.php:296
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:40
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:296
+msgid "Secondary Button"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:43
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:43
+msgid "Primary Button Advanced "
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:46
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:46
+msgid "Secondary Button Advanced "
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:86
+#: includes/modules/DualButton/DualButton.php:116
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:86
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:116
+msgid "Button Link Target"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:93
+#: includes/modules/DualButton/DualButton.php:123
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:93
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:123
+msgid "Same Tab"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:94
+#: includes/modules/DualButton/DualButton.php:124
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:94
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:124
+msgid "New Tab"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:129
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:129
+msgid "Connector Type"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:136
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:136
+msgid "No Connector"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:143
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:143
+msgid "Connector Text"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:155
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:155
+msgid "Connector Icon"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:169
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:169
+msgid "Connector Text Size"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:180
+#: includes/modules/ModulesCore/ModulesCore.php:1541
+#: includes/modules/ModulesCore/ModulesCore.php:1661
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:180
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1598
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1718
+msgid "Text Color"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:202
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:202
+msgid "Connector Size"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:213
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:213
+msgid "Connector Radius"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:224
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:224
+msgid "Connector Border Width"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:235
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:235
+msgid "Connector Border Color"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:246
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:246
+msgid "Button Gap"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:260
+#: includes/modules/DualButton/DualButton.php:267
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:260
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:267
+msgid "Advanced Border Radius"
+msgstr ""
+
+#: includes/modules/DualButton/DualButton.php:306
+#: includes/modules/DualButton/DualButton.php:316
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:270
+#: includes/modules/Number/Number.php:27 includes/modules/Number/Number.php:181
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:306
+#: wporg/trunk/includes/modules/DualButton/DualButton.php:316
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:364
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:270
+#: wporg/trunk/includes/modules/Number/Number.php:27
+#: wporg/trunk/includes/modules/Number/Number.php:181
+msgid "Box Shadow"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:14
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:14
+msgid "Brain Icon Box"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:63
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:60
+msgid "Use Image"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:75
+#: includes/modules/ScrollImage/ScrollImage.php:93
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:72
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:93
+msgid "Upload Icon Image"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:78
+#: includes/modules/ScrollImage/ScrollImage.php:96
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:75
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:96
+msgid "Upload an Icon"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:79
+#: includes/modules/ScrollImage/ScrollImage.php:97
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:76
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:97
+msgid "Choose an Icon"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:80
+#: includes/modules/ScrollImage/ScrollImage.php:98
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:77
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:98
+msgid "Set As Icon"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:115
+#: includes/modules/Testimonial/Testimonial.php:266
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:112
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:266
+msgid "Icon Placement"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:121
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:109
+#: includes/modules/Testimonial/Testimonial.php:220
+#: includes/modules/TwitterFeed/TwitterFeed.php:284
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:278
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:118
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:109
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:220
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:284
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:278
+msgid "Normal"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:122
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:110
+#: includes/modules/Testimonial/Testimonial.php:194
+#: includes/modules/Testimonial/Testimonial.php:273
+#: includes/modules/TwitterFeed/TwitterFeed.php:285
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:279
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:119
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:110
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:194
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:273
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:285
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:279
+msgid "Absolute"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:139
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:136
+msgid "Icon Width"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:154
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:151
+msgid "Icon Height"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:199
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:196
+msgid "Icon Bottom Spacing"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:216
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:213
+msgid "Icon Background Rotate"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:351
+#: includes/modules/InfoBox/InfoBox.php:128
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:334
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:128
+msgid "Box"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:371
+#: wporg/trunk/includes/modules/IconBox/IconBox.php:354
+msgid "Wrapper Box Shadow"
+msgstr ""
+
+#: includes/modules/IconBox/IconBox.php:381
+msgid "Icon Box Shadow"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:15
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:15
+msgid "Brain Image Carousel"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:21
+#: includes/modules/LogoCarousel/LogoCarousel.php:22
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:21
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:22
+msgid "Carousel Settings"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:28
+#: includes/modules/LogoCarousel/LogoCarousel.php:29
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:30
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:28
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:29
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:30
+msgid "Advanced"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:38
+#: includes/modules/LogoCarousel/LogoCarousel.php:39
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:70
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:38
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:39
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:70
+msgid "Navigation"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:53
+#: includes/modules/LogoCarousel/LogoCarousel.php:54
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:53
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:54
+msgid "Pagination"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:60
+#: includes/modules/LogoCarousel/LogoCarousel.php:61
+#: wporg/trunk/includes/modules/ImageCarousel/ImageCarousel.php:60
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:61
+msgid "Active"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:11
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:324
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:120
+#: includes/modules/Testimonial/Testimonial.php:875
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:11
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:324
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:120
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:875
+msgid "Item"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:33
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:72
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:302
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:33
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:72
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:302
+msgid "Subtitle"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:78
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:78
+msgid "Content Text Alignment"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:89
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:89
+msgid "Content Width"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:103
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:103
+msgid "Content Type"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:115
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:115
+msgid "Content Position"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:122
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:173
+#: includes/modules/LogoGrid/LogoGrid.php:129
+#: includes/modules/LogoGridChild/LogoGridChild.php:92
+#: includes/modules/ModulesCore/ModulesCore.php:1239
+#: includes/modules/Review/Review.php:296
+#: includes/modules/Testimonial/Testimonial.php:181
+#: includes/modules/Testimonial/Testimonial.php:206
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:122
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:173
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:129
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:92
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1296
+#: wporg/trunk/includes/modules/Review/Review.php:296
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:181
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:206
+msgid "Bottom"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:130
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:130
+msgid "Content Horizontal Position"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:146
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:146
+msgid "Content Horizontal Offset"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:165
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:165
+msgid "Content Vertical Position"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:181
+#: wporg/trunk/includes/modules/ImageCarouselChild/ImageCarouselChild.php:181
+msgid "Content Vertical Offset"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:12
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:12
+msgid "Brain Image Compare"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:19
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:19
+msgid "Before"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:20
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:20
+msgid "After"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:22
+#: includes/modules/ImageCompare/ImageCompare.php:129
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:22
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:129
+msgid "Orientation"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:23
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:23
+msgid "Comparison Handle"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:29
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:29
+msgid "Before/After Label"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:30
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:30
+msgid "Handle"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:37
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:37
+msgid "Before Image"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:41
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:41
+msgid "After Image"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:45
+#: includes/modules/ImageCompare/ImageCompare.php:78
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:45
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:78
+msgid "Before Label"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:49
+#: includes/modules/ImageCompare/ImageCompare.php:112
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:49
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:112
+msgid "After Label"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:68
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:68
+msgid "Upload an image to display as before image"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:81
+#: includes/modules/ImageCompare/ImageCompare.php:115
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:81
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:115
+msgid "Define the HTML ALT text for your image here."
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:88
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:88
+msgid "Before Label Background"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:102
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:102
+msgid "Upload an image to display at as after image"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:122
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:122
+msgid "After Label Background"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:133
+#: includes/modules/ScrollImage/ScrollImage.php:137
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:133
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:137
+msgid "Vertical"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:134
+#: includes/modules/ScrollImage/ScrollImage.php:138
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:134
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:138
+msgid "Horizontal"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:142
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:142
+msgid "Handle Initial Offset"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:146
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:146
+msgid "0.0"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:147
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:147
+msgid "0.1"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:148
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:148
+msgid "0.2"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:149
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:149
+msgid "0.3"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:150
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:150
+msgid "0.4"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:151
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:151
+msgid "0.5"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:152
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:152
+msgid "0.6"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:153
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:153
+msgid "0.7"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:154
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:154
+msgid "0.8"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:155
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:155
+msgid "0.9"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:163
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:163
+msgid "Move on Hover"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:175
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:175
+msgid "Use Overlay on Hover"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:187
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:187
+msgid "Show Before/After Label"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:190
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:190
+msgid "Always"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:191
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:191
+msgid "On Hover"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:201
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:201
+msgid "Label Border Radius"
+msgstr ""
+
+#: includes/modules/ImageCompare/ImageCompare.php:217
+#: wporg/trunk/includes/modules/ImageCompare/ImageCompare.php:217
+msgid "Handle Color"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:14
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:14
+msgid "Brain Info Box"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:27
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:27
+msgid "Figure"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:30
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:30
+msgid "Body Text"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:47
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:47
+msgid "Body"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:59
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:59
+msgid "Unordered List"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:72
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:72
+msgid "Ordered List"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:85
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:85
+msgid "Blockquote"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:96
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:96
+msgid "Link"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:191
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:191
+msgid "Choose an Figure Element"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:197
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:197
+msgid "Video"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:219
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:219
+msgid "Video MP4 File Or Youtube URL"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:223
+#: includes/modules/VideoPopup/VideoPopup.php:86
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:223
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:86
+msgid "Upload a video"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:224
+#: includes/modules/VideoPopup/VideoPopup.php:87
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:224
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:87
+msgid "Choose a Video MP4 File"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:225
+#: includes/modules/VideoPopup/VideoPopup.php:88
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:225
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:88
+msgid "Set As Video"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:226
+#: includes/modules/VideoPopup/VideoPopup.php:89
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:226
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:89
+msgid ""
+"Upload your desired video in .MP4 format, or type in the URL to the video "
+"you would like to display"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:251
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:251
+msgid "Tiny MCE"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:305
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:305
+msgid "Use Overlay Image"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:320
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:320
+msgid "Overlay Image"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:335
+#: includes/modules/ModulesCore/ModulesCore.php:695
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:335
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:752
+msgid "Overlay Icon Color"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:346
+#: includes/modules/ModulesCore/ModulesCore.php:705
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:346
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:762
+msgid "Overlay Icon Size"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:366
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:366
+msgid "Overlay background"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:482
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:482
+msgid "Hover Animation"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:487
+#: includes/modules/LogoCarousel/LogoCarousel.php:113
+#: includes/modules/LogoGrid/LogoGrid.php:99
+#: includes/modules/ModulesCore/ModulesCore.php:2771
+#: includes/modules/Review/Review.php:310
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:487
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:113
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:99
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2828
+#: wporg/trunk/includes/modules/Review/Review.php:310
+msgid "Zoom In"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:488
+#: includes/modules/LogoCarousel/LogoCarousel.php:114
+#: includes/modules/LogoGrid/LogoGrid.php:100
+#: includes/modules/ModulesCore/ModulesCore.php:2772
+#: includes/modules/Review/Review.php:311
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:488
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:114
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:100
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2829
+#: wporg/trunk/includes/modules/Review/Review.php:311
+msgid "Zoom Out"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:489
+#: includes/modules/ModulesCore/ModulesCore.php:2773
+#: includes/modules/Review/Review.php:312
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:489
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2830
+#: wporg/trunk/includes/modules/Review/Review.php:312
+msgid "Pulse"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:490
+#: includes/modules/ModulesCore/ModulesCore.php:2774
+#: includes/modules/Review/Review.php:313
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:490
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2831
+#: wporg/trunk/includes/modules/Review/Review.php:313
+msgid "Bounce"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:491
+#: includes/modules/ModulesCore/ModulesCore.php:2775
+#: includes/modules/Review/Review.php:314
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:491
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2832
+#: wporg/trunk/includes/modules/Review/Review.php:314
+msgid "Flash"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:492
+#: includes/modules/ModulesCore/ModulesCore.php:2776
+#: includes/modules/Review/Review.php:315
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:492
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2833
+#: wporg/trunk/includes/modules/Review/Review.php:315
+msgid "Rubber Band"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:493
+#: includes/modules/ModulesCore/ModulesCore.php:2777
+#: includes/modules/Review/Review.php:316
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:493
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2834
+#: wporg/trunk/includes/modules/Review/Review.php:316
+msgid "Shake"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:494
+#: includes/modules/ModulesCore/ModulesCore.php:2778
+#: includes/modules/Review/Review.php:317
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:494
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2835
+#: wporg/trunk/includes/modules/Review/Review.php:317
+msgid "Swing"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:495
+#: includes/modules/ModulesCore/ModulesCore.php:2779
+#: includes/modules/Review/Review.php:318
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:495
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2836
+#: wporg/trunk/includes/modules/Review/Review.php:318
+msgid "Tada"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:496
+#: includes/modules/ModulesCore/ModulesCore.php:2780
+#: includes/modules/Review/Review.php:319
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:496
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2837
+#: wporg/trunk/includes/modules/Review/Review.php:319
+msgid "Wobble"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:497
+#: includes/modules/ModulesCore/ModulesCore.php:2781
+#: includes/modules/Review/Review.php:320
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:497
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2838
+#: wporg/trunk/includes/modules/Review/Review.php:320
+msgid "Jello"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:498
+#: includes/modules/ModulesCore/ModulesCore.php:2782
+#: includes/modules/Review/Review.php:321
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:498
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2839
+#: wporg/trunk/includes/modules/Review/Review.php:321
+msgid "Heart Beat"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:499
+#: includes/modules/ModulesCore/ModulesCore.php:2783
+#: includes/modules/Review/Review.php:322
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:499
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2840
+#: wporg/trunk/includes/modules/Review/Review.php:322
+msgid "Bounce In"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:500
+#: includes/modules/ModulesCore/ModulesCore.php:2784
+#: includes/modules/Review/Review.php:323
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:500
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2841
+#: wporg/trunk/includes/modules/Review/Review.php:323
+msgid "Fade In"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:501
+#: includes/modules/ModulesCore/ModulesCore.php:2785
+#: includes/modules/Review/Review.php:324
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:501
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2842
+#: wporg/trunk/includes/modules/Review/Review.php:324
+msgid "Flip"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:502
+#: includes/modules/Review/Review.php:325
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:502
+#: wporg/trunk/includes/modules/Review/Review.php:325
+msgid "Light Speed In"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:503
+#: includes/modules/ModulesCore/ModulesCore.php:2786
+#: includes/modules/Review/Review.php:326
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:503
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2843
+#: wporg/trunk/includes/modules/Review/Review.php:326
+msgid "Rotate In"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:504
+#: includes/modules/ModulesCore/ModulesCore.php:2787
+#: includes/modules/Review/Review.php:327
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:504
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2844
+#: wporg/trunk/includes/modules/Review/Review.php:327
+msgid "Slide In Up"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:505
+#: includes/modules/ModulesCore/ModulesCore.php:2788
+#: includes/modules/Review/Review.php:328
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:505
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:2845
+#: wporg/trunk/includes/modules/Review/Review.php:328
+msgid "Slide In Down"
+msgstr ""
+
+#: includes/modules/InfoBox/InfoBox.php:528
+#: wporg/trunk/includes/modules/InfoBox/InfoBox.php:528
+msgid "Button Spacing Top"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:12
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:12
+msgid "Brain Logo Carousel"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:20
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:20
+msgid "Logo Settings"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:107
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:107
+msgid "Logo Hover Animation"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:115
+#: includes/modules/LogoGrid/LogoGrid.php:145
+#: includes/modules/LogoGridChild/LogoGridChild.php:108
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:115
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:145
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:108
+msgid "Fade"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:116
+#: includes/modules/LogoGrid/LogoGrid.php:102
+#: wporg/trunk/includes/modules/LogoCarousel/LogoCarousel.php:116
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:102
+msgid "Black and White"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:12
+#: includes/modules/LogoGridChild/LogoGridChild.php:12
+#: includes/modules/LogoGridChild/LogoGridChild.php:145
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:12
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:12
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:145
+msgid "Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:18
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:18
+msgid "Tab Content"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:24
+#: includes/modules/PostList/PostList.php:41
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:24
+#: wporg/trunk/includes/modules/PostList/PostList.php:41
+msgid "Borders"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:35
+#: includes/modules/LogoGridChild/LogoGridChild.php:34
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:35
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:34
+msgid "Upload Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:38
+#: includes/modules/LogoGridChild/LogoGridChild.php:37
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:38
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:37
+msgid "Upload a Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:39
+#: includes/modules/LogoGridChild/LogoGridChild.php:38
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:39
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:38
+msgid "Choose a Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:40
+#: includes/modules/LogoGridChild/LogoGridChild.php:39
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:40
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:39
+msgid "Set As Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:47
+#: includes/modules/LogoGridChild/LogoGridChild.php:44
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:47
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:44
+msgid "Brand Name"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:54
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:54
+msgid "Use Link"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:66
+#: wporg/trunk/includes/modules/LogoCarouselChild/LogoCarouselChild.php:66
+msgid "Link Url"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:16
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:16
+msgid "Brain Logo Grid"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:21
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:21
+msgid "Grid Settings"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:46
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:46
+msgid "Column"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:66
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:66
+msgid "Grid Gap"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:80
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:80
+msgid "Logo Size"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:93
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:93
+msgid "Logo Hover Style"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:101
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:101
+msgid "Fade Out"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:107
+#: includes/modules/LogoGridChild/LogoGridChild.php:70
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:107
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:70
+msgid "Theme"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:113
+#: includes/modules/LogoGridChild/LogoGridChild.php:76
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:113
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:76
+msgid "Dark"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:114
+#: includes/modules/LogoGridChild/LogoGridChild.php:77
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:114
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:77
+msgid "Light"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:122
+#: includes/modules/LogoGridChild/LogoGridChild.php:85
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:122
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:85
+msgid "Position"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:139
+#: includes/modules/LogoGridChild/LogoGridChild.php:102
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:139
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:102
+msgid "Animation"
+msgstr ""
+
+#: includes/modules/LogoGrid/LogoGrid.php:146
+#: includes/modules/LogoGridChild/LogoGridChild.php:109
+#: wporg/trunk/includes/modules/LogoGrid/LogoGrid.php:146
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:109
+msgid "Scale"
+msgstr ""
+
+#: includes/modules/LogoGridChild/LogoGridChild.php:22
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:22
+msgid "Tooltip"
+msgstr ""
+
+#: includes/modules/LogoGridChild/LogoGridChild.php:55
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:55
+msgid "Use Tooltip"
+msgstr ""
+
+#: includes/modules/LogoGridChild/LogoGridChild.php:60
+#: wporg/trunk/includes/modules/LogoGridChild/LogoGridChild.php:60
+msgid "Tooltip Text"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:50
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:50
+msgid "%1$s Background"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:413
+#: includes/modules/ModulesCore/ModulesCore.php:1387
+#: includes/modules/Testimonial/Testimonial.php:444
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:413
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1444
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:444
+msgid "Use Horizontal Position Center"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:442
+#: includes/modules/Testimonial/Testimonial.php:474
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:442
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:474
+msgid "Use Vertical Position Center"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:685
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:742
+msgid "Overlay Icon"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:720
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:777
+msgid "Overlay Icon Opacity"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:858
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:915
+msgid "Animation Speed"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:874
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:931
+msgid "Autoplay"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:887
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:944
+msgid "Autoplay Speed"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:902
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:959
+msgid "Use Navigation"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:917
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:974
+msgid "Use Pagination"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:932
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:989
+msgid "Use Fixed Width Slide"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:946
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1003
+msgid "Slide Width"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:962
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1019
+msgid "Slides To Show"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:982
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1039
+msgid "Slide Spacing"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:997
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1054
+msgid "Apply Spacing on First & Last Item"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1012
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1069
+msgid "Infinite looping"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1026
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1083
+msgid "Sliding CSS Transition"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1032
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1089
+msgid "linear"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1033
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1090
+msgid "ease-in"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1034
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1091
+msgid "ease-in-out"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1040
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1097
+msgid "Swipe"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1055
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1112
+msgid "Items to Scroll"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1072
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1129
+msgid "Vertical Mode"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1086
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1143
+msgid "Center Mode"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1100
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1157
+msgid "Center Mode Type"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1106
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1163
+msgid "Classic"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1107
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1164
+msgid "Highlighted"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1114
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1171
+msgid "Center Padding"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1137
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1194
+msgid "Wait For Animate"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1151
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1208
+msgid "Use Custom Cursor"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1165
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1222
+msgid "Cursor Name"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1171
+#: includes/modules/Testimonial/Testimonial.php:205
+#: includes/modules/Testimonial/Testimonial.php:272
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1228
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:205
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:272
+msgid "Default"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1173
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1230
+msgid "Grab"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1174
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1231
+msgid "Pointer"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1175
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1232
+msgid "Move"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1176
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1233
+msgid "Pizza"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1177
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1234
+msgid "Burger"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1184
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1241
+msgid "Wrapper Spacing Top"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1200
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1257
+msgid "Wrapper Spacing Bottom"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1217
+#: includes/modules/ModulesCore/ModulesCore.php:1513
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1274
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1570
+msgid "Type"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1224
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1281
+msgid "Type A"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1225
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1282
+msgid "Type B"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1231
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1288
+msgid "Vertical Placement"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1245
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1302
+msgid "Horizontal Placement"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1334
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1391
+msgid "Skew"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1370
+#: includes/modules/ModulesCore/ModulesCore.php:1621
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1427
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1678
+msgid "Vertical Position"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1401
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1458
+msgid "Horizontal Position"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1421
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1478
+msgid "Border Width"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1460
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1517
+msgid "Groove"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1461
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1518
+msgid "Ridge"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1462
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1519
+msgid "Inset"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1463
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1520
+msgid "Outset"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1492
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1549
+msgid "Right Icon"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1520
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1577
+msgid "Dot"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1552
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1609
+msgid "Text Size"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1636
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1693
+msgid "Spacing"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1689
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1746
+msgid "Open Image in Lightbox"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1706
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1763
+msgid "Equalize Item Height"
+msgstr ""
+
+#: includes/modules/ModulesCore/ModulesCore.php:1709
+#: wporg/trunk/includes/modules/ModulesCore/ModulesCore.php:1766
+msgid "Enable this to Equalize all Carousel items with same height."
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:14
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:14
+msgid "Brain News Ticker"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:25
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:25
+msgid "Title Style"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:27
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:27
+msgid "News Text"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:40
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:40
+msgid "Use Title"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:62
+#: includes/modules/PostList/PostList.php:66
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:62
+#: wporg/trunk/includes/modules/PostList/PostList.php:66
+msgid "Included Categories"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:73
+#: includes/modules/PostList/PostList.php:83
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:73
+#: wporg/trunk/includes/modules/PostList/PostList.php:83
+msgid "Order By"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:74
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:74
+msgid "Choose how your News should be ordered."
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:80
+#: includes/modules/PostList/PostList.php:90
+#: includes/modules/TwitterFeed/TwitterFeed.php:53
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:64
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:80
+#: wporg/trunk/includes/modules/PostList/PostList.php:90
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:53
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:64
+msgid "Date"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:89
+#: includes/modules/PostList/PostList.php:99
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:89
+#: wporg/trunk/includes/modules/PostList/PostList.php:99
+msgid "Sorted By"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:90
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:90
+msgid "Choose how your News should be sorted."
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:96
+#: includes/modules/PostList/PostList.php:106
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:96
+#: wporg/trunk/includes/modules/PostList/PostList.php:106
+msgid "Ascending"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:97
+#: includes/modules/PostList/PostList.php:107
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:97
+#: wporg/trunk/includes/modules/PostList/PostList.php:107
+msgid "Descending"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:104
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:104
+msgid "News Limit"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:113
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:113
+msgid "Title Position"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:126
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:126
+msgid "Moving Speed"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:140
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:140
+msgid "Moving Direction"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:150
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:150
+msgid "Item Spacing"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:164
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:164
+msgid "Pause on Hover "
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:176
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:176
+msgid "Use Bullet Before Item"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:188
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:188
+msgid "Bullet Color"
+msgstr ""
+
+#: includes/modules/NewsTicker/NewsTicker.php:199
+#: wporg/trunk/includes/modules/NewsTicker/NewsTicker.php:199
+msgid "Title Padding"
+msgstr ""
+
+#: includes/modules/Number/Number.php:14
+#: wporg/trunk/includes/modules/Number/Number.php:14
+msgid "Brain Number"
+msgstr ""
+
+#: includes/modules/Number/Number.php:85
+#: wporg/trunk/includes/modules/Number/Number.php:85
+msgid "Number Padding"
+msgstr ""
+
+#: includes/modules/Number/Number.php:94
+#: wporg/trunk/includes/modules/Number/Number.php:94
+msgid "Rotate"
+msgstr ""
+
+#: includes/modules/Number/Number.php:108
+#: wporg/trunk/includes/modules/Number/Number.php:108
+msgid "Inner Text Rotate"
+msgstr ""
+
+#: includes/modules/Number/Number.php:171
+#: wporg/trunk/includes/modules/Number/Number.php:171
+msgid "Number Box Shadow"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:14
+#: wporg/trunk/includes/modules/PostList/PostList.php:14
+msgid "Brain Post List"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:26
+#: wporg/trunk/includes/modules/PostList/PostList.php:26
+msgid "List Icon"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:27
+#: wporg/trunk/includes/modules/PostList/PostList.php:27
+msgid "Featured Image"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:40
+#: includes/modules/PostList/PostList.php:596
+#: wporg/trunk/includes/modules/PostList/PostList.php:40
+#: wporg/trunk/includes/modules/PostList/PostList.php:596
+msgid "Meta"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:53
+#: wporg/trunk/includes/modules/PostList/PostList.php:53
+msgid "Post Type"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:57
+#: wporg/trunk/includes/modules/PostList/PostList.php:57
+msgid "Choose posts of which post type you would like to display."
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:72
+#: wporg/trunk/includes/modules/PostList/PostList.php:72
+msgid "Choose which categories you would like to include in the List."
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:84
+#: wporg/trunk/includes/modules/PostList/PostList.php:84
+msgid "Choose how your posts should be ordered."
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:100
+#: wporg/trunk/includes/modules/PostList/PostList.php:100
+msgid "Choose how your posts should be sorted."
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:115
+#: wporg/trunk/includes/modules/PostList/PostList.php:115
+msgid "Post Count"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:118
+#: wporg/trunk/includes/modules/PostList/PostList.php:118
+msgid "Choose how much posts you would like to display per List."
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:128
+#: wporg/trunk/includes/modules/PostList/PostList.php:128
+msgid "Show Featured Image"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:141
+#: wporg/trunk/includes/modules/PostList/PostList.php:141
+msgid "Show List Icon"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:157
+#: wporg/trunk/includes/modules/PostList/PostList.php:157
+msgid "Select List Icon"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:169
+#: wporg/trunk/includes/modules/PostList/PostList.php:169
+msgid "Show Content"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:182
+#: wporg/trunk/includes/modules/PostList/PostList.php:182
+msgid "Content Length"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:193
+#: wporg/trunk/includes/modules/PostList/PostList.php:193
+msgid "Show Author"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:206
+#: includes/modules/TwitterFeed/TwitterFeed.php:173
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:211
+#: wporg/trunk/includes/modules/PostList/PostList.php:206
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:173
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:211
+msgid "Show Date"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:219
+#: wporg/trunk/includes/modules/PostList/PostList.php:219
+msgid "Date Format"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:235
+#: wporg/trunk/includes/modules/PostList/PostList.php:235
+msgid "List Type"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:241
+#: wporg/trunk/includes/modules/PostList/PostList.php:241
+msgid "List"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:242
+#: wporg/trunk/includes/modules/PostList/PostList.php:242
+msgid "Grid"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:247
+#: wporg/trunk/includes/modules/PostList/PostList.php:247
+msgid "Items per Row"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:269
+#: wporg/trunk/includes/modules/PostList/PostList.php:269
+msgid "Post Spacing"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:285
+#: wporg/trunk/includes/modules/PostList/PostList.php:285
+msgid "Post Padding"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:294
+#: wporg/trunk/includes/modules/PostList/PostList.php:294
+msgid "Post Alignment"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:337
+#: wporg/trunk/includes/modules/PostList/PostList.php:337
+msgid "Icon Spacing"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:396
+#: wporg/trunk/includes/modules/PostList/PostList.php:396
+msgid "Image Spacing"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:416
+#: wporg/trunk/includes/modules/PostList/PostList.php:416
+msgid "Meta Spacing Top"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:432
+#: wporg/trunk/includes/modules/PostList/PostList.php:432
+msgid "Content Spacing Top"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:504
+#: wporg/trunk/includes/modules/PostList/PostList.php:504
+msgid "Post"
+msgstr ""
+
+#: includes/modules/PostList/PostList.php:524
+#: wporg/trunk/includes/modules/PostList/PostList.php:524
+msgid "Post Box Shadow"
+msgstr ""
+
+#: includes/modules/Review/Review.php:14
+#: wporg/trunk/includes/modules/Review/Review.php:14
+msgid "Brain Review"
+msgstr ""
+
+#: includes/modules/Review/Review.php:69
+#: wporg/trunk/includes/modules/Review/Review.php:69
+msgid "Rating Scale"
+msgstr ""
+
+#: includes/modules/Review/Review.php:80
+#: includes/modules/Testimonial/Testimonial.php:29
+#: includes/modules/Testimonial/Testimonial.php:96
+#: wporg/trunk/includes/modules/Review/Review.php:80
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:29
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:96
+msgid "Rating"
+msgstr ""
+
+#: includes/modules/Review/Review.php:91
+#: wporg/trunk/includes/modules/Review/Review.php:91
+msgid "Show Rating Number"
+msgstr ""
+
+#: includes/modules/Review/Review.php:191
+#: includes/modules/Testimonial/Testimonial.php:620
+#: wporg/trunk/includes/modules/Review/Review.php:191
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:620
+msgid "Rating Spacing Bottom"
+msgstr ""
+
+#: includes/modules/Review/Review.php:206
+#: wporg/trunk/includes/modules/Review/Review.php:206
+msgid "Star Size"
+msgstr ""
+
+#: includes/modules/Review/Review.php:221
+#: wporg/trunk/includes/modules/Review/Review.php:221
+msgid "Star Spacing"
+msgstr ""
+
+#: includes/modules/Review/Review.php:235
+#: wporg/trunk/includes/modules/Review/Review.php:235
+msgid "Star Color"
+msgstr ""
+
+#: includes/modules/Review/Review.php:243
+#: wporg/trunk/includes/modules/Review/Review.php:243
+msgid "Star Active Color"
+msgstr ""
+
+#: includes/modules/Review/Review.php:251
+#: wporg/trunk/includes/modules/Review/Review.php:251
+msgid "Rating Text Size"
+msgstr ""
+
+#: includes/modules/Review/Review.php:266
+#: wporg/trunk/includes/modules/Review/Review.php:266
+msgid "Rating Text Color"
+msgstr ""
+
+#: includes/modules/Review/Review.php:274
+#: wporg/trunk/includes/modules/Review/Review.php:274
+msgid "Rating Text Spacing"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:14
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:14
+msgid "Brain Scroll Image"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:56
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:56
+msgid "Show Direction Icon"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:78
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:78
+msgid "Use Icon Image"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:108
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:108
+msgid "Use Icon Animation"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:122
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:122
+msgid "Scroll Type"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:126
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:126
+msgid "On Mouse Hover"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:127
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:127
+msgid "On Mouse Scroll"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:133
+#: includes/modules/ScrollImage/ScrollImage.php:147
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:133
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:147
+msgid "Scroll Direction"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:151
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:151
+msgid "Bottom to Top"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:152
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:152
+msgid "Top to Bottom"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:153
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:153
+msgid "Left to Right"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:154
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:154
+msgid "Right to Left"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:163
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:163
+msgid "Scroll Speed"
+msgstr ""
+
+#: includes/modules/ScrollImage/ScrollImage.php:197
+#: wporg/trunk/includes/modules/ScrollImage/ScrollImage.php:197
+msgid "Use Image Overlay"
+msgstr ""
+
+#: includes/modules/SkillBar/SkillBar.php:17
+#: wporg/trunk/includes/modules/SkillBar/SkillBar.php:17
+msgid "Brain Skill Bars"
+msgstr ""
+
+#: includes/modules/SkillBar/SkillBar.php:58
+#: wporg/trunk/includes/modules/SkillBar/SkillBar.php:58
+msgid "Bar Spacing Bottom"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:13
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:13
+msgid "Bar"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:49
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:49
+msgid "Use Name"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:71
+#: includes/modules/SkillBarChild/SkillBarChild.php:215
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:71
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:215
+msgid "Level"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:84
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:84
+msgid "Hide Level Text"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:96
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:96
+msgid "Text Placement"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:101
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:101
+msgid "Inside"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:102
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:102
+msgid "Outside"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:108
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:108
+msgid "Bar Height"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:123
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:123
+msgid "Bar Border Radius"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:136
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:136
+msgid "Outer Text Spacing"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:152
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:152
+msgid "Name Spacing"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:166
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:166
+msgid "Level Spacing"
+msgstr ""
+
+#: includes/modules/SkillBarChild/SkillBarChild.php:234
+#: wporg/trunk/includes/modules/SkillBarChild/SkillBarChild.php:234
+msgid "Bar Box Shadow"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:14
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:14
+msgid "Brain Testimonial"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:20
+#: includes/modules/TwitterFeed/TwitterFeed.php:21
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:20
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:21
+msgid "Elements"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:27
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:27
+msgid "Quote Icon"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:28
+#: includes/modules/Testimonial/Testimonial.php:56
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:28
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:56
+msgid "Reviewer Image"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:45
+#: includes/modules/Testimonial/Testimonial.php:221
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:45
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:221
+msgid "Bubble"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:72
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:72
+msgid "Reviewer Name"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:78
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:78
+msgid "Reviewer Title"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:84
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:84
+msgid "Use Rating"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:119
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:119
+msgid "Upload Custom Quote Icon"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:131
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:131
+msgid "Select Quote Icon"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:136
+#: includes/modules/VideoPopup/VideoPopup.php:57
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:136
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:57
+msgid "Icon 5"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:137
+#: includes/modules/VideoPopup/VideoPopup.php:56
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:137
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:56
+msgid "Icon 4"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:138
+#: includes/modules/VideoPopup/VideoPopup.php:55
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:138
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:55
+msgid "Icon 3"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:139
+#: includes/modules/VideoPopup/VideoPopup.php:54
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:139
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:54
+msgid "Icon 2"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:140
+#: includes/modules/VideoPopup/VideoPopup.php:53
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:140
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:53
+msgid "Icon 1"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:148
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:148
+msgid "Upload Quote Icon Image"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:152
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:152
+msgid "Upload an Image"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:163
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:163
+msgid "Hide Quote Icon"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:175
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:175
+msgid "Reviewer Position"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:186
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:186
+msgid "Reviewer Image Position"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:195
+#: includes/modules/Testimonial/Testimonial.php:207
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:195
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:207
+msgid "Relative to Reviewer"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:200
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:200
+msgid "Rating Position"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:215
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:215
+msgid "Review Design"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:227
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:227
+msgid "Personal Website URL"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:235
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:235
+msgid "Company URL"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:279
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:279
+msgid "Icon Position X"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:297
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:297
+msgid "Icon Position Y"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:315
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:315
+msgid "Icon Alignment"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:364
+#: includes/modules/VideoPopup/VideoPopup.php:136
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:364
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:136
+msgid "Icon Opacity"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:390
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:390
+msgid "Icon Spacing Top"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:408
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:408
+msgid "Icon Spacing Bottom"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:427
+#: includes/modules/Testimonial/Testimonial.php:505
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:427
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:505
+msgid "Image Placement"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:457
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:457
+msgid "Image Offset X"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:487
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:487
+msgid "Image Offset Y"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:521
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:521
+msgid "Image Spacing Left/Right"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:567
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:567
+msgid "Image Spacing Top"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:585
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:585
+msgid "Image Spacing Bottom"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:604
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:604
+msgid "Rating Spacing Top"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:636
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:636
+msgid "Stars Size"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:652
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:652
+msgid "Stars Color"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:663
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:663
+msgid "Stars Spacing Between"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:680
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:680
+msgid "Name Spacing Bottom"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:713
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:713
+msgid "Review Spacing Top"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:728
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:728
+msgid "Review Spacing Bottom"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:744
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:744
+msgid "Bubble Padding"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:755
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:755
+msgid "Bubble Border Radius"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:766
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:766
+msgid "Arrow Color"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:777
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:777
+msgid "Arrow Placement"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:793
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:793
+msgid "Arrow Custom Position"
+msgstr ""
+
+#: includes/modules/Testimonial/Testimonial.php:826
+#: wporg/trunk/includes/modules/Testimonial/Testimonial.php:826
+msgid "Item Box Shadow"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:14
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:14
+msgid "Brain Twitter Feed"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:28
+#: includes/modules/TwitterFeed/TwitterFeed.php:591
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:39
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:587
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:28
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:591
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:39
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:587
+msgid "Tweets Box"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:29
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:40
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:29
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:40
+msgid "User Avatar"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:31
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:42
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:31
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:42
+msgid "User Text"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:38
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:49
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:38
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:49
+msgid "Username"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:50
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:61
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:50
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:61
+msgid "Read More"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:57
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:68
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:57
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:68
+msgid "Footer"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:69
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:107
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:69
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:107
+msgid "User Name"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:72
+#: includes/modules/TwitterFeed/TwitterFeed.php:226
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:110
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:264
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:72
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:226
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:110
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:264
+msgid "Use @ sign with your Twitter user name."
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:78
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:116
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:78
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:116
+msgid "Consumer Key"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:87
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:125
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:87
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:125
+msgid "Consumer Secret"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:97
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:135
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:97
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:135
+msgid "Sort By"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:101
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:139
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:101
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:139
+msgid "Recent Posts"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:102
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:140
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:102
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:140
+msgid "Old Posts"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:103
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:141
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:103
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:141
+msgid "Favorite"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:104
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:142
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:104
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:142
+msgid "Retweet"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:111
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:149
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:111
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:149
+msgid "Number of tweets to show"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:125
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:163
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:125
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:163
+msgid "Show Twitter Logo"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:137
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:175
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:137
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:175
+msgid "Show User Image"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:149
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:187
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:149
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:187
+msgid "Show Name"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:161
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:199
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:161
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:199
+msgid "Show User Name"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:185
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:223
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:185
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:223
+msgid "Show Favorite"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:197
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:235
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:197
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:235
+msgid "Show Retweet"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:209
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:247
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:209
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:247
+msgid " Show Read More"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:223
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:261
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:223
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:261
+msgid "Read More Text"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:236
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:236
+msgid "Numbers of Column"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:251
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:251
+msgid "Column Gap Left/Right"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:265
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:265
+msgid "Column Gap Top/Bottom"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:280
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:274
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:280
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:274
+msgid "Avatar Position"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:292
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:286
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:292
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:286
+msgid "Avatar Placement"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:309
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:303
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:309
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:303
+msgid "Avatar Offset X"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:325
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:319
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:325
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:319
+msgid "Avatar Offset Y"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:342
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:336
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:342
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:336
+msgid "Profile Image Size"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:355
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:349
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:355
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:349
+msgid "Avatar Spacing"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:383
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:377
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:383
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:377
+msgid "Twitter Icon Size"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:396
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:390
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:396
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:390
+msgid "Tweets Padding"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:422
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:416
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:422
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:416
+msgid "Footer Alignment"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:431
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:425
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:431
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:425
+msgid "Space Around"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:432
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:426
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:432
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:426
+msgid "Space Between"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:437
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:431
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:437
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:431
+msgid "Footer Padding"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:446
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:440
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:446
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:440
+msgid "Favorite Text Color"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:456
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:450
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:456
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:450
+msgid "Favorite Text Size"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:471
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:465
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:471
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:465
+msgid "Favorite Icon Color"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:481
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:475
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:481
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:475
+msgid "Favorite Icon Size"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:496
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:490
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:496
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:490
+msgid "Retweet Text Color"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:505
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:499
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:505
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:499
+msgid "Retweet Text Size"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:520
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:514
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:520
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:514
+msgid "Retweet Icon Color"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:529
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:523
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:529
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:523
+msgid "Retweet Icon Size"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:612
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:608
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:612
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:608
+msgid "Avatar"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:626
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:622
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:626
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:622
+msgid "Tweets Box Shadow"
+msgstr ""
+
+#: includes/modules/TwitterFeed/TwitterFeed.php:636
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:632
+#: wporg/trunk/includes/modules/TwitterFeed/TwitterFeed.php:636
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:632
+msgid "Avatar Box Shadow"
+msgstr ""
+
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:15
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:15
+msgid "Brain Twitter Carousel"
+msgstr ""
+
+#: includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:21
+#: wporg/trunk/includes/modules/TwitterFeedCarousel/TwitterFeedCarousel.php:21
+msgid "Twitter Settings"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:14
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:14
+msgid "Brain Video Popup"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:48
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:48
+msgid "Select Play Icon"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:62
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:62
+msgid "Video Type"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:67
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:67
+msgid "Youtube"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:68
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:68
+msgid "Vimeo"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:69
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:69
+msgid "Custom Upload"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:74
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:74
+msgid "URL"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:83
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:83
+msgid "Video MP4 File"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:152
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:152
+msgid "Popup Background"
+msgstr ""
+
+#: includes/modules/VideoPopup/VideoPopup.php:160
+#: wporg/trunk/includes/modules/VideoPopup/VideoPopup.php:160
+msgid "Close Icon Color"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Brain Addons for Divi"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://brainaddons.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Brain Divi Addons is a library of unique and powerfull modules that works "
+"seamlessly with your favorite page builder."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Divi People"
+msgstr ""
