@@ -9,7 +9,7 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 	public function init() {
 
-        $this->name = esc_html__( 'Logo', 'brain-divi-addons' );
+		$this->name = esc_html__( 'Logo', 'brain-divi-addons' );
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
@@ -182,7 +182,6 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		$tag          = ! empty( $this->props['link_option_url'] ) ? 'a' : 'div';
 		$use_tooltip  = $this->props['use_tooltip'];
 		$tooltip_text = $this->props['tooltip_text'];
 		$position     = $this->props['position'];
@@ -196,8 +195,7 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 		if ( $use_tooltip === 'on' ) {
 			$tippy_opts = sprintf(
-				'
-                data-tippy-content="%1$s"
+				'data-tippy-content="%1$s"
                 data-tippy-placement="%2$s"
                 data-tippy-animation="%3$s"
                 data-tippy-theme="%4$s"',
@@ -209,15 +207,13 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 		}
 
 		return sprintf(
-			'
-                <div class="ba-module ba-child ba-logo-grid__item">
-                    <%1$s class="ba-logo-grid__item__inner %3$s" %4$s>
-					    %2$s
-				    </%1$s>
+			'<div class="ba-module ba-child ba-logo-grid__item">
+                    <div class="ba-logo-grid__item__inner %2$s" %3$s>
+					    %1$s
+				    </div>
                 </div>',
-			$tag,
 			$this->render_logo(),
-			$use_tooltip === 'on' ? 'ba-tooltip' : '',
+			'on' === $use_tooltip ? 'ba-tooltip' : '',
 			$tippy_opts
 		);
 	}

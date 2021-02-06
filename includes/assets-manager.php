@@ -93,7 +93,7 @@ class AssetsManager {
 			'ba_plugin',
 			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'nonce' => wp_create_nonce( 'ba_smart_post_nonce' ),
+				'nonce'   => wp_create_nonce( 'ba_smart_post_nonce' ),
 			)
 		);
 

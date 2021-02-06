@@ -3,7 +3,7 @@
 Plugin Name: Brain Addons for Divi Theme & Divi Builder
 Plugin URI:  https://brainaddons.com/
 Description: Brain Addons is a library of unique and powerfull modules that works seamlessly with your favorite page builder.
-Version:     1.0.2
+Version:     1.0.3
 Author:      BrainAddons
 Author URI:  https://brainaddons.com/
 License:     GPL2
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'BRAIN_ADDONS_DEV_MODE', $_SERVER['REMOTE_ADDR'] == '127.0.0.1' );
-define( 'BRAIN_ADDONS_PLUGIN_VERSION', '1.0.2' );
+define( 'BRAIN_ADDONS_PLUGIN_VERSION', '1.0.3' );
 define( 'BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_ASSETS', trailingslashit( BRAIN_ADDONS_PLUGIN_URL . 'assets' ) );
