@@ -1,6 +1,6 @@
 === Brain Addons for Divi Theme & Divi Builder ===
 Contributors: divipeople
-Tags: divi, divi theme, divi builder, divi module, divi page builder
+Tags: divi, divi theme, divi builder, divi module, divi page builder, divi plugins, divi carousel, divi image carousel
 Requires at least: 4.8
 Tested up to: 5.6
 Stable tag: trunk
@@ -18,11 +18,17 @@ In addition, many more free and premium features are coming soon to bring your e
 
 [Pro Version](https://brainaddons.com/) | [Live Demo](https://divi.brainaddons.com/) | [Documentation](https://docs.brainaddons.com/)
 
-### 20+ FREE MODULES AND COUNTING
+### 20+ FREE DIVI MODULES AND COUNTING
 
 YES, you are getting 20+ free outstanding useful modules for your Divi builders. These 20+ of the most useful Divi modules to enhance your Divi Page Building experience and allow you to climb the top of your design capabilities. And More features and improvements are coming on regular updates.  
 
-Let’s explore all the premium free modules of Brain Addons for Divi:
+Let’s explore all the premium free divi modules of Brain Addons:
+
+- [Divi Image Carousel](https://divi.brainaddons.com/demo/image-carousel/) - Create interesting image and text carousels using our image carousel module which comes with lot of options.
+
+- [Divi Testimonial](https://divi.brainaddons.com/demo/testimonial/) - Incredibly powerful module to create beautiful content boxes using icons, rating stars, images,  links, and texts.
+
+- [Divi Twitter Feed Carousel](https://divi.brainaddons.com/demo/twitter-feed-carousel/) - Incredibly powerful module to demonstrate your products, articles, news, creative posts using a beautiful combination of texts, links, badge, and image. Show those all in vertical or horizontal motions.
 
 - [Divi Video Popup](https://divi.brainaddons.com/demo/video-popup/) - Link up Youtube, Vimeo video URLs, or upload your own video. You can add images as cover, and onto the image, you can add overly. And noted it is not annoying auto pop up, after clicking or taping then the video appears in the display as pop up.
 
@@ -44,7 +50,7 @@ Let’s explore all the premium free modules of Brain Addons for Divi:
 
 - [Divi Advanced Team](https://divi.brainaddons.com/demo/team/) - A perfect module to show your leading team in various styles using texts, images, and social links.
 
-- [Divi Card](https://divi.brainaddons.com/demo/card/) - One of the advanced module to demonstrate your products, creative posts using a beautiful combination of texts, links, badge, and image. You can generate eye-candy designs in a short time. 
+- [Divi Card Module](https://divi.brainaddons.com/demo/card/) - One of the advanced module to demonstrate your products, creative posts using a beautiful combination of texts, links, badge, and image. You can generate eye-candy designs in a short time. 
 
 - [Divi Contact Form 7](https://divi.brainaddons.com/demo/cf7-styler/) - This module helps you to integrate existing forms built using Contact Form 7 plugin across your web pages without spending too much time.
 
@@ -52,21 +58,19 @@ Let’s explore all the premium free modules of Brain Addons for Divi:
 
 - [Divi Icon Box](https://divi.brainaddons.com/demo/icon-box/) - A Perfect for showcasing interesting information to your users in various styles.
 
-- [Divi Image Carousel](https://divi.brainaddons.com/demo/image-carousel/) - Create interesting image and text carousels using our image carousel module which comes with lot of options.
-
 - [Divi Image Compare](https://divi.brainaddons.com/demo/image-compare/) - This module is perfect for the image before-after slider. This module has built-in styling options, vertical and horizontal orientation features, and it can help you design these before-after sections in a more creative way.
 
 - [Divi Scroll Image](https://divi.brainaddons.com/demo/scroll-image/) - Applying this module, you can show your products or services in a way that slides horizontally or vertically. You can also create a stunning photo gallery with this awesome module.
 
 - [Divi Skill Bars](https://divi.brainaddons.com/demo/skill-bars/) - Present user skills or your skills, task percentage, required tools, and other progressive information in different ways. It comes with incredible customizing options to suit your needs. And using this module you can show your project progression.
 
-- [Divi Testimonial](https://divi.brainaddons.com/demo/testimonial/) - Incredibly powerful module to create beautiful content boxes using icons, rating stars, images,  links, and texts.
-
-- [Divi Twitter Feed Carousel](https://divi.brainaddons.com/demo/twitter-feed-carousel/) - Incredibly powerful module to demonstrate your products, articles, news, creative posts using a beautiful combination of texts, links, badge, and image. Show those all in vertical or horizontal motions.
-
 - [Divi Twitter Feed](https://divi.brainaddons.com/demo/twitter-feed/) - Module to show your products, articles, news, creative posts using a beautiful combination of texts, links, badge, and images.
 
-### More Modules (16+) on [Premium Version](https://brainaddons.com/pricing/)
+### More Divi Modules (16+) on [Premium Version](https://brainaddons.com/pricing/)
+
+- [Divi Post Carousel](https://divi.brainaddons.com/demo/post-carousel/) - Get the visitors’ attention in an enriched way. The Post carousel feature is now trendy in News Portals or other blogging sites, and it ensures a stunning post carousel for your blog site.  
+
+- [Divi Team Carousel](https://divi.brainaddons.com/demo/team-carousel/) - Display pieces of information in a beautiful and excellent way with the help of this module. You will find here many customization options, those options make this divi module the best team carousel module in divi page builder.
 
 - [Divi Advanced Heading](https://divi.brainaddons.com/demo/advanced-heading/) - Create incredible headings with powerful options and features in our Advanced Heading module. Full responsive and many customizations supported.
 
@@ -80,8 +84,6 @@ Let’s explore all the premium free modules of Brain Addons for Divi:
 
 - [Divi List Group](https://divi.brainaddons.com/demo/list-group) - Build incredible lists with powerful customization features and animations. And here you will find some amazing customization options that will make your lists very beautiful. 
 
-- [Divi Post Carousel](https://divi.brainaddons.com/demo/post-carousel/) - Get the visitors’ attention in an enriched way. The Post carousel feature is now trendy in News Portals or other blogging sites, and it ensures a stunning post carousel for your blog site. 
-
 - [Divi Post Grid](https://divi.brainaddons.com/demo/post-grid/) - Scaling your blog post, or any post, and page with this outstanding module without breaking any content. And show these in an amazing grid.
 
 - [Divi Post Masonry](https://divi.brainaddons.com/demo/post-masonry/) - Feature your blog post in your targeted way. Get the Divi visual builder customizations advantage and make your own desired design with the Divi Post Masonry plugin.
@@ -90,9 +92,7 @@ Let’s explore all the premium free modules of Brain Addons for Divi:
 
 - [Divi Smart Post Lists](https://divi.brainaddons.com/smart-post/) - Smart Post List is the perfect solution for heavy blog based websites. It lets you display your posts in an interactive manner, inside a grid layout. Every post in this list will be visually presented in separate cards.
 
-- [Divi Price Menu](https://divi.brainaddons.com/demo/price-menu/) - Present your table menu list with or without price in a proper and artistic way with this fully manageable module. By using this module, you can showcase your menu price innovatively. 
-
-- [Divi Team Carousel](https://divi.brainaddons.com/demo/team-carousel/) - Display pieces of information in a beautiful and excellent way with the help of this module. You will find here many customization options, those options make this divi module the best team carousel module in divi page builder.
+- [Divi Price Menu](https://divi.brainaddons.com/demo/price-menu/) - Present your table menu list with or without price in a proper and artistic way with this fully manageable module. By using this module, you can showcase your menu price innovatively.
 
 - [Divi Vertical Timeline](https://divi.brainaddons.com/vertical-timeline/) The Vertical Timeline module is a great option for creating attractive timelines for projects, roadmaps, upcoming and ongoing events. 
 
@@ -120,7 +120,7 @@ No extra resources or messy codes to slow down your website. Optimized for super
 
 == Installation ==
 
-Note: This plugin works with Divi. Make sure you have [Divi](https://www.elegantthemes.com/) installed.
+Note: This plugin works with Divi. Make sure you have [Divi Theme](https://www.elegantthemes.com/) installed.
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
@@ -136,7 +136,12 @@ No. You cannot use without Divi since it's an addon for Divi.
 
 == Changelog ==
 
+1.0.4 - 6 February, 2021
+
+- Post module issues fixed
+
 1.0.3 - 3 February, 2021
+
 - Logo grid issue fixed
 
 1.0.2

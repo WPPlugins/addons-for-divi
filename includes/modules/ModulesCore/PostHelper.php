@@ -66,53 +66,12 @@ class BaPostHelper {
 		);
 	}
 
-	public static function get_post_excerpt( $length = '-1' ) {
-		global $post;
-		$content = '';
-
-		if ( ! has_excerpt() ) {
-
-			$content = $post->post_content;
-			$content = preg_replace( '@\[caption[^\]]*?\].*?\[\/caption]@si', '', $content );
-			$content = preg_replace( '@\[et_pb_post_nav[^\]]*?\].*?\[\/et_pb_post_nav]@si', '', $content );
-			$content = preg_replace( '@\[audio[^\]]*?\].*?\[\/audio]@si', '', $content );
-			$content = preg_replace( '@\[embed[^\]]*?\].*?\[\/embed]@si', '', $content );
-			$content = wp_strip_all_tags( $content );
-			$content = et_builder_strip_dynamic_content( $content );
-			$content = apply_filters( 'et_truncate_post', $content, get_the_ID() );
-		} else {
-
-			$content = apply_filters( 'the_excerpt', $post->post_excerpt );
-		}
-
-		if ( $length > 0 ) {
-
-			if ( strlen( $content ) <= $length ) {
-
-				$str_end = '';
-			} else {
-
-				$str_end = '...';
-			}
-
-			$content = rtrim( et_wp_trim_words( $content, $length, '' ) );
-
-			if ( ! empty( $str_end ) ) {
-
-				$new_words_array = (array) explode( ' ', $content );
-				array_pop( $new_words_array );
-				$content  = implode( ' ', $new_words_array );
-				$content .= $str_end;
-			}
-
-			return et_core_intentionally_unescaped( $content, 'html' );
-		} else {
-
-			return et_core_intentionally_unescaped( $content, 'html' );
-		}
+	public static function get_post_excerpt( $length = '150' ) {
+		$post_id = get_the_ID();
+		return mb_strimwidth( get_the_excerpt( $post_id ), 0, $length, '...' );
 	}
 
-	public static function get_post_excerpt_html( $length = '-1' ) {
+	public static function get_post_excerpt_html( $length = '150' ) {
 		return sprintf( '<div class="ba-post-excerpt">%1$s</div>', self::get_post_excerpt( $length ) );
 	}
 
