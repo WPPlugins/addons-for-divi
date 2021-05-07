@@ -26,12 +26,6 @@ if ( ! function_exists( 'brainaddons_fs' ) ) {
 	}
 
 	brainaddons_fs();
-	// brainaddons_fs()->add_filter(
-	// 	'plugin_icon',
-	// 	function () {
-	// 		return '';
-	// 	}
-	// );
 
 	do_action( 'brainaddons_fs_loaded' );
 }

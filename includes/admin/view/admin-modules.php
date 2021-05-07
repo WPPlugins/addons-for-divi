@@ -19,8 +19,7 @@ $desc                = sprintf( 'Here is the list of our all %1$s modules.', $to
 				</div>
 				<div class="ba-col">
 					<div class="ba-admin-modules">
-
-						<?php
+					<?php
 						foreach ( $modules as $module_key => $module_data ) :
 
 							$title      = isset( $module_data['title'] ) ? $module_data['title'] : '';
@@ -49,12 +48,12 @@ $desc                = sprintf( 'Here is the list of our all %1$s modules.', $to
 							?>
 
 						<div class="<?php echo $class_attr; ?>">
-
 							<?php if ( $is_pro ) : ?>
 								<span class="ba-admin-modules-item-badge badge-pro">pro</span>
 							<?php endif; ?>
-
-							<span class="ba-admin-modules-item-icon"><i class="<?php echo $icon; ?>"></i></span>
+							<span class="ba-admin-modules-item-icon ba-icon-svg">
+								<?php echo et_core_intentionally_unescaped( BrainAddons_Static_Icons::icon( $icon ), 'html' ); ?>
+							</span>
 							<h3 class="ba-admin-modules-item-title">
 								<label for="ba-module-<?php echo $module_key; ?>"><?php echo $title; ?></label>
 							<?php if ( $demo_url ) : ?>

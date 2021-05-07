@@ -12,9 +12,11 @@
 				foreach ( self::get_tabs() as $slug => $tab ) :
 
 					$slug = esc_attr( strtolower( $slug ) );
+					if ( ba_has_pro() && 'pro' === $slug ) {
+						continue;
+					}
 
 					$class = ' ba-admin-nav-item-link';
-
 					if ( $tab_count === 1 ) {
 						$class .= ' active-tab';
 					}
@@ -26,8 +28,7 @@
 					}
 
 					printf(
-						'
-                            <a href="%1$s" aria-controls="tab-content-%2$s" id="tab-nav-%2$s" class="%3$s" role="tab">
+						'<a href="%1$s" aria-controls="tab-content-%2$s" id="tab-nav-%2$s" class="%3$s" role="tab">
                                 %5$s
                             </a>
                             <style type="text/css"> #tab-nav-%2$s { background-image: url(%4$s); } </style>
@@ -40,7 +41,6 @@
 					);
 
 					++$tab_count;
-
 					endforeach;
 				?>
 			</nav>
@@ -51,11 +51,18 @@
 			<?php
 				$tab_count = 1;
 
-			foreach ( self::get_tabs() as $slug => $tab ) :
+				foreach ( self::get_tabs() as $slug => $tab ) :
+
 				$class = 'ba-admin-tabs-content-item';
+
 				if ( $tab_count === 1 ) {
 					$class .= ' active-tab';
 				}
+
+				if ( ba_has_pro() && 'pro' === $slug ) {
+					continue;
+				}
+
 				$slug = esc_attr( strtolower( $slug ) );
 
 				?>
@@ -65,9 +72,7 @@
 					</div>
 
 				<?php
-
 				++$tab_count;
-
 				endforeach;
 			?>
 		</div>

@@ -10,6 +10,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 	public function init() {
 
 		$this->name       = esc_html__( 'Brain Image Compare', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'image-compare.svg';
 		$this->slug       = 'ba_image_compare';
 		$this->vb_support = 'on';
 
@@ -26,7 +27,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'advanced' => array(
 				'toggles' => array(
-					'label'  => esc_html__( 'Before/After Label', 'brain-divi-addons' ),
+					'label'  => esc_html__( 'Label', 'brain-divi-addons' ),
 					'handle' => esc_html__( 'Handle', 'brain-divi-addons' ),
 				),
 			),
@@ -74,13 +75,12 @@ class BA_Image_Compare extends BA_Builder_Module {
 			),
 
 			'before_label'    => array(
-				'default'          => 'Before',
-				'label'            => esc_html__( 'Before Label', 'brain-divi-addons' ),
-				'type'             => 'text',
-				'option_category'  => 'basic_option',
-				'description'      => esc_html__( 'Define the HTML ALT text for your image here.', '' ),
-				'computed_affects' => array( '__compare' ),
-				'toggle_slug'      => 'before',
+				'default'         => 'Before',
+				'label'           => esc_html__( 'Before Label', 'brain-divi-addons' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'description'     => esc_html__( 'Define the HTML ALT text for your image here.', '' ),
+				'toggle_slug'     => 'before',
 			),
 
 			'before_label_bg' => array(
@@ -108,13 +108,12 @@ class BA_Image_Compare extends BA_Builder_Module {
 			),
 
 			'after_label'     => array(
-				'default'          => 'After',
-				'label'            => esc_html__( 'After Label', 'brain-divi-addons' ),
-				'type'             => 'text',
-				'option_category'  => 'basic_option',
-				'description'      => esc_html__( 'Define the HTML ALT text for your image here.', 'brain-divi-addons' ),
-				'computed_affects' => array( '__compare' ),
-				'toggle_slug'      => 'after',
+				'default'         => 'After',
+				'label'           => esc_html__( 'After Label', 'brain-divi-addons' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'description'     => esc_html__( 'Define the HTML ALT text for your image here.', 'brain-divi-addons' ),
+				'toggle_slug'     => 'after',
 			),
 
 			'after_label_bg'  => array(
@@ -197,19 +196,43 @@ class BA_Image_Compare extends BA_Builder_Module {
 				),
 			),
 
-			'label_radius'    => array(
-				'label'           => esc_html__( 'Label Border Radius', 'brain-divi-addons' ),
-				'type'            => 'range',
-				'default'         => '4px',
-				'option_category' => 'basic_option',
-				'fixed_unit'      => 'px',
-				'range_settings'  => array(
+			'label_padding'   => array(
+				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
+				'type'           => 'custom_padding',
+				'tab_slug'       => 'advanced',
+				'toggle_slug'    => 'label',
+				'default'        => '5px|20px|5px|20px',
+				'mobile_options' => true,
+			),
+
+			'label_height'    => array(
+				'label'          => esc_html__( 'Height', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'default_unit'   => 'px',
+				'default'        => 'initial',
+				'range_settings' => array(
 					'min'  => 0,
 					'step' => 1,
-					'max'  => 100,
+					'max'  => 200,
 				),
-				'toggle_slug'     => 'label',
-				'tab_slug'        => 'advanced',
+				'toggle_slug'    => 'label',
+				'tab_slug'       => 'advanced',
+				'mobile_options' => true,
+			),
+
+			'label_width'     => array(
+				'label'          => esc_html__( 'Width', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'default_unit'   => 'px',
+				'default'        => 'initial',
+				'range_settings' => array(
+					'min'  => 0,
+					'step' => 1,
+					'max'  => 300,
+				),
+				'toggle_slug'    => 'label',
+				'tab_slug'       => 'advanced',
+				'mobile_options' => true,
 			),
 
 			'handle_color'    => array(
@@ -226,18 +249,12 @@ class BA_Image_Compare extends BA_Builder_Module {
 				'computed_callback'   => array( 'BA_Image_Compare', 'get_image_compare' ),
 				'computed_depends_on' => array(
 					'before_img',
-					'before_label',
 					'after_img',
-					'after_label',
 					'move_on_hover',
 					'offset_pct',
 					'orientation',
 					'overlay',
 					'show_label',
-				),
-				'computed_minimum'    => array(
-					'before_img',
-					'after_img',
 				),
 			),
 
@@ -260,10 +277,32 @@ class BA_Image_Compare extends BA_Builder_Module {
 			'toggle_slug'     => 'label',
 		);
 
+		$advanced_fields['borders']['label'] = array(
+			'toggle_slug' => 'label',
+			'css'         => array(
+				'main'      => array(
+					'border_radii'  => '%%order_class%% .twentytwenty-overlay div:before',
+					'border_styles' => '%%order_class%% .twentytwenty-overlay div:before',
+				),
+				'important' => 'all',
+			),
+			'defaults'    => array(
+				'border_radii'  => 'on|4px|4px|4px|4px',
+				'border_styles' => array(
+					'width' => '0px',
+					'color' => '#333333',
+					'style' => 'solid',
+				),
+			),
+		);
+
 		return $advanced_fields;
 	}
 
 	static function get_image_compare( $args = array() ) {
+
+		wp_enqueue_script( 'baj-event-move' );
+		wp_enqueue_script( 'baj-twentytwenty' );
 
 		$defaults = array(
 			'before_img'   => '',
@@ -281,8 +320,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 		$after_label  = $args['after_label'];
 
 		$html = sprintf(
-			'
-			<img class="ba-before-img" style="position: absolute;" src=" %1$s " alt="%3$s"/>
+			'<img class="ba-before-img" style="position: absolute;" src=" %1$s " alt="%3$s"/>
 			<img class="ba-after-img" src=" %2$s " alt="%4$s"/>',
 			esc_attr( $before_img ),
 			esc_attr( $after_img ),
@@ -359,10 +397,11 @@ class BA_Image_Compare extends BA_Builder_Module {
 		$before_label_bg = $this->props['before_label_bg'];
 		$after_label_bg  = $this->props['after_label_bg'];
 		$show_label      = $this->props['show_label'];
-		$label_radius    = $this->props['label_radius'];
 		$handle_color    = $this->props['handle_color'];
+		$label_height    = $this->props['label_height'];
+		$label_width     = $this->props['label_width'];
 
-		// handle_color
+		// handle_color.
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
@@ -390,19 +429,55 @@ class BA_Image_Compare extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-handle',
-				'declaration' => 'border: 3px solid ' . $handle_color . ';',
+				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-up-arrow',
+				'declaration' => 'border-bottom: 6px solid ' . $handle_color . ';',
 			)
 		);
-
-		// handle_color end
 
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .twentytwenty-overlay div:before',
-				'declaration' => 'border-radius:' . $label_radius . ';',
+				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-down-arrow',
+				'declaration' => 'border-top: 6px solid ' . $handle_color . ';',
 			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-handle',
+				'declaration' => 'border: 3px solid ' . $handle_color . ';',
+			)
+		);
+		// handle_color end.
+
+		// Label.
+		if ( 'initial' !== $label_height ) {
+			$this->get_responsive_styles(
+				'label_height',
+				'%%order_class%% .twentytwenty-overlay div:before',
+				array( 'primary' => 'height' ),
+				array( 'default' => 'initial' ),
+				$render_slug
+			);
+		}
+
+		if ( 'initial' !== $label_width ) {
+			$this->get_responsive_styles(
+				'label_width',
+				'%%order_class%% .twentytwenty-overlay div:before',
+				array( 'primary' => 'width' ),
+				array( 'default' => 'initial' ),
+				$render_slug
+			);
+		}
+
+		$this->get_responsive_styles(
+			'label_padding',
+			'%%order_class%% .twentytwenty-overlay div:before',
+			array( 'primary' => 'padding' ),
+			array( 'default' => '5px|20px|5px|20px' ),
+			$render_slug
 		);
 
 		if ( $show_label === 'on_hover' ) {

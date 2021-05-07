@@ -13,6 +13,7 @@ class BA_Image_Carousel extends BA_Builder_Module {
 		$this->slug       = 'ba_image_carousel';
 		$this->child_slug = 'ba_image_carousel_child';
 		$this->name       = esc_html__( 'Brain Image Carousel', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'image-carousel.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
@@ -85,31 +86,30 @@ class BA_Image_Carousel extends BA_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
+		wp_enqueue_script( 'baj-slick' );
+		wp_enqueue_style( 'bac-slick' );
+		$this->render_css( $render_slug );
+
 		$content          = $this->props['content'];
 		$is_center        = $this->props['is_center'];
 		$center_mode_type = $this->props['center_mode_type'];
 		$use_lightbox     = $this->props['use_lightbox'];
 		$custom_cursor    = $this->props['custom_cursor'];
-
-		// Render CSS.
-		$this->render_css( $render_slug );
-
-		$classes = array();
+		$classes          = array();
 
 		array_push( $classes, "ba-lightbox-{$use_lightbox}" );
 
-		if ( $is_center === 'on' ) {
+		if ( 'on' === $is_center ) {
 			array_push( $classes, 'ba-centered' );
 			array_push( $classes, "ba-centered--{$center_mode_type}" );
 		}
 
-		if ( $custom_cursor === 'on' ) {
+		if ( 'on' === $custom_cursor ) {
 			array_push( $classes, 'ba-cursor' );
 		}
 
 		$output = sprintf(
-			'
-			    <div class="ba-carousel ba-image-carousel ba-carousel-frontend %3$s" %2$s >
+			'<div class="ba-carousel ba-image-carousel ba-carousel-frontend %3$s" %2$s >
                     %1$s
                 </div>',
 			$content,
@@ -121,10 +121,7 @@ class BA_Image_Carousel extends BA_Builder_Module {
 	}
 
 	public function render_css( $render_slug ) {
-
-		// Carousel CSS
 		$this->render_carousel_css( $render_slug );
-
 	}
 
 }

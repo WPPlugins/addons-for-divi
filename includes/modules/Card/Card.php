@@ -10,6 +10,7 @@ class BA_Card extends BA_Builder_Module {
 	public function init() {
 
 		$this->name       = esc_html__( 'Brain Card', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'card.svg';
 		$this->slug       = 'ba_card';
 		$this->vb_support = 'on';
 
@@ -198,12 +199,13 @@ class BA_Card extends BA_Builder_Module {
 
 			// Image.
 			'image_position'        => array(
-				'label'       => esc_html__( 'Image/Icon Position', 'brain-divi-addons' ),
-				'type'        => 'select',
-				'tab_slug'    => 'advanced',
-				'toggle_slug' => 'image_icon',
-				'default'     => 'top',
-				'options'     => array(
+				'label'          => esc_html__( 'Image/Icon Position', 'brain-divi-addons' ),
+				'type'           => 'select',
+				'tab_slug'       => 'advanced',
+				'mobile_options' => true,
+				'toggle_slug'    => 'image_icon',
+				'default'        => 'top',
+				'options'        => array(
 					'top'   => esc_html__( 'Top', 'brain-divi-addons' ),
 					'left'  => esc_html__( 'Left', 'brain-divi-addons' ),
 					'right' => esc_html__( 'Right', 'brain-divi-addons' ),
@@ -250,6 +252,18 @@ class BA_Card extends BA_Builder_Module {
 				'options'     => $this->get_image_hover_animations(),
 				'show_if'     => array(
 					'use_icon' => 'off',
+				),
+			),
+
+			'image_overflow'        => array(
+				'label'       => esc_html__( 'Image Overflow', 'brain-divi-addons' ),
+				'type'        => 'select',
+				'tab_slug'    => 'advanced',
+				'toggle_slug' => 'image_icon',
+				'default'     => 'hidden',
+				'options'     => array(
+					'hidden'  => esc_html__( 'Hidden', 'brain-divi-addons' ),
+					'visible' => esc_html__( 'Visible', 'brain-divi-addons' ),
 				),
 			),
 
@@ -367,6 +381,7 @@ class BA_Card extends BA_Builder_Module {
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'options_icon'     => 'module_align',
 				'default'          => 'left',
+				'mobile_options'   => true,
 				'default_on_front' => 'left',
 				'toggle_slug'      => 'card',
 				'tab_slug'         => 'advanced',
@@ -688,32 +703,23 @@ class BA_Card extends BA_Builder_Module {
 		);
 	}
 
-
-
 	public function render( $attrs, $content = null, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
 		$image_hover_animation = $this->props['image_hover_animation'];
-		$tag                   = ! empty( $this->props['link_option_url'] ) ? 'a' : 'div';
 		$use_icon              = $this->props['use_icon'];
-		$image_position        = $this->props['image_position'];
-		$content_alignment     = $this->props['content_alignment'];
 
 		$classes = sprintf(
-			'ba-hover--%1$s use-icon-%2$s image--%3$s align--%4$s',
+			'ba-hover--%1$s use-icon-%2$s',
 			$image_hover_animation,
-			$use_icon,
-			$image_position,
-			$content_alignment
+			$use_icon
 		);
 
 		return sprintf(
-			'<%1$s %2$s class="ba-module ba-card ba-swapped-img-selector %3$s">
-                %4$s %5$s %6$s
-            </%1$s>',
-			$tag,
-			$this->render_ref_attr(),
+			'<div class="ba-module ba-card ba-swapped-img-selector %1$s">
+                %2$s %3$s %4$s
+            </div>',
 			$classes,
 			$this->render_figure(),
 			$this->render_icon(),
@@ -723,17 +729,22 @@ class BA_Card extends BA_Builder_Module {
 
 	public function render_css( $render_slug ) {
 
-		$use_icon                      = $this->props['use_icon'];
-		$image_width                   = $this->props['image_width'];
-		$image_position                = $this->props['image_position'];
-		$image_width_tablet            = $this->props['image_width_tablet'];
-		$image_width_phone             = $this->props['image_width_phone'];
-		$image_width_last_edited       = $this->props['image_width_last_edited'];
-		$image_width_responsive_status = et_pb_get_responsive_status( $image_width_last_edited );
-		$border_width_all_card         = $this->props['border_width_all_card'];
-		$border_color_all_card         = $this->props['border_color_all_card'];
-		$border_style_all_card         = $this->props['border_style_all_card'];
-		$content_overflow              = $this->props['content_overflow'];
+		$use_icon                         = $this->props['use_icon'];
+		$image_width                      = $this->props['image_width'];
+		$image_position                   = $this->props['image_position'];
+		$image_position_tablet            = $this->props['image_position_tablet'];
+		$image_position_phone             = $this->props['image_position_phone'];
+		$image_position_last_edited       = $this->props['image_position_last_edited'];
+		$image_position_responsive_status = et_pb_get_responsive_status( $image_position_last_edited );
+		$image_width_tablet               = $this->props['image_width_tablet'];
+		$image_width_phone                = $this->props['image_width_phone'];
+		$image_width_last_edited          = $this->props['image_width_last_edited'];
+		$image_width_responsive_status    = et_pb_get_responsive_status( $image_width_last_edited );
+		$border_width_all_card            = $this->props['border_width_all_card'];
+		$border_color_all_card            = $this->props['border_color_all_card'];
+		$border_style_all_card            = $this->props['border_style_all_card'];
+		$content_overflow                 = $this->props['content_overflow'];
+		$image_overflow                   = $this->props['image_overflow'];
 
 		if ( 'top' !== $image_position ) {
 			if ( 'auto' === $image_width ) {
@@ -775,12 +786,119 @@ class BA_Card extends BA_Builder_Module {
 			);
 		}
 
+		// Content Alignment.
+		$this->get_responsive_styles(
+			'content_alignment',
+			'%%order_class%% .ba-card',
+			array( 'primary' => 'text-align' ),
+			array( 'default' => 'left' ),
+			$render_slug
+		);
+
+		$this->get_responsive_styles(
+			'content_alignment',
+			'%%order_class%% .ba-card-figure',
+			array( 'primary' => 'align-self' ),
+			array( 'default' => 'left' ),
+			$render_slug
+		);
+
+		// Image/Icon position.
+		if ( 'top' === $image_position ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .ba-card',
+					'declaration' => 'flex-direction: column;',
+				)
+			);
+		} elseif ( 'right' === $image_position ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .ba-card',
+					'declaration' => 'flex-direction: row-reverse;',
+				)
+			);
+		}
+
+		if ( $image_position_tablet && $image_position_responsive_status ) {
+			if ( 'top' === $image_position_tablet ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-card',
+						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+						'declaration' => 'flex-direction: column;',
+					)
+				);
+			} elseif ( 'right' === $image_position_tablet ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-card',
+						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+						'declaration' => 'flex-direction: row-reverse;',
+					)
+				);
+			} else {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-card',
+						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+						'declaration' => 'flex-direction: row;',
+					)
+				);
+			}
+		}
+
+		if ( $image_position_phone && $image_position_responsive_status ) {
+			if ( 'top' === $image_position_phone ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-card',
+						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+						'declaration' => 'flex-direction: column;',
+					)
+				);
+			} elseif ( 'right' === $image_position_phone ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-card',
+						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+						'declaration' => 'flex-direction: row-reverse;',
+					)
+				);
+			} else {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-card',
+						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+						'declaration' => 'flex-direction: row;',
+					)
+				);
+			}
+		}
+
 		// wrapper content overflow.
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%%',
 				'declaration' => "overflow:{$content_overflow}!important;",
+			)
+		);
+
+		// Image overflow.
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .ba-card-figure',
+				'declaration' => "overflow:{$image_overflow}!important;",
 			)
 		);
 

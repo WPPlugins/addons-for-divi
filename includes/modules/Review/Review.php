@@ -12,6 +12,7 @@ class BA_Review extends BA_Builder_Module {
 		$this->slug       = 'ba_review';
 		$this->vb_support = 'on';
 		$this->name       = esc_html__( 'Brain Review', 'brain-divi-addons' );
+		$this->icon_path = plugin_dir_path( __FILE__ ) . 'review.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

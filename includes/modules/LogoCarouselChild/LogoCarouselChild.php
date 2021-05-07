@@ -4,8 +4,8 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 	public $slug                     = 'ba_logo_carousel_child';
 	public $vb_support               = 'on';
 	public $type                     = 'child';
-	public $child_title_var          = 'brand_name';
-	public $child_title_fallback_var = 'website_url';
+	public $child_title_var          = 'admin_title';
+	public $child_title_fallback_var = 'brand_name';
 
 	public function init() {
 
@@ -87,9 +87,18 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 			),
 		);
 
+		$label = array(
+			'admin_title' => array(
+				'label'       => esc_html__( 'Admin Label', 'brain-divi-addons' ),
+				'type'        => 'text',
+				'description' => esc_html__( 'This will change the label of the item', 'brain-divi-addons' ),
+				'toggle_slug' => 'admin_label',
+			),
+		);
+
 		$overlay = $this->get_overlay_option_fields( 'overlay', 'off', array() );
 
-		return array_merge( $fields, $overlay );
+		return array_merge( $label, $fields, $overlay );
 	}
 
 	public function get_advanced_fields_config() {

@@ -12,6 +12,7 @@ class BA_Scroll_Image extends BA_Builder_Module {
 
 	public function init() {
 		$this->name = esc_html__( 'Brain Scroll Image', 'brain-divi-addons' );
+		$this->icon_path = plugin_dir_path( __FILE__ ) . 'scroll-image.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

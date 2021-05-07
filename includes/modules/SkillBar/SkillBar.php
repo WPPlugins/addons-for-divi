@@ -14,7 +14,8 @@ class BA_Skill_Bar extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name = esc_html__( 'Brain Skill Bars', 'brain-divi-addons' );
+		$this->name      = esc_html__( 'Brain Skill Bars', 'brain-divi-addons' );
+		$this->icon_path = plugin_dir_path( __FILE__ ) . 'skill-bars.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

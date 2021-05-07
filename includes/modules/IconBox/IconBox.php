@@ -12,6 +12,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_icon_box';
 		$this->name       = esc_html__( 'Brain Icon Box', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'icon-box.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

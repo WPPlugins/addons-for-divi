@@ -35,3 +35,11 @@ function ba_get_img_masking_shapes( $shape ) {
 
 	return $masking_shapes[ $shape ];
 }
+
+function brainaddons_login_page() {
+
+	$options = get_option( 'brainaddons_settings', array() );
+	$page    = array_key_exists( 'login_page', $options ) ? get_post( $options['login_page'] ) : false;
+
+	return $page;
+}

@@ -12,6 +12,7 @@ class BA_Advanced_Divider extends BA_Builder_Module {
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_advanced_divider';
 		$this->name       = esc_html__( 'Brain Divider', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'advanced-divider.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

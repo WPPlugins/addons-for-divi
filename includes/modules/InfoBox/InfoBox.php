@@ -12,6 +12,7 @@ class BA_Info_Box extends BA_Builder_Module {
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_info_box';
 		$this->name       = esc_html__( 'Brain Info Box', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'info-box.svg';
 
 		$this->settings_modal_toggles = array(
 
@@ -114,12 +115,10 @@ class BA_Info_Box extends BA_Builder_Module {
 			'header_level'    => array(
 				'default' => 'h2',
 			),
-			'line_height'     => array(
-				'range_settings' => array(
-					'min'  => '1',
-					'max'  => '100',
-					'step' => '1',
-				),
+			'range_settings'  => array(
+				'min'  => '1',
+				'max'  => '100',
+				'step' => '1',
 			),
 		);
 

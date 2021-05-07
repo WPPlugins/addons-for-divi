@@ -13,13 +13,14 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name = esc_html__( 'Brain Logo Grid', 'brain-divi-addons' );
+		$this->name      = esc_html__( 'Brain Logo Grid', 'brain-divi-addons' );
+		$this->icon_path = plugin_dir_path( __FILE__ ) . 'logo-grid.svg';
 
 		$this->settings_modal_toggles = array(
 			'general' => array(
-                'toggles' => array(
-                    'grid' => esc_html__( 'Grid Settings', 'brain-divi-addons' ),
-                )
+				'toggles' => array(
+					'grid' => esc_html__( 'Grid Settings', 'brain-divi-addons' ),
+				),
 
 			),
 		);
@@ -29,7 +30,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 		$fields = array(
 
-			'grid_height'  => array(
+			'grid_height'   => array(
 				'label'          => esc_html__( 'Height', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'toggle_slug'    => 'grid',
@@ -42,7 +43,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 				),
 			),
 
-			'column_count' => array(
+			'column_count'  => array(
 				'label'          => esc_html__( 'Column', 'brain-divi-addons' ),
 				'type'           => 'select',
 				'default'        => '4',
@@ -62,7 +63,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 
-			'grid_gap'     => array(
+			'grid_gap'      => array(
 				'label'          => esc_html__( 'Grid Gap', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'toggle_slug'    => 'grid',
@@ -76,7 +77,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 				),
 			),
 
-			'logo_size'    => array(
+			'logo_size'     => array(
 				'label'          => esc_html__( 'Logo Size', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'toggle_slug'    => 'grid',
@@ -89,7 +90,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 				),
 			),
 
-			'image_hover'  => array(
+			'image_hover'   => array(
 				'label'       => esc_html__( 'Logo Hover Style', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'grid',
@@ -103,50 +104,14 @@ class BA_Logo_Grid extends BA_Builder_Module {
 				),
 			),
 
-			'theme'        => array(
-				'label'       => esc_html__( 'Theme', 'brain-divi-addons' ),
+			'logo_overflow' => array(
+				'label'       => esc_html__( 'Logo Overflow', 'brain-divi-addons' ),
 				'type'        => 'select',
-				'toggle_slug' => 'tooltip',
-				'tab_slug'    => 'advanced',
-				'default'     => 'dark',
+				'toggle_slug' => 'grid',
+				'default'     => 'visible',
 				'options'     => array(
-					'dark'  => esc_html__( 'Dark', 'brain-divi-addons' ),
-					'light' => esc_html__( 'Light', 'brain-divi-addons' ),
-				),
-				'show_if'     => array(
-					'use_tooltip' => 'on',
-				),
-			),
-
-			'position'     => array(
-				'label'       => esc_html__( 'Position', 'brain-divi-addons' ),
-				'type'        => 'select',
-				'toggle_slug' => 'tooltip',
-				'tab_slug'    => 'advanced',
-				'default'     => 'top',
-				'options'     => array(
-					'top'    => esc_html__( 'Top', 'brain-divi-addons' ),
-					'bottom' => esc_html__( 'Bottom', 'brain-divi-addons' ),
-					'left'   => esc_html__( 'Left', 'brain-divi-addons' ),
-					'right'  => esc_html__( 'Right', 'brain-divi-addons' ),
-				),
-				'show_if'     => array(
-					'use_tooltip' => 'on',
-				),
-			),
-
-			'animation'    => array(
-				'label'       => esc_html__( 'Animation', 'brain-divi-addons' ),
-				'type'        => 'select',
-				'toggle_slug' => 'tooltip',
-				'tab_slug'    => 'advanced',
-				'default'     => 'scale',
-				'options'     => array(
-					'fade'  => esc_html__( 'Fade', 'brain-divi-addons' ),
-					'scale' => esc_html__( 'Scale', 'brain-divi-addons' ),
-				),
-				'show_if'     => array(
-					'use_tooltip' => 'on',
+					'hidden'  => esc_html__( 'Hidden', 'brain-divi-addons' ),
+					'visible' => esc_html__( 'Visible', 'brain-divi-addons' ),
 				),
 			),
 
@@ -158,10 +123,10 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 	public function get_advanced_fields_config() {
 
-		$advanced_fields                 = array();
-		$advanced_fields['text']         = false;
-		$advanced_fields['text_shadow']  = false;
-		$advanced_fields['fonts']        = false;
+		$advanced_fields                = array();
+		$advanced_fields['text']        = false;
+		$advanced_fields['text_shadow'] = false;
+		$advanced_fields['fonts']       = false;
 
 		return $advanced_fields;
 	}
@@ -169,12 +134,10 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		// Render CSS
 		$this->render_css( $render_slug );
 
 		return sprintf(
-			'
-              <div class="ba-module ba-parent ba-logo-grid %2$s">
+			'<div class="ba-module ba-parent ba-logo-grid %2$s">
                 %1$s
             </div>',
 			$this->props['content'],
@@ -189,22 +152,28 @@ class BA_Logo_Grid extends BA_Builder_Module {
 		$grid_height_phone             = $this->props['grid_height_phone'];
 		$grid_height_last_edited       = $this->props['grid_height_last_edited'];
 		$grid_height_responsive_status = et_pb_get_responsive_status( $grid_height_last_edited );
+		$logo_size                     = $this->props['logo_size'];
+		$logo_size_tablet              = $this->props['logo_size_tablet'];
+		$logo_size_phone               = $this->props['logo_size_phone'];
+		$logo_size_last_edited         = $this->props['logo_size_last_edited'];
+		$logo_size_responsive_status   = et_pb_get_responsive_status( $logo_size_last_edited );
+		$grid_gap                      = $this->props['grid_gap'];
+		$grid_gap_tablet               = $this->props['grid_gap_tablet'];
+		$grid_gap_phone                = $this->props['grid_gap_phone'];
+		$grid_gap_last_edited          = $this->props['grid_gap_last_edited'];
+		$grid_gap_responsive_status    = et_pb_get_responsive_status( $grid_gap_last_edited );
+		$column_count                  = $this->props['column_count'];
+		$column_count_tablet           = $this->props['column_count_tablet'];
+		$column_count_phone            = $this->props['column_count_phone'];
+		$logo_overflow                 = $this->props['logo_overflow'];
 
-		$logo_size                   = $this->props['logo_size'];
-		$logo_size_tablet            = $this->props['logo_size_tablet'];
-		$logo_size_phone             = $this->props['logo_size_phone'];
-		$logo_size_last_edited       = $this->props['logo_size_last_edited'];
-		$logo_size_responsive_status = et_pb_get_responsive_status( $logo_size_last_edited );
-
-		$grid_gap                   = $this->props['grid_gap'];
-		$grid_gap_tablet            = $this->props['grid_gap_tablet'];
-		$grid_gap_phone             = $this->props['grid_gap_phone'];
-		$grid_gap_last_edited       = $this->props['grid_gap_last_edited'];
-		$grid_gap_responsive_status = et_pb_get_responsive_status( $grid_gap_last_edited );
-
-		$column_count        = $this->props['column_count'];
-		$column_count_tablet = $this->props['column_count_tablet'];
-		$column_count_phone  = $this->props['column_count_phone'];
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .ba-logo-grid__item',
+				'declaration' => sprintf( 'overflow: %1$s;', $logo_overflow ),
+			)
+		);
 
 		if ( ! empty( $grid_height ) ) {
 			ET_Builder_Element::set_style(

@@ -12,6 +12,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 	public function init() {
 		$this->name = esc_html__( 'Brain News Ticker', 'brain-divi-addons' );
+		$this->icon_path = plugin_dir_path( __FILE__ ) . 'post-ticker.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

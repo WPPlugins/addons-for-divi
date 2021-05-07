@@ -13,6 +13,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_twitter_feed_carousel';
 		$this->name       = esc_html__( 'Brain Twitter Carousel', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'twitter-carousel.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
@@ -933,10 +934,10 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		// Render Css.
+		wp_enqueue_script( 'baj-slick' );
+		wp_enqueue_style( 'bac-slick' );
 		$this->render_css( $render_slug );
 
-		// Props.
 		$user_name         = $this->props['user_name'];
 		$consumer_key      = $this->props['consumer_key'];
 		$consumer_secret   = $this->props['consumer_secret'];
@@ -958,7 +959,6 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 		$user_name         = trim( $user_name );
 		$alignment         = $this->props['alignment'];
 
-		// Props carousel settings.
 		$is_equal_height  = $this->props['is_equal_height'];
 		$is_center        = $this->props['is_center'];
 		$center_mode_type = $this->props['center_mode_type'];

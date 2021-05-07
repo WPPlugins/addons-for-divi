@@ -1,11 +1,10 @@
-;(function($, BA_PLUGIN) {
-
+(function($, BA_PLUGIN) {
     'use strict';
 
     var $tabsNav = $('.ba-nav').find('.ba-tabs-nav'),
         $tabsContent = $('.ba-admin-tabs').find('.ba-admin-tabs-content');
 
-    $tabsNav.on('click', '.ba-admin-nav-item-link', function(e) {     
+    $tabsNav.on('click', '.ba-admin-nav-item-link', function(e) {
         console.log('work!');
         var $currentTab = $(e.currentTarget),
             tabTargetHash = e.currentTarget.hash,
@@ -28,11 +27,11 @@
     });
 
     if (window.location.hash) {
-        $tabsNav.find('a[href="'+window.location.hash+'"]').click();
+        $tabsNav.find('a[href="' + window.location.hash + '"]').click();
     }
 
-	var $adminForm = $('#ba-admin-modules-form'),
-	    $saveButton = $adminForm.find('.ba-btn-save');
+    var $adminForm = $('.ba-modules-admin'),
+        $saveButton = $adminForm.find('.ba-btn-save');
 
     $adminForm.on('submit', function(e) {
         e.preventDefault();
@@ -41,7 +40,7 @@
             data: {
                 nonce: BA_PLUGIN.nonce,
                 action: BA_PLUGIN.action,
-                data: $adminForm.serialize()
+                data: $adminForm.serialize(),
             },
 
             beforeSend: function() {
@@ -49,15 +48,15 @@
             },
 
             success: function(response) {
-                if ( response.success ) {
-                    var t = setTimeout(function () {
+                if (response.success) {
+                    var t = setTimeout(function() {
                         $saveButton
                             .attr('disabled', true)
                             .text('Changes Saved');
                         clearTimeout(t);
                     }, 500);
                 }
-            }
+            },
         });
     });
 
@@ -69,8 +68,36 @@
         $saveButton.attr('disabled', false).text('Save Changes');
     });
 
-    $( '.ba-ext-switch' ).on( 'click', function () {
-        console.log('work!');
-    });
+    var $adminNotice = $(
+        '.ba-review-deserve, .ba-review-later, .ba-review-done'
+    );
 
-}(jQuery, window.BA_PLUGIN));
+    $adminNotice.on('click', function(e) {
+        var btn = $(this),
+            notice = btn.closest('.ba-notice');
+
+        if (!btn.hasClass('ba-review-deserve')) {
+            e.preventDefault();
+        }
+
+        $.ajax({
+            url: BA_PLUGIN.ajaxUrl,
+            type: 'POST',
+            data: {
+                action: 'brainaddons-dismiss-notice',
+                nonce: BA_PLUGIN.nonce,
+                repeat: !!btn.hasClass('ba-review-later'),
+            },
+        });
+
+        notice.animate(
+            {
+                opacity: '-=1',
+            },
+            1000,
+            function() {
+                notice.remove();
+            }
+        );
+    });
+})(jQuery, window.BA_PLUGIN);

@@ -12,6 +12,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		$this->slug       = 'ba_advanced_team';
 		$this->vb_support = 'on';
 		$this->name       = esc_html__( 'Brain Team', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'team.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
@@ -24,10 +25,10 @@ class BA_Advanced_Team extends BA_Builder_Module {
 
 			'advanced' => array(
 				'toggles' => array(
-					'content' => esc_html__( 'Content', 'brain-divi-addons' ),
-					'photo'   => esc_html__( 'Photo', 'brain-divi-addons' ),
-					'overlay' => esc_html__( 'Overlay', 'brain-divi-addons' ),
-					'text'    => array(
+					'content'    => esc_html__( 'Content', 'brain-divi-addons' ),
+					'photo'      => esc_html__( 'Photo', 'brain-divi-addons' ),
+					'overlay'    => esc_html__( 'Overlay', 'brain-divi-addons' ),
+					'text'       => array(
 						'title'             => esc_html__( 'Texts', 'brain-divi-addons' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
@@ -42,9 +43,9 @@ class BA_Advanced_Team extends BA_Builder_Module {
 							),
 						),
 					),
-					'links'   => esc_html__( 'Social Links', 'brain-divi-addons' ),
-					'border'  => esc_html__( 'Border', 'brain-divi-addons' ),
-					'box_shadow'  => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+					'links'      => esc_html__( 'Social Links', 'brain-divi-addons' ),
+					'border'     => esc_html__( 'Border', 'brain-divi-addons' ),
+					'box_shadow' => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
 				),
 			),
 		);

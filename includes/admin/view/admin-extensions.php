@@ -1,62 +1,42 @@
 <?php
-
-$extensions             = self::get_extensions();
-$inactive_extensions    = self::get_inactive_extensions();
-$total_extensions_count = count( $extensions );
-
+	$extensions             = self::get_extensions();
+	$inactive_extensions    = self::get_inactive_extensions();
+	$total_extensions_count = count( $extensions );
 ?>
 <div class="ba-admin-panel">
 	<div class="ba-extensions-body">
+		<form class="ba-modules-admin" id="ba-admin-extensions-form">
 		<div class="ba-row ba-admin-extensions-row">
 			<div class="ba-col">
 				<div class="ba-admin-extensions">
-
-					<?php
+				<?php
 					foreach ( $extensions as $extension_key => $extension_data ) :
-
 						$title    = isset( $extension_data['title'] ) ? $extension_data['title'] : '';
 						$desc     = isset( $extension_data['desc'] ) ? $extension_data['desc'] : '';
 						$icon     = isset( $extension_data['icon'] ) ? $extension_data['icon'] : '';
 						$demo_url = isset( $extension_data['demo'] ) && $extension_data['demo'] ? $extension_data['demo'] : '';
-
 						$class_attr = 'ba-admin-extensions-item';
-
+						$badge = '';
 						$checked = '';
 
 						if ( ! in_array( $extension_key, $inactive_extensions ) ) {
 							$checked = 'checked="checked"';
 						}
 
-						if ( empty( $demo_url ) ) {
-							$class_attr .= ' ba-extensions-is-placeholder';
-							$checked     = 'disabled="disabled"';
-						}
-
-						$badge = '';
-						if ( empty( $demo_url ) ) {
-							$badge = sprintf(
-								'<span class="ba-ext-badge ba-text f11">%1$s</span>',
-								__( 'UPCOMING', 'brain-divi-addons' )
-							);
-						}
-
 						?>
 
 					<div class="<?php echo $class_attr; ?>">
-
 						<div class="ba-admin-icon">
 							<i class="dashicons dashicons-admin-plugins centered"></i>
 						</div>
-
 						<div class="ba-admin-content">
-							<div class="ba-admin-extensions-item-title ba-text f20">
+							<div class="ba-admin-extensions-item-title ba-text f18">
 								<?php echo $title . ' ' . $badge; ?>
 							</div>
-							<p class="ba-text f15">
+							<p class="ba-text f14">
 								<?php echo $desc; ?>
 							</p>
 						</div>
-
 						<div class="ba-toggle-action">
 							<div class="ba-admin-extensions-item-toggle ba-toggle">
 								<input 
@@ -78,5 +58,13 @@ $total_extensions_count = count( $extensions );
 				</div>
 			</div>
 		</div>
+		<div class="ba-row ba-admin-button-panel">
+			<div class="ba-col">
+				<button disabled class="ba-btn ba-btn-save ba-btn-lg" type="submit">
+					<?php esc_html_e( 'Save Settings', 'brain-divi-addons' ); ?>
+				</button>
+			</div>
+		</div>
+		</form>
 	</div>
 </div>

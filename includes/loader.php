@@ -100,6 +100,14 @@ function ba_register_modules() {
 		require_once plugin_dir_path( __FILE__ ) . 'modules/Review/Review.php';
 	}
 
+	if ( ! ba_has_pro() && ! in_array( 'flipbox', $inactive_modules, true ) ) {
+		require_once plugin_dir_path( __FILE__ ) . 'modules/Flipbox/Flipbox.php';
+	}
+
+	if ( ! in_array( 'animated-text', $inactive_modules, true ) ) {
+		require_once plugin_dir_path( __FILE__ ) . 'modules/AnimatedText/AnimatedText.php';
+	}
+
 }
 
 // Kickoff

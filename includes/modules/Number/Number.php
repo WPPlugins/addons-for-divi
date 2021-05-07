@@ -12,6 +12,7 @@ class BA_Number extends BA_Builder_Module {
 
 	public function init() {
 		$this->name = esc_html__( 'Brain Number', 'brain-divi-addons' );
+		$this->icon_path = plugin_dir_path( __FILE__ ) . 'number.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

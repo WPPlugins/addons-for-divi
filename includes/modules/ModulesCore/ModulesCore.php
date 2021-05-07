@@ -235,6 +235,21 @@ class BA_Builder_Module extends ET_Builder_Module {
 		return $background_style;
 	}
 
+	public static function process_flex_style( $val, $type, $important ) {
+		$flex_val = 'center';
+		if ( 'left' === $val ) {
+			$flex_val = 'flex-start';
+		} elseif ( 'right' === $val ) {
+			$flex_val = 'flex-end';
+		}
+		return sprintf(
+			'%1$s:%2$s%3$s;',
+			$type,
+			$flex_val,
+			$important ? '!important;' : ''
+		);
+	}
+
 	public static function process_margin_padding(
 		$val = '0|0|0|0',
 		$type = 'padding',
@@ -276,6 +291,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 		if ( 'padding' === $style || 'margin' === $style ) {
 			return $this->process_margin_padding( $data, $style, $important );
+		} elseif ( 'align-self' === $style || 'align-items' === $style || 'justify-content' === $style ) {
+			return $this->process_flex_style( $data, $style, $important );
 		} elseif ( 'flex' === $style ) {
 			return 'flex: 0 0 ' . $data . ';';
 		} else {
@@ -2704,8 +2721,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 		$custom_padding_hover             = $this->get_hover_value( "{$prefix}_custom_padding" );
 		$custom_padding_last_edited       = $this->props[ "{$prefix}_custom_padding_last_edited" ];
 		$custom_padding_responsive_status = et_pb_get_responsive_status( $custom_padding_last_edited );
-		$icon_placement                   = $this->props[ "{$prefix}_icon_placement" ];
-		$use_icon                         = $this->props[ "{$prefix}_use_icon" ];
+		$icon_placement                   = isset( $this->props[ "{$prefix}_icon_placement" ] ) ? $this->props[ "{$prefix}_icon_placement" ] : '';
+		$use_icon                         = isset( $this->props[ "{$prefix}_use_icon" ] ) ? $this->props[ "{$prefix}_use_icon" ] : '';
 		$is_custom                        = $this->props[ "custom_{$prefix}" ];
 
 		if ( 'on' === $is_custom ) {

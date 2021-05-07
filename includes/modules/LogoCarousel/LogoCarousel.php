@@ -13,6 +13,7 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 		$this->slug       = 'ba_logo_carousel';
 		$this->vb_support = 'on';
 		$this->child_slug = 'ba_logo_carousel_child';
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'logo-carousel.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
@@ -123,27 +124,27 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 
 	public function get_advanced_fields_config() {
 
-		$advanced_fields                  = array();
-		$advanced_fields['text']          = false;
-		$advanced_fields['borders']       = false;
-		$advanced_fields['text_shadow']   = false;
-		$advanced_fields['fonts']         = false;
+		$advanced_fields                = array();
+		$advanced_fields['text']        = false;
+		$advanced_fields['borders']     = false;
+		$advanced_fields['text_shadow'] = false;
+		$advanced_fields['fonts']       = false;
 
 		return $advanced_fields;
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
+		wp_enqueue_script( 'baj-slick' );
+		wp_enqueue_style( 'bac-slick' );
+		$this->render_css( $render_slug );
+
 		$content          = $this->props['content'];
 		$logo_hover       = $this->props['logo_hover'];
 		$is_center        = $this->props['is_center'];
 		$center_mode_type = $this->props['center_mode_type'];
 		$custom_cursor    = $this->props['custom_cursor'];
-
-		// Render CSS.
-		$this->render_css( $render_slug );
-
-		$classes = array();
+		$classes          = array();
 
 		array_push( $classes, $logo_hover );
 
@@ -157,8 +158,7 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 		}
 
 		$output = sprintf(
-			'
-            <div class = "ba-carousel ba-logo-carousel ba-carousel-frontend %3$s" %2$s >
+			'<div class = "ba-carousel ba-logo-carousel ba-carousel-frontend %3$s" %2$s >
                 %1$s
             </div>',
 			$content,

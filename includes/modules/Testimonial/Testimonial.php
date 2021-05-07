@@ -12,6 +12,8 @@ class BA_Testimonial extends BA_Builder_Module {
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_testimonial';
 		$this->name       = esc_html__( 'Brain Testimonial', 'brain-divi-addons' );
+		$this->icon_path = plugin_dir_path( __FILE__ ) . 'testimonial.svg';
+
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

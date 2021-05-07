@@ -12,6 +12,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 		$this->slug       = 'ba_video_popup';
 		$this->vb_support = 'on';
 		$this->name       = esc_html__( 'Brain Video Popup', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'video-popup.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

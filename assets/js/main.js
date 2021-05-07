@@ -82,16 +82,16 @@ jQuery(function($) {
     if ( ba_carousel ) {
 
         var _pre_settings = {
-            swipeToSlide   : true,
             edgeFriction   : .35,
             useTransform   : true,
             touchThreshold : 600,
         };
 
+
+
         ba_carousel.each( function() {
             var _user_settings = $(this).data('settings');
             var _settings = Object.assign( _pre_settings, _user_settings );
-
             $( this ).slick( _settings );
         } );
     }

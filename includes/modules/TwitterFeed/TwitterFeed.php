@@ -13,6 +13,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 		$this->vb_support = 'on';
 		$this->name       = esc_html__( 'Brain Twitter Feed', 'brain-divi-addons' );
 		$this->slug       = 'ba_twitter_feed';
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'twitter-feed.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

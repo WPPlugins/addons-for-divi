@@ -10,6 +10,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 	public function init() {
 
 		$this->name       = esc_html__( 'Brain Dual Button', 'brain-divi-addons' );
+		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'dual-button.svg';
 		$this->slug       = 'ba_dual_button';
 		$this->vb_support = 'on';
 

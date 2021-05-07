@@ -12,6 +12,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_post_list';
 		$this->name       = esc_html__( 'Brain Post List', 'brain-divi-addons' );
+		$this->icon_path = plugin_dir_path( __FILE__ ) . 'post-list.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

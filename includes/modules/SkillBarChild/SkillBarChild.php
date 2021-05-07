@@ -5,8 +5,8 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 	public $slug                     = 'ba_skill_bar_child';
 	public $vb_support               = 'on';
 	public $type                     = 'child';
-	public $child_title_var          = 'name';
-	public $child_title_fallback_var = 'level';
+	public $child_title_var          = 'admin_title';
+	public $child_title_fallback_var = 'name';
 
 	public function init() {
 
@@ -178,9 +178,18 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 
 		);
 
+		$label = array(
+			'admin_title' => array(
+				'label'       => esc_html__( 'Admin Label', 'brain-divi-addons' ),
+				'type'        => 'text',
+				'description' => esc_html__( 'This will change the label of the item', 'brain-divi-addons' ),
+				'toggle_slug' => 'admin_label',
+			),
+		);
+
 		$level_bg = $this->custom_background_fields( 'level', 'Level', 'advanced', 'bar', array( 'color', 'gradient', 'hover' ), array(), '#add8e6' );
 		$bar_bg   = $this->custom_background_fields( 'bar', 'Bar', 'advanced', 'bar', array( 'color', 'gradient', 'hover' ), array(), '#dddddd' );
-		return array_merge( $level_bg, $bar_bg, $fields );
+		return array_merge( $label, $level_bg, $bar_bg, $fields );
 	}
 
 

@@ -4,8 +4,8 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 	public $slug                     = 'ba_logo_grid_child';
 	public $vb_support               = 'on';
 	public $type                     = 'child';
-	public $child_title_var          = 'brand_name';
-	public $child_title_fallback_var = 'tooltip_text';
+	public $child_title_var          = 'admin_title';
+	public $child_title_fallback_var = 'brand_name';
 
 	public function init() {
 
@@ -115,7 +115,16 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 		);
 
-		return $fields;
+		$label = array(
+			'admin_title' => array(
+				'label'       => esc_html__( 'Admin Label', 'brain-divi-addons' ),
+				'type'        => 'text',
+				'description' => esc_html__( 'This will change the label of the item', 'brain-divi-addons' ),
+				'toggle_slug' => 'admin_label',
+			),
+		);
+
+		return array_merge( $label, $fields );
 	}
 
 
@@ -194,6 +203,11 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 		$this->add_classname( 'ba_et_pb_module' );
 
 		if ( $use_tooltip === 'on' ) {
+
+			wp_enqueue_script( 'baj-popper' );
+			wp_enqueue_script( 'baj-tippy' );
+			wp_enqueue_style( 'bac-tippy' );
+
 			$tippy_opts = sprintf(
 				'data-tippy-content="%1$s"
                 data-tippy-placement="%2$s"
