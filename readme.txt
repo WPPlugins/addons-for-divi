@@ -1,5 +1,5 @@
 === Brain Addons for Divi Theme & Divi Builder ===
-Contributors: divipeople
+Contributors: BrainAddons
 Tags: divi, divi theme, divi builder, divi module, divi page builder, divi plugins, divi carousel, divi image carousel
 Requires at least: 4.8
 Tested up to: 5.7

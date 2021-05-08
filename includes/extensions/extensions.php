@@ -4,7 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-function brainconkit_register_extensions() {
+function brainaddons_register_extensions() {
 
 	$inactive_extensions = get_option( 'ba_inactive_extensions', array() );
 
@@ -27,4 +27,4 @@ function brainconkit_register_extensions() {
 }
 
 // Kickoff.
-brainconkit_register_extensions();
+brainaddons_register_extensions();
