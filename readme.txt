@@ -164,6 +164,12 @@ No. You cannot use without Divi since it's an addon for Divi.
 
 == Changelog ==
 
+2.0.2 - 12 May, 2021
+- Added: Extra theme support
+
+2.0.1 - 08 May, 2021
+- Fixed: A conflict issue.
+
 2.0.0 - 07 May, 2021
 - Added: Animated Text Module
 - Added: 3 New extensions
