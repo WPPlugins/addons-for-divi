@@ -2,7 +2,13 @@
 	<h1 class="screen-reader-text"><?php esc_html_e( 'BrainAddons Options', 'brain-divi-addons' ); ?></h1>
 	<div class="ba-admin-header">
 		<div class="ba-admin-logo-inline">
-			<img class="ba-logo-icon-size" src="" alt=""> <?php echo esc_attr_e( 'BrainAddons Options', 'brain-divi-addons' ); ?>
+			<?php $logo_url = BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/admin/'; ?>
+			<div class="ba-header-left">
+				<div class="ba-admin-logo-inline-svg">
+					<img class="ba-logo-icon-size" src="<?php echo $logo_url . 'brain-addons-icon.svg'; ?>" alt="BrainAddons">
+				</div> 
+				<?php esc_attr_e( 'Brain Addons Settings', 'brain-divi-addons' ); ?>
+			</div>
 		</div>
 		<div class="ba-nav" role="tablist">
 			<nav class="ba-tabs-nav">
@@ -29,10 +35,9 @@
 
 					printf(
 						'<a href="%1$s" aria-controls="tab-content-%2$s" id="tab-nav-%2$s" class="%3$s" role="tab">
-                                %5$s
-                            </a>
-                            <style type="text/css"> #tab-nav-%2$s { background-image: url(%4$s); } </style>
-                            ',
+							<img src="%4$s" alt="%5$s">
+							<span>%5$s</span>
+                        </a>',
 						$href,
 						$slug,
 						$class,

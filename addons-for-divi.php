@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Brain Addons for Divi
+Plugin Name: DiviAddons by BrainAddons
 Plugin URI:  https://brainaddons.com/
 Description: <a href="https://brainaddons.com/">BrainAddons</a> is a library of unique and powerfull modules that works seamlessly with Divi. <a href="https://brainaddons.com/">BrainAddons</a> is free, and comes with great support.
-Version:     2.0.2
-Author:      BrainAddons
+Version:     2.1.1
+Author:      DiviPeople
 Author URI:  https://brainaddons.com/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'BRAIN_ADDONS_DEV_MODE', $_SERVER['REMOTE_ADDR'] == '127.0.0.1' );
-define( 'BRAIN_ADDONS_PLUGIN_VERSION', '2.0.2' );
+define( 'BRAIN_ADDONS_PLUGIN_VERSION', '2.1.1' );
 define( 'BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_ASSETS', trailingslashit( BRAIN_ADDONS_PLUGIN_URL . 'assets' ) );
@@ -94,21 +94,28 @@ if ( ! class_exists( 'BRAIN_ADDONS_PLUGIN' ) ) :
 				$installer = new BrainAddons\Ext\LoginDesigner\Installer();
 				$installer->run();
 			}
+
+			if ( ! in_array( 'popup-maker', $inactive_extensions, true ) ) {
+				$installer = new BrainAddons\Popup_Post_Type();
+				$installer->register_post_type();
+				flush_rewrite_rules();
+			}
 		}
 
 		private function includes() {
 			
 			require_once BRAIN_ADDONS_PLUGIN_DIR . '/freemius.php';
+			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/functions.php';
 
 			if ( is_admin() ) {
 				require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/admin.php';
 				require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/admin/feedback.php';
 			}
+			
 			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/customizer.php';
 			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/extensions/extensions.php';
 			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/admin/static-icons.php';
 			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/assets-manager.php';
-			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/functions.php';
 			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/functions-forms.php';
 		}
 

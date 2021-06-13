@@ -24,7 +24,7 @@ class Customizer {
     /**
      * Customizer Register
      *
-     * @param array $wp_customize
+     * @param  array  $wp_customize
      * @return void
      */
     public function customize_register( $wp_customize ) {
@@ -66,15 +66,20 @@ class Customizer {
         }
 
         $inactive_extensions = get_option( 'ba_inactive_extensions', array() );
-        $customizer_imgs = BRAIN_ADDONS_PLUGIN_URL . '/includes/customizer/imgs/';
+        $customizer_imgs     = BRAIN_ADDONS_PLUGIN_URL . '/includes/customizer/imgs/';
 
         if ( !in_array( 'login-designer', $inactive_extensions, true ) ) {
             $ld_defaults = Login_Designer::defaults();
             require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/options/login-designer.php'; // phpcs:ignore
         }
 
+        if ( !in_array( 'blog-designer', $inactive_extensions, true ) && ba_has_pro() ) {
+            $bd_defaults = Blog_Designer::defaults();
+            require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/options/blog-designer.php'; // phpcs:ignore
+        }
+
         $wp_customize->add_panel(
-            'BrainAddons_section_separator',
+            'brainaddons_section_separator',
             array(
                 'type'     => 'brainaddons-section',
                 'priority' => -20,
@@ -89,28 +94,28 @@ class Customizer {
 
     public function customize_controls_enqueue_scripts() {
 
-        $path = BRAIN_ADDONS_PLUGIN_URL . '/includes/customizer/';
+        $path = BRAIN_ADDONS_PLUGIN_URL . 'includes/customizer/';
 
         $file_prefix = ( defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ) ? '' : '.min';
 
-        wp_enqueue_style( 
-            'brainaddons-customizer', 
+        wp_enqueue_style(
+            'brainaddons-customizer',
             $path . 'css/customizer' . $file_prefix . '.css',
-            false, 
-            BRAIN_ADDONS_PLUGIN_VERSION 
+            false,
+            BRAIN_ADDONS_PLUGIN_VERSION
         );
 
-        wp_enqueue_style( 
-            'brainaddons-customizer-preview', 
-            $path . 'css/customizer-preview' . $file_prefix . '.css', 
-            false, 
-            BRAIN_ADDONS_PLUGIN_VERSION 
+        wp_enqueue_style(
+            'brainaddons-customizer-preview',
+            $path . 'css/customizer-preview' . $file_prefix . '.css',
+            false,
+            BRAIN_ADDONS_PLUGIN_VERSION
         );
 
-        wp_enqueue_script( 
-            'brainaddons-customizer', $path . 'js/customizer' . $file_prefix . '.js', 
-            array( 'jquery' ), 
-            null, 
+        wp_enqueue_script(
+            'brainaddons-customizer', $path . 'js/customizer' . $file_prefix . '.js',
+            array( 'jquery' ),
+            null,
             true
         );
 
@@ -135,12 +140,12 @@ class Customizer {
 
         $file_prefix = ( defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ) ? '' : '.min';
 
-        wp_enqueue_script( 
-            'brainaddons-customizer-preview', 
-            $path . 'customizer-preview' . $file_prefix . '.js', 
-            array( 'jquery', 'customize-preview' ), 
-            rand( 0, 9999 ), 
-            true 
+        wp_enqueue_script(
+            'brainaddons-customizer-preview',
+            $path . 'customizer-preview' . $file_prefix . '.js',
+            array( 'jquery', 'customize-preview' ),
+            rand( 0, 9999 ),
+            true
         );
 
         // Localization.

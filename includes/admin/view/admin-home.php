@@ -1,41 +1,147 @@
 <div class="ba-admin-panel">
     <div class="ba-home-body">
 
-        <div class="ba-row ba-row-fixed-width ba-section-support">
-            <div class="ba-col ba-col-left">
-                <div class="ba-border-box ba-min-height-350">
-                    <h3 class="ba-feature-title">Knowledge Base!</h3>
-                    <p class="ba-text f18">We understand the need of a helpful knowledge base and have that for you. It will help you to understand how our plugin works.</p>
-                    <a class="ba-btn ba-btn-primary" target="_blank" rel="noopener" href="https://brainaddons.com/docs/">Documentation</a>
+        <div class="ba-section-wrap">
+            <div class="ba-section-block ba-section-block-doc">
+                <div class="ba-section-block-header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 432.4 432.4" >
+                        <g>
+                            <path style="fill:#1229b4;" d="M216.529,93.2c-61.2,0-111.2,50-111.2,111.2c0,32,14,62.8,37.6,83.6c17.6,17.6,16,55.2,15.6,55.6
+                                c0,2,0.4,3.6,2,5.2c1.2,1.2,3.2,2,4.8,2h102c2,0,3.6-0.8,4.8-2c1.2-1.2,2-3.2,2-5.2c0-0.4-2-38,15.6-55.6
+                                c0.4-0.4,0.8-0.8,1.2-1.2c23.2-21.2,36.8-51.2,36.8-82.4C327.729,143.2,277.729,93.2,216.529,93.2z M280.529,277.6
+                                c-0.4,0.4-1.2,1.2-1.2,1.6c-15.6,16.8-18.4,44.4-18.8,57.6h-88.4c-0.4-13.2-3.2-42-20-59.2c-21.2-18.4-33.6-45.2-33.6-73.6
+                                c0-54,43.6-97.6,97.6-97.6s97.6,43.6,97.6,97.6C313.729,232.4,301.729,259.2,280.529,277.6z"/>
+                            <path style="fill:#1229b4;" d="M216.129,121.6c-3.6,0-6.8,3.2-6.8,6.8c0,3.6,3.2,6.8,6.8,6.8c40.4,0,72.8,32.8,72.8,72.8
+                                c0,3.6,3.2,6.8,6.8,6.8c3.6,0,6.8-3.2,6.8-6.8C302.929,160.4,264.129,121.6,216.129,121.6z"/>
+                            <path style="fill:#1229b4;" d="M260.529,358.4h-88.8c-9.2,0-16.8,7.6-16.8,16.8s7.6,16.8,16.8,16.8h88.4
+                                c9.6-0.4,17.2-7.6,17.2-16.8C277.329,366,269.729,358.4,260.529,358.4z M260.529,378h-88.8c-1.6,0-3.2-1.2-3.2-3.2
+                                s1.2-3.2,3.2-3.2h88.4c1.6,0,3.2,1.2,3.2,3.2S262.129,378,260.529,378z"/>
+                            <path style="fill:#1229b4;" d="M247.329,398.8h-62.4c-9.2,0-16.8,7.6-16.8,16.8s7.6,16.8,16.8,16.8h62.4
+                                c9.2,0,16.8-7.6,16.8-16.8C264.129,406,256.529,398.8,247.329,398.8z M247.329,418.4h-62.4c-1.6,0-3.2-1.2-3.2-3.2
+                                s1.2-3.2,3.2-3.2h62.4c1.6,0,3.2,1.2,3.2,3.2S248.929,418.4,247.329,418.4z"/>
+                            <path style="fill:#1229b4;" d="M216.129,60c4,0,6.8-3.2,6.8-6.8V6.8c0-3.6-3.2-6.8-6.8-6.8c-3.6,0-6.8,3.2-6.8,6.8v46.4
+                                C209.329,56.8,212.529,60,216.129,60z"/>
+                            <path style="fill:#1229b4;" d="M329.329,34.4c-3.2-2.4-7.2-1.2-9.2,1.6l-25.6,38.4c-2.4,3.2-1.6,7.6,1.6,9.6
+                                c1.2,0.8,2.4,1.2,3.6,1.2c2.4,0,4.4-1.2,5.6-3.2l25.6-38.4C333.329,40.8,332.529,36.4,329.329,34.4z"/>
+                            <path style="fill:#1229b4;" d="M134.929,83.6c1.2,0,2.4-0.4,3.6-1.2c3.2-2,4-6.4,2-9.6l-24.8-38.8c-2-3.2-6.4-4-9.6-2
+                                s-4,6.4-2,9.6l24.8,38.8C130.529,82.8,132.529,83.6,134.929,83.6z"/>
+                            <path style="fill:#1229b4;" d="M86.529,126l-40.4-22c-3.2-1.6-7.6-0.4-9.2,2.8c-2,3.2-0.8,7.6,2.8,9.2l40.4,22
+                                c1.2,0.4,2,0.8,3.2,0.8c2.4,0,4.8-1.2,6-3.6C90.929,132,89.729,127.6,86.529,126z"/>
+                            <path style="fill:#1229b4;" d="M395.729,106.8c-1.6-3.2-6-4.4-9.2-2.8l-40.8,22c-3.2,1.6-4.4,6-2.8,9.2c1.2,2.4,3.6,3.6,6,3.6
+                                c1.2,0,2.4-0.4,3.2-0.8l40.8-22C396.129,114.4,397.329,110,395.729,106.8z"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="ba-section-block-content">
+                    <h3 class="ba-block-title">
+                        <?php esc_html_e( 'Knowledge Base!', 'brain-divi-addons' );?>
+                    </h3>
+                    <p class="ba-text f16">
+                        We understand the need of a helpful knowledge base and have that for you. It will help you to understand how our plugin works.
+                    </p>
+                    <a class="ba-btn ba-btn-primary" target="_blank" rel="noopener" href="https://brainaddons.com/docs/">
+                        Documentation
+                    </a>
                 </div>
             </div>
 
-            <div class="ba-col ba-col-right">
-                <div class="ba-border-box ba-min-height-350">
-                    <h3 class="ba-feature-title">Support And Feedback</h3>
-                    <p class="ba-text f18">Still need help? Submit a ticket and one of our support experts will get back to you as soon as possible.</p>
-                    <a class="ba-btn ba-btn-primary ba-btn-highlight" target="_blank" rel="noopener" href="http://brainaddons.com/support">Get Support</a>
+            <div class="ba-section-block ba-section-block-support">
+                <div class="ba-section-block-header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40px" height="32px" viewBox="0 0 40 32">
+                        <g>
+                            <path style="fill:#1229b4;" d="M34.9,14.7c-0.1-3.5-1.4-6.9-3.7-9.5C28.4,1.9,24.3,0,20,0S11.6,1.9,8.8,5.1c-2.4,2.7-3.6,6.1-3.7,9.7
+                                C2.2,15.3,0,17.7,0,20.7v0.1C0,24.2,2.8,27,6.1,27h4.5c2.1,3,5.5,5,9.4,5c5.6,0,10.5-4.2,11.2-9.8l0.8-5.6c0.5-3.5-0.6-6.9-2.9-9.6
+                                S23.5,2.8,20,2.8S13.2,4.3,10.9,7S7.5,13.1,8,16.5l0.8,5.6c0.2,1.4,0.6,2.7,1.2,3.8H7.9c-0.5-1.1-0.8-2.3-1-3.6l-0.8-5.6
+                                C6,16.2,6,15.8,6,15.3c0-0.1,0.1-0.2,0.1-0.3s0-0.1,0-0.2c0-3.4,1.2-6.6,3.4-9.2C12.1,2.7,16,1,20,1s7.8,1.7,10.5,4.8
+                                c2.2,2.5,3.4,5.8,3.4,9.1c0,0.1,0,0.1,0,0.2c0,0.1,0,0.2,0,0.2c0,0.5-0.1,1-0.1,1.5L33,22.5c-0.2,1.5-0.6,2.9-1.1,3.8
+                                c-0.1,0.2-0.1,0.3,0,0.5s0.3,0.2,0.4,0.2h1.6c3.3,0,6.1-2.8,6.1-6.3C40,17.7,37.8,15.1,34.9,14.7z M9.7,22L9,16.4
+                                c-0.4-3.2,0.5-6.4,2.6-8.8s5.2-3.8,8.4-3.8s6.2,1.4,8.4,3.8c2.1,2.4,3.1,5.6,2.6,8.8L30.2,22c-0.7,5.1-5.1,9-10.2,9
+                                c-3.3,0-6.2-1.6-8.1-4H15l0,0c0.2,1.1,1.2,2,2.5,2h4c1.4,0,2.5-1.1,2.5-2.5S22.9,24,21.5,24h-4c-1.2,0-2.2,0.9-2.5,2l0,0h-3.9
+                                C10.4,24.8,9.9,23.5,9.7,22z M16,26.5c0-0.8,0.7-1.5,1.5-1.5h4c0.8,0,1.5,0.7,1.5,1.5S22.3,28,21.5,28h-4C16.7,28,16,27.3,16,26.5z
+                                M6.8,26H6.1C3.3,26,1,23.7,1,20.9v-0.1c0-2.5,1.8-4.5,4.1-5c0,0.4,0,0.8,0.1,1.2L6,22.6C6.1,23.8,6.4,24.9,6.8,26z M33.9,26h-0.8
+                                c0.4-0.9,0.7-2.1,0.8-3.4l0.8-5.7c0.1-0.4,0.1-0.9,0.1-1.3c2.4,0.5,4.1,2.5,4.1,5.1C39,23.7,36.7,26,33.9,26z"/>
+                        </g>
+                    </svg>
+                </div>
+                <div class="ba-section-block-content">
+                    <h3 class="ba-block-title"><?php esc_html_e( 'Support And Feedback', 'brain-divi-addons' );?></h3>
+                    <p class="ba-text f16">Still need help? Submit a ticket and one of our support experts will get back to you as soon as possible.</p>
+                    <a class="ba-btn ba-btn-primary" target="_blank" rel="noopener" href="http://brainaddons.com/support">Get Support</a>
                 </div>
             </div>
-        </div>
 
-        <div class="ba-row ba-row-fixed-width ba-section-support">
-            <div class="ba-col ba-col-left">
-                <div class="ba-border-box ba-min-height-350">
-                    <h3 class="ba-feature-title">Join DiviPeople Community!</h3>
-                    <p class="ba-text f18">Join the community of super helpful Divi users. Say hello, ask questions, give feedback and help each other!</p>
+            <div class="ba-section-block ba-section-block-community">
+                <div class="ba-section-block-header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 505.4 505.4" >
+                        <g>
+                            <g>
+                                <path style="fill:#1229b4;" d="M437.1,233.45c14.8-10.4,24.6-27.7,24.6-47.2c0-31.9-25.8-57.7-57.7-57.7c-31.9,0-57.7,25.8-57.7,57.7
+                                    c0,19.5,9.7,36.8,24.6,47.2c-12.7,4.4-24.3,11.2-34.1,20c-13.5-11.5-29.4-20.3-46.8-25.5c21.1-12.8,35.3-36.1,35.3-62.6
+                                    c0-40.4-32.7-73.1-73.1-73.1c-40.4,0-73.1,32.8-73.1,73.1c0,26.5,14.1,49.8,35.3,62.6c-17.2,5.2-32.9,13.9-46.3,25.2
+                                    c-9.8-8.6-21.2-15.3-33.7-19.6c14.8-10.4,24.6-27.7,24.6-47.2c0-31.9-25.8-57.7-57.7-57.7s-57.7,25.8-57.7,57.7
+                                    c0,19.5,9.7,36.8,24.6,47.2C28.5,247.25,0,284.95,0,329.25v6.6c0,0.2,0.2,0.4,0.4,0.4h122.3c-0.7,5.5-1.1,11.2-1.1,16.9v6.8
+                                    c0,29.4,23.8,53.2,53.2,53.2h155c29.4,0,53.2-23.8,53.2-53.2v-6.8c0-5.7-0.4-11.4-1.1-16.9H505c0.2,0,0.4-0.2,0.4-0.4v-6.6
+                                    C505.2,284.85,476.8,247.15,437.1,233.45z M362.3,186.15c0-23,18.7-41.7,41.7-41.7s41.7,18.7,41.7,41.7
+                                    c0,22.7-18.3,41.2-40.9,41.7c-0.3,0-0.5,0-0.8,0s-0.5,0-0.8,0C380.5,227.45,362.3,208.95,362.3,186.15z M194.9,165.35
+                                    c0-31.5,25.6-57.1,57.1-57.1s57.1,25.6,57.1,57.1c0,30.4-23.9,55.3-53.8,57c-1.1,0-2.2,0-3.3,0c-1.1,0-2.2,0-3.3,0
+                                    C218.8,220.65,194.9,195.75,194.9,165.35z M59.3,186.15c0-23,18.7-41.7,41.7-41.7s41.7,18.7,41.7,41.7c0,22.7-18.3,41.2-40.9,41.7
+                                    c-0.3,0-0.5,0-0.8,0s-0.5,0-0.8,0C77.6,227.45,59.3,208.95,59.3,186.15z M125.5,320.15H16.2c4.5-42.6,40.5-76,84.2-76.3
+                                    c0.2,0,0.4,0,0.6,0s0.4,0,0.6,0c20.8,0.1,39.8,7.8,54.5,20.3C141.7,279.75,131,298.95,125.5,320.15z M366.8,359.95
+                                    c0,20.5-16.7,37.2-37.2,37.2h-155c-20.5,0-37.2-16.7-37.2-37.2v-6.8c0-62.1,49.6-112.9,111.3-114.7c1.1,0.1,2.3,0.1,3.4,0.1
+                                    s2.3,0,3.4-0.1c61.7,1.8,111.3,52.6,111.3,114.7V359.95z M378.7,320.15c-5.5-21.1-16-40-30.3-55.6c14.8-12.8,34-20.5,55-20.7
+                                    c0.2,0,0.4,0,0.6,0s0.4,0,0.6,0c43.7,0.3,79.7,33.7,84.2,76.3H378.7z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="ba-section-block-content">
+                    <h3 class="ba-block-title"><?php esc_html_e( 'Join DiviPeople Community!', 'brain-divi-addons' );?></h3>
+                    <p class="ba-text f16">Join the community of super helpful Divi users. Say hello, ask questions, give feedback and help each other!</p>
                     <a class="ba-btn ba-btn-primary" target="_blank" rel="noopener" href="https://www.facebook.com/groups/divipeople/">Join Group</a>
                 </div>
             </div>
 
-            <div class="ba-col ba-col-right">
-                <div class="ba-border-box ba-min-height-350">
-                    <h3 class="ba-feature-title">Satisfied!</h3>
-                    <p class="ba-text f18">We love to have you in Divi Addons family. Take your 2 minutes to review the plugin and spread the love to encourage us to keep it going.</p>
-                    <a class="ba-btn ba-btn-primary ba-btn-highlight" target="_blank" rel="noopener" href="https://wordpress.org/support/plugin/addons-for-divi/reviews/?filter=5#new-post">Rate it now</a>
+            <div class="ba-section-block ba-section-block-love">
+                <div class="ba-section-block-header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" >
+                        <g>
+                            <g>
+                                <path style="fill:#1229b4;" d="M407.815,0h-303.63c-21.38,0-41.736,6.707-58.87,19.394c-3.341,2.474-4.044,7.188-1.57,10.529s7.188,4.042,10.529,1.57
+                                    c14.522-10.754,31.781-16.439,49.911-16.439h303.629c46.296,0,83.96,37.665,83.96,83.96v199.144
+                                    c0,46.296-37.665,83.96-83.96,83.96H279.48c-3.101,0-6.097,1.296-8.217,3.553l-103.068,109.59
+                                    c-2.225,2.364-4.805,1.693-5.81,1.296c-1.006-0.398-3.345-1.676-3.345-4.924V393.4c0-6.22-5.06-11.28-11.28-11.28h-43.575
+                                    c-46.296,0-83.961-37.665-83.961-83.96V99.014c0-17.032,5.069-33.429,14.66-47.417c2.35-3.429,1.477-8.113-1.951-10.464
+                                    c-3.427-2.351-8.114-1.476-10.464,1.951C11.153,59.59,5.171,78.93,5.171,99.014v199.144c0,54.596,44.418,99.014,99.015,99.014
+                                    h39.801v94.461c0,8.398,5.044,15.824,12.851,18.918c2.461,0.975,5.017,1.449,7.543,1.449c5.489,0,10.84-2.237,14.78-6.425
+                                    l101.95-108.402h126.704c54.596,0,99.014-44.418,99.014-99.014V99.014C506.829,44.418,462.412,0,407.815,0z"/>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path style="fill:#1229b4;" d="M364.119,120.935c-26.124-26.125-68.635-26.123-94.761,0l-13.119,13.12c-0.035,0.035-0.143,0.143-0.344,0.143
+                                    c-0.2,0-0.307-0.106-0.342-0.143l-12.911-12.91c-26.125-26.125-68.635-26.124-94.76,0c-26.125,26.125-26.125,68.636,0,94.761
+                                    l97.035,97.035c2.935,2.935,6.837,4.551,10.987,4.551s8.053-1.617,10.987-4.552l53.325-53.334c2.94-2.94,2.94-7.706-0.001-10.644
+                                    c-2.94-2.939-7.707-2.94-10.644,0.001l-53.325,53.334c-0.035,0.035-0.143,0.141-0.342,0.141c-0.201,0-0.308-0.106-0.343-0.143
+                                    l-97.035-97.035c-20.256-20.257-20.256-53.215,0-73.472s53.215-20.255,73.471,0l12.91,12.91c2.935,2.935,6.837,4.552,10.987,4.552
+                                    c4.151,0,8.052-1.616,10.988-4.551l13.12-13.12c20.26-20.255,53.216-20.255,73.472,0c20.256,20.256,20.256,53.214,0,73.472
+                                    l-22.472,22.477c-2.94,2.94-2.94,7.706,0.001,10.644c2.94,2.939,7.706,2.94,10.644-0.001l22.473-22.476
+                                    C390.244,189.57,390.244,147.06,364.119,120.935z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="ba-section-block-content">
+                    <h3 class="ba-block-title">
+                        <?php esc_html_e( 'Satisfied!', 'brain-divi-addons' );?>
+                    </h3>
+                    <p class="ba-text f16">
+                        We love to have you in Divi Addons family. Take your 2 minutes to review the plugin and spread the love to encourage us to keep it go
+                    </p>
+                    <a class="ba-btn ba-btn-primary" target="_blank" rel="noopener" href="https://wordpress.org/support/plugin/addons-for-divi/reviews/?filter=5#new-post">
+                        Leave a Review
+                    </a>
                 </div>
             </div>
         </div>
-
     </div>
 </div>

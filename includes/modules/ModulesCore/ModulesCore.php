@@ -2816,4 +2816,25 @@ class BA_Builder_Module extends ET_Builder_Module {
 			'slideInDown' => esc_html__( 'Slide In Down', 'brain-divi-addons' ),
 		);
 	}
+
+
+	protected function hex_to_rgb( $hex ) {
+
+		$hex      = str_replace( '#', '', $hex );
+		$length   = strlen( $hex );
+		$rgb['r'] = hexdec( $length == 6 ? substr( $hex, 0, 2 ) : ( $length == 3 ? str_repeat( substr( $hex, 0, 1 ), 2 ) : 0 ) );
+		$rgb['g'] = hexdec( $length == 6 ? substr( $hex, 2, 2 ) : ( $length == 3 ? str_repeat( substr( $hex, 1, 1 ), 2 ) : 0 ) );
+		$rgb['b'] = hexdec( $length == 6 ? substr( $hex, 4, 2 ) : ( $length == 3 ? str_repeat( substr( $hex, 2, 1 ), 2 ) : 0 ) );
+
+		return sprintf( 'rgba(%1$s,%2$s,%3$s,1)', $rgb['r'], $rgb['g'], $rgb['b'] );
+	}
+
+	protected function get_pattern( $name, $color, $weight ) {
+		$pattern = array(
+			'curved' => "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' stroke='" . $color . "' stroke-width='" . $weight . "' fill='none' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='M0,6c6,0,6,13,12,13S18,6,24,6'/%3E%3C/svg%3E",
+			'zigzag' => "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' stroke='" . $color . "' stroke-width='" . $weight . "' fill='none' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpolyline points='0,18 12,6 24,18 '/%3E%3C/svg%3E",
+		);
+
+		return $pattern[ $name ];
+	}
 }

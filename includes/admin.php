@@ -38,7 +38,10 @@ class Admin {
 
         wp_enqueue_style(
             'ba-admin',
-            BRAIN_ADDONS_PLUGIN_ASSETS . 'admin/css/admin' . $prefix . '.css'
+            BRAIN_ADDONS_PLUGIN_ASSETS . 'admin/css/admin' . $prefix . '.css',
+            array(), 
+            BRAIN_ADDONS_PLUGIN_VERSION, 
+            'all'
         );
 
         wp_enqueue_style(
@@ -63,7 +66,7 @@ class Admin {
                 'action'  => self::MODULES_NONCE,
             )
         );
-        
+
     }
 
     public static function save_data() {
@@ -85,7 +88,7 @@ class Admin {
     }
 
     public static function save_modules_data( $data ) {
-        $modules = !empty( $data['modules'] ) ? $data['modules'] : array();
+        $modules          = !empty( $data['modules'] ) ? $data['modules'] : array();
         $inactive_modules = array_values( array_diff( array_keys( self::get_modules() ), $modules ) );
         self::save_inactive_modules( $inactive_modules );
     }
@@ -110,7 +113,7 @@ class Admin {
     }
 
     public static function save_extensions_data( $data ) {
-        $extensions = !empty( $data['extensions'] ) ? $data['extensions'] : array();
+        $extensions          = !empty( $data['extensions'] ) ? $data['extensions'] : array();
         $inactive_extensions = array_values( array_diff( array_keys( self::get_all_extensions() ), $extensions ) );
         self::save_inactive_extensions( $inactive_extensions );
     }
@@ -128,6 +131,22 @@ class Admin {
     private static function get_all_extensions() {
 
         $extensions_map = array(
+            'blog-designer'           => array(
+                'title'       => __( 'Blog Designer', 'brain-divi-addons' ),
+                'desc'        => __( 'Blog Designer is a good handy and premium solution for everyone who is looking for a responsive blog page with the divi website.', 'brain-divi-addons' ),
+                'link_enable' => true,
+                'is_pro'      => true,
+                'section'     => 'blog_designer_archive__section',
+            ),
+
+            'popup-maker'             => array(
+                'title'       => __( 'Popup Maker', 'brain-divi-addons' ),
+                'desc'        => __( 'It is incredibly versatile & flexible. Bend it to create any type of popup, modal, or content overlay for your website.', 'brain-divi-addons' ),
+                'link_enable' => false,
+                'is_pro'      => false,
+                'section'     => '',
+            ),
+
             'login-designer'          => array(
                 'title'   => __( 'Login Designer', 'brain-divi-addons' ),
                 'desc'    => __( 'Design and build an on-brand custom WordPress login page.', 'brain-divi-addons' ),
@@ -310,11 +329,18 @@ class Admin {
                 'icon'   => 'flipbox',
                 'is_pro' => ba_has_pro() ? true : false,
             ),
-			'animated-text'         => array(
-				'title' => __( 'Animated Text', 'brain-divi-addons' ),
-				'demo'  => 'https://divi.brainaddons.com/animated-text',
-				'icon'  => 'animated_text',
-			),
+
+            'animated-text'         => array(
+                'title' => __( 'Animated Text', 'brain-divi-addons' ),
+                'demo'  => 'https://divi.brainaddons.com/animated-text',
+                'icon'  => 'animated_text',
+            ),
+
+            'business-hour'         => array(
+                'title' => __( 'Business Hour', 'brain-divi-addons' ),
+                'demo'  => 'https://divi.brainaddons.com/business-hour',
+                'icon'  => 'business_hour',
+            ),
 
         );
 
@@ -474,6 +500,12 @@ class Admin {
                 'icon'   => 'instagram_carousel',
                 'is_pro' => true,
             ),
+            'social-share'         => array(
+                'title'  => __( 'Social Share', 'brain-divi-addons' ),
+                'demo'   => 'https://divi.brainaddons.com/social-share',
+                'icon'   => 'social_share',
+                'is_pro' => true,
+            ),
         );
 
         return $modules_map;
@@ -491,26 +523,26 @@ class Admin {
 
         $tabs = array(
             'home'       => array(
-                'title'    => esc_html__( 'Home', 'brain-divi-addons' ),
-                'icon'     => '',
+                'title'    => esc_html__( 'General', 'brain-divi-addons' ),
+                'icon'     => $icon_url . 'general.svg',
                 'renderer' => array( __CLASS__, 'render_home' ),
             ),
 
             'modules'    => array(
                 'title'    => esc_html__( 'Modules', 'brain-divi-addons' ),
-                'icon'     => '',
+                'icon'     => $icon_url . 'modules.svg',
                 'renderer' => array( __CLASS__, 'render_modules' ),
             ),
 
             'extensions' => array(
                 'title'    => esc_html__( 'Extension', 'brain-divi-addons' ),
-                'icon'     => '',
+                'icon'     => $icon_url . 'extensions.svg',
                 'renderer' => array( __CLASS__, 'render_extensions' ),
             ),
 
             'pro'        => array(
-                'title'    => esc_html__( 'Pro', 'brain-divi-addons' ),
-                'icon'     => '',
+                'title'    => esc_html__( 'Get Pro', 'brain-divi-addons' ),
+                'icon'     => $icon_url . 'get-pro.svg',
                 'renderer' => array( __CLASS__, 'render_pro' ),
             ),
         );

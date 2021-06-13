@@ -3,7 +3,6 @@ function brainaddons_css(control, css_property, selector, unit, priority) {
         value.bind(function(new_value) {
             control = control.replace('[', '_');
             control = control.replace(']', '');
-
             if (new_value) {
                 if ('undefined' !== typeof unit) {
                     if ('url' === unit) {
@@ -16,9 +15,7 @@ function brainaddons_css(control, css_property, selector, unit, priority) {
                         }
                     }
                 }
-
                 jQuery('style#' + control + '_' + css_property).remove();
-
                 jQuery('head').append(
                     '<style id="' +
                         control +
@@ -44,7 +41,6 @@ function brainaddons_add_dynamic_css(control, style) {
     control = control.replace('[', '-');
     control = control.replace(']', '');
     jQuery('style#' + control).remove();
-
     jQuery('head').append('<style id="' + control + '">' + style + '</style>');
 }
 
@@ -55,7 +51,6 @@ function brainaddons_add_dynamic_css(control, style) {
                 wp.customize.preview.send('url', brainaddons_script.login_page);
             }
         });
-
         wp.customize.preview.bind('brainaddons-back-to-home', function(data) {
             wp.customize.preview.send('url', data.home_url);
         });
@@ -68,7 +63,6 @@ function brainaddons_add_dynamic_css(control, style) {
                 wp.customize.preview.send('refresh');
                 $('body.login').css('background-image', 'none');
             }
-
             if (bg_image) {
                 var dynamicStyle =
                     'body.login { background-image: url(' + bg_image + '); }';

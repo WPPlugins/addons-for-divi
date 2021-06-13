@@ -104,11 +104,16 @@ function ba_register_modules() {
 		require_once plugin_dir_path( __FILE__ ) . 'modules/Flipbox/Flipbox.php';
 	}
 
-	if ( ! in_array( 'animated-text', $inactive_modules, true ) ) {
+	if ( ! ba_has_pro() && ! in_array( 'animated-text', $inactive_modules, true ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'modules/AnimatedText/AnimatedText.php';
+	}
+
+	if ( ! in_array( 'business-hour', $inactive_modules, true ) ) {
+		require_once plugin_dir_path( __FILE__ ) . 'modules/BusinessHour/BusinessHour.php';
+		require_once plugin_dir_path( __FILE__ ) . 'modules/BusinessHourChild/BusinessHourChild.php';
 	}
 
 }
 
-// Kickoff
+// Kickoff.
 ba_register_modules();

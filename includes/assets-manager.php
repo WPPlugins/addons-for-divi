@@ -21,29 +21,32 @@ class AssetsManager {
         $css_path = BRAIN_ADDONS_PLUGIN_ASSETS . 'css/';
         $version  = BRAIN_ADDONS_PLUGIN_VERSION;
 
-		//All vendor js.
+        // All vendor js.
         wp_register_script( 'baj-slick', $js_path . 'slick.min.js', array( 'jquery' ), $version, true );
-        wp_register_script( 'baj-twentytwenty', $js_path . 'js/twentytwenty.min.js', array( 'jquery' ), $version, true );
+        wp_register_script( 'baj-twentytwenty', $js_path . 'twentytwenty.min.js', array( 'jquery' ), $version, true );
         wp_register_script( 'baj-tippy', $js_path . 'tippymin.min.js', array( 'jquery' ), $version, true );
         wp_register_script( 'baj-event-move', $js_path . 'event_move.min.js', array( 'jquery' ), $version, true );
         wp_register_script( 'baj-popper', $js_path . 'popper.min.js', array( 'jquery' ), $version, true );
         wp_register_script( 'baj-typed', $js_path . 'typed.min.js', array( 'jquery' ), $version, true );
-        
-		//All vendor css.
-		wp_register_style( 'bac-slick', $css_path . 'slick.min.css', array(), $version, 'all' );
+        wp_register_script( 'baj-anime', $js_path . 'anime.min.js', array( 'jquery' ), $version, true );
+
+        // All vendor css.
+        wp_register_style( 'bac-slick', $css_path . 'slick.min.css', array(), $version, 'all' );
         wp_register_style( 'bac-tippy', $css_path . 'tippy.min.css', array(), $version, 'all' );
 
-		//Brainaddons core.
+        // Brainaddons core.
         $prefix = defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ? '' : '.min';
-        wp_enqueue_style( 'bac-core', $css_path . 'core' . $prefix . '.css', null, $version  );
+        wp_enqueue_style( 'bac-core', $css_path . 'core' . $prefix . '.css', null, $version );
         wp_enqueue_script( 'baj-main', $js_path . 'main' . $prefix . '.js', array( 'jquery' ), $version, true );
+        wp_register_script( 'baj-marvin', $js_path . 'marvin' . $prefix . '.js', array( 'jquery' ), $version, true );
 
-		//Brainaddons localize.
+        // Brainaddons localize.
         wp_localize_script(
             'baj-main',
             'ba_plugin',
             array(
                 'ajaxurl' => admin_url( 'admin-ajax.php' ),
+                'is_pro'  => ba_has_pro() ? true : false,
                 'nonce'   => wp_create_nonce( 'ba_smart_post_nonce' ),
             )
         );

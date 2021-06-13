@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainConkit;
+namespace BrainAddons;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

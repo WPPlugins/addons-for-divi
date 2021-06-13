@@ -14,6 +14,7 @@ if ( ! function_exists( 'brainaddons_fs' ) ) {
 					'is_premium'     => false,
 					'has_addons'     => true,
 					'has_paid_plans' => false,
+					'is_org_compliant' => true,
 					'menu'           => array(
 						'slug'    => 'addons-for-divi',
 						'support' => false,

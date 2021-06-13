@@ -405,7 +405,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-horizontal .twentytwenty-handle:before, %%order_class%% .ba-image-compare .twentytwenty-horizontal .twentytwenty-handle:after, %%order_class%% ba-image-compare .twentytwenty-vertical .twentytwenty-handle:before, %%order_class%% .ba-image-compare .twentytwenty-vertical .twentytwenty-handle:after',
+				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-horizontal .twentytwenty-handle:before, %%order_class%% .ba-image-compare .twentytwenty-horizontal .twentytwenty-handle:after, %%order_class%% .ba-image-compare .twentytwenty-vertical .twentytwenty-handle:before, %%order_class%% .ba-image-compare .twentytwenty-vertical .twentytwenty-handle:after',
 				'declaration' => 'background:' . $handle_color . ';',
 			)
 		);

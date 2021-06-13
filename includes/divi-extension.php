@@ -30,7 +30,7 @@ class BA_DiviExtension extends DiviExtension {
 	public $version = BRAIN_ADDONS_PLUGIN_VERSION;
 
 	/**
-	 * BA_AddonsForDivi constructor.
+	 * BrainAddons Extension constructor.
 	 *
 	 * @param string $name
 	 * @param array  $args

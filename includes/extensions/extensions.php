@@ -8,6 +8,12 @@ function brainaddons_register_extensions() {
 
 	$inactive_extensions = get_option( 'ba_inactive_extensions', array() );
 
+	if ( ! in_array( 'popup-maker', $inactive_extensions, true ) ) {
+		require_once plugin_dir_path( __FILE__ ) . 'popup-maker/ext-post-type.php';
+		require_once plugin_dir_path( __FILE__ ) . 'popup-maker/popup-settings.php';
+		require_once plugin_dir_path( __FILE__ ) . 'popup-maker/ext-popup-maker.php';
+	}
+
 	if ( ! in_array( 'login-designer', $inactive_extensions, true ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'login-designer/ext-login-designer.php';
 		require_once plugin_dir_path( __FILE__ ) . 'login-designer/ext-page-template.php';

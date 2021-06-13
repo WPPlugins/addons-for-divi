@@ -43,3 +43,88 @@ function brainaddons_login_page() {
 
 	return $page;
 }
+
+function ba_get_post_types() {
+
+	$post_types = get_post_types(
+		array(
+			'public' => true,
+		),
+		'objects'
+	);
+
+	$options = array();
+
+	foreach ( $post_types as $post_type ) {
+		$options[ $post_type->name ] = $post_type->label;
+	}
+
+	// Deprecated 'Media' post type.
+	$key = array_search( 'Media', $options, true );
+	if ( 'attachment' === $key ) {
+		unset( $options[ $key ] );
+	}
+
+	return apply_filters( 'uael_loop_post_types', $options );
+}
+
+function ba_get_taxonomies() {
+
+	$taxonomies = get_taxonomies( array( 'show_in_nav_menus' => true ), 'objects' );
+
+	$options = array( '' => '' );
+
+	foreach ( $taxonomies as $taxonomy ) {
+		$options[ $taxonomy->name ] = $taxonomy->label;
+	}
+
+	return $options;
+}
+
+function ba_get_date_link( $post_id = null ) {
+
+	if ( empty( $post_id ) ) {
+		$post_id = get_the_ID();
+	}
+
+	$year  = get_the_date( 'Y', $post_id );
+	$month = get_the_time( 'm', $post_id );
+	$day   = get_the_time( 'd', $post_id );
+	$url   = get_day_link( $year, $month, $day );
+
+	return $url;
+}
+
+function ba_get_excerpt( $post_id = null, $length = 35 ) {
+	return wpautop( strip_shortcodes( truncate_post( $length, false, '', true ) ) );
+}
+
+function ba_prev_arrow_icon(){
+	return '<span class="ba-svg-iconset svg-baseline"><svg aria-hidden="true" class="ba-svg-icon ba-arrow-left-alt-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28"><title>Previous</title><path d="M28 12.5v3c0 0.281-0.219 0.5-0.5 0.5h-19.5v3.5c0 0.203-0.109 0.375-0.297 0.453s-0.391 0.047-0.547-0.078l-6-5.469c-0.094-0.094-0.156-0.219-0.156-0.359v0c0-0.141 0.063-0.281 0.156-0.375l6-5.531c0.156-0.141 0.359-0.172 0.547-0.094 0.172 0.078 0.297 0.25 0.297 0.453v3.5h19.5c0.281 0 0.5 0.219 0.5 0.5z"></path>
+	</svg></span>';
+}
+
+
+function ba_next_arrow_icon(){
+	return '<span class="ba-svg-iconset svg-baseline"><svg aria-hidden="true" class="ba-svg-icon ba-arrow-right-alt-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28"><title>Continue</title><path d="M27 13.953c0 0.141-0.063 0.281-0.156 0.375l-6 5.531c-0.156 0.141-0.359 0.172-0.547 0.094-0.172-0.078-0.297-0.25-0.297-0.453v-3.5h-19.5c-0.281 0-0.5-0.219-0.5-0.5v-3c0-0.281 0.219-0.5 0.5-0.5h19.5v-3.5c0-0.203 0.109-0.375 0.297-0.453s0.391-0.047 0.547 0.078l6 5.469c0.094 0.094 0.156 0.219 0.156 0.359v0z"></path></svg></span>';
+}
+
+function ba_related_posts_args( $post_id ) {
+	$categories = get_the_terms( $post_id, 'category' );
+	if ( empty( $categories ) || is_wp_error( $categories ) ) {
+		$categories = array();
+	}
+	$category_list = wp_list_pluck( $categories, 'term_id' );
+	$related_args = array(
+		'post_type'              => 'post',
+		'posts_per_page'         => 6,
+		'no_found_rows'          => true,
+		'post_status'            => 'publish',
+		'post__not_in'           => array( $post_id ),
+		'orderby'                => 'rand',
+		'category__in'           => $category_list,
+
+	);
+
+	return $related_args;
+}
