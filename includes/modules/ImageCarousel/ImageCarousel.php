@@ -2,7 +2,7 @@
 class BA_Image_Carousel extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/image-carousel/',
+		'module_uri' => 'https://divi.brainaddons.com/image-carousel/',
 		'author'     => 'BrainAddons',
 		'author_uri' => 'https://brainaddons.com/',
 	);
@@ -63,6 +63,29 @@ class BA_Image_Carousel extends BA_Builder_Module {
 						),
 					),
 				),
+			),
+		);
+
+		$this->custom_css_fields = array(
+			'nav_prev'  => array(
+				'label'    => esc_html__( 'Prev (Navigation)', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-arrow.slick-prev',
+			),
+			'nav_next'  => array(
+				'label'    => esc_html__( 'Next (Navigation)', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-arrow.slick-next',
+			),
+			'pagi_dots'  => array(
+				'label'    => esc_html__( 'Pagination Wrapper', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-dots',
+			),
+			'pagi_item'  => array(
+				'label'    => esc_html__( 'Pagination Item', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-dots li',
+			),
+			'pagi_dot'  => array(
+				'label'    => esc_html__( 'Pagination Dot', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-dots button',
 			),
 		);
 	}

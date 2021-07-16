@@ -10,7 +10,7 @@ $total_modules_count = count( $modules );
 
 <div class="ba-admin-panel">
 	<div class="ba-modules-body">
-		<form class="ba-modules-admin" id="ba-admin-modules-form">
+		<form class="ba-form-admin ba-modules-admin" id="ba-admin-modules-form">
 			<div class="ba-row">
 				<div class="ba-col">
 					<h2 class="ba-section-title">

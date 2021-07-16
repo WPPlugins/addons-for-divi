@@ -25,6 +25,7 @@ class BA_Card extends BA_Builder_Module {
 				'toggles' => array(
 					'card'       => esc_html__( 'Card', 'brain-divi-addons' ),
 					'image_icon' => esc_html__( 'Image/Icon', 'brain-divi-addons' ),
+					'image_mask' => esc_html__( 'Image Mask', 'brain-divi-addons' ),
 					'overlay'    => esc_html__( 'Overlay', 'brain-divi-addons' ),
 					'badge'      => esc_html__( 'Badge', 'brain-divi-addons' ),
 					'texts'      => array(
@@ -39,18 +40,47 @@ class BA_Card extends BA_Builder_Module {
 							),
 						),
 					),
+					'body'       => esc_html__( 'Body Text', 'brain-divi-addons' ),
 					'button'     => esc_html__( 'Button', 'brain-divi-addons' ),
 				),
 			),
 
 		);
+
+		$this->custom_css_fields = array(
+			'icon'   => array(
+				'label'    => esc_html__( 'Icon', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-card-icon i',
+			),
+			'image'  => array(
+				'label'    => esc_html__( 'Image', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-card-figure img',
+			),
+			'badge'  => array(
+				'label'    => esc_html__( 'Badge', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-card .ba-card-badge',
+			),
+			'title'  => array(
+				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-card .ba-card-title',
+			),
+			'desc'   => array(
+				'label'    => esc_html__( 'Description', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-card .ba-card-desc',
+			),
+			'button' => array(
+				'label'    => esc_html__( 'Button', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-card .ba-btn-card',
+			),
+		);
 	}
 
 	public function get_fields() {
 
-		$fields = array(
-			'use_icon'              => array(
+		$main_content = array(
+			'use_icon'     => array(
 				'label'           => esc_html__( 'Use Icon', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether icon set below should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -61,22 +91,23 @@ class BA_Card extends BA_Builder_Module {
 				),
 			),
 
-			'icon'                  => array(
-				'label'           => esc_html__( 'Left Icon', 'brain-divi-addons' ),
+			'icon'         => array(
+				'label'           => esc_html__( 'Select Icon', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Choose an icon to display with your card.', 'brain-divi-addons' ),
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
 				'toggle_slug'     => 'main_content',
 				'tab_slug'        => 'general',
+				'default'         => '+',
 				'show_if'         => array(
 					'use_icon' => 'on',
 				),
 			),
-
-			'photo'                 => array(
+			'photo'        => array(
 				'label'              => esc_html__( 'Upload Card Image', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the card.', 'brain-divi-addons' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
 				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
 				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
 				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
@@ -87,8 +118,7 @@ class BA_Card extends BA_Builder_Module {
 					'use_icon' => 'off',
 				),
 			),
-
-			'use_lightbox'          => array(
+			'use_lightbox' => array(
 				'type'        => 'multiple_checkboxes',
 				'default'     => 'off',
 				'toggle_slug' => 'main_content',
@@ -99,18 +129,18 @@ class BA_Card extends BA_Builder_Module {
 					'use_icon' => 'off',
 				),
 			),
-
-			'photo_alt'             => array(
+			'photo_alt'    => array(
 				'label'       => esc_html__( 'Image Alt Text', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define the HTML ALT text for your image.', 'brain-divi-addons' ),
 				'type'        => 'text',
 				'toggle_slug' => 'main_content',
 				'show_if'     => array(
 					'use_icon' => 'off',
 				),
 			),
-
-			'use_badge'             => array(
+			'use_badge'    => array(
 				'label'           => esc_html__( 'Use Badge', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether badge should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -120,9 +150,9 @@ class BA_Card extends BA_Builder_Module {
 					'off' => esc_html__( 'No', 'brain-divi-addons' ),
 				),
 			),
-
-			'badge_text'            => array(
+			'badge_text'   => array(
 				'label'           => esc_html__( 'Badge Text', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define the badge text for your card.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'default'         => esc_html__( 'Badge', 'brain-divi-addons' ),
 				'toggle_slug'     => 'main_content',
@@ -131,25 +161,27 @@ class BA_Card extends BA_Builder_Module {
 					'use_badge' => 'on',
 				),
 			),
-
-			'title'                 => array(
+			'title'        => array(
 				'label'           => esc_html__( 'Title Text', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define the title text for your card.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'dynamic_content' => 'text',
-				'default'         => esc_html__( 'Your Title Goes Here', 'brain-divi-addons' ),
 				'toggle_slug'     => 'main_content',
 			),
-
-			'description'           => array(
+			'description'  => array(
 				'label'           => esc_html__( 'Description', 'brain-divi-addons' ),
-				'type'            => 'textarea',
+				'description'     => esc_html__( 'Input the description text for your card module.', 'brain-divi-addons' ),
+				'type'            => 'tiny_mce',
+				'option_category' => 'basic_option',
 				'dynamic_content' => 'text',
 				'toggle_slug'     => 'main_content',
 			),
+		);
 
-			// Button.
-			'use_button'            => array(
+		$button_content = array(
+			'use_button'    => array(
 				'label'           => esc_html__( 'Use Button', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether button should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -159,9 +191,9 @@ class BA_Card extends BA_Builder_Module {
 				'default'         => 'off',
 				'toggle_slug'     => 'button',
 			),
-
-			'button_text'           => array(
+			'button_text'   => array(
 				'label'           => esc_html__( 'Button Text', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define the button text for your button.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'default'         => 'Click Here',
 				'toggle_slug'     => 'button',
@@ -170,9 +202,9 @@ class BA_Card extends BA_Builder_Module {
 					'use_button' => 'on',
 				),
 			),
-
-			'button_link'           => array(
+			'button_link'   => array(
 				'label'           => esc_html__( 'Button Link', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define the button link url for your button.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'default'         => '',
 				'toggle_slug'     => 'button',
@@ -181,9 +213,9 @@ class BA_Card extends BA_Builder_Module {
 					'use_button' => 'on',
 				),
 			),
-
-			'is_new_window'         => array(
+			'is_new_window' => array(
 				'label'           => esc_html__( 'Open Button link in new window', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether button URL should be opened in new window.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -196,10 +228,12 @@ class BA_Card extends BA_Builder_Module {
 					'use_button' => 'on',
 				),
 			),
+		);
 
-			// Image.
+		$img_icon_style = array(
 			'image_position'        => array(
 				'label'          => esc_html__( 'Image/Icon Position', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Select Image or icon placement.', 'brain-divi-addons' ),
 				'type'           => 'select',
 				'tab_slug'       => 'advanced',
 				'mobile_options' => true,
@@ -214,6 +248,7 @@ class BA_Card extends BA_Builder_Module {
 
 			'icon_color'            => array(
 				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'image_icon',
@@ -225,9 +260,9 @@ class BA_Card extends BA_Builder_Module {
 
 			'icon_size'             => array(
 				'label'           => esc_html__( 'Icon Size', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Control the size of the icon by increasing or decreasing the range.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
-				'allowed_units'   => array( 'em', 'rem', 'px', 'cm', '%', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
 				'default_unit'    => 'px',
 				'default'         => '45px',
 				'range_settings'  => array(
@@ -245,6 +280,7 @@ class BA_Card extends BA_Builder_Module {
 
 			'image_hover_animation' => array(
 				'label'       => esc_html__( 'Image Hover Animation', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select image mouse hover animation.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'image_icon',
@@ -257,6 +293,7 @@ class BA_Card extends BA_Builder_Module {
 
 			'image_overflow'        => array(
 				'label'       => esc_html__( 'Image Overflow', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can control image overflow on the X and Y axis. If set to hidden, image will be clipped.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'image_icon',
@@ -269,6 +306,7 @@ class BA_Card extends BA_Builder_Module {
 
 			'image_height'          => array(
 				'label'          => esc_html__( 'Image Height', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'This sets a static height value for your card image.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '300px',
@@ -287,6 +325,7 @@ class BA_Card extends BA_Builder_Module {
 
 			'image_width'           => array(
 				'label'          => esc_html__( 'Image Width', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'This sets a static width value for your card image.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'mobile_options' => true,
@@ -305,6 +344,7 @@ class BA_Card extends BA_Builder_Module {
 
 			'image_padding'         => array(
 				'label'          => esc_html__( 'Image Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'image_icon',
@@ -317,6 +357,7 @@ class BA_Card extends BA_Builder_Module {
 
 			'icon_padding'          => array(
 				'label'          => esc_html__( 'Icon Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'image_icon',
@@ -326,10 +367,12 @@ class BA_Card extends BA_Builder_Module {
 					'use_icon' => 'on',
 				),
 			),
+		);
 
-			// button.
-			'btn_spacing_top'       => array(
+		$fields = array(
+			'btn_spacing_top'      => array(
 				'label'          => esc_html__( 'Spacing Top', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the button.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'mobile_options' => true,
@@ -342,10 +385,9 @@ class BA_Card extends BA_Builder_Module {
 				'toggle_slug'    => 'button',
 				'tab_slug'       => 'advanced',
 			),
-
-			// Card Text.
-			'title_bottom_spacing'  => array(
+			'title_bottom_spacing' => array(
 				'label'          => esc_html__( 'Title Spacing Bottom', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'mobile_options' => true,
@@ -362,8 +404,9 @@ class BA_Card extends BA_Builder_Module {
 			),
 
 			// Card.
-			'content_overflow'      => array(
+			'content_overflow'     => array(
 				'label'       => esc_html__( 'Content Overflow', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can control card content overflow on the X and Y axis. If set to hidden, content will be clipped.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'card',
@@ -373,9 +416,9 @@ class BA_Card extends BA_Builder_Module {
 					'visible' => esc_html__( 'Visible', 'brain-divi-addons' ),
 				),
 			),
-
-			'content_alignment'     => array(
+			'content_alignment'    => array(
 				'label'            => esc_html__( 'Alignment', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Align content to the left, right or center.', 'brain-divi-addons' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -386,9 +429,9 @@ class BA_Card extends BA_Builder_Module {
 				'toggle_slug'      => 'card',
 				'tab_slug'         => 'advanced',
 			),
-
-			'content_padding'       => array(
+			'content_padding'      => array(
 				'label'          => esc_html__( 'Content Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'card',
 				'tab_slug'       => 'advanced',
@@ -405,11 +448,24 @@ class BA_Card extends BA_Builder_Module {
 			'bg'       => '#ffffff',
 			'color'    => '#333',
 		);
-		$badge_options  = $this->get_badge_options( 'badge', 'Badge', 'badge', $badge_defaults );
+		$badge_options  = $this->get_badge_options(
+			'badge',
+			esc_html__( 'Badge', 'brain-divi-addons' ),
+			'badge',
+			$badge_defaults
+		);
 		$overlay        = $this->get_overlay_option_fields( 'overlay', 'on', array( 'use_icon' => 'off' ) );
-		$icon_bg        = $this->custom_background_fields( 'icon', 'Icon', 'advanced', 'image_icon', array( 'color', 'gradient', 'hover' ), array( 'use_icon' => 'on' ), '' );
+		$icon_bg        = $this->custom_background_fields(
+			'icon',
+			esc_html__( 'Icon', 'brain-divi-addons' ),
+			'advanced',
+			'image_icon',
+			array( 'color', 'gradient', 'hover' ),
+			array( 'use_icon' => 'on' ),
+			''
+		);
 
-		return array_merge( $fields, $overlay, $badge_options, $icon_bg );
+		return array_merge( $main_content, $button_content, $img_icon_style, $fields, $overlay, $badge_options, $icon_bg );
 	}
 
 	public function get_advanced_fields_config() {
@@ -627,7 +683,7 @@ class BA_Card extends BA_Builder_Module {
 	public function render_description() {
 		$description = $this->props['description'];
 		if ( ! empty( $description ) ) {
-			return sprintf( '<p class="ba-card-desc">%1$s</p>', $description );
+			return sprintf( '<div class="ba-card-desc">%1$s</div>', $description );
 		}
 	}
 
@@ -745,6 +801,16 @@ class BA_Card extends BA_Builder_Module {
 		$border_style_all_card            = $this->props['border_style_all_card'];
 		$content_overflow                 = $this->props['content_overflow'];
 		$image_overflow                   = $this->props['image_overflow'];
+
+		if ( ! empty( $this->props['custom_margin'] ) ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%%.et_pb_module',
+					'declaration' => 'margin-bottom: 0!important;',
+				)
+			);
+		}
 
 		if ( 'top' !== $image_position ) {
 			if ( 'auto' === $image_width ) {

@@ -29,6 +29,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 				'toggles' => array(
 					'label'  => esc_html__( 'Label', 'brain-divi-addons' ),
 					'handle' => esc_html__( 'Handle', 'brain-divi-addons' ),
+					'border' => esc_html__( 'Border', 'brain-divi-addons' ),
 				),
 			),
 		);
@@ -55,12 +56,11 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 	public function get_fields() {
 
-		$et_accent_color = et_builder_accent_color();
-
 		return array(
 
 			'before_img'      => array(
 				'label'              => esc_html__( 'Image', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display as before image.', 'brain-divi-addons' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
@@ -75,8 +75,9 @@ class BA_Image_Compare extends BA_Builder_Module {
 			),
 
 			'before_label'    => array(
-				'default'         => 'Before',
 				'label'           => esc_html__( 'Before Label', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define before label text.', 'brain-divi-addons' ),
+				'default'         => 'Before',
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Define the HTML ALT text for your image here.', '' ),
@@ -84,8 +85,9 @@ class BA_Image_Compare extends BA_Builder_Module {
 			),
 
 			'before_label_bg' => array(
-				'default'      => $et_accent_color,
 				'label'        => esc_html__( 'Before Label Background', 'brain-divi-addons' ),
+				'description'  => esc_html__( 'Here you can define a custom background for before label.', 'brain-divi-addons' ),
+				'default'      => $this->default_color,
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'toggle_slug'  => 'before',
@@ -93,6 +95,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'after_img'       => array(
 				'label'              => esc_html__( 'Image', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display as after image.', 'brain-divi-addons' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
@@ -110,6 +113,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 			'after_label'     => array(
 				'default'         => 'After',
 				'label'           => esc_html__( 'After Label', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define after label text.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Define the HTML ALT text for your image here.', 'brain-divi-addons' ),
@@ -117,8 +121,9 @@ class BA_Image_Compare extends BA_Builder_Module {
 			),
 
 			'after_label_bg'  => array(
-				'default'      => $et_accent_color,
+				'default'      => $this->default_color,
 				'label'        => esc_html__( 'After Label Background', 'brain-divi-addons' ),
+				'description'  => esc_html__( 'Here you can define a custom background for after label.', 'brain-divi-addons' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'toggle_slug'  => 'after',
@@ -126,6 +131,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'orientation'     => array(
 				'label'            => esc_html__( 'Orientation', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Select orientation.', 'brain-divi-addons' ),
 				'type'             => 'select',
 				'option_category'  => 'layout',
 				'options'          => array(
@@ -139,6 +145,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'offset_pct'      => array(
 				'label'            => esc_html__( 'Handle Initial Offset', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Define handle initial offset.', 'brain-divi-addons' ),
 				'type'             => 'select',
 				'option_category'  => 'layout',
 				'options'          => array(
@@ -160,6 +167,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'move_on_hover'   => array(
 				'label'            => esc_html__( 'Move on Hover', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Here you can choose whether handle should be moved on hover.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
@@ -172,6 +180,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'overlay'         => array(
 				'label'            => esc_html__( 'Use Overlay on Hover', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Here you can choose whether overlay should be used on hover.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
@@ -184,6 +193,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'show_label'      => array(
 				'label'       => esc_html__( 'Show Before/After Label', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can choose whether before/after label should be used.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'options'     => array(
 					'always'   => __( 'Always', 'brain-divi-addons' ),
@@ -198,6 +208,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'label_padding'   => array(
 				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom padding for the label.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'label',
@@ -207,6 +218,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'label_height'    => array(
 				'label'          => esc_html__( 'Height', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom label height.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => 'initial',
@@ -222,6 +234,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'label_width'     => array(
 				'label'          => esc_html__( 'Width', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom label width.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => 'initial',
@@ -238,6 +251,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 			'handle_color'    => array(
 				'default'      => '#ffffff',
 				'label'        => esc_html__( 'Handle Color', 'brain-divi-addons' ),
+				'description'  => esc_html__( 'Here you can define a custom handle color.', 'brain-divi-addons' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'toggle_slug'  => 'handle',
@@ -288,6 +302,25 @@ class BA_Image_Compare extends BA_Builder_Module {
 			),
 			'defaults'    => array(
 				'border_radii'  => 'on|4px|4px|4px|4px',
+				'border_styles' => array(
+					'width' => '0px',
+					'color' => '#333333',
+					'style' => 'solid',
+				),
+			),
+		);
+
+		$advanced_fields['borders']['main'] = array(
+			'toggle_slug' => 'border',
+			'css'         => array(
+				'main'      => array(
+					'border_radii'  => '%%order_class%%',
+					'border_styles' => '%%order_class%%',
+				),
+				'important' => 'all',
+			),
+			'defaults'    => array(
+				'border_radii'  => 'on|0px|0px|0px|0px',
 				'border_styles' => array(
 					'width' => '0px',
 					'color' => '#333333',

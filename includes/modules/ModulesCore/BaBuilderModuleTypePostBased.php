@@ -3,15 +3,6 @@ class BA_Builder_Module_Type_PostBased extends BA_Builder_Module {
 
 	public $is_post_based = true;
 
-	/**
-	 * Loads and returns the contents of the "No Results" template.
-	 *
-	 * @since 3.0.77
-	 *
-	 * @param string $heading_tag
-	 *
-	 * @return string
-	 */
 	public static function get_no_results_template( $heading_tag = 'h1' ) {
 		global $et_no_results_heading_tag;
 		$et_no_results_heading_tag = $heading_tag;
@@ -26,16 +17,6 @@ class BA_Builder_Module_Type_PostBased extends BA_Builder_Module {
 		return ob_get_clean();
 	}
 
-	/**
-	 * Filters out invalid term ids from an array.
-	 *
-	 * @since 3.0.106
-	 *
-	 * @param integer[] $term_ids
-	 * @param string    $taxonomy
-	 *
-	 * @return integer[]
-	 */
 	public static function filter_invalid_term_ids( $term_ids, $taxonomy ) {
 		$valid_term_ids = array();
 
@@ -50,23 +31,10 @@ class BA_Builder_Module_Type_PostBased extends BA_Builder_Module {
 		return $valid_term_ids;
 	}
 
-	/**
-	 * Convert an array or comma-separated list of term ids and special keywords to an array of term ids.
-	 *
-	 * @since 3.17.2
-	 *
-	 * @param string|array $terms Comma-separated list of term ids and special keywords.
-	 * @param integer      $post_id Optional post id to resolve "current" categories.
-	 * @param string       $taxonomy
-	 *
-	 * @return integer[]
-	 */
 	protected static function filter_meta_categories( $categories, $post_id = 0, $taxonomy = 'category' ) {
 		$raw_term_ids = is_array( $categories ) ? $categories : explode( ',', $categories );
 
 		if ( in_array( 'all', $raw_term_ids, true ) ) {
-			// If "All Categories" is selected return an empty array so it works for all terms
-			// even ones created after the module was last updated.
 			return array();
 		}
 
@@ -75,7 +43,7 @@ class BA_Builder_Module_Type_PostBased extends BA_Builder_Module {
 		foreach ( $raw_term_ids as $value ) {
 			if ( 'current' === $value ) {
 				if ( $post_id > 0 ) {
-					$post_terms = wpget_object_terms( $post_id, $taxonomy );
+					$post_terms = wp_get_object_terms( $post_id, $taxonomy );
 
 					if ( is_wp_error( $post_terms ) ) {
 						continue;
@@ -102,17 +70,6 @@ class BA_Builder_Module_Type_PostBased extends BA_Builder_Module {
 		return $term_ids;
 	}
 
-	/**
-	 * Handle common filtering of included categories, including handling meta categories.
-	 *
-	 * @since 4.0
-	 *
-	 * @param string|array $include_categories Comma-separated list of term ids and special keywords.
-	 * @param integer      $post_id
-	 * @param string       $taxonomy
-	 *
-	 * @return array
-	 */
 	protected static function filter_include_categories( $include_categories, $post_id = 0, $taxonomy = 'category' ) {
 		$categories = array();
 
@@ -127,11 +84,5 @@ class BA_Builder_Module_Type_PostBased extends BA_Builder_Module {
 		}
 
 		return $categories;
-	}
-
-	public static function is_processing_computed_prop() {
-		global $et_fb_processing_shortcode_object;
-
-		return $et_fb_processing_shortcode_object || ( wp_doing_ajax() && 'et_pb_process_computed_property' === $_POST['action'] );
 	}
 }

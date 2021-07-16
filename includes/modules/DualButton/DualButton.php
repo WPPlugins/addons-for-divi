@@ -36,7 +36,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'common'         => esc_html__( 'Common', 'brain-divi-addons' ),
+					'common'         => esc_html__( 'General', 'brain-divi-addons' ),
 					'btn_a'          => esc_html__( 'Primary Button', 'brain-divi-addons' ),
 					'btn_b'          => esc_html__( 'Secondary Button', 'brain-divi-addons' ),
 					'connector'      => esc_html__( 'Connector', 'brain-divi-addons' ),
@@ -49,6 +49,21 @@ class BA_Dual_Button extends BA_Builder_Module {
 				),
 			),
 		);
+
+		$this->custom_css_fields = array(
+			'primary' => array(
+				'label'    => esc_html__( 'Primary Button', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .btn-el btn-el--primary',
+			),
+			'secondary' => array(
+				'label'    => esc_html__( 'Secondary Button', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .btn-el btn-el--secondary',
+			),
+			'connector' => array(
+				'label'    => esc_html__( 'Connector', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-btn__connector',
+			),
+		);
 	}
 
 	public function get_fields() {
@@ -57,6 +72,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_alignment'          => array(
 				'label'            => esc_html__( 'Button Alignment', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Align buttons to the left, right or center.', 'brain-divi-addons' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -68,8 +84,8 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_a_text'             => array(
 				'label'           => esc_html__( 'Button Text', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define primary button text for your module.', 'brain-divi-addons' ),
 				'type'            => 'text',
-				'default'         => 'Button 1',
 				'dynamic_content' => 'text',
 				'toggle_slug'     => 'btns',
 				'tab_slug'        => 'general',
@@ -78,6 +94,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_a_link'             => array(
 				'label'           => esc_html__( 'Button Link', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define primary button link URL for your module.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'btns',
 				'tab_slug'        => 'general',
@@ -87,6 +104,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_a_link_target'      => array(
 				'label'       => esc_html__( 'Button Link Target', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can choose whether or not your link opens in a new window', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'btns',
 				'tab_slug'    => 'general',
@@ -100,8 +118,8 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_b_text'             => array(
 				'label'           => esc_html__( 'Button Text', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define secondary button text for your module.', 'brain-divi-addons' ),
 				'type'            => 'text',
-				'default'         => 'Button 2',
 				'dynamic_content' => 'text',
 				'toggle_slug'     => 'btns',
 				'tab_slug'        => 'general',
@@ -110,6 +128,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_b_link'             => array(
 				'label'           => esc_html__( 'Button Link', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define secondary button link URL for your module.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'btns',
 				'dynamic_content' => 'url',
@@ -119,6 +138,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_b_link_target'      => array(
 				'label'       => esc_html__( 'Button Link Target', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can choose whether or not your link opens in a new window', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'btns',
 				'tab_slug'    => 'general',
@@ -132,6 +152,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_type'         => array(
 				'label'       => esc_html__( 'Connector Type', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select button connector type.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'btns',
 				'tab_slug'    => 'general',
@@ -146,6 +167,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_text'         => array(
 				'label'       => esc_html__( 'Connector Text', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define the connector text for your module.', 'brain-divi-addons' ),
 				'type'        => 'text',
 				'default'     => 'OR',
 				'toggle_slug' => 'btns',
@@ -158,6 +180,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_icon'         => array(
 				'label'           => esc_html__( 'Connector Icon', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Select icon for your button connector.', 'brain-divi-addons' ),
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
 				'class'           => array( 'ba-btn__connector' ),
@@ -172,6 +195,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_text_size'    => array(
 				'label'       => esc_html__( 'Connector Text Size', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom text size for your button connector.', 'brain-divi-addons' ),
 				'type'        => 'range',
 				'default'     => '14px',
 				'toggle_slug' => 'connector',
@@ -183,6 +207,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_text_color'   => array(
 				'label'       => esc_html__( 'Text Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom text color for your button connector.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'default'     => '#333',
 				'toggle_slug' => 'connector',
@@ -194,6 +219,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_bg'           => array(
 				'label'       => esc_html__( 'Background', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom background color for your button connector.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'default'     => 'transparent',
 				'toggle_slug' => 'connector',
@@ -205,6 +231,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_size'         => array(
 				'label'       => esc_html__( 'Connector Size', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Increase or decrease the size for your button connector.', 'brain-divi-addons' ),
 				'type'        => 'range',
 				'default'     => '30px',
 				'toggle_slug' => 'connector',
@@ -215,18 +242,21 @@ class BA_Dual_Button extends BA_Builder_Module {
 			),
 
 			'connector_radius'       => array(
-				'label'       => esc_html__( 'Connector Radius', 'brain-divi-addons' ),
-				'type'        => 'range',
-				'default'     => '0px',
-				'toggle_slug' => 'connector',
-				'tab_slug'    => 'advanced',
-				'show_if_not' => array(
+				'label'        => esc_html__( 'Connector Radius', 'brain-divi-addons' ),
+				'description'  => esc_html__( 'Here you can define a custom border radius for your button connector.', 'brain-divi-addons' ),
+				'type'         => 'range',
+				'default'      => '0px',
+				'default_unit' => 'px',
+				'toggle_slug'  => 'connector',
+				'tab_slug'     => 'advanced',
+				'show_if_not'  => array(
 					'connector_type' => 'empty',
 				),
 			),
 
 			'connector_border_width' => array(
 				'label'       => esc_html__( 'Connector Border Width', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom border width for your button connector.', 'brain-divi-addons' ),
 				'type'        => 'range',
 				'default'     => '0px',
 				'toggle_slug' => 'connector',
@@ -238,6 +268,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'connector_border_color' => array(
 				'label'       => esc_html__( 'Connector Border Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom border color for your button connector.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'default'     => 'transparent',
 				'toggle_slug' => 'connector',
@@ -249,6 +280,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'button_gap'             => array(
 				'label'          => esc_html__( 'Button Gap', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Increase or decrease the spacing between buttons.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '40px',
 				'mobile_options' => true,
@@ -263,6 +295,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_a_radius'           => array(
 				'label'       => esc_html__( 'Advanced Border Radius', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can control the corner radius of the primary button. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'brain-divi-addons' ),
 				'type'        => 'border-radius',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'btn_a_advanced',
@@ -270,6 +303,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 
 			'btn_b_radius'           => array(
 				'label'       => esc_html__( 'Advanced Border Radius', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can control the corner radius of the secondary button. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'brain-divi-addons' ),
 				'type'        => 'border-radius',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'btn_b_advanced',

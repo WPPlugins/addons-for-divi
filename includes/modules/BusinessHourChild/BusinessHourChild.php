@@ -37,31 +37,45 @@ class BA_Business_Hour_Child extends BA_Builder_Module {
 				),
 			),
 		);
+
+		$this->custom_css_fields = array(
+			'day' => array(
+				'label'    => esc_html__( 'Day', 'brain-divi-addons' ),
+				'selector' => '.ba-business-hour  %%order_class%% .ba-business-hour-day',
+			),
+			'time' => array(
+				'label'    => esc_html__( 'Time', 'brain-divi-addons' ),
+				'selector' => '.ba-business-hour  %%order_class%% .ba-business-hour-time',
+			),
+			'separator' => array(
+				'label'    => esc_html__( 'Separator', 'brain-divi-addons' ),
+				'selector' => '.ba-business-hour  %%order_class%% .ba-business-hour-separator',
+			),
+		);
 	}
 
 	public function get_fields() {
 
 		$content = array(
-
 			'day'  => array(
 				'label'       => esc_html__( 'Day', 'brain-divi-addons' ),
+				'description'       => esc_html__( 'Define the day your for business hour.', 'brain-divi-addons' ),
 				'type'        => 'text',
-				'default'     => esc_html__( 'Friday', 'brain-divi-addons' ),
 				'toggle_slug' => 'content',
 			),
 
 			'time' => array(
 				'label'       => esc_html__( 'Time', 'brain-divi-addons' ),
+				'description'       => esc_html__( 'Define the time your for business hour.', 'brain-divi-addons' ),
 				'type'        => 'text',
-				'default'     => esc_html__( '10.00AM - 6.00PM', 'brain-divi-addons' ),
 				'toggle_slug' => 'content',
 			),
-
 		);
 
 		$separator = array(
 			'separator_type'   => array(
 				'label'       => esc_html__( 'Separator Type', 'brain-divi-addons' ),
+				'description'       => esc_html__( 'Select text separator type.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
@@ -78,6 +92,7 @@ class BA_Business_Hour_Child extends BA_Builder_Module {
 			),
 			'separator_gap'    => array(
 				'label'          => esc_html__( 'Separator Spacing', 'brain-divi-addons' ),
+				'description'          => esc_html__( 'Define separator both side spacing.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'fixed_unit'     => 'px',
@@ -94,6 +109,7 @@ class BA_Business_Hour_Child extends BA_Builder_Module {
 			),
 			'separator_color'  => array(
 				'label'       => esc_html__( 'Separator Color', 'brain-divi-addons' ),
+				'description'       => esc_html__( 'Here you can define a custom color for your text separator.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
@@ -104,6 +120,7 @@ class BA_Business_Hour_Child extends BA_Builder_Module {
 			),
 			'separator_weight' => array(
 				'label'          => esc_html__( 'Separator Weight', 'brain-divi-addons' ),
+				'description'          => esc_html__( 'Here you can define a custom depth for your text separator', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '1px',
 				'fixed_unit'     => 'px',
@@ -120,6 +137,7 @@ class BA_Business_Hour_Child extends BA_Builder_Module {
 			),
 			'separator_height' => array(
 				'label'          => esc_html__( 'Separator Height', 'brain-divi-addons' ),
+				'description'          => esc_html__( 'Here you can define a custom height for your text separator', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',

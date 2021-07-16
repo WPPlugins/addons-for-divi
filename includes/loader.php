@@ -113,6 +113,9 @@ function ba_register_modules() {
 		require_once plugin_dir_path( __FILE__ ) . 'modules/BusinessHourChild/BusinessHourChild.php';
 	}
 
+	if ( ! in_array( 'gradient-heading', $inactive_modules, true ) ) {
+		require_once plugin_dir_path( __FILE__ ) . 'modules/GradientHeading/GradientHeading.php';
+	}
 }
 
 // Kickoff.

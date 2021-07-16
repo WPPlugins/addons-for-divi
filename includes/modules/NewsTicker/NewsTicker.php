@@ -5,13 +5,13 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 	public $vb_support = 'on';
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/news-ticker/',
+		'module_uri' => 'https://divi.brainaddons.com/news-ticker/',
 		'author'     => 'BrainAddons',
 		'author_uri' => 'https://brainaddons.com/',
 	);
 
 	public function init() {
-		$this->name = esc_html__( 'Brain News Ticker', 'brain-divi-addons' );
+		$this->name      = esc_html__( 'Brain News Ticker', 'brain-divi-addons' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'post-ticker.svg';
 
 		$this->settings_modal_toggles = array(
@@ -30,6 +30,25 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 		);
+
+		$this->custom_css_fields = array(
+			'title'  => array(
+				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-news-title',
+			),
+			'item'  => array(
+				'label'    => esc_html__( 'News Item', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-news-wrap li',
+			),
+			'text'  => array(
+				'label'    => esc_html__( 'News Text', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-news-wrap li a',
+			),
+			'bullet'  => array(
+				'label'    => esc_html__( 'Bullet', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-news-wrap li a:before',
+			),
+		);
 	}
 
 	public function get_fields() {
@@ -39,6 +58,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			// Content.
 			'use_title'          => array(
 				'label'           => esc_html__( 'Use Title', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether title should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -51,8 +71,8 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 			'title'              => array(
 				'label'       => esc_html__( 'Title Text', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define the title text your for news ticker.', 'brain-divi-addons' ),
 				'type'        => 'text',
-				'default'     => 'Breaking News',
 				'toggle_slug' => 'content',
 				'show_if'     => array(
 					'use_title' => 'on',
@@ -61,7 +81,11 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 			'include_categories' => array(
 				'label'            => esc_html__( 'Included Categories', 'brain-divi-addons' ),
+				'description'            => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'brain-divi-addons' ),
 				'type'             => 'categories',
+				'meta_categories'  => array(
+					'current' => esc_html__( 'Current Category', 'brain-divi-addons' ),
+				),
 				'renderer_options' => array(
 					'use_terms' => false,
 				),
@@ -103,6 +127,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 			'news_count'         => array(
 				'label'            => esc_html__( 'News Limit', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Choose how much news you would like to display per module.', 'brain-divi-addons' ),
 				'type'             => 'text',
 				'default'          => '5',
 				'toggle_slug'      => 'content',
@@ -117,6 +142,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 			'post_offset'        => array(
 				'label'            => esc_html__( 'News Offset', 'brain-divi-addons-pro' ),
+				'description'      => esc_html__( 'Choose how many news you would like to skip. These news will not be shown.', 'brain-divi-addons-pro' ),
 				'type'             => 'range',
 				'default'          => '0',
 				'unitless'         => true,
@@ -132,6 +158,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			// settings.
 			'title_pos'          => array(
 				'label'            => esc_html__( 'Title Position', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Define title position to the left, right or center.', 'brain-divi-addons' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified', 'center' ) ),
@@ -144,6 +171,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 			'speed'              => array(
 				'label'          => esc_html__( 'Moving Speed', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define news moving speed.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'fixed_unit'     => 'ms',
 				'default_unit'   => 'ms',
@@ -157,6 +185,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 			'slide_dir'          => array(
 				'label'            => esc_html__( 'Moving Direction', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Define news moving direction.', 'brain-divi-addons' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified', 'center' ) ),
@@ -166,6 +195,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 			'item_spacing'       => array(
 				'label'          => esc_html__( 'Item Spacing', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define spacing between news items.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'fixed_unit'     => 'px',
 				'default_unit'   => 'px',
@@ -179,6 +209,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 			'pause_on_hover'     => array(
 				'label'           => esc_html__( 'Pause on Hover ', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether pause on hover should be activated.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -190,6 +221,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 			'use_bullet'         => array(
 				'label'           => esc_html__( 'Use Bullet Before Item', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether bullet should be used before news items.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -201,6 +233,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 			'bullet_color'       => array(
 				'label'       => esc_html__( 'Bullet Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom color for your bullet.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'toggle_slug' => 'settings',
 				'default'     => '#8a8585',
@@ -212,6 +245,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			// title.
 			'title_padding'      => array(
 				'label'          => __( 'Title Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define custom padding for news ticker title.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'title',
@@ -234,7 +268,15 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 		);
 
-		$title_bg = $this->custom_background_fields( 'title', 'Title', 'advanced', 'title', array( 'color', 'gradient', 'hover' ), array(), '#333' );
+		$title_bg = $this->custom_background_fields(
+			'title',
+			esc_html__( 'Title', 'brain-divi-addons' ),
+			'advanced',
+			'title',
+			array( 'color', 'gradient', 'hover' ),
+			array(),
+			'#333'
+		);
 
 		return array_merge( $fields, $title_bg );
 	}
@@ -364,6 +406,8 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 		$post_id           = isset( $current_page['id'] ) ? (int) $current_page['id'] : 0;
 		$query_args['cat'] = implode( ',', self::filter_include_categories( $include_categories, $post_id ) );
+		
+
 		$query             = new WP_Query( $query_args );
 
 		ob_start();

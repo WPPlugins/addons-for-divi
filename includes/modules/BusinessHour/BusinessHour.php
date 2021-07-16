@@ -6,7 +6,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 	public $child_slug = 'ba_business_hour_child';
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/business-hour/',
+		'module_uri' => 'https://divi.brainaddons.com/business-hour/',
 		'author'     => 'BrainAddons',
 		'author_uri' => 'https://brainaddons.com/',
 	);
@@ -44,6 +44,25 @@ class BA_Business_Hour extends BA_Builder_Module {
 				),
 			),
 		);
+
+		$this->custom_css_fields = array(
+			'title'     => array(
+				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-business-hour-title h2',
+			),
+			'day'       => array(
+				'label'    => esc_html__( 'Day', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-business-hour-day',
+			),
+			'time'      => array(
+				'label'    => esc_html__( 'Time', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-business-hour-time',
+			),
+			'separator' => array(
+				'label'    => esc_html__( 'Separator', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-business-hour-separator',
+			),
+		);
 	}
 
 	public function get_fields() {
@@ -51,6 +70,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 		$content = array(
 			'title' => array(
 				'label'       => esc_html__( 'Title', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define the title text your for business hour.', 'brain-divi-addons' ),
 				'type'        => 'text',
 				'default'     => esc_html__( 'Business Hour', 'brain-divi-addons' ),
 				'toggle_slug' => 'content',
@@ -60,6 +80,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 		$settings = array(
 			'show_title'     => array(
 				'label'           => esc_html__( 'Show Title', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether title should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
@@ -71,6 +92,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'item_spacing'   => array(
 				'label'          => esc_html__( 'Item Spacing Bottom', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of each item.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '25px',
 				'fixed_unit'     => 'px',
@@ -84,9 +106,10 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'show_separator' => array(
 				'label'           => esc_html__( 'Show Text Separator', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether a separator should be used between day and time.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
-				'default'         => 'off',
+				'default'         => 'on',
 				'toggle_slug'     => 'settings',
 				'options'         => array(
 					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
@@ -95,6 +118,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'show_divider'   => array(
 				'label'           => esc_html__( 'Show Item Divider', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether a divider should be used at the bottom of each item.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -106,6 +130,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'divider_type'   => array(
 				'label'       => esc_html__( 'Divider Type', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select item divider type.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'solid_border',
@@ -123,6 +148,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'divider_color'  => array(
 				'label'       => esc_html__( 'Divider Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom color for your item divider.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'toggle_slug' => 'settings',
 				'default'     => '#dddddd',
@@ -132,6 +158,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'divider_weight' => array(
 				'label'          => esc_html__( 'Divider Weight', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom depth for your item divider.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '1px',
 				'fixed_unit'     => 'px',
@@ -147,6 +174,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'divider_height' => array(
 				'label'          => esc_html__( 'Divider Height', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom height for your item divider.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -159,6 +187,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 				'show_if'        => array(
 					'show_divider' => 'on',
 					'divider_type' => array( 'curved_pattern', 'zigzag_pattern' ),
+					'label'        => esc_html__( '', 'brain-divi-addons' ),
 				),
 			),
 		);
@@ -166,6 +195,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 		$general = array(
 			'day_text_width'  => array(
 				'label'          => esc_html__( 'Day Text Width', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom width for your day text.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'default_unit'   => '%',
@@ -180,6 +210,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'time_text_width' => array(
 				'label'          => esc_html__( 'Time Text Width', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom width for your time text.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'default_unit'   => '%',
@@ -194,6 +225,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'item_padding'    => array(
 				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom padding for each item.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'general',
@@ -205,6 +237,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 		$separator = array(
 			'separator_type'   => array(
 				'label'       => esc_html__( 'Separator Type', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select text separator type.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
@@ -223,6 +256,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'separator_gap'    => array(
 				'label'          => esc_html__( 'Separator Spacing', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define separator both side spacing.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'fixed_unit'     => 'px',
@@ -239,6 +273,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'separator_color'  => array(
 				'label'       => esc_html__( 'Separator Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom color for your text separator.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
@@ -249,6 +284,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'separator_weight' => array(
 				'label'          => esc_html__( 'Separator Weight', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom depth for your text separator', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '1px',
 				'fixed_unit'     => 'px',
@@ -265,6 +301,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'separator_height' => array(
 				'label'          => esc_html__( 'Separator Height', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom height for your text separator', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -285,6 +322,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 		$title = array(
 			'title_padding' => array(
 				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a padding for your title.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'bh_title',
@@ -293,6 +331,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 			),
 			'title_spacing' => array(
 				'label'          => esc_html__( 'Spacing Bottom', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '25px',
 				'fixed_unit'     => 'px',
@@ -309,7 +348,15 @@ class BA_Business_Hour extends BA_Builder_Module {
 
 		$title_bg = $this->custom_background_fields( 'title', '', 'advanced', 'bh_title', array( 'color', 'gradient', 'hover', 'image' ), array(), '' );
 
-		$item_bg = $this->custom_background_fields( 'item', 'Item', 'advanced', 'general', array( 'color', 'gradient', 'hover', 'image' ), array(), '' );
+		$item_bg = $this->custom_background_fields(
+			'item',
+			esc_html__( 'Item', 'brain-divi-addons' ),
+			'advanced',
+			'general',
+			array( 'color', 'gradient', 'hover', 'image' ),
+			array(),
+			''
+		);
 
 		return array_merge( $settings, $separator, $content, $general, $title, $title_bg, $item_bg );
 	}
@@ -378,12 +425,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 			'tab_slug'        => 'advanced',
 			'toggle_slug'     => 'title_text',
 			'hide_text_align' => false,
-			'line_height'     => array(
-				'range_settings' => array(
-					'min'  => '1',
-					'max'  => '3',
-					'step' => '.1',
-				),
+			'font_size'       => array(
+				'default' => '26px',
 			),
 		);
 
@@ -397,12 +440,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 			'toggle_slug'     => 'texts',
 			'sub_toggle'      => 'day',
 			'hide_text_align' => false,
-			'line_height'     => array(
-				'range_settings' => array(
-					'min'  => '1',
-					'max'  => '3',
-					'step' => '.1',
-				),
+			'font_size'       => array(
+				'default' => '14px',
 			),
 		);
 
@@ -416,12 +455,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 			'toggle_slug'     => 'texts',
 			'sub_toggle'      => 'time',
 			'hide_text_align' => false,
-			'line_height'     => array(
-				'range_settings' => array(
-					'min'  => '1',
-					'max'  => '3',
-					'step' => '.1',
-				),
+			'font_size'       => array(
+				'default' => '14px',
 			),
 		);
 

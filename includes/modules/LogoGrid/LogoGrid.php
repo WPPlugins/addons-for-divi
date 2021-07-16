@@ -24,27 +24,21 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 			),
 		);
+
+		$this->custom_css_fields = array(
+			'logo'  => array(
+				'label'    => esc_html__( 'Logo', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-logo-grid__item img',
+			),
+		);
 	}
 
 	public function get_fields() {
 
 		$fields = array(
-
-			'grid_height'   => array(
-				'label'          => esc_html__( 'Height', 'brain-divi-addons' ),
-				'type'           => 'range',
-				'toggle_slug'    => 'grid',
-				'default_unit'   => 'px',
-				'mobile_options' => true,
-				'range_settings' => array(
-					'min'  => 0,
-					'max'  => 800,
-					'step' => 1,
-				),
-			),
-
 			'column_count'  => array(
 				'label'          => esc_html__( 'Column', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define grid columns number.', 'brain-divi-addons' ),
 				'type'           => 'select',
 				'default'        => '4',
 				'options'        => array(
@@ -63,8 +57,23 @@ class BA_Logo_Grid extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 
+			'grid_height'   => array(
+				'label'          => esc_html__( 'Column Height', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define grid column height.', 'brain-divi-addons' ),
+				'type'           => 'range',
+				'toggle_slug'    => 'grid',
+				'default_unit'   => 'px',
+				'mobile_options' => true,
+				'range_settings' => array(
+					'min'  => 0,
+					'max'  => 800,
+					'step' => 1,
+				),
+			),
+
 			'grid_gap'      => array(
 				'label'          => esc_html__( 'Grid Gap', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define the spacing between grid columns.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'toggle_slug'    => 'grid',
 				'default'        => '5px',
@@ -79,6 +88,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 			'logo_size'     => array(
 				'label'          => esc_html__( 'Logo Size', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define static logo width.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'toggle_slug'    => 'grid',
 				'default_unit'   => 'px',
@@ -92,6 +102,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 			'image_hover'   => array(
 				'label'       => esc_html__( 'Logo Hover Style', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select logo hover animation.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'grid',
 				'default'     => 'zoom_in',
@@ -106,6 +117,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 			'logo_overflow' => array(
 				'label'       => esc_html__( 'Logo Overflow', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can control logo image overflow on the X and Y axis. If set to hidden, logo will be clipped.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'grid',
 				'default'     => 'visible',

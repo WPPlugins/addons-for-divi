@@ -33,6 +33,7 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 
 			'logo'         => array(
 				'label'              => esc_html__( 'Upload Logo', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload a logo or type in the URL of the logo you would like to display.', 'brain-divi-addons' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'upload_button_text' => esc_attr__( 'Upload a Logo', 'brain-divi-addons' ),
@@ -44,14 +45,15 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'brand_name'   => array(
-				'label'       => esc_html__( 'Brand Name', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Logo Alt Text', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define the HTML ALT text for your logo image here.', 'brain-divi-addons' ),
 				'type'        => 'text',
-				'default'     => esc_html__( 'Brand Name', 'brain-divi-addons' ),
 				'toggle_slug' => 'main_content',
 			),
 
 			'is_link'      => array(
 				'label'           => esc_html__( 'Use Link', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether logo should be linked.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -64,6 +66,7 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 
 			'link_url'     => array(
 				'label'           => esc_html__( 'Link Url', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can define the logo link url.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'default'         => '',
 				'dynamic_content' => 'url',

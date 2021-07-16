@@ -5,7 +5,7 @@
 ?>
 <div class="ba-admin-panel">
 	<div class="ba-extensions-body">
-		<form class="ba-extensions-admin" id="ba-admin-extensions-form">
+		<form class="ba-form-admin ba-extensions-admin" id="ba-admin-extensions-form">
 		<div class="ba-row">
 			<div class="ba-col">
 				<h2 class="ba-section-title">

@@ -6,54 +6,56 @@ defined( 'ABSPATH' ) || die();
 
 class AssetsManager {
 
-    public function __construct() {
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+	public function __construct() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
         if ( isset( $_GET['et_fb'] ) && '1' === $_GET['et_fb'] ) { // phpcs:ignore
-            add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts_vb' ) );
-        }
+			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts_vb' ) );
+		}
 
-    }
+	}
 
-    public function enqueue_scripts() {
+	public function enqueue_scripts() {
 
-        $js_path  = BRAIN_ADDONS_PLUGIN_ASSETS . 'js/';
-        $css_path = BRAIN_ADDONS_PLUGIN_ASSETS . 'css/';
-        $version  = BRAIN_ADDONS_PLUGIN_VERSION;
+		$js_path  = BRAIN_ADDONS_PLUGIN_ASSETS . 'js/';
+		$css_path = BRAIN_ADDONS_PLUGIN_ASSETS . 'css/';
+		$version  = BRAIN_ADDONS_PLUGIN_VERSION;
 
-        // All vendor js.
-        wp_register_script( 'baj-slick', $js_path . 'slick.min.js', array( 'jquery' ), $version, true );
-        wp_register_script( 'baj-twentytwenty', $js_path . 'twentytwenty.min.js', array( 'jquery' ), $version, true );
-        wp_register_script( 'baj-tippy', $js_path . 'tippymin.min.js', array( 'jquery' ), $version, true );
-        wp_register_script( 'baj-event-move', $js_path . 'event_move.min.js', array( 'jquery' ), $version, true );
-        wp_register_script( 'baj-popper', $js_path . 'popper.min.js', array( 'jquery' ), $version, true );
-        wp_register_script( 'baj-typed', $js_path . 'typed.min.js', array( 'jquery' ), $version, true );
-        wp_register_script( 'baj-anime', $js_path . 'anime.min.js', array( 'jquery' ), $version, true );
+		// All vendor js.
+		wp_register_script( 'baj-slick', $js_path . 'slick.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'baj-twentytwenty', $js_path . 'twentytwenty.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'baj-tippy', $js_path . 'tippy.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'baj-event-move', $js_path . 'event_move.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'baj-popper', $js_path . 'popper.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'baj-typed', $js_path . 'typed.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'baj-anime', $js_path . 'anime.min.js', array( 'jquery' ), $version, true );
 
-        // All vendor css.
-        wp_register_style( 'bac-slick', $css_path . 'slick.min.css', array(), $version, 'all' );
-        wp_register_style( 'bac-tippy', $css_path . 'tippy.min.css', array(), $version, 'all' );
+		// All vendor css.
+		wp_register_style( 'bac-slick', $css_path . 'slick.min.css', array(), $version, 'all' );
+		wp_register_style( 'bac-tippy', $css_path . 'tippy.min.css', array(), $version, 'all' );
 
-        // Brainaddons core.
-        $prefix = defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ? '' : '.min';
-        wp_enqueue_style( 'bac-core', $css_path . 'core' . $prefix . '.css', null, $version );
-        wp_enqueue_script( 'baj-main', $js_path . 'main' . $prefix . '.js', array( 'jquery' ), $version, true );
-        wp_register_script( 'baj-marvin', $js_path . 'marvin' . $prefix . '.js', array( 'jquery' ), $version, true );
+		// Brain addons core.
+		$prefix = defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ? '' : '.min';
+		wp_enqueue_style( 'bac-core', $css_path . 'core' . $prefix . '.css', null, $version );
+		wp_enqueue_script( 'baj-main', $js_path . 'main' . $prefix . '.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'baj-marvin', $js_path . 'marvin' . $prefix . '.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( 'baj-default-vb', $js_path . 'ba-default-vb.js', array( 'jquery' ), $version, true );
 
-        // Brainaddons localize.
-        wp_localize_script(
-            'baj-main',
-            'ba_plugin',
-            array(
-                'ajaxurl' => admin_url( 'admin-ajax.php' ),
-                'is_pro'  => ba_has_pro() ? true : false,
-                'nonce'   => wp_create_nonce( 'ba_smart_post_nonce' ),
-            )
-        );
-    }
+		// Brainaddons localize.
+		wp_localize_script(
+			'baj-main',
+			'ba_plugin',
+			array(
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+				'is_pro'  => ba_has_pro() ? true : false,
+				'nonce'   => wp_create_nonce( 'ba_smart_post_nonce' ),
+			)
+		);
+	}
 
-    public function enqueue_scripts_vb() {
-        wp_enqueue_style( 'bac-slick' );
-    }
+	public function enqueue_scripts_vb() {
+		wp_enqueue_style( 'bac-slick' );
+		wp_enqueue_script( 'baj-default-vb' );
+	}
 
 }

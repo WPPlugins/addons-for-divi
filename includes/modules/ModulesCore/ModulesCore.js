@@ -1710,22 +1710,20 @@ export const _getCarouselCss = (props) => {
         additionalCss.push([
             {
                 selector: '%%order_class%% .ba-carousel .slick-dots li button',
-                declaration: `font-size: ${pagi_text}!important; color: ${pagi_color}!important;`,
+                declaration: `font-size: ${pagi_text}!important; color: ${pagi_color};`,
             },
         ]);
-    }
-
-    if (props.hover_enabled === 1) {
         if (pagi_color__hover) {
             additionalCss.push([
                 {
                     selector:
-                        '%%order_class%% .ba-carousel .slick-dots li button',
-                    declaration: `color: ${pagi_color__hover}!important;`,
+                        '%%order_class%% .ba-carousel .slick-dots li:hover button',
+                    declaration: `color: ${pagi_color__hover};`,
                 },
             ]);
         }
     }
+
 
     additionalCss.push([
         {
@@ -1752,13 +1750,16 @@ export const _getCarouselCss = (props) => {
         },
     ]);
 
-    additionalCss.push([
-        {
-            selector:
-                '%%order_class%% .ba-carousel .slick-dots li:hover button',
-            declaration: `background: ${pagi_bg__hover};`,
-        },
-    ]);
+    if( pagi_bg__hover ) {
+        additionalCss.push([
+            {
+                selector:
+                    '%%order_class%% .ba-carousel .slick-dots li:hover button',
+                declaration: `background: ${pagi_bg__hover};`,
+            },
+        ]);
+    }
+
 
     if (pagi_bg_active) {
         additionalCss.push([
@@ -1785,9 +1786,31 @@ export const _getCarouselCss = (props) => {
             {
                 selector:
                     '%%order_class%% .ba-carousel .slick-dots li.slick-active button',
-                declaration: `color: ${pagi_text_active}!important;`,
+                declaration: `color: ${pagi_text_active};`,
             },
         ]);
+    }
+
+    if (props.hover_enabled === 1) {
+        if (pagi_color__hover) {
+            additionalCss.push([
+                {
+                    selector:
+                        '%%order_class%% .ba-carousel .slick-dots li button',
+                    declaration: `color: ${pagi_color__hover};`,
+                },
+            ]);
+        }
+
+         if (pagi_bg__hover) {
+            additionalCss.push([
+                {
+                    selector:
+                        '%%order_class%% .ba-carousel .slick-dots li button',
+                    declaration: `background: ${pagi_bg__hover};`,
+                },
+            ]);
+        }
     }
 
     return additionalCss;
@@ -1796,13 +1819,21 @@ export const _getCarouselCss = (props) => {
 export const hex2rgba = (hex, alpha = 1) => {
     const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
     return `rgba(${r},${g},${b},${alpha})`;
+  };
+
+  export const get_pattern = ( name, color, weight ) => {
+
+	let pattern = {
+		'curved' : `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' stroke='${color}' stroke-width='${weight}' fill='none' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='M0,6c6,0,6,13,12,13S18,6,24,6'/%3E%3C/svg%3E`,
+
+		'zigzag' : `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' stroke='${color}' stroke-width='${weight}' fill='none' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpolyline points='0,18 12,6 24,18 '/%3E%3C/svg%3E`,
+
+		'square': `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' fill='none' stroke='${color}' stroke-width='${weight}' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpolyline points='0,6 6,6 6,18 18,18 18,6 24,6 '/%3E%3C/svg%3E`,
+
+		'curly': `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' fill='none' stroke='${color}' stroke-width='${weight}' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='M0,21c3.3,0,8.3-0.9,15.7-7.1c6.6-5.4,4.4-9.3,2.4-10.3c-3.4-1.8-7.7,1.3-7.3,8.8C11.2,20,17.1,21,24,21'/%3E%3C/svg%3E`,
+	};
+
+	return pattern[name];
 };
 
-export const get_pattern = (name, color, weight) => {
-    let pattern = {
-        curved: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' stroke='${color}' stroke-width='${weight}' fill='none' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='M0,6c6,0,6,13,12,13S18,6,24,6'/%3E%3C/svg%3E`,
-        zigzag: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' stroke='${color}' stroke-width='${weight}' fill='none' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpolyline points='0,18 12,6 24,18 '/%3E%3C/svg%3E`,
-    };
 
-    return pattern[name];
-};

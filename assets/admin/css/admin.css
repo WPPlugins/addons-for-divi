@@ -466,6 +466,7 @@ a:hover {
 
 .ba-admin-button-panel {
     border-top: 1px dotted #e8e8e8;
+    padding-top: 15px;
 }
 
 .ba-admin .panel.options.active {

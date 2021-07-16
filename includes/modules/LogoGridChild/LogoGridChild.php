@@ -32,6 +32,7 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 			'logo_url'     => array(
 				'label'              => esc_html__( 'Upload Logo', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload a logo or type in the URL of the logo you would like to display.', 'brain-divi-addons' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'upload_button_text' => esc_attr__( 'Upload a Logo', 'brain-divi-addons' ),
@@ -41,7 +42,8 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 			),
 
 			'brand_name'   => array(
-				'label'       => esc_html__( 'Brand Name', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Logo Alt Text', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define alt text for html img tag.', 'brain-divi-addons' ),
 				'type'        => 'text',
 				'default'     => esc_html__( 'Brand Name', 'brain-divi-addons' ),
 				'toggle_slug' => 'main_content',
@@ -58,6 +60,7 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 			'tooltip_text' => array(
 				'label'       => esc_html__( 'Tooltip Text', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define tooltip text for logo image.', 'brain-divi-addons' ),
 				'type'        => 'text',
 				'default'     => esc_html__( 'Tooltip!', 'brain-divi-addons' ),
 				'toggle_slug' => 'main_content',
@@ -68,6 +71,7 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 			'theme'        => array(
 				'label'       => esc_html__( 'Theme', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select tooltip theme.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'tooltip',
 				'tab_slug'    => 'advanced',
@@ -83,6 +87,7 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 			'position'     => array(
 				'label'       => esc_html__( 'Position', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select tooltip position.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'tooltip',
 				'tab_slug'    => 'advanced',
@@ -100,6 +105,7 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 			'animation'    => array(
 				'label'       => esc_html__( 'Animation', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select tooltip animation.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'tooltip',
 				'tab_slug'    => 'advanced',

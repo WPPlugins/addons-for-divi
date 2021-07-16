@@ -43,8 +43,42 @@ class BaPostHelper {
 		);
 	}
 
-	public static function get_post_categories() {
-		return '<div class="ba-post-categories">' . et_builder_get_the_term_list( ', ' ) . '</div>';
+	//public static function get_post_categories() {
+		//return '<div class="ba-post-categories">' . et_builder_get_the_term_list( ', ' ) . '</div>';
+	//}
+
+	public static function get_post_categories( $show_first_category, $include_categories, $class_name ) {
+		if ( 'off' === $show_first_category ) {
+			return sprintf(
+				'<div class="%2$s">%1$s</div>',
+				et_builder_get_the_term_list( ', ' ),
+				$class_name
+			);
+		} else {
+
+			$pattern            = '/,?current/';
+			$include_categories = preg_replace( $pattern, '', $include_categories );
+			$pattern            = '/^,?/';
+			$include_categories = preg_replace( $pattern, '', $include_categories );
+
+			if ( ! empty( $include_categories ) ) {
+				$categories_ids = explode( ',', $include_categories );
+			} else {
+				$categories_ids = get_terms(
+					array( 'category' ),
+					array( 'fields' => 'ids' )
+				);
+			}
+
+			//print_r( $categories_ids );
+
+			return sprintf(
+				'<div class="%3$s"><a rel="tag" href="%2$s">%1$s</a></div>',
+				get_the_category_by_ID( $categories_ids[0] ),
+				get_category_link( $categories_ids[0] ),
+				$class_name
+			);
+		}
 	}
 
 	public static function get_post_button(

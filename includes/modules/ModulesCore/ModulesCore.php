@@ -1,6 +1,8 @@
 <?php
 class BA_Builder_Module extends ET_Builder_Module {
 
+	public $default_color = '#1D39D8';
+
 	protected function custom_background_fields(
 		$option_name,
 		$option_label,
@@ -15,6 +17,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		$image           = array();
 		$gradient        = array();
 		$advanced_fields = array();
+		$help_text       = esc_html__( 'Adjust the background style of this element by customizing the background color', 'brain-divi-addons' );
 
 		if ( in_array( 'color', $background_tab, true ) ) {
 			$color = $this->generate_background_options(
@@ -27,7 +30,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 		}
 
 		if ( in_array( 'gradient', $background_tab, true ) ) {
-			$gradient = $this->generate_background_options(
+			$help_text = $help_text . ', ' . esc_html__( 'gradient', 'brain-divi-addons' );
+			$gradient  = $this->generate_background_options(
 				"{$option_name}_bg",
 				'gradient',
 				$tab_slug,
@@ -37,7 +41,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 		}
 
 		if ( in_array( 'image', $background_tab, true ) ) {
-			$image = $this->generate_background_options(
+			$help_text = $help_text . ', ' . esc_html__( 'image', 'brain-divi-addons' );
+			$image     = $this->generate_background_options(
 				"{$option_name}_bg",
 				'image',
 				$tab_slug,
@@ -47,7 +52,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 		}
 
 		$advanced_fields[ "{$option_name}_bg_color" ] = array(
-			'label'             => sprintf( esc_html__( '%1$s Background', 'brain-divi-addons' ), $option_label ),
+			'label'             => sprintf( '%1$s %2$s', $option_label, esc_html__( 'Background', 'brain-divi-addons' ) ),
+			'description'       => $help_text . '.',
 			'type'              => 'background-field',
 			'base_name'         => "{$option_name}_bg",
 			'context'           => "{$option_name}_bg_color",
@@ -316,26 +322,26 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 		$is_enabled = false;
 		$style      = $styles['primary'];
-		$_data      = $this->props[ "{$opt_name}" ];
+		$_data      = $this->props[ $opt_name ];
 
 		if ( isset( $this->props[ "{$opt_name}_last_edited" ] ) ) {
 			$is_enabled = et_pb_get_responsive_status( $this->props[ "{$opt_name}_last_edited" ] );
 		}
 
 		if ( empty( $_data ) && ! empty( $pre_values ) ) {
+			$is_default = true;
 			if ( ! empty( $pre_values['conditional'] ) ) {
-				$is_default = true;
 				foreach ( $pre_values['conditional']['values'] as $value ) {
-					$property_val = $this->props[ "{$pre_values['conditional']['name']}" ];
+					$property_val = $this->props[ $pre_values['conditional']['name'] ];
 					if ( $property_val === $value['a'] ) {
 						$_data      = $value['b'];
 						$is_default = false;
 					}
 				}
+			}
 
-				if ( $is_default ) {
-					$_data = $pre_values['default'];
-				}
+			if ( $is_default ) {
+				$_data = $pre_values['default'];
 			}
 		}
 
@@ -416,7 +422,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 		$fields = array(
 			"{$prefix}_position"    => array(
-				'label'       => esc_html__( "{$label} Position", 'brain-divi-addons' ),
+				'label'       => $label . esc_html__( ' Position', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select ', 'brain-divi-addons' ) . $label . esc_html__( ' placement.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => $slug,
@@ -432,6 +439,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			"{$prefix}_is_center_x" => array(
 				'label'           => esc_html__( 'Use Horizontal Position Center', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'If enabled ', 'brain-divi-addons' ) . $label . esc_html__( ' will be in horizontally center position.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -445,7 +453,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 			),
 
 			"{$prefix}_offset_x"    => array(
-				'label'          => esc_html__( "{$label} Offset X", 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Horizontal Offset', 'brain-divi-addons' ),
+				'description'    => $label . esc_html__( ' Horizontal offset value.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default'        => $defaults['offset_x'],
@@ -461,6 +470,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			"{$prefix}_is_center_y" => array(
 				'label'           => esc_html__( 'Use Vertical Position Center', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'If enabled ', 'brain-divi-addons' ) . $label . esc_html__( ' will be in vertically center position.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -474,7 +484,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 			),
 
 			"{$prefix}_offset_y"    => array(
-				'label'          => esc_html__( "{$label} Offset Y", 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Vertical Offset', 'brain-divi-addons' ),
+				'description'    => $label . esc_html__( ' vertical offset value.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default'        => $defaults['offset_y'],
@@ -493,10 +504,10 @@ class BA_Builder_Module extends ET_Builder_Module {
 	}
 
 	protected function get_badge_options( $prefix, $label, $slug, $defaults ) {
-
 		$fields = array(
 			"{$prefix}_padding" => array(
-				'label'          => esc_html__( "{$label} Padding", 'brain-divi-addons' ),
+				'label'          => $label . esc_html__( ' Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'mobile_options' => true,
@@ -505,8 +516,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 			),
 		);
 
-		$badge_opts = $this->get_absolute_element_options( 'badge', 'Badge', 'badge', $defaults, array() );
-		$badge_bg   = $this->custom_background_fields( 'badge', 'Badge', 'advanced', 'badge', array( 'color', 'gradient', 'hover' ), array(), $defaults['bg'] );
+		$badge_opts = $this->get_absolute_element_options( 'badge', $label, 'badge', $defaults, array() );
+		$badge_bg   = $this->custom_background_fields( 'badge', $label, 'advanced', 'badge', array( 'color', 'gradient', 'hover' ), array(), $defaults['bg'] );
 		return array_merge( $badge_opts, $fields, $badge_bg );
 	}
 
@@ -690,6 +701,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		$fields = array(
 			'overlay_on_hover'     => array(
 				'label'           => esc_html__( 'Show Overlay on Hover', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Enable overlay during hover.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -703,6 +715,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			),
 			'overlay_hover_speed'  => array(
 				'label'          => esc_html__( 'Overlay Hover Speed', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Set how long it will take for the overlay to be visible', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'fixed_unit'     => 'ms',
 				'default'        => '300ms',
@@ -717,6 +730,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			),
 			'overlay_icon'         => array(
 				'label'           => esc_html__( 'Overlay Icon', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Select icon for the overlay', 'brain-divi-addons' ),
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
 				'toggle_slug'     => $opt_slug,
@@ -725,6 +739,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			),
 			'overlay_icon_color'   => array(
 				'label'       => esc_html__( 'Overlay Icon Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom color for your overlay icon.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'default'     => '#2EA3F2',
@@ -734,6 +749,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			),
 			'overlay_icon_size'    => array(
 				'label'          => esc_html__( 'Overlay Icon Size', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a icon size for your overlay icon.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '32px',
 				'hover'          => 'tabs',
@@ -748,6 +764,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			),
 			'overlay_icon_opacity' => array(
 				'label'          => esc_html__( 'Overlay Icon Opacity', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Select the opacity of the overlay icon. Set the value from 0 - 1. The lower value, the more transparent.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '1',
 				'unitless'       => true,
@@ -764,7 +781,15 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 		);
 
-		$overlay = $this->custom_background_fields( 'overlay', 'Overlay', 'advanced', $opt_slug, array( 'color', 'gradient' ), $show_if, '' );
+		$overlay = $this->custom_background_fields(
+			'overlay',
+			esc_html__( 'Overlay', 'brain-divi-addons' ),
+			'advanced',
+			$opt_slug,
+			array( 'color', 'gradient' ),
+			$show_if,
+			''
+		);
 
 		return array_merge( $overlay, $fields );
 
@@ -897,9 +922,10 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 		$fields = array(
 
-			// Carousel Settings
+			// Carousel Settings.
 			'animation_speed'         => array(
 				'label'           => esc_html__( 'Animation Speed', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can define sliding Speed.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '700ms',
@@ -916,6 +942,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'is_autoplay'             => array(
 				'label'       => esc_html__( 'Autoplay', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can choose whether autoplay should be used.', 'brain-divi-addons' ),
 				'type'        => 'yes_no_button',
 				'default'     => 'on',
 				'toggle_slug' => 'carousel_settings',
@@ -929,6 +956,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'autoplay_speed'          => array(
 				'label'          => esc_html__( 'Autoplay Speed', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define sliding autoplay speed for the carousel.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '2000ms',
 				'fixed_unit'     => 'ms',
@@ -944,6 +972,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'use_nav'                 => array(
 				'label'           => esc_html__( 'Use Navigation', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether navigation should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
@@ -959,6 +988,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'use_pagi'                => array(
 				'label'           => esc_html__( 'Use Pagination', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether pagination should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -974,6 +1004,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'is_variable_width'       => array(
 				'label'           => esc_html__( 'Use Fixed Width Slide', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether fixed width slider item should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -988,6 +1019,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'slide_width'             => array(
 				'label'          => esc_html__( 'Slide Width', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define fixed width for the slides.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '360px',
 				'fixed_unit'     => 'px',
@@ -1004,6 +1036,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'slide_count'             => array(
 				'label'          => esc_html__( 'Slides To Show', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define how many items you want to display in the carousel.', 'brain-divi-addons' ),
 				'type'           => 'select',
 				'default'        => $slide_count,
 				'toggle_slug'    => 'carousel_settings',
@@ -1024,6 +1057,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'slide_spacing'           => array(
 				'label'          => esc_html__( 'Slide Spacing', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define spaces between carousel items.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -1039,6 +1073,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'use_both_side_spacing'   => array(
 				'label'           => esc_html__( 'Apply Spacing on First & Last Item', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'If enable slide spacing will be applied to the first and last item.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
@@ -1054,6 +1089,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'is_infinite'             => array(
 				'label'           => esc_html__( 'Infinite looping', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Choose whether the endless of times sliding should be played or not.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
@@ -1068,6 +1104,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'css_transition'          => array(
 				'label'       => esc_html__( 'Sliding CSS Transition', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define sliding CSS transition during the carousel animation.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'ease-in-out',
 				'toggle_slug' => 'carousel_settings',
@@ -1082,6 +1119,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'is_swipe'                => array(
 				'label'           => esc_html__( 'Swipe', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether carousel swipe should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
@@ -1097,6 +1135,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'slide_to_scroll'         => array(
 				'label'           => esc_html__( 'Items to Scroll', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define how many slides to move at once.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'default'         => '1',
 				'option_category' => 'basic_option',
@@ -1114,6 +1153,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'is_vertical'             => array(
 				'label'           => esc_html__( 'Vertical Mode', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether carousel vertical mode should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -1128,6 +1168,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'is_center'               => array(
 				'label'           => esc_html__( 'Center Mode', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether center mode should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -1142,6 +1183,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'center_mode_type'        => array(
 				'label'       => esc_html__( 'Center Mode Type', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define center mode type from the list.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'classic',
 				'toggle_slug' => 'carousel_settings',
@@ -1156,6 +1198,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'center_padding'          => array(
 				'label'          => esc_html__( 'Center Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define side padding when in center mode.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '70px',
 				'fixed_unit'     => 'px',
@@ -1179,6 +1222,11 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'wait_for_animate'        => array(
 				'label'           => esc_html__( 'Wait For Animate', 'brain-divi-addons' ),
+				'description'     => esc_html__(
+					'Ignores requests to advance the slide while animating
+				.',
+					'brain-divi-addons'
+				),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
@@ -1193,6 +1241,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'custom_cursor'           => array(
 				'label'           => esc_html__( 'Use Custom Cursor', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether custom cursor should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -1207,6 +1256,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'cursor_name'             => array(
 				'label'       => esc_html__( 'Cursor Name', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define cursor name from the list.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'css_default',
 				'toggle_slug' => 'carousel_settings',
@@ -1226,6 +1276,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			// Carousel style.
 			'carousel_spacing_top'    => array(
 				'label'          => esc_html__( 'Wrapper Spacing Top', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define spacing at the top of the carousel.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '50px',
 				'fixed_unit'     => 'px',
@@ -1242,6 +1293,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'carousel_spacing_bottom' => array(
 				'label'          => esc_html__( 'Wrapper Spacing Bottom', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define spacing at the bottom of the carousel.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '50px',
 				'fixed_unit'     => 'px',
@@ -1256,9 +1308,10 @@ class BA_Builder_Module extends ET_Builder_Module {
 				'show_if'        => $show_if,
 			),
 
-			// Navigation
+			// Navigation.
 			'nav_type'                => array(
 				'label'       => esc_html__( 'Type', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define navigation type.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'default',
 				'toggle_slug' => 'nav',
@@ -1273,6 +1326,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_pos'                 => array(
 				'label'       => esc_html__( 'Vertical Placement', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define navigation vertical placement.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'top',
 				'toggle_slug' => 'nav',
@@ -1287,6 +1341,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_pos_hz'              => array(
 				'label'       => esc_html__( 'Horizontal Placement', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define navigation horizontal placement.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'left',
 				'toggle_slug' => 'nav',
@@ -1301,6 +1356,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_height'              => array(
 				'label'           => esc_html__( 'Height', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can define custom height for the navigation buttons.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '40px',
@@ -1319,6 +1375,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_width'               => array(
 				'label'           => esc_html__( 'Width', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can define custom width for the navigation buttons.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '40px',
@@ -1337,6 +1394,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_icon_size'           => array(
 				'label'           => esc_html__( 'Icon Size', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define icon size for the navigation.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '30px',
@@ -1354,10 +1412,11 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_color'               => array(
 				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Pick a color for the navigation icon.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'nav',
-				'default'     => '#333',
+				'default'     => '#333333',
 				'sub_toggle'  => 'nav_common',
 				'hover'       => 'tabs',
 				'show_if'     => $show_if,
@@ -1365,6 +1424,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_bg'                  => array(
 				'label'       => esc_html__( 'Background', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Pick a color to use for navigation background.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'nav',
@@ -1376,6 +1436,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_skew'                => array(
 				'label'           => esc_html__( 'Skew', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define a value to skew navigation buttons in a two-dimensional space.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '0deg',
@@ -1394,6 +1455,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_gap'                 => array(
 				'label'           => esc_html__( 'Spacing Between', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define spacing between navigation buttons.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '10px',
@@ -1412,6 +1474,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_pos_y'               => array(
 				'label'           => esc_html__( 'Vertical Position', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define a value for the navigation vertical placement.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '50%',
@@ -1429,6 +1492,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_x_center'            => array(
 				'label'       => esc_html__( 'Use Horizontal Position Center', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can choose whether navigation should be horizontal center.', 'brain-divi-addons' ),
 				'type'        => 'yes_no_button',
 				'default'     => 'off',
 				'toggle_slug' => 'nav',
@@ -1443,6 +1507,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_pos_x'               => array(
 				'label'           => esc_html__( 'Horizontal Position', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define a value for the navigation horizontal placement.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'mobile_options'  => true,
@@ -1463,6 +1528,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_border_width'        => array(
 				'label'           => esc_html__( 'Border Width', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define border width for the navigation.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '0px',
@@ -1480,6 +1546,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_border_color'        => array(
 				'label'       => esc_html__( 'Border Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Pick a color to use for navigation border.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'default'     => '#333',
 				'toggle_slug' => 'nav',
@@ -1491,6 +1558,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'nav_border_style'        => array(
 				'label'       => esc_html__( 'Border Type', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Borders support various different styles, each of which will change the shape of the border element.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'solid',
 				'toggle_slug' => 'nav',
@@ -1510,9 +1578,10 @@ class BA_Builder_Module extends ET_Builder_Module {
 				'show_if'     => $show_if,
 			),
 
-			// Left Arrow
+			// Left Arrow.
 			'icon_left'               => array(
-				'label'           => esc_html__( 'Left Icon', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Prev Icon', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define custom icon for the prev navigation button.', 'brain-divi-addons' ),
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
 				'toggle_slug'     => 'nav',
@@ -1523,6 +1592,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'left_border_radius'      => array(
 				'label'       => esc_html__( 'Border Radius', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can control the corner radius of the prev nav. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'brain-divi-addons' ),
 				'type'        => 'border-radius',
 				'default'     => 'on|40px|40px|40px|40px',
 				'toggle_slug' => 'nav',
@@ -1533,7 +1603,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			// Right Arrow
 			'icon_right'              => array(
-				'label'           => esc_html__( 'Right Icon', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Next Icon', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define custom icon for the next navigation button.', 'brain-divi-addons' ),
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
 				'toggle_slug'     => 'nav',
@@ -1544,6 +1615,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'right_border_radius'     => array(
 				'label'       => esc_html__( 'Border Radius', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can control the corner radius of the next nav. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'brain-divi-addons' ),
 				'type'        => 'border-radius',
 				'default'     => 'on|40px|40px|40px|40px',
 				'toggle_slug' => 'nav',
@@ -1555,6 +1627,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			// pagination
 			'pagi_type'               => array(
 				'label'       => esc_html__( 'Type', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Define pagination type from the list.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'dot',
 				'toggle_slug' => 'pagi',
@@ -1569,6 +1642,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_alignment'          => array(
 				'label'            => esc_html__( 'Alignment', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Align pagination to the left, right or center.', 'brain-divi-addons' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -1583,6 +1657,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_color'              => array(
 				'label'       => esc_html__( 'Text Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Pick a color to use for the pagination text.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'pagi',
@@ -1594,6 +1669,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_text'               => array(
 				'label'           => esc_html__( 'Text Size', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define a size to use for the pagination text.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '18px',
@@ -1610,6 +1686,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_bg'                 => array(
 				'label'       => esc_html__( 'Background', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Pick a color to use for the pagination background.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'pagi',
@@ -1621,6 +1698,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_height'             => array(
 				'label'           => esc_html__( 'Height', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define a height for the pagination dots.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '10px',
@@ -1637,6 +1715,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_width'              => array(
 				'label'           => esc_html__( 'Width', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define a width for the pagination dots.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '10px',
@@ -1653,6 +1732,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_radius'             => array(
 				'label'       => esc_html__( 'Border Radius', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can control the corner radius of the dots. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'brain-divi-addons' ),
 				'type'        => 'border-radius',
 				'default'     => 'on|10px|10px|10px|10px',
 				'toggle_slug' => 'pagi',
@@ -1663,6 +1743,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_pos_y'              => array(
 				'label'          => esc_html__( 'Vertical Position', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define a value for the pagination vertical placement.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'toggle_slug'    => 'pagi',
@@ -1678,6 +1759,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_spacing'            => array(
 				'label'          => esc_html__( 'Spacing', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define spacing between pagination dots.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -1694,6 +1776,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_bg_active'          => array(
 				'label'       => esc_html__( 'Background', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Pick a color to use for the active pagination dot.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'pagi',
@@ -1703,6 +1786,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_text_active'        => array(
 				'label'       => esc_html__( 'Text Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Pick a color to use for the active pagination text.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'pagi',
@@ -1712,6 +1796,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			'pagi_width_active'       => array(
 				'label'          => esc_html__( 'Width', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define a width for the active pagination dot.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'fixed_unit'     => 'px',
 				'toggle_slug'    => 'pagi',
@@ -1731,6 +1816,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 			$aditional['use_lightbox'] = array(
 				'label'           => esc_html__( 'Open Image in Lightbox', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether image should be opened with lightbox.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
@@ -2107,7 +2193,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .ba-carousel .slick-dots li button',
-					'declaration' => "font-size: {$pagi_text}!important; color: {$pagi_color}!important;",
+					'declaration' => "font-size: {$pagi_text}!important; color: {$pagi_color};",
 				)
 			);
 
@@ -2116,7 +2202,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .ba-carousel .slick-dots li:hover button',
-						'declaration' => "color: {$pagi_color_hover}!important;",
+						'declaration' => "color: {$pagi_color_hover};",
 					)
 				);
 			}
@@ -2712,7 +2798,6 @@ class BA_Builder_Module extends ET_Builder_Module {
 		return $carousel_options;
 	}
 
-
 	protected function get_buttons_styles( $prefix, $render_slug, $selector ) {
 
 		$custom_padding                   = $this->props[ "{$prefix}_custom_padding" ];
@@ -2817,7 +2902,6 @@ class BA_Builder_Module extends ET_Builder_Module {
 		);
 	}
 
-
 	protected function hex_to_rgb( $hex ) {
 
 		$hex      = str_replace( '#', '', $hex );
@@ -2832,7 +2916,13 @@ class BA_Builder_Module extends ET_Builder_Module {
 	protected function get_pattern( $name, $color, $weight ) {
 		$pattern = array(
 			'curved' => "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' stroke='" . $color . "' stroke-width='" . $weight . "' fill='none' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='M0,6c6,0,6,13,12,13S18,6,24,6'/%3E%3C/svg%3E",
+
 			'zigzag' => "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' stroke='" . $color . "' stroke-width='" . $weight . "' fill='none' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpolyline points='0,18 12,6 24,18 '/%3E%3C/svg%3E",
+
+			'square' => "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' fill='none' stroke='" . $color . "' stroke-width='" . $weight . "' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpolyline points='0,6 6,6 6,18 18,18 18,6 24,6 '/%3E%3C/svg%3E",
+
+			'curly'  => "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' overflow='visible' height='100%' viewBox='0 0 24 24' fill='none' stroke='" . $color . "' stroke-width='" . $weight . "' stroke-linecap='square' stroke-miterlimit='10'%3E%3Cpath d='M0,21c3.3,0,8.3-0.9,15.7-7.1c6.6-5.4,4.4-9.3,2.4-10.3c-3.4-1.8-7.7,1.3-7.3,8.8C11.2,20,17.1,21,24,21'/%3E%3C/svg%3E",
+
 		);
 
 		return $pattern[ $name ];

@@ -30,7 +30,7 @@
         $tabsNav.find('a[href="' + window.location.hash + '"]').click();
     }
 
-    var $adminForm = $('.ba-modules-admin'),
+    var $adminForm = $('.ba-form-admin'),
         $saveButton = $adminForm.find('.ba-btn-save');
 
     $adminForm.on('submit', function(e) {

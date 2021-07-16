@@ -2,7 +2,7 @@
 class BA_Animated_Text extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/animated-text/',
+		'module_uri' => 'https://divi.brainaddons.com/animated-text/',
 		'author'     => 'BrainAddons',
 		'author_uri' => 'https://brainaddons.com/',
 	);
@@ -17,8 +17,8 @@ class BA_Animated_Text extends BA_Builder_Module {
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content'  => esc_html__( 'Content', 'brain-divi-addons' ),
-					'settings' => esc_html__( 'Settings', 'brain-divi-addons' ),
+					'main_content' => esc_html__( 'Content', 'brain-divi-addons' ),
+					'settings'     => esc_html__( 'Settings', 'brain-divi-addons' ),
 				),
 			),
 			'advanced' => array(
@@ -29,22 +29,32 @@ class BA_Animated_Text extends BA_Builder_Module {
 			),
 
 		);
+
+		$this->custom_css_fields = array(
+			'animated_text' => array(
+				'label'    => esc_html__( 'Animated Text', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-animated-text-head',
+			),
+		);
 	}
 
 	public function get_fields() {
 
 		$content = array(
 			'animated_text' => array(
-				'label'       => esc_html__( 'Animated Text', 'brain-divi-addons' ),
-				'type'        => 'textarea',
-				'default'     => esc_html__( 'Text 1 | Text 2', 'brain-divi-addons' ),
-				'toggle_slug' => 'main_content',
+				'label'           => esc_html__( 'Animated Text', 'brain-divi-addons-pro' ),
+				'description'     => esc_html__( 'Animated Text', 'brain-divi-addons-pro' ),
+				'type'            => 'options_list',
+				'option_category' => 'basic_option',
+				'default'         => '[{"value":"Brain Addons","checked":0,"dragID":-1},{"value":"Animated Text","checked":0,"dragID":0}]',
+				'toggle_slug'     => 'main_content',
 			),
 		);
 
 		$settings = array(
 			'animation_type'  => array(
 				'label'       => esc_html__( 'Select Animation', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select text animation type.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'typed',
@@ -54,9 +64,10 @@ class BA_Animated_Text extends BA_Builder_Module {
 			),
 			'animation_speed' => array(
 				'label'          => esc_html__( 'Animation Speed', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Increase or decrease text animation speed.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'fixed_unit'     => 'ms',
-				'default'        => '0ms',
+				'default'        => '100ms',
 				'range_settings' => array(
 					'min'  => 0,
 					'step' => 1,
@@ -66,6 +77,7 @@ class BA_Animated_Text extends BA_Builder_Module {
 			),
 			'start_delay'     => array(
 				'label'          => esc_html__( 'Start Delay', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Specifies a delay for the start of text animation.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'fixed_unit'     => 'ms',
 				'default'        => '300ms',
@@ -78,9 +90,10 @@ class BA_Animated_Text extends BA_Builder_Module {
 			),
 			'back_speed'      => array(
 				'label'          => esc_html__( 'Type Back Speed', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Increase or decrease typing back animation speed.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'fixed_unit'     => 'ms',
-				'default'        => '0ms',
+				'default'        => '50ms',
 				'range_settings' => array(
 					'min'  => 0,
 					'step' => 1,
@@ -90,6 +103,7 @@ class BA_Animated_Text extends BA_Builder_Module {
 			),
 			'back_delay'      => array(
 				'label'          => esc_html__( 'Type Back Delay', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Specifies a delay for the start of typing back animation.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'fixed_unit'     => 'ms',
 				'default'        => '500ms',
@@ -102,6 +116,7 @@ class BA_Animated_Text extends BA_Builder_Module {
 			),
 			'use_loop'        => array(
 				'label'           => esc_html__( 'Animation Loop', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Choose whether the endless of times an animation should be played or not.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -113,6 +128,7 @@ class BA_Animated_Text extends BA_Builder_Module {
 			),
 			'show_cursor'     => array(
 				'label'           => esc_html__( 'Show Cursor', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Show or hide cursor during text animation.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -124,6 +140,7 @@ class BA_Animated_Text extends BA_Builder_Module {
 			),
 			'cursor_text'     => array(
 				'label'       => esc_html__( 'Cursor Symbol', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom typographic symbol for your cursor pointer.', 'brain-divi-addons' ),
 				'type'        => 'textarea',
 				'default'     => esc_html__( '|', 'brain-divi-addons' ),
 				'toggle_slug' => 'settings',
@@ -136,6 +153,7 @@ class BA_Animated_Text extends BA_Builder_Module {
 		$general = array(
 			'text_alignment' => array(
 				'label'           => esc_html__( 'Text Alignment', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Align text to the left, right or center.', 'brain-divi-addons' ),
 				'type'            => 'text_align',
 				'option_category' => 'layout',
 				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -185,8 +203,21 @@ class BA_Animated_Text extends BA_Builder_Module {
 		$animated_level = esc_html( $animated_level );
 		$order_class    = self::get_module_order_class( $render_slug );
 		$order_number   = str_replace( '_', '', str_replace( $this->slug, '', $order_class ) );
+		$items          = array();
 
-		$settings['strings']    = explode( '|', $this->props['animated_text'] );
+		if ( '[' === $this->props['animated_text'][0] || '&' === $this->props['animated_text'][0] ) {
+			$animated_text = str_replace(
+				array( '&#91;', '&#93;' ),
+				array( '[', ']' ),
+				$this->props['animated_text']
+			);
+			$json          = json_decode( $animated_text );
+			foreach ( $json as $item ) {
+				array_push( $items, $item->value );
+			}
+		}
+
+		$settings['strings']    = $items;
 		$settings['cursorChar'] = $this->props['cursor_text'];
 		$settings['showCursor'] = 'on' === $this->props['show_cursor'] ? true : false;
 		$settings['loop']       = 'on' === $this->props['use_loop'] ? true : false;
@@ -198,7 +229,7 @@ class BA_Animated_Text extends BA_Builder_Module {
 		$data_settings = sprintf( 'data-settings="%1$s"', htmlspecialchars( wp_json_encode( $settings ), ENT_QUOTES, 'UTF-8' ) );
 
 		return sprintf(
-			'<div id="ba-animated-text-%3$s" class="ba-module ba-animated-text ba-front" %2$s>
+			'<div id="ba-animated-text-%3$s" class="ba-module ba-animated-text  ba-animated-text-lt ba-front" %2$s>
 				<%1$s class="ba-animated-text-head"><span class="ba-typed-text"></span></%1$s>
 			</div>',
 			$animated_level,

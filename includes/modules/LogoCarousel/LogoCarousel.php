@@ -66,6 +66,33 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 				),
 			),
 		);
+
+		$this->custom_css_fields = array(
+			'logo'  => array(
+				'label'    => esc_html__( 'Logo', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba_logo_carousel_child img',
+			),
+			'nav_prev'  => array(
+				'label'    => esc_html__( 'Prev (Navigation)', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-arrow.slick-prev',
+			),
+			'nav_next'  => array(
+				'label'    => esc_html__( 'Next (Navigation)', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-arrow.slick-next',
+			),
+			'pagi_dots'  => array(
+				'label'    => esc_html__( 'Pagination Wrapper', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-dots',
+			),
+			'pagi_item'  => array(
+				'label'    => esc_html__( 'Pagination Item', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-dots li',
+			),
+			'pagi_dot'  => array(
+				'label'    => esc_html__( 'Pagination Dot', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .slick-dots button',
+			),
+		);
 	}
 
 	public function get_fields() {
@@ -76,6 +103,7 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 
 			'logo_height' => array(
 				'label'           => esc_html__( 'Height', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define custom logo height.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => 'auto',
@@ -91,6 +119,7 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 
 			'logo_width'  => array(
 				'label'           => esc_html__( 'Width', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define custom logo width.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => 'auto',
@@ -106,6 +135,7 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 
 			'logo_hover'  => array(
 				'label'       => esc_html__( 'Logo Hover Animation', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select hover animation for the logo.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'logo_settings',
 				'default'     => 'zoom_in',

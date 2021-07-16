@@ -18,14 +18,14 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'twitter_feed' => esc_html__( 'Twitter Feed', 'brain-divi-addons' ),
-					'elements'     => esc_html__( 'Elements', 'brain-divi-addons' ),
+					'twitter_feed'  => esc_html__( 'Twitter Feed', 'brain-divi-addons' ),
+					'elements'      => esc_html__( 'Elements', 'brain-divi-addons' ),
+					'grid_settings' => esc_html__( 'Grid Settings', 'brain-divi-addons' ),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'common'      => esc_html__( 'Common', 'brain-divi-addons' ),
 					'tweets'      => esc_html__( 'Tweets Box', 'brain-divi-addons' ),
 					'user_avatar' => esc_html__( 'User Avatar', 'brain-divi-addons' ),
 					'user_text'   => array(
@@ -77,6 +77,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'consumer_key'        => array(
 				'label'            => __( 'Consumer Key', 'brain-divi-addons' ),
+				'description'      => __( '.', 'brain-divi-addons' ),
 				'type'             => 'text',
 				'default'          => 'okjSlxMnSMCKTKlBVjPhg5R1v',
 				'description'      => '<a href="https://apps.twitter.com/app/" target="_blank">Get Consumer Key.</a> Create a new app or select existing app and grab the consumer key.',
@@ -86,6 +87,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'consumer_secret'     => array(
 				'label'            => __( 'Consumer Secret', 'brain-divi-addons' ),
+				'description'      => __( '.', 'brain-divi-addons' ),
 				'type'             => 'text',
 				'default'          => '8GhKIROr4kT1byyCqiXsJkttS3BXqePOJlWN2TfKCVgenHMCeb',
 				'description'      => '<a href="https://apps.twitter.com/app/" target="_blank">Get Consumer Secret key.</a> Create a new app or select existing app and grab the consumer secret.',
@@ -96,6 +98,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			// Twitter Settings.
 			'sort_by'             => array(
 				'label'            => __( 'Sort By', 'brain-divi-addons' ),
+				'description'      => __( 'Choose how your feed should be sorted.', 'brain-divi-addons' ),
 				'type'             => 'select',
 				'default'          => 'recent-posts',
 				'options'          => array(
@@ -110,6 +113,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'tweets_limit'        => array(
 				'label'            => __( 'Number of tweets to show', 'brain-divi-addons' ),
+				'description'      => __( 'Choose how much posts you would like to display per List.', 'brain-divi-addons' ),
 				'type'             => 'range',
 				'default'          => '8',
 				'unitless'         => true,
@@ -124,6 +128,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'show_twitter_icon'   => array(
 				'label'            => __( 'Show Twitter Logo', 'brain-divi-addons' ),
+				'description'      => __( 'Here you can choose whether twitter logo should be displayed.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => __( 'Yes', 'brain-divi-addons' ),
@@ -136,6 +141,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'show_user_image'     => array(
 				'label'            => __( 'Show User Image', 'brain-divi-addons' ),
+				'description'      => __( 'Here you can choose whether user image should be displayed.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => __( 'Yes', 'brain-divi-addons' ),
@@ -148,6 +154,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'show_name'           => array(
 				'label'            => __( 'Show Name', 'brain-divi-addons' ),
+				'description'      => __( 'Here you can choose whether name should be displayed.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => __( 'Yes', 'brain-divi-addons' ),
@@ -160,6 +167,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'show_user_name'      => array(
 				'label'            => __( 'Show User Name', 'brain-divi-addons' ),
+				'description'      => __( 'Here you can choose whether user name should be displayed.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => __( 'Yes', 'brain-divi-addons' ),
@@ -172,6 +180,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'show_date'           => array(
 				'label'            => __( 'Show Date', 'brain-divi-addons' ),
+				'description'      => __( 'Here you can choose whether date should be displayed.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => __( 'Yes', 'brain-divi-addons' ),
@@ -184,6 +193,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'show_favorite'       => array(
 				'label'            => __( 'Show Favorite', 'brain-divi-addons' ),
+				'description'      => __( 'Here you can choose whether favorite should be displayed.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => __( 'Yes', 'brain-divi-addons' ),
@@ -196,6 +206,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'show_retweet'        => array(
 				'label'            => __( 'Show Retweet', 'brain-divi-addons' ),
+				'description'      => __( 'Here you can choose whether retweet should be displayed.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => __( 'Yes', 'brain-divi-addons' ),
@@ -208,6 +219,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'read_more'           => array(
 				'label'            => __( ' Show Read More', 'brain-divi-addons' ),
+				'description'      => __( 'Here you can choose whether readmore should be displayed.', 'brain-divi-addons' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
 					'on'  => __( 'Yes', 'brain-divi-addons' ),
@@ -222,6 +234,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'read_more_text'      => array(
 				'label'            => __( 'Read More Text', 'brain-divi-addons' ),
+				'description'      => __( 'Define your custom readmore text.', 'brain-divi-addons' ),
 				'type'             => 'text',
 				'default'          => 'Read More',
 				'description'      => __( 'Use @ sign with your Twitter user name.', 'brain-divi-addons' ),
@@ -232,9 +245,10 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 				),
 			),
 
-			// Common.
+			// grid settings.
 			'column_count'        => array(
 				'label'          => __( 'Numbers of Column', 'brain-divi-addons' ),
+				'description'    => __( 'Define column numbers per row.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '3',
 				'unitless'       => true,
@@ -244,12 +258,12 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 					'min'  => 1,
 					'max'  => 10,
 				),
-				'tab_slug'       => 'advanced',
-				'toggle_slug'    => 'common',
+				'toggle_slug'    => 'grid_settings',
 			),
 
 			'column_gap_x'        => array(
 				'label'          => __( 'Column Gap Left/Right', 'brain-divi-addons' ),
+				'description'    => __( 'Define left/right column spacing.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'mobile_options' => true,
@@ -258,12 +272,12 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 					'min'  => 0,
 					'max'  => 100,
 				),
-				'tab_slug'       => 'advanced',
-				'toggle_slug'    => 'common',
+				'toggle_slug'    => 'grid_settings',
 			),
 
 			'column_gap_y'        => array(
 				'label'          => __( 'Column Gap Top/Bottom', 'brain-divi-addons' ),
+				'description'    => __( 'Define top/bottom column spacing.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'mobile_options' => true,
@@ -272,13 +286,13 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 					'min'  => 0,
 					'max'  => 100,
 				),
-				'tab_slug'       => 'advanced',
-				'toggle_slug'    => 'common',
+				'toggle_slug'    => 'grid_settings',
 			),
 
 			// User Avatar.
 			'avatar_position'     => array(
 				'label'       => __( 'Avatar Position', 'brain-divi-addons' ),
+				'description' => __( 'Here you can define avatar position. By selecting absolute position avatar can be placed any where on the feed.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'normal',
 				'options'     => array(
@@ -291,6 +305,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'avatar_placement'    => array(
 				'label'       => esc_html__( 'Avatar Placement', 'brain-divi-addons' ),
+				'description' => __( 'Here you can define avatar placement.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'user_avatar',
@@ -308,6 +323,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'avatar_offset_x'     => array(
 				'label'          => esc_html__( 'Avatar Offset X', 'brain-divi-addons' ),
+				'description'    => __( 'Define avatar horizontal offset value.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '50%',
 				'range_settings' => array(
@@ -324,6 +340,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'avatar_offset_y'     => array(
 				'label'           => esc_html__( 'Avatar Offset Y', 'brain-divi-addons' ),
+				'description'     => __( 'Define avatar vertical offset value.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '0px',
@@ -341,6 +358,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'avatar_size'         => array(
 				'label'          => __( 'Profile Image Size', 'brain-divi-addons' ),
+				'description'    => __( 'Here you can define custom size for your avatar.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '50px',
 				'range_settings' => array(
@@ -354,6 +372,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'avatar_spacing'      => array(
 				'label'          => __( 'Avatar Spacing', 'brain-divi-addons' ),
+				'description'    => __( 'Define avatar spacing gap.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'range_settings' => array(
@@ -371,6 +390,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			// Tweets.
 			'alignment'           => array(
 				'label'            => __( 'Alignment', 'brain-divi-addons' ),
+				'description'      => __( 'Align content to the left, right or center.', 'brain-divi-addons' ),
 				'type'             => 'text_align',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'options_icon'     => 'module_align',
@@ -382,6 +402,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'twitter_icon_size'   => array(
 				'label'          => __( 'Twitter Icon Size', 'brain-divi-addons' ),
+				'description'    => __( 'Here you can define custom size for your twitter icon.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'range_settings' => array(
@@ -395,6 +416,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'content_padding'     => array(
 				'label'          => __( 'Tweets Padding', 'brain-divi-addons' ),
+				'description'    => __( 'Here you can define custom padding for your tweets content.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'tweets',
@@ -405,6 +427,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			// Description.
 			'description_spacing' => array(
 				'label'          => __( 'Bottom Spacing', 'brain-divi-addons' ),
+				'description'    => __( 'Here you can define a custom spacing at the bottom of the description text.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '25px',
 				'range_settings' => array(
@@ -421,6 +444,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			// Footer.
 			'footer_alignment'    => array(
 				'label'       => esc_html__( 'Footer Alignment', 'brain-divi-addons' ),
+				'description' => __( 'Define footer content alignment from the list.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'space-between',
 				'tab_slug'    => 'advanced',
@@ -436,6 +460,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'footer_padding'      => array(
 				'label'          => __( 'Footer Padding', 'brain-divi-addons' ),
+				'description'    => __( 'Define custom padding for the footer content.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'footer',
@@ -445,6 +470,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'favorite_color'      => array(
 				'label'       => __( 'Favorite Text Color', 'brain-divi-addons' ),
+				'description' => __( 'Here you can define custom color for favorite text.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
@@ -455,6 +481,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'favorite_font_size'  => array(
 				'label'          => __( 'Favorite Text Size', 'brain-divi-addons' ),
+				'description'    => __( 'Here you can define custom size for favorite text.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '14px',
 				'range_settings' => array(
@@ -470,6 +497,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'favorite_icon_color' => array(
 				'label'       => __( 'Favorite Icon Color', 'brain-divi-addons' ),
+				'description' => __( 'Here you can define custom color for favorite icon.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
@@ -480,6 +508,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'favorite_icon_size'  => array(
 				'label'          => __( 'Favorite Icon Size', 'brain-divi-addons' ),
+				'description'    => __( 'Here you can define custom size for favorite icon.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '14px',
 				'range_settings' => array(
@@ -495,6 +524,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'retweet_color'       => array(
 				'label'       => __( 'Retweet Text Color', 'brain-divi-addons' ),
+				'description' => __( 'Here you can define custom color for retweet text.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
@@ -504,6 +534,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'retweet_font_size'   => array(
 				'label'          => __( 'Retweet Text Size', 'brain-divi-addons' ),
+				'description'    => __( 'Here you can define custom size for retweet text.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '14px',
 				'range_settings' => array(
@@ -519,6 +550,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'retweet_icon_color'  => array(
 				'label'       => __( 'Retweet Icon Color', 'brain-divi-addons' ),
+				'description' => __( 'Here you can define custom color for retweet icon.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
@@ -528,6 +560,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'retweet_icon_size'   => array(
 				'label'          => __( 'Retweet Icon Size', 'brain-divi-addons' ),
+				'description'    => __( 'Here you can define custom size for retweet icon.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '14px',
 				'range_settings' => array(
@@ -567,7 +600,15 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 				),
 			),
 		);
-		$additional_options = $this->custom_background_fields( 'tweets_item', 'Tweets', 'advanced', 'tweets', array( 'color', 'gradient', 'hover' ), array(), '' );
+		$additional_options = $this->custom_background_fields(
+			'tweets_item',
+			__( 'Tweets', 'brain-divi-addons' ),
+			'advanced',
+			'tweets',
+			array( 'color', 'gradient', 'hover' ),
+			array(),
+			''
+		);
 
 		return array_merge( $fields, $additional_options );
 	}
@@ -576,9 +617,9 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 		$advanced_fields = array();
 
-		$advanced_fields['text']         = false;
-		$advanced_fields['text_shadow']  = false;
-		$advanced_fields['fonts']        = false;
+		$advanced_fields['text']        = false;
+		$advanced_fields['text_shadow'] = false;
+		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['borders']['tweets'] = array(
 			'css'          => array(
@@ -766,10 +807,10 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 		$transient_key = $user_name . $ba_tweets_cash;
 		$twitter_data  = get_transient( $transient_key );
-		$credentials   = base64_encode( $args['consumer_key'] . ':' . $args['consumer_secret'] );
+		$credentials   = base64_encode( $args['consumer_key'] . ':' . $args['consumer_secret'] ); // phpcs:ignore
 
 		$messages = array();
-		if ( $twitter_data === false ) {
+		if ( ! $twitter_data ) {
 
 			$auth_url      = 'https://api.twitter.com/oauth2/token';
 			$auth_response = wp_remote_post(
@@ -811,7 +852,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 				$messages['error'] = $error['message'];
 			}
 		} elseif ( count( $twitter_data ) < $args['tweets_limit'] ) {
-			$messages['item_limit'] = __( '"Number of Tweets to show" is more than your actual total Tweets\'s number. You have only ' . count( $twitter_data ) . ' Tweets', 'brain-divi-addons' );
+			$messages['item_limit'] = __( '"Number of Tweets to show" is more than your actual total Tweets\'s number. You have only ' . count( $twitter_data ) . ' Tweets', 'brain-divi-addons' ); // phpcs:ignore
 
 		}
 
@@ -879,13 +920,11 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			<div class = "ba-twitter-grid-item">
 			<div class = "ba-twitter-grid-item-inner">
 
-					<?php if ( $args['show_twitter_icon'] === 'on' ) : ?>
+					<?php if ( 'on' === $args['show_twitter_icon'] ) : ?>
 						<div class = "ba-twitter-grid-icon">
 							<span>
-								<svg  version = "1.1" id="ba-twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x = "0px" y = "0px"
-									  viewBox = "0 0 512 512" style = "enable-background:new 0 0 512 512;" xml:space = "preserve">
-								<path style   = "fill:#1da1f2;" d   = "M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
-									c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+								<svg  version="1.1" id="ba-twitter" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox = "0 0 512 512" >
+								<path style="fill:#1da1f2;" d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016 c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
 									c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
 									c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
 									c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
@@ -900,7 +939,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 					<div class = "ba-twitter-grid-inner-wrapper">
 					<div class = "ba-twitter-grid-author">
 
-							<?php if ( $args['show_user_image'] === 'on' ) : ?>
+							<?php if ( 'on' === $args['show_user_image'] ) : ?>
 
 								<a class = "ba-twitter-grid-avatar-wrapper" href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>">
 									<img
@@ -914,13 +953,13 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 							<div class = "ba-twitter-grid-user">
 
-								<?php if ( $args['show_name'] === 'on' ) : ?>
+								<?php if ( 'on' === $args['show_name'] ) : ?>
 									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "ba-twitter-grid-author-name">
 										<?php echo esc_html( $item['user']['name'] ); ?>
 									</a>
 								<?php endif; ?>
 
-								<?php if ( $args['show_user_name'] === 'on' ) : ?>
+								<?php if ( 'on' === $args['show_user_name'] ) : ?>
 									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "ba-twitter-grid-username">
 										<?php echo esc_html( $args['user_name'] ); ?>
 									</a>
@@ -940,7 +979,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 							<div class = "ba-inner-twitter-grid-content">
 								<p>
 									<?php echo esc_html( $content ); ?>
-									<?php if ( $args['read_more'] === 'on' ) : ?>
+									<?php if ( 'on' === $args['read_more'] ) : ?>
 										<a href = "<?php echo esc_url( '//twitter.com/' . $item['user']['screen_name'] . '/status/' . $item['id'] ); ?>" target = "_blank">
 											<?php echo esc_html( $args['read_more_text'] ); ?>
 										</a>
@@ -948,25 +987,25 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 								</p>
 							</div>
 
-							<?php if ( $args['show_date'] === 'on' ) : ?>
+							<?php if ( 'on' === $args['show_date'] ) : ?>
 								<div class = "ba-twitter-grid-date">
-									<?php echo esc_html( date( 'M d Y', strtotime( $item['created_at'] ) ) ); ?>
+									<?php echo esc_html( gmdate( 'M d Y', strtotime( $item['created_at'] ) ) ); ?>
 								</div>
 							<?php endif; ?>
 						</div>
 					</div>
 
-					<?php if ( $args['show_favorite'] === 'on' || $args['show_retweet'] === 'on' ) : ?>
+					<?php if ( 'on' === $args['show_favorite'] || 'on' === $args['show_retweet'] ) : ?>
 						<div class = "ba-twitter-grid-footer-wrapper">
 						<div class = "ba-twitter-grid-footer">
-								<?php if ( $args['show_favorite'] === 'on' ) : ?>
+								<?php if ( 'on' === $args['show_favorite'] ) : ?>
 									<div class = "ba-tweet-favorite">
 										<?php echo esc_html( $item['favorite_count'] ); ?>
 										<span class = "et-pb-icon ba-icon ba-tweet-favorite-icon"></span>
 									</div>
 								<?php endif; ?>
 
-								<?php if ( $args['show_retweet'] === 'on' ) : ?>
+								<?php if ( 'on' === $args['show_retweet'] ) : ?>
 									<div class = "ba-tweet-retweet">
 										<?php echo esc_html( $item['retweet_count'] ); ?>
 										<span class = "et-pb-icon ba-icon ba-tweet-retweet-icon"></span>
@@ -982,7 +1021,9 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 		endforeach;
 
-		if ( ! $output = ob_get_clean() ) {
+		$output = ob_get_clean();
+
+		if ( ! $output ) {
 			$output = 'Something is wrong';
 		}
 
@@ -1020,11 +1061,11 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 		$transient_key = $user_name . $ba_tweets_cash;
 		$twitter_data  = get_transient( $transient_key );
-		$credentials   = base64_encode( $consumer_key . ':' . $consumer_secret );
+		$credentials   = base64_encode( $consumer_key . ':' . $consumer_secret ); // phpcs:ignore
 
 		$messages = array();
 
-		if ( $twitter_data === false ) {
+		if ( ! $twitter_data ) {
 
 			$auth_url = 'https://api.twitter.com/oauth2/token';
 
@@ -1072,7 +1113,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			}
 		} elseif ( count( $twitter_data ) < $tweets_limit ) {
 
-			$messages['item_limit'] = __( ' "Number of Tweets to show"  is more than your actual total Tweets\'s number. You have only ' . count( $twitter_data ) . ' Tweets', 'brain-divi-addons' );
+			$messages['item_limit'] = __( '"Number of Tweets to show" is more than your actual total Tweets\'s number. You have only ' . count( $twitter_data ) . ' Tweets', 'brain-divi-addons' ); //phpcs:ignore
 
 		}
 
@@ -1144,11 +1185,10 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			<div class = "ba-twitter-grid-item">
 			<div class = "ba-twitter-grid-item-inner">
 
-					<?php if ( $show_twitter_icon === 'on' ) : ?>
+					<?php if ( 'on' === $show_twitter_icon ) : ?>
 						<div class = "ba-twitter-grid-icon">
 							<span>
-								<svg  version = "1.1" id = "ba-twitter" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px"
-									  viewBox = "0 0 512 512" style = "enable-background:new 0 0 512 512;" xml:space = "preserve">
+								<svg  version = "1.1" id = "ba-twitter" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px" viewBox = "0 0 512 512">
 								<path style   = "fill:#1da1f2;" d   = "M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
 									c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
 									c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
@@ -1165,7 +1205,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 					<div class = "ba-twitter-grid-inner-wrapper">
 					<div class = "ba-twitter-grid-author">
 
-							<?php if ( $show_user_image === 'on' ) : ?>
+							<?php if ( 'on' === $show_user_image ) : ?>
 								<a class = "ba-twitter-grid-avatar-wrapper" href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>">
 									<img
 										src   = "<?php echo esc_url( $item['user']['profile_image_url_https'] ); ?>"
@@ -1176,13 +1216,13 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 							<?php endif; ?>
 							<div class = "ba-twitter-grid-user">
 
-								<?php if ( $show_name === 'on' ) : ?>
+								<?php if ( 'on' === $show_name ) : ?>
 									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "ba-twitter-grid-author-name">
 										<?php echo esc_html( $item['user']['name'] ); ?>
 									</a>
 								<?php endif; ?>
 
-								<?php if ( $show_user_name === 'on' ) : ?>
+								<?php if ( 'on' === $show_user_name ) : ?>
 									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "ba-twitter-grid-username">
 										<?php echo esc_html( $user_name ); ?>
 									</a>
@@ -1205,7 +1245,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 							<div class = "ba-inner-twitter-grid-content">
 								<p>
 									<?php echo esc_html( $content ); ?>
-									<?php if ( $read_more === 'on' ) : ?>
+									<?php if ( 'on' === $read_more ) : ?>
 										<a href = "<?php echo esc_url( '//twitter.com/' . $item['user']['screen_name'] . '/status/' . $item['id'] ); ?>" target = "_blank">
 											<?php echo esc_html( $read_more_text ); ?>
 										</a>
@@ -1213,25 +1253,25 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 								</p>
 							</div>
 
-							<?php if ( $show_date === 'on' ) : ?>
+							<?php if ( 'on' === $show_date ) : ?>
 								<div class = "ba-twitter-grid-date">
-									<?php echo esc_html( date( 'M d Y', strtotime( $item['created_at'] ) ) ); ?>
+									<?php echo esc_html( gmdate( 'M d Y', strtotime( $item['created_at'] ) ) ); ?>
 								</div>
 							<?php endif; ?>
 						</div>
 					</div>
 
-					<?php if ( $show_favorite === 'on' || $show_retweet === 'on' ) : ?>
+					<?php if ( 'on' === $show_favorite || 'on' === $show_retweet ) : ?>
 						<div class = "ba-twitter-grid-footer-wrapper">
 						<div class = "ba-twitter-grid-footer">
-								<?php if ( $show_favorite === 'on' ) : ?>
+								<?php if ( 'on' === $show_favorite ) : ?>
 									<div class = "ba-tweet-favorite">
 										<?php echo esc_html( $item['favorite_count'] ); ?>
 										<span class = "et-pb-icon ba-icon ba-tweet-favorite-icon"></span>
 									</div>
 								<?php endif; ?>
 
-								<?php if ( $show_retweet === 'on' ) : ?>
+								<?php if ( 'on' === $show_retweet ) : ?>
 									<div class = "ba-tweet-retweet">
 										<?php echo esc_html( $item['retweet_count'] ); ?>
 										<span class = "et-pb-icon ba-icon ba-tweet-retweet-icon"></span>
@@ -1289,14 +1329,14 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 	public function render_footer_css( $render_slug ) {
 
-		$favorite_color                   = $this->props['favorite_color'];
-		$favorite_icon_color              = $this->props['favorite_icon_color'];
-		$favorite_font_size               = $this->props['favorite_font_size'];
-		$favorite_icon_size               = $this->props['favorite_icon_size'];
-		$retweet_color                    = $this->props['retweet_color'];
-		$retweet_icon_color               = $this->props['retweet_icon_color'];
-		$retweet_font_size                = $this->props['retweet_font_size'];
-		$retweet_icon_size                = $this->props['retweet_icon_size'];
+		$favorite_color      = $this->props['favorite_color'];
+		$favorite_icon_color = $this->props['favorite_icon_color'];
+		$favorite_font_size  = $this->props['favorite_font_size'];
+		$favorite_icon_size  = $this->props['favorite_icon_size'];
+		$retweet_color       = $this->props['retweet_color'];
+		$retweet_icon_color  = $this->props['retweet_icon_color'];
+		$retweet_font_size   = $this->props['retweet_font_size'];
+		$retweet_icon_size   = $this->props['retweet_icon_size'];
 
 		ET_Builder_Element::set_style(
 			$render_slug,
@@ -1377,10 +1417,13 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 		$this->get_responsive_styles(
 			'description_spacing',
 			'%%order_class%% .ba-twitter-grid-content p',
-			array( 'primary' => 'margin-bottom', 'important' => true ),
+			array(
+				'primary'   => 'margin-bottom',
+				'important' => true,
+			),
 			array( 'default' => '25px' ),
 			$render_slug
-        );
+		);
 
 		$this->get_responsive_styles(
 			'content_padding',
@@ -1420,7 +1463,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 						'declaration' => sprintf( 'margin-bottom: %1$s;', $avatar_spacing ),
 					)
 				);
-			} elseif ( $alignment === 'left' ) {
+			} elseif ( 'left' === $alignment ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1428,7 +1471,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 						'declaration' => sprintf( 'margin-right: %1$s;', $avatar_spacing ),
 					)
 				);
-			} elseif ( $alignment === 'right' ) {
+			} elseif ( 'right' === $alignment ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1439,8 +1482,8 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			}
 		}
 
-		// avatar position
-		if ( $avatar_position === 'absolute' ) {
+		// Avatar Position.
+		if ( 'absolute' === $avatar_position ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1467,7 +1510,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 				)
 			);
 
-			if ( $avatar_placement === 'right_top' ) {
+			if ( 'right_top' === $avatar_placement ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1475,7 +1518,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 						'declaration' => 'transform : translateX(50%) translateY(-50%);',
 					)
 				);
-			} elseif ( $avatar_placement === 'right_bottom' ) {
+			} elseif ( 'right_bottom' === $avatar_placement ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1483,7 +1526,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 						'declaration' => 'transform : translateX(50%) translateY(50%);',
 					)
 				);
-			} elseif ( $avatar_placement === 'left_bottom' ) {
+			} elseif ( 'left_bottom' === $avatar_placement ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1491,7 +1534,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 						'declaration' => 'transform : translateX(-50%) translateY(50%);',
 					)
 				);
-			} elseif ( $avatar_placement === 'left_top' ) {
+			} elseif ( 'left_top' === $avatar_placement ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1548,15 +1591,15 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-grid-item',
+				'selector'    => '%%order_class%% .ba-twitter-grid',
 				'declaration' => sprintf(
-					'
-                flex: 0 0 calc(100%%/%1$s);
-                max-width:calc(100%%/%1$s);
-                padding:%2$s %3$s;',
-					$column_count,
+					'grid-column-gap: %1$s;
+					grid-row-gap: %2$s;
+					-ms-grid-columns: repeat(%3$s,1fr);
+					grid-template-columns:repeat(%3$s,1fr);',
+					$column_gap_x,
 					$column_gap_y,
-					$column_gap_x
+					$column_count
 				),
 			)
 		);
@@ -1565,23 +1608,15 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .ba-twitter-grid',
-				'declaration' => sprintf( 'margin: -%1$s -%2$s;', $column_gap_y, $column_gap_x ),
-			)
-		);
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-twitter-grid-item',
 				'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 				'declaration' => sprintf(
-					'
-                flex: 0 0 calc(100%%/%1$s);
-                max-width:calc(100%%/%1$s);
-                padding:%2$s %3$s;',
-					$column_count_tablet,
+					'grid-column-gap: %1$s;
+					grid-row-gap: %2$s;
+					-ms-grid-columns: repeat(%3$s,1fr);
+					grid-template-columns:repeat(%3$s,1fr);',
+					$column_gap_x_tablet,
 					$column_gap_y_tablet,
-					$column_gap_x_tablet
+					$column_count_tablet
 				),
 			)
 		);
@@ -1590,37 +1625,18 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .ba-twitter-grid',
-				'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-				'declaration' => sprintf( 'margin: -%1$s -%2$s;', $column_gap_y_tablet, $column_gap_x_tablet ),
-			)
-		);
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-twitter-grid-item',
 				'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 				'declaration' => sprintf(
-					'
-                flex: 0 0 calc(100%%/%1$s);
-                max-width:calc(100%%/%1$s);
-                padding:%2$s %3$s;',
-					$column_count_phone,
+					'grid-column-gap: %1$s;
+					grid-row-gap: %2$s;
+					-ms-grid-columns: repeat(%3$s,1fr);
+					grid-template-columns:repeat(%3$s,1fr);',
+					$column_gap_x_phone,
 					$column_gap_y_phone,
-					$column_gap_x_phone
+					$column_count_phone
 				),
 			)
 		);
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-twitter-grid',
-				'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-				'declaration' => sprintf( 'margin: -%1$s -%2$s;', $column_gap_y_phone, $column_gap_x_phone ),
-			)
-		);
-
 	}
 
 }

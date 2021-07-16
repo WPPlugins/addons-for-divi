@@ -2,7 +2,7 @@
 class BA_Info_Box extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/info-box/',
+		'module_uri' => 'https://divi.brainaddons.com/info-box/',
 		'author'     => 'BrainAddons',
 		'author_uri' => 'https://brainaddons.com/',
 	);
@@ -24,15 +24,67 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'advanced' => array(
 				'toggles' => array(
-					'info_box'     => esc_html__( 'Info Box', 'brain-divi-addons' ),
+					'general'      => esc_html__( 'General', 'brain-divi-addons' ),
 					'main_element' => esc_html__( 'Figure', 'brain-divi-addons' ),
 					'overlay'      => esc_html__( 'Overlay', 'brain-divi-addons' ),
 					'title'        => esc_html__( 'Title', 'brain-divi-addons' ),
-					'body'         => esc_html__( 'Body Text', 'brain-divi-addons' ),
+					'header'       => array(
+						'title'             => esc_html__( 'Heading Text', 'brain-divi-addons' ),
+						'tabbed_subtoggles' => true,
+						'sub_toggles'       => array(
+							'h1' => array(
+								'name' => 'H1',
+								'icon' => 'text-h1',
+							),
+							'h2' => array(
+								'name' => 'H2',
+								'icon' => 'text-h2',
+							),
+							'h3' => array(
+								'name' => 'H3',
+								'icon' => 'text-h3',
+							),
+							'h4' => array(
+								'name' => 'H4',
+								'icon' => 'text-h4',
+							),
+							'h5' => array(
+								'name' => 'H5',
+								'icon' => 'text-h5',
+							),
+							'h6' => array(
+								'name' => 'H6',
+								'icon' => 'text-h6',
+							),
+						),
+					),
 					'button'       => esc_html__( 'Button', 'brain-divi-addons' ),
 				),
 			),
 
+		);
+
+		$this->custom_css_fields = array(
+			'image'  => array(
+				'label'    => esc_html__( 'Image', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-info-box .figure img',
+			),
+			'icon'  => array(
+				'label'    => esc_html__( 'Icon', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-info-box-icon i',
+			),
+			'video'  => array(
+				'label'    => esc_html__( 'Video', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-info-box-video video',
+			),
+			'title'  => array(
+				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-info-box-title',
+			),
+			'button'  => array(
+				'label'    => esc_html__( 'Button', 'brain-divi-addons' ),
+				'selector' => '%%order_class%% .ba-btn-info-box',
+			),
 		);
 	}
 
@@ -42,85 +94,6 @@ class BA_Info_Box extends BA_Builder_Module {
 		$advanced_fields['text']        = false;
 		$advanced_fields['text_shadow'] = false;
 		$advanced_fields['fonts']       = false;
-
-		$advanced_fields['fonts']['body'] = array(
-			'label'           => esc_html__( 'Body', 'brain-divi-addons' ),
-			'css'             => array(
-				'main'        => '%%order_class%% .ba-mce-content',
-				'line_height' => '%%order_class%% .ba-mce-content p',
-				'text_align'  => '%%order_class%% .ba-mce-content',
-				'text_shadow' => '%%order_class%% .ba-mce-content',
-				'important'   => 'all',
-			),
-			'hide_text_align' => true,
-		);
-
-		$advanced_fields['fonts']['ul'] = array(
-			'label'           => esc_html__( 'Unordered List', 'brain-divi-addons' ),
-			'css'             => array(
-				'main'        => '%%order_class%% .ba-mce-content ul li',
-				'color'       => '%%order_class%% .ba-mce-content ul li',
-				'line_height' => '%%order_class%% .ba-mce-content ul li',
-				'item_indent' => '%%order_class%% .ba-mce-content ul',
-			),
-			'hide_text_align' => true,
-			'toggle_slug'     => 'body',
-			'sub_toggle'      => 'ul',
-		);
-
-		$advanced_fields['fonts']['ol'] = array(
-			'label'           => esc_html__( 'Ordered List', 'brain-divi-addons' ),
-			'css'             => array(
-				'main'        => '%%order_class%% .ba-mce-content ol li',
-				'color'       => '%%order_class%% .ba-mce-content ol li',
-				'line_height' => '%%order_class%% .ba-mce-content ol li',
-				'item_indent' => '%%order_class%% .ba-mce-content ol',
-			),
-			'hide_text_align' => true,
-			'toggle_slug'     => 'body',
-			'sub_toggle'      => 'ol',
-		);
-
-		$advanced_fields['fonts']['quote'] = array(
-			'label'           => esc_html__( 'Blockquote', 'brain-divi-addons' ),
-			'css'             => array(
-				'main'  => '%%order_class%% .ba-mce-content blockquote',
-				'color' => '%%order_class%% .ba-mce-content blockquote',
-			),
-			'hide_text_align' => true,
-			'toggle_slug'     => 'body',
-			'sub_toggle'      => 'quote',
-		);
-
-		$advanced_fields['fonts']['link'] = array(
-			'label'           => esc_html__( 'Link', 'brain-divi-addons' ),
-			'css'             => array(
-				'main'  => '%%order_class%% .ba-mce-content a',
-				'color' => '%%order_class%% .ba-mce-content a',
-			),
-			'hide_text_align' => true,
-			'toggle_slug'     => 'body',
-			'sub_toggle'      => 'a',
-		);
-
-		$advanced_fields['fonts']['title'] = array(
-			'label'           => esc_html__( 'Title', 'brain-divi-addons' ),
-			'css'             => array(
-				'main'      => '%%order_class%% .ba-info-box-title, .et-db #et-boc %%order_class%% .ba-info-box-title',
-				'important' => 'all',
-			),
-			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'title',
-			'hide_text_align' => true,
-			'header_level'    => array(
-				'default' => 'h2',
-			),
-			'range_settings'  => array(
-				'min'  => '1',
-				'max'  => '100',
-				'step' => '1',
-			),
-		);
 
 		$advanced_fields['borders']['box'] = array(
 			'label_prefix' => esc_html__( 'Box', 'brain-divi-addons' ),
@@ -139,7 +112,7 @@ class BA_Info_Box extends BA_Builder_Module {
 					'style' => 'solid',
 				),
 			),
-			'toggle_slug'  => 'info_box',
+			'toggle_slug'  => 'general',
 		);
 
 		$advanced_fields['borders']['photo'] = array(
@@ -178,6 +151,141 @@ class BA_Info_Box extends BA_Builder_Module {
 			'use_alignment' => false,
 		);
 
+
+		$advanced_fields['fonts'] = array(
+			'title'    => array(
+				'label'           => esc_html__( 'Title', 'brain-divi-addons' ),
+				'css'             => array(
+					'main'      => '%%order_class%% .ba-info-box-title',
+					'important' => 'all',
+				),
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'title',
+				'hide_text_align' => false,
+				'header_level'    => array(
+					'default' => 'h2',
+				),
+				'line_height'     => array(
+					'default'        => '1em',
+					'range_settings' => array(
+						'min'  => '1',
+						'max'  => '3',
+						'step' => '.1',
+					),
+				),
+				'font_size'       => array(
+					'default' => '26px',
+				),
+			),
+			'body'     => array(
+				'label'          => esc_html__( 'Body', 'brain-divi-addons' ),
+				'css'             => array(
+					'main'        => '%%order_class%% .ba-mce-content',
+					'line_height' => '%%order_class%% .ba-mce-content p',
+					'text_align'  => '%%order_class%% .ba-mce-content',
+					'text_shadow' => '%%order_class%% .ba-mce-content',
+					'important'   => 'all',
+				),
+				'block_elements' => array(
+					'tabbed_subtoggles' => true,
+					'css'               => array(
+						'main'      => '%%order_class%% .ba-mce-content',
+						'important' => 'all',
+					),
+				),
+			),
+			'header'   => array(
+				'label'       => esc_html__( 'Heading', 'brain-divi-addons' ),
+				'css'         => array(
+					'main'      => '%%order_class%% .ba-mce-content h1',
+					'important' => 'all',
+				),
+				'font_size'   => array(
+					'default' => absint( et_get_option( 'body_header_size', '30' ) ) . 'px',
+				),
+				'line_height' => array(
+					'default' => '1em',
+				),
+				'toggle_slug' => 'header',
+				'sub_toggle'  => 'h1',
+			),
+			'header_2' => array(
+				'label'       => esc_html__( 'Heading 2', 'brain-divi-addons' ),
+				'css'         => array(
+					'main'      => '%%order_class%% .ba-mce-content h2',
+					'important' => 'all',
+				),
+				'font_size'   => array(
+					'default' => '26px',
+				),
+				'line_height' => array(
+					'default' => '1em',
+				),
+				'toggle_slug' => 'header',
+				'sub_toggle'  => 'h2',
+			),
+			'header_3' => array(
+				'label'       => esc_html__( 'Heading 3', 'brain-divi-addons' ),
+				'css'         => array(
+					'main'      => '%%order_class%% .ba-mce-content h3',
+					'important' => 'all',
+				),
+				'font_size'   => array(
+					'default' => '22px',
+				),
+				'line_height' => array(
+					'default' => '1em',
+				),
+				'toggle_slug' => 'header',
+				'sub_toggle'  => 'h3',
+			),
+			'header_4' => array(
+				'label'       => esc_html__( 'Heading 4', 'brain-divi-addons' ),
+				'css'         => array(
+					'main'      => '%%order_class%% .ba-mce-content h4',
+					'important' => 'all',
+				),
+				'font_size'   => array(
+					'default' => '18px',
+				),
+				'line_height' => array(
+					'default' => '1em',
+				),
+				'toggle_slug' => 'header',
+				'sub_toggle'  => 'h4',
+			),
+			'header_5' => array(
+				'label'       => esc_html__( 'Heading 5', 'brain-divi-addons' ),
+				'css'         => array(
+					'main'      => '%%order_class%% .ba-mce-content h5',
+					'important' => 'all',
+				),
+				'font_size'   => array(
+					'default' => '16px',
+				),
+				'line_height' => array(
+					'default' => '1em',
+				),
+				'toggle_slug' => 'header',
+				'sub_toggle'  => 'h5',
+			),
+			'header_6' => array(
+				'label'       => esc_html__( 'Heading 6', 'brain-divi-addons' ),
+				'css'         => array(
+					'main'      => '%%order_class%% .ba-mce-content h6',
+					'important' => 'all',
+				),
+				'font_size'   => array(
+					'default' => '14px',
+				),
+				'line_height' => array(
+					'default' => '1em',
+				),
+				'toggle_slug' => 'header',
+				'sub_toggle'  => 'h6',
+			),
+		);
+
 		return $advanced_fields;
 	}
 
@@ -187,6 +295,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'main_figure'          => array(
 				'label'       => esc_html__( 'Choose an Figure Element', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Choose icon/image/video for the info box figure.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'default'     => 'image',
@@ -199,6 +308,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'photo'                => array(
 				'label'              => esc_html__( 'Upload Image', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the info box.', 'brain-divi-addons' ),
 				'type'               => 'upload',
 				'data_type'          => 'image',
 				'option_category'    => 'basic_option',
@@ -216,6 +326,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'video'                => array(
 				'label'              => esc_html__( 'Video MP4 File Or Youtube URL', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload MP4 video file or type youtube URL which would like to display.', 'brain-divi-addons' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'data_type'          => 'video',
@@ -232,9 +343,11 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'icon'                 => array(
 				'label'       => esc_html__( 'Select Icon', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select icon for the info box.', 'brain-divi-addons' ),
 				'type'        => 'select_icon',
 				'toggle_slug' => 'content',
 				'tab_slug'    => 'general',
+				'default'     => '+',
 				'show_if'     => array(
 					'main_figure' => 'icon',
 				),
@@ -242,21 +355,24 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'title'                => array(
 				'label'           => esc_html__( 'Title Text', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define the title for your info box.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'dynamic_content' => 'text',
 				'toggle_slug'     => 'content',
-				'default'         => esc_html__( 'Your Title Goes Here', 'brain-divi-addons' ),
 			),
 
 			'body_content'         => array(
 				'label'           => esc_html__( 'Content', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define the body content for your info box.', 'brain-divi-addons' ),
 				'type'            => 'tiny_mce',
 				'option_category' => 'basic_option',
+				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
 			),
 
 			'use_button'           => array(
 				'label'       => esc_html__( 'Use Button', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can choose whether button should be used.', 'brain-divi-addons' ),
 				'type'        => 'yes_no_button',
 				'options'     => array(
 					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
@@ -268,8 +384,9 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'button_text'          => array(
 				'label'           => esc_html__( 'Button Text', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define the button text for your info box.', 'brain-divi-addons' ),
 				'type'            => 'text',
-				'default'         => '',
+				'default'         => 'Click Here',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
 				'show_if'         => array(
@@ -279,6 +396,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'button_link'          => array(
 				'label'           => esc_html__( 'Button Link', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Define the button link url for your info box.', 'brain-divi-addons' ),
 				'type'            => 'text',
 				'default'         => '',
 				'toggle_slug'     => 'content',
@@ -290,6 +408,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'is_new_wndow'         => array(
 				'label'           => esc_html__( 'Open Button link in new window', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether button URL should be opened in new window.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -306,6 +425,7 @@ class BA_Info_Box extends BA_Builder_Module {
 			// video overlay.
 			'use_overlay'          => array(
 				'label'           => esc_html__( 'Use Overlay Image', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can choose whether video overlay should be used.', 'brain-divi-addons' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -321,6 +441,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'vo_src'               => array(
 				'label'              => esc_html__( 'Overlay Image', 'brain-divi-addons' ),
+				'description'        => esc_html__( 'Upload an overlay image or type in the URL of the image you would like to display.', 'brain-divi-addons' ),
 				'type'               => 'upload',
 				'data_type'          => 'image',
 				'option_category'    => 'basic_option',
@@ -336,6 +457,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'vo_icon_color'        => array(
 				'label'       => esc_html__( 'Overlay Icon Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom color for your overlay icon.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'overlay',
@@ -347,9 +469,9 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'vo_icon_size'         => array(
 				'label'           => esc_html__( 'Overlay Icon Size', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can define a custom size for your overlay icon.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
-				'allowed_units'   => array( 'em', 'rem', 'px', 'cm', '%', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
 				'default_unit'    => 'px',
 				'default '        => '6rem',
 				'range_settings'  => array(
@@ -367,6 +489,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'vo_bg'                => array(
 				'label'       => esc_html__( 'Overlay background', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom background color for your overlay.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'overlay',
@@ -376,22 +499,24 @@ class BA_Info_Box extends BA_Builder_Module {
 				),
 			),
 
-			// info box
+			// info box.
 			'content_alignment'    => array(
 				'label'            => esc_html__( 'Content Alignment', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Align content to the left, right or center.', 'brain-divi-addons' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'options_icon'     => 'module_align',
 				'default_on_front' => 'left',
-				'toggle_slug'      => 'info_box',
+				'toggle_slug'      => 'general',
 				'tab_slug'         => 'advanced',
 			),
 
 			'content_padding'      => array(
 				'label'          => esc_html__( 'Content Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define custom content padding for the info box content. Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
-				'toggle_slug'    => 'info_box',
+				'toggle_slug'    => 'general',
 				'tab_slug'       => 'advanced',
 				'default'        => '15px|0px|0px|0px',
 				'mobile_options' => true,
@@ -400,6 +525,7 @@ class BA_Info_Box extends BA_Builder_Module {
 			// figure.
 			'icon_color'           => array(
 				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'main_element',
@@ -412,6 +538,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'icon_bg'              => array(
 				'label'       => esc_html__( 'Icon Background', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Here you can define a custom background color for your icon.', 'brain-divi-addons' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'main_element',
@@ -424,9 +551,9 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'icon_size'            => array(
 				'label'           => esc_html__( 'Icon Size', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can define a custom size for your icon.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
-				'allowed_units'   => array( 'em', 'rem', 'px', 'cm', '%', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
 				'default_unit'    => 'px',
 				'default'         => '45px',
 				'range_settings'  => array(
@@ -444,6 +571,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'image_width'          => array(
 				'label'          => esc_html__( 'Image Width', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom width for your image.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '100%',
 				'default_unit'   => '%',
@@ -464,9 +592,9 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'image_height'         => array(
 				'label'           => esc_html__( 'Image Height', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can define a custom height for your image.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
-				'allowed_units'   => array( 'em', 'rem', 'px', 'cm', '%', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
 				'default_unit'    => 'px',
 				'default'         => 'auto',
 				'range_settings'  => array(
@@ -483,6 +611,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'img_anim'             => array(
 				'label'       => esc_html__( 'Hover Animation', 'brain-divi-addons' ),
+				'description' => esc_html__( 'Select image hover animation.', 'brain-divi-addons' ),
 				'type'        => 'select',
 				'default'     => 'none',
 				'options'     => array(
@@ -516,6 +645,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'icon_padding'         => array(
 				'label'          => esc_html__( 'Icon Padding', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Define custom icon padding for the info box icon. Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'main_element',
@@ -526,9 +656,10 @@ class BA_Info_Box extends BA_Builder_Module {
 				),
 			),
 
-			// Button
+			// Button.
 			'btn_spacing_top'      => array(
 				'label'           => esc_html__( 'Button Spacing Top', 'brain-divi-addons' ),
+				'description'     => esc_html__( 'Here you can define a custom spacing at the top of the button.', 'brain-divi-addons' ),
 				'type'            => 'range',
 				'default'         => '15px',
 				'option_category' => 'basic_option',
@@ -545,6 +676,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			'title_bottom_spacing' => array(
 				'label'          => esc_html__( 'Title Spacing Bottom', 'brain-divi-addons' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'brain-divi-addons' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'default_unit'   => 'px',
@@ -583,7 +715,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 	public function render_figure() {
 
-		if ( $this->props['main_figure'] === 'image' ) {
+		if ( 'image' === $this->props['main_figure'] ) {
 
 			$processed_overlay_icon = esc_attr( et_pb_process_font_icon( $this->props['overlay_icon'] ) );
 			$overlay_icon           = ! empty( $processed_overlay_icon ) ? $processed_overlay_icon : '';
@@ -591,8 +723,7 @@ class BA_Info_Box extends BA_Builder_Module {
 			$data_schema            = $this->get_swapped_img_schema( 'photo' );
 
 			return sprintf(
-				'
-				<div class="figure ba-lightbox-ctrl">
+				'<div class="figure ba-lightbox-ctrl">
                     <div class="ba-overlay" data-icon="%3$s"></div>
 					<img class="ba-info-box-img ba-swapped-img" src="%1$s" %2$s alt=""/>
 				</div>',
@@ -602,8 +733,8 @@ class BA_Info_Box extends BA_Builder_Module {
 			);
 		} elseif ( $this->props['main_figure'] === 'icon' ) {
 
-			$selectedIcon = esc_attr( et_pb_process_font_icon( $this->props['icon'] ) );
-			$icon_name    = $selectedIcon ? $selectedIcon : '';
+			$selected_icon = esc_attr( et_pb_process_font_icon( $this->props['icon'] ) );
+			$icon_name     = $selected_icon ? $selected_icon : '';
 
 			return sprintf(
 				'<span class="ba-info-box-icon">
@@ -629,8 +760,7 @@ class BA_Info_Box extends BA_Builder_Module {
 
 			if ( ! empty( $overlay_src ) ) {
 				$overlay_html = sprintf(
-					'
-					<div style="background-image:url(%1$s)" class="et_pb_video_overlay">
+					'<div style="background-image: url(%1$s)" class="et_pb_video_overlay">
 						<div class="et_pb_video_overlay_hover">
 							<a href="#" class="et_pb_video_play"></a>
 						</div>
@@ -640,8 +770,7 @@ class BA_Info_Box extends BA_Builder_Module {
 			}
 
 			return sprintf(
-				'
-				<div class="ba-content-video et_pb_video">
+				'<div class="ba-content-video et_pb_video">
 					<div class="et_pb_video_box ba-content-video-wrap">
 						%1$s
 					</div>
@@ -692,8 +821,7 @@ class BA_Info_Box extends BA_Builder_Module {
 			);
 
 			return sprintf(
-				'
-            	<div class="ba-info-box-btn">
+				'<div class="ba-info-box-btn">
                     %1$s
                 </div>',
 				$button_output
@@ -704,9 +832,8 @@ class BA_Info_Box extends BA_Builder_Module {
 	public function render_MCE() {
 
 		$body_content = $this->props['body_content'];
-
-		$content = force_balance_tags( $body_content );
-		$content = preg_replace( '~\s?<p></p>\s?~', '', $content );
+		$content      = force_balance_tags( $body_content );
+		$content      = preg_replace( '~\s?<p></p>\s?~', '', $content );
 
 		if ( ! empty( $content ) ) {
 			return sprintf( '<div class="ba-mce-content">%1$s</div>', $content );
@@ -726,8 +853,6 @@ class BA_Info_Box extends BA_Builder_Module {
 	public function render( $attrs, $content = null, $render_slug ) {
 
 		$this->render_css( $render_slug );
-
-		// Module classnames
 		$this->remove_classname( 'et_pb_module' );
 		$this->add_classname( 'ba_et_pb_module' );
 
@@ -773,17 +898,6 @@ class BA_Info_Box extends BA_Builder_Module {
 		$vo_icon_size                           = $this->props['vo_icon_size'];
 		$vo_bg                                  = $this->props['vo_bg'];
 		$content_alignment                      = $this->props['content_alignment'];
-		$quote_text_color                       = $this->props['quote_text_color'];
-
-		if ( ! empty( $quote_text_color ) ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% blockquote',
-					'declaration' => sprintf( 'border-color: %1$s;', $quote_text_color ),
-				)
-			);
-		}
 
 		// Figure Image.
 		ET_Builder_Element::set_style(
@@ -866,7 +980,7 @@ class BA_Info_Box extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% *',
+				'selector'    => '%%order_class%%',
 				'declaration' => sprintf( 'text-align: %1$s;', $content_alignment ),
 			)
 		);
