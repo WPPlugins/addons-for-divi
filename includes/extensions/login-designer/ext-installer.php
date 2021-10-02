@@ -56,8 +56,8 @@ class Installer {
 					'post_status'    => 'publish',
 					'comment_status' => 'closed',
 					'ping_status'    => 'closed',
-					'post_title'     => __( 'Divi Login Designer', 'brain-divi-addons' ),
-					'post_content'   => __( 'This page is used for Divi Login Designer extension. It will not be visible to your readers. Do not delete it.', 'brain-divi-addons' ),
+					'post_title'     => __( 'Divi Login Designer', 'addons-for-divi' ),
+					'post_content'   => __( 'This page is used for Divi Login Designer extension. It will not be visible to your readers. Do not delete it.', 'addons-for-divi' ),
 					'post_name'      => 'divi-login-designer',
 				)
 			);

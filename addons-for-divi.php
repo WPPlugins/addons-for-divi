@@ -1,17 +1,17 @@
 <?php
 /*
-Plugin Name: BrainAddons
+Plugin Name: Brainaddons
 Plugin URI:  https://brainaddons.com/
 Description: <a href="https://brainaddons.com/">BrainAddons</a> is a library of unique and powerfull modules that works seamlessly with Divi. <a href="https://brainaddons.com/">BrainAddons</a> is free, and comes with great support.
-Version:     2.2.3
-Author:      DiviPeople
+Version:     2.3.3
+Author:      BrainAddons
 Author URI:  https://brainaddons.com/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: brain-divi-addons
+Text Domain: addons-for-divi
 Domain Path: /languages
 
-@package Brain_Addons
+@package DiviTorque
 */
 
 /*
@@ -29,7 +29,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
-Copyright 2021 BrainAddons <https://brainaddons.com>
+Copyright 2021 DiviTorque <https://divitorque.com>
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'BRAIN_ADDONS_DEV_MODE', $_SERVER['REMOTE_ADDR'] == '127.0.0.1' );
-define( 'BRAIN_ADDONS_PLUGIN_VERSION', '2.2.3' );
+define( 'BRAIN_ADDONS_PLUGIN_VERSION', '2.3.3' );
 define( 'BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_ASSETS', trailingslashit( BRAIN_ADDONS_PLUGIN_URL . 'assets' ) );

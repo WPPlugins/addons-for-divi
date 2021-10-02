@@ -9,7 +9,7 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name       = esc_html__( 'Brain Logo Carousel', 'brain-divi-addons' );
+		$this->name       = esc_html__( 'Brain Logo Carousel', 'addons-for-divi' );
 		$this->slug       = 'ba_logo_carousel';
 		$this->vb_support = 'on';
 		$this->child_slug = 'ba_logo_carousel_child';
@@ -18,16 +18,16 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'logo_settings'     => esc_html__( 'Logo Settings', 'brain-divi-addons' ),
+					'logo_settings'     => esc_html__( 'Logo Settings', 'addons-for-divi' ),
 					'carousel_settings' => array(
-						'title'             => esc_html__( 'Carousel Settings', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Carousel Settings', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'general'  => array(
-								'name' => esc_html__( 'General', 'brain-divi-addons' ),
+								'name' => esc_html__( 'General', 'addons-for-divi' ),
 							),
 							'advanced' => array(
-								'name' => esc_html__( 'Advanced', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Advanced', 'addons-for-divi' ),
 							),
 						),
 					),
@@ -37,29 +37,29 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 			'advanced' => array(
 				'toggles' => array(
 					'nav'  => array(
-						'title'             => esc_html__( 'Navigation', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Navigation', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'nav_common' => array(
-								'name' => esc_html__( 'Common', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Common', 'addons-for-divi' ),
 							),
 							'nav_left'   => array(
-								'name' => esc_html__( 'Left', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Left', 'addons-for-divi' ),
 							),
 							'nav_right'  => array(
-								'name' => esc_html__( 'Right', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Right', 'addons-for-divi' ),
 							),
 						),
 					),
 					'pagi' => array(
-						'title'             => esc_html__( 'Pagination', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Pagination', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'pagi_common' => array(
-								'name' => esc_html__( 'Common', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Common', 'addons-for-divi' ),
 							),
 							'pagi_active' => array(
-								'name' => esc_html__( 'Active', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Active', 'addons-for-divi' ),
 							),
 						),
 					),
@@ -69,27 +69,27 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 
 		$this->custom_css_fields = array(
 			'logo'  => array(
-				'label'    => esc_html__( 'Logo', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Logo', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba_logo_carousel_child img',
 			),
 			'nav_prev'  => array(
-				'label'    => esc_html__( 'Prev (Navigation)', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Prev (Navigation)', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .slick-arrow.slick-prev',
 			),
 			'nav_next'  => array(
-				'label'    => esc_html__( 'Next (Navigation)', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Next (Navigation)', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .slick-arrow.slick-next',
 			),
 			'pagi_dots'  => array(
-				'label'    => esc_html__( 'Pagination Wrapper', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Pagination Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .slick-dots',
 			),
 			'pagi_item'  => array(
-				'label'    => esc_html__( 'Pagination Item', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Pagination Item', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .slick-dots li',
 			),
 			'pagi_dot'  => array(
-				'label'    => esc_html__( 'Pagination Dot', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Pagination Dot', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .slick-dots button',
 			),
 		);
@@ -102,8 +102,8 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 		$logo_options = array(
 
 			'logo_height' => array(
-				'label'           => esc_html__( 'Height', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define custom logo height.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Height', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define custom logo height.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => 'auto',
@@ -118,8 +118,8 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 			),
 
 			'logo_width'  => array(
-				'label'           => esc_html__( 'Width', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define custom logo width.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Width', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define custom logo width.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => 'auto',
@@ -134,17 +134,17 @@ class BA_Logo_Carousel extends BA_Builder_Module {
 			),
 
 			'logo_hover'  => array(
-				'label'       => esc_html__( 'Logo Hover Animation', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select hover animation for the logo.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Logo Hover Animation', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select hover animation for the logo.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'logo_settings',
 				'default'     => 'zoom_in',
 				'options'     => array(
-					'no_hover'      => esc_html__( 'None', 'brain-divi-addons' ),
-					'zoom_in'       => esc_html__( 'Zoom In', 'brain-divi-addons' ),
-					'zoom_out'      => esc_html__( 'Zoom Out', 'brain-divi-addons' ),
-					'fade'          => esc_html__( 'Fade', 'brain-divi-addons' ),
-					'black_n_white' => esc_html__( 'Black and White', 'brain-divi-addons' ),
+					'no_hover'      => esc_html__( 'None', 'addons-for-divi' ),
+					'zoom_in'       => esc_html__( 'Zoom In', 'addons-for-divi' ),
+					'zoom_out'      => esc_html__( 'Zoom Out', 'addons-for-divi' ),
+					'fade'          => esc_html__( 'Fade', 'addons-for-divi' ),
+					'black_n_white' => esc_html__( 'Black and White', 'addons-for-divi' ),
 				),
 			),
 		);

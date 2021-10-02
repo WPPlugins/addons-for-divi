@@ -11,33 +11,33 @@ class BA_Scroll_Image extends BA_Builder_Module {
 	);
 
 	public function init() {
-		$this->name      = esc_html__( 'Brain Scroll Image', 'brain-divi-addons' );
+		$this->name      = esc_html__( 'Brain Scroll Image', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'scroll-image.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'brain-divi-addons' ),
-					'settings' => esc_html__( 'Settings', 'brain-divi-addons' ),
+					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
+					'settings' => esc_html__( 'Settings', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'image'   => esc_html__( 'Image', 'brain-divi-addons' ),
-					'overlay' => esc_html__( 'Overlay', 'brain-divi-addons' ),
-					'icon'    => esc_html__( 'Icon', 'brain-divi-addons' ),
-					'border'  => esc_html__( 'Border', 'brain-divi-addons' ),
+					'image'   => esc_html__( 'Image', 'addons-for-divi' ),
+					'overlay' => esc_html__( 'Overlay', 'addons-for-divi' ),
+					'icon'    => esc_html__( 'Icon', 'addons-for-divi' ),
+					'border'  => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'image'  => array(
-				'label'    => esc_html__( 'Image', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-scroll-image img',
 			),
 			'icon'  => array(
-				'label'    => esc_html__( 'Direction Icon', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Direction Icon', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-scroll-image-icon-el',
 			),
 		);
@@ -49,38 +49,38 @@ class BA_Scroll_Image extends BA_Builder_Module {
 
 			// content.
 			'image'             => array(
-				'label'              => esc_html__( 'Upload Image', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Upload Image', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'toggle_slug'        => 'content',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
 			),
 
 			'image_alt'         => array(
-				'label'       => esc_html__( 'Image Alt Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define the HTML ALT text for your image.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define the HTML ALT text for your image.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
 
 			'show_icon'         => array(
-				'label'       => esc_html__( 'Show Direction Icon', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can choose whether direction icon should be displayed.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Show Direction Icon', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can choose whether direction icon should be displayed.', 'addons-for-divi' ),
 				'type'        => 'yes_no_button',
 				'default'     => 'off',
 				'toggle_slug' => 'content',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 			),
 
 			'icon'              => array(
-				'label'           => esc_html__( 'Select Icon', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Select direction icon.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Select Icon', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Select direction icon.', 'addons-for-divi' ),
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
 				'toggle_slug'     => 'content',
@@ -92,13 +92,13 @@ class BA_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'use_image'         => array(
-				'label'           => esc_html__( 'Use Icon Image', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether icon image should be used.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Icon Image', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether icon image should be used.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'content',
@@ -108,13 +108,13 @@ class BA_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'icon_image'        => array(
-				'label'              => esc_html__( 'Upload Icon Image', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload an icon image or type in the URL of the image you would like to display.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Upload Icon Image', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload an icon image or type in the URL of the image you would like to display.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload an Icon', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose an Icon', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Icon', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload an Icon', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose an Icon', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Icon', 'addons-for-divi' ),
 				'toggle_slug'        => 'content',
 				'show_if'            => array(
 					'use_image' => 'on',
@@ -124,14 +124,14 @@ class BA_Scroll_Image extends BA_Builder_Module {
 
 			// settings.
 			'use_icon_anim'     => array(
-				'label'       => esc_html__( 'Use Icon Animation', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can choose whether icon animation should be used.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Use Icon Animation', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can choose whether icon animation should be used.', 'addons-for-divi' ),
 				'type'        => 'yes_no_button',
 				'default'     => 'off',
 				'toggle_slug' => 'content',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'show_icon' => 'on',
@@ -139,25 +139,25 @@ class BA_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'scroll_type'       => array(
-				'label'       => esc_html__( 'Scroll Type', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define scroll type.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Scroll Type', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define scroll type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'default'     => 'on_hover',
 				'options'     => array(
-					'on_hover'  => esc_html__( 'On Mouse Hover', 'brain-divi-addons' ),
-					'on_scroll' => esc_html__( 'On Mouse Scroll', 'brain-divi-addons' ),
+					'on_hover'  => esc_html__( 'On Mouse Hover', 'addons-for-divi' ),
+					'on_scroll' => esc_html__( 'On Mouse Scroll', 'addons-for-divi' ),
 				),
 				'toggle_slug' => 'settings',
 			),
 
 			'scroll_dir_scroll' => array(
-				'label'       => esc_html__( 'Scroll Direction', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define scroll direction.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Scroll Direction', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define scroll direction.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'default'     => 'vertical',
 				'options'     => array(
-					'vertical'   => esc_html__( 'Vertical', 'brain-divi-addons' ),
-					'horizontal' => esc_html__( 'Horizontal', 'brain-divi-addons' ),
+					'vertical'   => esc_html__( 'Vertical', 'addons-for-divi' ),
+					'horizontal' => esc_html__( 'Horizontal', 'addons-for-divi' ),
 				),
 				'toggle_slug' => 'settings',
 				'show_if'     => array(
@@ -166,15 +166,15 @@ class BA_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'scroll_dir_hover'  => array(
-				'label'       => esc_html__( 'Scroll Direction', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define scroll direction.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Scroll Direction', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define scroll direction.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'default'     => 'Y_btt',
 				'options'     => array(
-					'Y_btt' => esc_html__( 'Bottom to Top', 'brain-divi-addons' ),
-					'Y_ttb' => esc_html__( 'Top to Bottom', 'brain-divi-addons' ),
-					'X_ltr' => esc_html__( 'Left to Right', 'brain-divi-addons' ),
-					'X_rtl' => esc_html__( 'Right to Left', 'brain-divi-addons' ),
+					'Y_btt' => esc_html__( 'Bottom to Top', 'addons-for-divi' ),
+					'Y_ttb' => esc_html__( 'Top to Bottom', 'addons-for-divi' ),
+					'X_ltr' => esc_html__( 'Left to Right', 'addons-for-divi' ),
+					'X_rtl' => esc_html__( 'Right to Left', 'addons-for-divi' ),
 				),
 				'toggle_slug' => 'settings',
 				'show_if'     => array(
@@ -183,8 +183,8 @@ class BA_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'scroll_speed'      => array(
-				'label'          => esc_html__( 'Scroll Speed', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define timing for the scroll event.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Scroll Speed', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define timing for the scroll event.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '700ms',
 				'fixed_unit'     => 'ms',
@@ -202,8 +202,8 @@ class BA_Scroll_Image extends BA_Builder_Module {
 
 			// image.
 			'img_height'        => array(
-				'label'          => esc_html__( 'Image Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define static height for the image.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define static height for the image.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '200px',
 				'default_unit'   => 'px',
@@ -219,13 +219,13 @@ class BA_Scroll_Image extends BA_Builder_Module {
 
 			// overlay.
 			'use_overlay'       => array(
-				'label'           => esc_html__( 'Use Image Overlay', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether image overlay should be used.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Image Overlay', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether image overlay should be used.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'tab_slug'        => 'advanced',
@@ -234,8 +234,8 @@ class BA_Scroll_Image extends BA_Builder_Module {
 
 			// icon.
 			'icon_color'        => array(
-				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'default'     => '#2EA3F2',
@@ -247,8 +247,8 @@ class BA_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'icon_size'         => array(
-				'label'          => esc_html__( 'Icon Size', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom size for your icon.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom size for your icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '48px',
 				'range_settings' => array(
@@ -266,7 +266,7 @@ class BA_Scroll_Image extends BA_Builder_Module {
 
 		$overlay_bg = $this->custom_background_fields(
 			'overlay',
-			esc_html__( 'Overlay', 'brain-divi-addons' ),
+			esc_html__( 'Overlay', 'addons-for-divi' ),
 			'advanced',
 			'overlay',
 			array( 'color', 'gradient' ),
@@ -285,7 +285,7 @@ class BA_Scroll_Image extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['borders']['icon'] = array(
-			'label_prefix' => esc_html__( 'Icon', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Icon', 'addons-for-divi' ),
 			'toggle_slug'  => 'icon',
 			'css'          => array(
 				'main'      => array(

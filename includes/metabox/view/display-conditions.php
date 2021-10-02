@@ -1,11 +1,11 @@
 <div class="ba-popup-conditions">
 	<div class="ba-popup-conditions-head">
-		<h3><?php esc_html_e( 'WHERE DO YOU WANT TO DISPLAY IT?', 'brain-divi-addons' );?></h3>
+		<h3><?php esc_html_e( 'WHERE DO YOU WANT TO DISPLAY IT?', 'addons-for-divi' );?></h3>
 	</div>
 
 	<div class="ba-popup-conditions-body">
 		<div class="ba-popup-new-condition">
-			<h4><?php esc_html_e( 'Add New Condition', 'brain-divi-addons' );?></h4>	
+			<h4><?php esc_html_e( 'Add New Condition', 'addons-for-divi' );?></h4>	
 			<div class="ba-popup-holder">
 			<?php
 
@@ -34,10 +34,10 @@
 				<div class="ba-popup-select">
 					<select name="conditions[type][]">
 						<option value="1" <?php selected( $conditions_type, 1 ); ?>>
-							<?php esc_html_e( 'Include', 'brain-divi-addons' );?>
+							<?php esc_html_e( 'Include', 'addons-for-divi' );?>
 						</option>
 						<option value="0" <?php selected( $conditions_type, 0 ); ?>>
-							<?php esc_html_e( 'Exclude', 'brain-divi-addons' );?>
+							<?php esc_html_e( 'Exclude', 'addons-for-divi' );?>
 						</option>
 					</select>
 				</div>
@@ -45,20 +45,20 @@
 				<div class="ba-popup-select">
 					<select id="ba-target" class="ba-select2-initialized ba-taget" name="conditions[target][]">
 						<option value="entire" <?php selected( $conditions_target, 'entire' ); ?>>
-							<?php esc_html_e( 'Entire Sites', 'brain-divi-addons' );?>
+							<?php esc_html_e( 'Entire Sites', 'addons-for-divi' );?>
 						</option>
 						<option value="page_selected" <?php selected( $conditions_target, 'page_selected' ); ?>>
-							<?php esc_html_e( 'Pages', 'brain-divi-addons' );?>
+							<?php esc_html_e( 'Pages', 'addons-for-divi' );?>
 						</option>
 						<!-- /**
 						<option value="post_selected" <?php //selected( $conditions_target, 'post_selected' ); ?>>
-							<?php //esc_html_e( 'Posts', 'brain-divi-addons' );?>
+							<?php //esc_html_e( 'Posts', 'addons-for-divi' );?>
 						</option>
 						<option value="is_front_page" <?php //selected( $conditions_target, 'is_front_page' ); ?>>
-							<?php //( 'Frontpage', 'brain-divi-addons' );?>
+							<?php //( 'Frontpage', 'addons-for-divi' );?>
 						</option>
 						<option value="is_404" <?php //selected( $conditions_target, 'is_404' ); ?>>
-							<?php //( '404 Page', 'brain-divi-addons' );?>
+							<?php //( '404 Page', 'addons-for-divi' );?>
 						</option> -->
 					</select>  
 				</div>
@@ -85,7 +85,7 @@
 				<?php endif; ?>
 
 				<div class="ba-popup-remove">
-					<?php esc_html_e( 'Remove', 'brain-divi-addons' );?>
+					<?php esc_html_e( 'Remove', 'addons-for-divi' );?>
 				</div>
 			</div>
 			<?php
@@ -95,18 +95,18 @@
 			<div class="row">	
 				<div class="ba-popup-select">
 					<select name="conditions[type][]">
-						<option value="1"><?php esc_html_e( 'Include', 'brain-divi-addons' );?></option>
-						<option value="0"><?php esc_html_e( 'Exclude', 'brain-divi-addons' );?></option>
+						<option value="1"><?php esc_html_e( 'Include', 'addons-for-divi' );?></option>
+						<option value="0"><?php esc_html_e( 'Exclude', 'addons-for-divi' );?></option>
 					</select>
 				</div>
 
 				<div class="ba-popup-select">
 					<select id="ba-target" class="ba-select2-initialized ba-taget" name="conditions[target][]">
-						<option value="entire"><?php esc_html_e( 'Entire Site', 'brain-divi-addons' );?></option>
-						<option value="page_selected"><?php esc_html_e( 'Pages', 'brain-divi-addons' );?></option>
-						<!-- <option value="post_selected"><?php //esc_html_e( 'Posts', 'brain-divi-addons' );?></option>
-						<option value="is_front_page"><?php //esc_html_e( 'Frontpage', 'brain-divi-addons' );?></option>
-						<option value="is_404"><?php //esc_html_e( '404 Page', 'brain-divi-addons' );?></option> -->
+						<option value="entire"><?php esc_html_e( 'Entire Site', 'addons-for-divi' );?></option>
+						<option value="page_selected"><?php esc_html_e( 'Pages', 'addons-for-divi' );?></option>
+						<!-- <option value="post_selected"><?php //esc_html_e( 'Posts', 'addons-for-divi' );?></option>
+						<option value="is_front_page"><?php //esc_html_e( 'Frontpage', 'addons-for-divi' );?></option>
+						<option value="is_404"><?php //esc_html_e( '404 Page', 'addons-for-divi' );?></option> -->
 					</select>
 				</div>
 
@@ -126,7 +126,7 @@
 							</path>
 						</g>
 					</g>
-				</svg> <?php esc_html_e( 'Add new display condition', 'brain-divi-addons' );?>
+				</svg> <?php esc_html_e( 'Add new display condition', 'addons-for-divi' );?>
 			</div>
 	</div>
 </div>

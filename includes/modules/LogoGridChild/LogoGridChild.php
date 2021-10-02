@@ -9,18 +9,18 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name = esc_html__( 'Logo', 'brain-divi-addons' );
+		$this->name = esc_html__( 'Logo', 'addons-for-divi' );
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'brain-divi-addons' ),
+					'main_content' => esc_html__( 'Content', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'tooltip' => esc_html__( 'Tooltip', 'brain-divi-addons' ),
-					'border'  => esc_html__( 'Border', 'brain-divi-addons' ),
+					'tooltip' => esc_html__( 'Tooltip', 'addons-for-divi' ),
+					'border'  => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 		);
@@ -31,21 +31,21 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 		$fields = array(
 
 			'logo_url'     => array(
-				'label'              => esc_html__( 'Upload Logo', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload a logo or type in the URL of the logo you would like to display.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Upload Logo', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload a logo or type in the URL of the logo you would like to display.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload a Logo', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose a Logo', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Logo', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload a Logo', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose a Logo', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Logo', 'addons-for-divi' ),
 				'toggle_slug'        => 'main_content',
 			),
 
 			'brand_name'   => array(
-				'label'       => esc_html__( 'Logo Alt Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define alt text for html img tag.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Logo Alt Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define alt text for html img tag.', 'addons-for-divi' ),
 				'type'        => 'text',
-				'default'     => esc_html__( 'Brand Name', 'brain-divi-addons' ),
+				'default'     => esc_html__( 'Brand Name', 'addons-for-divi' ),
 				'toggle_slug' => 'main_content',
 			),
 
@@ -54,15 +54,15 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 				'default'     => 'off',
 				'toggle_slug' => 'main_content',
 				'options'     => array(
-					'tooltip' => esc_html__( 'Use Tooltip', 'brain-divi-addons' ),
+					'tooltip' => esc_html__( 'Use Tooltip', 'addons-for-divi' ),
 				),
 			),
 
 			'tooltip_text' => array(
-				'label'       => esc_html__( 'Tooltip Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define tooltip text for logo image.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Tooltip Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define tooltip text for logo image.', 'addons-for-divi' ),
 				'type'        => 'text',
-				'default'     => esc_html__( 'Tooltip!', 'brain-divi-addons' ),
+				'default'     => esc_html__( 'Tooltip!', 'addons-for-divi' ),
 				'toggle_slug' => 'main_content',
 				'show_if'     => array(
 					'use_tooltip' => 'on',
@@ -70,15 +70,15 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 			),
 
 			'theme'        => array(
-				'label'       => esc_html__( 'Theme', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select tooltip theme.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Theme', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select tooltip theme.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'tooltip',
 				'tab_slug'    => 'advanced',
 				'default'     => 'dark',
 				'options'     => array(
-					'dark'  => esc_html__( 'Dark', 'brain-divi-addons' ),
-					'light' => esc_html__( 'Light', 'brain-divi-addons' ),
+					'dark'  => esc_html__( 'Dark', 'addons-for-divi' ),
+					'light' => esc_html__( 'Light', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_tooltip' => 'on',
@@ -86,17 +86,17 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 			),
 
 			'position'     => array(
-				'label'       => esc_html__( 'Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select tooltip position.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select tooltip position.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'tooltip',
 				'tab_slug'    => 'advanced',
 				'default'     => 'top',
 				'options'     => array(
-					'top'    => esc_html__( 'Top', 'brain-divi-addons' ),
-					'bottom' => esc_html__( 'Bottom', 'brain-divi-addons' ),
-					'left'   => esc_html__( 'Left', 'brain-divi-addons' ),
-					'right'  => esc_html__( 'Right', 'brain-divi-addons' ),
+					'top'    => esc_html__( 'Top', 'addons-for-divi' ),
+					'bottom' => esc_html__( 'Bottom', 'addons-for-divi' ),
+					'left'   => esc_html__( 'Left', 'addons-for-divi' ),
+					'right'  => esc_html__( 'Right', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_tooltip' => 'on',
@@ -104,15 +104,15 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 			),
 
 			'animation'    => array(
-				'label'       => esc_html__( 'Animation', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select tooltip animation.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Animation', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select tooltip animation.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'tooltip',
 				'tab_slug'    => 'advanced',
 				'default'     => 'scale',
 				'options'     => array(
-					'fade'  => esc_html__( 'Fade', 'brain-divi-addons' ),
-					'scale' => esc_html__( 'Scale', 'brain-divi-addons' ),
+					'fade'  => esc_html__( 'Fade', 'addons-for-divi' ),
+					'scale' => esc_html__( 'Scale', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_tooltip' => 'on',
@@ -123,9 +123,9 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 
 		$label = array(
 			'admin_title' => array(
-				'label'       => esc_html__( 'Admin Label', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Admin Label', 'addons-for-divi' ),
 				'type'        => 'text',
-				'description' => esc_html__( 'This will change the label of the item', 'brain-divi-addons' ),
+				'description' => esc_html__( 'This will change the label of the item', 'addons-for-divi' ),
 				'toggle_slug' => 'admin_label',
 			),
 		);
@@ -157,7 +157,7 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['default'] = array(
-			'label_prefix' => esc_html__( 'Logo', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Logo', 'addons-for-divi' ),
 			'toggle_slug'  => 'border',
 			'css'          => array(
 				'main'      => array(

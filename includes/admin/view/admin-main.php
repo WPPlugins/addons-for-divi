@@ -1,5 +1,5 @@
 <div class="ba-admin wrapper">
-	<h1 class="screen-reader-text"><?php esc_html_e( 'BrainAddons Options', 'brain-divi-addons' ); ?></h1>
+	<h1 class="screen-reader-text"><?php esc_html_e( 'BrainAddons Options', 'addons-for-divi' ); ?></h1>
 	<div class="ba-admin-header">
 		<div class="ba-admin-logo-inline">
 			<?php $logo_url = BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/admin/'; ?>
@@ -7,7 +7,7 @@
 				<div class="ba-admin-logo-inline-svg">
 					<img class="ba-logo-icon-size" src="<?php echo $logo_url . 'brain-addons-icon.svg'; ?>" alt="BrainAddons">
 				</div> 
-				<?php esc_attr_e( 'Brain Addons Settings', 'brain-divi-addons' ); ?>
+				<?php esc_attr_e( 'Brain Addons Settings', 'addons-for-divi' ); ?>
 			</div>
 		</div>
 		<div class="ba-nav" role="tablist">

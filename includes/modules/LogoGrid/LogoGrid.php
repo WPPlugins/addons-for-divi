@@ -13,13 +13,13 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name      = esc_html__( 'Brain Logo Grid', 'brain-divi-addons' );
+		$this->name      = esc_html__( 'Brain Logo Grid', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'logo-grid.svg';
 
 		$this->settings_modal_toggles = array(
 			'general' => array(
 				'toggles' => array(
-					'grid' => esc_html__( 'Grid Settings', 'brain-divi-addons' ),
+					'grid' => esc_html__( 'Grid Settings', 'addons-for-divi' ),
 				),
 
 			),
@@ -27,7 +27,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 		$this->custom_css_fields = array(
 			'logo'  => array(
-				'label'    => esc_html__( 'Logo', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Logo', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-logo-grid__item img',
 			),
 		);
@@ -37,29 +37,29 @@ class BA_Logo_Grid extends BA_Builder_Module {
 
 		$fields = array(
 			'column_count'  => array(
-				'label'          => esc_html__( 'Column', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define grid columns number.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Column', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define grid columns number.', 'addons-for-divi' ),
 				'type'           => 'select',
 				'default'        => '4',
 				'options'        => array(
-					'1'  => esc_html__( '1', 'brain-divi-addons' ),
-					'2'  => esc_html__( '2', 'brain-divi-addons' ),
-					'3'  => esc_html__( '3', 'brain-divi-addons' ),
-					'4'  => esc_html__( '4', 'brain-divi-addons' ),
-					'5'  => esc_html__( '5', 'brain-divi-addons' ),
-					'6'  => esc_html__( '6', 'brain-divi-addons' ),
-					'7'  => esc_html__( '7', 'brain-divi-addons' ),
-					'8'  => esc_html__( '8', 'brain-divi-addons' ),
-					'9'  => esc_html__( '9', 'brain-divi-addons' ),
-					'10' => esc_html__( '10', 'brain-divi-addons' ),
+					'1'  => esc_html__( '1', 'addons-for-divi' ),
+					'2'  => esc_html__( '2', 'addons-for-divi' ),
+					'3'  => esc_html__( '3', 'addons-for-divi' ),
+					'4'  => esc_html__( '4', 'addons-for-divi' ),
+					'5'  => esc_html__( '5', 'addons-for-divi' ),
+					'6'  => esc_html__( '6', 'addons-for-divi' ),
+					'7'  => esc_html__( '7', 'addons-for-divi' ),
+					'8'  => esc_html__( '8', 'addons-for-divi' ),
+					'9'  => esc_html__( '9', 'addons-for-divi' ),
+					'10' => esc_html__( '10', 'addons-for-divi' ),
 				),
 				'toggle_slug'    => 'grid',
 				'mobile_options' => true,
 			),
 
 			'grid_height'   => array(
-				'label'          => esc_html__( 'Column Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define grid column height.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Column Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define grid column height.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'toggle_slug'    => 'grid',
 				'default_unit'   => 'px',
@@ -72,8 +72,8 @@ class BA_Logo_Grid extends BA_Builder_Module {
 			),
 
 			'grid_gap'      => array(
-				'label'          => esc_html__( 'Grid Gap', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define the spacing between grid columns.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Grid Gap', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define the spacing between grid columns.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'toggle_slug'    => 'grid',
 				'default'        => '5px',
@@ -87,8 +87,8 @@ class BA_Logo_Grid extends BA_Builder_Module {
 			),
 
 			'logo_size'     => array(
-				'label'          => esc_html__( 'Logo Size', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define static logo width.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Logo Size', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define static logo width.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'toggle_slug'    => 'grid',
 				'default_unit'   => 'px',
@@ -101,29 +101,29 @@ class BA_Logo_Grid extends BA_Builder_Module {
 			),
 
 			'image_hover'   => array(
-				'label'       => esc_html__( 'Logo Hover Style', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select logo hover animation.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Logo Hover Style', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select logo hover animation.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'grid',
 				'default'     => 'zoom_in',
 				'options'     => array(
-					'no_hover'      => esc_html__( 'None', 'brain-divi-addons' ),
-					'zoom_in'       => esc_html__( 'Zoom In', 'brain-divi-addons' ),
-					'zoom_out'      => esc_html__( 'Zoom Out', 'brain-divi-addons' ),
-					'fade'          => esc_html__( 'Fade Out', 'brain-divi-addons' ),
-					'black_n_white' => esc_html__( 'Black and White', 'brain-divi-addons' ),
+					'no_hover'      => esc_html__( 'None', 'addons-for-divi' ),
+					'zoom_in'       => esc_html__( 'Zoom In', 'addons-for-divi' ),
+					'zoom_out'      => esc_html__( 'Zoom Out', 'addons-for-divi' ),
+					'fade'          => esc_html__( 'Fade Out', 'addons-for-divi' ),
+					'black_n_white' => esc_html__( 'Black and White', 'addons-for-divi' ),
 				),
 			),
 
 			'logo_overflow' => array(
-				'label'       => esc_html__( 'Logo Overflow', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can control logo image overflow on the X and Y axis. If set to hidden, logo will be clipped.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Logo Overflow', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can control logo image overflow on the X and Y axis. If set to hidden, logo will be clipped.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'grid',
 				'default'     => 'visible',
 				'options'     => array(
-					'hidden'  => esc_html__( 'Hidden', 'brain-divi-addons' ),
-					'visible' => esc_html__( 'Visible', 'brain-divi-addons' ),
+					'hidden'  => esc_html__( 'Hidden', 'addons-for-divi' ),
+					'visible' => esc_html__( 'Visible', 'addons-for-divi' ),
 				),
 			),
 

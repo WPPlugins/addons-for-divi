@@ -45,12 +45,12 @@ if ( ! class_exists( 'Unfiltered_Uploads' ) ) :
 			$display_type = strtoupper( $file_type );
 
 			if ( $file_type !== $ext ) {
-				$file['error'] = sprintf( __( 'The uploaded %1$s file is not supported. Please upload a valid %2$s file', 'brain-divi-addons' ), $ext, $display_type );
+				$file['error'] = sprintf( __( 'The uploaded %1$s file is not supported. Please upload a valid %2$s file', 'addons-for-divi' ), $ext, $display_type );
 				return $file;
 			}
 
 			if ( ! self::is_enabled() ) {
-				$file['error'] = sprintf( __( '%1$s file is not allowed for security reasons', 'brain-divi-addons' ), $display_type );
+				$file['error'] = sprintf( __( '%1$s file is not allowed for security reasons', 'addons-for-divi' ), $display_type );
 				return $file;
 			}
 

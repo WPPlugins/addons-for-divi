@@ -20,7 +20,7 @@
 			<attributes>
 				<attribute>animated_text</attribute>
 			</attributes>
-		</shortcode>		
+		</shortcode>
 		<shortcode>
 			<tag>ba_business_hour</tag>
 			<attributes>
@@ -65,7 +65,7 @@
 				<attribute>front_img</attribute>
 				<attribute>front_img_alt</attribute>
 				<attribute>front_title</attribute>
-				<attribute>front_subtitle</attribute>				
+				<attribute>front_subtitle</attribute>
 				<attribute>back_img</attribute>
 				<attribute>back_img_alt</attribute>
 				<attribute>back_title</attribute>
@@ -165,7 +165,12 @@
 				<attribute>testimonial</attribute>
 			</attributes>
 		</shortcode>
+		<shortcode>
+			<tag>ba_video_popup</tag>
+			<attributes>
+				<attribute>text</attribute>
+			</attributes>
+		</shortcode>
 	</shortcodes>
 </wpml-config>
 
- 

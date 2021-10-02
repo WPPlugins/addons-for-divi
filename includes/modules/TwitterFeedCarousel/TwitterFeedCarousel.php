@@ -12,23 +12,23 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_twitter_feed_carousel';
-		$this->name       = esc_html__( 'Brain Twitter Carousel', 'brain-divi-addons' );
+		$this->name       = esc_html__( 'Brain Twitter Carousel', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'twitter-carousel.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'twitter_feed'      => esc_html__( 'Twitter Feed', 'brain-divi-addons' ),
-					'twitter_settings'  => esc_html__( 'Twitter Settings', 'brain-divi-addons' ),
+					'twitter_feed'      => esc_html__( 'Twitter Feed', 'addons-for-divi' ),
+					'twitter_settings'  => esc_html__( 'Twitter Settings', 'addons-for-divi' ),
 					'carousel_settings' => array(
-						'title'             => esc_html__( 'Carousel Settings', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Carousel Settings', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'general'  => array(
-								'name' => esc_html__( 'General', 'brain-divi-addons' ),
+								'name' => esc_html__( 'General', 'addons-for-divi' ),
 							),
 							'advanced' => array(
-								'name' => esc_html__( 'Advanced', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Advanced', 'addons-for-divi' ),
 							),
 						),
 					),
@@ -37,60 +37,60 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 			'advanced' => array(
 				'toggles' => array(
-					'tweets'      => esc_html__( 'Tweets Box', 'brain-divi-addons' ),
-					'user_avatar' => esc_html__( 'User Avatar', 'brain-divi-addons' ),
+					'tweets'      => esc_html__( 'Tweets Box', 'addons-for-divi' ),
+					'user_avatar' => esc_html__( 'User Avatar', 'addons-for-divi' ),
 					'user_text'   => array(
-						'title'             => esc_html__( 'User Text', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'User Text', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'name'     => array(
-								'name' => esc_html__( 'Name', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Name', 'addons-for-divi' ),
 							),
 							'username' => array(
-								'name' => esc_html__( 'Username', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Username', 'addons-for-divi' ),
 							),
 						),
 					),
 					'content'     => array(
-						'title'             => esc_html__( 'Content', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Content', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'description' => array(
-								'name' => esc_html__( 'Description', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Description', 'addons-for-divi' ),
 							),
 							'read_more'   => array(
-								'name' => esc_html__( 'Read More', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Read More', 'addons-for-divi' ),
 							),
 							'date'        => array(
-								'name' => esc_html__( 'Date', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Date', 'addons-for-divi' ),
 							),
 						),
 					),
-					'footer'      => esc_html__( 'Footer', 'brain-divi-addons' ),
+					'footer'      => esc_html__( 'Footer', 'addons-for-divi' ),
 					'nav'         => array(
-						'title'             => esc_html__( 'Navigation', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Navigation', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'nav_common' => array(
-								'name' => esc_html( 'Common', 'brain-divi-addons' ),
+								'name' => esc_html( 'Common', 'addons-for-divi' ),
 							),
 							'nav_left'   => array(
-								'name' => esc_html( 'Left', 'brain-divi-addons' ),
+								'name' => esc_html( 'Left', 'addons-for-divi' ),
 							),
 							'nav_right'  => array(
-								'name' => esc_html( 'Right', 'brain-divi-addons' ),
+								'name' => esc_html( 'Right', 'addons-for-divi' ),
 							),
 						),
 					),
 					'pagi'        => array(
-						'title'             => esc_html( 'Pagination', 'brain-divi-addons' ),
+						'title'             => esc_html( 'Pagination', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'pagi_common' => array(
-								'name' => esc_html( 'Common', 'brain-divi-addons' ),
+								'name' => esc_html( 'Common', 'addons-for-divi' ),
 							),
 							'pagi_active' => array(
-								'name' => esc_html( 'Active', 'brain-divi-addons' ),
+								'name' => esc_html( 'Active', 'addons-for-divi' ),
 							),
 						),
 					),
@@ -104,15 +104,15 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 		$fields = array(
 			// Twitter Feed.
 			'user_name'           => array(
-				'label'            => __( 'User Name', 'brain-divi-addons' ),
+				'label'            => __( 'User Name', 'addons-for-divi' ),
 				'type'             => 'text',
 				'default'          => '@divipeople',
-				'description'      => __( 'Use @ sign with your Twitter user name.', 'brain-divi-addons' ),
+				'description'      => __( 'Use @ sign with your Twitter user name.', 'addons-for-divi' ),
 				'toggle_slug'      => 'twitter_feed',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'consumer_key'        => array(
-				'label'            => __( 'Consumer Key', 'brain-divi-addons' ),
+				'label'            => __( 'Consumer Key', 'addons-for-divi' ),
 				'type'             => 'text',
 				'default'          => 'okjSlxMnSMCKTKlBVjPhg5R1v',
 				'description'      => '<a href="https://apps.twitter.com/app/" target="_blank">Get Consumer Key.</a> Create a new app or select existing app and grab the consumer key.',
@@ -120,7 +120,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'consumer_secret'     => array(
-				'label'            => __( 'Consumer Secret', 'brain-divi-addons' ),
+				'label'            => __( 'Consumer Secret', 'addons-for-divi' ),
 				'type'             => 'text',
 				'default'          => '8GhKIROr4kT1byyCqiXsJkttS3BXqePOJlWN2TfKCVgenHMCeb',
 				'description'      => '<a href="https://apps.twitter.com/app/" target="_blank">Get Consumer Secret key.</a> Create a new app or select existing app and grab the consumer secret.',
@@ -129,22 +129,22 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 			),
 			// Twitter Settings.
 			'sort_by'             => array(
-				'label'            => __( 'Sort By', 'brain-divi-addons' ),
-				'description'      => __( 'Choose how your feed should be sorted.', 'brain-divi-addons' ),
+				'label'            => __( 'Sort By', 'addons-for-divi' ),
+				'description'      => __( 'Choose how your feed should be sorted.', 'addons-for-divi' ),
 				'type'             => 'select',
 				'default'          => 'recent-posts',
 				'options'          => array(
-					'recent-posts'   => __( 'Recent Posts', 'brain-divi-addons' ),
-					'old-posts'      => __( 'Old Posts', 'brain-divi-addons' ),
-					'favorite_count' => __( 'Favorite', 'brain-divi-addons' ),
-					'retweet_count'  => __( 'Retweet', 'brain-divi-addons' ),
+					'recent-posts'   => __( 'Recent Posts', 'addons-for-divi' ),
+					'old-posts'      => __( 'Old Posts', 'addons-for-divi' ),
+					'favorite_count' => __( 'Favorite', 'addons-for-divi' ),
+					'retweet_count'  => __( 'Retweet', 'addons-for-divi' ),
 				),
 				'toggle_slug'      => 'twitter_settings',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'tweets_limit'        => array(
-				'label'            => __( 'Number of tweets to show', 'brain-divi-addons' ),
-				'description'      => __( 'Choose how much posts you would like to display per List.', 'brain-divi-addons' ),
+				'label'            => __( 'Number of tweets to show', 'addons-for-divi' ),
+				'description'      => __( 'Choose how much posts you would like to display per List.', 'addons-for-divi' ),
 				'type'             => 'range',
 				'default'          => '8',
 				'unitless'         => true,
@@ -157,96 +157,96 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'show_twitter_icon'   => array(
-				'label'            => __( 'Show Twitter Logo', 'brain-divi-addons' ),
-				'description'      => __( 'Here you can choose whether twitter logo should be displayed.', 'brain-divi-addons' ),
+				'label'            => __( 'Show Twitter Logo', 'addons-for-divi' ),
+				'description'      => __( 'Here you can choose whether twitter logo should be displayed.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => __( 'Yes', 'brain-divi-addons' ),
-					'off' => __( 'No', 'brain-divi-addons' ),
+					'on'  => __( 'Yes', 'addons-for-divi' ),
+					'off' => __( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'twitter_settings',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'show_user_image'     => array(
-				'label'            => __( 'Show User Image', 'brain-divi-addons' ),
-				'description'      => __( 'Here you can choose whether user image should be displayed.', 'brain-divi-addons' ),
+				'label'            => __( 'Show User Image', 'addons-for-divi' ),
+				'description'      => __( 'Here you can choose whether user image should be displayed.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => __( 'Yes', 'brain-divi-addons' ),
-					'off' => __( 'No', 'brain-divi-addons' ),
+					'on'  => __( 'Yes', 'addons-for-divi' ),
+					'off' => __( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'twitter_settings',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'show_name'           => array(
-				'label'            => __( 'Show Name', 'brain-divi-addons' ),
-				'description'      => __( 'Here you can choose whether name should be displayed.', 'brain-divi-addons' ),
+				'label'            => __( 'Show Name', 'addons-for-divi' ),
+				'description'      => __( 'Here you can choose whether name should be displayed.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => __( 'Yes', 'brain-divi-addons' ),
-					'off' => __( 'No', 'brain-divi-addons' ),
+					'on'  => __( 'Yes', 'addons-for-divi' ),
+					'off' => __( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'twitter_settings',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'show_user_name'      => array(
-				'label'            => __( 'Show User Name', 'brain-divi-addons' ),
-				'description'      => __( 'Here you can choose whether user name should be displayed.', 'brain-divi-addons' ),
+				'label'            => __( 'Show User Name', 'addons-for-divi' ),
+				'description'      => __( 'Here you can choose whether user name should be displayed.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => __( 'Yes', 'brain-divi-addons' ),
-					'off' => __( 'No', 'brain-divi-addons' ),
+					'on'  => __( 'Yes', 'addons-for-divi' ),
+					'off' => __( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'off',
 				'toggle_slug'      => 'twitter_settings',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'show_date'           => array(
-				'label'            => __( 'Show Date', 'brain-divi-addons' ),
-				'description'      => __( 'Here you can choose whether date should be displayed.', 'brain-divi-addons' ),
+				'label'            => __( 'Show Date', 'addons-for-divi' ),
+				'description'      => __( 'Here you can choose whether date should be displayed.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => __( 'Yes', 'brain-divi-addons' ),
-					'off' => __( 'No', 'brain-divi-addons' ),
+					'on'  => __( 'Yes', 'addons-for-divi' ),
+					'off' => __( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'twitter_settings',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'show_favorite'       => array(
-				'label'            => __( 'Show Favorite', 'brain-divi-addons' ),
-				'description'      => __( 'Here you can choose whether favorite should be displayed.', 'brain-divi-addons' ),
+				'label'            => __( 'Show Favorite', 'addons-for-divi' ),
+				'description'      => __( 'Here you can choose whether favorite should be displayed.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => __( 'Yes', 'brain-divi-addons' ),
-					'off' => __( 'No', 'brain-divi-addons' ),
+					'on'  => __( 'Yes', 'addons-for-divi' ),
+					'off' => __( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'twitter_settings',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'show_retweet'        => array(
-				'label'            => __( 'Show Retweet', 'brain-divi-addons' ),
-				'description'      => __( 'Here you can choose whether retweet should be displayed.', 'brain-divi-addons' ),
+				'label'            => __( 'Show Retweet', 'addons-for-divi' ),
+				'description'      => __( 'Here you can choose whether retweet should be displayed.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => __( 'Yes', 'brain-divi-addons' ),
-					'off' => __( 'No', 'brain-divi-addons' ),
+					'on'  => __( 'Yes', 'addons-for-divi' ),
+					'off' => __( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'twitter_settings',
 				'computed_affects' => array( '__twitterfeed' ),
 			),
 			'read_more'           => array(
-				'label'            => __( ' Show Read More', 'brain-divi-addons' ),
-				'description'      => __( 'Here you can choose whether readmore should be displayed.', 'brain-divi-addons' ),
+				'label'            => __( ' Show Read More', 'addons-for-divi' ),
+				'description'      => __( 'Here you can choose whether readmore should be displayed.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => __( 'Yes', 'brain-divi-addons' ),
-					'off' => __( 'No', 'brain-divi-addons' ),
+					'on'  => __( 'Yes', 'addons-for-divi' ),
+					'off' => __( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'twitter_settings',
@@ -255,11 +255,11 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				),
 			),
 			'read_more_text'      => array(
-				'label'            => __( 'Read More Text', 'brain-divi-addons' ),
-				'description'      => __( 'Define your custom readmore text.', 'brain-divi-addons' ),
+				'label'            => __( 'Read More Text', 'addons-for-divi' ),
+				'description'      => __( 'Define your custom readmore text.', 'addons-for-divi' ),
 				'type'             => 'text',
 				'default'          => 'Read More',
-				'description'      => __( 'Use @ sign with your Twitter user name.', 'brain-divi-addons' ),
+				'description'      => __( 'Use @ sign with your Twitter user name.', 'addons-for-divi' ),
 				'toggle_slug'      => 'twitter_settings',
 				'show_if'          => array( 'read_more' => 'on' ),
 				'computed_affects' => array(
@@ -268,35 +268,35 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 			),
 			// User Avatar.
 			'avatar_position'     => array(
-				'label'       => __( 'Avatar Position', 'brain-divi-addons' ),
-				'description' => __( 'Here you can define avatar position. By selecting absolute position avatar can be placed any where on the feed.', 'brain-divi-addons' ),
+				'label'       => __( 'Avatar Position', 'addons-for-divi' ),
+				'description' => __( 'Here you can define avatar position. By selecting absolute position avatar can be placed any where on the feed.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'default'     => 'normal',
 				'options'     => array(
-					'normal'   => __( 'Normal', 'brain-divi-addons' ),
-					'absolute' => __( 'Absolute', 'brain-divi-addons' ),
+					'normal'   => __( 'Normal', 'addons-for-divi' ),
+					'absolute' => __( 'Absolute', 'addons-for-divi' ),
 				),
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'user_avatar',
 			),
 			'avatar_placement'    => array(
-				'label'       => esc_html__( 'Avatar Placement', 'brain-divi-addons' ),
-				'description' => __( 'Here you can define avatar placement.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Avatar Placement', 'addons-for-divi' ),
+				'description' => __( 'Here you can define avatar placement.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'user_avatar',
 				'default'     => 'top',
 				'options'     => array(
-					'top'    => esc_html__( 'Top', 'brain-divi-addons' ),
-					'bottom' => esc_html__( 'Bottom', 'brain-divi-addons' ),
+					'top'    => esc_html__( 'Top', 'addons-for-divi' ),
+					'bottom' => esc_html__( 'Bottom', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'avatar_position' => 'absolute',
 				),
 			),
 			'avatar_offset_x'     => array(
-				'label'          => esc_html__( 'Avatar Offset X', 'brain-divi-addons' ),
-				'description'    => __( 'Define avatar horizontal offset value.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Avatar Offset X', 'addons-for-divi' ),
+				'description'    => __( 'Define avatar horizontal offset value.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'unitless'       => true,
 				'range_settings' => array(
@@ -311,8 +311,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'avatar_size'         => array(
-				'label'          => __( 'Profile Image Size', 'brain-divi-addons' ),
-				'description'    => __( 'Here you can define custom size for your avatar.', 'brain-divi-addons' ),
+				'label'          => __( 'Profile Image Size', 'addons-for-divi' ),
+				'description'    => __( 'Here you can define custom size for your avatar.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '50px',
 				'range_settings' => array(
@@ -324,8 +324,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'toggle_slug'    => 'user_avatar',
 			),
 			'avatar_spacing'      => array(
-				'label'          => __( 'Avatar Spacing', 'brain-divi-addons' ),
-				'description'    => __( 'Define avatar spacing gap.', 'brain-divi-addons' ),
+				'label'          => __( 'Avatar Spacing', 'addons-for-divi' ),
+				'description'    => __( 'Define avatar spacing gap.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'range_settings' => array(
@@ -341,8 +341,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 			),
 			// Tweets.
 			'alignment'           => array(
-				'label'            => __( 'Alignment', 'brain-divi-addons' ),
-				'description'      => __( 'Align content to the left, right or center.', 'brain-divi-addons' ),
+				'label'            => __( 'Alignment', 'addons-for-divi' ),
+				'description'      => __( 'Align content to the left, right or center.', 'addons-for-divi' ),
 				'type'             => 'text_align',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'options_icon'     => 'module_align',
@@ -352,8 +352,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'computed_affects' => array( '__feed' ),
 			),
 			'twitter_icon_size'   => array(
-				'label'          => __( 'Twitter Icon Size', 'brain-divi-addons' ),
-				'description'    => __( 'Here you can define custom size for your twitter icon.', 'brain-divi-addons' ),
+				'label'          => __( 'Twitter Icon Size', 'addons-for-divi' ),
+				'description'    => __( 'Here you can define custom size for your twitter icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'range_settings' => array(
@@ -365,8 +365,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'toggle_slug'    => 'tweets',
 			),
 			'content_padding'     => array(
-				'label'          => __( 'Tweets Padding', 'brain-divi-addons' ),
-				'description'    => __( 'Here you can define custom padding for your tweets content.', 'brain-divi-addons' ),
+				'label'          => __( 'Tweets Padding', 'addons-for-divi' ),
+				'description'    => __( 'Here you can define custom padding for your tweets content.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'tweets',
@@ -375,8 +375,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 			),
 			// Description.
 			'description_spacing' => array(
-				'label'          => __( 'Bottom Spacing', 'brain-divi-addons' ),
-				'description'    => __( 'Here you can define a custom spacing at the bottom of the description text.', 'brain-divi-addons' ),
+				'label'          => __( 'Bottom Spacing', 'addons-for-divi' ),
+				'description'    => __( 'Here you can define a custom spacing at the bottom of the description text.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '25px',
 				'range_settings' => array(
@@ -391,23 +391,23 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 			),
 			// Footer.
 			'footer_alignment'    => array(
-				'label'       => esc_html__( 'Footer Alignment', 'brain-divi-addons' ),
-				'description' => __( 'Define footer content alignment from the list.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Footer Alignment', 'addons-for-divi' ),
+				'description' => __( 'Define footer content alignment from the list.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'default'     => 'space-between',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
 				'options'     => array(
-					'flex-start'    => esc_html__( 'Left', 'brain-divi-addons' ),
-					'flex-end'      => esc_html__( 'Right', 'brain-divi-addons' ),
-					'center'        => esc_html__( 'Center', 'brain-divi-addons' ),
-					'space-around'  => esc_html__( 'Space Around', 'brain-divi-addons' ),
-					'space-between' => esc_html__( 'Space Between', 'brain-divi-addons' ),
+					'flex-start'    => esc_html__( 'Left', 'addons-for-divi' ),
+					'flex-end'      => esc_html__( 'Right', 'addons-for-divi' ),
+					'center'        => esc_html__( 'Center', 'addons-for-divi' ),
+					'space-around'  => esc_html__( 'Space Around', 'addons-for-divi' ),
+					'space-between' => esc_html__( 'Space Between', 'addons-for-divi' ),
 				),
 			),
 			'footer_padding'      => array(
-				'label'          => __( 'Footer Padding', 'brain-divi-addons' ),
-				'description'    => __( 'Define custom padding for the footer content.', 'brain-divi-addons' ),
+				'label'          => __( 'Footer Padding', 'addons-for-divi' ),
+				'description'    => __( 'Define custom padding for the footer content.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'footer',
@@ -415,8 +415,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'favorite_color'      => array(
-				'label'       => __( 'Favorite Text Color', 'brain-divi-addons' ),
-				'description' => __( 'Here you can define custom color for favorite text.', 'brain-divi-addons' ),
+				'label'       => __( 'Favorite Text Color', 'addons-for-divi' ),
+				'description' => __( 'Here you can define custom color for favorite text.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
@@ -425,8 +425,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'default'     => '#000000',
 			),
 			'favorite_font_size'  => array(
-				'label'          => __( 'Favorite Text Size', 'brain-divi-addons' ),
-				'description'    => __( 'Here you can define custom size for favorite text.', 'brain-divi-addons' ),
+				'label'          => __( 'Favorite Text Size', 'addons-for-divi' ),
+				'description'    => __( 'Here you can define custom size for favorite text.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '14px',
 				'range_settings' => array(
@@ -440,8 +440,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'toggle_slug'    => 'footer',
 			),
 			'favorite_icon_color' => array(
-				'label'       => __( 'Favorite Icon Color', 'brain-divi-addons' ),
-				'description' => __( 'Here you can define custom color for favorite icon.', 'brain-divi-addons' ),
+				'label'       => __( 'Favorite Icon Color', 'addons-for-divi' ),
+				'description' => __( 'Here you can define custom color for favorite icon.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
@@ -450,8 +450,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'default'     => '#000000',
 			),
 			'favorite_icon_size'  => array(
-				'label'          => __( 'Favorite Icon Size', 'brain-divi-addons' ),
-				'description'    => __( 'Here you can define custom size for favorite icon.', 'brain-divi-addons' ),
+				'label'          => __( 'Favorite Icon Size', 'addons-for-divi' ),
+				'description'    => __( 'Here you can define custom size for favorite icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '14px',
 				'range_settings' => array(
@@ -465,8 +465,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'toggle_slug'    => 'footer',
 			),
 			'retweet_color'       => array(
-				'label'       => __( 'Retweet Text Color', 'brain-divi-addons' ),
-				'description' => __( 'Here you can define custom color for retweet text.', 'brain-divi-addons' ),
+				'label'       => __( 'Retweet Text Color', 'addons-for-divi' ),
+				'description' => __( 'Here you can define custom color for retweet text.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
@@ -474,8 +474,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'default'     => '#000000',
 			),
 			'retweet_font_size'   => array(
-				'label'          => __( 'Retweet Text Size', 'brain-divi-addons' ),
-				'description'    => __( 'Here you can define custom size for retweet text.', 'brain-divi-addons' ),
+				'label'          => __( 'Retweet Text Size', 'addons-for-divi' ),
+				'description'    => __( 'Here you can define custom size for retweet text.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '14px',
 				'range_settings' => array(
@@ -489,8 +489,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'toggle_slug'    => 'footer',
 			),
 			'retweet_icon_color'  => array(
-				'label'       => __( 'Retweet Icon Color', 'brain-divi-addons' ),
-				'description' => __( 'Here you can define custom color for retweet icon.', 'brain-divi-addons' ),
+				'label'       => __( 'Retweet Icon Color', 'addons-for-divi' ),
+				'description' => __( 'Here you can define custom color for retweet icon.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'footer',
@@ -498,8 +498,8 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				'default'     => '#000000',
 			),
 			'retweet_icon_size'   => array(
-				'label'          => __( 'Retweet Icon Size', 'brain-divi-addons' ),
-				'description'    => __( 'Here you can define custom size for retweet icon.', 'brain-divi-addons' ),
+				'label'          => __( 'Retweet Icon Size', 'addons-for-divi' ),
+				'description'    => __( 'Here you can define custom size for retweet icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '14px',
 				'range_settings' => array(
@@ -543,7 +543,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		$additional_options = $this->custom_background_fields(
 			'tweets_item',
-			__( 'Tweets', 'brain-divi-addons' ),
+			__( 'Tweets', 'addons-for-divi' ),
 			'advanced',
 			'tweets',
 			array( 'color', 'gradient', 'hover' ),
@@ -570,7 +570,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				),
 				'important' => 'all',
 			),
-			'label_prefix' => esc_html__( 'Tweets Box', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Tweets Box', 'addons-for-divi' ),
 			'defaults'     => array(
 				'border_radii'  => 'on|0px|0px|0px|0px',
 				'border_styles' => array(
@@ -591,7 +591,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				),
 				'important' => 'all',
 			),
-			'label_prefix' => esc_html__( 'Avatar', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Avatar', 'addons-for-divi' ),
 			'defaults'     => array(
 				'border_radii'  => 'on|0px|0px|0px|0px',
 				'border_styles' => array(
@@ -605,7 +605,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['tweets'] = array(
-			'label'       => esc_html__( 'Tweets Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Tweets Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-twitter-feed-item-inner',
 				'important' => 'all',
@@ -615,7 +615,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['avatar'] = array(
-			'label'       => esc_html__( 'Avatar Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Avatar Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-twitter-feed-avatar',
 				'important' => 'all',
@@ -793,7 +793,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 				$messages['error'] = $error['message'];
 			}
 		} elseif ( count( $twitter_data ) < $args['tweets_limit'] ) {
-			$messages['item_limit'] = __( '"Number of Tweets to show" is more than your actual total Tweets\'s number. You have only ' . count( $twitter_data ) . ' Tweets', 'brain-divi-addons' );
+			$messages['item_limit'] = __( '"Number of Tweets to show" is more than your actual total Tweets\'s number. You have only ' . count( $twitter_data ) . ' Tweets', 'addons-for-divi' );
 
 		}
 
@@ -1061,7 +1061,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 			}
 		} elseif ( count( $twitter_data ) < $tweets_limit ) {
 
-			$messages['item_limit'] = __( ' "Number of Tweets to show"  is more than your actual total Tweets\'s number. You have only ' . count( $twitter_data ) . ' Tweets', 'brain-divi-addons' );
+			$messages['item_limit'] = __( ' "Number of Tweets to show"  is more than your actual total Tweets\'s number. You have only ' . count( $twitter_data ) . ' Tweets', 'addons-for-divi' );
 
 		}
 

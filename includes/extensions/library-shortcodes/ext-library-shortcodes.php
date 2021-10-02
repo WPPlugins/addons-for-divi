@@ -17,7 +17,7 @@ if ( ! class_exists( 'Library_Shortcodes' ) ) :
 
 		public function columns_head_et_pb_layout( $defaults ) {
 
-			$column_title = esc_html__( 'Shortcode', 'brain-divi-addons' );
+			$column_title = esc_html__( 'Shortcode', 'addons-for-divi' );
 
 			$defaults['shortcode_id'] = $column_title;
 

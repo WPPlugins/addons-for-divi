@@ -11,64 +11,64 @@ class BA_Advanced_Team extends BA_Builder_Module {
 
 		$this->slug       = 'ba_advanced_team';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__( 'Brain Team', 'brain-divi-addons' );
+		$this->name       = esc_html__( 'Brain Team', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'team.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'brain-divi-addons' ),
-					'links'    => esc_html__( 'Social Links', 'brain-divi-addons' ),
-					'settings' => esc_html__( 'Settings', 'brain-divi-addons' ),
+					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
+					'links'    => esc_html__( 'Social Links', 'addons-for-divi' ),
+					'settings' => esc_html__( 'Settings', 'addons-for-divi' ),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'content'    => esc_html__( 'Content', 'brain-divi-addons' ),
-					'photo'      => esc_html__( 'Photo', 'brain-divi-addons' ),
-					'overlay'    => esc_html__( 'Overlay', 'brain-divi-addons' ),
+					'content'    => esc_html__( 'Content', 'addons-for-divi' ),
+					'photo'      => esc_html__( 'Photo', 'addons-for-divi' ),
+					'overlay'    => esc_html__( 'Overlay', 'addons-for-divi' ),
 					'text'       => array(
-						'title'             => esc_html__( 'Texts', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Texts', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'name'      => array(
-								'name' => esc_html__( 'Name', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Name', 'addons-for-divi' ),
 							),
 							'job_title' => array(
-								'name' => esc_html__( 'Job Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Job Title', 'addons-for-divi' ),
 							),
 							'short_bio' => array(
-								'name' => esc_html__( 'Bio', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Bio', 'addons-for-divi' ),
 							),
 						),
 					),
-					'links'      => esc_html__( 'Social Links', 'brain-divi-addons' ),
-					'border'     => esc_html__( 'Border', 'brain-divi-addons' ),
-					'box_shadow' => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+					'links'      => esc_html__( 'Social Links', 'addons-for-divi' ),
+					'border'     => esc_html__( 'Border', 'addons-for-divi' ),
+					'box_shadow' => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'photo'     => array(
-				'label'    => esc_html__( 'Photo', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Photo', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-team figure img',
 			),
 			'name'      => array(
-				'label'    => esc_html__( 'Member Name', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Member Name', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-team-content h3',
 			),
 			'job_title' => array(
-				'label'    => esc_html__( 'Job Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Job Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-team-content .ba-team-content-job-title',
 			),
 			'short_bio' => array(
-				'label'    => esc_html__( 'Member Bio', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Member Bio', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-team-content p',
 			),
 			'social'    => array(
-				'label'    => esc_html__( 'Social Network', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Social Network', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-team-social .ba-icon',
 			),
 		);
@@ -78,13 +78,13 @@ class BA_Advanced_Team extends BA_Builder_Module {
 
 		$content = array(
 			'photo'        => array(
-				'label'              => esc_html__( 'Photo', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload an image of the team member, or type in the URL to the image you would like to display for the team member.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Photo', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload an image of the team member, or type in the URL to the image you would like to display for the team member.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload a Photo', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose a Photo', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Photo', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload a Photo', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose a Photo', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Photo', 'addons-for-divi' ),
 				'toggle_slug'        => 'content',
 				'mobile_options'     => true,
 				'hover'              => 'tabs',
@@ -95,36 +95,36 @@ class BA_Advanced_Team extends BA_Builder_Module {
 				'default'     => 'off',
 				'toggle_slug' => 'content',
 				'options'     => array(
-					'tooltip' => esc_html__( 'Open Photo in Lightbox', 'brain-divi-addons' ),
+					'tooltip' => esc_html__( 'Open Photo in Lightbox', 'addons-for-divi' ),
 				),
 			),
 
 			'photo_alt'    => array(
-				'label'       => esc_html__( 'Photo Alt Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the HTML ALT text for your image here.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Photo Alt Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the HTML ALT text for your image here.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
 
 			'member_name'  => array(
-				'label'           => esc_html__( 'Member Name', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'The team member name.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Member Name', 'addons-for-divi' ),
+				'description'     => esc_html__( 'The team member name.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
 			),
 
 			'job_title'    => array(
-				'label'           => esc_html__( 'Job Title', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'The job title or position of the team member.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Job Title', 'addons-for-divi' ),
+				'description'     => esc_html__( 'The job title or position of the team member.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
 			),
 
 			'short_bio'    => array(
-				'label'           => esc_html__( 'Member Bio', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Short biography of the team member.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Member Bio', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Short biography of the team member.', 'addons-for-divi' ),
 				'type'            => 'textarea',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
@@ -133,64 +133,64 @@ class BA_Advanced_Team extends BA_Builder_Module {
 
 		$social_links = array(
 			'website'   => array(
-				'label'       => esc_html__( 'Website URL', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Website URL of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Website URL', 'addons-for-divi' ),
+				'description' => esc_html__( 'Website URL of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
 
 			'email'     => array(
-				'label'       => esc_html__( 'Email Address', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Email address of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Email Address', 'addons-for-divi' ),
+				'description' => esc_html__( 'Email address of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
 
 			'facebook'  => array(
-				'label'       => esc_html__( 'Facebook URL', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Facebook profile or page URL of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Facebook URL', 'addons-for-divi' ),
+				'description' => esc_html__( 'Facebook profile or page URL of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
 
 			'twitter'   => array(
-				'label'       => esc_html__( 'Twitter URL', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Twitter account URL of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Twitter URL', 'addons-for-divi' ),
+				'description' => esc_html__( 'Twitter account URL of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
 
 			'instagram' => array(
-				'label'       => esc_html__( 'Instagram URL', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Instagram account URL of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Instagram URL', 'addons-for-divi' ),
+				'description' => esc_html__( 'Instagram account URL of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
 
 			'linkedin'  => array(
-				'label'       => esc_html__( 'Linkedin URL', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Linkedin profile URL of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Linkedin URL', 'addons-for-divi' ),
+				'description' => esc_html__( 'Linkedin profile URL of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
 
 			'github'    => array(
-				'label'       => esc_html__( 'Github URL', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Github profile URL of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Github URL', 'addons-for-divi' ),
+				'description' => esc_html__( 'Github profile URL of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
 
 			'behance'   => array(
-				'label'       => esc_html__( 'Behance URL', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Behance profile URL of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Behance URL', 'addons-for-divi' ),
+				'description' => esc_html__( 'Behance profile URL of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
 
 			'dribbble'  => array(
-				'label'       => esc_html__( 'Dribbble URL', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Dribbble account URL of the team member.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Dribbble URL', 'addons-for-divi' ),
+				'description' => esc_html__( 'Dribbble account URL of the team member.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'links',
 			),
@@ -198,29 +198,29 @@ class BA_Advanced_Team extends BA_Builder_Module {
 
 		$settings = array(
 			'content_on_hover' => array(
-				'label'           => esc_html__( 'Show Content on Hover', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Enable to visualize the content during hover.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Show Content on Hover', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Enable to visualize the content during hover.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'settings',
 			),
 
 			'hover_style'      => array(
-				'label'       => esc_html__( 'Content Hover Animation', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Choose animation type during the hover.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Content Hover Animation', 'addons-for-divi' ),
+				'description' => esc_html__( 'Choose animation type during the hover.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'hover_1',
 				'options'     => array(
-					'hover_1' => esc_html__( 'Slide Bottom', 'brain-divi-addons' ),
-					'hover_2' => esc_html__( 'Fade In', 'brain-divi-addons' ),
-					'hover_3' => esc_html__( 'Slide Up', 'brain-divi-addons' ),
-					'hover_4' => esc_html__( 'Zoom In', 'brain-divi-addons' ),
+					'hover_1' => esc_html__( 'Slide Bottom', 'addons-for-divi' ),
+					'hover_2' => esc_html__( 'Fade In', 'addons-for-divi' ),
+					'hover_3' => esc_html__( 'Slide Up', 'addons-for-divi' ),
+					'hover_4' => esc_html__( 'Zoom In', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'content_on_hover' => 'on',
@@ -228,8 +228,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'hover_speed'      => array(
-				'label'          => esc_html__( 'Hover Animation Speed', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Set the time for the hover animation speed.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Hover Animation Speed', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Set the time for the hover animation speed.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '400ms',
 				'default_unit'   => 'ms',
@@ -246,14 +246,14 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_position'   => array(
-				'label'       => esc_html__( 'Social Links Hover Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select where you want to put social links icons during the hover.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Social Links Hover Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select where you want to put social links icons during the hover.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'content',
 				'options'     => array(
-					'content' => esc_html__( 'Relative to the Content', 'brain-divi-addons' ),
-					'photo'   => esc_html__( 'Relative to the Photo', 'brain-divi-addons' ),
+					'content' => esc_html__( 'Relative to the Content', 'addons-for-divi' ),
+					'photo'   => esc_html__( 'Relative to the Photo', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'content_on_hover' => 'off',
@@ -264,13 +264,13 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		$fields = array(
 			// Photo.
 			'use_photo_abs'         => array(
-				'label'           => esc_html__( 'Use Absolute Photo Position', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'If enabled the photo will be in absolute position according to its parent.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Absolute Photo Position', 'addons-for-divi' ),
+				'description'     => esc_html__( 'If enabled the photo will be in absolute position according to its parent.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'photo',
@@ -281,17 +281,17 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'photo_placement'       => array(
-				'label'       => esc_html__( 'Photo Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select the placement of the photo.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Photo Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select the placement of the photo.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'photo',
 				'default'     => 'left_top',
 				'options'     => array(
-					'left_top'     => esc_html__( 'Left Top', 'brain-divi-addons' ),
-					'left_bottom'  => esc_html__( 'Left Bottom', 'brain-divi-addons' ),
-					'right_top'    => esc_html__( 'Right Top', 'brain-divi-addons' ),
-					'right_bottom' => esc_html__( 'Right Bottom', 'brain-divi-addons' ),
+					'left_top'     => esc_html__( 'Left Top', 'addons-for-divi' ),
+					'left_bottom'  => esc_html__( 'Left Bottom', 'addons-for-divi' ),
+					'right_top'    => esc_html__( 'Right Top', 'addons-for-divi' ),
+					'right_bottom' => esc_html__( 'Right Bottom', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_photo_abs'    => 'on',
@@ -300,8 +300,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'photo_offset_x'        => array(
-				'label'           => esc_html__( 'Photo Offset X', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Set horizontal absolute position value of the photo.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Photo Offset X', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Set horizontal absolute position value of the photo.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '50%',
@@ -319,8 +319,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'photo_offset_y'        => array(
-				'label'           => esc_html__( 'Photo Offset Y', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Set vertical absolute position value of the photo.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Photo Offset Y', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Set vertical absolute position value of the photo.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'default'         => '0px',
 				'range_settings'  => array(
@@ -337,8 +337,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'photo_width'           => array(
-				'label'          => esc_html__( 'Photo Width', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Increase or decrease the width of member photo.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Photo Width', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Increase or decrease the width of member photo.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'mobile_options' => true,
@@ -353,8 +353,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'photo_height'          => array(
-				'label'          => esc_html__( 'Photo Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Increase or decrease the height of member photo.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Photo Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Increase or decrease the height of member photo.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'mobile_options' => true,
@@ -369,8 +369,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'photo_alignment'       => array(
-				'label'            => esc_html__( 'Photo Alignment', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Align photo to the left, right or center.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Photo Alignment', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Align photo to the left, right or center.', 'addons-for-divi' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -384,8 +384,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'photo_hover_animation' => array(
-				'label'       => esc_html__( 'Photo Hover Animation', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select photo mouse hover animation.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Photo Hover Animation', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select photo mouse hover animation.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'photo',
@@ -395,8 +395,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 
 			// Content.
 			'content_alignment'     => array(
-				'label'            => esc_html__( 'Content Alignment', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Align content to the left, right or center.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Content Alignment', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -407,8 +407,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'content_padding'       => array(
-				'label'          => esc_html__( 'Content Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Content Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'content',
@@ -418,8 +418,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 
 			// Social links.
 			'social_icon_color'     => array(
-				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'links',
@@ -428,8 +428,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_bg'              => array(
-				'label'       => esc_html__( 'Background', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define a custom Background color for your icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Background', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom Background color for your icon.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'links',
@@ -438,8 +438,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_margin_between'  => array(
-				'label'           => esc_html__( 'Spacing Between', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Set how much space between social icons.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Spacing Between', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Set how much space between social icons.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '5px',
@@ -453,8 +453,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_margin_top'      => array(
-				'label'           => esc_html__( 'Top Spacing', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Set how much space the icons will take from the top.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Top Spacing', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Set how much space the icons will take from the top.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'default'         => '15px',
 				'range_settings'  => array(
@@ -471,8 +471,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_height'          => array(
-				'label'           => esc_html__( 'Height', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Increase or decrease social icons box height.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Height', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Increase or decrease social icons box height.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '36px',
@@ -486,8 +486,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_width'           => array(
-				'label'           => esc_html__( 'Width', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Increase or decrease social icons box width.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Width', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Increase or decrease social icons box width.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '36px',
@@ -501,8 +501,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_icon_size'       => array(
-				'label'           => esc_html__( 'Icon Size', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Control the size of the icon by increasing or decreasing the font size.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Icon Size', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Control the size of the icon by increasing or decreasing the font size.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '16px',
@@ -516,8 +516,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_radius'          => array(
-				'label'           => esc_html__( 'Border Radius', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can control the corner radius of social icons.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Border Radius', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can control the corner radius of social icons.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '4px',
@@ -534,8 +534,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 
 			// Texts.
 			'name_bottom_spacing'   => array(
-				'label'          => esc_html__( 'Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Set how much space the element will take at the bottom.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Set how much space the element will take at the bottom.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'mobile_options' => true,
@@ -552,8 +552,8 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'job_bottom_spacing'    => array(
-				'label'          => esc_html__( 'Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Set how much space the element will take at the bottom.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Set how much space the element will take at the bottom.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'mobile_options' => true,
@@ -573,7 +573,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		$overlay    = $this->get_overlay_option_fields( 'overlay', 'on', array() );
 		$content_bg = $this->custom_background_fields(
 			'content',
-			esc_html__( 'Content', 'brain-divi-addons' ),
+			esc_html__( 'Content', 'addons-for-divi' ),
 			'advanced',
 			'content',
 			array( 'color', 'gradient', 'image', 'hover' ),
@@ -595,7 +595,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['fonts']['name'] = array(
-			'label'           => esc_html__( 'Name', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-team-content .ba-team-content-name',
 				'important' => 'all',
@@ -618,7 +618,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['job_title'] = array(
-			'label'           => esc_html__( 'Job Title', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Job Title', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-team-content .ba-team-content-job-title',
 				'important' => 'all',
@@ -641,7 +641,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['short_bio'] = array(
-			'label'           => esc_html__( 'Bio', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Bio', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-team-content .ba-team-content-bio',
 				'important' => 'all',
@@ -678,7 +678,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['content'] = array(
-			'label'       => esc_html__( 'Content Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Content Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'content',
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-team-content',
@@ -687,7 +687,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['main'] = array(
-			'label'       => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'box_shadow',
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-team',
@@ -696,7 +696,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['content'] = array(
-			'label_prefix' => esc_html__( 'Content', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Content', 'addons-for-divi' ),
 			'toggle_slug'  => 'content',
 			'css'          => array(
 				'main'      => array(
@@ -735,7 +735,7 @@ class BA_Advanced_Team extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['photo'] = array(
-			'label_prefix' => esc_html__( 'Photo', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Photo', 'addons-for-divi' ),
 			'toggle_slug'  => 'photo',
 			'css'          => array(
 				'main'      => array(

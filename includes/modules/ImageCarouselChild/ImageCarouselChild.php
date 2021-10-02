@@ -9,52 +9,52 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name = esc_html__( 'Item', 'brain-divi-addons' );
+		$this->name = esc_html__( 'Item', 'addons-for-divi' );
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'carousel_content' => esc_html__( 'Content', 'brain-divi-addons' ),
+					'carousel_content' => esc_html__( 'Content', 'addons-for-divi' ),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'image'   => esc_html__( 'Image', 'brain-divi-addons' ),
-					'overlay' => esc_html__( 'Overlay', 'brain-divi-addons' ),
-					'content' => esc_html__( 'Content', 'brain-divi-addons' ),
+					'image'   => esc_html__( 'Image', 'addons-for-divi' ),
+					'overlay' => esc_html__( 'Overlay', 'addons-for-divi' ),
+					'content' => esc_html__( 'Content', 'addons-for-divi' ),
 					'texts'   => array(
-						'title'             => esc_html__( 'Title & Subtitle', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Title & Subtitle', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'title_tab'    => array(
-								'name' => esc_html__( 'Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Title', 'addons-for-divi' ),
 							),
 							'subtitle_tab' => array(
-								'name' => esc_html__( 'Subtitle', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Subtitle', 'addons-for-divi' ),
 							),
 						),
 					),
-					'borders' => esc_html__( 'Border', 'brain-divi-addons' ),
+					'borders' => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'image_wrap'  => array(
-				'label'    => esc_html__( 'Image Wrapper', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Image Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% figure',
 			),
 			'image'  => array(
-				'label'    => esc_html__( 'Image', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% figure img',
 			),
 			'title'  => array(
-				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-image-title',
 			),
 			'sub_title'  => array(
-				'label'    => esc_html__( 'Sub Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Sub Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-image-subtitle',
 			),
 		);
@@ -65,42 +65,42 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 		$fields = array(
 
 			'photo'                 => array(
-				'label'              => esc_html__( 'Upload Image', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Upload Image', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'toggle_slug'        => 'carousel_content',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
 				'hover'              => 'tabs',
 				'mobile_options'     => true,
 			),
 
 			'photo_alt'             => array(
-				'label'       => esc_html__( 'Image Alt Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the HTML ALT text for your image here.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the HTML ALT text for your image here.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'carousel_content',
 			),
 
 			'title'                 => array(
-				'label'       => esc_html__( 'Title', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the title text for the item.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Title', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the title text for the item.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'carousel_content',
 			),
 
 			'sub_title'             => array(
-				'label'       => esc_html__( 'Subtitle', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the sub-title text for the item.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Subtitle', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the sub-title text for the item.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'carousel_content',
 			),
 
 			'content_alignment'     => array(
-				'label'            => esc_html__( 'Content Text Alignment', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Align texts to the left, right or center.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Content Text Alignment', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Align texts to the left, right or center.', 'addons-for-divi' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -111,8 +111,8 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'content_width'         => array(
-				'label'          => esc_html__( 'Content Width', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define custom content width.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Content Width', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define custom content width.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default'        => '100%',
@@ -126,28 +126,28 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'content_type'          => array(
-				'label'       => esc_html__( 'Content Type', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define content type. By selecting absolute type content can be placed as image overlay.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Content Type', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define content type. By selecting absolute type content can be placed as image overlay.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'tab_slug'    => 'advanced',
 				'default'     => 'normal',
 				'options'     => array(
-					'normal'   => esc_html__( 'Normal', 'brain-divi-addons' ),
-					'absolute' => esc_html__( 'Absolute', 'brain-divi-addons' ),
+					'normal'   => esc_html__( 'Normal', 'addons-for-divi' ),
+					'absolute' => esc_html__( 'Absolute', 'addons-for-divi' ),
 				),
 			),
 
 			'content_position'      => array(
-				'label'       => esc_html__( 'Content Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define content position.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Content Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define content position.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'tab_slug'    => 'advanced',
 				'default'     => 'bottom',
 				'options'     => array(
-					'top'    => esc_html__( 'Top', 'brain-divi-addons' ),
-					'bottom' => esc_html__( 'Bottom', 'brain-divi-addons' ),
+					'top'    => esc_html__( 'Top', 'addons-for-divi' ),
+					'bottom' => esc_html__( 'Bottom', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'content_type' => 'normal',
@@ -155,16 +155,16 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'content_pos_x'         => array(
-				'label'       => esc_html__( 'Content Horizontal Placement', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select content horizontal placement.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Content Horizontal Placement', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select content horizontal placement.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'tab_slug'    => 'advanced',
 				'default'     => 'center',
 				'options'     => array(
-					'center'     => esc_html__( 'Center', 'brain-divi-addons' ),
-					'flex-start' => esc_html__( 'Left', 'brain-divi-addons' ),
-					'flex-end'   => esc_html__( 'Right', 'brain-divi-addons' ),
+					'center'     => esc_html__( 'Center', 'addons-for-divi' ),
+					'flex-start' => esc_html__( 'Left', 'addons-for-divi' ),
+					'flex-end'   => esc_html__( 'Right', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'content_type' => 'absolute',
@@ -172,8 +172,8 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'content_offset_x'      => array(
-				'label'          => esc_html__( 'Content Horizontal Position', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define the value for the content horizontally offset.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Content Horizontal Position', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define the value for the content horizontally offset.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '0px',
@@ -192,16 +192,16 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'content_pos_y'         => array(
-				'label'       => esc_html__( 'Content Vertical Placement', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select content vertical placement.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Content Vertical Placement', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select content vertical placement.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'tab_slug'    => 'advanced',
 				'default'     => 'center',
 				'options'     => array(
-					'center'     => esc_html__( 'Center', 'brain-divi-addons' ),
-					'flex-start' => esc_html__( 'Top', 'brain-divi-addons' ),
-					'flex-end'   => esc_html__( 'Bottom', 'brain-divi-addons' ),
+					'center'     => esc_html__( 'Center', 'addons-for-divi' ),
+					'flex-start' => esc_html__( 'Top', 'addons-for-divi' ),
+					'flex-end'   => esc_html__( 'Bottom', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'content_type' => 'absolute',
@@ -209,8 +209,8 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'content_offset_y'      => array(
-				'label'          => esc_html__( 'Content Vertical Position', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define the value for the content vertically offset.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Content Vertical Position', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define the value for the content vertically offset.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '0px',
@@ -229,8 +229,8 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'content_padding'       => array(
-				'label'          => esc_html__( 'Content Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define custom padding for the content area.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Content Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define custom padding for the content area.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'content',
@@ -239,8 +239,8 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 
 			// image.
 			'image_height'          => array(
-				'label'          => esc_html__( 'Image Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( '.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
+				'description'    => esc_html__( '.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -255,8 +255,8 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 			),
 
 			'image_hover_animation' => array(
-				'label'       => esc_html__( 'Image Hover Animation', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select image hover animation.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Image Hover Animation', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select image hover animation.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'image',
@@ -266,8 +266,8 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 
 			// Text.
 			'title_bottom_spacing'  => array(
-				'label'          => esc_html__( 'Title Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Title Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '5px',
 				'mobile_options' => true,
@@ -287,17 +287,17 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 
 		$label = array(
 			'admin_title' => array(
-				'label'       => esc_html__( 'Admin Label', 'brain-divi-addons' ),
-				'description' => esc_html__( '.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Admin Label', 'addons-for-divi' ),
+				'description' => esc_html__( '.', 'addons-for-divi' ),
 				'type'        => 'text',
-				'description' => esc_html__( 'This will change the label of the item', 'brain-divi-addons' ),
+				'description' => esc_html__( 'This will change the label of the item', 'addons-for-divi' ),
 				'toggle_slug' => 'admin_label',
 			),
 		);
 
 		$content = $this->custom_background_fields(
 			'content',
-			esc_html__( 'Content', 'brain-divi-addons' ),
+			esc_html__( 'Content', 'addons-for-divi' ),
 			'advanced',
 			'content',
 			array( 'color', 'gradient', 'image', 'hover' ),
@@ -319,7 +319,7 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 		$advanced_fields['borders']     = false;
 
 		$advanced_fields['box_shadow']['content'] = array(
-			'label'       => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%% .content .content-inner',
 				'important' => 'all',
@@ -329,7 +329,7 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'           => esc_html__( 'Title', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-image-title, .et-db #et-boc %%order_class%% .ba-image-title',
 				'important' => 'all',
@@ -351,7 +351,7 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['subtitle'] = array(
-			'label'           => esc_html__( 'Subtitle', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Subtitle', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-image-subtitle, .et-db #et-boc %%order_class%% .ba-image-subtitle',
 				'important' => 'all',
@@ -373,7 +373,7 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['item'] = array(
-			'label_prefix' => esc_html__( 'Item', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Item', 'addons-for-divi' ),
 			'css'          => array(
 				'main'      => '%%order_class%%',
 				'important' => 'all',

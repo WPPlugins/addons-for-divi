@@ -9,7 +9,7 @@
 		<div class="ba-row">
 			<div class="ba-col">
 				<h2 class="ba-section-title">
-					<?php esc_html_e( 'Extensions', 'brain-divi-addons' ); ?>
+					<?php esc_html_e( 'Extensions', 'addons-for-divi' ); ?>
 				</h2>
 				<p class="ba-text f18">
 				You can disable the modules you are not using on your site. That will disable all associated assets of those modules to improve your site loading.
@@ -67,7 +67,7 @@
 		<div class="ba-row ba-admin-button-panel">
 			<div class="ba-col">
 				<button disabled class="ba-btn ba-btn-save ba-btn-lg" type="submit">
-					<?php esc_html_e( 'Save Settings', 'brain-divi-addons' ); ?>
+					<?php esc_html_e( 'Save Settings', 'addons-for-divi' ); ?>
 				</button>
 			</div>
 		</div>

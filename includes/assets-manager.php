@@ -29,6 +29,10 @@ class AssetsManager {
 		wp_register_script( 'baj-popper', $js_path . 'popper.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'baj-typed', $js_path . 'typed.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'baj-anime', $js_path . 'anime.min.js', array( 'jquery' ), $version, true );
+		
+		//Temp Fix 
+		wp_enqueue_script( 'baj-magnific-popup', $js_path . 'magnific-popup.js', array( 'jquery' ), $version, true );
+		wp_enqueue_style( 'bac-magnific', $css_path . 'magnific-popup.min.css', array(), $version, 'all' );
 
 		// All vendor css.
 		wp_register_style( 'bac-slick', $css_path . 'slick.min.css', array(), $version, 'all' );

@@ -13,53 +13,53 @@ class BA_Business_Hour extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name      = esc_html__( 'Brain Business Hour', 'brain-divi-addons' );
+		$this->name      = esc_html__( 'Brain Business Hour', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'business-hour.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'brain-divi-addons' ),
-					'settings' => esc_html__( 'Settings', 'brain-divi-addons' ),
+					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
+					'settings' => esc_html__( 'Settings', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'general'    => esc_html__( 'General', 'brain-divi-addons' ),
-					'bh_title'   => esc_html__( 'Title', 'brain-divi-addons' ),
-					'title_text' => esc_html__( 'Title Text', 'brain-divi-addons' ),
+					'general'    => esc_html__( 'General', 'addons-for-divi' ),
+					'bh_title'   => esc_html__( 'Title', 'addons-for-divi' ),
+					'title_text' => esc_html__( 'Title Text', 'addons-for-divi' ),
 					'texts'      => array(
-						'title'             => esc_html__( 'Day & Time', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Day & Time', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'day'  => array(
-								'name' => esc_html__( 'Day', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Day', 'addons-for-divi' ),
 							),
 							'time' => array(
-								'name' => esc_html__( 'Time', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Time', 'addons-for-divi' ),
 							),
 						),
 					),
-					'separator'  => esc_html__( 'Separator', 'brain-divi-addons' ),
+					'separator'  => esc_html__( 'Separator', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'title'     => array(
-				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-business-hour-title h2',
 			),
 			'day'       => array(
-				'label'    => esc_html__( 'Day', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Day', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-business-hour-day',
 			),
 			'time'      => array(
-				'label'    => esc_html__( 'Time', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Time', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-business-hour-time',
 			),
 			'separator' => array(
-				'label'    => esc_html__( 'Separator', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Separator', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-business-hour-separator',
 			),
 		);
@@ -69,30 +69,30 @@ class BA_Business_Hour extends BA_Builder_Module {
 
 		$content = array(
 			'title' => array(
-				'label'       => esc_html__( 'Title', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the title text your for business hour.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Title', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the title text your for business hour.', 'addons-for-divi' ),
 				'type'        => 'text',
-				'default'     => esc_html__( 'Business Hour', 'brain-divi-addons' ),
+				'default'     => esc_html__( 'Business Hour', 'addons-for-divi' ),
 				'toggle_slug' => 'content',
 			),
 		);
 
 		$settings = array(
 			'show_title'     => array(
-				'label'           => esc_html__( 'Show Title', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether title should be used.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Show Title', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether title should be used.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
 				'toggle_slug'     => 'settings',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 			),
 			'item_spacing'   => array(
-				'label'          => esc_html__( 'Item Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of each item.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Item Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of each item.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '25px',
 				'fixed_unit'     => 'px',
@@ -105,50 +105,50 @@ class BA_Business_Hour extends BA_Builder_Module {
 				'toggle_slug'    => 'settings',
 			),
 			'show_separator' => array(
-				'label'           => esc_html__( 'Show Text Separator', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether a separator should be used between day and time.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Show Text Separator', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether a separator should be used between day and time.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
 				'toggle_slug'     => 'settings',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 			),
 			'show_divider'   => array(
-				'label'           => esc_html__( 'Show Item Divider', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether a divider should be used at the bottom of each item.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Show Item Divider', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether a divider should be used at the bottom of each item.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
 				'toggle_slug'     => 'settings',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 			),
 			'divider_type'   => array(
-				'label'       => esc_html__( 'Divider Type', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select item divider type.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Divider Type', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select item divider type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'solid_border',
 				'options'     => array(
-					'solid_border'   => esc_html__( 'Solid', 'brain-divi-addons' ),
-					'double_border'  => esc_html__( 'Double', 'brain-divi-addons' ),
-					'dotted_border'  => esc_html__( 'Dotted', 'brain-divi-addons' ),
-					'dashed_border'  => esc_html__( 'Dashed', 'brain-divi-addons' ),
-					'curved_pattern' => esc_html__( 'Curved', 'brain-divi-addons' ),
-					'zigzag_pattern' => esc_html__( 'Zigzag', 'brain-divi-addons' ),
+					'solid_border'   => esc_html__( 'Solid', 'addons-for-divi' ),
+					'double_border'  => esc_html__( 'Double', 'addons-for-divi' ),
+					'dotted_border'  => esc_html__( 'Dotted', 'addons-for-divi' ),
+					'dashed_border'  => esc_html__( 'Dashed', 'addons-for-divi' ),
+					'curved_pattern' => esc_html__( 'Curved', 'addons-for-divi' ),
+					'zigzag_pattern' => esc_html__( 'Zigzag', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'show_divider' => 'on',
 				),
 			),
 			'divider_color'  => array(
-				'label'       => esc_html__( 'Divider Color', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define a custom color for your item divider.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Divider Color', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom color for your item divider.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'toggle_slug' => 'settings',
 				'default'     => '#dddddd',
@@ -157,8 +157,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'divider_weight' => array(
-				'label'          => esc_html__( 'Divider Weight', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom depth for your item divider.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Divider Weight', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom depth for your item divider.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '1px',
 				'fixed_unit'     => 'px',
@@ -173,8 +173,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'divider_height' => array(
-				'label'          => esc_html__( 'Divider Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom height for your item divider.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Divider Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom height for your item divider.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -187,15 +187,15 @@ class BA_Business_Hour extends BA_Builder_Module {
 				'show_if'        => array(
 					'show_divider' => 'on',
 					'divider_type' => array( 'curved_pattern', 'zigzag_pattern' ),
-					'label'        => esc_html__( '', 'brain-divi-addons' ),
+					'label'        => esc_html__( '', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$general = array(
 			'day_text_width'  => array(
-				'label'          => esc_html__( 'Day Text Width', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom width for your day text.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Day Text Width', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom width for your day text.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'default_unit'   => '%',
@@ -209,8 +209,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 				'toggle_slug'    => 'general',
 			),
 			'time_text_width' => array(
-				'label'          => esc_html__( 'Time Text Width', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom width for your time text.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Time Text Width', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom width for your time text.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'default_unit'   => '%',
@@ -224,8 +224,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 				'toggle_slug'    => 'general',
 			),
 			'item_padding'    => array(
-				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for each item.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom padding for each item.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'general',
@@ -236,27 +236,27 @@ class BA_Business_Hour extends BA_Builder_Module {
 
 		$separator = array(
 			'separator_type'   => array(
-				'label'       => esc_html__( 'Separator Type', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select text separator type.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Separator Type', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select text separator type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
 				'default'     => 'solid_border',
 				'options'     => array(
-					'solid_border'   => esc_html__( 'Solid', 'brain-divi-addons' ),
-					'double_border'  => esc_html__( 'Double', 'brain-divi-addons' ),
-					'dotted_border'  => esc_html__( 'Dotted', 'brain-divi-addons' ),
-					'dashed_border'  => esc_html__( 'Dashed', 'brain-divi-addons' ),
-					'curved_pattern' => esc_html__( 'Curved', 'brain-divi-addons' ),
-					'zigzag_pattern' => esc_html__( 'Zigzag', 'brain-divi-addons' ),
+					'solid_border'   => esc_html__( 'Solid', 'addons-for-divi' ),
+					'double_border'  => esc_html__( 'Double', 'addons-for-divi' ),
+					'dotted_border'  => esc_html__( 'Dotted', 'addons-for-divi' ),
+					'dashed_border'  => esc_html__( 'Dashed', 'addons-for-divi' ),
+					'curved_pattern' => esc_html__( 'Curved', 'addons-for-divi' ),
+					'zigzag_pattern' => esc_html__( 'Zigzag', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'show_separator' => 'on',
 				),
 			),
 			'separator_gap'    => array(
-				'label'          => esc_html__( 'Separator Spacing', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define separator both side spacing.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Separator Spacing', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define separator both side spacing.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'fixed_unit'     => 'px',
@@ -272,8 +272,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'separator_color'  => array(
-				'label'       => esc_html__( 'Separator Color', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define a custom color for your text separator.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Separator Color', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom color for your text separator.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
@@ -283,8 +283,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'separator_weight' => array(
-				'label'          => esc_html__( 'Separator Weight', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom depth for your text separator', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Separator Weight', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom depth for your text separator', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '1px',
 				'fixed_unit'     => 'px',
@@ -300,8 +300,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'separator_height' => array(
-				'label'          => esc_html__( 'Separator Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom height for your text separator', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Separator Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom height for your text separator', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -321,8 +321,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 
 		$title = array(
 			'title_padding' => array(
-				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a padding for your title.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a padding for your title.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'bh_title',
@@ -330,8 +330,8 @@ class BA_Business_Hour extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'title_spacing' => array(
-				'label'          => esc_html__( 'Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '25px',
 				'fixed_unit'     => 'px',
@@ -350,7 +350,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 
 		$item_bg = $this->custom_background_fields(
 			'item',
-			esc_html__( 'Item', 'brain-divi-addons' ),
+			esc_html__( 'Item', 'addons-for-divi' ),
 			'advanced',
 			'general',
 			array( 'color', 'gradient', 'hover', 'image' ),
@@ -389,7 +389,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['item'] = array(
-			'label'       => esc_html__( 'Item Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Item Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-business-hour-child',
 				'important' => 'all',
@@ -431,7 +431,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['day'] = array(
-			'label'           => esc_html__( 'Day', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Day', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-business-hour-day',
 				'important' => 'all',
@@ -446,7 +446,7 @@ class BA_Business_Hour extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['time'] = array(
-			'label'           => esc_html__( 'Time', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Time', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-business-hour-time',
 				'important' => 'all',

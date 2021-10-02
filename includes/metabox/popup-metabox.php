@@ -34,7 +34,7 @@ class Metabox {
     public function register_popup_metabox() {
         add_meta_box(
             'popup-rules',
-            __( 'Display Conditions', 'brain-divi-addons' ),
+            __( 'Display Conditions', 'addons-for-divi' ),
             array( $this, 'display_conditions' ),
             $this->slug(),
             'side',
@@ -171,16 +171,16 @@ class Metabox {
 
                 <div class="ba-popup-select">
                     <select id="ba-target" class="ba-taget ba-select2-initialized" name="conditions[target][]">
-						<option value="entire"><?php esc_html_e( 'Entire Site', 'brain-divi-addons' );?></option>
-						<option value="page_selected"><?php esc_html_e( 'Pages', 'brain-divi-addons' );?></option>
-						<!-- <option value="post_selected"><?php //esc_html_e( 'Posts', 'brain-divi-addons' );?></option>
-						<option value="is_front_page"><?php //esc_html_e( 'Frontpage', 'brain-divi-addons' );?></option>
-						<option value="is_404"><?php //esc_html_e( '404 Page', 'brain-divi-addons' );?></option> -->
+						<option value="entire"><?php esc_html_e( 'Entire Site', 'addons-for-divi' );?></option>
+						<option value="page_selected"><?php esc_html_e( 'Pages', 'addons-for-divi' );?></option>
+						<!-- <option value="post_selected"><?php //esc_html_e( 'Posts', 'addons-for-divi' );?></option>
+						<option value="is_front_page"><?php //esc_html_e( 'Frontpage', 'addons-for-divi' );?></option>
+						<option value="is_404"><?php //esc_html_e( '404 Page', 'addons-for-divi' );?></option> -->
                     </select>
                 </div>
                 <div class="ba-popup-select ba-popup-target"></div>
 				<div class="ba-popup-remove">
-					<?php esc_html_e( 'Remove', 'brain-divi-addons' );?>
+					<?php esc_html_e( 'Remove', 'addons-for-divi' );?>
 				</div>
             </div>
         </script>

@@ -37,15 +37,15 @@ class Popup_Maker {
 
             add_submenu_page(
                 'addons-for-divi',
-                esc_html__( 'Options', 'brain-divi-addons' ),
-                esc_html__( 'Options', 'brain-divi-addons' ),
+                esc_html__( 'Options', 'addons-for-divi' ),
+                esc_html__( 'Options', 'addons-for-divi' ),
                 'manage_options', 'addons-for-divi'
             );
 
             add_submenu_page(
                 'addons-for-divi',
-                esc_html__( 'Popups', 'brain-divi-addons' ),
-                esc_html__( 'Popups', 'brain-divi-addons' ),
+                esc_html__( 'Popups', 'addons-for-divi' ),
+                esc_html__( 'Popups', 'addons-for-divi' ),
                 'manage_options',
                 'edit.php?post_type=brainaddons-popup'
             );

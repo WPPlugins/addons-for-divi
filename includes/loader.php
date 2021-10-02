@@ -116,6 +116,10 @@ function ba_register_modules() {
 	if ( ! in_array( 'gradient-heading', $inactive_modules, true ) ) {
 		require_once plugin_dir_path( __FILE__ ) . 'modules/GradientHeading/GradientHeading.php';
 	}
+
+	if ( ! in_array( 'alert', $inactive_modules, true ) ) {
+		require_once plugin_dir_path( __FILE__ ) . 'modules/Alert/Alert.php';
+	}
 }
 
 // Kickoff.

@@ -5,7 +5,7 @@ $brainaddons_background_choices = $this->get_background_choices();
 $wp_customize->add_panel(
     'divi_login_designer',
     array(
-        'title'    => esc_html__( 'Login Designer', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Login Designer', 'addons-for-divi' ),
         'type'     => 'brainaddons-panel',
         'priority' => -20,
     )
@@ -15,7 +15,7 @@ $wp_customize->add_panel(
 $wp_customize->add_section(
     'login_designer_bg__section',
     array(
-        'title'    => esc_html__( 'Background', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Background', 'addons-for-divi' ),
         'priority' => 10,
         'type'     => 'brainaddons-section',
         'panel'    => 'divi_login_designer',
@@ -37,7 +37,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_bg_image]',
         array(
-            'label'    => esc_html__( 'Background Image', 'brain-divi-addons' ),
+            'label'    => esc_html__( 'Background Image', 'addons-for-divi' ),
             'section'  => 'login_designer_bg__section',
             'settings' => 'brain_addons[login_designer_bg_image]',
         )
@@ -59,7 +59,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_bg_color]',
         array(
-            'label'   => esc_html__( 'Background Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Background Color', 'addons-for-divi' ),
             'section' => 'login_designer_bg__section',
         )
     )
@@ -79,7 +79,7 @@ $wp_customize->add_control(
     'brain_addons[login_designer_bg_position]',
     array(
         'type'    => 'select',
-        'label'   => esc_html__( 'Position', 'brain-divi-addons' ),
+        'label'   => esc_html__( 'Position', 'addons-for-divi' ),
         'section' => 'login_designer_bg__section',
         'choices' => $brainaddons_background_choices['position'],
     )
@@ -100,7 +100,7 @@ $wp_customize->add_control(
     'brain_addons[login_designer_bg_repeat]',
     array(
         'type'    => 'select',
-        'label'   => esc_html__( 'Repeat', 'brain-divi-addons' ),
+        'label'   => esc_html__( 'Repeat', 'addons-for-divi' ),
         'section' => 'login_designer_bg__section',
         'choices' => $brainaddons_background_choices['repeat'],
     )
@@ -120,7 +120,7 @@ $wp_customize->add_control(
     'brain_addons[login_designer_bg_size]',
     array(
         'type'    => 'select',
-        'label'   => esc_html__( 'Size', 'brain-divi-addons' ),
+        'label'   => esc_html__( 'Size', 'addons-for-divi' ),
         'section' => 'login_designer_bg__section',
         'choices' => $brainaddons_background_choices['size'],
     )
@@ -140,7 +140,7 @@ $wp_customize->add_control(
     'brain_addons[login_designer_bg_attach]',
     array(
         'type'    => 'select',
-        'label'   => esc_html__( 'Attachment', 'brain-divi-addons' ),
+        'label'   => esc_html__( 'Attachment', 'addons-for-divi' ),
         'section' => 'login_designer_bg__section',
         'choices' => $brainaddons_background_choices['attach'],
     )
@@ -150,7 +150,7 @@ $wp_customize->add_control(
 $wp_customize->add_section(
     'login_designer_logo__section',
     array(
-        'title'    => esc_html__( 'Logo', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Logo', 'addons-for-divi' ),
         'priority' => 10,
         'type'     => 'brainaddons-section',
         'panel'    => 'divi_login_designer',
@@ -172,8 +172,8 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_logo]',
         array(
-            'label'       => esc_html__( 'Upload', 'brain-divi-addons' ),
-            'description' => esc_html__( 'Add your own logo. Logos will display at 50% height and width to account for retina devices. Modify the height and width below.', 'brain-divi-addons' ),
+            'label'       => esc_html__( 'Upload', 'addons-for-divi' ),
+            'description' => esc_html__( 'Add your own logo. Logos will display at 50% height and width to account for retina devices. Modify the height and width below.', 'addons-for-divi' ),
             'section'     => 'login_designer_logo__section',
             'settings'    => 'brain_addons[login_designer_logo]',
         )
@@ -193,8 +193,8 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'brain_addons[login_designer_logo_url]',
     array(
-        'label'          => esc_html__( 'URL', 'brain-divi-addons' ),
-        'description'    => esc_html__( 'The page where your logo will take you. ', 'brain-divi-addons' ),
+        'label'          => esc_html__( 'URL', 'addons-for-divi' ),
+        'description'    => esc_html__( 'The page where your logo will take you. ', 'addons-for-divi' ),
         'section'        => 'login_designer_logo__section',
         'type'           => 'dropdown-pages',
         'allow_addition' => false,
@@ -217,7 +217,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_logo_width]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Width', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Width', 'addons-for-divi' ),
             'section'    => 'login_designer_logo__section',
             'default'    => $ld_defaults['login_designer_logo_width'],
             'input_attr' => array(
@@ -245,7 +245,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_logo_height]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Height', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Height', 'addons-for-divi' ),
             'section'    => 'login_designer_logo__section',
             'default'    => $ld_defaults['login_designer_logo_height'],
             'input_attr' => array(
@@ -273,7 +273,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_logo_margin_bottom]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Position', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Position', 'addons-for-divi' ),
             'section'    => 'login_designer_logo__section',
             'step'       => 1,
             'input_attr' => array(
@@ -289,7 +289,7 @@ $wp_customize->add_control(
 $wp_customize->add_section(
     'login_designer_form__section',
     array(
-        'title'    => esc_html__( 'Form', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Form', 'addons-for-divi' ),
         'priority' => 10,
         'type'     => 'brainaddons-section',
         'panel'    => 'divi_login_designer',
@@ -318,7 +318,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_form_bg_image]',
         array(
-            'label'    => esc_html__( 'Background Image', 'brain-divi-addons' ),
+            'label'    => esc_html__( 'Background Image', 'addons-for-divi' ),
             'section'  => 'login_designer_form__section',
             'settings' => 'brain_addons[login_designer_form_bg_image]',
         )
@@ -340,7 +340,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_form_bg_color]',
         array(
-            'label'   => esc_html__( 'Background Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Background Color', 'addons-for-divi' ),
             'section' => 'login_designer_form__section',
         )
     )
@@ -362,7 +362,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_form_width]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Width', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Width', 'addons-for-divi' ),
             'section'    => 'login_designer_form__section',
             'step'       => 1,
             'input_attr' => array(
@@ -390,7 +390,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_form_side_padding]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Side Padding', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Side Padding', 'addons-for-divi' ),
             'section'    => 'login_designer_form__section',
             'step'       => 1,
             'input_attr' => array(
@@ -418,7 +418,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_form_vertical_padding]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Vertical Padding', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Vertical Padding', 'addons-for-divi' ),
             'section'    => 'login_designer_form__section',
             'step'       => 1,
             'input_attr' => array(
@@ -446,7 +446,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_form_radius]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Border Radius', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Border Radius', 'addons-for-divi' ),
             'section'    => 'login_designer_form__section',
             'step'       => 1,
             'input_attr' => array(
@@ -474,7 +474,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_form_shadow]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Shadow', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Shadow', 'addons-for-divi' ),
             'section'    => 'login_designer_form__section',
             'step'       => 1,
             'input_attr' => array(
@@ -502,7 +502,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_form_shadow_opacity]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Shadow Opacity', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Shadow Opacity', 'addons-for-divi' ),
             'section'    => 'login_designer_form__section',
             'step'       => 1,
             'input_attr' => array(
@@ -529,7 +529,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_form_border_color]',
         array(
-            'label'   => esc_html__( 'Border Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Border Color', 'addons-for-divi' ),
             'section' => 'login_designer_form__section',
         )
     )
@@ -539,7 +539,7 @@ $wp_customize->add_control(
 $wp_customize->add_section(
     'login_designer_fields__section',
     array(
-        'title'    => esc_html__( 'Fields', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Fields', 'addons-for-divi' ),
         'priority' => 10,
         'type'     => 'brainaddons-section',
         'panel'    => 'divi_login_designer',
@@ -559,8 +559,8 @@ $wp_customize->add_control(
         'brain_addons[login_designer_fields_title]',
         array(
             'type'        => 'brainaddons-title',
-            'label'       => esc_html__( 'Fields', 'brain-divi-addons' ),
-            'description' => esc_html__( 'Customize display appearance of the login input fields.', 'brain-divi-addons' ),
+            'label'       => esc_html__( 'Fields', 'addons-for-divi' ),
+            'description' => esc_html__( 'Customize display appearance of the login input fields.', 'addons-for-divi' ),
             'section'     => 'login_designer_fields__section',
         )
     )
@@ -581,7 +581,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_fields_bg_color]',
         array(
-            'label'   => esc_html__( 'Background Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Background Color', 'addons-for-divi' ),
             'section' => 'login_designer_fields__section',
         )
     )
@@ -603,7 +603,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_side_padding]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Side Padding', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Side Padding', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -631,7 +631,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_side_padding]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Side Padding', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Side Padding', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -659,7 +659,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_padding_bottom]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Padding Bottom', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Padding Bottom', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -687,7 +687,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_padding_top]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Padding Top', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Padding Top', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -715,7 +715,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_margin_bottom]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Margin Bottom', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Margin Bottom', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -743,7 +743,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_border]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Border', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Border', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -770,7 +770,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_field_border_color]',
         array(
-            'label'   => esc_html__( 'Border Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Border Color', 'addons-for-divi' ),
             'section' => 'login_designer_fields__section',
         )
     )
@@ -792,7 +792,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_radius]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Border Radius', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Border Radius', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -820,7 +820,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_shadow]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Shadow', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Shadow', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -848,7 +848,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_shadow_opacity]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Shadow Opacity', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Shadow Opacity', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -875,7 +875,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_field_shadow_inset]',
         array(
-            'label'    => esc_html__( 'Shadow Inset', 'brain-divi-addons' ),
+            'label'    => esc_html__( 'Shadow Inset', 'addons-for-divi' ),
             'section'  => 'login_designer_fields__section',
             'type'     => 'brainaddons-toggle',
             'settings' => 'brain_addons[login_designer_field_shadow_inset]',
@@ -899,7 +899,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_field_font_size]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Font Size', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Font Size', 'addons-for-divi' ),
             'section'    => 'login_designer_fields__section',
             'step'       => 1,
             'input_attr' => array(
@@ -926,7 +926,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_field_color]',
         array(
-            'label'   => esc_html__( 'Text Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Text Color', 'addons-for-divi' ),
             'section' => 'login_designer_fields__section',
         )
     )
@@ -935,7 +935,7 @@ $wp_customize->add_control(
 $wp_customize->add_section(
     'login_designer_remember__section',
     array(
-        'title'    => esc_html__( 'Remember', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Remember', 'addons-for-divi' ),
         'priority' => 10,
         'type'     => 'brainaddons-section',
         'panel'    => 'divi_login_designer',
@@ -958,7 +958,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_remember_field_font_size]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Font Size', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Font Size', 'addons-for-divi' ),
             'section'    => 'login_designer_remember__section',
             'step'       => 1,
             'input_attr' => array(
@@ -986,7 +986,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_remember_field_position]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Position', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Position', 'addons-for-divi' ),
             'section'    => 'login_designer_remember__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1013,7 +1013,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_remember_field_color]',
         array(
-            'label'   => esc_html__( 'Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Color', 'addons-for-divi' ),
             'section' => 'login_designer_remember__section',
         )
     )
@@ -1023,7 +1023,7 @@ $wp_customize->add_control(
 $wp_customize->add_section(
     'login_designer_label__section',
     array(
-        'title'    => esc_html__( 'Labels', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Labels', 'addons-for-divi' ),
         'priority' => 10,
         'type'     => 'brainaddons-section',
         'panel'    => 'divi_login_designer',
@@ -1046,7 +1046,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_label_font_size]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Font Size', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Font Size', 'addons-for-divi' ),
             'section'    => 'login_designer_label__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1074,7 +1074,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_label_position]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Label Position', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Label Position', 'addons-for-divi' ),
             'section'    => 'login_designer_label__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1101,7 +1101,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_label_color]',
         array(
-            'label'   => esc_html__( 'Label Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Label Color', 'addons-for-divi' ),
             'section' => 'login_designer_label__section',
         )
     )
@@ -1120,7 +1120,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'brain_addons[login_designer_username_label]',
     array(
-        'label'   => esc_html__( 'Username', 'brain-divi-addons' ),
+        'label'   => esc_html__( 'Username', 'addons-for-divi' ),
         'section' => 'login_designer_label__section',
         'type'    => 'text',
     )
@@ -1139,7 +1139,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'brain_addons[login_designer_password_label]',
     array(
-        'label'   => esc_html__( 'Password', 'brain-divi-addons' ),
+        'label'   => esc_html__( 'Password', 'addons-for-divi' ),
         'section' => 'login_designer_label__section',
         'type'    => 'text',
     )
@@ -1149,7 +1149,7 @@ $wp_customize->add_control(
 $wp_customize->add_section(
     'login_designer_button__section',
     array(
-        'title'    => esc_html__( 'Button', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Button', 'addons-for-divi' ),
         'priority' => 10,
         'type'     => 'brainaddons-section',
         'panel'    => 'divi_login_designer',
@@ -1171,7 +1171,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_button_bg]',
         array(
-            'label'   => esc_html__( 'Background', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Background', 'addons-for-divi' ),
             'section' => 'login_designer_button__section',
         )
     )
@@ -1193,7 +1193,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_button_padding_top]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Padding Top', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Padding Top', 'addons-for-divi' ),
             'section'    => 'login_designer_button__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1221,7 +1221,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_button_padding_bottom]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Padding Bottom', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Padding Bottom', 'addons-for-divi' ),
             'section'    => 'login_designer_button__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1249,7 +1249,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_button_side_padding]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Side Padding', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Side Padding', 'addons-for-divi' ),
             'section'    => 'login_designer_button__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1276,7 +1276,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_button_radius]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Border Radius', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Border Radius', 'addons-for-divi' ),
             'section'    => 'login_designer_button__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1304,7 +1304,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_button_border]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Border', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Border', 'addons-for-divi' ),
             'section'    => 'login_designer_button__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1331,7 +1331,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_button_border_color]',
         array(
-            'label'   => esc_html__( 'Border Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Border Color', 'addons-for-divi' ),
             'section' => 'login_designer_button__section',
         )
     )
@@ -1353,7 +1353,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_button_shadow]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Shadow', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Shadow', 'addons-for-divi' ),
             'section'    => 'login_designer_button__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1381,7 +1381,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_button_shadow_opacity]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Shadow Opacity', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Shadow Opacity', 'addons-for-divi' ),
             'section'    => 'login_designer_button__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1408,7 +1408,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_button_color]',
         array(
-            'label'   => esc_html__( 'Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Color', 'addons-for-divi' ),
             'section' => 'login_designer_button__section',
         )
     )
@@ -1430,7 +1430,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_button_font_size]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Font Size', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Font Size', 'addons-for-divi' ),
             'section'    => 'login_designer_button__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1446,7 +1446,7 @@ $wp_customize->add_control(
 $wp_customize->add_section(
     'login_designer_below__section',
     array(
-        'title'    => esc_html__( 'Below Form', 'brain-divi-addons' ),
+        'title'    => esc_html__( 'Below Form', 'addons-for-divi' ),
         'priority' => 10,
         'type'     => 'brainaddons-section',
         'panel'    => 'divi_login_designer',
@@ -1468,7 +1468,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_lost_password]',
         array(
-            'label'    => esc_html__( 'Lost Password', 'brain-divi-addons' ),
+            'label'    => esc_html__( 'Lost Password', 'addons-for-divi' ),
             'section'  => 'login_designer_below__section',
             'type'     => 'brainaddons-toggle',
             'settings' => 'brain_addons[login_designer_lost_password]',
@@ -1491,7 +1491,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_back_to]',
         array(
-            'label'    => esc_html__( 'Back to', 'brain-divi-addons' ),
+            'label'    => esc_html__( 'Back to', 'addons-for-divi' ),
             'section'  => 'login_designer_below__section',
             'type'     => 'brainaddons-toggle',
             'settings' => 'brain_addons[login_designer_back_to]',
@@ -1515,7 +1515,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_below_font_size]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Font Size', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Font Size', 'addons-for-divi' ),
             'section'    => 'login_designer_below__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1543,7 +1543,7 @@ $wp_customize->add_control(
         'brain_addons[login_designer_below_position]',
         array(
             'type'       => 'range-value',
-            'label'      => esc_html__( 'Position', 'brain-divi-addons' ),
+            'label'      => esc_html__( 'Position', 'addons-for-divi' ),
             'section'    => 'login_designer_below__section',
             'step'       => 1,
             'input_attr' => array(
@@ -1570,7 +1570,7 @@ $wp_customize->add_control(
         $wp_customize,
         'brain_addons[login_designer_below_color]',
         array(
-            'label'   => esc_html__( 'Color', 'brain-divi-addons' ),
+            'label'   => esc_html__( 'Color', 'addons-for-divi' ),
             'section' => 'login_designer_below__section',
         )
     )

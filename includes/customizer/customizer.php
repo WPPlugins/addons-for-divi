@@ -163,30 +163,30 @@ class Customizer {
 
         $choices = array(
             'repeat'   => array(
-                'no-repeat' => esc_html__( 'No Repeat', 'brain-divi-addons' ),
-                'repeat'    => esc_html__( 'Tile', 'brain-divi-addons' ),
-                'repeat-x'  => esc_html__( 'Tile Horizontally', 'brain-divi-addons' ),
-                'repeat-y'  => esc_html__( 'Tile Vertically', 'brain-divi-addons' ),
+                'no-repeat' => esc_html__( 'No Repeat', 'addons-for-divi' ),
+                'repeat'    => esc_html__( 'Tile', 'addons-for-divi' ),
+                'repeat-x'  => esc_html__( 'Tile Horizontally', 'addons-for-divi' ),
+                'repeat-y'  => esc_html__( 'Tile Vertically', 'addons-for-divi' ),
             ),
             'size'     => array(
-                'auto'    => esc_html__( 'Auto', 'brain-divi-addons' ),
-                'cover'   => esc_html__( 'Cover', 'brain-divi-addons' ),
-                'contain' => esc_html__( 'Contain', 'brain-divi-addons' ),
+                'auto'    => esc_html__( 'Auto', 'addons-for-divi' ),
+                'cover'   => esc_html__( 'Cover', 'addons-for-divi' ),
+                'contain' => esc_html__( 'Contain', 'addons-for-divi' ),
             ),
             'position' => array(
-                'left top'      => esc_html__( 'Left Top', 'brain-divi-addons' ),
-                'left center'   => esc_html__( 'Left Center', 'brain-divi-addons' ),
-                'left bottom'   => esc_html__( 'Left Bottom', 'brain-divi-addons' ),
-                'right top'     => esc_html__( 'Right Top', 'brain-divi-addons' ),
-                'right center'  => esc_html__( 'Right Center', 'brain-divi-addons' ),
-                'right bottom'  => esc_html__( 'Right Bottom', 'brain-divi-addons' ),
-                'center top'    => esc_html__( 'Center Top', 'brain-divi-addons' ),
-                'center center' => esc_html__( 'Center Center', 'brain-divi-addons' ),
-                'center bottom' => esc_html__( 'Center Bottom', 'brain-divi-addons' ),
+                'left top'      => esc_html__( 'Left Top', 'addons-for-divi' ),
+                'left center'   => esc_html__( 'Left Center', 'addons-for-divi' ),
+                'left bottom'   => esc_html__( 'Left Bottom', 'addons-for-divi' ),
+                'right top'     => esc_html__( 'Right Top', 'addons-for-divi' ),
+                'right center'  => esc_html__( 'Right Center', 'addons-for-divi' ),
+                'right bottom'  => esc_html__( 'Right Bottom', 'addons-for-divi' ),
+                'center top'    => esc_html__( 'Center Top', 'addons-for-divi' ),
+                'center center' => esc_html__( 'Center Center', 'addons-for-divi' ),
+                'center bottom' => esc_html__( 'Center Bottom', 'addons-for-divi' ),
             ),
             'attach'   => array(
-                'fixed'  => esc_html__( 'Fixed', 'brain-divi-addons' ),
-                'scroll' => esc_html__( 'Scroll', 'brain-divi-addons' ),
+                'fixed'  => esc_html__( 'Fixed', 'addons-for-divi' ),
+                'scroll' => esc_html__( 'Scroll', 'addons-for-divi' ),
             ),
         );
 

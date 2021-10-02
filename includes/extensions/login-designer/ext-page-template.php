@@ -25,7 +25,7 @@ if ( ! class_exists( 'BrainAddons_Login_Template' ) ) :
 			add_filter( 'template_include', array( $this, 'view_project_template' ) );
 			add_action( 'login_head', array( $this, 'noindex_meta' ), 9 );
 			$this->templates = array(
-				'ext-template-login-designer.php' => esc_html__( 'Login Designer', 'brain-divi-addons' ),
+				'ext-template-login-designer.php' => esc_html__( 'Login Designer', 'addons-for-divi' ),
 			);
 		}
 

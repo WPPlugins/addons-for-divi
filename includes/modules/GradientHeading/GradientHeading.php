@@ -12,26 +12,26 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 
 		$this->slug       = 'ba_gradient_heading';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__( 'Brain Gradient Heading', 'brain-divi-addons' );
+		$this->name       = esc_html__( 'Brain Gradient Heading', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'gradient-heading.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content' => esc_html__( 'Content', 'brain-divi-addons' ),
+					'content' => esc_html__( 'Content', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'gradient' => esc_html__( 'Gradient', 'brain-divi-addons' ),
-					'text'     => esc_html__( 'Text', 'brain-divi-addons' ),
+					'gradient' => esc_html__( 'Gradient', 'addons-for-divi' ),
+					'text'     => esc_html__( 'Text', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'title' => array(
-				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-gradient-heading',
 			),
 		);
@@ -41,27 +41,27 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 
 		$content = array(
 			'title'        => array(
-				'label'       => esc_html__( 'Title Text', 'brain-divi-addons' ),
-				'Description' => esc_html__( 'Define the title text. Use <br> for line break.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Title Text', 'addons-for-divi' ),
+				'Description' => esc_html__( 'Define the title text. Use <br> for line break.', 'addons-for-divi' ),
 				'type'        => 'textarea',
 				'default'     => 'Brain Addons <br> Gradient Heading',
 				'toggle_slug' => 'content',
 			),
 			'use_link'     => array(
-				'label'           => esc_html__( 'Use Link', 'brain-divi-addons' ),
-				'Description'     => esc_html__( 'If enable, title will be render with <a> tag.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Link', 'addons-for-divi' ),
+				'Description'     => esc_html__( 'If enable, title will be render with <a> tag.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'content',
 			),
 			'link_url'     => array(
-				'label'       => esc_html__( 'Link Url', 'brain-divi-addons' ),
-				'Description' => esc_html__( 'Define the link url for your title.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Link Url', 'addons-for-divi' ),
+				'Description' => esc_html__( 'Define the link url for your title.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'default'     => 'https://brainaddons.com',
 				'toggle_slug' => 'content',
@@ -82,38 +82,38 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 				),
 			),
 			'html_tag'     => array(
-				'label'       => esc_html__( 'html Tag', 'brain-divi-addons' ),
-				'Description' => esc_html__( 'Define html heading tag for your title.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'html Tag', 'addons-for-divi' ),
+				'Description' => esc_html__( 'Define html heading tag for your title.', 'addons-for-divi' ),
 				'type'        => 'multiple_buttons',
 				'toggle_slug' => 'content',
 				'default'     => 'h1',
 				'options'     => array(
-					'h1' => array( 'title' => esc_html__( 'h1', 'brain-divi-addons' ) ),
-					'h2' => array( 'title' => esc_html__( 'h2', 'brain-divi-addons' ) ),
-					'h3' => array( 'title' => esc_html__( 'h3', 'brain-divi-addons' ) ),
-					'h4' => array( 'title' => esc_html__( 'h4', 'brain-divi-addons' ) ),
-					'h5' => array( 'title' => esc_html__( 'h5', 'brain-divi-addons' ) ),
-					'h6' => array( 'title' => esc_html__( 'h6', 'brain-divi-addons' ) ),
+					'h1' => array( 'title' => esc_html__( 'h1', 'addons-for-divi' ) ),
+					'h2' => array( 'title' => esc_html__( 'h2', 'addons-for-divi' ) ),
+					'h3' => array( 'title' => esc_html__( 'h3', 'addons-for-divi' ) ),
+					'h4' => array( 'title' => esc_html__( 'h4', 'addons-for-divi' ) ),
+					'h5' => array( 'title' => esc_html__( 'h5', 'addons-for-divi' ) ),
+					'h6' => array( 'title' => esc_html__( 'h6', 'addons-for-divi' ) ),
 				),
 			),
 		);
 
 		$styles = array(
 			'gradient_type'            => array(
-				'label'       => esc_html__( 'Gradient Type', 'brain-divi-addons' ),
-				'Description' => esc_html__( 'Here you can define linear/radial gradient type.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Gradient Type', 'addons-for-divi' ),
+				'Description' => esc_html__( 'Here you can define linear/radial gradient type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'gradient',
 				'default'     => 'linear',
 				'options'     => array(
-					'linear' => esc_html__( 'Linear', 'brain-divi-addons' ),
-					'radial' => esc_html__( 'Radial', 'brain-divi-addons' ),
+					'linear' => esc_html__( 'Linear', 'addons-for-divi' ),
+					'radial' => esc_html__( 'Radial', 'addons-for-divi' ),
 				),
 			),
 			'primary_color'            => array(
-				'label'        => esc_html__( 'Primary Color', 'brain-divi-addons' ),
-				'Description'  => esc_html__( 'Define primary color for the gradient.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Primary Color', 'addons-for-divi' ),
+				'Description'  => esc_html__( 'Define primary color for the gradient.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -121,8 +121,8 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 				'default'      => $this->default_color,
 			),
 			'primary_color_location'   => array(
-				'label'          => esc_html__( 'Location', 'brain-divi-addons' ),
-				'Description'    => esc_html__( 'Here you can define primary color location for the gradient.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Location', 'addons-for-divi' ),
+				'Description'    => esc_html__( 'Here you can define primary color location for the gradient.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => 11,
 				'unitless'       => true,
@@ -135,8 +135,8 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'secondary_color'          => array(
-				'label'        => esc_html__( 'Secondary Color', 'brain-divi-addons' ),
-				'Description'  => esc_html__( 'Define secondary color for the gradient.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Secondary Color', 'addons-for-divi' ),
+				'Description'  => esc_html__( 'Define secondary color for the gradient.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -144,8 +144,8 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 				'default'      => '#e02b20',
 			),
 			'secondary_color_location' => array(
-				'label'          => esc_html__( 'Location', 'brain-divi-addons' ),
-				'Description'    => esc_html__( 'Here you can define secondary color location for the gradient.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Location', 'addons-for-divi' ),
+				'Description'    => esc_html__( 'Here you can define secondary color location for the gradient.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => 37,
 				'unitless'       => true,
@@ -158,8 +158,8 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'angle'                    => array(
-				'label'          => esc_html__( 'Gradient Angle', 'brain-divi-addons' ),
-				'Description'    => esc_html__( 'Define custom gradient angle to use for linear gradient type.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Gradient Angle', 'addons-for-divi' ),
+				'Description'    => esc_html__( 'Define custom gradient angle to use for linear gradient type.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => 130,
 				'unitless'       => true,
@@ -175,22 +175,22 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 				),
 			),
 			'radial_position'          => array(
-				'label'       => esc_html__( 'Radial Position', 'brain-divi-addons' ),
-				'Description' => esc_html__( 'Choose radial position for the gradient text.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Radial Position', 'addons-for-divi' ),
+				'Description' => esc_html__( 'Choose radial position for the gradient text.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'gradient',
 				'default'     => 'center center',
 				'options'     => array(
-					'center center' => esc_html__( 'Center Center', 'brain-divi-addons' ),
-					'bottom center' => esc_html__( 'Bottom Center', 'brain-divi-addons' ),
-					'bottom left'   => esc_html__( 'Bottom Left', 'brain-divi-addons' ),
-					'bottom right'  => esc_html__( 'Bottom Right', 'brain-divi-addons' ),
-					'center left'   => esc_html__( 'Center Left', 'brain-divi-addons' ),
-					'center right'  => esc_html__( 'Center Right', 'brain-divi-addons' ),
-					'top center'    => esc_html__( 'Top Center', 'brain-divi-addons' ),
-					'top left'      => esc_html__( 'Top Left', 'brain-divi-addons' ),
-					'top right'     => esc_html__( 'Top Right', 'brain-divi-addons' ),
+					'center center' => esc_html__( 'Center Center', 'addons-for-divi' ),
+					'bottom center' => esc_html__( 'Bottom Center', 'addons-for-divi' ),
+					'bottom left'   => esc_html__( 'Bottom Left', 'addons-for-divi' ),
+					'bottom right'  => esc_html__( 'Bottom Right', 'addons-for-divi' ),
+					'center left'   => esc_html__( 'Center Left', 'addons-for-divi' ),
+					'center right'  => esc_html__( 'Center Right', 'addons-for-divi' ),
+					'top center'    => esc_html__( 'Top Center', 'addons-for-divi' ),
+					'top left'      => esc_html__( 'Top Left', 'addons-for-divi' ),
+					'top right'     => esc_html__( 'Top Right', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'gradient_type' => 'radial',

@@ -11,32 +11,32 @@ class BA_Number extends BA_Builder_Module {
 	);
 
 	public function init() {
-		$this->name      = esc_html__( 'Brain Number', 'brain-divi-addons' );
+		$this->name      = esc_html__( 'Brain Number', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'number.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content' => esc_html__( 'Content', 'brain-divi-addons' ),
+					'content' => esc_html__( 'Content', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'number'     => esc_html__( 'Number', 'brain-divi-addons' ),
-					'text'       => esc_html__( 'Text', 'brain-divi-addons' ),
-					'border'     => esc_html__( 'Border', 'brain-divi-addons' ),
-					'box_shadow' => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+					'number'     => esc_html__( 'Number', 'addons-for-divi' ),
+					'text'       => esc_html__( 'Text', 'addons-for-divi' ),
+					'border'     => esc_html__( 'Border', 'addons-for-divi' ),
+					'box_shadow' => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'wrapper'  => array(
-				'label'    => esc_html__( 'Text Wrapper', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Text Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-number-wrap',
 			),
 			'text'  => array(
-				'label'    => esc_html__( 'Text', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Text', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-number-text',
 			),
 		);
@@ -48,16 +48,16 @@ class BA_Number extends BA_Builder_Module {
 
 		// Content.
 		$fields['number'] = array(
-			'label'       => esc_html__( 'Number', 'brain-divi-addons' ),
-			'description' => esc_html__( 'Define the number.', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Number', 'addons-for-divi' ),
+			'description' => esc_html__( 'Define the number.', 'addons-for-divi' ),
 			'type'        => 'text',
 			'toggle_slug' => 'content',
 		);
 
 		// Number.
 		$fields['number_alignment'] = array(
-			'label'            => esc_html__( 'Alignment', 'brain-divi-addons' ),
-			'description'      => esc_html__( 'Align number to the left, right or center.', 'brain-divi-addons' ),
+			'label'            => esc_html__( 'Alignment', 'addons-for-divi' ),
+			'description'      => esc_html__( 'Align number to the left, right or center.', 'addons-for-divi' ),
 			'type'             => 'text_align',
 			'option_category'  => 'layout',
 			'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -68,8 +68,8 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$fields['number_height'] = array(
-			'label'          => esc_html__( 'Height', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Here you can define a custom height for number text.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Height', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Here you can define a custom height for number text.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'default'        => '100px',
 			'mobile_options' => true,
@@ -83,8 +83,8 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$fields['number_width'] = array(
-			'label'          => esc_html__( 'Width', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Here you can define a custom width for number text.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Width', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Here you can define a custom width for number text.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'default'        => '100px',
 			'mobile_options' => true,
@@ -98,8 +98,8 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$fields['number_padding'] = array(
-			'label'          => esc_html__( 'Number Padding', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Here you can define custom padding for your number.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Number Padding', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Here you can define custom padding for your number.', 'addons-for-divi' ),
 			'type'           => 'custom_padding',
 			'default'        => '0px|0px|0px|0px',
 			'mobile_options' => true,
@@ -108,8 +108,8 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$fields['number_rotate'] = array(
-			'label'          => esc_html__( 'Rotate', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Rotate number box, number text will be in same position. Only container box will be rotated.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Rotate', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Rotate number box, number text will be in same position. Only container box will be rotated.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'default'        => '0deg',
 			'fixed_unit'     => 'deg',
@@ -123,8 +123,8 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$fields['number_inner_rotate'] = array(
-			'label'          => esc_html__( 'Inner Text Rotate', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Rotate number text.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Inner Text Rotate', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Rotate number text.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'default'        => '0deg',
 			'fixed_unit'     => 'deg',
@@ -139,7 +139,7 @@ class BA_Number extends BA_Builder_Module {
 
 		$number_bg = $this->custom_background_fields(
 			'number',
-			esc_html__( 'Number', 'brain-divi-addons' ),
+			esc_html__( 'Number', 'addons-for-divi' ),
 			'advanced',
 			'number',
 			array( 'color', 'gradient', 'hover' ),
@@ -156,7 +156,7 @@ class BA_Number extends BA_Builder_Module {
 		$advanced_fields['text_shadow'] = false;
 
 		$advanced_fields['borders']['number'] = array(
-			'label_prefix' => esc_html__( 'Number', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Number', 'addons-for-divi' ),
 			'toggle_slug'  => 'number',
 			'css'          => array(
 				'main'      => array(
@@ -195,7 +195,7 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['number'] = array(
-			'label'       => esc_html__( 'Number Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Number Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-number-wrap',
 				'important' => 'all',
@@ -205,7 +205,7 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['main'] = array(
-			'label'       => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%%',
 				'important' => 'all',
@@ -215,7 +215,7 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['number'] = array(
-			'label'           => esc_html__( 'Number', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Number', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-number-text',
 				'important' => 'all',

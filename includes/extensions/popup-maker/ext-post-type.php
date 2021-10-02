@@ -118,8 +118,8 @@ class Popup_Post_Type {
 
         unset( $columns['date'] );
 
-        $columns['conditions'] = __( 'Active Conditions', 'brain-divi-addons' );
-        $columns['date']       = __( 'Date', 'brain-divi-addons' );
+        $columns['conditions'] = __( 'Active Conditions', 'addons-for-divi' );
+        $columns['date']       = __( 'Date', 'addons-for-divi' );
 
         return $columns;
     }
@@ -132,13 +132,13 @@ class Popup_Post_Type {
     static public function register_post_type() {
 
         $labels = array(
-            'name'          => esc_html__( 'Popups', 'brain-divi-addons' ),
-            'singular_name' => esc_html__( 'Popups', 'brain-divi-addons' ),
-            'all_items'     => esc_html__( 'All Popups', 'brain-divi-addons' ),
-            'add_new'       => esc_html__( 'Add New Popup', 'brain-divi-addons' ),
-            'add_new_item'  => esc_html__( 'Add New Popup', 'brain-divi-addons' ),
-            'edit_item'     => esc_html__( 'Edit Popup', 'brain-divi-addons' ),
-            'menu_name'     => esc_html__( 'Popups', 'brain-divi-addons' ),
+            'name'          => esc_html__( 'Popups', 'addons-for-divi' ),
+            'singular_name' => esc_html__( 'Popups', 'addons-for-divi' ),
+            'all_items'     => esc_html__( 'All Popups', 'addons-for-divi' ),
+            'add_new'       => esc_html__( 'Add New Popup', 'addons-for-divi' ),
+            'add_new_item'  => esc_html__( 'Add New Popup', 'addons-for-divi' ),
+            'edit_item'     => esc_html__( 'Edit Popup', 'addons-for-divi' ),
+            'menu_name'     => esc_html__( 'Popups', 'addons-for-divi' ),
         );
 
         $args = array(

@@ -34,7 +34,7 @@
                 </div>
                 <div class="ba-section-block-content">
                     <h3 class="ba-block-title">
-                        <?php esc_html_e( 'Knowledge Base!', 'brain-divi-addons' );?>
+                        <?php esc_html_e( 'Knowledge Base!', 'addons-for-divi' );?>
                     </h3>
                     <p class="ba-text f16">
                         We understand the need of a helpful knowledge base and have that for you. It will help you to understand how our plugin works.
@@ -64,7 +64,7 @@
                     </svg>
                 </div>
                 <div class="ba-section-block-content">
-                    <h3 class="ba-block-title"><?php esc_html_e( 'Support And Feedback', 'brain-divi-addons' );?></h3>
+                    <h3 class="ba-block-title"><?php esc_html_e( 'Support And Feedback', 'addons-for-divi' );?></h3>
                     <p class="ba-text f16">Still need help? Submit a ticket and one of our support experts will get back to you as soon as possible.</p>
                     <a class="ba-btn ba-btn-primary" target="_blank" rel="noopener" href="http://brainaddons.com/support">Get Support</a>
                 </div>
@@ -95,7 +95,7 @@
                     </svg>
                 </div>
                 <div class="ba-section-block-content">
-                    <h3 class="ba-block-title"><?php esc_html_e( 'Join DiviPeople Community!', 'brain-divi-addons' );?></h3>
+                    <h3 class="ba-block-title"><?php esc_html_e( 'Join DiviPeople Community!', 'addons-for-divi' );?></h3>
                     <p class="ba-text f16">Join the community of super helpful Divi users. Say hello, ask questions, give feedback and help each other!</p>
                     <a class="ba-btn ba-btn-primary" target="_blank" rel="noopener" href="https://www.facebook.com/groups/divipeople/">Join Group</a>
                 </div>
@@ -132,7 +132,7 @@
                 </div>
                 <div class="ba-section-block-content">
                     <h3 class="ba-block-title">
-                        <?php esc_html_e( 'Satisfied!', 'brain-divi-addons' );?>
+                        <?php esc_html_e( 'Satisfied!', 'addons-for-divi' );?>
                     </h3>
                     <p class="ba-text f16">
                         We love to have you in Divi Addons family. Take your 2 minutes to review the plugin and spread the love to encourage us to keep it go

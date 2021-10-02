@@ -25,21 +25,21 @@ class BrainAddons_Admin_Feedback {
 				</div>
 				<div class="ba-notice-content">
 					<div class="ba-notice-heading">
-						<?php esc_html_e( 'Hello! Seems like you are using BrainAddons plugin to build your Divi website - Thanks a lot!', 'brain-divi-addons' ); ?>
+						<?php esc_html_e( 'Hello! Seems like you are using BrainAddons plugin to build your Divi website - Thanks a lot!', 'addons-for-divi' ); ?>
 					</div>
-					<?php esc_html_e( 'Could you please do us a BIG favor and give it a 5-star rating on WordPress? This would boost our motivation and help other users make a comfortable decision while choosing the BrainAddons plugin.', 'brain-divi-addons' ); ?>
+					<?php esc_html_e( 'Could you please do us a BIG favor and give it a 5-star rating on WordPress? This would boost our motivation and help other users make a comfortable decision while choosing the BrainAddons plugin.', 'addons-for-divi' ); ?>
 					<br/>
 					<div class="ba-review-notice-container">
 						<a href="https://wordpress.org/support/plugin/addons-for-divi/reviews/?filter=5#new-post" class="ba-review-deserve button-primary" target="_blank">
-							<?php esc_html_e( 'Ok, you deserve it', 'brain-divi-addons' ); ?>
+							<?php esc_html_e( 'Ok, you deserve it', 'addons-for-divi' ); ?>
 						</a>
 						<span class="dashicons dashicons-calendar"></span>
 						<a href="#" class="ba-review-later">
-							<?php esc_html_e( 'Nope, maybe later', 'brain-divi-addons' ); ?>
+							<?php esc_html_e( 'Nope, maybe later', 'addons-for-divi' ); ?>
 						</a>
 						<span class="dashicons dashicons-smiley"></span>
 						<a href="#" class="ba-review-done">
-							<?php esc_html_e( 'I already did', 'brain-divi-addons' ); ?>
+							<?php esc_html_e( 'I already did', 'addons-for-divi' ); ?>
 						</a>
 					</div>
 				</div>

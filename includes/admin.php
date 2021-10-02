@@ -18,8 +18,8 @@ class Admin {
 
 	public static function add_menu() {
 		add_menu_page(
-			__( 'BrianAddons', 'brain-divi-addons' ),
-			__( 'BrainAddons', 'brain-divi-addons' ),
+			__( 'BrianAddons', 'addons-for-divi' ),
+			__( 'BrainAddons', 'addons-for-divi' ),
 			'manage_options',
 			'addons-for-divi',
 			array( __CLASS__, 'render_main' ),
@@ -132,24 +132,24 @@ class Admin {
 
 		$extensions_map = array(
 			'blog-designer'           => array(
-				'title'       => __( 'Blog Designer', 'brain-divi-addons' ),
-				'desc'        => __( 'Blog Designer is a good handy and premium solution for everyone who is looking for a responsive blog page with the divi website.', 'brain-divi-addons' ),
+				'title'       => __( 'Blog Designer', 'addons-for-divi' ),
+				'desc'        => __( 'Blog Designer is a good handy and premium solution for everyone who is looking for a responsive blog page with the divi website.', 'addons-for-divi' ),
 				'link_enable' => true,
 				'is_pro'      => true,
 				'section'     => 'blog_designer_archive__section',
 			),
 
 			'popup-maker'             => array(
-				'title'       => __( 'Popup Maker', 'brain-divi-addons' ),
-				'desc'        => __( 'It is incredibly versatile & flexible. Bend it to create any type of popup, modal, or content overlay for your website.', 'brain-divi-addons' ),
+				'title'       => __( 'Popup Maker', 'addons-for-divi' ),
+				'desc'        => __( 'It is incredibly versatile & flexible. Bend it to create any type of popup, modal, or content overlay for your website.', 'addons-for-divi' ),
 				'link_enable' => false,
 				'is_pro'      => false,
 				'section'     => '',
 			),
 
 			'login-designer'          => array(
-				'title'   => __( 'Login Designer', 'brain-divi-addons' ),
-				'desc'    => __( 'Design and build an on-brand custom WordPress login page.', 'brain-divi-addons' ),
+				'title'   => __( 'Login Designer', 'addons-for-divi' ),
+				'desc'    => __( 'Design and build an on-brand custom WordPress login page.', 'addons-for-divi' ),
 				'demo'    => '',
 				'icon'    => '',
 				'is_pro'  => false,
@@ -157,7 +157,7 @@ class Admin {
 			),
 
 			'unfiltered-file-uploads' => array(
-				'title'   => __( 'Unfiltered File Uploads', 'brain-divi-addons' ),
+				'title'   => __( 'Unfiltered File Uploads', 'addons-for-divi' ),
 				'desc'    => __( 'Please note! Allowing uploads SVG & JSON files is a potential security risk. We recommend you only enable this feature if you understand the security risks involved.' ),
 				'demo'    => '',
 				'icon'    => '',
@@ -166,7 +166,7 @@ class Admin {
 			),
 
 			'library-shortcodes'      => array(
-				'title'   => __( 'Divi Library Shortcodes', 'brain-divi-addons' ),
+				'title'   => __( 'Divi Library Shortcodes', 'addons-for-divi' ),
 				'desc'    => __( 'This extension allows you to display any Divi library template as a shortcode. Embed any Divi library template inside any divi module or inside a .php files by using a shortcode.' ),
 				'demo'    => '',
 				'icon'    => '',
@@ -184,168 +184,180 @@ class Admin {
 		$modules_map = array(
 
 			'advanced-divider'      => array(
-				'title' => __( 'Advanced Divider', 'brain-divi-addons' ),
+				'title' => __( 'Advanced Divider', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/advanced-divider/',
 				'icon'  => 'advanced_divider',
 			),
 
 			'card'                  => array(
-				'title' => __( 'Card', 'brain-divi-addons' ),
+				'title' => __( 'Card', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/card/',
 				'icon'  => 'card',
 			),
 
 			'cf7-module'            => array(
-				'title' => __( 'CF7 Styler', 'brain-divi-addons' ),
+				'title' => __( 'CF7 Styler', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/cf7-styler/',
 				'icon'  => 'cf7_styler',
 			),
 
 			'twitter-feed'          => array(
-				'title' => __( 'Twitter Feed', 'brain-divi-addons' ),
+				'title' => __( 'Twitter Feed', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/twitter-feed',
 				'icon'  => 'twitter_feed',
 			),
 
 			'icon-box'              => array(
-				'title' => __( 'Icon Box', 'brain-divi-addons' ),
+				'title' => __( 'Icon Box', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/icon-box',
 				'icon'  => 'icon_box',
 			),
 
 			'logo-grid'             => array(
-				'title' => __( 'Logo Grid', 'brain-divi-addons' ),
+				'title' => __( 'Logo Grid', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/logo-grid',
 				'icon'  => 'logo_grid',
 			),
 
 			'image-compare'         => array(
-				'title' => __( 'Image Compare', 'brain-divi-addons' ),
+				'title' => __( 'Image Compare', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/image-compare',
 				'icon'  => 'image_compare',
 			),
 
 			'advanced-team'         => array(
-				'title'  => __( 'Advanced Team', 'brain-divi-addons' ),
+				'title'  => __( 'Advanced Team', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/team',
 				'icon'   => 'team',
 				'is_pro' => false,
 			),
 
 			'skill-bars'            => array(
-				'title' => __( 'Skill Bars', 'brain-divi-addons' ),
+				'title' => __( 'Skill Bars', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/skill-bars',
 				'icon'  => 'skill_bars',
 			),
 
 			'dual-button'           => array(
-				'title' => __( 'Dual Button', 'brain-divi-addons' ),
+				'title' => __( 'Dual Button', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/dual-button',
 				'icon'  => 'dual_button',
 			),
 
 			'video-popup'           => array(
-				'title' => __( 'Video Popup', 'brain-divi-addons' ),
+				'title' => __( 'Video Popup', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/video-popup',
 				'icon'  => 'video_popup',
 			),
 
 			'testimonial'           => array(
-				'title' => __( 'Testimonial', 'brain-divi-addons' ),
+				'title' => __( 'Testimonial', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/testimonial',
 				'icon'  => 'testimonial',
 			),
 
 			'info-box'              => array(
-				'title' => __( 'Info Box', 'brain-divi-addons' ),
+				'title' => __( 'Info Box', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/info-box',
 				'icon'  => 'info_box',
 			),
 
 			'number'                => array(
-				'title' => __( 'Number', 'brain-divi-addons' ),
+				'title' => __( 'Number', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/number',
 				'icon'  => 'number',
 			),
 
 			'scroll-image'          => array(
-				'title' => __( 'Scroll Image', 'brain-divi-addons' ),
+				'title' => __( 'Scroll Image', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/scroll-image',
 				'icon'  => 'scroll_image',
 			),
 
 			'review'                => array(
-				'title' => __( 'Review', 'brain-divi-addons' ),
+				'title' => __( 'Review', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/review',
 				'icon'  => 'review',
 			),
 
 			'flipbox'               => array(
-				'title'  => __( 'Flipbox', 'brain-divi-addons' ),
+				'title'  => __( 'Flipbox', 'addons-for-divi' ),
 				'demo'   => ba_has_pro() ? 'https://divi.brainaddons.com/flip-box-pro/' : 'https://divi.brainaddons.com/flip-box/',
 				'icon'   => 'flipbox',
 				'is_pro' => ba_has_pro() ? true : false,
 			),
 
 			'news-ticker'           => array(
-				'title' => __( 'News Ticker', 'brain-divi-addons' ),
+				'title' => __( 'News Ticker', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/news-ticker',
 				'icon'  => 'news_ticker',
 			),
 
 			'post-list'             => array(
-				'title' => __( 'Post List', 'brain-divi-addons' ),
+				'title' => __( 'Post List', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/post-list',
 				'icon'  => 'post_list',
 			),
 
 			'twitter-feed-carousel' => array(
-				'title' => __( 'Twitter Feed Carousel', 'brain-divi-addons' ),
+				'title' => __( 'Twitter Feed Carousel', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/twitter-feed-carousel',
 				'icon'  => 'twitter_feed_carousel',
 			),
 
 			'image-carousel'        => array(
-				'title' => __( 'Image Carousel', 'brain-divi-addons' ),
+				'title' => __( 'Image Carousel', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/image-carousel',
 				'icon'  => 'image_carousel',
 			),
 
 			'logo-carousel'         => array(
-				'title' => __( 'Logo Carousel', 'brain-divi-addons' ),
+				'title' => __( 'Logo Carousel', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/logo-carousel',
 				'icon'  => 'logo_carousel',
 			),
 
 			'review'                => array(
-				'title' => __( 'Review', 'brain-divi-addons' ),
+				'title' => __( 'Review', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/review',
 				'icon'  => 'review',
 			),
 
 			'flipbox'               => array(
-				'title'  => __( 'Flipbox', 'brain-divi-addons' ),
+				'title'  => __( 'Flipbox', 'addons-for-divi' ),
 				'demo'   => ba_has_pro() ? 'https://divi.brainaddons.com/flipbox-pro' : 'https://divi.brainaddons.com/flipbox',
 				'icon'   => 'flipbox',
 				'is_pro' => ba_has_pro() ? true : false,
 			),
 
 			'animated-text'         => array(
-				'title' => __( 'Animated Text', 'brain-divi-addons' ),
+				'title' => __( 'Animated Text', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/animated-text',
 				'icon'  => 'animated_text',
 			),
 
 			'business-hour'         => array(
-				'title' => __( 'Business Hour', 'brain-divi-addons' ),
+				'title' => __( 'Business Hour', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/business-hour',
 				'icon'  => 'business_hour',
 			),
 
 			'gradient-heading'      => array(
-				'title' => __( 'Gradient Heading', 'brain-divi-addons' ),
+				'title' => __( 'Gradient Heading', 'addons-for-divi' ),
 				'demo'  => 'https://divi.brainaddons.com/gradient-heading',
 				'icon'  => 'advanced_heading',
+			),
+
+			'alert'                 => array(
+				'title' => __( 'Alert', 'addons-for-divi' ),
+				'demo'  => 'https://divi.brainaddons.com/alert',
+				'icon'  => 'alert',
+			),
+
+			'animated-gallery'      => array(
+				'title' => __( 'Animated Gallery', 'addons-for-divi' ),
+				'demo'  => 'https://divi.brainaddons.com/animated-gallery',
+				'icon'  => 'animated-gallery',
 			),
 
 		);
@@ -357,165 +369,171 @@ class Admin {
 
 		$modules_map = array(
 			'advanced-heading'     => array(
-				'title'  => __( 'Advanced Heading', 'brain-divi-addons' ),
+				'title'  => __( 'Advanced Heading', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/advanced-heading/advanced-heading',
 				'icon'   => 'advanced_heading',
 				'is_pro' => true,
 			),
 			'hover-box'            => array(
-				'title'  => __( 'Hover Box', 'brain-divi-addons' ),
+				'title'  => __( 'Hover Box', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/hover-box',
 				'icon'   => 'hover_box',
 				'is_pro' => true,
 			),
 			'image-masking'        => array(
-				'title'  => __( 'Image Masking', 'brain-divi-addons' ),
+				'title'  => __( 'Image Masking', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/image-masking',
 				'icon'   => 'image_masking',
 				'is_pro' => true,
 			),
 			'list-group'           => array(
-				'title'  => __( 'List Group', 'brain-divi-addons' ),
+				'title'  => __( 'List Group', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/list-group',
 				'icon'   => 'list_group',
 				'is_pro' => true,
 			),
 			'price-menu'           => array(
-				'title'  => __( 'Price Menu', 'brain-divi-addons' ),
+				'title'  => __( 'Price Menu', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/price-menu',
 				'icon'   => 'price_menu',
 				'is_pro' => true,
 			),
 			'vertical-timeline'    => array(
-				'title'  => __( 'Vertical Timeline', 'brain-divi-addons' ),
+				'title'  => __( 'Vertical Timeline', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/vertical-timeline/',
 				'icon'   => 'vertical_timeline',
 				'is_pro' => true,
 			),
 			'horizontal-timeline'  => array(
-				'title'  => __( 'Horizontal Timeline', 'brain-divi-addons' ),
+				'title'  => __( 'Horizontal Timeline', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/horizontal-timeline/',
 				'icon'   => 'horizontal_timeline',
 				'is_pro' => true,
 			),
 			'image-accordion'      => array(
-				'title'  => __( 'Image Accordion', 'brain-divi-addons' ),
+				'title'  => __( 'Image Accordion', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/image-accordion',
 				'icon'   => 'image_accordion',
 				'is_pro' => true,
 			),
 			'image-magnifier'      => array(
-				'title'  => __( 'Image Magnifier', 'brain-divi-addons' ),
+				'title'  => __( 'Image Magnifier', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/image-magnifier',
 				'icon'   => 'image_magnifier',
 				'is_pro' => true,
 			),
 			'hotspots'             => array(
-				'title'  => __( 'Hotspots', 'brain-divi-addons' ),
+				'title'  => __( 'Hotspots', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/hotspots',
 				'icon'   => 'hotspots',
 				'is_pro' => true,
 			),
 			'floating-image'       => array(
-				'title'  => __( 'Floating Image', 'brain-divi-addons' ),
+				'title'  => __( 'Floating Image', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/floating-image',
 				'icon'   => 'floating_image',
 				'is_pro' => true,
 			),
 			'instagram-feed'       => array(
-				'title'  => __( 'Instagram Feed', 'brain-divi-addons' ),
+				'title'  => __( 'Instagram Feed', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/instagram-feed',
 				'icon'   => 'instagram_feed',
 				'is_pro' => true,
 			),
 			'inline-svg'           => array(
-				'title'  => __( 'Inline SVG', 'brain-divi-addons' ),
+				'title'  => __( 'Inline SVG', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/inline-svg',
 				'icon'   => 'inline_svg',
 				'is_pro' => true,
 			),
 			'lottie-animation'     => array(
-				'title'  => __( 'Lottie Animation', 'brain-divi-addons' ),
+				'title'  => __( 'Lottie Animation', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/lottie-animation',
 				'icon'   => 'lottie',
 				'is_pro' => true,
 			),
 			'content-toggle'       => array(
-				'title'  => __( 'Content Toggle', 'brain-divi-addons' ),
+				'title'  => __( 'Content Toggle', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/content-toggle',
 				'icon'   => 'content_toggle',
 				'is_pro' => true,
 			),
 			'testimonial-carousel' => array(
-				'title'  => __( 'Testimonial Carousel', 'brain-divi-addons' ),
+				'title'  => __( 'Testimonial Carousel', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/testimonial-carousel',
 				'icon'   => 'testimonial_carousel',
 				'is_pro' => true,
 			),
 			'team-carousel'        => array(
-				'title'  => __( 'Team Carousel', 'brain-divi-addons' ),
+				'title'  => __( 'Team Carousel', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/team-carousel',
 				'icon'   => 'team_carousel',
 				'is_pro' => true,
 			),
 			'post-grid'            => array(
-				'title'  => __( 'Post Grid', 'brain-divi-addons' ),
+				'title'  => __( 'Post Grid', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/post-grid/',
 				'icon'   => 'post_grid',
 				'is_pro' => true,
 			),
 			'post-tiles'           => array(
-				'title'  => __( 'Post Tiles', 'brain-divi-addons' ),
+				'title'  => __( 'Post Tiles', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/post-tiles/',
 				'icon'   => 'post_tiles',
 				'is_pro' => true,
 			),
 			'post-carousel'        => array(
-				'title'  => __( 'Post Carousel', 'brain-divi-addons' ),
+				'title'  => __( 'Post Carousel', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/post-carousel/',
 				'icon'   => 'post_carousel',
 				'is_pro' => true,
 			),
 			'post-masonry'         => array(
-				'title'  => __( 'Post Masonry', 'brain-divi-addons' ),
+				'title'  => __( 'Post Masonry', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/post-masonry/',
 				'icon'   => 'post_masonry',
 				'is_pro' => true,
 			),
 			'smart-post-list'      => array(
-				'title'  => __( 'Smart Post List', 'brain-divi-addons' ),
+				'title'  => __( 'Smart Post List', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/smart-post',
 				'icon'   => 'smart_post_list',
 				'is_pro' => true,
 			),
 			'news-ticker-pro'      => array(
-				'title'  => __( 'News Ticker Pro', 'brain-divi-addons' ),
+				'title'  => __( 'News Ticker Pro', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/new-ticker-pro/',
 				'icon'   => 'news_ticker',
 				'is_pro' => true,
 			),
 			'author-list'          => array(
-				'title'  => __( 'Author List', 'brain-divi-addons' ),
+				'title'  => __( 'Author List', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/author-list/',
 				'icon'   => 'author_list',
 				'is_pro' => true,
 			),
 			'instagram-carousel'   => array(
-				'title'  => __( 'Instagram Carousel', 'brain-divi-addons' ),
+				'title'  => __( 'Instagram Carousel', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/instagram-carousel',
 				'icon'   => 'instagram_carousel',
 				'is_pro' => true,
 			),
 			'social-share'         => array(
-				'title'  => __( 'Social Share', 'brain-divi-addons' ),
+				'title'  => __( 'Social Share', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/social-share',
 				'icon'   => 'social_share',
 				'is_pro' => true,
 			),
 			'image-hover'          => array(
-				'title'  => __( 'Image Hover', 'brain-divi-addons' ),
+				'title'  => __( 'Image Hover', 'addons-for-divi' ),
 				'demo'   => 'https://divi.brainaddons.com/image-hover',
 				'icon'   => 'hover_box',
+				'is_pro' => true,
+			),
+			'author-box'           => array(
+				'title'  => __( 'Author Box', 'addons-for-divi' ),
+				'demo'   => 'https://brainaddons.com/',
+				'icon'   => 'author_list',
 				'is_pro' => true,
 			),
 		);
@@ -535,25 +553,25 @@ class Admin {
 
 		$tabs = array(
 			'home'       => array(
-				'title'    => esc_html__( 'General', 'brain-divi-addons' ),
+				'title'    => esc_html__( 'General', 'addons-for-divi' ),
 				'icon'     => $icon_url . 'general.svg',
 				'renderer' => array( __CLASS__, 'render_home' ),
 			),
 
 			'modules'    => array(
-				'title'    => esc_html__( 'Modules', 'brain-divi-addons' ),
+				'title'    => esc_html__( 'Modules', 'addons-for-divi' ),
 				'icon'     => $icon_url . 'modules.svg',
 				'renderer' => array( __CLASS__, 'render_modules' ),
 			),
 
 			'extensions' => array(
-				'title'    => esc_html__( 'Extension', 'brain-divi-addons' ),
+				'title'    => esc_html__( 'Extension', 'addons-for-divi' ),
 				'icon'     => $icon_url . 'extensions.svg',
 				'renderer' => array( __CLASS__, 'render_extensions' ),
 			),
 
 			'pro'        => array(
-				'title'    => esc_html__( 'Get Pro', 'brain-divi-addons' ),
+				'title'    => esc_html__( 'Get Pro', 'addons-for-divi' ),
 				'icon'     => $icon_url . 'get-pro.svg',
 				'renderer' => array( __CLASS__, 'render_pro' ),
 			),

@@ -12,66 +12,66 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 
 		$this->vb_support       = 'on';
 		$this->slug             = 'ba_cf7_styler';
-		$this->name             = esc_html__( 'Brain CF7 Styler', 'brain-divi-addons' );
+		$this->name             = esc_html__( 'Brain CF7 Styler', 'addons-for-divi' );
 		$this->icon_path        = plugin_dir_path( __FILE__ ) . 'cf7.svg';
 		$this->main_css_element = '%%order_class%%.ba_cf7_styler';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'general' => esc_html__( 'General', 'brain-divi-addons' ),
+					'general' => esc_html__( 'General', 'addons-for-divi' ),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'common'         => esc_html__( 'General', 'brain-divi-addons' ),
+					'common'         => esc_html__( 'General', 'addons-for-divi' ),
 					'form_header'    => array(
-						'title'             => esc_html__( 'Form Header', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Form Header', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'common_tab' => array(
-								'name' => esc_html__( 'General', 'brain-divi-addons' ),
+								'name' => esc_html__( 'General', 'addons-for-divi' ),
 							),
 							'title_tab'  => array(
-								'name' => esc_html__( 'Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Title', 'addons-for-divi' ),
 							),
 							'text_tab'   => array(
-								'name' => esc_html__( 'Text', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Text', 'addons-for-divi' ),
 							),
 						),
 					),
 					'form_text'      => array(
-						'title'             => esc_html__( 'Form Text', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Form Text', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'field_tab'       => array(
-								'name' => esc_html__( 'Field', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Field', 'addons-for-divi' ),
 							),
 							'label_tab'       => array(
-								'name' => esc_html__( 'Label', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Label', 'addons-for-divi' ),
 							),
 
 							'placeholder_tab' => array(
-								'name' => esc_html__( 'Placeholder', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Placeholder', 'addons-for-divi' ),
 							),
 						),
 					),
-					'form_field'     => esc_html__( 'Fields', 'brain-divi-addons' ),
-					'radio_checkbox' => esc_html__( 'Radio & Checkbox', 'brain-divi-addons' ),
-					'submit_button'  => esc_html__( 'Button', 'brain-divi-addons' ),
-					'suc_err_msg'    => esc_html__( 'Message', 'brain-divi-addons' ),
+					'form_field'     => esc_html__( 'Fields', 'addons-for-divi' ),
+					'radio_checkbox' => esc_html__( 'Radio & Checkbox', 'addons-for-divi' ),
+					'submit_button'  => esc_html__( 'Button', 'addons-for-divi' ),
+					'suc_err_msg'    => esc_html__( 'Message', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'form_id'    => array(
-				'label'    => esc_html__( 'Form Fields', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Form Fields', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-cf7-styler input',
 			),
 			'cf7_labels' => array(
-				'label'    => esc_html__( 'Form Label', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Form Label', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-cf7-styler label',
 			),
 		);
@@ -83,12 +83,12 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 		return array(
 
 			'use_form_header'              => array(
-				'label'       => esc_html__( 'Show Form Header', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can choose whether form header should be used.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Show Form Header', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can choose whether form header should be used.', 'addons-for-divi' ),
 				'type'        => 'yes_no_button',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'     => 'off',
 				'toggle_slug' => 'general',
@@ -111,8 +111,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_title'            => array(
-				'label'       => esc_html__( 'Header Title', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the header title for your form.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Header Title', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the header title for your form.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'show_if'     => array(
 					'use_form_header' => 'on',
@@ -121,8 +121,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_text'             => array(
-				'label'       => esc_html__( 'Header Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the header description text for your form.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Header Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the header description text for your form.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'show_if'     => array(
 					'use_form_header' => 'on',
@@ -131,12 +131,12 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'use_icon'                     => array(
-				'label'       => esc_html__( 'Use Icon', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can choose whether icon should be used.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Use Icon', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can choose whether icon should be used.', 'addons-for-divi' ),
 				'type'        => 'yes_no_button',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_form_header' => 'on',
@@ -146,12 +146,12 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'header_img'                   => array(
-				'label'              => esc_html__( 'Header Image', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the form header.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Header Image', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the form header.', 'addons-for-divi' ),
 				'type'               => 'upload',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
 				'show_if'            => array(
 					'use_icon'        => 'off',
 					'use_form_header' => 'on',
@@ -160,8 +160,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'header_icon'                  => array(
-				'label'       => esc_html__( 'Header Icon', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select an icon for your form header.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Header Icon', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select an icon for your form header.', 'addons-for-divi' ),
 				'type'        => 'select_icon',
 				'show_if'     => array(
 					'use_form_header' => 'on',
@@ -172,8 +172,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_bg'               => array(
-				'label'        => esc_html__( 'Form Header Background', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your form header.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Form Header Background', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your form header.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -182,8 +182,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_padding'          => array(
-				'label'          => esc_html__( 'Header Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Header Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'default'        => '0px|0px|0px|0px',
 				'tab_slug'       => 'advanced',
@@ -193,8 +193,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_bottom'           => array(
-				'label'          => esc_html__( 'Bottom Spacing', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Set how much space the form header will take at the bottom.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Bottom Spacing', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Set how much space the form header will take at the bottom.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '0px',
@@ -209,8 +209,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_img_bg'           => array(
-				'label'        => esc_html__( 'Header Image/Icon Background', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your form header icon/image.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Header Image/Icon Background', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your form header icon/image.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'default'      => '#efefef',
 				'custom_color' => true,
@@ -220,8 +220,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_icon_size'        => array(
-				'label'          => esc_html__( 'Header Icon Size', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom size for your form header icon.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Header Icon Size', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom size for your form header icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '32px',
@@ -241,8 +241,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_icon_color'       => array(
-				'label'        => esc_html__( 'Header Icon Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your form header icon.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Header Icon Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom color for your form header icon.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'show_if'      => array(
@@ -255,8 +255,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_icon_padding'     => array(
-				'label'       => esc_html__( 'Header Icon Padding', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Header Icon Padding', 'addons-for-divi' ),
+				'description' => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
 				'type'        => 'custom_padding',
 				'default'     => '15px|15px|15px|15px',
 				'show_if'     => array(
@@ -269,8 +269,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_bg'                      => array(
-				'label'        => esc_html__( 'Form Background', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your form.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Form Background', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your form.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -278,8 +278,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_padding'                 => array(
-				'label'          => esc_html__( 'Form Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Form Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'default'        => '0px|0px|0px|0px',
 				'tab_slug'       => 'advanced',
@@ -288,12 +288,12 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'use_form_button_fullwidth'    => array(
-				'label'       => esc_html__( 'Fullwidth Button', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Force button always display fullwidth.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Fullwidth Button', 'addons-for-divi' ),
+				'description' => esc_html__( 'Force button always display fullwidth.', 'addons-for-divi' ),
 				'type'        => 'yes_no_button',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'     => 'off',
 				'tab_slug'    => 'advanced',
@@ -301,13 +301,13 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'button_alignment'             => array(
-				'label'       => esc_html__( 'Button Alignment', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Align button to the left, right or center.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Button Alignment', 'addons-for-divi' ),
+				'description' => esc_html__( 'Align button to the left, right or center.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'options'     => array(
-					'left'   => esc_html__( 'Left', 'brain-divi-addons' ),
-					'center' => esc_html__( 'Center', 'brain-divi-addons' ),
-					'right'  => esc_html__( 'Right', 'brain-divi-addons' ),
+					'left'   => esc_html__( 'Left', 'addons-for-divi' ),
+					'center' => esc_html__( 'Center', 'addons-for-divi' ),
+					'right'  => esc_html__( 'Right', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_form_button_fullwidth' => 'off',
@@ -318,11 +318,11 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_id'                      => array(
-				'label'            => esc_html__( 'Select Your Form', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Select form id from the list which you want to customize & display.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Select Your Form', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Select form id from the list which you want to customize & display.', 'addons-for-divi' ),
 				'type'             => 'select',
 				'option_category'  => 'layout',
-				'options'          => array( '0' => __( 'Select a Form', 'brain-divi-addons' ) ) + \ba_get_cf7_forms(),
+				'options'          => array( '0' => __( 'Select a Form', 'addons-for-divi' ) ) + \ba_get_cf7_forms(),
 				'computed_affects' => array(
 					'__cf7form',
 				),
@@ -330,8 +330,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_field_height'           => array(
-				'label'          => esc_html__( 'Common Text Fields Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define static height for the common text fields.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Common Text Fields Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define static height for the common text fields.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'mobile_options' => true,
@@ -345,8 +345,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_field_padding'    => array(
-				'label'          => esc_html__( 'Form Field Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for each field.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Form Field Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom padding for each field.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'form_field',
@@ -355,8 +355,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_background_color'        => array(
-				'label'        => esc_html__( 'Form Field Background Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for form field.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Form Field Background Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for form field.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'default'      => '#f5f5f5',
@@ -365,8 +365,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_field_active_color'      => array(
-				'label'        => esc_html__( 'Form Field Active Border Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom active color for form field.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Form Field Active Border Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom active color for form field.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -374,8 +374,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_field_spacing'           => array(
-				'label'          => esc_html__( 'Form Field Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Set how much space the form field will take at the bottom.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Form Field Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Set how much space the form field will take at the bottom.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '20px',
@@ -390,8 +390,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_label_spacing'           => array(
-				'label'          => esc_html__( 'Form Label Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Set how much space the form label will take at the bottom.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Form Label Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Set how much space the form label will take at the bottom.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '7px',
@@ -407,13 +407,13 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_custom_styles'             => array(
-				'label'            => esc_html__( 'Enable Custom Styles', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can choose whether checkbox & radio custom styles should be used.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Enable Custom Styles', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can choose whether checkbox & radio custom styles should be used.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'off',
 				'computed_affects' => array(
@@ -424,8 +424,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_size'                      => array(
-				'label'           => esc_html__( 'Size', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Increase or decrease the size of checkbox & radio.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Size', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Increase or decrease the size of checkbox & radio.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'layout',
 				'default_unit'    => 'px',
@@ -443,8 +443,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_background_color'          => array(
-				'label'        => esc_html__( 'Background Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for checkbox & radio.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Background Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for checkbox & radio.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -455,8 +455,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_selected_color'            => array(
-				'label'        => esc_html__( 'Selected Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom selected color for checkbox & radio.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Selected Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom selected color for checkbox & radio.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'default'      => '#222222',
@@ -468,8 +468,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_border_color'              => array(
-				'label'        => esc_html__( 'Border Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom border color for checkbox & radio.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Border Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom border color for checkbox & radio.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'default'      => '#222222',
@@ -481,8 +481,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_border_size'               => array(
-				'label'           => esc_html__( 'Border Size', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define a custom border size for checkbox & radio.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Border Size', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define a custom border size for checkbox & radio.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'layout',
 				'tab_slug'        => 'advanced',
@@ -500,8 +500,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_label_color'               => array(
-				'label'        => esc_html__( 'Label Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom label color for checkbox & radio.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Label Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom label color for checkbox & radio.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -513,8 +513,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 
 			// Success / Error Message.
 			'cf7_message_color'            => array(
-				'label'        => esc_html__( 'Message Text Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom text color for your message.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Message Text Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom text color for your message.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -522,8 +522,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_message_bg_color'         => array(
-				'label'        => esc_html__( 'Message Background Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your message.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Message Background Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your message.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -531,8 +531,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_border_highlight_color'   => array(
-				'label'        => esc_html__( 'Border Highlight Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom border highlight color for your message.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Border Highlight Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom border highlight color for your message.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -541,8 +541,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 
 			// Success.
 			'cf7_success_message_color'    => array(
-				'label'        => esc_html__( 'Success Message Text Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom text color for your success message.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Success Message Text Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom text color for your success message.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -550,8 +550,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_success_message_bg_color' => array(
-				'label'        => esc_html__( 'Success Message Background Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your success message.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Success Message Background Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your success message.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -559,8 +559,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_success_border_color'     => array(
-				'label'        => esc_html__( 'Success Border Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your success message border.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Success Border Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom color for your success message border.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -569,8 +569,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 
 			// Error.
 			'cf7_error_message_color'      => array(
-				'label'        => esc_html__( 'Error Message Text Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom text color for your error message.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Error Message Text Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom text color for your error message.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -578,8 +578,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_error_message_bg_color'   => array(
-				'label'        => esc_html__( 'Error Message Background Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your error message.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Error Message Background Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your error message.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -587,8 +587,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_error_border_color'       => array(
-				'label'        => esc_html__( 'Error Border Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your error message border.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Error Border Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom color for your error message border.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -596,8 +596,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_message_padding'          => array(
-				'label'          => esc_html__( 'Message Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Message Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'suc_err_msg',
@@ -611,8 +611,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_message_margin_top'       => array(
-				'label'          => esc_html__( 'Message Margin Top', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the message.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Message Margin Top', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the message.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'suc_err_msg',
@@ -627,8 +627,8 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 
 			// Header Text.
 			'header_title_spacing'         => array(
-				'label'          => esc_html__( 'Title Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Title Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'form_header',
@@ -645,7 +645,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 			'__cf7form'                    => array(
 				'type'                => 'computed',
 				'computed_callback'   => array( 'BA_CF7_Styler', 'get_cf7_shortcode' ),
-				'description'         => esc_html__( '.', 'brain-divi-addons' ),
+				'description'         => esc_html__( '.', 'addons-for-divi' ),
 				'computed_depends_on' => array(
 					'form_id',
 				),
@@ -661,7 +661,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 		$advanced_fields['text_shadow'] = false;
 
 		$advanced_fields['fonts']['form_field_font'] = array(
-			'label'       => esc_html__( 'Field', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Field', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => implode(
 					', ',
@@ -687,7 +687,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['labels'] = array(
-			'label'       => esc_html__( 'Label', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Label', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => "{$this->main_css_element} .ba-cf7 .wpcf7 label",
 				'important' => 'all',
@@ -697,7 +697,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['placeholder'] = array(
-			'label'       => esc_html__( 'Placeholder', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Placeholder', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => implode(
 					', ',
@@ -713,7 +713,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'            => esc_html__( 'Title', 'brain-divi-addons' ),
+			'label'            => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'              => array(
 				'main'      => '%%order_class%% .ba-form-header-title',
 				'important' => 'all',
@@ -726,7 +726,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['text'] = array(
-			'label'            => esc_html__( 'Text', 'brain-divi-addons' ),
+			'label'            => esc_html__( 'Text', 'addons-for-divi' ),
 			'css'              => array(
 				'main'      => '%%order_class%% .ba-form-header-text',
 				'important' => 'all',
@@ -739,7 +739,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['button']['submit_button'] = array(
-			'label'          => esc_html__( 'Button', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Button', 'addons-for-divi' ),
 			'css'            => array(
 				'main'      => '%%order_class%% .wpcf7-form input[type=submit]',
 				'important' => 'all',
@@ -763,7 +763,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 		$advanced_fields['borders']['default'] = array();
 
 		$advanced_fields['borders']['field'] = array(
-			'label_prefix' => esc_html__( 'Field', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Field', 'addons-for-divi' ),
 			'toggle_slug'  => 'form_field',
 			'css'          => array(
 				'main'      => array(

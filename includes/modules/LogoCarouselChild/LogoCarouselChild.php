@@ -9,19 +9,19 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name = esc_html__( 'Logo', 'brain-divi-addons' );
+		$this->name = esc_html__( 'Logo', 'addons-for-divi' );
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Content', 'brain-divi-addons' ),
-					'tab_content'  => esc_html__( 'Tab Content', 'brain-divi-addons' ),
+					'main_content' => esc_html__( 'Content', 'addons-for-divi' ),
+					'tab_content'  => esc_html__( 'Tab Content', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'overlay' => esc_html__( 'Overlay', 'brain-divi-addons' ),
-					'borders' => esc_html__( 'Borders', 'brain-divi-addons' ),
+					'overlay' => esc_html__( 'Overlay', 'addons-for-divi' ),
+					'borders' => esc_html__( 'Borders', 'addons-for-divi' ),
 				),
 			),
 		);
@@ -32,41 +32,41 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 		$fields = array(
 
 			'logo'         => array(
-				'label'              => esc_html__( 'Upload Logo', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload a logo or type in the URL of the logo you would like to display.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Upload Logo', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload a logo or type in the URL of the logo you would like to display.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload a Logo', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose a Logo', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Logo', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload a Logo', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose a Logo', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Logo', 'addons-for-divi' ),
 				'toggle_slug'        => 'main_content',
 				'mobile_options'     => true,
 				'hover'              => 'tabs',
 			),
 
 			'brand_name'   => array(
-				'label'       => esc_html__( 'Logo Alt Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the HTML ALT text for your logo image here.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Logo Alt Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the HTML ALT text for your logo image here.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'main_content',
 			),
 
 			'is_link'      => array(
-				'label'           => esc_html__( 'Use Link', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether logo should be linked.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Link', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether logo should be linked.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'main_content',
 			),
 
 			'link_url'     => array(
-				'label'           => esc_html__( 'Link Url', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define the logo link url.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Link Url', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define the logo link url.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'default'         => '',
 				'dynamic_content' => 'url',
@@ -92,9 +92,9 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 
 		$label = array(
 			'admin_title' => array(
-				'label'       => esc_html__( 'Admin Label', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Admin Label', 'addons-for-divi' ),
 				'type'        => 'text',
-				'description' => esc_html__( 'This will change the label of the item', 'brain-divi-addons' ),
+				'description' => esc_html__( 'This will change the label of the item', 'addons-for-divi' ),
 				'toggle_slug' => 'admin_label',
 			),
 		);
@@ -127,7 +127,7 @@ class BA_Logo_Carousel_Child extends BA_Builder_Module {
 				),
 				'important' => 'all',
 			),
-			'label_prefix' => esc_html__( 'Item', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Item', 'addons-for-divi' ),
 			'defaults'     => array(
 				'border_radii'  => 'on|0px|0px|0px|0px',
 				'border_styles' => array(

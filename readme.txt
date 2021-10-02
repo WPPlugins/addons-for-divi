@@ -1,9 +1,9 @@
-=== Divi Modules, Extensions and Divi Popup Plugin for Divi Theme and Divi Builder by BrainAddons ===
-Contributors: divipeople, brainaddons
-Tags: divi, divi theme, divi builder, divi modules, divi page builder
+=== BrainAddons ===
+Contributors: divitorque
+Tags: divi, divi theme, divi builder, divi modules, divi template
 Requires at least: 4.8
 Tested up to: 5.8
-Stable tag: trunk
+Stable tag: 2.3.3
 Requires PHP: 5.6
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,21 +14,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 [BrainAddons](https://brainaddons.com) for Divi Theme and Divi Builder Is One of the Best Divi Addons That Comes With **50 Free & Pro Divi Modules and 5+ Problem-Solving Divi Extensions**. Enhance your Divi page building experience with 50+ creative divi modules and extensions.
 
-[Pro Version](https://brainaddons.com/pricing/) | [Live Demo](https://divi.brainaddons.com/) | [Documentation](https://brainaddons.com/docs)
+[Try Pro Version](https://brainaddons.com/pricing/) | [Live Demo](https://divi.brainaddons.com/) | [Documentation](https://brainaddons.com/docs)
 
-### ✅ **Why Should You Choose BrainAddons?**
-BrainAddons is the pioneer of adding exclusive problem-solving features for Divi Theme or Divi Page Builder. Reasons for choosing BrainAddons for Div over any other Divi plugin:
-
-- You Can Create Advanced Divi Popup Modal
-- Exclusive Blog Archive Page Designing Capability
-- Design your Login and Registration Page
-- Completely Customizable Every Module
-- Expert & Professional Support Team
-- Light Weight & Instant Loading
-
-[DIVI PAGE BUILDER](https://www.elegantthemes.com/gallery/divi/) IS REQUIRED FOR THIS PLUGIN.
-
-## FREE DIVI MODULES AND COUNTING
+## FREE DIVI MODULES AND COUNTING 🎉
 
 YES, you are getting 25+ free outstanding useful Divi modules for your Divi builders. These 25+ of the most useful Divi modules to enhance your Divi Page Building experience and allow you to climb the top of your design capabilities. And More features and improvements are coming on regular updates.  
 
@@ -83,6 +71,8 @@ Let’s explore all the premium free Divi modules of Brain Addons:
 24. [Business Hour](https://divi.brainaddons.com/business-hour/) - With the new Business Hour module oh Brain Addons, you can showcase your business hours with style and make your webpage stand out from the rest.
 
 25. [Divi Gradient Heading](https://divi.brainaddons.com/gradient-heading/) - With the Divi Gradient Heading module you can create beautiful header designs for your divi page section.
+
+26. Divi Alert Module - 
 
 ### **27 PREMIUM DIVI MODULES OF BRAINADDONS ( [PRO](https://brainaddons.com/pricing/) )**
 
@@ -168,12 +158,11 @@ Please note! Allowing uploads SVG & JSON files is a potential security risk. We 
 This extension allows you to display any Divi library template as a shortcode. Embed any Divi library template inside any Divi module or inside a .php files by using a shortcode.
 
 ### Documentation and Support
-
 * [Documentation](https://brainaddons.com/docs)
 
 == Installation ==
 
- Note: This plugin works with Divi. Make sure you have [Divi Theme](https://www.elegantthemes.com/) installed.
+Note: This plugin works with Divi. Make sure you have [Divi Theme](https://www.elegantthemes.com/) installed.
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
@@ -194,6 +183,24 @@ Unfortunately, No. You’ve to install Divi first. BrainAddons is dependent on D
 6. screenshot-6
 
 == Changelog ==
+2.3.3 - 2 October, 2021
+Updated: Text Domain Name
+
+2.3.2 - 19 August, 2021
+Fixed: Quick css fix for Magnific Popup
+
+2.3.1 - 19 August, 2021
+Fixed: Magnific Popup issue
+Fixed: Error type issue in alert module
+Fixed: Mobile popup issue in video module
+Added: Alert Module main border options
+Added: Video Popup Module custom video auto play and pause 
+Added: Video Popup Module overlay image show/hide option
+Added: Video Popup Module text support 
+
+2.3.0 - 11 August, 2021
+- Added: Alert Module
+
 2.2.2 - 16 July, 2021
 - Fixed: Gradient Heading module PHP error
 - Fixed: Animated Text module animation

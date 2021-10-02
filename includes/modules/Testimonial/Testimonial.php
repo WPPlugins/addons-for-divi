@@ -11,74 +11,74 @@ class BA_Testimonial extends BA_Builder_Module {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_testimonial';
-		$this->name       = esc_html__( 'Brain Testimonial', 'brain-divi-addons' );
+		$this->name       = esc_html__( 'Brain Testimonial', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'testimonial.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'brain-divi-addons' ),
-					'elements' => esc_html__( 'Elements', 'brain-divi-addons' ),
+					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
+					'elements' => esc_html__( 'Elements', 'addons-for-divi' ),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'common'     => esc_html__( 'General', 'brain-divi-addons' ),
-					'quote_icon' => esc_html__( 'Quote Icon', 'brain-divi-addons' ),
-					'image'      => esc_html__( 'Reviewer Image', 'brain-divi-addons' ),
-					'rating'     => esc_html__( 'Rating', 'brain-divi-addons' ),
+					'common'     => esc_html__( 'General', 'addons-for-divi' ),
+					'quote_icon' => esc_html__( 'Quote Icon', 'addons-for-divi' ),
+					'image'      => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
+					'rating'     => esc_html__( 'Rating', 'addons-for-divi' ),
 					'texts'      => array(
-						'title'             => esc_html__( 'Texts', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Texts', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'name'   => array(
-								'name' => esc_html__( 'Name', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Name', 'addons-for-divi' ),
 							),
 							'title'  => array(
-								'name' => esc_html__( 'Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Title', 'addons-for-divi' ),
 							),
 							'review' => array(
-								'name' => esc_html__( 'Review', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Review', 'addons-for-divi' ),
 							),
 						),
 					),
-					'bubble'     => esc_html__( 'Bubble', 'brain-divi-addons' ),
+					'bubble'     => esc_html__( 'Bubble', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'image'        => array(
-				'label'    => esc_html__( 'Reviewer Image', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-img img',
 			),
 			'name'         => array(
-				'label'    => esc_html__( 'Reviewer Name', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Reviewer Name', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-reviewer-text h3',
 			),
 			'title'        => array(
-				'label'    => esc_html__( 'Reviewer Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Reviewer Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-reviewer-text .ba-testimonial-title',
 			),
 			'rating'       => array(
-				'label'    => esc_html__( 'Rating', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Rating', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-rating',
 			),
 			'star'         => array(
-				'label'    => esc_html__( 'Rating Star', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Rating Star', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-rating span',
 			),
 			'review'       => array(
-				'label'    => esc_html__( 'Review', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Review', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-review',
 			),
 			'icon_wrapper' => array(
-				'label'    => esc_html__( 'Quote Icon Wrapper', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Quote Icon Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-icon-wrap',
 			),
 			'icon'         => array(
-				'label'    => esc_html__( 'Quote Icon', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Quote Icon', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-icon-wrap svg',
 			),
 		);
@@ -88,16 +88,16 @@ class BA_Testimonial extends BA_Builder_Module {
 
 		$primary_fields = array(
 			'icon_placement' => array(
-				'label'       => esc_html__( 'Icon Placement', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define Placement for the quote icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Icon Placement', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define Placement for the quote icon.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'quote_icon',
 				'tab_slug'    => 'advanced',
 				'default'     => 'background',
 				'options'     => array(
-					'_default'   => esc_html__( 'Default', 'brain-divi-addons' ),
-					'absolute'   => esc_html__( 'Absolute', 'brain-divi-addons' ),
-					'background' => esc_html__( 'Background', 'brain-divi-addons' ),
+					'_default'   => esc_html__( 'Default', 'addons-for-divi' ),
+					'absolute'   => esc_html__( 'Absolute', 'addons-for-divi' ),
+					'background' => esc_html__( 'Background', 'addons-for-divi' ),
 				),
 			),
 		);
@@ -105,65 +105,65 @@ class BA_Testimonial extends BA_Builder_Module {
 		$fields = array(
 
 			'image'                  => array(
-				'label'              => esc_html__( 'Reviewer Image', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload reviewer image or type in the URL of the image you would like to display.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload reviewer image or type in the URL of the image you would like to display.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
 				'toggle_slug'        => 'content',
 			),
 
 			'image_alt'              => array(
-				'label'       => esc_html__( 'Image Alt Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define the HTML ALT text for your image.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define the HTML ALT text for your image.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
 
 			'name'                   => array(
-				'label'           => esc_html__( 'Reviewer Name', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define the name of the reviewer.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Reviewer Name', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the name of the reviewer.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
 			),
 
 			'title'                  => array(
-				'label'           => esc_html__( 'Reviewer Title', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define the title/position of the reviewer.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Reviewer Title', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the title/position of the reviewer.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
-				'description'     => esc_html__( '.', 'brain-divi-addons' ),
+				'description'     => esc_html__( '.', 'addons-for-divi' ),
 			),
 
 			'use_rating'             => array(
-				'label'           => esc_html__( 'Use Rating', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether rating should be used.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Rating', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether rating should be used.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'content',
 			),
 
 			'rating'                 => array(
-				'label'       => esc_html__( 'Rating', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define your rating number from the list.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Rating', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define your rating number from the list.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'default'     => '5',
 				'options'     => array(
-					'1' => esc_html__( '1', 'brain-divi-addons' ),
-					'2' => esc_html__( '2', 'brain-divi-addons' ),
-					'3' => esc_html__( '3', 'brain-divi-addons' ),
-					'4' => esc_html__( '4', 'brain-divi-addons' ),
-					'5' => esc_html__( '5', 'brain-divi-addons' ),
+					'1' => esc_html__( '1', 'addons-for-divi' ),
+					'2' => esc_html__( '2', 'addons-for-divi' ),
+					'3' => esc_html__( '3', 'addons-for-divi' ),
+					'4' => esc_html__( '4', 'addons-for-divi' ),
+					'5' => esc_html__( '5', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_rating' => 'on',
@@ -171,38 +171,38 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'testimonial'            => array(
-				'label'           => esc_html__( 'Review', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define the testimonial.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Review', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the testimonial.', 'addons-for-divi' ),
 				'type'            => 'textarea',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
 			),
 
 			'use_custom_icon'        => array(
-				'label'           => esc_html__( 'Upload Custom Quote Icon', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether custom icon should be used.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Upload Custom Quote Icon', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether custom icon should be used.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'content',
 			),
 
 			'selected_icon'          => array(
-				'label'       => esc_html__( 'Select Quote Icon', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define quote icon from the list.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Select Quote Icon', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define quote icon from the list.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'default'     => '5',
 				'options'     => array(
-					'5' => esc_html__( 'Icon 5', 'brain-divi-addons' ),
-					'4' => esc_html__( 'Icon 4', 'brain-divi-addons' ),
-					'3' => esc_html__( 'Icon 3', 'brain-divi-addons' ),
-					'2' => esc_html__( 'Icon 2', 'brain-divi-addons' ),
-					'1' => esc_html__( 'Icon 1', 'brain-divi-addons' ),
+					'5' => esc_html__( 'Icon 5', 'addons-for-divi' ),
+					'4' => esc_html__( 'Icon 4', 'addons-for-divi' ),
+					'3' => esc_html__( 'Icon 3', 'addons-for-divi' ),
+					'2' => esc_html__( 'Icon 2', 'addons-for-divi' ),
+					'1' => esc_html__( 'Icon 1', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_custom_icon' => 'off',
@@ -210,14 +210,14 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'icon_img'               => array(
-				'label'              => esc_html__( 'Upload Quote Icon Image', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload your custom quote icon or type in the URL of the icon image you would like to display.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Upload Quote Icon Image', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload your custom quote icon or type in the URL of the icon image you would like to display.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'data_type'          => 'image',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload an Image', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload an Image', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
 				'toggle_slug'        => 'content',
 				'show_if'            => array(
 					'use_custom_icon' => 'on',
@@ -226,55 +226,55 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			// elements.
 			'hide_quote'             => array(
-				'label'           => esc_html__( 'Hide Quote Icon', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether quote should be hidden.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Hide Quote Icon', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether quote should be hidden.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'elements',
 			),
 
 			'reviewer_position'      => array(
-				'label'       => esc_html__( 'Reviewer Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define reviewer position.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Reviewer Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define reviewer position.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
 				'default'     => 'bottom',
 				'options'     => array(
-					'top'    => esc_html__( 'Top', 'brain-divi-addons' ),
-					'bottom' => esc_html__( 'Bottom', 'brain-divi-addons' ),
+					'top'    => esc_html__( 'Top', 'addons-for-divi' ),
+					'bottom' => esc_html__( 'Bottom', 'addons-for-divi' ),
 				),
 			),
 
 			'img_position'           => array(
-				'label'       => esc_html__( 'Reviewer Image Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define reviewer image position.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Reviewer Image Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define reviewer image position.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
 				'default'     => 'relative',
 				'options'     => array(
-					'top'      => esc_html__( 'Top', 'brain-divi-addons' ),
-					'left'     => esc_html__( 'Left', 'brain-divi-addons' ),
-					'right'    => esc_html__( 'Right', 'brain-divi-addons' ),
-					'absolute' => esc_html__( 'Absolute', 'brain-divi-addons' ),
-					'relative' => esc_html__( 'Relative to Reviewer', 'brain-divi-addons' ),
+					'top'      => esc_html__( 'Top', 'addons-for-divi' ),
+					'left'     => esc_html__( 'Left', 'addons-for-divi' ),
+					'right'    => esc_html__( 'Right', 'addons-for-divi' ),
+					'absolute' => esc_html__( 'Absolute', 'addons-for-divi' ),
+					'relative' => esc_html__( 'Relative to Reviewer', 'addons-for-divi' ),
 				),
 			),
 
 			'ratings_position'       => array(
-				'label'       => esc_html__( 'Rating Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define rating position.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Rating Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define rating position.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
 				'default'     => '_default',
 				'options'     => array(
-					'_default' => esc_html__( 'Default', 'brain-divi-addons' ),
-					'bottom'   => esc_html__( 'Bottom', 'brain-divi-addons' ),
-					'reviewer' => esc_html__( 'Relative to Reviewer', 'brain-divi-addons' ),
+					'_default' => esc_html__( 'Default', 'addons-for-divi' ),
+					'bottom'   => esc_html__( 'Bottom', 'addons-for-divi' ),
+					'reviewer' => esc_html__( 'Relative to Reviewer', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'use_rating' => 'on',
@@ -282,21 +282,21 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'review_design'          => array(
-				'label'       => esc_html__( 'Review Design', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define review design layout.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Review Design', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define review design layout.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
 				'default'     => 'normal',
 				'options'     => array(
-					'normal' => esc_html__( 'Normal', 'brain-divi-addons' ),
-					'bubble' => esc_html__( 'Bubble', 'brain-divi-addons' ),
+					'normal' => esc_html__( 'Normal', 'addons-for-divi' ),
+					'bubble' => esc_html__( 'Bubble', 'addons-for-divi' ),
 				),
 			),
 
 			// links.
 			'website_url'            => array(
-				'label'           => esc_html__( 'Personal Website URL', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define personal website URL of the reviewer.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Personal Website URL', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define personal website URL of the reviewer.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'link_options',
 				'tab_slug'        => 'general',
@@ -304,8 +304,8 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			),
 			'company_url'            => array(
-				'label'           => esc_html__( 'Company URL', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define company Website URL of the reviewer.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Company URL', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define company Website URL of the reviewer.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'link_options',
 				'tab_slug'        => 'general',
@@ -315,8 +315,8 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			// General.
 			'alignment'              => array(
-				'label'        => esc_html__( 'Content Alignment', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Align content to the left, right or center.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Content Alignment', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 				'type'         => 'text_align',
 				'options'      => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'options_icon' => 'module_align',
@@ -325,8 +325,8 @@ class BA_Testimonial extends BA_Builder_Module {
 				'tab_slug'     => 'advanced',
 			),
 			'content_padding'        => array(
-				'label'          => esc_html__( 'Content Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define custom padding for the content.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Content Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define custom padding for the content.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'default'        => '30px|30px|30px|30px',
 				'mobile_options' => true,
@@ -339,8 +339,8 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			// Quote Icon.
 			'icon_alignment'         => array(
-				'label'           => esc_html__( 'Icon Alignment', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Align icon to the left, right or center.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Icon Alignment', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Align icon to the left, right or center.', 'addons-for-divi' ),
 				'type'            => 'text_align',
 				'option_category' => 'layout',
 				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -353,8 +353,8 @@ class BA_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_color'             => array(
-				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'quote_icon',
@@ -364,8 +364,8 @@ class BA_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_bg'                => array(
-				'label'       => esc_html__( 'Icon Background', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define a custom background color for your icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Icon Background', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom background color for your icon.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'quote_icon',
@@ -375,8 +375,8 @@ class BA_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_size'              => array(
-				'label'           => esc_html__( 'Icon Size', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define a custom size for your icon.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Icon Size', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define a custom size for your icon.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'default'         => '70px',
 				'option_category' => 'basic_option',
@@ -391,8 +391,8 @@ class BA_Testimonial extends BA_Builder_Module {
 				'tab_slug'        => 'advanced',
 			),
 			'icon_opacity'           => array(
-				'label'           => esc_html__( 'Icon Opacity', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define the opacity for the icon. Set the value from 0 - 1. The lower value, the more transparent.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Icon Opacity', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the opacity for the icon. Set the value from 0 - 1. The lower value, the more transparent.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'default'         => '.2',
 				'option_category' => 'basic_option',
@@ -406,8 +406,8 @@ class BA_Testimonial extends BA_Builder_Module {
 				'tab_slug'        => 'advanced',
 			),
 			'icon_padding'           => array(
-				'label'       => esc_html__( 'Icon Padding', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define custom padding for the icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Icon Padding', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define custom padding for the icon.', 'addons-for-divi' ),
 				'type'        => 'custom_padding',
 				'default'     => '0px|0px|0px|0px',
 				'toggle_slug' => 'quote_icon',
@@ -417,8 +417,8 @@ class BA_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_top_spacing'       => array(
-				'label'           => esc_html__( 'Icon Spacing Top', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define a custom spacing at the top of the icon.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Icon Spacing Top', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define a custom spacing at the top of the icon.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'default'         => '40px',
 				'option_category' => 'basic_option',
@@ -435,8 +435,8 @@ class BA_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_bottom_spacing'    => array(
-				'label'           => esc_html__( 'Icon Spacing Bottom', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the icon.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Icon Spacing Bottom', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the icon.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'default'         => '5px',
 				'option_category' => 'basic_option',
@@ -455,17 +455,17 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			// image.
 			'image_placement'        => array(
-				'label'       => esc_html__( 'Image Placement', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define reviewer image placement.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Image Placement', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define reviewer image placement.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'image',
 				'default'     => 'left_top',
 				'options'     => array(
-					'left_top'     => esc_html__( 'Left Top', 'brain-divi-addons' ),
-					'left_bottom'  => esc_html__( 'Left Bottom', 'brain-divi-addons' ),
-					'right_top'    => esc_html__( 'Right Top', 'brain-divi-addons' ),
-					'right_bottom' => esc_html__( 'Right Bottom', 'brain-divi-addons' ),
+					'left_top'     => esc_html__( 'Left Top', 'addons-for-divi' ),
+					'left_bottom'  => esc_html__( 'Left Bottom', 'addons-for-divi' ),
+					'right_top'    => esc_html__( 'Right Top', 'addons-for-divi' ),
+					'right_bottom' => esc_html__( 'Right Bottom', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'img_position' => 'absolute',
@@ -473,16 +473,16 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'img_is_center_x'        => array(
-				'label'           => esc_html__( 'Use Horizontal Position Center', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'If enabled reviewer image will be placed horizontally center.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Horizontal Position Center', 'addons-for-divi' ),
+				'description'     => esc_html__( 'If enabled reviewer image will be placed horizontally center.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
 				'toggle_slug'     => 'image',
 				'tab_slug'        => 'advanced',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'show_if'         => array(
 					'img_position' => 'absolute',
@@ -490,8 +490,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'img_offset_x'           => array(
-				'label'          => esc_html__( 'Image Offset X', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define horizontal offset value.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Offset X', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define horizontal offset value.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '50%',
 				'range_settings' => array(
@@ -508,16 +508,16 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'img_is_center_y'        => array(
-				'label'           => esc_html__( 'Use Vertical Position Center', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'If enabled reviewer image will be placed vertically center.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Vertical Position Center', 'addons-for-divi' ),
+				'description'     => esc_html__( 'If enabled reviewer image will be placed vertically center.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
 				'toggle_slug'     => 'image',
 				'tab_slug'        => 'advanced',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'show_if'         => array(
 					'img_position' => 'absolute',
@@ -525,8 +525,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'img_offset_y'           => array(
-				'label'          => esc_html__( 'Image Offset Y', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define vertical offset value.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Offset Y', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define vertical offset value.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '0px',
 				'range_settings' => array(
@@ -544,16 +544,16 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_placement_alt'    => array(
-				'label'       => esc_html__( 'Image Placement', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define reviewer image placement.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Image Placement', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define reviewer image placement.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'image',
 				'tab_slug'    => 'advanced',
 				'default'     => 'top',
 				'options'     => array(
-					'top'   => esc_html__( 'Top', 'brain-divi-addons' ),
-					'left'  => esc_html__( 'Left', 'brain-divi-addons' ),
-					'right' => esc_html__( 'Right', 'brain-divi-addons' ),
+					'top'   => esc_html__( 'Top', 'addons-for-divi' ),
+					'left'  => esc_html__( 'Left', 'addons-for-divi' ),
+					'right' => esc_html__( 'Right', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
 					'img_position' => 'relative',
@@ -561,8 +561,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_spacing'          => array(
-				'label'          => esc_html__( 'Image Spacing Left/Right', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define custom spacing for the image left/right.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Spacing Left/Right', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define custom spacing for the image left/right.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'default_unit'   => 'px',
@@ -580,8 +580,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_width'            => array(
-				'label'          => esc_html__( 'Image Width', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define static width for the image.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Width', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define static width for the image.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'range_settings' => array(
@@ -595,8 +595,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_height'           => array(
-				'label'          => esc_html__( 'Image Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define static height for the image.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define static height for the image.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'range_settings' => array(
@@ -610,8 +610,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_spacing_top'      => array(
-				'label'          => esc_html__( 'Image Spacing Top', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the image.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Spacing Top', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the image.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'default_unit'   => 'px',
@@ -629,8 +629,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_spacing_bottom'   => array(
-				'label'          => esc_html__( 'Image Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the image.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the image.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'default_unit'   => 'px',
@@ -649,8 +649,8 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			// rating.
 			'ratings_spacing_top'    => array(
-				'label'          => esc_html__( 'Rating Spacing Top', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the rating.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Rating Spacing Top', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the rating.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '0px',
 				'range_settings' => array(
@@ -666,8 +666,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'ratings_spacing_bottom' => array(
-				'label'          => esc_html__( 'Rating Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the rating.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Rating Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the rating.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '0px',
 				'range_settings' => array(
@@ -683,8 +683,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'stars_size'             => array(
-				'label'          => esc_html__( 'Stars Size', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Control the size of the stars by increasing or decreasing the range.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Stars Size', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Control the size of the stars by increasing or decreasing the range.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'range_settings' => array(
@@ -700,8 +700,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'stars_color'            => array(
-				'label'       => esc_html__( 'Stars Color', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can define a custom color for stars.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Stars Color', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom color for stars.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'rating',
@@ -712,8 +712,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'stars_spacing_between'  => array(
-				'label'          => __( 'Stars Spacing Between', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define the spacing between stars.', 'brain-divi-addons' ),
+				'label'          => __( 'Stars Spacing Between', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define the spacing between stars.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '5px',
 				'range_settings' => array(
@@ -730,8 +730,8 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			// texts.
 			'name_bottom_spacing'    => array(
-				'label'           => esc_html__( 'Name Spacing Bottom', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the reviewer name.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Name Spacing Bottom', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the reviewer name.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'default'         => '5px',
 				'option_category' => 'basic_option',
@@ -747,8 +747,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'title_bottom_spacing'   => array(
-				'label'           => esc_html__( 'Title Spacing Bottom', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the reviewer title.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Title Spacing Bottom', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the reviewer title.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'default'         => '5px',
 				'option_category' => 'basic_option',
@@ -765,8 +765,8 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			// Review.
 			'review_top_spacing'     => array(
-				'label'          => esc_html__( 'Review Spacing Top', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the review.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Review Spacing Top', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the review.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '0px',
 				'default_unit'   => 'px',
@@ -781,8 +781,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'review_bottom_spacing'  => array(
-				'label'          => esc_html__( 'Review Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the review.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Review Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the review.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'default_unit'   => 'px',
@@ -798,8 +798,8 @@ class BA_Testimonial extends BA_Builder_Module {
 
 			// Bubble.
 			'bubble_padding'         => array(
-				'label'       => esc_html__( 'Bubble Padding', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define custom padding for the bubble area.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Bubble Padding', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define custom padding for the bubble area.', 'addons-for-divi' ),
 				'type'        => 'custom_padding',
 				'toggle_slug' => 'bubble',
 				'tab_slug'    => 'advanced',
@@ -810,8 +810,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'bubble_radius'          => array(
-				'label'       => esc_html__( 'Bubble Border Radius', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Here you can control the corner radius of this bubble area. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Bubble Border Radius', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can control the corner radius of this bubble area. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'addons-for-divi' ),
 				'type'        => 'border-radius',
 				'toggle_slug' => 'bubble',
 				'tab_slug'    => 'advanced',
@@ -822,8 +822,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'arrow_color'            => array(
-				'label'       => esc_html__( 'Arrow Color', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define custom color for the bubble arrow.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Arrow Color', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define custom color for the bubble arrow.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'bubble',
@@ -834,13 +834,13 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'arrow_placement'        => array(
-				'label'            => esc_html__( 'Arrow Placement', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Place the bubble arrow at the left, right or center.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Arrow Placement', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Place the bubble arrow at the left, right or center.', 'addons-for-divi' ),
 				'type'             => 'select',
 				'options'          => array(
-					'left'   => esc_html__( 'Left', 'brain-divi-addons' ),
-					'right'  => esc_html__( 'Right', 'brain-divi-addons' ),
-					'center' => esc_html__( 'Center', 'brain-divi-addons' ),
+					'left'   => esc_html__( 'Left', 'addons-for-divi' ),
+					'right'  => esc_html__( 'Right', 'addons-for-divi' ),
+					'center' => esc_html__( 'Center', 'addons-for-divi' ),
 				),
 				'default_on_front' => 'center',
 				'tab_slug'         => 'advanced',
@@ -851,8 +851,8 @@ class BA_Testimonial extends BA_Builder_Module {
 			),
 
 			'arrow_position_x'       => array(
-				'label'          => esc_html__( 'Arrow Custom Position', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define arrow offset left/right value.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Arrow Custom Position', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define arrow offset left/right value.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'default_unit'   => 'px',
@@ -879,7 +879,7 @@ class BA_Testimonial extends BA_Builder_Module {
 
 		$abs_quote = $this->get_absolute_element_options(
 			'icon',
-			esc_html__( 'Icon', 'brain-divi-addons' ),
+			esc_html__( 'Icon', 'addons-for-divi' ),
 			'quote_icon',
 			$defaults,
 			array( 'icon_placement' => 'absolute' )
@@ -887,7 +887,7 @@ class BA_Testimonial extends BA_Builder_Module {
 
 		$quote_icon_bg = $this->custom_background_fields(
 			'icon',
-			esc_html__( 'Icon', 'brain-divi-addons' ),
+			esc_html__( 'Icon', 'addons-for-divi' ),
 			'advanced',
 			'quote_icon',
 			array( 'color', 'gradient', 'hover' ),
@@ -897,7 +897,7 @@ class BA_Testimonial extends BA_Builder_Module {
 
 		$bubble_bg = $this->custom_background_fields(
 			'bubble',
-			esc_html__( 'Bubble', 'brain-divi-addons' ),
+			esc_html__( 'Bubble', 'addons-for-divi' ),
 			'advanced',
 			'bubble',
 			array( 'color', 'gradient', 'hover' ),
@@ -917,7 +917,7 @@ class BA_Testimonial extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['box_shadow']['item'] = array(
-			'label'       => esc_html__( 'Item Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Item Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'common',
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-testimonial-inner',
@@ -926,7 +926,7 @@ class BA_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['image'] = array(
-			'label_prefix' => esc_html__( 'Image', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Image', 'addons-for-divi' ),
 			'toggle_slug'  => 'image',
 			'css'          => array(
 				'main'      => array(
@@ -946,7 +946,7 @@ class BA_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['icon'] = array(
-			'label_prefix' => esc_html__( 'Icon', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Icon', 'addons-for-divi' ),
 			'toggle_slug'  => 'quote_icon',
 			'css'          => array(
 				'main'      => array(
@@ -966,7 +966,7 @@ class BA_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['item'] = array(
-			'label_prefix' => esc_html__( 'Item', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Item', 'addons-for-divi' ),
 			'toggle_slug'  => 'common',
 			'css'          => array(
 				'main'      => array(
@@ -1000,7 +1000,7 @@ class BA_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['name'] = array(
-			'label'           => esc_html__( 'Name', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-testimonial-reviewer-text h3, .et-db #et-boc %%order_class%% .ba-testimonial-reviewer-text h3',
 				'important' => 'all',
@@ -1022,7 +1022,7 @@ class BA_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'           => esc_html__( 'Title', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-testimonial-title',
 				'important' => 'all',
@@ -1044,7 +1044,7 @@ class BA_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['review'] = array(
-			'label'           => esc_html__( 'Review', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Review', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-testimonial-review',
 				'important' => 'all',

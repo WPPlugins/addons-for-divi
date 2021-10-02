@@ -14,26 +14,26 @@ class BA_Skill_Bar extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name      = esc_html__( 'Brain Skill Bars', 'brain-divi-addons' );
+		$this->name      = esc_html__( 'Brain Skill Bars', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'skill-bars.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content' => esc_html__( 'Content', 'brain-divi-addons' ),
+					'content' => esc_html__( 'Content', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'general' => esc_html__( 'General', 'brain-divi-addons' ),
-					'title'   => esc_html__( 'Title', 'brain-divi-addons' ),
+					'general' => esc_html__( 'General', 'addons-for-divi' ),
+					'title'   => esc_html__( 'Title', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'title'  => array(
-				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skill__title',
 			),
 		);
@@ -44,15 +44,15 @@ class BA_Skill_Bar extends BA_Builder_Module {
 		$fields = array(
 
 			'title'                => array(
-				'label'       => esc_html__( 'Title', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the title text for your module.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Title', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the title text for your module.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
 
 			'title_spacing_bottom' => array(
-				'label'          => esc_html__( 'Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'range_settings' => array(
@@ -65,8 +65,8 @@ class BA_Skill_Bar extends BA_Builder_Module {
 			),
 
 			'bar_spacing_bottom'   => array(
-				'label'          => esc_html__( 'Bar Spacing Bottom', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the bar item.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Bar Spacing Bottom', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the bar item.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'range_settings' => array(

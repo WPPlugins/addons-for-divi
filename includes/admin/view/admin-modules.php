@@ -14,10 +14,10 @@ $total_modules_count = count( $modules );
 			<div class="ba-row">
 				<div class="ba-col">
 					<h2 class="ba-section-title">
-						<?php esc_html_e( 'Modules', 'brain-divi-addons' ); ?>
+						<?php esc_html_e( 'Modules', 'addons-for-divi' ); ?>
 					</h2>
 					<p class="ba-text f18">
-						<?php printf( esc_html__( 'Here is the list of our all %s modules. %sAfter enabling or disabling any module make sure to click the Save Settings button.%s', 'brain-divi-addons' ), $total_modules_count, '<strong>', '</strong>' ); ?>
+						<?php printf( esc_html__( 'Here is the list of our all %s modules. %sAfter enabling or disabling any module make sure to click the Save Settings button.%s', 'addons-for-divi' ), $total_modules_count, '<strong>', '</strong>' ); ?>
 					</p>
 				</div>
 			</div>
@@ -61,7 +61,7 @@ $total_modules_count = count( $modules );
 									<a href="<?php echo esc_url( $demo_url ); ?>"
 										target="_blank"
 										rel="noopener"
-										data-tooltip="<?php echo esc_attr_e( 'Click and view demo', 'brain-divi-addons' ); ?>"
+										data-tooltip="<?php echo esc_attr_e( 'Click and view demo', 'addons-for-divi' ); ?>"
 										class="ba-admin-modules-item-preview">
 										<img class="ba-img-fluid ba-item-icon-size" src="<?php echo BRAIN_ADDONS_PLUGIN_ASSETS . '/imgs/admin/desktop.svg'; ?>" alt="demo-link">
 									</a>
@@ -90,7 +90,7 @@ $total_modules_count = count( $modules );
 			<div class="ba-row ba-admin-button-panel">
 				<div class="ba-col">
 					<button disabled class="ba-btn ba-btn-save ba-btn-lg" type="submit">
-						<?php esc_html_e( 'Save Settings', 'brain-divi-addons' );?>
+						<?php esc_html_e( 'Save Settings', 'addons-for-divi' );?>
 					</button>
 				</div>
 			</div>

@@ -9,7 +9,7 @@ class BA_Flipbox extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name       = esc_html__( 'Brain Flipbox', 'brain-divi-addons' );
+		$this->name       = esc_html__( 'Brain Flipbox', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'flipbox.svg';
 		$this->slug       = 'ba_flipbox';
 		$this->vb_support = 'on';
@@ -17,78 +17,78 @@ class BA_Flipbox extends BA_Builder_Module {
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'front'    => esc_html__( 'Front Side', 'brain-divi-addons' ),
-					'back'     => esc_html__( 'Back Side', 'brain-divi-addons' ),
-					'settings' => esc_html__( 'Settings', 'brain-divi-addons' ),
+					'front'    => esc_html__( 'Front Side', 'addons-for-divi' ),
+					'back'     => esc_html__( 'Back Side', 'addons-for-divi' ),
+					'settings' => esc_html__( 'Settings', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'front'       => esc_html__( 'Front Side', 'brain-divi-addons' ),
-					'back'        => esc_html__( 'Back Side', 'brain-divi-addons' ),
-					'front_media' => esc_html__( 'Front Media', 'brain-divi-addons' ),
-					'back_media'  => esc_html__( 'Back Media', 'brain-divi-addons' ),
+					'front'       => esc_html__( 'Front Side', 'addons-for-divi' ),
+					'back'        => esc_html__( 'Back Side', 'addons-for-divi' ),
+					'front_media' => esc_html__( 'Front Media', 'addons-for-divi' ),
+					'back_media'  => esc_html__( 'Back Media', 'addons-for-divi' ),
 					'front_text'  => array(
-						'title'             => esc_html__( 'Front Text', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Front Text', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'title'    => array(
-								'name' => esc_html__( 'Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Title', 'addons-for-divi' ),
 							),
 							'subtitle' => array(
-								'name' => esc_html__( 'Sub Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Sub Title', 'addons-for-divi' ),
 							),
 						),
 					),
 					'back_text'   => array(
-						'title'             => esc_html__( 'Back Text', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Back Text', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'title'    => array(
-								'name' => esc_html__( 'Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Title', 'addons-for-divi' ),
 							),
 							'subtitle' => array(
-								'name' => esc_html__( 'Sub Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Sub Title', 'addons-for-divi' ),
 							),
 						),
 					),
-					'border'      => esc_html__( 'Border', 'brain-divi-addons' ),
-					'box_shadow'  => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+					'border'      => esc_html__( 'Border', 'addons-for-divi' ),
+					'box_shadow'  => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'front_icon'      => array(
-				'label'    => esc_html__( 'Front Icon', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Front Icon', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-flipbox-icon-front i',
 			),
 			'front_img'       => array(
-				'label'    => esc_html__( 'Front Image', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Front Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-flipbox-figure-front img',
 			),
 			'front_title'     => array(
-				'label'    => esc_html__( 'Front Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Front Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-flipbox-title-front',
 			),
 			'front_sub_title' => array(
-				'label'    => esc_html__( 'Front Image', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Front Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-flipbox-subtitle-front',
 			),
 			'back_icon'       => array(
-				'label'    => esc_html__( 'Back Icon', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Back Icon', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-flipbox-icon-back i',
 			),
 			'back_img'        => array(
-				'label'    => esc_html__( 'Back Image', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Back Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-flipbox-figure-back img',
 			),
 			'back_title'      => array(
-				'label'    => esc_html__( 'Back Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Back Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-flipbox-title-back',
 			),
 			'back_sub_title'  => array(
-				'label'    => esc_html__( 'Back Sub Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Back Sub Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-flipbox-subtitle-back',
 			),
 		);
@@ -98,20 +98,20 @@ class BA_Flipbox extends BA_Builder_Module {
 
 		$front_content = array(
 			'front_media_type' => array(
-				'label'       => esc_html__( 'Media Type', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select front side media type.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Media Type', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select front side media type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'front',
 				'default'     => 'icon',
 				'options'     => array(
-					'none'  => esc_html__( 'None', 'brain-divi-addons' ),
-					'icon'  => esc_html__( 'Icon', 'brain-divi-addons' ),
-					'image' => esc_html__( 'Image', 'brain-divi-addons' ),
+					'none'  => esc_html__( 'None', 'addons-for-divi' ),
+					'icon'  => esc_html__( 'Icon', 'addons-for-divi' ),
+					'image' => esc_html__( 'Image', 'addons-for-divi' ),
 				),
 			),
 			'front_icon'       => array(
-				'label'       => esc_html__( 'Select Icon', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select front side icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Select Icon', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select front side icon.', 'addons-for-divi' ),
 				'type'        => 'select_icon',
 				'default'     => '',
 				'toggle_slug' => 'front',
@@ -121,21 +121,21 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_img'        => array(
-				'label'              => esc_html__( 'Upload Image', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the front side.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Upload Image', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the front side.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
 				'toggle_slug'        => 'front',
 				'show_if'            => array(
 					'front_media_type' => 'image',
 				),
 			),
 			'front_img_alt'    => array(
-				'label'       => esc_html__( 'Image Alt Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the front side image alt text for your flip box.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the front side image alt text for your flip box.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'front',
 				'show_if'     => array(
@@ -143,15 +143,15 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_title'      => array(
-				'label'           => esc_html__( 'Front Title', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define the front side title for your flip box.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Front Title', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the front side title for your flip box.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'front',
 				'dynamic_content' => 'text',
 			),
 			'front_subtitle'   => array(
-				'label'           => esc_html__( 'Front Sub Title', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define the front side sub-title for your flip box.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Front Sub Title', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the front side sub-title for your flip box.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'front',
 				'dynamic_content' => 'text',
@@ -160,20 +160,20 @@ class BA_Flipbox extends BA_Builder_Module {
 
 		$back_content = array(
 			'back_media_type' => array(
-				'label'       => esc_html__( 'Media Type', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select back side media type.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Media Type', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select back side media type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'back',
 				'default'     => 'icon',
 				'options'     => array(
-					'none'  => esc_html__( 'None', 'brain-divi-addons' ),
-					'icon'  => esc_html__( 'Icon', 'brain-divi-addons' ),
-					'image' => esc_html__( 'Image', 'brain-divi-addons' ),
+					'none'  => esc_html__( 'None', 'addons-for-divi' ),
+					'icon'  => esc_html__( 'Icon', 'addons-for-divi' ),
+					'image' => esc_html__( 'Image', 'addons-for-divi' ),
 				),
 			),
 			'back_icon'       => array(
-				'label'       => esc_html__( 'Select Icon', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select back side icon.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Select Icon', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select back side icon.', 'addons-for-divi' ),
 				'type'        => 'select_icon',
 				'toggle_slug' => 'back',
 				'default'     => '+',
@@ -183,21 +183,21 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_img'        => array(
-				'label'              => esc_html__( 'Upload Image', 'brain-divi-addons' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the back side.', 'brain-divi-addons' ),
+				'label'              => esc_html__( 'Upload Image', 'addons-for-divi' ),
+				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the back side.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'brain-divi-addons' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'brain-divi-addons' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'brain-divi-addons' ),
+				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
+				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
+				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
 				'toggle_slug'        => 'back',
 				'show_if'            => array(
 					'back_media_type' => 'image',
 				),
 			),
 			'back_img_alt'    => array(
-				'label'       => esc_html__( 'Image Alt Text', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the back side image alt text for your flip box.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the back side image alt text for your flip box.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'back',
 				'show_if'     => array(
@@ -205,15 +205,15 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_title'      => array(
-				'label'           => esc_html__( 'Back Title', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define the back side title for your flip box.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Back Title', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the back side title for your flip box.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'back',
 				'dynamic_content' => 'text',
 			),
 			'back_subtitle'   => array(
-				'label'           => esc_html__( 'Back Sub Title', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define the back side sub-title for your flip box.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Back Sub Title', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the back side sub-title for your flip box.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'back',
 				'dynamic_content' => 'text',
@@ -222,31 +222,31 @@ class BA_Flipbox extends BA_Builder_Module {
 
 		$settings = array(
 			'animation_type' => array(
-				'label'       => esc_html__( 'Animation Type', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select the animation type.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Animation Type', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select the animation type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'flip',
 				'options'     => array(
-					'flip' => esc_html__( 'Flip', 'brain-divi-addons' ),
+					'flip' => esc_html__( 'Flip', 'addons-for-divi' ),
 				),
 			),
 			'direction'      => array(
-				'label'       => esc_html__( 'Animation Direction', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select the animation direction.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Animation Direction', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select the animation direction.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'right',
 				'options'     => array(
-					'up'    => esc_html__( 'UP', 'brain-divi-addons' ),
-					'right' => esc_html__( 'Right', 'brain-divi-addons' ),
-					'down'  => esc_html__( 'Down', 'brain-divi-addons' ),
-					'left'  => esc_html__( 'Left', 'brain-divi-addons' ),
+					'up'    => esc_html__( 'UP', 'addons-for-divi' ),
+					'right' => esc_html__( 'Right', 'addons-for-divi' ),
+					'down'  => esc_html__( 'Down', 'addons-for-divi' ),
+					'left'  => esc_html__( 'Left', 'addons-for-divi' ),
 				),
 			),
 			'duration'       => array(
-				'label'          => esc_html__( 'Animation Duration', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define the length of time that the animation takes.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Animation Duration', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define the length of time that the animation takes.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '600ms',
 				'fixed_unit'     => 'ms',
@@ -258,8 +258,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'toggle_slug'    => 'settings',
 			),
 			'main_height'    => array(
-				'label'          => esc_html__( 'Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define height for your flip box.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define height for your flip box.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '300px',
 				'default_unit'   => 'px',
@@ -275,21 +275,21 @@ class BA_Flipbox extends BA_Builder_Module {
 
 		$front_media = array(
 			'front_img_position' => array(
-				'label'       => esc_html__( 'Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select image position for the front side.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select image position for the front side.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'front_media',
 				'tab_slug'    => 'advanced',
 				'default'     => 'center',
 				'options'     => array(
-					'left'   => esc_html__( 'Left', 'brain-divi-addons' ),
-					'center' => esc_html__( 'Center', 'brain-divi-addons' ),
-					'right'  => esc_html__( 'Right', 'brain-divi-addons' ),
+					'left'   => esc_html__( 'Left', 'addons-for-divi' ),
+					'center' => esc_html__( 'Center', 'addons-for-divi' ),
+					'right'  => esc_html__( 'Right', 'addons-for-divi' ),
 				),
 			),
 			'front_img_padding'  => array(
-				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for your front side icon/image.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom padding for your front side icon/image.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'front_media',
 				'tab_slug'       => 'advanced',
@@ -300,8 +300,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_icon_color'   => array(
-				'label'        => esc_html__( 'Icon Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your front side icon.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Icon Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom color for your front side icon.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -311,8 +311,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_icon_size'    => array(
-				'label'          => esc_html__( 'Icon Size', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom size for your front side icon.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom size for your front side icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '60px',
@@ -329,8 +329,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_img_height'   => array(
-				'label'          => esc_html__( 'Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom height for your front side image/icon.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom height for your front side image/icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -343,8 +343,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'front_img_width'    => array(
-				'label'          => esc_html__( 'Width', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom width for your front side image/icon.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Width', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom width for your front side image/icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -357,8 +357,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'front_img_bg_color' => array(
-				'label'        => esc_html__( 'Background', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your front side icon/image.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Background', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your front side icon/image.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -368,21 +368,21 @@ class BA_Flipbox extends BA_Builder_Module {
 
 		$back_media = array(
 			'back_img_position' => array(
-				'label'       => esc_html__( 'Position', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Select image position for the back side.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Position', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select image position for the back side.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'back_media',
 				'tab_slug'    => 'advanced',
 				'default'     => 'center',
 				'options'     => array(
-					'flex-start' => esc_html__( 'Left', 'brain-divi-addons' ),
-					'center'     => esc_html__( 'Center', 'brain-divi-addons' ),
-					'flex-end'   => esc_html__( 'Right', 'brain-divi-addons' ),
+					'flex-start' => esc_html__( 'Left', 'addons-for-divi' ),
+					'center'     => esc_html__( 'Center', 'addons-for-divi' ),
+					'flex-end'   => esc_html__( 'Right', 'addons-for-divi' ),
 				),
 			),
 			'back_img_padding'  => array(
-				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for your back side icon/image.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom padding for your back side icon/image.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'back_media',
 				'tab_slug'       => 'advanced',
@@ -393,8 +393,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_icon_color'   => array(
-				'label'        => esc_html__( 'Icon Color', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your back side icon.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Icon Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom color for your back side icon.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -404,8 +404,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_icon_size'    => array(
-				'label'          => esc_html__( 'Icon Size', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom size for your back side icon.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom size for your back side icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -422,8 +422,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_img_height'   => array(
-				'label'          => esc_html__( 'Height', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom height for your back side image/icon.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Height', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom height for your back side image/icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -436,8 +436,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'back_img_width'    => array(
-				'label'          => esc_html__( 'Width', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom width for your back side image/icon.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Width', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom width for your back side image/icon.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -450,8 +450,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'back_img_bg_color' => array(
-				'label'        => esc_html__( 'Background', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your back side icon/image.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Background', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your back side icon/image.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -461,8 +461,8 @@ class BA_Flipbox extends BA_Builder_Module {
 
 		$front_design = array(
 			'front_alignment'  => array(
-				'label'            => esc_html__( 'Content Alignment', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Align content to the left, right or center.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Content Alignment', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -473,8 +473,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'mobile_options'   => true,
 			),
 			'front_padding'    => array(
-				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'front',
 				'tab_slug'       => 'advanced',
@@ -482,8 +482,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'front_ct_padding' => array(
-				'label'          => esc_html__( 'Content Padding', 'brain-divi-addons-pro' ),
-				'description'    => esc_html__( 'Set front side card content padding.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Content Padding', 'addons-for-divi-pro' ),
+				'description'    => esc_html__( 'Set front side card content padding.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'front',
 				'tab_slug'       => 'advanced',
@@ -491,8 +491,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'front_bg_color'   => array(
-				'label'        => esc_html__( 'Background', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your front side.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Background', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your front side.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -503,8 +503,8 @@ class BA_Flipbox extends BA_Builder_Module {
 
 		$back_design = array(
 			'back_alignment'  => array(
-				'label'            => esc_html__( 'Content Alignment', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Align content to the left, right or center.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Content Alignment', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
 				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -515,8 +515,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'mobile_options'   => true,
 			),
 			'back_padding'    => array(
-				'label'          => esc_html__( 'Padding', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'back',
 				'tab_slug'       => 'advanced',
@@ -524,8 +524,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'back_ct_padding' => array(
-				'label'          => esc_html__( 'Content Padding', 'brain-divi-addons-pro' ),
-				'description'    => esc_html__( 'Set back side card content padding.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Content Padding', 'addons-for-divi-pro' ),
+				'description'    => esc_html__( 'Set back side card content padding.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'back',
 				'tab_slug'       => 'advanced',
@@ -533,8 +533,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'back_bg_color'   => array(
-				'label'        => esc_html__( 'Background', 'brain-divi-addons' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your back side.', 'brain-divi-addons' ),
+				'label'        => esc_html__( 'Background', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom background color for your back side.', 'addons-for-divi' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -545,8 +545,8 @@ class BA_Flipbox extends BA_Builder_Module {
 
 		$texts_spacing = array(
 			'front_subtitle_spacing' => array(
-				'label'          => esc_html__( 'Spacing Top', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the front card subtitle.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Spacing Top', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the front card subtitle.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -561,8 +561,8 @@ class BA_Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'back_subtitle_spacing'  => array(
-				'label'          => esc_html__( 'Spacing Top', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the back card subtitle.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Spacing Top', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the back card subtitle.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -598,7 +598,7 @@ class BA_Flipbox extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['box_shadow']['card'] = array(
-			'label'       => esc_html__( 'Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'box_shadow',
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-flipbox-card',

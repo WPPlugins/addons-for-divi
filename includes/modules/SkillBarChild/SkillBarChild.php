@@ -10,30 +10,30 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 
 	public function init() {
 
-		$this->name = esc_html__( 'Bar', 'brain-divi-addons' );
+		$this->name = esc_html__( 'Bar', 'addons-for-divi' );
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
 					'content' => array(
-						'title' => esc_html( 'Content', 'brain-divi-addons' ),
+						'title' => esc_html( 'Content', 'addons-for-divi' ),
 					),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
 					'bar'   => array(
-						'title' => esc_html( 'Bar', 'brain-divi-addons' ),
+						'title' => esc_html( 'Bar', 'addons-for-divi' ),
 					),
 					'texts' => array(
-						'title'             => esc_html( 'Texts', 'brain-divi-addons' ),
+						'title'             => esc_html( 'Texts', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'name'  => array(
-								'name' => esc_html( 'Name', 'brain-divi-addons' ),
+								'name' => esc_html( 'Name', 'addons-for-divi' ),
 							),
 							'level' => array(
-								'name' => esc_html( 'Level', 'brain-divi-addons' ),
+								'name' => esc_html( 'Level', 'addons-for-divi' ),
 							),
 						),
 					),
@@ -43,19 +43,19 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 
 		$this->custom_css_fields = array(
 			'name_text'  => array(
-				'label'    => esc_html__( 'Name Text', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Name Text', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skillbar__name',
 			),
 			'level_text'  => array(
-				'label'    => esc_html__( 'Level Text', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Level Text', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skillbar__level',
 			),
 			'level'  => array(
-				'label'    => esc_html__( 'Level', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Level', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skillbar__inner',
 			),
 			'bar'  => array(
-				'label'    => esc_html__( 'Bar', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Bar', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skillbar__wrapper',
 			),
 		);
@@ -65,21 +65,21 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 		$fields = array(
 
 			'use_name'       => array(
-				'label'           => esc_html__( 'Use Name', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether name text should be used.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Use Name', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether name text should be used.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'on',
 				'toggle_slug'     => 'content',
 			),
 
 			'name'           => array(
-				'label'       => esc_html__( 'Name', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define the name text for the skill bar.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Name', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the name text for the skill bar.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 				'default'     => 'Web Design',
@@ -89,8 +89,8 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 			),
 
 			'level'          => array(
-				'label'          => esc_html__( 'Level', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define the level text for the skill bar.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Level', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define the level text for the skill bar.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '30%',
 				'fixed_unit'     => '%',
@@ -103,34 +103,34 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 			),
 
 			'is_hide_level'  => array(
-				'label'           => esc_html__( 'Hide Level Text', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Here you can choose whether level text should be hidden.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Hide Level Text', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether level text should be hidden.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'content',
 			),
 
 			'text_placement' => array(
-				'label'       => esc_html__( 'Text Placement', 'brain-divi-addons' ),
-				'description' => esc_html__( 'Define text placement for the skill bar.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Text Placement', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define text placement for the skill bar.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'default'     => 'in',
 				'options'     => array(
-					'in'  => esc_html__( 'Inside', 'brain-divi-addons' ),
-					'out' => esc_html__( 'Outside', 'brain-divi-addons' ),
+					'in'  => esc_html__( 'Inside', 'addons-for-divi' ),
+					'out' => esc_html__( 'Outside', 'addons-for-divi' ),
 				),
 			),
 
 			// Styling.
 			'bar_height'     => array(
-				'label'           => esc_html__( 'Bar Height', 'brain-divi-addons' ),
-				'description'     => esc_html__( 'Define static height for the bar.', 'brain-divi-addons' ),
+				'label'           => esc_html__( 'Bar Height', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define static height for the bar.', 'addons-for-divi' ),
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default'         => '30px',
@@ -145,8 +145,8 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 			),
 
 			'bar_radius'     => array(
-				'label'          => esc_html__( 'Bar Border Radius', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define border radius value for the bar.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Bar Border Radius', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define border radius value for the bar.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '40px',
 				'range_settings' => array(
@@ -159,8 +159,8 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 			),
 
 			'text_spacing'   => array(
-				'label'          => esc_html__( 'Outer Text Spacing', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define spacing for the outer text.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Outer Text Spacing', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define spacing for the outer text.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '12px',
 				'range_settings' => array(
@@ -176,8 +176,8 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 			),
 
 			'name_spacing'   => array(
-				'label'          => esc_html__( 'Name Spacing', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define name spacing from the edge.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Name Spacing', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define name spacing from the edge.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'range_settings' => array(
@@ -191,8 +191,8 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 			),
 
 			'level_spacing'  => array(
-				'label'          => esc_html__( 'Level Spacing', 'brain-divi-addons' ),
-				'description'    => esc_html__( 'Define level spacing from the edge.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Level Spacing', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define level spacing from the edge.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'range_settings' => array(
@@ -209,16 +209,16 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 
 		$label = array(
 			'admin_title' => array(
-				'label'       => esc_html__( 'Admin Label', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Admin Label', 'addons-for-divi' ),
 				'type'        => 'text',
-				'description' => esc_html__( 'This will change the label of the item', 'brain-divi-addons' ),
+				'description' => esc_html__( 'This will change the label of the item', 'addons-for-divi' ),
 				'toggle_slug' => 'admin_label',
 			),
 		);
 
 		$level_bg = $this->custom_background_fields(
 			'level',
-			esc_html__( 'Level', 'brain-divi-addons' ),
+			esc_html__( 'Level', 'addons-for-divi' ),
 			'advanced',
 			'bar',
 			array( 'color', 'gradient', 'hover' ),
@@ -228,7 +228,7 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 
 		$bar_bg = $this->custom_background_fields(
 			'bar',
-			esc_html__( 'Bar', 'brain-divi-addons' ),
+			esc_html__( 'Bar', 'addons-for-divi' ),
 			'advanced',
 			'bar',
 			array( 'color', 'gradient', 'hover' ),
@@ -250,7 +250,7 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 		$advanced_fields['background']  = false;
 
 		$advanced_fields['fonts']['name'] = array(
-			'label'           => esc_html__( 'Name', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-skillbar__name',
 				'important' => 'all',
@@ -268,7 +268,7 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['level'] = array(
-			'label'           => esc_html__( 'Level', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Level', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-skillbar__level',
 				'important' => 'all',
@@ -287,7 +287,7 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 
 		$advanced_fields['box_shadow']['bar'] = array(
 			'toggle_slug' => 'bar',
-			'label'       => esc_html__( 'Bar Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Bar Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-skillbar__wrapper',
 				'important' => 'all',

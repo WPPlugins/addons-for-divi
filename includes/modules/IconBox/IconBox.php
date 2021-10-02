@@ -11,29 +11,29 @@ class BA_Icon_Box extends BA_Builder_Module {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_icon_box';
-		$this->name       = esc_html__( 'Brain Icon Box', 'brain-divi-addons' );
+		$this->name       = esc_html__( 'Brain Icon Box', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'icon-box.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content' => esc_html__( 'Content', 'brain-divi-addons' ),
+					'content' => esc_html__( 'Content', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'icon_box' => esc_html__( 'Icon Box', 'brain-divi-addons' ),
-					'icon'     => esc_html__( 'Icon', 'brain-divi-addons' ),
-					'badge'    => esc_html__( 'Badge', 'brain-divi-addons' ),
+					'icon_box' => esc_html__( 'Icon Box', 'addons-for-divi' ),
+					'icon'     => esc_html__( 'Icon', 'addons-for-divi' ),
+					'badge'    => esc_html__( 'Badge', 'addons-for-divi' ),
 					'texts'    => array(
-						'title'             => esc_html__( 'Title & Description', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Title & Description', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'title'       => array(
-								'name' => esc_html__( 'Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Title', 'addons-for-divi' ),
 							),
 							'description' => array(
-								'name' => esc_html__( 'Description', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Description', 'addons-for-divi' ),
 							),
 						),
 					),
@@ -43,27 +43,27 @@ class BA_Icon_Box extends BA_Builder_Module {
 
 		$this->custom_css_fields = array(
 			'icon_wrap' => array(
-				'label'    => esc_html__( 'Icon Wrapper', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Icon Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-iconbox__icon',
 			),
 			'icon'      => array(
-				'label'    => esc_html__( 'Icon', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Icon', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-iconbox__icon i',
 			),
 			'icon_img'  => array(
-				'label'    => esc_html__( 'Icon Image', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Icon Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-iconbox__icon img',
 			),
 			'badge'     => array(
-				'label'    => esc_html__( 'Badge', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Badge', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-iconbox__badge',
 			),
 			'title'     => array(
-				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-iconbox__title',
 			),
 			'desc'      => array(
-				'label'    => esc_html__( 'Description', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Description', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-iconbox__desc',
 			),
 		);
@@ -75,8 +75,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		$fields     = array();
 
 		$fields['icon'] = array(
-			'label'       => esc_html__( 'Select Icon', 'brain-divi-addons' ),
-			'description' => esc_html__( 'Select icon for the icon box.', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Select Icon', 'addons-for-divi' ),
+			'description' => esc_html__( 'Select icon for the icon box.', 'addons-for-divi' ),
 			'type'        => 'select_icon',
 			'default'     => '+',
 			'toggle_slug' => 'content',
@@ -86,26 +86,26 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['use_image'] = array(
-			'label'           => esc_html__( 'Use Image', 'brain-divi-addons' ),
-			'description'     => esc_html__( 'Here you can choose whether image should be used.', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Use Image', 'addons-for-divi' ),
+			'description'     => esc_html__( 'Here you can choose whether image should be used.', 'addons-for-divi' ),
 			'type'            => 'yes_no_button',
 			'option_category' => 'configuration',
 			'options'         => array(
-				'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-				'off' => esc_html__( 'No', 'brain-divi-addons' ),
+				'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+				'off' => esc_html__( 'No', 'addons-for-divi' ),
 			),
 			'default'         => 'off',
 			'toggle_slug'     => 'content',
 		);
 
 		$fields['icon_image'] = array(
-			'label'              => esc_html__( 'Upload Icon Image', 'brain-divi-addons' ),
-			'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the icon box.', 'brain-divi-addons' ),
+			'label'              => esc_html__( 'Upload Icon Image', 'addons-for-divi' ),
+			'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the icon box.', 'addons-for-divi' ),
 			'type'               => 'upload',
 			'option_category'    => 'basic_option',
-			'upload_button_text' => esc_attr__( 'Upload an Icon', 'brain-divi-addons' ),
-			'choose_text'        => esc_attr__( 'Choose an Icon', 'brain-divi-addons' ),
-			'update_text'        => esc_attr__( 'Set As Icon', 'brain-divi-addons' ),
+			'upload_button_text' => esc_attr__( 'Upload an Icon', 'addons-for-divi' ),
+			'choose_text'        => esc_attr__( 'Choose an Icon', 'addons-for-divi' ),
+			'update_text'        => esc_attr__( 'Set As Icon', 'addons-for-divi' ),
 			'toggle_slug'        => 'content',
 			'show_if'            => array(
 				'use_image' => 'on',
@@ -113,8 +113,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['image_alt'] = array(
-			'label'       => esc_html__( 'Image Alt Text', 'brain-divi-addons' ),
-			'description' => esc_html__( 'Define the HTML ALT text for your image here.', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
+			'description' => esc_html__( 'Define the HTML ALT text for your image here.', 'addons-for-divi' ),
 			'type'        => 'text',
 			'toggle_slug' => 'content',
 			'show_if'     => array(
@@ -123,45 +123,45 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['badge_text'] = array(
-			'label'           => esc_html__( 'Badge Text', 'brain-divi-addons' ),
-			'description'     => esc_html__( 'Define the badge text for your icon box.', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Badge Text', 'addons-for-divi' ),
+			'description'     => esc_html__( 'Define the badge text for your icon box.', 'addons-for-divi' ),
 			'type'            => 'text',
 			'toggle_slug'     => 'content',
 			'dynamic_content' => 'text',
 		);
 
 		$fields['title'] = array(
-			'label'           => esc_html__( 'Title', 'brain-divi-addons' ),
-			'description'     => esc_html__( 'Define the title text for your icon box.', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
+			'description'     => esc_html__( 'Define the title text for your icon box.', 'addons-for-divi' ),
 			'type'            => 'text',
 			'toggle_slug'     => 'content',
 			'dynamic_content' => 'text',
 		);
 
 		$fields['description'] = array(
-			'label'           => esc_html__( 'Description', 'brain-divi-addons' ),
-			'description'     => esc_html__( 'Define the description text for your icon box.', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Description', 'addons-for-divi' ),
+			'description'     => esc_html__( 'Define the description text for your icon box.', 'addons-for-divi' ),
 			'type'            => 'textarea',
 			'toggle_slug'     => 'content',
 			'dynamic_content' => 'text',
 		);
 
 		$fields_top['icon__placement'] = array(
-			'label'       => esc_html__( 'Icon Position', 'brain-divi-addons' ),
-			'description' => esc_html__( 'Select icon position. By selecting absolute position icon can be placed any where on the icon box.', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Icon Position', 'addons-for-divi' ),
+			'description' => esc_html__( 'Select icon position. By selecting absolute position icon can be placed any where on the icon box.', 'addons-for-divi' ),
 			'type'        => 'select',
 			'toggle_slug' => 'icon',
 			'tab_slug'    => 'advanced',
 			'default'     => 'normal',
 			'options'     => array(
-				'normal'   => esc_html__( 'Normal', 'brain-divi-addons' ),
-				'absolute' => esc_html__( 'Absolute', 'brain-divi-addons' ),
+				'normal'   => esc_html__( 'Normal', 'addons-for-divi' ),
+				'absolute' => esc_html__( 'Absolute', 'addons-for-divi' ),
 			),
 		);
 
 		$fields['icon_color'] = array(
-			'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
-			'description' => esc_html__( 'Here you can define a custom color for the icon.', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
+			'description' => esc_html__( 'Here you can define a custom color for the icon.', 'addons-for-divi' ),
 			'type'        => 'color-alpha',
 			'tab_slug'    => 'advanced',
 			'toggle_slug' => 'icon',
@@ -173,8 +173,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['icon_size'] = array(
-			'label'          => esc_html__( 'Icon Size', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Here you can define a custom size for the icon.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Here you can define a custom size for the icon.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'mobile_options' => true,
 			'default'        => '60px',
@@ -189,8 +189,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['icon_width'] = array(
-			'label'          => esc_html__( 'Icon Width', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Define static width for the icon box.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Icon Width', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Define static width for the icon box.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'mobile_options' => true,
 			'default'        => 'auto',
@@ -206,8 +206,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['icon_height'] = array(
-			'label'          => esc_html__( 'Icon Height', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Define static height for the icon box.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Icon Height', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Define static height for the icon box.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'mobile_options' => true,
 			'default'        => 'auto',
@@ -223,8 +223,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['icon_padding'] = array(
-			'label'          => esc_html__( 'Icon Padding', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Here you can define a custom padding for the icon.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Icon Padding', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Here you can define a custom padding for the icon.', 'addons-for-divi' ),
 			'type'           => 'custom_padding',
 			'default'        => '0px|0px|0px|0px',
 			'mobile_options' => true,
@@ -236,8 +236,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['icon_spacing'] = array(
-			'label'          => esc_html__( 'Icon Bottom Spacing', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the icon.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Icon Bottom Spacing', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the icon.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'default'        => '10px',
 			'mobile_options' => true,
@@ -254,8 +254,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['icon_bg_rotate'] = array(
-			'label'          => esc_html__( 'Icon Box Rotate', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Rotate icon box, icon will be in same position. Only container box will be rotated.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Icon Box Rotate', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Rotate icon box, icon will be in same position. Only container box will be rotated.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'default'        => '0deg',
 			'fixed_unit'     => 'deg',
@@ -269,8 +269,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['content_alignment'] = array(
-			'label'            => esc_html__( 'Content Alignment', 'brain-divi-addons' ),
-			'description'      => esc_html__( 'Align content to the left, right or center.', 'brain-divi-addons' ),
+			'label'            => esc_html__( 'Content Alignment', 'addons-for-divi' ),
+			'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 			'type'             => 'text_align',
 			'option_category'  => 'layout',
 			'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -281,8 +281,8 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['title_spacing'] = array(
-			'label'          => esc_html__( 'Title Spacing Bottom', 'brain-divi-addons' ),
-			'description'    => esc_html__( 'Here you can define a custom spacing at the top of the title.', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Title Spacing Bottom', 'addons-for-divi' ),
+			'description'    => esc_html__( 'Here you can define a custom spacing at the top of the title.', 'addons-for-divi' ),
 			'type'           => 'range',
 			'mobile_options' => true,
 			'default'        => '10px',
@@ -314,14 +314,14 @@ class BA_Icon_Box extends BA_Builder_Module {
 
 		$badge_additional_opts = $this->get_badge_options(
 			'badge',
-			esc_html__( 'Badge', 'brain-divi-addons' ),
+			esc_html__( 'Badge', 'addons-for-divi' ),
 			'badge',
 			$badge_defaults
 		);
 
 		$icon_bg = $this->custom_background_fields(
 			'icon',
-			esc_html__( 'Icon', 'brain-divi-addons' ),
+			esc_html__( 'Icon', 'addons-for-divi' ),
 			'advanced',
 			'icon',
 			array( 'color', 'gradient', 'hover' ),
@@ -340,7 +340,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['borders']['icon'] = array(
-			'label_prefix' => esc_html__( 'Icon', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Icon', 'addons-for-divi' ),
 			'toggle_slug'  => 'icon',
 			'css'          => array(
 				'main'      => array(
@@ -360,7 +360,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['badge'] = array(
-			'label_prefix' => esc_html__( 'Badge', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Badge', 'addons-for-divi' ),
 			'toggle_slug'  => 'badge',
 			'css'          => array(
 				'main'      => array(
@@ -408,7 +408,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['box'] = array(
-			'label_prefix' => esc_html__( 'Box', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Box', 'addons-for-divi' ),
 			'toggle_slug'  => 'icon_box',
 			'css'          => array(
 				'main'      => array(
@@ -428,7 +428,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['item'] = array(
-			'label'       => esc_html__( 'Wrapper Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Wrapper Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-iconbox-inner',
 				'important' => 'all',
@@ -438,7 +438,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['icon'] = array(
-			'label'          => esc_html__( 'Icon Box Shadow', 'brain-divi-addons' ),
+			'label'          => esc_html__( 'Icon Box Shadow', 'addons-for-divi' ),
 			'css'            => array(
 				'main'      => '%%order_class%% .ba-iconbox__icon',
 				'important' => 'all',
@@ -448,7 +448,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'           => esc_html__( 'Title', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-iconbox__title',
 				'important' => 'all',
@@ -469,7 +469,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['description'] = array(
-			'label'           => esc_html__( 'Description', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Description', 'addons-for-divi' ),
 			'css'             => array(
 				'main' => '%%order_class%% .ba-iconbox__desc',
 			),
@@ -490,7 +490,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['badge'] = array(
-			'label'           => esc_html__( 'Badge', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Badge', 'addons-for-divi' ),
 			'css'             => array(
 				'main' => '%%order_class%% .ba-iconbox__badge',
 			),

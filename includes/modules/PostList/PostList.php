@@ -11,58 +11,58 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_post_list';
-		$this->name       = esc_html__( 'Brain Post List', 'brain-divi-addons' );
+		$this->name       = esc_html__( 'Brain Post List', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'post-list.svg';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'brain-divi-addons' ),
-					'settings' => esc_html__( 'Elements', 'brain-divi-addons' ),
+					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
+					'settings' => esc_html__( 'Elements', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'common'    => esc_html__( 'General', 'brain-divi-addons' ),
-					'list_icon' => esc_html__( 'List Icon', 'brain-divi-addons' ),
-					'image'     => esc_html__( 'Featured Image', 'brain-divi-addons' ),
+					'common'    => esc_html__( 'General', 'addons-for-divi' ),
+					'list_icon' => esc_html__( 'List Icon', 'addons-for-divi' ),
+					'image'     => esc_html__( 'Featured Image', 'addons-for-divi' ),
 					'texts'     => array(
-						'title'             => esc_html__( 'Title & Excerpt', 'brain-divi-addons' ),
+						'title'             => esc_html__( 'Title & Excerpt', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'title'   => array(
-								'name' => esc_html__( 'Title', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Title', 'addons-for-divi' ),
 							),
 							'content' => array(
-								'name' => esc_html__( 'Excerpt', 'brain-divi-addons' ),
+								'name' => esc_html__( 'Excerpt', 'addons-for-divi' ),
 							),
 						),
 					),
-					'meta'      => esc_html__( 'Meta', 'brain-divi-addons' ),
-					'border'    => esc_html__( 'Border', 'brain-divi-addons' ),
+					'meta'      => esc_html__( 'Meta', 'addons-for-divi' ),
+					'border'    => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'image'  => array(
-				'label'    => esc_html__( 'Featured Image', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Featured Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-thumb img',
 			),
 			'title'  => array(
-				'label'    => esc_html__( 'Title', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-title',
 			),
 			'excerpt'  => array(
-				'label'    => esc_html__( 'Excerpt', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Excerpt', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-excerpt',
 			),
 			'author'  => array(
-				'label'    => esc_html__( 'Author', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Author', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-author',
 			),
 			'date'  => array(
-				'label'    => esc_html__( 'Date', 'brain-divi-addons' ),
+				'label'    => esc_html__( 'Date', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-date',
 			),
 		);
@@ -72,12 +72,12 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 		$fields = array(
 			'post_type'             => array(
-				'label'            => esc_html__( 'Post Type', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Choose posts of which post type you would like to display.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Post Type', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Choose posts of which post type you would like to display.', 'addons-for-divi' ),
 				'type'             => 'select',
 				'option_category'  => 'configuration',
 				'options'          => et_get_registered_post_type_options( false, false ),
-				'description'      => esc_html__( 'Choose posts of which post type you would like to display.', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Choose posts of which post type you would like to display.', 'addons-for-divi' ),
 				'computed_affects' => array(
 					'__posts',
 				),
@@ -86,17 +86,17 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'include_categories'    => array(
-				'label'            => esc_html__( 'Included Categories', 'brain-divi-addons' ),
-				'description'            => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Included Categories', 'addons-for-divi' ),
+				'description'            => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'addons-for-divi' ),
 				'type'             => 'categories',
 				'option_category'  => 'basic_option',
 				'meta_categories'  => array(
-					'current' => esc_html__( 'Current Category', 'brain-divi-addons' ),
+					'current' => esc_html__( 'Current Category', 'addons-for-divi' ),
 				),
 				'renderer_options' => array(
 					'use_terms' => false,
 				),
-				'description'      => esc_html__( 'Choose which categories you would like to include in the List.', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Choose which categories you would like to include in the List.', 'addons-for-divi' ),
 				'toggle_slug'      => 'content',
 				'computed_affects' => array(
 					'__posts',
@@ -107,15 +107,15 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'order_by'              => array(
-				'label'            => esc_html__( 'Order By', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Choose how your posts should be ordered.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Order By', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Choose how your posts should be ordered.', 'addons-for-divi' ),
 				'type'             => 'select',
 				'option_category'  => 'configuration',
 				'toggle_slug'      => 'content',
 				'default'          => 'date',
 				'options'          => array(
-					'date'  => esc_html__( 'Date', 'brain-divi-addons' ),
-					'title' => esc_html__( 'Title', 'brain-divi-addons' ),
+					'date'  => esc_html__( 'Date', 'addons-for-divi' ),
+					'title' => esc_html__( 'Title', 'addons-for-divi' ),
 				),
 
 				'default_on_front' => 'date',
@@ -123,15 +123,15 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'order'                 => array(
-				'label'            => esc_html__( 'Sorted By', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Choose how your posts should be sorted.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Sorted By', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Choose how your posts should be sorted.', 'addons-for-divi' ),
 				'type'             => 'select',
 				'option_category'  => 'configuration',
 				'toggle_slug'      => 'content',
 				'default'          => 'ASC',
 				'options'          => array(
-					'ASC'  => esc_html__( 'Ascending', 'brain-divi-addons' ),
-					'DESC' => esc_html__( 'Descending', 'brain-divi-addons' ),
+					'ASC'  => esc_html__( 'Ascending', 'addons-for-divi' ),
+					'DESC' => esc_html__( 'Descending', 'addons-for-divi' ),
 				),
 
 				'default_on_front' => 'ASC',
@@ -139,11 +139,11 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'posts_number'          => array(
-				'label'            => esc_html__( 'Post Count', 'brain-divi-addons' ),
-				'description'      => esc_html__( '.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Post Count', 'addons-for-divi' ),
+				'description'      => esc_html__( '.', 'addons-for-divi' ),
 				'type'             => 'text',
 				'option_category'  => 'configuration',
-				'description'      => esc_html__( 'Choose how much posts you would like to display per List.', 'brain-divi-addons' ),
+				'description'      => esc_html__( 'Choose how much posts you would like to display per List.', 'addons-for-divi' ),
 				'computed_affects' => array(
 					'__posts',
 				),
@@ -151,15 +151,15 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'default'          => 6,
 			),
 			'exclude_posts'         => array(
-				'label'            => esc_html__( 'Exclude posts by IDs', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'eg. 10, 22, 19 etc. If this is used by IDs, Selected Posts will be ignored.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Exclude posts by IDs', 'addons-for-divi' ),
+				'description'      => esc_html__( 'eg. 10, 22, 19 etc. If this is used by IDs, Selected Posts will be ignored.', 'addons-for-divi' ),
 				'type'             => 'text',
 				'toggle_slug'      => 'content',
 				'computed_affects' => array( '__posts' ),
 			),
 			'post_offset'           => array(
-				'label'            => esc_html__( 'Post Offset', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Choose how many news you would like to skip. These news will not be shown.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Post Offset', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Choose how many news you would like to skip. These news will not be shown.', 'addons-for-divi' ),
 				'type'             => 'range',
 				'default'          => '0',
 				'unitless'         => true,
@@ -172,12 +172,12 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'computed_affects' => array( '__posts' ),
 			),
 			'posts_only_with_image' => array(
-				'label'            => esc_html__( 'Post only With Thumbnail', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Enable to display posts only with thumbnail image', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Post only With Thumbnail', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Enable to display posts only with thumbnail image', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'content',
@@ -185,13 +185,13 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 			// Settings.
 			'show_thumb'            => array(
-				'label'            => esc_html__( 'Show Featured Image', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can choose whether thumbnail should be used.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Show Featured Image', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can choose whether thumbnail should be used.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'elements',
@@ -199,13 +199,13 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'show_icon'             => array(
-				'label'            => esc_html__( 'Show List Icon', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can choose whether icon should be used before list items.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Show List Icon', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can choose whether icon should be used before list items.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'elements',
@@ -216,8 +216,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'list_icon'             => array(
-				'label'            => esc_html__( 'Select List Icon', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Select icon for the list.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Select List Icon', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Select icon for the list.', 'addons-for-divi' ),
 				'type'             => 'select_icon',
 				'option_category'  => 'basic_option',
 				'toggle_slug'      => 'elements',
@@ -229,13 +229,13 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'show_excerpt'          => array(
-				'label'            => esc_html__( 'Show Excerpt', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can choose whether excerpt should be used.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Show Excerpt', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can choose whether excerpt should be used.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'on',
 				'toggle_slug'      => 'elements',
@@ -243,8 +243,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'excerpt_length'        => array(
-				'label'            => esc_html__( 'Excerpt Length', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Define the length of automatically generated excerpts. Leave blank for default ( 150 ) ', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Excerpt Length', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Define the length of automatically generated excerpts. Leave blank for default ( 150 ) ', 'addons-for-divi' ),
 				'type'             => 'text',
 				'default'          => '150',
 				'toggle_slug'      => 'elements',
@@ -255,13 +255,13 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'show_author'           => array(
-				'label'            => esc_html__( 'Show Author', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can choose whether author should be used.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Show Author', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can choose whether author should be used.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'off',
 				'toggle_slug'      => 'elements',
@@ -269,13 +269,13 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'show_date'             => array(
-				'label'            => esc_html__( 'Show Date', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can choose whether date should be used.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Show Date', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can choose whether date should be used.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'brain-divi-addons' ),
-					'off' => esc_html__( 'No', 'brain-divi-addons' ),
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'default'          => 'off',
 				'toggle_slug'      => 'elements',
@@ -283,8 +283,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'date_format'           => array(
-				'label'            => esc_html__( 'Date Format', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'If you would like to adjust the date format, input the appropriate PHP date format here.', 'brain-divi-addons' ),
+				'label'            => esc_html__( 'Date Format', 'addons-for-divi' ),
+				'description'      => esc_html__( 'If you would like to adjust the date format, input the appropriate PHP date format here.', 'addons-for-divi' ),
 				'type'             => 'text',
 				'default'          => 'M d, Y',
 				'toggle_slug'      => 'content',
@@ -300,35 +300,35 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			// common.
 			'list_type'             => array(
-				'label'       => esc_html__( 'List Type', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Select post list layout type.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'List Type', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Select post list layout type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'common',
 				'tab_slug'    => 'advanced',
 				'default'     => 'list',
 				'options'     => array(
-					'list' => esc_html__( 'List', 'brain-divi-addons' ),
-					'grid' => esc_html__( 'Grid', 'brain-divi-addons' ),
+					'list' => esc_html__( 'List', 'addons-for-divi' ),
+					'grid' => esc_html__( 'Grid', 'addons-for-divi' ),
 				),
 			),
 
 			'items'                 => array(
-				'label'          => esc_html__( 'Items per Row', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Define items count per row.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Items per Row', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Define items count per row.', 'addons-for-divi' ),
 				'type'           => 'select',
 				'toggle_slug'    => 'common',
 				'tab_slug'       => 'advanced',
 				'default'        => '4',
 				'mobile_options' => true,
 				'options'        => array(
-					'1' => esc_html__( '1', 'brain-divi-addons' ),
-					'2' => esc_html__( '2', 'brain-divi-addons' ),
-					'3' => esc_html__( '3', 'brain-divi-addons' ),
-					'4' => esc_html__( '4', 'brain-divi-addons' ),
-					'5' => esc_html__( '5', 'brain-divi-addons' ),
-					'6' => esc_html__( '6', 'brain-divi-addons' ),
-					'7' => esc_html__( '7', 'brain-divi-addons' ),
-					'8' => esc_html__( '8', 'brain-divi-addons' ),
+					'1' => esc_html__( '1', 'addons-for-divi' ),
+					'2' => esc_html__( '2', 'addons-for-divi' ),
+					'3' => esc_html__( '3', 'addons-for-divi' ),
+					'4' => esc_html__( '4', 'addons-for-divi' ),
+					'5' => esc_html__( '5', 'addons-for-divi' ),
+					'6' => esc_html__( '6', 'addons-for-divi' ),
+					'7' => esc_html__( '7', 'addons-for-divi' ),
+					'8' => esc_html__( '8', 'addons-for-divi' ),
 				),
 				'show_if'        => array(
 					'list_type' => 'grid',
@@ -336,8 +336,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'item_spacing'          => array(
-				'label'          => esc_html__( 'Post Spacing', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Define spacing between post items.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Post Spacing', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Define spacing between post items.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'allowed_units'  => array( 'px' ),
@@ -353,8 +353,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'item_padding'          => array(
-				'label'          => __( 'Post Padding', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Define custom padding for the post items.', 'brain-divi-addons' ),
+				'label'          => __( 'Post Padding', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Define custom padding for the post items.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'common',
@@ -363,8 +363,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'alignment'             => array(
-				'label'        => __( 'Post Alignment', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Align content to the left, right or center.', 'brain-divi-addons' ),
+				'label'        => __( 'Post Alignment', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 				'type'         => 'text_align',
 				'options'      => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'options_icon' => 'module_align',
@@ -375,8 +375,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			// list icon.
 			'icon_size'             => array(
-				'label'          => esc_html__( 'Icon Size', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can define a custom size for list icons.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can define a custom size for list icons.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '18px',
 				'allowed_units'  => array( 'px' ),
@@ -396,8 +396,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'icon_color'            => array(
-				'label'       => esc_html__( 'Icon Color', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can define a custom color for list icons.', 'brain-divi-addons' ),
+				'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can define a custom color for list icons.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'list_icon',
@@ -409,8 +409,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'icon_spacing'          => array(
-				'label'          => esc_html__( 'Icon Spacing', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Define spacing between icon and texts.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Icon Spacing', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Define spacing between icon and texts.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'default_unit'   => 'px',
@@ -430,8 +430,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			// Image.
 			'image_width'           => array(
-				'label'          => esc_html__( 'Image Width', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Define static width for pot thumbnail.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Width', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Define static width for pot thumbnail.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '60px',
 				'allowed_units'  => array( 'px' ),
@@ -450,8 +450,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'image_height'          => array(
-				'label'          => esc_html__( 'Image Height', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Define static height for pot thumbnail.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Define static height for pot thumbnail.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '60px',
 				'allowed_units'  => array( 'px' ),
@@ -470,8 +470,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'image_spacing'         => array(
-				'label'          => esc_html__( 'Image Spacing', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Define spacing between image and texts.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Image Spacing', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Define spacing between image and texts.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '12px',
 				'allowed_units'  => array( 'px' ),
@@ -491,8 +491,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			// Texts.
 			'meta_spacing'          => array(
-				'label'          => esc_html__( 'Meta Spacing Top', 'brain-divi-addons' ),
-				'description'      => esc_html__( 'Here you can define a custom spacing at the top of the meta area.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Meta Spacing Top', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Here you can define a custom spacing at the top of the meta area.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '0px',
 				'allowed_units'  => array( 'px' ),
@@ -508,8 +508,8 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'excerpt_spacing'       => array(
-				'label'          => esc_html__( 'Excerpt Spacing Top', 'brain-divi-addons' ),
-				'description'      => esc_html__( '.', 'brain-divi-addons' ),
+				'label'          => esc_html__( 'Excerpt Spacing Top', 'addons-for-divi' ),
+				'description'      => esc_html__( '.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '0px',
 				'allowed_units'  => array( 'px' ),
@@ -563,7 +563,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['borders']['image'] = array(
-			'label_prefix' => esc_html__( 'Image', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Image', 'addons-for-divi' ),
 			'toggle_slug'  => 'image',
 			'css'          => array(
 				'main'      => array(
@@ -583,7 +583,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		);
 
 		$advanced_fields['borders']['post'] = array(
-			'label_prefix' => esc_html__( 'Post', 'brain-divi-addons' ),
+			'label_prefix' => esc_html__( 'Post', 'addons-for-divi' ),
 			'toggle_slug'  => 'common',
 			'css'          => array(
 				'main'      => array(
@@ -603,7 +603,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		);
 
 		$advanced_fields['box_shadow']['post'] = array(
-			'label'       => esc_html__( 'Post Box Shadow', 'brain-divi-addons' ),
+			'label'       => esc_html__( 'Post Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'common',
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-post-list-child-inner',
@@ -631,7 +631,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		);
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'           => esc_html__( 'Title', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-post-list-title',
 				'important' => 'all',
@@ -653,7 +653,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		);
 
 		$advanced_fields['fonts']['content'] = array(
-			'label'           => esc_html__( 'Content', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Content', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-post-list-excerpt',
 				'important' => 'all',
@@ -675,7 +675,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		);
 
 		$advanced_fields['fonts']['meta'] = array(
-			'label'           => esc_html__( 'Meta', 'brain-divi-addons' ),
+			'label'           => esc_html__( 'Meta', 'addons-for-divi' ),
 			'css'             => array(
 				'main'      => '%%order_class%% .ba-post-list-meta, %%order_class%% .ba-post-list-meta a',
 				'important' => 'all',
