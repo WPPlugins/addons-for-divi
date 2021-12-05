@@ -1,5 +1,5 @@
 <?php
-class BA_Business_Hour_Child extends BA_Builder_Module {
+class DTQ_Business_Hour_Child extends BA_Builder_Module {
 
 	public $slug                     = 'ba_business_hour_child';
 	public $vb_support               = 'on';
@@ -359,4 +359,4 @@ class BA_Business_Hour_Child extends BA_Builder_Module {
 	}
 }
 
-new BA_Business_Hour_Child();
+new DTQ_Business_Hour_Child();

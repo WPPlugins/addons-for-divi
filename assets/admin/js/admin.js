@@ -1,27 +1,26 @@
-(function($, BA_PLUGIN) {
-    'use strict';
+(function($, DTQ_PLUGIN) {
+    "use strict";
 
-    var $tabsNav = $('.ba-nav').find('.ba-tabs-nav'),
-        $tabsContent = $('.ba-admin-tabs').find('.ba-admin-tabs-content');
+    var $tabsNav = $(".ba-nav").find(".ba-tabs-nav"),
+        $tabsContent = $(".ba-admin-tabs").find(".ba-admin-tabs-content");
 
-    $tabsNav.on('click', '.ba-admin-nav-item-link', function(e) {
-        console.log('work!');
+    $tabsNav.on("click", ".ba-admin-nav-item-link", function(e) {
         var $currentTab = $(e.currentTarget),
             tabTargetHash = e.currentTarget.hash,
-            tabIdSelector = '#tab-content-' + tabTargetHash.substring(1),
+            tabIdSelector = "#tab-content-" + tabTargetHash.substring(1),
             $currentTabContent = $tabsContent.find(tabIdSelector);
 
         e.preventDefault();
 
         $currentTab
-            .addClass('active-tab')
+            .addClass("active-tab")
             .siblings()
-            .removeClass('active-tab');
+            .removeClass("active-tab");
 
         $currentTabContent
-            .addClass('active-tab')
+            .addClass("active-tab")
             .siblings()
-            .removeClass('active-tab');
+            .removeClass("active-tab");
 
         window.location.hash = tabTargetHash;
     });
@@ -30,69 +29,69 @@
         $tabsNav.find('a[href="' + window.location.hash + '"]').click();
     }
 
-    var $adminForm = $('.ba-form-admin'),
-        $saveButton = $adminForm.find('.ba-btn-save');
+    var $adminForm = $(".ba-form-admin"),
+        $saveButton = $adminForm.find(".ba-btn-save");
 
-    $adminForm.on('submit', function(e) {
+    $adminForm.on("submit", function(e) {
         e.preventDefault();
         $.post({
-            url: BA_PLUGIN.ajaxUrl,
+            url: DTQ_PLUGIN.ajaxUrl,
             data: {
-                nonce: BA_PLUGIN.nonce,
-                action: BA_PLUGIN.action,
-                data: $adminForm.serialize(),
+                nonce: DTQ_PLUGIN.nonce,
+                action: DTQ_PLUGIN.action,
+                data: $adminForm.serialize()
             },
 
             beforeSend: function() {
-                $saveButton.text('Saving...');
+                $saveButton.text("Saving...");
             },
 
             success: function(response) {
                 if (response.success) {
                     var t = setTimeout(function() {
                         $saveButton
-                            .attr('disabled', true)
-                            .text('Changes Saved');
+                            .attr("disabled", true)
+                            .text("Changes Saved");
                         clearTimeout(t);
                     }, 500);
                 }
-            },
+            }
         });
     });
 
-    $adminForm.on('change', ':checkbox, :radio', function() {
-        $saveButton.attr('disabled', false).text('Save Changes');
+    $adminForm.on("change", ":checkbox, :radio", function() {
+        $saveButton.attr("disabled", false).text("Save Changes");
     });
 
-    $adminForm.on('change', ':text', function() {
-        $saveButton.attr('disabled', false).text('Save Changes');
+    $adminForm.on("change", ":text", function() {
+        $saveButton.attr("disabled", false).text("Save Changes");
     });
 
     var $adminNotice = $(
-        '.ba-review-deserve, .ba-review-later, .ba-review-done'
+        ".ba-review-deserve, .ba-review-later, .ba-review-done"
     );
 
-    $adminNotice.on('click', function(e) {
+    $adminNotice.on("click", function(e) {
         var btn = $(this),
-            notice = btn.closest('.ba-notice');
+            notice = btn.closest(".ba-notice");
 
-        if (!btn.hasClass('ba-review-deserve')) {
+        if (!btn.hasClass("ba-review-deserve")) {
             e.preventDefault();
         }
 
         $.ajax({
-            url: BA_PLUGIN.ajaxUrl,
-            type: 'POST',
+            url: DTQ_PLUGIN.ajaxUrl,
+            type: "POST",
             data: {
-                action: 'brainaddons-dismiss-notice',
-                nonce: BA_PLUGIN.nonce,
-                repeat: !!btn.hasClass('ba-review-later'),
-            },
+                action: "brainaddons-dismiss-notice",
+                nonce: DTQ_PLUGIN.nonce,
+                repeat: !!btn.hasClass("ba-review-later")
+            }
         });
 
         notice.animate(
             {
-                opacity: '-=1',
+                opacity: "-=1"
             },
             1000,
             function() {
@@ -100,4 +99,4 @@
             }
         );
     });
-})(jQuery, window.BA_PLUGIN);
+})(jQuery, window.DTQ_PLUGIN);

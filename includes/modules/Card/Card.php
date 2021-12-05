@@ -1,15 +1,15 @@
 <?php
-class BA_Card extends BA_Builder_Module {
+class DTQ_Card extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/card',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/card-module',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
-		$this->name       = esc_html__( 'Brain Card', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Card', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'card.svg';
 		$this->slug       = 'ba_card';
 		$this->vb_support = 'on';
@@ -651,12 +651,11 @@ class BA_Card extends BA_Builder_Module {
 
 		if ( 'on' !== $use_icon && ! empty( $photo ) ) {
 			return sprintf(
-				'
-                    <div class="ba-figure ba-card-figure">
-                        %1$s
-                        <div class="ba-overlay" data-icon="%4$s"></div>
-                        <img class="ba-img-cover ba-card-figure-img ba-swapped-img %5$s" data-mfp-src="%2$s" src="%2$s" %3$s alt="%6$s"/>
-                    </div>',
+				'<div class="ba-figure ba-card-figure">
+                    %1$s
+                    <div class="ba-overlay" data-icon="%4$s"></div>
+                    <img class="ba-img-cover ba-card-figure-img ba-swapped-img %5$s" data-mfp-src="%2$s" src="%2$s" %3$s alt="%6$s"/>
+                </div>',
 				$this->render_Badge(),
 				$photo,
 				$data_schema,
@@ -731,8 +730,7 @@ class BA_Card extends BA_Builder_Module {
 			);
 
 			return sprintf(
-				'
-                <div class="ba-btn-card-wrap">
+				'<div class="ba-btn-card-wrap">
                     %1$s
                 </div>',
 				$button_output
@@ -1072,4 +1070,4 @@ class BA_Card extends BA_Builder_Module {
 	}
 }
 
-new BA_Card();
+new DTQ_Card();

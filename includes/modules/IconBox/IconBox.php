@@ -1,17 +1,17 @@
 <?php
-class BA_Icon_Box extends BA_Builder_Module {
+class DTQ_Icon_Box extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/icon-box/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/icon-box-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_icon_box';
-		$this->name       = esc_html__( 'Brain Icon Box', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Icon Box', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'icon-box.svg';
 
 		$this->settings_modal_toggles = array(
@@ -22,21 +22,13 @@ class BA_Icon_Box extends BA_Builder_Module {
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'icon_box' => esc_html__( 'Icon Box', 'addons-for-divi' ),
-					'icon'     => esc_html__( 'Icon', 'addons-for-divi' ),
-					'badge'    => esc_html__( 'Badge', 'addons-for-divi' ),
-					'texts'    => array(
-						'title'             => esc_html__( 'Title & Description', 'addons-for-divi' ),
-						'tabbed_subtoggles' => true,
-						'sub_toggles'       => array(
-							'title'       => array(
-								'name' => esc_html__( 'Title', 'addons-for-divi' ),
-							),
-							'description' => array(
-								'name' => esc_html__( 'Description', 'addons-for-divi' ),
-							),
-						),
-					),
+					'icon_box'   => esc_html__( 'Alignment', 'addons-for-divi' ),
+					'icon'       => esc_html__( 'Icon', 'addons-for-divi' ),
+					'badge'      => esc_html__( 'Badge', 'addons-for-divi' ),
+					'title'      => esc_html__( 'Title', 'addons-for-divi' ),
+					'desc'       => esc_html__( 'Description', 'addons-for-divi' ),
+					'border'     => esc_html__( 'Border', 'addons-for-divi' ),
+					'box_shadow' => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 				),
 			),
 		);
@@ -75,11 +67,11 @@ class BA_Icon_Box extends BA_Builder_Module {
 		$fields     = array();
 
 		$fields['icon'] = array(
-			'label'       => esc_html__( 'Select Icon', 'addons-for-divi' ),
+			'label'       => esc_html__( 'Icon', 'addons-for-divi' ),
 			'description' => esc_html__( 'Select icon for the icon box.', 'addons-for-divi' ),
 			'type'        => 'select_icon',
-			'default'     => '+',
 			'toggle_slug' => 'content',
+			'default'     => '&#x2b;||divi||400',
 			'show_if'     => array(
 				'use_image' => 'off',
 			),
@@ -269,7 +261,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$fields['content_alignment'] = array(
-			'label'            => esc_html__( 'Content Alignment', 'addons-for-divi' ),
+			'label'            => esc_html__( 'Alignment', 'addons-for-divi' ),
 			'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 			'type'             => 'text_align',
 			'option_category'  => 'layout',
@@ -291,8 +283,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 				'max'  => 200,
 				'step' => 1,
 			),
-			'toggle_slug'    => 'texts',
-			'sub_toggle'     => 'title',
+			'toggle_slug'    => 'title',
 			'tab_slug'       => 'advanced',
 		);
 
@@ -302,7 +293,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 			'offset_y' => '50%',
 		);
 
-		$badge_defaults       = array(
+		$badge_defaults = array(
 			'position' => 'right_top',
 			'offset_x' => '15px',
 			'offset_y' => '15px',
@@ -310,6 +301,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 			'bg'       => '#efefef',
 			'color'    => '#ffffff',
 		);
+
 		$icon_additional_opts = $this->get_absolute_element_options( 'icon', 'Icon', 'icon', $icon_defaults, array( 'icon__placement' => 'absolute' ) );
 
 		$badge_additional_opts = $this->get_badge_options(
@@ -408,43 +400,34 @@ class BA_Icon_Box extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['box'] = array(
-			'label_prefix' => esc_html__( 'Box', 'addons-for-divi' ),
-			'toggle_slug'  => 'icon_box',
-			'css'          => array(
+			'toggle_slug' => 'border',
+			'css'         => array(
 				'main'      => array(
 					'border_radii'  => '%%order_class%% .ba-iconbox-inner',
 					'border_styles' => '%%order_class%% .ba-iconbox-inner',
 				),
 				'important' => 'all',
 			),
-			'defaults'     => array(
-				'border_radii'  => 'on|0px|0px|0px|0px',
-				'border_styles' => array(
-					'width' => '0px',
-					'color' => '#333',
-					'style' => 'solid',
-				),
-			),
 		);
 
 		$advanced_fields['box_shadow']['item'] = array(
-			'label'       => esc_html__( 'Wrapper Box Shadow', 'addons-for-divi' ),
+			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
 				'main'      => '%%order_class%% .ba-iconbox-inner',
 				'important' => 'all',
 			),
 			'tab_slug'    => 'advanced',
-			'toggle_slug' => 'icon_box',
+			'toggle_slug' => 'box_shadow',
 		);
 
 		$advanced_fields['box_shadow']['icon'] = array(
-			'label'          => esc_html__( 'Icon Box Shadow', 'addons-for-divi' ),
-			'css'            => array(
+			'label'       => esc_html__( 'Icon Box Shadow', 'addons-for-divi' ),
+			'css'         => array(
 				'main'      => '%%order_class%% .ba-iconbox__icon',
 				'important' => 'all',
 			),
-			'tab_slug'       => 'advanced',
-			'toggle_slug'    => 'icon',
+			'tab_slug'    => 'advanced',
+			'toggle_slug' => 'icon',
 		);
 
 		$advanced_fields['fonts']['title'] = array(
@@ -454,17 +437,16 @@ class BA_Icon_Box extends BA_Builder_Module {
 				'important' => 'all',
 			),
 			'header_level'    => array(
-				'default' => 'h2',
+				'default' => 'h3',
 			),
 			'hide_text_align' => true,
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'title',
+			'toggle_slug'     => 'title',
 			'line_height'     => array(
 				'default' => '1em',
 			),
 			'font_size'       => array(
-				'default' => '26px',
+				'default' => '22px',
 			),
 		);
 
@@ -476,13 +458,9 @@ class BA_Icon_Box extends BA_Builder_Module {
 			'important'       => 'all',
 			'hide_text_align' => true,
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'description',
+			'toggle_slug'     => 'desc',
 			'show_if'         => array(
 				'is_description_hide' => 'off',
-			),
-			'line_height'     => array(
-				'default' => '1em',
 			),
 			'font_size'       => array(
 				'default' => '14px',
@@ -505,6 +483,24 @@ class BA_Icon_Box extends BA_Builder_Module {
 				'default' => '14px',
 			),
 		);
+
+				// Default values.
+		if ( ! dt_if_not_migrated() ) {
+			// $advanced_fields['fonts']['title']['font_size']['default'] = '20px';
+			$advanced_fields['borders']['box']['defaults'] = array(
+				'border_styles' => array(
+					'width' => '1px',
+					'color' => '#EBEBEB',
+				),
+			);
+		} else {
+			// $advanced_fields['fonts']['title']['font_size']['default'] = '26px';
+			$advanced_fields['borders']['box']['defaults'] = array(
+				'border_styles' => array(
+					'width' => '0px',
+				),
+			);
+		}
 
 		return $advanced_fields;
 	}
@@ -566,8 +562,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 		$badge_text = $this->props['badge_text'];
 		if ( ! empty( $badge_text ) ) {
 			return sprintf(
-				'
-                <div class="ba-iconbox__badge">
+				'<div class="ba-iconbox__badge">
                     %1$s
                 </div>',
 				$badge_text
@@ -605,6 +600,37 @@ class BA_Icon_Box extends BA_Builder_Module {
 		$is_negative      = substr( $icon_bg_rotate, 0, 1 ) === '-';
 		$alignment        = $this->props['content_alignment'];
 
+		// Default Design.
+		if ( ! dt_if_not_migrated() ) {
+			if ( empty( $this->props['border_color_all_box'] ) ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-iconbox-inner',
+						'declaration' => 'border-color: #EBEBEB;',
+					)
+				);
+			}
+			if ( empty( $this->props['border_width_all_box'] ) ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-iconbox-inner',
+						'declaration' => 'border-width: 1px;',
+					)
+				);
+			}
+			if ( empty( $this->props['custom_padding'] ) ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-iconbox-inner',
+						'declaration' => 'padding: 60px 30px 60px 30px;',
+					)
+				);
+			}
+		}
+
 		if ( ! empty( $this->props['custom_margin'] ) ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -641,7 +667,7 @@ class BA_Icon_Box extends BA_Builder_Module {
 			);
 		}
 
-		if ( $icon__placement === 'normal' ) {
+		if ( 'normal' === $icon__placement ) {
 			$this->get_responsive_styles(
 				'icon_spacing',
 				'%%order_class%% .ba-iconbox__icon-wrap',
@@ -758,4 +784,4 @@ class BA_Icon_Box extends BA_Builder_Module {
 	}
 }
 
-new BA_Icon_Box();
+new DTQ_Icon_Box();

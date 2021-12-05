@@ -1,17 +1,17 @@
 <?php
-class BA_Testimonial extends BA_Builder_Module {
+class DTQ_Testimonial extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/testimonial',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/testimonial-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_testimonial';
-		$this->name       = esc_html__( 'Brain Testimonial', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Testimonial', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'testimonial.svg';
 
 		$this->settings_modal_toggles = array(
@@ -49,6 +49,10 @@ class BA_Testimonial extends BA_Builder_Module {
 		);
 
 		$this->custom_css_fields = array(
+			'image'        => array(
+				'label'    => esc_html__( 'Reviewer Wrapper', 'addons-for-divi' ),
+				'selector' => '%%order_class%% .ba-testimonial-reviewer',
+			),
 			'image'        => array(
 				'label'    => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-testimonial-img img',
@@ -148,7 +152,6 @@ class BA_Testimonial extends BA_Builder_Module {
 					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
 					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
-				'default'         => 'off',
 				'toggle_slug'     => 'content',
 			),
 
@@ -234,7 +237,6 @@ class BA_Testimonial extends BA_Builder_Module {
 					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
 					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
-				'default'         => 'off',
 				'toggle_slug'     => 'elements',
 			),
 
@@ -243,7 +245,6 @@ class BA_Testimonial extends BA_Builder_Module {
 				'description' => esc_html__( 'Here you can define reviewer position.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
-				'default'     => 'bottom',
 				'options'     => array(
 					'top'    => esc_html__( 'Top', 'addons-for-divi' ),
 					'bottom' => esc_html__( 'Bottom', 'addons-for-divi' ),
@@ -613,7 +614,7 @@ class BA_Testimonial extends BA_Builder_Module {
 				'label'          => esc_html__( 'Image Spacing Top', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the image.', 'addons-for-divi' ),
 				'type'           => 'range',
-				'default'        => '15px',
+				'default'        => '10px',
 				'default_unit'   => 'px',
 				'range_settings' => array(
 					'step' => 1,
@@ -632,7 +633,7 @@ class BA_Testimonial extends BA_Builder_Module {
 				'label'          => esc_html__( 'Image Spacing Bottom', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the image.', 'addons-for-divi' ),
 				'type'           => 'range',
-				'default'        => '20px',
+				'default'        => '10px',
 				'default_unit'   => 'px',
 				'range_settings' => array(
 					'step' => 1,
@@ -768,7 +769,6 @@ class BA_Testimonial extends BA_Builder_Module {
 				'label'          => esc_html__( 'Review Spacing Top', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the review.', 'addons-for-divi' ),
 				'type'           => 'range',
-				'default'        => '0px',
 				'default_unit'   => 'px',
 				'range_settings' => array(
 					'min'  => 0,
@@ -904,6 +904,21 @@ class BA_Testimonial extends BA_Builder_Module {
 			array( 'review_design' => 'bubble' ),
 			'#efefef'
 		);
+
+		// Default values.
+		if ( dt_if_not_migrated() ) {
+			$fields['hide_quote']['default']         = 'off';
+			$fields['use_rating']['default']         = 'off';
+			$fields['reviewer_position']['default']  = 'bottom';
+			$fields['review_top_spacing']['default'] = '0px';
+			$fields['ratings_position']['default']   = '_default';
+		} else {
+			$fields['hide_quote']['default']         = 'on';
+			$fields['use_rating']['default']         = 'on';
+			$fields['reviewer_position']['default']  = 'top';
+			$fields['review_top_spacing']['default'] = '10px';
+			$fields['ratings_position']['default']   = 'bottom';
+		}
 
 		return array_merge( $primary_fields, $bubble_bg, $abs_quote, $fields, $quote_icon_bg );
 	}
@@ -1081,8 +1096,7 @@ class BA_Testimonial extends BA_Builder_Module {
 
 		if ( $use_rating === 'on' && $ratings_position === $pos ) {
 			return sprintf(
-				'
-                <div class="ba-testimonial-rating">
+				'<div class="ba-testimonial-rating">
                     %1$s
                 </div>',
 				$html
@@ -1782,4 +1796,4 @@ class BA_Testimonial extends BA_Builder_Module {
 	}
 }
 
-new BA_Testimonial();
+new DTQ_Testimonial();

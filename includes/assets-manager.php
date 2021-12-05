@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain_Addons_Divi\Includes;
+namespace DiviTorque\Includes;
 
 defined( 'ABSPATH' ) || die();
 
@@ -17,9 +17,9 @@ class AssetsManager {
 
 	public function enqueue_scripts() {
 
-		$js_path  = BRAIN_ADDONS_PLUGIN_ASSETS . 'js/';
-		$css_path = BRAIN_ADDONS_PLUGIN_ASSETS . 'css/';
-		$version  = BRAIN_ADDONS_PLUGIN_VERSION;
+		$js_path  = DIVI_TORQUE_PLUGIN_ASSETS . 'js/';
+		$css_path = DIVI_TORQUE_PLUGIN_ASSETS . 'css/';
+		$version  = DIVI_TORQUE_PLUGIN_VERSION;
 
 		// All vendor js.
 		wp_register_script( 'baj-slick', $js_path . 'slick.min.js', array( 'jquery' ), $version, true );
@@ -29,8 +29,9 @@ class AssetsManager {
 		wp_register_script( 'baj-popper', $js_path . 'popper.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'baj-typed', $js_path . 'typed.min.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'baj-anime', $js_path . 'anime.min.js', array( 'jquery' ), $version, true );
-		
-		//Temp Fix 
+		wp_register_script( 'baj-text-animation', $js_path . 'text-animation.min.js', array( 'jquery' ), $version, true );
+
+		// Temp Fix
 		wp_enqueue_script( 'baj-magnific-popup', $js_path . 'magnific-popup.js', array( 'jquery' ), $version, true );
 		wp_enqueue_style( 'bac-magnific', $css_path . 'magnific-popup.min.css', array(), $version, 'all' );
 
@@ -38,20 +39,18 @@ class AssetsManager {
 		wp_register_style( 'bac-slick', $css_path . 'slick.min.css', array(), $version, 'all' );
 		wp_register_style( 'bac-tippy', $css_path . 'tippy.min.css', array(), $version, 'all' );
 
-		// Brain addons core.
-		$prefix = defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ? '' : '.min';
+		$prefix = defined( 'DTQ_DEBUG' ) && true === constant( 'DTQ_DEBUG' ) ? '' : '.min';
 		wp_enqueue_style( 'bac-core', $css_path . 'core' . $prefix . '.css', null, $version );
 		wp_enqueue_script( 'baj-main', $js_path . 'main' . $prefix . '.js', array( 'jquery' ), $version, true );
 		wp_register_script( 'baj-marvin', $js_path . 'marvin' . $prefix . '.js', array( 'jquery' ), $version, true );
 		wp_enqueue_script( 'baj-default-vb', $js_path . 'ba-default-vb.js', array( 'jquery' ), $version, true );
 
-		// Brainaddons localize.
 		wp_localize_script(
 			'baj-main',
-			'ba_plugin',
+			'DTQ_PLUGIN',
 			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'is_pro'  => ba_has_pro() ? true : false,
+				'is_pro'  => divitorque_has_pro() ? true : false,
 				'nonce'   => wp_create_nonce( 'ba_smart_post_nonce' ),
 			)
 		);

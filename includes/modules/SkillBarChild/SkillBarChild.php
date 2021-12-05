@@ -1,6 +1,6 @@
 <?php
 
-class BA_Skill_Bar_Child extends BA_Builder_Module {
+class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 
 	public $slug                     = 'ba_skill_bar_child';
 	public $vb_support               = 'on';
@@ -46,15 +46,15 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 				'label'    => esc_html__( 'Name Text', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skillbar__name',
 			),
-			'level_text'  => array(
+			'level_text' => array(
 				'label'    => esc_html__( 'Level Text', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skillbar__level',
 			),
-			'level'  => array(
+			'level'      => array(
 				'label'    => esc_html__( 'Level', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skillbar__inner',
 			),
-			'bar'  => array(
+			'bar'        => array(
 				'label'    => esc_html__( 'Bar', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skillbar__wrapper',
 			),
@@ -480,4 +480,4 @@ class BA_Skill_Bar_Child extends BA_Builder_Module {
 	}
 }
 
-new BA_Skill_Bar_Child();
+new DTQ_Skill_Bar_Child();

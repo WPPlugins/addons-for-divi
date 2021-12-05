@@ -1,18 +1,18 @@
 <?php
 
-class BA_Gradient_Heading extends BA_Builder_Module {
+class DTQ_Gradient_Heading extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/gradient-heading',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/gradient-heading-module',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->slug       = 'ba_gradient_heading';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__( 'Brain Gradient Heading', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Gradient Heading', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'gradient-heading.svg';
 
 		$this->settings_modal_toggles = array(
@@ -44,7 +44,7 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 				'label'       => esc_html__( 'Title Text', 'addons-for-divi' ),
 				'Description' => esc_html__( 'Define the title text. Use <br> for line break.', 'addons-for-divi' ),
 				'type'        => 'textarea',
-				'default'     => 'Brain Addons <br> Gradient Heading',
+				'default'     => 'Divi Torque <br> Gradient Heading',
 				'toggle_slug' => 'content',
 			),
 			'use_link'     => array(
@@ -63,7 +63,7 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 				'label'       => esc_html__( 'Link Url', 'addons-for-divi' ),
 				'Description' => esc_html__( 'Define the link url for your title.', 'addons-for-divi' ),
 				'type'        => 'text',
-				'default'     => 'https://brainaddons.com',
+				'default'     => 'https://divitorque.com',
 				'toggle_slug' => 'content',
 				'show_if'     => array(
 					'use_link' => 'on',
@@ -346,4 +346,4 @@ class BA_Gradient_Heading extends BA_Builder_Module {
 	}
 }
 
-new BA_Gradient_Heading();
+new DTQ_Gradient_Heading();

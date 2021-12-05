@@ -1,20 +1,20 @@
 <?php
 
-class BA_Skill_Bar extends BA_Builder_Module {
+class DTQ_Skill_Bar extends BA_Builder_Module {
 
 	public $slug       = 'ba_skill_bar';
 	public $vb_support = 'on';
 	public $child_slug = 'ba_skill_bar_child';
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/skill-bars',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/skill-bars-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
-		$this->name      = esc_html__( 'Brain Skill Bars', 'addons-for-divi' );
+		$this->name      = esc_html__( 'Torque Skill Bars', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'skill-bars.svg';
 
 		$this->settings_modal_toggles = array(
@@ -32,7 +32,7 @@ class BA_Skill_Bar extends BA_Builder_Module {
 		);
 
 		$this->custom_css_fields = array(
-			'title'  => array(
+			'title' => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-skill__title',
 			),
@@ -185,4 +185,4 @@ class BA_Skill_Bar extends BA_Builder_Module {
 	}
 }
 
-new BA_Skill_Bar();
+new DTQ_Skill_Bar();

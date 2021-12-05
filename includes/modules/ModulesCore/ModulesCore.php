@@ -1,7 +1,7 @@
 <?php
 class BA_Builder_Module extends ET_Builder_Module {
 
-	public $default_color = '#1D39D8';
+	public $default_color = '#5b2cff';
 
 	protected function custom_background_fields(
 		$option_name,

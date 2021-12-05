@@ -1,15 +1,15 @@
 <?php
-class BA_Image_Compare extends BA_Builder_Module {
+class DTQ_Image_Compare extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/image-compare/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/image-compare-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
-		$this->name       = esc_html__( 'Brain Image Compare', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Image Compare', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'image-compare.svg';
 		$this->slug       = 'ba_image_compare';
 		$this->vb_support = 'on';
@@ -68,7 +68,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
 				'description'        => esc_html__( 'Upload an image to display as before image', 'addons-for-divi' ),
 				'hide_metadata'      => true,
-				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
+				'default'            => DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/placeholder.svg',
 				'computed_affects'   => array( '__compare' ),
 				'toggle_slug'        => 'before',
 				'dynamic_content'    => 'image',
@@ -98,7 +98,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display as after image.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
+				'default'            => DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/placeholder.svg',
 				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
 				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
 				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
@@ -260,7 +260,7 @@ class BA_Image_Compare extends BA_Builder_Module {
 
 			'__compare'       => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'BA_Image_Compare', 'get_image_compare' ),
+				'computed_callback'   => array( 'DTQ_Image_Compare', 'get_image_compare' ),
 				'computed_depends_on' => array(
 					'before_img',
 					'after_img',
@@ -554,4 +554,4 @@ class BA_Image_Compare extends BA_Builder_Module {
 	}
 }
 
-new BA_Image_Compare();
+new DTQ_Image_Compare();

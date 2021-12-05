@@ -1,6 +1,6 @@
 <?php
 
-class BA_DiviExtension extends DiviExtension {
+class DTQ_DiviExtension extends DiviExtension {
 
 	/**
 	 * The gettext domain for the extension's translations.
@@ -9,7 +9,7 @@ class BA_DiviExtension extends DiviExtension {
 	 *
 	 * @var string
 	 */
-	public $gettext_domain = 'brain-addons';
+	public $gettext_domain = 'addons-for-divi';
 
 	/**
 	 * The extension's WP Plugin name.
@@ -27,7 +27,7 @@ class BA_DiviExtension extends DiviExtension {
 	 *
 	 * @var string
 	 */
-	public $version = BRAIN_ADDONS_PLUGIN_VERSION;
+	public $version = DIVI_TORQUE_PLUGIN_VERSION;
 
 	/**
 	 * BrainAddons Extension constructor.
@@ -43,4 +43,4 @@ class BA_DiviExtension extends DiviExtension {
 	}
 }
 
-new BA_DiviExtension();
+new DTQ_DiviExtension();

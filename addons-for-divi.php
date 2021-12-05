@@ -1,42 +1,52 @@
 <?php
 /*
-Plugin Name: Brainaddons
-Plugin URI:  https://brainaddons.com/
-Description: <a href="https://brainaddons.com/">BrainAddons</a> is a library of unique and powerfull modules that works seamlessly with Divi. <a href="https://brainaddons.com/">BrainAddons</a> is free, and comes with great support.
-Version:     2.3.3
-Author:      BrainAddons
-Author URI:  https://brainaddons.com/
-License:     GPL2
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: addons-for-divi
-Domain Path: /languages
+ * Plugin Name: DiviTorque
+ * Plugin URI:  https://divitorque.com/
+ * Description: DiviTorque is a plugin that turns Divi theme into a powerful Swiss army knife.
+ * Version:     3.1.0
+ * Author:      DiviTorque
+ * Author URI:  https://divitorque.com/
+ * License: GPL3
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
+ * Text Domain: addons-for-divi
+ * Domain Path: /languages
+ * 
+ * @package DiviTorque
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ * Copyright 2021 DiviTorque <https://divitorque.com>
+ * 
+ */
 
-@package DiviTorque
-*/
-
-/*
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
-Copyright 2021 DiviTorque <https://divitorque.com>
-*/
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+// Exit if accessed directly
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
 }
 
-define( 'BRAIN_ADDONS_DEV_MODE', $_SERVER['REMOTE_ADDR'] == '127.0.0.1' );
+define( 'DIVI_TORQUE_PLUGIN_VERSION', '3.1.0' );
+define( 'DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'DIVI_TORQUE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+define( 'DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit( DIVI_TORQUE_PLUGIN_URL . 'assets' ) );
+define( 'DIVI_TORQUE_PLUGIN_FILE', __FILE__ );
+define( 'DIVI_TORQUE_PLUGIN_BASE', plugin_basename( __FILE__ ) );
+define( 'DIVI_TORQUE_REDIRECTION_FLAG', 'divitorque_activation_redirect' );
+
+do_action( 'divitorque_loaded' );
+
+//Compatibility - BrainAddons
 define( 'BRAIN_ADDONS_PLUGIN_VERSION', '2.3.3' );
 define( 'BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -46,97 +56,99 @@ define( 'BRAIN_ADDONS_PLUGIN_BASE', plugin_basename( __FILE__ ) );
 
 do_action( 'brainaddons_loaded' );
 
-if ( ! class_exists( 'BRAIN_ADDONS_PLUGIN' ) ) :
-	
-	final class BRAIN_ADDONS_PLUGIN {
+if ( !class_exists( 'DIVI_TORQUE_PLUGIN' ) ):
 
-		private static $instance;
+    final class DIVI_TORQUE_PLUGIN {
 
-		private function __construct() {
-			register_activation_hook( __FILE__, array( $this, 'activate' ) );
-			add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
-		}
+        private static $instance;
 
-		public static function instance() {
+        private function __construct() {
+            register_activation_hook( __FILE__, array( $this, 'activate' ) );
+            add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
+        }
 
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof BRAIN_ADDONS_PLUGIN ) ) {
-				self::$instance = new BRAIN_ADDONS_PLUGIN();
-				self::$instance->init();
-				self::$instance->includes();
-			}
+        public static function instance() {
 
-			return self::$instance;
-		}
+            if ( !isset( self::$instance ) && !( self::$instance instanceof DIVI_TORQUE_PLUGIN ) ) {
+                self::$instance = new DIVI_TORQUE_PLUGIN();
+                self::$instance->init();
+                self::$instance->includes();
+            }
 
-		private function init() {
-			add_action( 'divi_extensions_init', array( $this, 'initialize_extension' ) );
-		}
+            return self::$instance;
+        }
 
-		public function init_plugin() {
+        private function init() {
+            add_action( 'divi_extensions_init', array( $this, 'initialize_extension' ) );
+        }
 
-			if ( is_admin() ) {
-				new Brain_Addons_Divi\Includes\Admin();
-			} else {
-				new Brain_Addons_Divi\Includes\AssetsManager();
-			}
+        public function init_plugin() {
 
-			if ( is_admin() ) {
-				$this->initFeedback();
-			}
+            if ( is_admin() ) {
+                new DiviTorque\Includes\Admin();
+            } else {
+                new DiviTorque\Includes\AssetsManager();
+            }
 
-		}
+            if ( is_admin() ) {
+                $this->initFeedback();
+            }
 
-		public function activate() {
-			update_option( 'ba_version', BRAIN_ADDONS_PLUGIN_VERSION );
+        }
 
-			$inactive_extensions = get_option( 'ba_inactive_extensions', array() );
-			if ( ! in_array( 'login-designer', $inactive_extensions, true ) ) {
-				$installer = new BrainAddons\Ext\LoginDesigner\Installer();
-				$installer->run();
-			}
+        public function activate() {
+            
+            update_option( 'divitorque_version', DIVI_TORQUE_PLUGIN_VERSION );
+            
+            add_option( DIVI_TORQUE_REDIRECTION_FLAG, true );
 
-			if ( ! in_array( 'popup-maker', $inactive_extensions, true ) ) {
-				$installer = new BrainAddons\Popup_Post_Type();
-				$installer->register_post_type();
-				flush_rewrite_rules();
-			}
-		}
+            $inactive_extensions = get_option( 'ba_inactive_extensions', array() );
+            if ( !in_array( 'login-designer', $inactive_extensions, true ) ) {
+                $installer = new BrainAddons\Ext\LoginDesigner\Installer();
+                $installer->run();
+            }
 
-		private function includes() {
-			
-			require_once BRAIN_ADDONS_PLUGIN_DIR . '/freemius.php';
-			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/functions.php';
+            if ( !in_array( 'popup-maker', $inactive_extensions, true ) ) {
+                $installer = new BrainAddons\Popup_Post_Type();
+                $installer->register_post_type();
+                flush_rewrite_rules();
+            }
+        }
 
-			if ( is_admin() ) {
-				require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/admin.php';
-				require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/admin/feedback.php';
-			}
-			
-			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/customizer.php';
-			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/extensions/extensions.php';
-			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/admin/static-icons.php';
-			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/assets-manager.php';
-			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/functions-forms.php';
-		}
+        private function includes() {
+            require_once DIVI_TORQUE_PLUGIN_DIR . '/freemius.php';
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/functions.php';
 
-		public function initialize_extension() {
-			require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/divi-extension.php';
-		}
+            if ( is_admin() ) {
+                require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin.php';
+                require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/feedback.php';
+            }
 
-		private function initFeedback() {
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/customizer.php';
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/extensions/extensions.php';
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/static-icons.php';
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/assets-manager.php';
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/functions-forms.php';
+        }
 
-			$feedback = true;
-	
-			if ( $feedback ) {
-				new BrainAddons_Admin_Feedback();
-			}
-		}
+        public function initialize_extension() {
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/divi-extension.php';
+        }
 
-	}
+        private function initFeedback() {
+
+            $feedback = true;
+
+            if ( $feedback ) {
+                new DiviTorque_Admin_Feedback();
+            }
+        }
+
+    }
 endif;
 
-function ba_init_plugin() {
-	return BRAIN_ADDONS_PLUGIN::instance();
+function divitorque_plugin() {
+    return DIVI_TORQUE_PLUGIN::instance();
 }
 
-ba_init_plugin();
+divitorque_plugin();

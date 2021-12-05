@@ -76,7 +76,7 @@ class Popup_Post_Type {
      * @return void
      */
     public static function metabox(){
-        require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/metabox/popup-metabox.php';
+        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/metabox/popup-metabox.php';
         
         Metabox::instance();
 

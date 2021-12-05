@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain_Addons_Divi\Includes;
+namespace DiviTorque\Includes;
 
 defined( 'ABSPATH' ) || die();
 
@@ -14,12 +14,25 @@ class Admin {
 		add_action( 'wp_ajax_' . self::MODULES_NONCE, array( __CLASS__, 'save_data' ) );
 		add_action( 'ba_save_admin_data', array( __CLASS__, 'save_modules_data' ) );
 		add_action( 'ba_save_admin_data', array( __CLASS__, 'save_extensions_data' ) );
+
+        add_action( 'admin_init', [ __CLASS__, 'activation_redirect' ] );
 	}
+
+	public static function activation_redirect() {
+        if ( get_option( DIVI_TORQUE_REDIRECTION_FLAG, false ) ) {
+            delete_option( DIVI_TORQUE_REDIRECTION_FLAG );
+            if(!get_option( DIVI_TORQUE_REDIRECTION_FLAG, false ) || !divitorque_has_pro()){
+                die( wp_redirect( divitorque_dashboard_link() ) );
+            }else{
+                die( wp_redirect( divitorque_dashboard_link() ) );
+            }
+        }
+    }
 
 	public static function add_menu() {
 		add_menu_page(
-			__( 'BrianAddons', 'addons-for-divi' ),
-			__( 'BrainAddons', 'addons-for-divi' ),
+			__( 'DiviTorque', 'addons-for-divi' ),
+			__( 'DiviTorque', 'addons-for-divi' ),
 			'manage_options',
 			'addons-for-divi',
 			array( __CLASS__, 'render_main' ),
@@ -34,32 +47,27 @@ class Admin {
 			return;
 		}
 
-		$prefix = defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ? '' : '.min';
+		$prefix = defined( 'DTQ_DEBUG' ) && true === constant( 'DTQ_DEBUG' ) ? '' : '.min';
 
 		wp_enqueue_style(
-			'ba-admin',
-			BRAIN_ADDONS_PLUGIN_ASSETS . 'admin/css/admin' . $prefix . '.css',
+			'torque-admin',
+			DIVI_TORQUE_PLUGIN_ASSETS . 'admin/css/admin' . $prefix . '.css',
 			array(),
-			BRAIN_ADDONS_PLUGIN_VERSION,
+			DIVI_TORQUE_PLUGIN_VERSION,
 			'all'
 		);
 
-		wp_enqueue_style(
-			'google-nunito-font',
-			BRAIN_ADDONS_PLUGIN_ASSETS . 'fonts/nunito/stylesheet.min.css'
-		);
-
 		wp_enqueue_script(
-			'ba-admin-js',
-			BRAIN_ADDONS_PLUGIN_ASSETS . 'admin/js/admin' . $prefix . '.js',
+			'torque-admin-js',
+			DIVI_TORQUE_PLUGIN_ASSETS . 'admin/js/admin' . $prefix . '.js',
 			array( 'jquery' ),
-			BRAIN_ADDONS_PLUGIN_VERSION,
+			DIVI_TORQUE_PLUGIN_VERSION,
 			true
 		);
 
 		wp_localize_script(
-			'ba-admin-js',
-			'BA_PLUGIN',
+			'torque-admin-js',
+			'DTQ_PLUGIN',
 			array(
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 				'nonce'   => wp_create_nonce( self::MODULES_NONCE ),
@@ -282,9 +290,9 @@ class Admin {
 
 			'flipbox'               => array(
 				'title'  => __( 'Flipbox', 'addons-for-divi' ),
-				'demo'   => ba_has_pro() ? 'https://divi.brainaddons.com/flip-box-pro/' : 'https://divi.brainaddons.com/flip-box/',
+				'demo'   => divitorque_has_pro() ? 'https://divi.brainaddons.com/flip-box-pro/' : 'https://divi.brainaddons.com/flip-box/',
 				'icon'   => 'flipbox',
-				'is_pro' => ba_has_pro() ? true : false,
+				'is_pro' => divitorque_has_pro() ? true : false,
 			),
 
 			'news-ticker'           => array(
@@ -325,9 +333,9 @@ class Admin {
 
 			'flipbox'               => array(
 				'title'  => __( 'Flipbox', 'addons-for-divi' ),
-				'demo'   => ba_has_pro() ? 'https://divi.brainaddons.com/flipbox-pro' : 'https://divi.brainaddons.com/flipbox',
+				'demo'   => divitorque_has_pro() ? 'https://divi.brainaddons.com/flipbox-pro' : 'https://divi.brainaddons.com/flipbox',
 				'icon'   => 'flipbox',
-				'is_pro' => ba_has_pro() ? true : false,
+				'is_pro' => divitorque_has_pro() ? true : false,
 			),
 
 			'animated-text'         => array(
@@ -532,7 +540,7 @@ class Admin {
 			),
 			'author-box'           => array(
 				'title'  => __( 'Author Box', 'addons-for-divi' ),
-				'demo'   => 'https://brainaddons.com/',
+				'demo'   => 'https://divitorque.com/',
 				'icon'   => 'author_list',
 				'is_pro' => true,
 			),
@@ -549,30 +557,26 @@ class Admin {
 
 	public static function get_tabs() {
 
-		$icon_url = BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/admin/';
+		$icon_url = DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/admin/';
 
 		$tabs = array(
 			'home'       => array(
 				'title'    => esc_html__( 'General', 'addons-for-divi' ),
-				'icon'     => $icon_url . 'general.svg',
 				'renderer' => array( __CLASS__, 'render_home' ),
 			),
 
 			'modules'    => array(
 				'title'    => esc_html__( 'Modules', 'addons-for-divi' ),
-				'icon'     => $icon_url . 'modules.svg',
 				'renderer' => array( __CLASS__, 'render_modules' ),
 			),
 
 			'extensions' => array(
 				'title'    => esc_html__( 'Extension', 'addons-for-divi' ),
-				'icon'     => $icon_url . 'extensions.svg',
 				'renderer' => array( __CLASS__, 'render_extensions' ),
 			),
 
 			'pro'        => array(
 				'title'    => esc_html__( 'Get Pro', 'addons-for-divi' ),
-				'icon'     => $icon_url . 'get-pro.svg',
 				'renderer' => array( __CLASS__, 'render_pro' ),
 			),
 		);
@@ -581,7 +585,7 @@ class Admin {
 	}
 
 	private static function load_template( $template ) {
-		$file = BRAIN_ADDONS_PLUGIN_DIR . 'includes/admin/view/admin-' . $template . '.php';
+		$file = DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/view/admin-' . $template . '.php';
 		if ( is_readable( $file ) ) {
 			include $file;
 		}

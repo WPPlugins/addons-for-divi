@@ -15,6 +15,11 @@ jQuery(function($) {
                 title: "Awesome",
                 img_url: defaultImage
             }),
+            (window.ETBuilderBackend.defaults.ba_review = {
+                image: defaultImage,
+                title,
+                description: content + contentSuffix
+            }),
             (window.ETBuilderBackend.defaults.ba_advanced_team = {
                 member_name: "Jane Doe",
                 job_title: "CEO, Acme Inc.",
@@ -34,8 +39,8 @@ jQuery(function($) {
                 video_link: "https://youtu.be/q9XI0Lo-SWE"
             }),
             (window.ETBuilderBackend.defaults.ba_testimonial = {
+                image: defaultImage,
                 name: "Jane Doe",
-                title: "Job Title",
                 testimonial: content + contentSuffix
             }),
             (window.ETBuilderBackend.defaults.ba_skill_bar = {
@@ -65,7 +70,8 @@ jQuery(function($) {
                 photo: defaultImage
             }),
             (window.ETBuilderBackend.defaults.ba_icon_box = {
-                title
+                title,
+                description: content + contentSuffix
             }),
             (window.ETBuilderBackend.defaults.ba_flipbox = {
                 front_title: "Front Title",

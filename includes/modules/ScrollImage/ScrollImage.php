@@ -1,17 +1,17 @@
 <?php
-class BA_Scroll_Image extends BA_Builder_Module {
+class DTQ_Scroll_Image extends BA_Builder_Module {
 
 	public $slug       = 'ba_scroll_image';
 	public $vb_support = 'on';
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/scroll-image/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/scroll-image-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
-		$this->name      = esc_html__( 'Brain Scroll Image', 'addons-for-divi' );
+		$this->name      = esc_html__( 'Torque Scroll Image', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'scroll-image.svg';
 
 		$this->settings_modal_toggles = array(
@@ -32,7 +32,7 @@ class BA_Scroll_Image extends BA_Builder_Module {
 		);
 
 		$this->custom_css_fields = array(
-			'image'  => array(
+			'image' => array(
 				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-scroll-image img',
 			),
@@ -624,4 +624,4 @@ class BA_Scroll_Image extends BA_Builder_Module {
 	}
 }
 
-new BA_Scroll_Image();
+new DTQ_Scroll_Image();

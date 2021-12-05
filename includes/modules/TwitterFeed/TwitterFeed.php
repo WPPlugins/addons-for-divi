@@ -1,17 +1,17 @@
 <?php
 
-class BA_Twitter_Feed extends BA_Builder_Module {
+class DTQ_Twitter_Feed extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/twitter-feed',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/twitter-feed-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->vb_support = 'on';
-		$this->name       = esc_html__( 'Brain Twitter Feed', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Twitter Feed', 'addons-for-divi' );
 		$this->slug       = 'ba_twitter_feed';
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'twitter-feed.svg';
 
@@ -576,7 +576,7 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 			'__twitterfeed'       => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'BA_Twitter_Feed', 'twitter_feed_render' ),
+				'computed_callback'   => array( 'DTQ_Twitter_Feed', 'twitter_feed_render' ),
 				'computed_depends_on' => array(
 					'user_name',
 					'consumer_key',
@@ -1641,4 +1641,4 @@ class BA_Twitter_Feed extends BA_Builder_Module {
 
 }
 
-new BA_Twitter_Feed();
+new DTQ_Twitter_Feed();

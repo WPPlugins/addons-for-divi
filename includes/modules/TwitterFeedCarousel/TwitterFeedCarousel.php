@@ -1,18 +1,18 @@
 <?php
 
-class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
+class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/twitter-feed-carousel',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/twitter-feed-carousel-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_twitter_feed_carousel';
-		$this->name       = esc_html__( 'Brain Twitter Carousel', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Twitter Carousel', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'twitter-carousel.svg';
 
 		$this->settings_modal_toggles = array(
@@ -514,7 +514,7 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 			),
 			'__twitterfeed'       => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'BA_Twitter_Feed_Carousel', 'twitter_feed_render' ),
+				'computed_callback'   => array( 'DTQ_Twitter_Feed_Carousel', 'twitter_feed_render' ),
 				'computed_depends_on' => array(
 					'user_name',
 					'consumer_key',
@@ -1656,4 +1656,4 @@ class BA_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 }
 
-new BA_Twitter_Feed_Carousel();
+new DTQ_Twitter_Feed_Carousel();

@@ -18,7 +18,7 @@ class Customizer {
      * @return void
      */
     public function controls_helpers() {
-        require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/customizer-sanitizes.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/customizer-sanitizes.php'; // phpcs:ignore
     }
 
     /**
@@ -30,8 +30,8 @@ class Customizer {
     public function customize_register( $wp_customize ) {
 
         // Extend panel and section.
-        require BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/extend-customizer/customizer-panel.php';
-        require BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/extend-customizer/customizer-section.php';
+        require DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/extend-customizer/customizer-panel.php';
+        require DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/extend-customizer/customizer-section.php';
 
         // Register the panel and section.
         if ( class_exists( 'BrainAddons_WP_Customize_Panel' ) ) {
@@ -43,10 +43,10 @@ class Customizer {
         }
 
         // Add custom controls.
-        require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/controls/radio-image.php'; // phpcs:ignore
-        require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/controls/title.php'; // phpcs:ignore
-        require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/controls/toggle.php'; // phpcs:ignore
-        require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/controls/range.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/controls/radio-image.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/controls/title.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/controls/toggle.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/controls/range.php'; // phpcs:ignore
 
         // Register the control types that we're using as JavaScript controls.
         if ( class_exists( 'BrainAddons_Title_Control' ) ) {
@@ -66,16 +66,16 @@ class Customizer {
         }
 
         $inactive_extensions = get_option( 'ba_inactive_extensions', array() );
-        $customizer_imgs     = BRAIN_ADDONS_PLUGIN_URL . '/includes/customizer/imgs/';
+        $customizer_imgs     = DIVI_TORQUE_PLUGIN_URL . '/includes/customizer/imgs/';
 
         if ( !in_array( 'login-designer', $inactive_extensions, true ) ) {
             $ld_defaults = Login_Designer::defaults();
-            require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/options/login-designer.php'; // phpcs:ignore
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/options/login-designer.php'; // phpcs:ignore
         }
 
         if ( !in_array( 'blog-designer', $inactive_extensions, true ) && ba_has_pro() ) {
             $bd_defaults = Blog_Designer::defaults();
-            require_once BRAIN_ADDONS_PLUGIN_DIR . 'includes/customizer/options/blog-designer.php'; // phpcs:ignore
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/options/blog-designer.php'; // phpcs:ignore
         }
 
         $wp_customize->add_panel(
@@ -94,22 +94,22 @@ class Customizer {
 
     public function customize_controls_enqueue_scripts() {
 
-        $path = BRAIN_ADDONS_PLUGIN_URL . 'includes/customizer/';
+        $path = DIVI_TORQUE_PLUGIN_URL . 'includes/customizer/';
 
-        $file_prefix = ( defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ) ? '' : '.min';
+        $file_prefix = ( defined( 'DTQ_DEBUG' ) && true === constant( 'DTQ_DEBUG' ) ) ? '' : '.min';
 
         wp_enqueue_style(
             'brainaddons-customizer',
             $path . 'css/customizer' . $file_prefix . '.css',
             false,
-            BRAIN_ADDONS_PLUGIN_VERSION
+            DIVI_TORQUE_PLUGIN_VERSION
         );
 
         wp_enqueue_style(
             'brainaddons-customizer-preview',
             $path . 'css/customizer-preview' . $file_prefix . '.css',
             false,
-            BRAIN_ADDONS_PLUGIN_VERSION
+            DIVI_TORQUE_PLUGIN_VERSION
         );
 
         wp_enqueue_script(
@@ -136,9 +136,9 @@ class Customizer {
             return;
         }
 
-        $path = BRAIN_ADDONS_PLUGIN_URL . 'includes/customizer/js/';
+        $path = DIVI_TORQUE_PLUGIN_URL . 'includes/customizer/js/';
 
-        $file_prefix = ( defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ) ? '' : '.min';
+        $file_prefix = ( defined( 'DTQ_DEBUG' ) && true === constant( 'DTQ_DEBUG' ) ) ? '' : '.min';
 
         wp_enqueue_script(
             'brainaddons-customizer-preview',

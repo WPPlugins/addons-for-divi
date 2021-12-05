@@ -1,5 +1,5 @@
 <?php
-class BA_Logo_Grid_Child extends BA_Builder_Module {
+class DTQ_Logo_Grid_Child extends BA_Builder_Module {
 
 	public $slug                     = 'ba_logo_grid_child';
 	public $vb_support               = 'on';
@@ -239,4 +239,4 @@ class BA_Logo_Grid_Child extends BA_Builder_Module {
 	}
 }
 
-new BA_Logo_Grid_Child();
+new DTQ_Logo_Grid_Child();

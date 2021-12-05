@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) or die();
 
-class BrainAddons_Admin_Feedback {
+class DiviTorque_Admin_Feedback {
 	
 	public function __construct() {
 		add_action( 'wp_ajax_brainaddons-dismiss-notice', [ $this, 'ajax_dismiss_notice' ] );
@@ -21,13 +21,13 @@ class BrainAddons_Admin_Feedback {
 		<div class="ba-notice notice is-dismissible">
 			<div class="ba-notice-container">
 				<div class="ba-notice-image">
-                    <img src="https://ps.w.org/addons-for-divi/assets/icon.svg" alt="brainaddons-logo">
+                    <img src="https://ps.w.org/addons-for-divi/assets/icon.svg" alt="divitorque-logo">
 				</div>
 				<div class="ba-notice-content">
 					<div class="ba-notice-heading">
-						<?php esc_html_e( 'Hello! Seems like you are using BrainAddons plugin to build your Divi website - Thanks a lot!', 'addons-for-divi' ); ?>
+						<?php esc_html_e( 'Hello! Seems like you are using DiviTorque plugin to build your Divi website - Thanks a lot!', 'addons-for-divi' ); ?>
 					</div>
-					<?php esc_html_e( 'Could you please do us a BIG favor and give it a 5-star rating on WordPress? This would boost our motivation and help other users make a comfortable decision while choosing the BrainAddons plugin.', 'addons-for-divi' ); ?>
+					<?php esc_html_e( 'Could you please do us a BIG favor and give it a 5-star rating on WordPress? This would boost our motivation and help other users make a comfortable decision while choosing the Divi Torque plugin.', 'addons-for-divi' ); ?>
 					<br/>
 					<div class="ba-review-notice-container">
 						<a href="https://wordpress.org/support/plugin/addons-for-divi/reviews/?filter=5#new-post" class="ba-review-deserve button-primary" target="_blank">

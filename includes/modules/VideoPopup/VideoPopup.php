@@ -1,17 +1,17 @@
 <?php
-class BA_Video_Popup extends BA_Builder_Module {
+class DTQ_Video_Popup extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/video-popup',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/video-popup-module',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->slug       = 'ba_video_popup';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__( 'Brain Video Popup', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Video Popup', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'video-popup.svg';
 
 		$this->settings_modal_toggles = array(
@@ -34,19 +34,19 @@ class BA_Video_Popup extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'image'        => array(
 				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-video-popup-figure img',
+				'selector' => '%%order_class%% .ba-video-popup .ba-video-popup-figure img',
 			),
 			'icon_wrapper' => array(
 				'label'    => esc_html__( 'Icon Wrapper', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-video-popup-icon a',
+				'selector' => '%%order_class%% .ba-video-popup .ba-video-popup-icon',
 			),
 			'icon'         => array(
 				'label'    => esc_html__( 'Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-video-popup-icon svg',
+				'selector' => '%%order_class%% .ba-video-popup .ba-video-popup-icon svg',
 			),
-			'wave'         => array(
-				'label'    => esc_html__( 'Animated Wave', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-video-popup-icon a:after',
+			'text'         => array(
+				'label'    => esc_html__( 'Text', 'addons-for-divi' ),
+				'selector' => '%%order_class%% .ba-video-popup .ba-video-popup-text',
 			),
 		);
 	}
@@ -71,7 +71,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'description'        => esc_html__( 'Here you can define placeholder image for the video.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'data_type'          => 'image',
-				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
+				'default'            => DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/placeholder.svg',
 				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
 				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
 				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
@@ -96,8 +96,9 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'toggle_slug' => 'content',
 				'default'     => 'icon',
 				'options'     => array(
-					'icon' => esc_html__( 'Icon', 'addons-for-divi' ),
-					'text' => esc_html__( 'Text', 'addons-for-divi' ),
+					'icon'      => esc_html__( 'Icon', 'addons-for-divi' ),
+					'text'      => esc_html__( 'Text', 'addons-for-divi' ),
+					'icon_text' => esc_html__( 'Icon & Text', 'addons-for-divi' ),
 				),
 			),
 			'icon'             => array(
@@ -115,7 +116,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 					'6' => esc_html__( 'Icon 6', 'addons-for-divi' ),
 				),
 				'show_if'     => array(
-					'trigger_element' => 'icon',
+					'trigger_element' => array( 'icon', 'icon_text' ),
 				),
 			),
 			'text'             => array(
@@ -125,7 +126,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'toggle_slug' => 'content',
 				'default'     => 'Play',
 				'show_if'     => array(
-					'trigger_element' => 'text',
+					'trigger_element' => array( 'text', 'icon_text' ),
 				),
 			),
 			'type'             => array(
@@ -186,7 +187,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				),
 			),
 			'icon_alignment'   => array(
-				'label'           => esc_html__( 'Icon Alignment', 'addons-for-divi' ),
+				'label'           => esc_html__( 'Icon/Text Alignment', 'addons-for-divi' ),
 				'description'     => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 				'type'            => 'text_align',
 				'option_category' => 'layout',
@@ -196,8 +197,24 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'toggle_slug'     => 'settings',
 				'mobile_options'  => true,
 				'show_if'         => array(
-					'use_overlay'     => 'off',
-					'trigger_element' => 'icon',
+					'use_overlay' => 'off',
+				),
+			),
+			'icon_spacing'     => array(
+				'label'          => esc_html__( 'Spacing Between Icon and Text', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define spacing between icon and text.', 'addons-for-divi' ),
+				'type'           => 'range',
+				'default'        => '20px',
+				'default_unit'   => 'px',
+				'mobile_options' => true,
+				'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'toggle_slug'    => 'settings',
+				'show_if'        => array(
+					'trigger_element' => 'icon_text',
 				),
 			),
 			'img_height'       => array(
@@ -220,7 +237,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 			),
 			'icon_color'       => array(
 				'label'        => esc_html__( 'Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define custom color for your icon . ', 'brain - divi - addons' ),
+				'description'  => esc_html__( 'Here you can define custom color for your icon . ', 'Torque  - divi - addons' ),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -228,7 +245,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'toggle_slug'  => 'icon',
 				'hover'        => 'tabs',
 				'show_if'      => array(
-					'trigger_element' => 'icon',
+					'trigger_element' => array( 'icon', 'icon_text' ),
 				),
 			),
 			'icon_size'        => array(
@@ -247,7 +264,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'toggle_slug'    => 'icon',
 				'tab_slug'       => 'advanced',
 				'show_if'        => array(
-					'trigger_element' => 'icon',
+					'trigger_element' => array( 'icon', 'icon_text' ),
 				),
 			),
 			'icon_opacity'     => array(
@@ -265,7 +282,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'hover'          => 'tabs',
 				'show_if'        => array(
-					'trigger_element' => 'icon',
+					'trigger_element' => array( 'icon', 'icon_text' ),
 				),
 			),
 			'icon_height'      => array(
@@ -283,7 +300,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'mobile_options' => true,
 				'show_if'        => array(
-					'trigger_element' => 'icon',
+					'trigger_element' => array( 'icon', 'icon_text' ),
 				),
 			),
 			'icon_width'       => array(
@@ -301,7 +318,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'mobile_options' => true,
 				'show_if'        => array(
-					'trigger_element' => 'icon',
+					'trigger_element' => array( 'icon', 'icon_text' ),
 				),
 			),
 			'icon_bg'          => array(
@@ -313,7 +330,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'tab_slug'     => 'advanced',
 				'hover'        => 'tabs',
 				'show_if'      => array(
-					'trigger_element' => 'icon',
+					'trigger_element' => array( 'icon', 'icon_text' ),
 				),
 			),
 			'icon_radius'      => array(
@@ -330,7 +347,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'toggle_slug'    => 'icon',
 				'tab_slug'       => 'advanced',
 				'show_if'        => array(
-					'trigger_element' => 'icon',
+					'trigger_element' => array( 'icon', 'icon_text' ),
 				),
 			),
 			// Popup.
@@ -356,7 +373,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 
 		$text = array(
 			'use_text_box'    => array(
-				'label'           => esc_html__( 'Text Box', 'addons-for-divi' ),
+				'label'           => esc_html__( 'Use Text Box', 'addons-for-divi' ),
 				'description'     => esc_html__( 'Here you can choose whether overlay image should be used.', 'addons-for-divi' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
@@ -368,7 +385,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'toggle_slug'     => 'text',
 				'tab_slug'        => 'advanced',
 				'show_if'         => array(
-					'trigger_element' => 'text',
+					'trigger_element' => array( 'text', 'icon_text' ),
 				),
 			),
 			'text_box_height' => array(
@@ -387,7 +404,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'mobile_options' => true,
 				'show_if'        => array(
 					'use_text_box'    => 'on',
-					'trigger_element' => 'text',
+					'trigger_element' => array( 'text', 'icon_text' ),
 				),
 			),
 			'text_box_width'  => array(
@@ -406,7 +423,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'mobile_options' => true,
 				'show_if'        => array(
 					'use_text_box'    => 'on',
-					'trigger_element' => 'text',
+					'trigger_element' => array( 'text', 'icon_text' ),
 				),
 			),
 			'text_box_bg'     => array(
@@ -420,7 +437,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'hover'        => 'tabs',
 				'show_if'      => array(
 					'use_text_box'    => 'on',
-					'trigger_element' => 'text',
+					'trigger_element' => array( 'text', 'icon_text' ),
 				),
 			),
 			'text_box_radius' => array(
@@ -438,7 +455,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'show_if'        => array(
 					'use_text_box'    => 'on',
-					'trigger_element' => 'text',
+					'trigger_element' => array( 'text', 'icon_text' ),
 				),
 			),
 		);
@@ -458,27 +475,32 @@ class BA_Video_Popup extends BA_Builder_Module {
 
 	public function get_advanced_fields_config() {
 
-		$advanced_fields                 = array();
-		$advanced_fields['text']         = false;
-		$advanced_fields['fonts']        = false;
-		$advanced_fields['text_shadow']  = false;
-		$advanced_fields['link_options'] = false;
+		$advanced_fields                = array();
+		$advanced_fields['text']        = false;
+		$advanced_fields['fonts']       = false;
+		$advanced_fields['text_shadow'] = false;
 
 		$advanced_fields['fonts']['trigger'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-video-popup-text a',
+				'main'      => '%%order_class%% .ba-video-popup .ba-video-popup-text',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
 			'toggle_slug'     => 'text',
-			'hide_text_align' => false,
+			'hide_text_align' => true,
+			'font_size'       => array(
+				'default' => '16px',
+			),
 		);
 
 		return $advanced_fields;
 	}
 
 	protected function render_trigger( $icon ) {
-		if ( 'icon' === $this->props['trigger_element'] ) {
+		$svg_icon = '';
+		$text     = '';
+
+		if ( 'text' !== $this->props['trigger_element'] ) {
 			$icons = array(
 				'1' => '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 511.999 511.999"><g><path d="M443.86,196.919L141.46,10.514C119.582-2.955,93.131-3.515,70.702,9.016c-22.429,12.529-35.819,35.35-35.819,61.041  v371.112c0,38.846,31.3,70.619,69.77,70.829c0.105,0,0.21,0.001,0.313,0.001c12.022-0.001,24.55-3.769,36.251-10.909 c9.413-5.743,12.388-18.029,6.645-27.441c-5.743-9.414-18.031-12.388-27.441-6.645c-5.473,3.338-10.818,5.065-15.553,5.064 c-14.515-0.079-30.056-12.513-30.056-30.898V70.058c0-11.021,5.744-20.808,15.364-26.183c9.621-5.375,20.966-5.135,30.339,0.636 l302.401,186.405c9.089,5.596,14.29,14.927,14.268,25.601c-0.022,10.673-5.261,19.983-14.4,25.56L204.147,415.945 c-9.404,5.758-12.36,18.049-6.602,27.452c5.757,9.404,18.048,12.36,27.452,6.602l218.611-133.852  c20.931-12.769,33.457-35.029,33.507-59.55C477.165,232.079,464.729,209.767,443.86,196.919z"/></g></svg>',
 
@@ -493,11 +515,14 @@ class BA_Video_Popup extends BA_Builder_Module {
 				'6' => '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 310 310"><g><path d="M297.917,64.645c-11.19-13.302-31.85-18.728-71.306-18.728H83.386c-40.359,0-61.369,5.776-72.517,19.938 C0,79.663,0,100.008,0,128.166v53.669c0,54.551,12.896,82.248,83.386,82.248h143.226c34.216,0,53.176-4.788,65.442-16.527 C304.633,235.518,310,215.863,310,181.835v-53.669C310,98.471,309.159,78.006,297.917,64.645z M199.021,162.41l-65.038,33.991 c-1.454,0.76-3.044,1.137-4.632,1.137c-1.798,0-3.592-0.484-5.181-1.446c-2.992-1.813-4.819-5.056-4.819-8.554v-67.764 c0-3.492,1.822-6.732,4.808-8.546c2.987-1.814,6.702-1.938,9.801-0.328l65.038,33.772c3.309,1.718,5.387,5.134,5.392,8.861 C204.394,157.263,202.325,160.684,199.021,162.41z"/></g></svg>',
 			);
 
-			return $icons[ $icon ];
-		} else {
-			return $this->props['text'];
+			$svg_icon = sprintf( '<span class="ba-video-popup-icon">%1$s</span>', $icons[ $icon ] );
 		}
 
+		if ( 'icon' !== $this->props['trigger_element'] ) {
+			$text = sprintf( '<span class="ba-video-popup-text">%1$s</span>', $this->props['text'] );
+		}
+
+		return $svg_icon . $text;
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
@@ -560,8 +585,9 @@ class BA_Video_Popup extends BA_Builder_Module {
 				$video_id = $ex_link[0];
 			}
 		} elseif ( 'vm' === $type ) {
-			$ex_link  = explode( '/', $video_link );
-			$video_id = $ex_link[ count( $ex_link ) - 1 ];
+			if ( preg_match( '/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/', $video_link, $output_array ) ) {
+				$video_id = $output_array[5];
+			}
 		}
 
 		if ( 'on' === $use_overlay ) {
@@ -573,13 +599,12 @@ class BA_Video_Popup extends BA_Builder_Module {
 				$image_alt
 			);
 		}
-
 		return sprintf(
 			'<div class="ba-module ba-video-popup">
                 %5$s
-                <div class="ba-video-popup-%9$s">
+                <div class="ba-video-popup-wrap">
 					<a
-						class="ba-popup-%6$s"
+						class="ba-video-popup-trigger ba-popup-%6$s"
 						data-order="%4$s"
 						data-id="%8$s"
 						data-type="%6$s"
@@ -623,12 +648,20 @@ class BA_Video_Popup extends BA_Builder_Module {
 		$icon_opacity       = $this->props['icon_opacity'];
 		$icon_opacity_hover = $this->get_hover_value( 'icon_opacity' );
 
-		if ( 'icon' === $trigger_element ) {
+		$this->get_responsive_styles(
+			'icon_alignment',
+			'%%order_class%% .ba-video-popup-icon',
+			array( 'primary' => 'justify-content' ),
+			array( 'default' => 'center' ),
+			$render_slug
+		);
+
+		if ( 'text' !== $trigger_element ) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-video-popup-icon svg',
+					'selector'    => '%%order_class%% .ba-video-popup svg',
 					'declaration' => sprintf( 'fill: %1$s;', $icon_color ),
 				)
 			);
@@ -637,7 +670,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%%:hover .ba-video-popup-icon svg',
+						'selector'    => '%%order_class%%:hover .ba-video-popup svg',
 						'declaration' => sprintf( 'fill: %1$s;', $icon_color_hover ),
 					)
 				);
@@ -645,7 +678,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'icon_height',
-				'%%order_class%% .ba-video-popup-icon a',
+				'%%order_class%% .ba-video-popup .ba-video-popup-icon',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'initial' ),
 				$render_slug
@@ -653,10 +686,18 @@ class BA_Video_Popup extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'icon_width',
-				'%%order_class%% .ba-video-popup-icon a',
+				'%%order_class%% .ba-video-popup .ba-video-popup-icon',
 				array( 'primary' => 'width' ),
 				array( 'default' => 'initial' ),
 				$render_slug
+			);
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .ba-video-popup .ba-video-popup-icon',
+					'declaration' => sprintf( 'border-radius:%1$s;', $icon_radius ),
+				)
 			);
 
 			$this->get_responsive_styles(
@@ -676,39 +717,10 @@ class BA_Video_Popup extends BA_Builder_Module {
 					)
 				);
 			}
-
-			if ( ! empty( $icon_bg ) ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .ba-video-popup-icon a',
-						'declaration' => sprintf( 'background: %1$s;', $icon_bg ),
-					)
-				);
-			}
-
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-video-popup-icon a, %%order_class%% .ba-video-popup-icon a:after',
-					'declaration' => sprintf( 'border-radius:%1$s;', $icon_radius ),
-				)
-			);
-
-			if ( ! empty( $icon_bg_hover ) ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%%:hover .ba-video-popup-icon a',
-						'declaration' => sprintf( 'background: %1$s;', $icon_bg_hover ),
-					)
-				);
-			}
-
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-video-popup-icon i',
+					'selector'    => '%%order_class%% .ba-video-popup-icon svg',
 					'declaration' => "opacity:{$icon_opacity};",
 				)
 			);
@@ -717,26 +729,46 @@ class BA_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%%:hover .ba-video-popup-icon i',
+						'selector'    => '%%order_class%%:hover .ba-video-popup-icon svg',
 						'declaration' => "opacity:{$icon_opacity_hover};",
+					)
+				);
+			}
+
+			if ( ! empty( $icon_bg ) ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-video-popup-icon',
+						'declaration' => sprintf( 'background: %1$s;', $icon_bg ),
+					)
+				);
+			}
+
+			if ( ! empty( $icon_bg_hover ) ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%%:hover .ba-video-popup-icon',
+						'declaration' => sprintf( 'background: %1$s;', $icon_bg_hover ),
 					)
 				);
 			}
 		}
 
-		if ( 'text' === $trigger_element ) {
+		if ( 'icon' !== $trigger_element ) {
 			if ( 'on' === $use_text_box ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-video-popup-text a, %%order_class%% .ba-video-popup-text a:after',
+						'selector'    => '%%order_class%% .ba-video-popup .ba-video-popup-text',
 						'declaration' => sprintf( 'border-radius:%1$s;', $text_box_radius ),
 					)
 				);
 
 				$this->get_responsive_styles(
 					'text_box_height',
-					'%%order_class%% .ba-video-popup-text a',
+					'%%order_class%% .ba-video-popup .ba-video-popup-text',
 					array( 'primary' => 'height' ),
 					array( 'default' => '80px' ),
 					$render_slug
@@ -744,7 +776,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 
 				$this->get_responsive_styles(
 					'text_box_width',
-					'%%order_class%% .ba-video-popup-text a',
+					'%%order_class%% .ba-video-popup .ba-video-popup-text',
 					array( 'primary' => 'width' ),
 					array( 'default' => '80px' ),
 					$render_slug
@@ -754,7 +786,7 @@ class BA_Video_Popup extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-video-popup-text a',
+							'selector'    => '%%order_class%% .ba-video-popup .ba-video-popup-text',
 							'declaration' => sprintf( 'background: %1$s;', $text_box_bg ),
 						)
 					);
@@ -764,34 +796,30 @@ class BA_Video_Popup extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-video-popup-text a:hover',
+							'selector'    => '%%order_class%%:hover .ba-video-popup .ba-video-popup-text',
 							'declaration' => sprintf( 'background: %1$s;', $text_box_bg_hover ),
 						)
 					);
 				}
 			}
-
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-video-popup-text',
-					'declaration' => 'justify-content: center; position: absolute; left: 0; top: 0;',
-				)
-			);
+			if ( 'on' === $use_overlay ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-video-popup-trigger',
+						'declaration' => 'justify-content: center; position: absolute; left: 0; top: 0;',
+					)
+				);
+			}
 		}
 
-		if ( 'on' === $use_animation ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-video-popup-icon a:after, %%order_class%% .ba-video-popup-text a:after',
-					'declaration' => sprintf(
-						'content: "";
-						-webkit-box-shadow: 0 0 0 15px %1$s, 0 0 0 30px %1$s, 0 0 0 45px %1$s;
-						box-shadow: 0 0 0 15px %1$s, 0 0 0 30px %1$s, 0 0 0 45px %1$s;',
-						$wave_bg
-					),
-				)
+		if ( 'icon_text' === $trigger_element ) {
+			$this->get_responsive_styles(
+				'icon_spacing',
+				'%%order_class%% .ba-video-popup-icon',
+				array( 'primary' => 'margin-right' ),
+				array( 'default' => '20px' ),
+				$render_slug
 			);
 		}
 
@@ -805,25 +833,69 @@ class BA_Video_Popup extends BA_Builder_Module {
 				$render_slug
 			);
 
-			$this->get_custom_bg_style( $render_slug, 'image', '%%order_class%% .ba-video-popup-figure:before', '%%order_class%%:hover .ba-video-popup-figure:before' );
+			$this->get_custom_bg_style(
+				$render_slug,
+				'image',
+				'%%order_class%% .ba-video-popup-figure:before',
+				'%%order_class%%:hover .ba-video-popup-figure:before'
+			);
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-video-popup-icon',
+					'selector'    => '%%order_class%% .ba-video-popup-trigger',
 					'declaration' => 'justify-content: center; position: absolute; left: 0; top: 0;',
 				)
 			);
-		} else {
-			$this->get_responsive_styles(
-				'icon_alignment',
-				'%%order_class%% .ba-video-popup-icon',
-				array( 'primary' => 'justify-content' ),
-				array( 'default' => 'center' ),
-				$render_slug
+		}
+
+		// Animation.
+		if ( 'on' === $use_animation ) {
+			$selector = '%%order_class%% .ba-video-popup a:after';
+			if ( 'icon_text' === $trigger_element ) {
+				$selector = '%%order_class%% .ba-video-popup .ba-video-popup-icon:after';
+			}
+
+			if ( 'icon' !== $trigger_element ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => $selector,
+						'declaration' => sprintf(
+							'border-radius: %1$s;',
+							$text_box_radius
+						),
+					)
+				);
+			}
+
+			if ( 'text' !== $trigger_element ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => $selector,
+						'declaration' => sprintf(
+							'border-radius: %1$s;',
+							$icon_radius
+						),
+					)
+				);
+			}
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => $selector,
+					'declaration' => sprintf(
+						'content: "";
+						-webkit-box-shadow: 0 0 0 15px %1$s, 0 0 0 30px %1$s, 0 0 0 45px %1$s;
+						box-shadow: 0 0 0 15px %1$s, 0 0 0 30px %1$s, 0 0 0 45px %1$s;',
+						$wave_bg
+					),
+				)
 			);
 		}
 	}
 }
 
-new BA_Video_Popup();
+new DTQ_Video_Popup();

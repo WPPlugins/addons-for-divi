@@ -1,17 +1,17 @@
 <?php
-class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
+class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 	public $slug       = 'ba_news_ticker';
 	public $vb_support = 'on';
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/news-ticker/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/news-ticker-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
-		$this->name      = esc_html__( 'Brain News Ticker', 'addons-for-divi' );
+		$this->name      = esc_html__( 'Torque News Ticker', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'post-ticker.svg';
 
 		$this->settings_modal_toggles = array(
@@ -36,15 +36,15 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-news-title',
 			),
-			'item'  => array(
+			'item'   => array(
 				'label'    => esc_html__( 'News Item', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-news-wrap li',
 			),
-			'text'  => array(
+			'text'   => array(
 				'label'    => esc_html__( 'News Text', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-news-wrap li a',
 			),
-			'bullet'  => array(
+			'bullet' => array(
 				'label'    => esc_html__( 'Bullet', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-news-wrap li a:before',
 			),
@@ -81,7 +81,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 			'include_categories' => array(
 				'label'            => esc_html__( 'Included Categories', 'addons-for-divi' ),
-				'description'            => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'addons-for-divi' ),
 				'type'             => 'categories',
 				'meta_categories'  => array(
 					'current' => esc_html__( 'Current Category', 'addons-for-divi' ),
@@ -255,7 +255,7 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 			'__news'             => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'BA_News_Ticker', 'get_news' ),
+				'computed_callback'   => array( 'DTQ_News_Ticker', 'get_news' ),
 				'computed_depends_on' => array(
 					'include_categories',
 					'news_count',
@@ -406,9 +406,8 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 		$post_id           = isset( $current_page['id'] ) ? (int) $current_page['id'] : 0;
 		$query_args['cat'] = implode( ',', self::filter_include_categories( $include_categories, $post_id ) );
-		
 
-		$query             = new WP_Query( $query_args );
+		$query = new WP_Query( $query_args );
 
 		ob_start();
 
@@ -620,4 +619,4 @@ class BA_News_Ticker extends BA_Builder_Module_Type_PostBased {
 	}
 }
 
-new BA_News_Ticker();
+new DTQ_News_Ticker();

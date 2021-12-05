@@ -1,13 +1,10 @@
 <div class="ba-admin wrapper">
-	<h1 class="screen-reader-text"><?php esc_html_e( 'BrainAddons Options', 'addons-for-divi' ); ?></h1>
+	<h1 class="screen-reader-text"><?php esc_html_e( 'DiviTorque Settings', 'addons-for-divi' ); ?></h1>
 	<div class="ba-admin-header">
 		<div class="ba-admin-logo-inline">
-			<?php $logo_url = BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/admin/'; ?>
+			<?php $logo_url = DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/admin/'; ?>
 			<div class="ba-header-left">
-				<div class="ba-admin-logo-inline-svg">
-					<img class="ba-logo-icon-size" src="<?php echo $logo_url . 'brain-addons-icon.svg'; ?>" alt="BrainAddons">
-				</div> 
-				<?php esc_attr_e( 'Brain Addons Settings', 'addons-for-divi' ); ?>
+				<?php esc_attr_e( 'DiviTorque Settings', 'addons-for-divi' ); ?>
 			</div>
 		</div>
 		<div class="ba-nav" role="tablist">
@@ -18,7 +15,7 @@
 				foreach ( self::get_tabs() as $slug => $tab ) :
 
 					$slug = esc_attr( strtolower( $slug ) );
-					if ( ba_has_pro() && 'pro' === $slug ) {
+					if ( divitorque_has_pro() && 'pro' === $slug ) {
 						continue;
 					}
 
@@ -35,13 +32,11 @@
 
 					printf(
 						'<a href="%1$s" aria-controls="tab-content-%2$s" id="tab-nav-%2$s" class="%3$s" role="tab">
-							<img src="%4$s" alt="%5$s">
-							<span>%5$s</span>
+							<span>%4$s</span>
                         </a>',
 						$href,
 						$slug,
 						$class,
-						$tab['icon'],
 						$tab['title']
 					);
 
@@ -51,12 +46,28 @@
 			</nav>
 		</div>
 	</div>
+
+	<?php if ( ! divitorque_has_pro() ) : ?>
+	<div class="baa-get-pro-notify">
+		<?php $badge_url = DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/admin/'; ?>
+		<img class="baa-fly" src="<?php echo $badge_url; ?>/fly.webp" alt="">
+		<div class="baa-ct-left">
+			<h2>DiviTorque Pro</h2>
+			<h3>Unlock a Faster Divi Experience</h3>
+		</div>
+		<div class="baa-ct-right">
+			<a class="baa-btn-pro" href="https://divitorque.com/pricing/">UPGRADE TO PRO</a>
+			<img src="<?php echo $badge_url; ?>/sale-price.svg" alt="">
+		</div>
+	</div>
+	<?php endif; ?>
+
 	<div class="ba-admin-tabs">
 		<div class="ba-admin-tabs-content">
 			<?php
 				$tab_count = 1;
 
-				foreach ( self::get_tabs() as $slug => $tab ) :
+			foreach ( self::get_tabs() as $slug => $tab ) :
 
 				$class = 'ba-admin-tabs-content-item';
 
@@ -64,18 +75,16 @@
 					$class .= ' active-tab';
 				}
 
-				if ( ba_has_pro() && 'pro' === $slug ) {
+				if ( divitorque_has_pro() && 'pro' === $slug ) {
 					continue;
 				}
 
 				$slug = esc_attr( strtolower( $slug ) );
 
 				?>
-
 					<div class="<?php echo $class; ?>" id="tab-content-<?php echo $slug; ?>" role="tabpanel" aria-labelledby="tab-nav-<?php echo $slug; ?>">
 					<?php call_user_func( $tab['renderer'], $slug, $tab ); ?>
 					</div>
-
 				<?php
 				++$tab_count;
 				endforeach;

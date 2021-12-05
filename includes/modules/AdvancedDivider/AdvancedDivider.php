@@ -1,17 +1,17 @@
 <?php
-class BA_Advanced_Divider extends BA_Builder_Module {
+class DTQ_Advanced_Divider extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/advanced-divider/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/advanced-divider-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_advanced_divider';
-		$this->name       = esc_html__( 'Brain Divider', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Divider', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'advanced-divider.svg';
 
 		$this->settings_modal_toggles = array(
@@ -1079,4 +1079,4 @@ class BA_Advanced_Divider extends BA_Builder_Module {
 }
 
 
-new BA_Advanced_Divider();
+new DTQ_Advanced_Divider();

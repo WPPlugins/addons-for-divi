@@ -1,5 +1,5 @@
 <?php
-class BA_Image_Carousel_Child extends BA_Builder_Module {
+class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 
 	public $slug                     = 'ba_image_carousel_child';
 	public $vb_support               = 'on';
@@ -671,4 +671,4 @@ class BA_Image_Carousel_Child extends BA_Builder_Module {
 	}
 }
 
-new BA_Image_Carousel_Child();
+new DTQ_Image_Carousel_Child();

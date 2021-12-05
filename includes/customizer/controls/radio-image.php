@@ -32,9 +32,9 @@ class BrainAddons_Radio_Image extends \WP_Customize_Control {
 
 	public function enqueue() {
 
-		$css_path    = BRAIN_ADDONS_PLUGIN_URL . '/includes/customizer/controls/css/';
-        $file_prefix = ( defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ) ? '' : '.min';
-        wp_enqueue_style( 'brainaddons-radio-image', $css_path . 'radio-image' . $file_prefix . '.css', false, BRAIN_ADDONS_PLUGIN_VERSION );
+		$css_path    = DIVI_TORQUE_PLUGIN_URL . '/includes/customizer/controls/css/';
+        $file_prefix = ( defined( 'DTQ_DEBUG' ) && true === constant( 'DTQ_DEBUG' ) ) ? '' : '.min';
+        wp_enqueue_style( 'brainaddons-radio-image', $css_path . 'radio-image' . $file_prefix . '.css', false, DIVI_TORQUE_PLUGIN_VERSION );
 		wp_enqueue_script( 'jquery-ui-button' );
 
 	}

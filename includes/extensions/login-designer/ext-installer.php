@@ -10,20 +10,20 @@ class Installer {
 	public function timestamps() {
 		flush_rewrite_rules();
 
-		$installed = get_option( 'brain_addons_activation_date' );
+		$installed = get_option( 'divi_torque_activation_date' );
 
 		if ( ! $installed ) {
-			update_option( 'brain_addons_activation_date', time() );
+			update_option( 'divi_torque_activation_date', time() );
 		}
 
-		update_option( 'brain_addons_version', BRAIN_ADDONS_PLUGIN_VERSION );
+		update_option( 'divi_torque_version', DIVI_TORQUE_PLUGIN_VERSION );
 	}
 
 	public function create_login_page() {
 
 		global $wpdb;
 
-		$version = get_option( 'brain_addons_version' );
+		$version = get_option( 'divi_torque_version' );
 
 		if ( $version && ! version_compare( $version, '1.2.0', '>=' ) ) {
 			return;

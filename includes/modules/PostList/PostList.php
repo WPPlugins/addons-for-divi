@@ -1,17 +1,17 @@
 <?php
-class BA_Post_List extends BA_Builder_Module_Type_PostBased {
+class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/post-list/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/post-list-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_post_list';
-		$this->name       = esc_html__( 'Brain Post List', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Post List', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'post-list.svg';
 
 		$this->settings_modal_toggles = array(
@@ -45,15 +45,15 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 		);
 
 		$this->custom_css_fields = array(
-			'image'  => array(
+			'image'   => array(
 				'label'    => esc_html__( 'Featured Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-thumb img',
 			),
-			'title'  => array(
+			'title'   => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-title',
 			),
-			'excerpt'  => array(
+			'excerpt' => array(
 				'label'    => esc_html__( 'Excerpt', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-excerpt',
 			),
@@ -61,7 +61,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 				'label'    => esc_html__( 'Author', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-author',
 			),
-			'date'  => array(
+			'date'    => array(
 				'label'    => esc_html__( 'Date', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-post-list-date',
 			),
@@ -87,7 +87,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'include_categories'    => array(
 				'label'            => esc_html__( 'Included Categories', 'addons-for-divi' ),
-				'description'            => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'addons-for-divi' ),
+				'description'      => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'addons-for-divi' ),
 				'type'             => 'categories',
 				'option_category'  => 'basic_option',
 				'meta_categories'  => array(
@@ -301,7 +301,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			// common.
 			'list_type'             => array(
 				'label'       => esc_html__( 'List Type', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Select post list layout type.', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select post list layout type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'toggle_slug' => 'common',
 				'tab_slug'    => 'advanced',
@@ -314,7 +314,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'items'                 => array(
 				'label'          => esc_html__( 'Items per Row', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define items count per row.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define items count per row.', 'addons-for-divi' ),
 				'type'           => 'select',
 				'toggle_slug'    => 'common',
 				'tab_slug'       => 'advanced',
@@ -337,7 +337,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'item_spacing'          => array(
 				'label'          => esc_html__( 'Post Spacing', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define spacing between post items.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define spacing between post items.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'allowed_units'  => array( 'px' ),
@@ -354,7 +354,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'item_padding'          => array(
 				'label'          => __( 'Post Padding', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define custom padding for the post items.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define custom padding for the post items.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'common',
@@ -364,7 +364,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'alignment'             => array(
 				'label'        => __( 'Post Alignment', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
 				'type'         => 'text_align',
 				'options'      => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'options_icon' => 'module_align',
@@ -376,7 +376,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			// list icon.
 			'icon_size'             => array(
 				'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Here you can define a custom size for list icons.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom size for list icons.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '18px',
 				'allowed_units'  => array( 'px' ),
@@ -397,7 +397,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'icon_color'            => array(
 				'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Here you can define a custom color for list icons.', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom color for list icons.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'list_icon',
@@ -410,7 +410,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'icon_spacing'          => array(
 				'label'          => esc_html__( 'Icon Spacing', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define spacing between icon and texts.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define spacing between icon and texts.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '20px',
 				'default_unit'   => 'px',
@@ -431,7 +431,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			// Image.
 			'image_width'           => array(
 				'label'          => esc_html__( 'Image Width', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define static width for pot thumbnail.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define static width for pot thumbnail.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '60px',
 				'allowed_units'  => array( 'px' ),
@@ -451,7 +451,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'image_height'          => array(
 				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define static height for pot thumbnail.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define static height for pot thumbnail.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '60px',
 				'allowed_units'  => array( 'px' ),
@@ -471,7 +471,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'image_spacing'         => array(
 				'label'          => esc_html__( 'Image Spacing', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define spacing between image and texts.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define spacing between image and texts.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '12px',
 				'allowed_units'  => array( 'px' ),
@@ -492,7 +492,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 			// Texts.
 			'meta_spacing'          => array(
 				'label'          => esc_html__( 'Meta Spacing Top', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Here you can define a custom spacing at the top of the meta area.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the meta area.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '0px',
 				'allowed_units'  => array( 'px' ),
@@ -509,7 +509,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'excerpt_spacing'       => array(
 				'label'          => esc_html__( 'Excerpt Spacing Top', 'addons-for-divi' ),
-				'description'      => esc_html__( '.', 'addons-for-divi' ),
+				'description'    => esc_html__( '.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '0px',
 				'allowed_units'  => array( 'px' ),
@@ -527,7 +527,7 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			'__posts'               => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'BA_Post_List', 'get_post' ),
+				'computed_callback'   => array( 'DTQ_Post_List', 'get_post' ),
 				'computed_depends_on' => array(
 					'post_type',
 					'include_categories',
@@ -1250,4 +1250,4 @@ class BA_Post_List extends BA_Builder_Module_Type_PostBased {
 	}
 }
 
-new BA_Post_List();
+new DTQ_Post_List();

@@ -1,17 +1,17 @@
 <?php
-class BA_Advanced_Team extends BA_Builder_Module {
+class DTQ_Advanced_Team extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/team',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/team-module',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->slug       = 'ba_advanced_team';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__( 'Brain Team', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Team', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'team.svg';
 
 		$this->settings_modal_toggles = array(
@@ -319,21 +319,21 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'photo_offset_y'        => array(
-				'label'           => esc_html__( 'Photo Offset Y', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Set vertical absolute position value of the photo.', 'addons-for-divi' ),
-				'type'            => 'range',
-				'default'         => '0px',
-				'range_settings'  => array(
+				'label'          => esc_html__( 'Photo Offset Y', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Set vertical absolute position value of the photo.', 'addons-for-divi' ),
+				'type'           => 'range',
+				'default'        => '0px',
+				'range_settings' => array(
 					'min'  => -500,
 					'max'  => 500,
 					'step' => 1,
 				),
-				'show_if'         => array(
+				'show_if'        => array(
 					'use_photo_abs'    => 'on',
 					'content_on_hover' => 'off',
 				),
-				'toggle_slug'     => 'photo',
-				'tab_slug'        => 'advanced',
+				'toggle_slug'    => 'photo',
+				'tab_slug'       => 'advanced',
 			),
 
 			'photo_width'           => array(
@@ -453,18 +453,18 @@ class BA_Advanced_Team extends BA_Builder_Module {
 			),
 
 			'links_margin_top'      => array(
-				'label'           => esc_html__( 'Top Spacing', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Set how much space the icons will take from the top.', 'addons-for-divi' ),
-				'type'            => 'range',
-				'default'         => '15px',
-				'range_settings'  => array(
+				'label'          => esc_html__( 'Top Spacing', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Set how much space the icons will take from the top.', 'addons-for-divi' ),
+				'type'           => 'range',
+				'default'        => '15px',
+				'range_settings' => array(
 					'min'  => 0,
 					'max'  => 100,
 					'step' => 1,
 				),
-				'toggle_slug'     => 'links',
-				'tab_slug'        => 'advanced',
-				'show_if'         => array(
+				'toggle_slug'    => 'links',
+				'tab_slug'       => 'advanced',
+				'show_if'        => array(
 					'content_on_hover' => 'on',
 					'links_position'   => 'content',
 				),
@@ -1285,4 +1285,4 @@ class BA_Advanced_Team extends BA_Builder_Module {
 	}
 }
 
-new BA_Advanced_Team();
+new DTQ_Advanced_Team();

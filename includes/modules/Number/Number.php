@@ -1,17 +1,17 @@
 <?php
-class BA_Number extends BA_Builder_Module {
+class DTQ_Number extends BA_Builder_Module {
 
 	public $slug       = 'ba_number';
 	public $vb_support = 'on';
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/number/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/number-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
-		$this->name      = esc_html__( 'Brain Number', 'addons-for-divi' );
+		$this->name      = esc_html__( 'Torque Number', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'number.svg';
 
 		$this->settings_modal_toggles = array(
@@ -31,11 +31,11 @@ class BA_Number extends BA_Builder_Module {
 		);
 
 		$this->custom_css_fields = array(
-			'wrapper'  => array(
+			'wrapper' => array(
 				'label'    => esc_html__( 'Text Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-number-wrap',
 			),
-			'text'  => array(
+			'text'    => array(
 				'label'    => esc_html__( 'Text', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-number-text',
 			),
@@ -434,4 +434,4 @@ class BA_Number extends BA_Builder_Module {
 	}
 }
 
-new BA_Number();
+new DTQ_Number();

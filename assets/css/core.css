@@ -1509,12 +1509,12 @@ body.single-brainaddons-popup.et_cover_background {
 
 .ba-popup.ba-popup-front-mode.ba-popup-show-state {
     opacity: 1;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 .ba-popup.ba-popup-front-mode.ba-popup-show-state .ba-popup-overlay,
 .ba-popup.ba-popup-front-mode.ba-popup-show-state .ba-popup-close-button {
-    pointer-events: all;
+    /* pointer-events: all; */
 }
 
 .ba-popup.ba-popup-front-mode .ba-popup-container-overlay {

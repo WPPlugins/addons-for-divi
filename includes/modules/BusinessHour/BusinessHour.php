@@ -1,19 +1,19 @@
 <?php
-class BA_Business_Hour extends BA_Builder_Module {
+class DTQ_Business_Hour extends BA_Builder_Module {
 
 	public $slug       = 'ba_business_hour';
 	public $vb_support = 'on';
 	public $child_slug = 'ba_business_hour_child';
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/business-hour/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/business-hour-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
-		$this->name      = esc_html__( 'Brain Business Hour', 'addons-for-divi' );
+		$this->name      = esc_html__( 'Torque Business Hour', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'business-hour.svg';
 
 		$this->settings_modal_toggles = array(
@@ -705,4 +705,4 @@ class BA_Business_Hour extends BA_Builder_Module {
 	}
 }
 
-new BA_Business_Hour();
+new DTQ_Business_Hour();

@@ -1,19 +1,19 @@
 <?php
-class BA_Logo_Grid extends BA_Builder_Module {
+class DTQ_Logo_Grid extends BA_Builder_Module {
 
 	public $slug       = 'ba_logo_grid';
 	public $vb_support = 'on';
 	public $child_slug = 'ba_logo_grid_child';
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/logo-grid/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com//logo-grid-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
-		$this->name      = esc_html__( 'Brain Logo Grid', 'addons-for-divi' );
+		$this->name      = esc_html__( 'Torque Logo Grid', 'addons-for-divi' );
 		$this->icon_path = plugin_dir_path( __FILE__ ) . 'logo-grid.svg';
 
 		$this->settings_modal_toggles = array(
@@ -26,7 +26,7 @@ class BA_Logo_Grid extends BA_Builder_Module {
 		);
 
 		$this->custom_css_fields = array(
-			'logo'  => array(
+			'logo' => array(
 				'label'    => esc_html__( 'Logo', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-logo-grid__item img',
 			),
@@ -320,4 +320,4 @@ class BA_Logo_Grid extends BA_Builder_Module {
 	}
 }
 
-new BA_Logo_Grid();
+new DTQ_Logo_Grid();

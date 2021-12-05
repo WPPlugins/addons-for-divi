@@ -1,17 +1,17 @@
 <?php
-class BA_Review extends BA_Builder_Module {
+class DTQ_Review extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/review/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/review-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->slug       = 'ba_review';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__( 'Brain Review', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Review', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'review.svg';
 
 		$this->settings_modal_toggles = array(
@@ -27,6 +27,7 @@ class BA_Review extends BA_Builder_Module {
 					'rating'  => esc_html__( 'Rating', 'addons-for-divi' ),
 					'image'   => esc_html__( 'Image', 'addons-for-divi' ),
 					'overlay' => esc_html__( 'Overlay', 'addons-for-divi' ),
+					'badge'   => esc_html__( 'Badge', 'addons-for-divi' ),
 					'texts'   => array(
 						'title'             => esc_html__( 'Title & Description', 'addons-for-divi' ),
 						'tabbed_subtoggles' => true,
@@ -46,11 +47,11 @@ class BA_Review extends BA_Builder_Module {
 		);
 
 		$this->custom_css_fields = array(
-			'rating'       => array(
+			'rating'        => array(
 				'label'    => esc_html__( 'Ratings', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-ratings',
 			),
-			'rating_number'         => array(
+			'rating_number' => array(
 				'label'    => esc_html__( 'Rating Number', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-ratings-number',
 			),
@@ -62,15 +63,15 @@ class BA_Review extends BA_Builder_Module {
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-rating-star-title',
 			),
-			'desc'         => array(
+			'desc'          => array(
 				'label'    => esc_html__( 'Description', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-rating-star-desc',
 			),
-			'button_wrap'         => array(
+			'button_wrap'   => array(
 				'label'    => esc_html__( 'Button Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-rating-btn-wrap',
 			),
-			'button'         => array(
+			'button'        => array(
 				'label'    => esc_html__( 'Button', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-rating-btn',
 			),
@@ -146,6 +147,30 @@ class BA_Review extends BA_Builder_Module {
 				'toggle_slug' => 'main_content',
 			),
 
+			'use_badge'             => array(
+				'label'           => esc_html__( 'Use Badge', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether badge should be used.', 'addons-for-divi' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'default'         => 'off',
+				'toggle_slug'     => 'main_content',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
+				),
+			),
+			'badge_text'            => array(
+				'label'           => esc_html__( 'Badge Text', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the badge text for your card.', 'addons-for-divi' ),
+				'type'            => 'text',
+				'default'         => esc_html__( 'Badge', 'addons-for-divi' ),
+				'toggle_slug'     => 'main_content',
+				'dynamic_content' => 'text',
+				'show_if'         => array(
+					'use_badge' => 'on',
+				),
+			),
+
 			'title'                 => array(
 				'label'           => esc_html__( 'Title Text', 'addons-for-divi' ),
 				'description'     => esc_html__( 'Define the title text your for card.', 'addons-for-divi' ),
@@ -172,7 +197,6 @@ class BA_Review extends BA_Builder_Module {
 					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
 					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
-				'default'         => 'off',
 				'toggle_slug'     => 'button',
 			),
 
@@ -375,7 +399,6 @@ class BA_Review extends BA_Builder_Module {
 				'description'    => esc_html__( 'This sets a static height  for your image.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default_unit'   => 'px',
-				'default'        => '300px',
 				'range_settings' => array(
 					'min'  => 0,
 					'step' => 1,
@@ -471,14 +494,36 @@ class BA_Review extends BA_Builder_Module {
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'common',
 				'tab_slug'       => 'advanced',
-				'default'        => '25px|0px|0px|0px',
+				'default'        => '15px|0px|0px|0px',
 				'mobile_options' => true,
 			),
 		);
 
+		$badge_defaults = array(
+			'position' => 'right_top',
+			'offset_x' => '15px',
+			'offset_y' => '15px',
+			'padding'  => '5px|15px|5px|15px',
+			'bg'       => '#ffffff',
+			'color'    => '#333',
+		);
+		$badge_options  = $this->get_badge_options(
+			'badge',
+			esc_html__( 'Badge', 'addons-for-divi' ),
+			'badge',
+			$badge_defaults
+		);
+
 		$overlay = $this->get_overlay_option_fields( 'overlay', 'on', array() );
 
-		return array_merge( $fields, $overlay );
+		// Default values.
+		if ( dt_if_not_migrated() ) {
+			$fields['use_button']['default'] = 'off';
+		} else {
+			$fields['use_button']['default'] = 'on';
+		}
+
+		return array_merge( $fields, $overlay, $badge_options );
 	}
 
 	public function get_advanced_fields_config() {
@@ -487,6 +532,40 @@ class BA_Review extends BA_Builder_Module {
 		$advanced_fields['text']        = false;
 		$advanced_fields['text_shadow'] = false;
 		$advanced_fields['fonts']       = false;
+
+		$advanced_fields['borders']['badge'] = array(
+			'toggle_slug'  => 'badge',
+			'label_prefix' => esc_html__( 'Badge', 'addons-for-divi' ),
+			'css'          => array(
+				'main'      => array(
+					'border_radii'  => '%%order_class%% .ba-review-badge',
+					'border_styles' => '%%order_class%% .ba-review-badge',
+				),
+				'important' => 'all',
+			),
+			'defaults'     => array(
+				'border_radii'  => 'on|0px|0px|0px|0px',
+				'border_styles' => array(
+					'width' => '0',
+					'color' => '#333',
+					'style' => 'solid',
+				),
+			),
+		);
+
+		$advanced_fields['fonts']['badge'] = array(
+			'label'           => esc_html__( 'Badge', 'addons-for-divi' ),
+			'css'             => array(
+				'main'      => '%%order_class%% .ba-review-badge',
+				'important' => 'all',
+			),
+			'tab_slug'        => 'advanced',
+			'toggle_slug'     => 'badge',
+			'hide_text_align' => true,
+			'font_size'       => array(
+				'default' => '13px',
+			),
+		);
 
 		$advanced_fields['fonts']['title'] = array(
 			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
@@ -601,9 +680,16 @@ class BA_Review extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
+	public function render_badge() {
+		if ( 'off' !== $this->props['use_badge'] ) {
+			return sprintf(
+				'<div class="ba-review-badge">%1$s</div>',
+				$this->props['badge_text']
+			);
+		}
+	}
 
 	public function _render_image() {
-
 		$image                  = $this->props['image'];
 		$image_alt              = $this->props['image_alt'];
 		$use_lightbox           = $this->props['use_lightbox'];
@@ -613,8 +699,8 @@ class BA_Review extends BA_Builder_Module {
 
 		if ( ! empty( $image ) ) {
 			return sprintf(
-				'
-                <div class="ba-rating-figure">
+				'<div class="ba-rating-figure">
+                    %6$s
                     <div class="ba-overlay" data-icon="%3$s"></div>
                     <img class="ba-img-cover ba-swapped-img %5$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%4$s"/>
                 </div>',
@@ -622,7 +708,8 @@ class BA_Review extends BA_Builder_Module {
 				$data_schema,
 				$overlay_icon,
 				$image_alt,
-				$use_lightbox === 'on' ? 'ba-lightbox' : ''
+				$use_lightbox === 'on' ? 'ba-lightbox' : '',
+				$this->render_badge()
 			);
 		}
 	}
@@ -763,7 +850,7 @@ class BA_Review extends BA_Builder_Module {
 		$img_width_responsive_status       = et_pb_get_responsive_status( $img_width_last_edited );
 
 		// Image position.
-		if ( $img_pos === 'top' ) {
+		if ( 'top' === $img_pos ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -771,7 +858,7 @@ class BA_Review extends BA_Builder_Module {
 					'declaration' => 'flex-direction: column;',
 				)
 			);
-		} elseif ( $img_pos === 'bottom' ) {
+		} elseif ( 'bottom' === $img_pos ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -779,7 +866,7 @@ class BA_Review extends BA_Builder_Module {
 					'declaration' => 'flex-direction: column-reverse;',
 				)
 			);
-		} elseif ( $img_pos === 'left' ) {
+		} elseif ( 'left' === $img_pos ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -787,7 +874,7 @@ class BA_Review extends BA_Builder_Module {
 					'declaration' => 'flex-direction: row;',
 				)
 			);
-		} elseif ( $img_pos === 'right' ) {
+		} elseif ( 'right' === $img_pos ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -798,16 +885,18 @@ class BA_Review extends BA_Builder_Module {
 		}
 
 		// Image Height.
-		$this->get_responsive_styles(
-			'img_height',
-			'%%order_class%% .ba-rating-figure',
-			array( 'primary' => 'height' ),
-			array( 'default' => '30px' ),
-			$render_slug
-		);
+		if ( ! empty( $this->props['img_height'] ) ) {
+			$this->get_responsive_styles(
+				'img_height',
+				'%%order_class%% .ba-rating-figure',
+				array( 'primary' => 'height' ),
+				array( 'default' => 'auto' ),
+				$render_slug
+			);
+		}
 
 		// image width.
-		if ( $img_pos === 'left' || $img_pos === 'right' ) {
+		if ( 'left' === $img_pos || 'right' === $img_pos ) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -889,7 +978,7 @@ class BA_Review extends BA_Builder_Module {
 			'content_padding',
 			'%%order_class%% .ba-review-content',
 			array( 'primary' => 'padding' ),
-			array( 'default' => '25px|0px|0px|0px' ),
+			array( 'default' => '15px|0px|0px|0px' ),
 			$render_slug
 		);
 
@@ -1007,7 +1096,8 @@ class BA_Review extends BA_Builder_Module {
 
 		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .ba-review .ba-rating-btn' );
 		$this->get_overlay_style( $render_slug, 'image', '%%order_class%%' );
+		$this->get_badge_styles( $render_slug, 'badge', '%%order_class%% .ba-review-badge', '%%order_class%%:hover .ba-review-badge' );
 	}
 }
 
-new BA_Review();
+new DTQ_Review();

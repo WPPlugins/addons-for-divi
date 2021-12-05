@@ -4,10 +4,10 @@
 function ba_get_toggles( $builder_settings_toggles ) {
     if ( is_singular( 'brainaddons-popup' ) ) {
         return array_merge( array(
-            'general_settings'   => esc_html__( 'General Settings', 'ba-brain-conkit' ),
-            'popup_container'    => esc_html__( 'Popup Container', 'ba-brain-conkit' ),
-            'popup_close_button' => esc_html__( 'Close Button', 'ba-brain-conkit' ),
-            'popup_overlay'      => esc_html__( 'Popup Overlay', 'ba-brain-conkit' ),
+            'general_settings'   => esc_html__( 'General Settings', 'addons-for-divi' ),
+            'popup_container'    => esc_html__( 'Popup Container', 'addons-for-divi' ),
+            'popup_close_button' => esc_html__( 'Close Button', 'addons-for-divi' ),
+            'popup_overlay'      => esc_html__( 'Popup Overlay', 'addons-for-divi' ),
         ), $builder_settings_toggles );
     }
     return $builder_settings_toggles;
@@ -22,7 +22,7 @@ function ba_all_fields() {
             'type'                 => 'color-alpha',
             'id'                   => 'ba_close_button_color',
             'meta_key'             => '_ba_close_button_color',
-            'label'                => esc_html__( 'Close Color', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Close Color', 'addons-for-divi' ),
             'default'              => '#000',
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_close_button',
@@ -32,7 +32,7 @@ function ba_all_fields() {
             'type'                 => 'custom_padding',
             'id'                   => 'ba_close_button_radius',
             'meta_key'             => '_ba_close_button_radius',
-            'label'                => esc_html__( 'Close Button Radius', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Close Button Radius', 'addons-for-divi' ),
             'default'              => '0px|0px|0px|0px|false|false',
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_close_button',
@@ -41,22 +41,22 @@ function ba_all_fields() {
         'ba_animation'               => array(
             'type'                 => 'select',
             'id'                   => 'ba_animation',
-            'label'                => esc_html__( 'Animation', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Animation', 'addons-for-divi' ),
             'default'              => 'fade',
             'options'              => array(
-                'fade'           => esc_html__( 'Fade', 'ba-brain-conkit' ),
-                'zoom-in'        => esc_html__( 'ZoomIn', 'ba-brain-conkit' ),
-                'zoom-out'       => esc_html__( 'ZoomOut', 'ba-brain-conkit' ),
-                'rotate'         => esc_html__( 'Rotate', 'ba-brain-conkit' ),
-                'move-up'        => esc_html__( 'MoveUp', 'ba-brain-conkit' ),
-                'flip-x'         => esc_html__( 'Horizontal Flip', 'ba-brain-conkit' ),
-                'flip-y'         => esc_html__( 'Vertical Flip', 'ba-brain-conkit' ),
-                'bounce-in'      => esc_html__( 'BounceIn', 'ba-brain-conkit' ),
-                'bounce-out'     => esc_html__( 'BounceOut', 'ba-brain-conkit' ),
-                'slide-in-up'    => esc_html__( 'SlideInUp', 'ba-brain-conkit' ),
-                'slide-in-right' => esc_html__( 'SlideInRight', 'ba-brain-conkit' ),
-                'slide-in-down'  => esc_html__( 'SlideInDown', 'ba-brain-conkit' ),
-                'slide-in-left'  => esc_html__( 'SlideInLeft', 'ba-brain-conkit' ),
+                'fade'           => esc_html__( 'Fade', 'addons-for-divi' ),
+                'zoom-in'        => esc_html__( 'ZoomIn', 'addons-for-divi' ),
+                'zoom-out'       => esc_html__( 'ZoomOut', 'addons-for-divi' ),
+                'rotate'         => esc_html__( 'Rotate', 'addons-for-divi' ),
+                'move-up'        => esc_html__( 'MoveUp', 'addons-for-divi' ),
+                'flip-x'         => esc_html__( 'Horizontal Flip', 'addons-for-divi' ),
+                'flip-y'         => esc_html__( 'Vertical Flip', 'addons-for-divi' ),
+                'bounce-in'      => esc_html__( 'BounceIn', 'addons-for-divi' ),
+                'bounce-out'     => esc_html__( 'BounceOut', 'addons-for-divi' ),
+                'slide-in-up'    => esc_html__( 'SlideInUp', 'addons-for-divi' ),
+                'slide-in-right' => esc_html__( 'SlideInRight', 'addons-for-divi' ),
+                'slide-in-down'  => esc_html__( 'SlideInDown', 'addons-for-divi' ),
+                'slide-in-left'  => esc_html__( 'SlideInLeft', 'addons-for-divi' ),
             ),
             'tab_slug'             => 'content',
             'toggle_slug'          => 'general_settings',
@@ -65,13 +65,13 @@ function ba_all_fields() {
         'ba_position_x'              => array(
             'type'                 => 'select',
             'id'                   => 'ba_position_x',
-            'label'                => esc_html__( 'Horizontal Position', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Horizontal Position', 'addons-for-divi' ),
             'default'              => 'center',
             'autoload'             => false,
             'options'              => array(
-                'flex-start' => __( 'Left', 'ba-brain-conkit' ),
-                'center'     => __( 'Center', 'ba-brain-conkit' ),
-                'flex-end'   => __( 'Right', 'ba-brain-conkit' ),
+                'flex-start' => __( 'Left', 'addons-for-divi' ),
+                'center'     => __( 'Center', 'addons-for-divi' ),
+                'flex-end'   => __( 'Right', 'addons-for-divi' ),
             ),
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_container',
@@ -80,13 +80,13 @@ function ba_all_fields() {
         'ba_position_y'              => array(
             'type'                 => 'select',
             'id'                   => 'ba_position_y',
-            'label'                => esc_html__( 'Vertical Position', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Vertical Position', 'addons-for-divi' ),
             'default'              => 'center',
             'autoload'             => false,
             'options'              => array(
-                'flex-start' => __( 'Top', 'ba-brain-conkit' ),
-                'center'     => __( 'Middle', 'ba-brain-conkit' ),
-                'flex-end'   => __( 'Bottom', 'ba-brain-conkit' ),
+                'flex-start' => __( 'Top', 'addons-for-divi' ),
+                'center'     => __( 'Middle', 'addons-for-divi' ),
+                'flex-end'   => __( 'Bottom', 'addons-for-divi' ),
             ),
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_container',
@@ -96,7 +96,7 @@ function ba_all_fields() {
             'type'                 => 'custom_padding',
             'id'                   => 'ba_container_padding',
             'meta_key'             => '_ba_container_padding',
-            'label'                => esc_html__( 'Padding', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Padding', 'addons-for-divi' ),
             'default'              => '20px|20px|20px|20px|false|false',
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_container',
@@ -106,7 +106,7 @@ function ba_all_fields() {
             'type'                 => 'custom_padding',
             'id'                   => 'ba_container_border_radius',
             'meta_key'             => '_ba_container_border_radius',
-            'label'                => esc_html__( 'Border Radius', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Border Radius', 'addons-for-divi' ),
             'default'              => '0px|0px|0px|0px|false|false',
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_container',
@@ -115,29 +115,29 @@ function ba_all_fields() {
     );
     
     $pro_trigger = array(
-        'try-exit-trigger' => esc_html__( 'Try Exit', 'ba-brain-conkit' ),
-        'custom-selector'  => esc_html__( 'Custom Selector Click', 'ba-brain-conkit' ),
+        'try-exit-trigger' => esc_html__( 'Try Exit', 'addons-for-divi' ),
+        'custom-selector'  => esc_html__( 'Custom Selector Click', 'addons-for-divi' ),
     );
     
     $free_trigger = array(
-        'attach'           => esc_html__( 'Not Selected', 'ba-brain-conkit' ),
-        'page-load'        => esc_html__( 'On page load(s)', 'ba-brain-conkit' ),
-        'scroll-trigger'   => esc_html__( 'Page Scrolled(%)', 'ba-brain-conkit' ),
+        'attach'           => esc_html__( 'Not Selected', 'addons-for-divi' ),
+        'page-load'        => esc_html__( 'On page load(s)', 'addons-for-divi' ),
+        'scroll-trigger'   => esc_html__( 'Page Scrolled(%)', 'addons-for-divi' ),
     );
 
-    $all_trigger = ba_has_pro() ? array_merge( $free_trigger, $pro_trigger ) : $free_trigger;
+    $all_trigger = divitorque_has_pro() ? array_merge( $free_trigger, $pro_trigger ) : $free_trigger;
 
     $free_options = array(
 
         'ba_close_button'            => array(
-            'label'                => __( 'Use Close Button', 'ba-brain-conkit' ),
+            'label'                => __( 'Use Close Button', 'addons-for-divi' ),
             'type'                 => 'yes_no_button',
             'id'                   => 'ba_close_button',
             'meta_key'             => '_ba_close_button',
             'default'              => 'on',
             'options'              => array(
-                'on'  => esc_html__( 'Yes', 'ba-brain-conkit' ),
-                'off' => esc_html__( 'No', 'ba-brain-conkit' ),
+                'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+                'off' => esc_html__( 'No', 'addons-for-divi' ),
             ),
             'affects'              => array(
                 'ba_close_icon_x_position',
@@ -153,8 +153,8 @@ function ba_all_fields() {
         'ba_close_icon_x_position'   => array(
             'type'                 => 'text',
             'id'                   => 'ba_close_icon_x_position',
-            'label'                => esc_html__( 'Icon Transform ( Translate X )', 'ba-brain-conkit' ),
-            'description'          => esc_html__( 'Change the position of the Close button moving it along the x-axis. Default: 0', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Icon Transform ( Translate X )', 'addons-for-divi' ),
+            'description'          => esc_html__( 'Change the position of the Close button moving it along the x-axis. Default: 0', 'addons-for-divi' ),
             'default'              => '0',
             'depends_show_if'      => 'on',
             'depends_on'           => array(
@@ -168,8 +168,8 @@ function ba_all_fields() {
         'ba_close_icon_y_position'   => array(
             'type'                 => 'text',
             'id'                   => 'ba_close_icon_y_position',
-            'label'                => esc_html__( 'Icon Transform ( Translate Y )', 'ba-brain-conkit' ),
-            'description'          => esc_html__( 'Change the position of the Close button moving it along the y-axis. Default: 0', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Icon Transform ( Translate Y )', 'addons-for-divi' ),
+            'description'          => esc_html__( 'Change the position of the Close button moving it along the y-axis. Default: 0', 'addons-for-divi' ),
             'default'              => '0',
             'depends_show_if'      => 'on',
             'depends_on'           => array(
@@ -183,7 +183,7 @@ function ba_all_fields() {
         'ba_popup_open_trigger'      => array(
             'type'                 => 'select',
             'id'                   => 'ba_popup_open_trigger',
-            'label'                => esc_html__( 'Open event', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Open event', 'addons-for-divi' ),
             'default'              => 'attach',
             'options'              => $all_trigger,
             'affects'              => array(
@@ -199,7 +199,7 @@ function ba_all_fields() {
             'type'                 => 'range',
             'id'                   => 'ba_page_load_delay',
             'meta_key'             => '_ba_page_load_delay',
-            'label'                => esc_html__( 'Open delay', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Open delay', 'addons-for-divi' ),
             'default'              => 1,
             'range_settings'       => array(
                 'step' => 1,
@@ -217,7 +217,7 @@ function ba_all_fields() {
         ),
 
         'ba_custom_selector'         => array(
-            'label'                => esc_html__( 'Custom Selector', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Custom Selector', 'addons-for-divi' ),
             'type'                 => 'text',
             'id'                   => 'ba_custom_selector',
             'meta_key'             => '_ba_custom_selector',
@@ -235,7 +235,7 @@ function ba_all_fields() {
             'type'                 => 'range',
             'id'                   => 'ba_popup_scrolled_to_value',
             'meta_key'             => '_ba_popup_scrolled_to_value',
-            'label'                => esc_html__( 'Scroll Page Progress(%)', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Scroll Page Progress(%)', 'addons-for-divi' ),
             'default'              => 10,
             'range_settings'       => array(
                 'step' => 1,
@@ -256,7 +256,7 @@ function ba_all_fields() {
             'type'                 => 'range',
             'id'                   => 'ba_container_width',
             'meta_key'             => '_ba_container_width',
-            'label'                => esc_html__( 'Width', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Width', 'addons-for-divi' ),
             'default'              => '500',
             'range_settings'       => array(
                 'step' => 1,
@@ -272,12 +272,12 @@ function ba_all_fields() {
         'ba_container_width_unit'    => array(
             'type'                 => 'select',
             'id'                   => 'ba_container_width_unit',
-            'label'                => esc_html__( 'Width Unit', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Width Unit', 'addons-for-divi' ),
             'default'              => 'px',
             'unitless'             => true,
             'options'              => array(
-                'px' => __( 'Pixel', 'ba-brain-conkit' ),
-                '%'  => __( 'Percent', 'ba-brain-conkit' ),
+                'px' => __( 'Pixel', 'addons-for-divi' ),
+                '%'  => __( 'Percent', 'addons-for-divi' ),
             ),
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_container',
@@ -285,14 +285,14 @@ function ba_all_fields() {
         ),
 
         'ba_use_container_height'    => array(
-            'label'                => __( 'Custom Height', 'ba-brain-conkit' ),
+            'label'                => __( 'Custom Height', 'addons-for-divi' ),
             'id'                   => 'ba_use_container_height',
             'meta_key'             => '_ba_use_container_height',
             'type'                 => 'yes_no_button',
             'default'              => 'off',
             'options'              => array(
-                'on'  => esc_html__( 'Yes', 'ba-brain-conkit' ),
-                'off' => esc_html__( 'No', 'ba-brain-conkit' ),
+                'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+                'off' => esc_html__( 'No', 'addons-for-divi' ),
             ),
             'affects'              => array(
                 'ba_container_height',
@@ -307,7 +307,7 @@ function ba_all_fields() {
             'type'                 => 'range',
             'id'                   => 'ba_container_height',
             'meta_key'             => '_ba_container_height',
-            'label'                => esc_html__( 'Height', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Height', 'addons-for-divi' ),
             'default'              => '500',
             'range_settings'       => array(
                 'step' => 1,
@@ -327,12 +327,12 @@ function ba_all_fields() {
         'ba_container_height_unit'   => array(
             'type'                 => 'select',
             'id'                   => 'ba_container_height_unit',
-            'label'                => esc_html__( 'Height Unit', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Height Unit', 'addons-for-divi' ),
             'default'              => 'px',
             'autoload'             => false,
             'options'              => array(
-                'px' => __( 'Pixel', 'ba-brain-conkit' ),
-                '%'  => __( 'Percent', 'ba-brain-conkit' ),
+                'px' => __( 'Pixel', 'addons-for-divi' ),
+                '%'  => __( 'Percent', 'addons-for-divi' ),
             ),
             'depends_show_if'      => 'on',
             'depends_on'           => array(
@@ -347,7 +347,7 @@ function ba_all_fields() {
             'type'                 => 'color-alpha',
             'id'                   => 'ba_container_color',
             'meta_key'             => '_ba_container_color',
-            'label'                => esc_html__( 'Container Background', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Container Background', 'addons-for-divi' ),
             'default'              => '#ffffff',
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_container',
@@ -355,14 +355,14 @@ function ba_all_fields() {
         ),
 
         'ba_overlay'                 => array(
-            'label'                => __( 'Use Overlay', 'ba-brain-conkit' ),
+            'label'                => __( 'Use Overlay', 'addons-for-divi' ),
             'id'                   => 'ba_overlay',
             'meta_key'             => '_ba_overlay',
             'type'                 => 'yes_no_button',
             'default'              => 'on',
             'options'              => array(
-                'on'  => esc_html__( 'Yes', 'ba-brain-conkit' ),
-                'off' => esc_html__( 'No', 'ba-brain-conkit' ),
+                'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+                'off' => esc_html__( 'No', 'addons-for-divi' ),
             ),
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_overlay',
@@ -373,7 +373,7 @@ function ba_all_fields() {
             'type'                 => 'color-alpha',
             'id'                   => 'ba_overlay_color',
             'meta_key'             => '_ba_overlay_color',
-            'label'                => esc_html__( 'Overlay Color', 'ba-brain-conkit' ),
+            'label'                => esc_html__( 'Overlay Color', 'addons-for-divi' ),
             'default'              => '#000',
             'tab_slug'             => 'design',
             'toggle_slug'          => 'popup_overlay',
@@ -384,7 +384,7 @@ function ba_all_fields() {
 
     $all_options = array_merge( $free_options, $pro_options );
 
-    return ba_has_pro() ? $all_options : $free_options;
+    return divitorque_has_pro() ? $all_options : $free_options;
 }
 
 // Settings.
@@ -402,7 +402,7 @@ function ba_all_values( $post_id = 0 ) {
 
     $fields = ba_all_fields();
 
-    if ( ba_has_pro() ) {
+    if ( divitorque_has_pro() ) {
         $ba_container_padding       = get_post_meta( $post_id, '_ba_container_padding', true );
         $default                    = $fields['ba_container_padding']['default'];
         $ba_container_padding       = !empty( $ba_container_padding ) ? $ba_container_padding : $default;
@@ -475,7 +475,7 @@ function ba_all_values( $post_id = 0 ) {
 
     $pro_values = array();
 
-    if ( ba_has_pro() ) {
+    if ( divitorque_has_pro() ) {
         $pro_values = array(
             'ba_container_padding'       => $ba_container_padding,
             'ba_container_border_radius' => $ba_container_border_radius,

@@ -1,18 +1,18 @@
 <?php
 
-class BA_Cf7_Styler extends BA_Builder_Module {
+class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/cf7-styler/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/cf7-styler-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->vb_support       = 'on';
 		$this->slug             = 'ba_cf7_styler';
-		$this->name             = esc_html__( 'Brain CF7 Styler', 'addons-for-divi' );
+		$this->name             = esc_html__( 'Torque CF7 Styler', 'addons-for-divi' );
 		$this->icon_path        = plugin_dir_path( __FILE__ ) . 'cf7.svg';
 		$this->main_css_element = '%%order_class%%.ba_cf7_styler';
 
@@ -329,7 +329,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 				'toggle_slug'      => 'general',
 			),
 
-			'form_field_height'           => array(
+			'form_field_height'            => array(
 				'label'          => esc_html__( 'Common Text Fields Height', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Here you can define static height for the common text fields.', 'addons-for-divi' ),
 				'type'           => 'range',
@@ -344,7 +344,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 				'toggle_slug'    => 'form_field',
 			),
 
-			'form_field_padding'    => array(
+			'form_field_padding'           => array(
 				'label'          => esc_html__( 'Form Field Padding', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Here you can define a custom padding for each field.', 'addons-for-divi' ),
 				'type'           => 'custom_padding',
@@ -644,7 +644,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 
 			'__cf7form'                    => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'BA_CF7_Styler', 'get_cf7_shortcode' ),
+				'computed_callback'   => array( 'DTQ_CF7_Styler', 'get_cf7_shortcode' ),
 				'description'         => esc_html__( '.', 'addons-for-divi' ),
 				'computed_depends_on' => array(
 					'form_id',
@@ -797,7 +797,7 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 
 				'important' => 'all',
 			),
-			'defaults'    => array(
+			'defaults'     => array(
 				'border_radii'  => 'on|0px|0px|0px|0px',
 				'border_styles' => array(
 					'width' => '1px',
@@ -1479,4 +1479,4 @@ class BA_Cf7_Styler extends BA_Builder_Module {
 
 }
 
-new BA_Cf7_Styler();
+new DTQ_Cf7_Styler();

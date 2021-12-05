@@ -1,17 +1,17 @@
 <?php
-class BA_Alert extends BA_Builder_Module {
+class DTQ_Alert extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/alert',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/alert-module',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->slug       = 'ba_alert';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__( 'Brain Alert', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Alert', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'alert.svg';
 
 		$this->settings_modal_toggles = array(
@@ -747,4 +747,4 @@ class BA_Alert extends BA_Builder_Module {
 	}
 }
 
-new BA_Alert();
+new DTQ_Alert();

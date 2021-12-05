@@ -67,23 +67,23 @@ class BrainAddons_Range extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 		
-		$css_path    = BRAIN_ADDONS_PLUGIN_URL . '/includes/customizer/controls/css/';
-		$js_path     = BRAIN_ADDONS_PLUGIN_URL . '/includes/customizer/controls/js/';
+		$css_path    = DIVI_TORQUE_PLUGIN_URL . '/includes/customizer/controls/css/';
+		$js_path     = DIVI_TORQUE_PLUGIN_URL . '/includes/customizer/controls/js/';
 		
-		$file_prefix = ( defined( 'BA_DEBUG' ) && true === constant( 'BA_DEBUG' ) ) ? '' : '.min';
+		$file_prefix = ( defined( 'DTQ_DEBUG' ) && true === constant( 'DTQ_DEBUG' ) ) ? '' : '.min';
 
 		wp_enqueue_script( 
 			'brainaddons-range-control', 
 			$js_path . 'range-control' . $file_prefix . '.js', 
 			array( 'customize-controls' ), 
-			BRAIN_ADDONS_PLUGIN_VERSION, true 
+			DIVI_TORQUE_PLUGIN_VERSION, true 
 		);
 
         wp_enqueue_style( 
 			'brainaddons-range', 
 			$css_path . 'range' . $file_prefix . '.css', 
 			false, 
-			BRAIN_ADDONS_PLUGIN_VERSION
+			DIVI_TORQUE_PLUGIN_VERSION
 		);
 
 	}

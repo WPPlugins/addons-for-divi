@@ -1,10 +1,10 @@
 <?php
-class BA_Image_Carousel extends BA_Builder_Module {
+class DTQ_Image_Carousel extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/image-carousel/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/image-carousel-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
@@ -12,7 +12,7 @@ class BA_Image_Carousel extends BA_Builder_Module {
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_image_carousel';
 		$this->child_slug = 'ba_image_carousel_child';
-		$this->name       = esc_html__( 'Brain Image Carousel', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Image Carousel', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'image-carousel.svg';
 
 		$this->settings_modal_toggles = array(
@@ -75,11 +75,11 @@ class BA_Image_Carousel extends BA_Builder_Module {
 				'label'    => esc_html__( 'Next (Navigation)', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .slick-arrow.slick-next',
 			),
-			'pagi_dots'  => array(
+			'pagi_dots' => array(
 				'label'    => esc_html__( 'Pagination Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .slick-dots',
 			),
-			'pagi_item'  => array(
+			'pagi_item' => array(
 				'label'    => esc_html__( 'Pagination Item', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .slick-dots li',
 			),
@@ -149,4 +149,4 @@ class BA_Image_Carousel extends BA_Builder_Module {
 
 }
 
-new BA_Image_Carousel();
+new DTQ_Image_Carousel();

@@ -1,15 +1,15 @@
 <?php
-class BA_Dual_Button extends BA_Builder_Module {
+class DTQ_Dual_Button extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/demo/dual-button/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com//dual-button-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
-		$this->name       = esc_html__( 'Brain Dual Button', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Dual Button', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'dual-button.svg';
 		$this->slug       = 'ba_dual_button';
 		$this->vb_support = 'on';
@@ -51,7 +51,7 @@ class BA_Dual_Button extends BA_Builder_Module {
 		);
 
 		$this->custom_css_fields = array(
-			'primary' => array(
+			'primary'   => array(
 				'label'    => esc_html__( 'Primary Button', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .btn-el btn-el--primary',
 			),
@@ -614,4 +614,4 @@ class BA_Dual_Button extends BA_Builder_Module {
 	}
 }
 
-new BA_Dual_Button();
+new DTQ_Dual_Button();

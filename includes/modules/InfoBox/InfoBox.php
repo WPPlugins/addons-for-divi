@@ -1,17 +1,17 @@
 <?php
-class BA_Info_Box extends BA_Builder_Module {
+class DTQ_Info_Box extends BA_Builder_Module {
 
 	protected $module_credits = array(
-		'module_uri' => 'https://divi.brainaddons.com/info-box/',
-		'author'     => 'BrainAddons',
-		'author_uri' => 'https://brainaddons.com/',
+		'module_uri' => 'https://divitorque.com/info-box-module/',
+		'author'     => 'DiviTorque',
+		'author_uri' => 'https://divitorque.com/',
 	);
 
 	public function init() {
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_info_box';
-		$this->name       = esc_html__( 'Brain Info Box', 'addons-for-divi' );
+		$this->name       = esc_html__( 'Torque Info Box', 'addons-for-divi' );
 		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'info-box.svg';
 
 		$this->settings_modal_toggles = array(
@@ -59,6 +59,7 @@ class BA_Info_Box extends BA_Builder_Module {
 						),
 					),
 					'button'       => esc_html__( 'Button', 'addons-for-divi' ),
+					'border'       => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 
@@ -67,9 +68,9 @@ class BA_Info_Box extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'image'  => array(
 				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-info-box .figure img',
+				'selector' => '%%order_class%% .ba-info-box .ba-info-box-figure img',
 			),
-			'icon'  => array(
+			'icon'   => array(
 				'label'    => esc_html__( 'Icon', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-info-box-icon i',
 			),
@@ -81,7 +82,7 @@ class BA_Info_Box extends BA_Builder_Module {
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-info-box-title',
 			),
-			'button'  => array(
+			'button' => array(
 				'label'    => esc_html__( 'Button', 'addons-for-divi' ),
 				'selector' => '%%order_class%% .ba-btn-info-box',
 			),
@@ -96,15 +97,14 @@ class BA_Info_Box extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['borders']['box'] = array(
-			'label_prefix' => esc_html__( 'Box', 'addons-for-divi' ),
-			'css'          => array(
+			'css'         => array(
 				'main'      => array(
 					'border_radii'  => '%%order_class%%',
 					'border_styles' => '%%order_class%%',
 				),
 				'important' => 'all',
 			),
-			'defaults'     => array(
+			'defaults'    => array(
 				'border_radii'  => 'on|0px|0px|0px|0px',
 				'border_styles' => array(
 					'width' => '0px',
@@ -112,7 +112,7 @@ class BA_Info_Box extends BA_Builder_Module {
 					'style' => 'solid',
 				),
 			),
-			'toggle_slug'  => 'general',
+			'toggle_slug' => 'border',
 		);
 
 		$advanced_fields['borders']['photo'] = array(
@@ -120,8 +120,8 @@ class BA_Info_Box extends BA_Builder_Module {
 			'tab_slug'    => 'advanced',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .figure, %%order_class%% .ba-info-box-icon, %%order_class%% .ba-content-video',
-					'border_styles' => '%%order_class%% .figure, %%order_class%% .ba-info-box-icon, %%order_class%% .ba-content-video',
+					'border_radii'  => '%%order_class%% .ba-info-box-figure, %%order_class%% .ba-info-box-icon, %%order_class%% .ba-content-video',
+					'border_styles' => '%%order_class%% .ba-info-box-figure, %%order_class%% .ba-info-box-icon, %%order_class%% .ba-content-video',
 				),
 				'important' => 'all',
 			),
@@ -151,7 +151,6 @@ class BA_Info_Box extends BA_Builder_Module {
 			'use_alignment' => false,
 		);
 
-
 		$advanced_fields['fonts'] = array(
 			'title'    => array(
 				'label'           => esc_html__( 'Title', 'addons-for-divi' ),
@@ -177,9 +176,10 @@ class BA_Info_Box extends BA_Builder_Module {
 					'default' => '26px',
 				),
 			),
+
 			'body'     => array(
 				'label'          => esc_html__( 'Body', 'addons-for-divi' ),
-				'css'             => array(
+				'css'            => array(
 					'main'        => '%%order_class%% .ba-mce-content',
 					'line_height' => '%%order_class%% .ba-mce-content p',
 					'text_align'  => '%%order_class%% .ba-mce-content',
@@ -194,6 +194,7 @@ class BA_Info_Box extends BA_Builder_Module {
 					),
 				),
 			),
+
 			'header'   => array(
 				'label'       => esc_html__( 'Heading', 'addons-for-divi' ),
 				'css'         => array(
@@ -312,7 +313,7 @@ class BA_Info_Box extends BA_Builder_Module {
 				'type'               => 'upload',
 				'data_type'          => 'image',
 				'option_category'    => 'basic_option',
-				'default'            => BRAIN_ADDONS_PLUGIN_ASSETS . 'imgs/placeholder.svg',
+				'default'            => DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/placeholder.svg',
 				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
 				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
 				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
@@ -354,7 +355,7 @@ class BA_Info_Box extends BA_Builder_Module {
 			),
 
 			'title'                => array(
-				'label'           => esc_html__( 'Title Text', 'addons-for-divi' ),
+				'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 				'description'     => esc_html__( 'Define the title for your info box.', 'addons-for-divi' ),
 				'type'            => 'text',
 				'dynamic_content' => 'text',
@@ -473,7 +474,8 @@ class BA_Info_Box extends BA_Builder_Module {
 				'type'            => 'range',
 				'option_category' => 'basic_option',
 				'default_unit'    => 'px',
-				'default '        => '6rem',
+				'default'         => '6rem',
+				'mobile_options'  => true,
 				'range_settings'  => array(
 					'min'  => 0,
 					'step' => 1,
@@ -500,6 +502,22 @@ class BA_Info_Box extends BA_Builder_Module {
 			),
 
 			// info box.
+			'equalize_content'     => array(
+				'label'       => esc_html__( 'Equalize Content Height', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can equalize content heights for the both sides.', 'addons-for-divi' ),
+				'type'        => 'yes_no_button',
+				'options'     => array(
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
+				),
+				'default'     => 'off',
+				'toggle_slug' => 'general',
+				'tab_slug'    => 'advanced',
+				'show_if'     => array(
+					'main_figure'      => 'image',
+					'figure_placement' => array( 'left', 'right' ),
+				),
+			),
 			'content_alignment'    => array(
 				'label'            => esc_html__( 'Content Alignment', 'addons-for-divi' ),
 				'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
@@ -510,8 +528,26 @@ class BA_Info_Box extends BA_Builder_Module {
 				'default_on_front' => 'left',
 				'toggle_slug'      => 'general',
 				'tab_slug'         => 'advanced',
+				'mobile_options'   => true,
 			),
-
+			'align_items'          => array(
+				'label'       => esc_html__( 'Vertical Alignment', 'addons-for-divi' ),
+				'description' => esc_html__( 'Choose content vertical alignment.', 'addons-for-divi' ),
+				'type'        => 'select',
+				'toggle_slug' => 'general',
+				'tab_slug'    => 'advanced',
+				'default'     => 'flex-start',
+				'options'     => array(
+					'flex-start' => esc_html__( 'Top', 'addons-for-divi' ),
+					'center'     => esc_html__( 'Center', 'addons-for-divi' ),
+					'flex-end'   => esc_html__( 'Bottom', 'addons-for-divi' ),
+				),
+				'show_if'     => array(
+					'figure_placement' => array( 'left', 'right' ),
+					'equalize_content' => 'off',
+					'main_figure'      => 'image',
+				),
+			),
 			'content_padding'      => array(
 				'label'          => esc_html__( 'Content Padding', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Define custom content padding for the info box content. Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
@@ -523,6 +559,22 @@ class BA_Info_Box extends BA_Builder_Module {
 			),
 
 			// figure.
+			'figure_placement'     => array(
+				'label'       => esc_html__( 'Figure Placement', 'addons-for-divi' ),
+				'description' => esc_html__( 'Choose icon/image placement.', 'addons-for-divi' ),
+				'type'        => 'select',
+				'toggle_slug' => 'main_element',
+				'tab_slug'    => 'advanced',
+				'default'     => 'top',
+				'options'     => array(
+					'top'   => esc_html__( 'Top', 'addons-for-divi' ),
+					'left'  => esc_html__( 'Left', 'addons-for-divi' ),
+					'right' => esc_html__( 'Right', 'addons-for-divi' ),
+				),
+				'show_if_not' => array(
+					'main_figure' => 'video',
+				),
+			),
 			'icon_color'           => array(
 				'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
 				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'addons-for-divi' ),
@@ -530,19 +582,6 @@ class BA_Info_Box extends BA_Builder_Module {
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'main_element',
 				'default'     => '#333',
-				'hover'       => 'tabs',
-				'show_if'     => array(
-					'main_figure' => 'icon',
-				),
-			),
-
-			'icon_bg'              => array(
-				'label'       => esc_html__( 'Icon Background', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define a custom background color for your icon.', 'addons-for-divi' ),
-				'type'        => 'color-alpha',
-				'tab_slug'    => 'advanced',
-				'toggle_slug' => 'main_element',
-				'default'     => 'transparent',
 				'hover'       => 'tabs',
 				'show_if'     => array(
 					'main_figure' => 'icon',
@@ -575,6 +614,7 @@ class BA_Info_Box extends BA_Builder_Module {
 				'type'           => 'range',
 				'default'        => '100%',
 				'default_unit'   => '%',
+				'mobile_options' => true,
 				'range_settings' => array(
 					'min'  => 0,
 					'step' => 1,
@@ -597,6 +637,7 @@ class BA_Info_Box extends BA_Builder_Module {
 				'option_category' => 'basic_option',
 				'default_unit'    => 'px',
 				'default'         => 'auto',
+				'mobile_options'  => true,
 				'range_settings'  => array(
 					'min'  => 0,
 					'step' => 1,
@@ -605,7 +646,8 @@ class BA_Info_Box extends BA_Builder_Module {
 				'toggle_slug'     => 'main_element',
 				'tab_slug'        => 'advanced',
 				'show_if'         => array(
-					'main_figure' => 'image',
+					'main_figure'      => 'image',
+					'equalize_content' => 'off',
 				),
 			),
 
@@ -655,7 +697,74 @@ class BA_Info_Box extends BA_Builder_Module {
 					'main_figure' => 'icon',
 				),
 			),
-
+			'use_icon_box'         => array(
+				'label'       => esc_html__( 'Use Icon Box', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can choose whether icon box should be used.', 'addons-for-divi' ),
+				'type'        => 'yes_no_button',
+				'options'     => array(
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
+				),
+				'default'     => 'off',
+				'toggle_slug' => 'main_element',
+				'tab_slug'    => 'advanced',
+				'show_if'     => array(
+					'main_figure' => 'icon',
+				),
+			),
+			'icon_bg'              => array(
+				'label'       => esc_html__( 'Icon Background', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom background color for your icon.', 'addons-for-divi' ),
+				'type'        => 'color-alpha',
+				'tab_slug'    => 'advanced',
+				'toggle_slug' => 'main_element',
+				'default'     => 'transparent',
+				'hover'       => 'tabs',
+				'show_if'     => array(
+					'use_icon_box' => 'on',
+					'main_figure'  => 'icon',
+				),
+			),
+			'icon_height'          => array(
+				'label'           => esc_html__( 'Icon Height', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define a custom height for your icon box.', 'addons-for-divi' ),
+				'type'            => 'range',
+				'option_category' => 'basic_option',
+				'default_unit'    => 'px',
+				'default'         => '80px',
+				'mobile_options'  => true,
+				'range_settings'  => array(
+					'min'  => 0,
+					'step' => 1,
+					'max'  => 200,
+				),
+				'toggle_slug'     => 'main_element',
+				'tab_slug'        => 'advanced',
+				'show_if'         => array(
+					'use_icon_box' => 'on',
+					'main_figure'  => 'icon',
+				),
+			),
+			'icon_width'           => array(
+				'label'           => esc_html__( 'Icon Width', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define a custom height for your icon box.', 'addons-for-divi' ),
+				'type'            => 'range',
+				'option_category' => 'basic_option',
+				'default_unit'    => 'px',
+				'default'         => '80px',
+				'mobile_options'  => true,
+				'range_settings'  => array(
+					'min'  => 0,
+					'step' => 1,
+					'max'  => 200,
+				),
+				'toggle_slug'     => 'main_element',
+				'tab_slug'        => 'advanced',
+				'show_if'         => array(
+					'use_icon_box' => 'on',
+					'main_figure'  => 'icon',
+				),
+			),
 			// Button.
 			'btn_spacing_top'      => array(
 				'label'           => esc_html__( 'Button Spacing Top', 'addons-for-divi' ),
@@ -663,6 +772,7 @@ class BA_Info_Box extends BA_Builder_Module {
 				'type'            => 'range',
 				'default'         => '15px',
 				'option_category' => 'basic_option',
+				'mobile_options'  => true,
 				'allowed_units'   => array( 'px' ),
 				'default_unit'    => 'px',
 				'range_settings'  => array(
@@ -693,7 +803,7 @@ class BA_Info_Box extends BA_Builder_Module {
 			// computed fields.
 			'__video'              => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'BA_Info_Box', 'get_new_video' ),
+				'computed_callback'   => array( 'DTQ_Info_Box', 'get_new_video' ),
 				'computed_depends_on' => array(
 					'video',
 				),
@@ -723,10 +833,8 @@ class BA_Info_Box extends BA_Builder_Module {
 			$data_schema            = $this->get_swapped_img_schema( 'photo' );
 
 			return sprintf(
-				'<div class="figure ba-lightbox-ctrl">
-                    <div class="ba-overlay" data-icon="%3$s"></div>
-					<img class="ba-info-box-img ba-swapped-img" src="%1$s" %2$s alt=""/>
-				</div>',
+				'<div class="ba-overlay" data-icon="%3$s"></div>
+				<img class="ba-info-box-img ba-swapped-img" src="%1$s" %2$s alt=""/>',
 				$photo,
 				$data_schema,
 				$overlay_icon
@@ -872,179 +980,223 @@ class BA_Info_Box extends BA_Builder_Module {
 	}
 
 	public function render_css( $render_slug ) {
+		$main_figure      = $this->props['main_figure'];
+		$use_icon_box     = $this->props['use_icon_box'];
+		$align_items      = $this->props['align_items'];
+		$equalize_content = $this->props['equalize_content'];
+		$figure_placement = $this->props['figure_placement'];
+		$image_height     = $this->props['image_height'];
+		$icon_bg_hover    = $this->get_hover_value( 'icon_bg' );
+		$icon_color_hover = $this->get_hover_value( 'icon_color' );
+		$vo_icon_color    = $this->props['vo_icon_color'];
+		$vo_icon_size     = $this->props['vo_icon_size'];
+		$vo_bg            = $this->props['vo_bg'];
 
-		$icon_padding                           = $this->props['icon_padding'];
-		$icon_padding_tablet                    = $this->props['icon_padding_tablet'];
-		$icon_padding_phone                     = $this->props['icon_padding_phone'];
-		$icon_padding_last_edited               = $this->props['icon_padding_last_edited'];
-		$icon_padding_responsive_status         = et_pb_get_responsive_status( $icon_padding_last_edited );
-		$image_width                            = $this->props['image_width'];
-		$image_height                           = $this->props['image_height'];
-		$content_padding                        = $this->props['content_padding'];
-		$content_padding_tablet                 = $this->props['content_padding_tablet'];
-		$content_padding_phone                  = $this->props['content_padding_phone'];
-		$content_padding_last_edited            = $this->props['content_padding_last_edited'];
-		$content_padding_responsive_status      = et_pb_get_responsive_status( $content_padding_last_edited );
-		$icon_bg_hover                          = $this->get_hover_value( 'icon_bg' );
-		$icon_color_hover                       = $this->get_hover_value( 'icon_color' );
-		$btn_spacing_top                        = $this->props['btn_spacing_top'];
-		$title_bottom_spacing                   = $this->props['title_bottom_spacing'];
-		$title_bottom_spacing_tablet            = $this->props['title_bottom_spacing_tablet'];
-		$title_bottom_spacing_phone             = $this->props['title_bottom_spacing_phone'];
-		$title_bottom_spacing_last_edited       = $this->props['title_bottom_spacing_last_edited'];
-		$title_bottom_spacing_responsive_status = et_pb_get_responsive_status( $title_bottom_spacing_last_edited );
-		$button_custom_padding                  = $this->props['button_custom_padding'];
-		$vo_icon_color                          = $this->props['vo_icon_color'];
-		$vo_icon_size                           = $this->props['vo_icon_size'];
-		$vo_bg                                  = $this->props['vo_bg'];
-		$content_alignment                      = $this->props['content_alignment'];
+		if ( 'video' !== $main_figure ) {
+			if ( 'top' !== $figure_placement ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-info-box',
+						'declaration' => 'display: flex;',
+					)
+				);
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-info-box-content',
+						'declaration' => 'flex: 1 1;',
+					)
+				);
+			}
+
+			if ( 'right' === $figure_placement ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-info-box',
+						'declaration' => 'flex-direction: row-reverse;',
+					)
+				);
+			}
+		}
 
 		// Figure Image.
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-info-box .figure',
-				'declaration' => sprintf( 'width: %1$s !important;', $image_width ),
-			)
-		);
-
-		if ( $image_height !== 'auto' ) {
-
-			ET_Builder_Element::set_style(
-				$render_slug,
+		if ( 'image' === $main_figure ) {
+			$this->get_responsive_styles(
+				'image_width',
+				'%%order_class%% .ba-info-box .ba-info-box-figure',
 				array(
-					'selector'    => '%%order_class%% .ba-info-box .figure',
-					'declaration' => sprintf( 'height: %1$s !important;', $image_height ),
-				)
+					'primary'   => 'width',
+					'important' => true,
+				),
+				array( 'default' => '100%' ),
+				$render_slug
+			);
+			$this->get_responsive_styles(
+				'image_width',
+				'%%order_class%% .ba-info-box .ba-info-box-figure',
+				array(
+					'primary'   => 'flex',
+					'important' => true,
+				),
+				array( 'default' => '100%' ),
+				$render_slug
 			);
 
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-info-box .figure img',
-					'declaration' => 'height: 100%; object-fit: cover;width:100%;',
-				)
-			);
+			if ( 'off' === $equalize_content ) {
+				if ( 'top' !== $figure_placement && 'auto' !== $image_height ) {
+
+					$this->get_responsive_styles(
+						'image_height',
+						'%%order_class%% .ba-info-box .ba-info-box-figure',
+						array(
+							'primary'   => 'height',
+							'important' => true,
+						),
+						array( 'default' => '100%' ),
+						$render_slug
+					);
+
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .ba-info-box .ba-info-box-figure img',
+							'declaration' => 'height: 100%; object-fit: cover;width:100%;',
+						)
+					);
+
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .ba-info-box',
+							'declaration' => sprintf( 'align-items: %1$s !important;', $align_items ),
+						)
+					);
+				}
+			} else {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-info-box .ba-info-box-figure img',
+						'declaration' => 'height: 100%; object-fit: cover;width:100%;',
+					)
+				);
+			}
 		}
 
 		// Button.
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-info-box-btn',
-				'declaration' => sprintf( 'padding-top: %1$s;', $btn_spacing_top ),
-			)
-		);
+		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .ba-info-box .ba-info-box-btn' );
 
-		if ( ! empty( $button_custom_padding ) ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => 'body #page-container %%order_class%% .ba-btn-content, .et-db #et-boc %%order_class%% .ba-btn-content',
-					'declaration' => $this->process_margin_padding( $button_custom_padding, 'padding', true ),
-				)
-			);
-		}
+		$this->get_responsive_styles(
+			'btn_spacing_top',
+			'%%order_class%% .ba-info-box-btn',
+			array(
+				'primary'   => 'padding-top',
+				'important' => false,
+			),
+			array( 'default' => '15px' ),
+			$render_slug
+		);
 
 		// Texts.
-		ET_Builder_Element::set_style(
-			$render_slug,
+		$this->get_responsive_styles(
+			'title_bottom_spacing',
+			'%%order_class%% .ba-info-box-title',
 			array(
-				'selector'    => '%%order_class%% .ba-info-box-title',
-				'declaration' => sprintf( 'padding-bottom: %1$s!important;', $title_bottom_spacing ),
-			)
+				'primary'   => 'padding-bottom',
+				'important' => true,
+			),
+			array( 'default' => '10px' ),
+			$render_slug
 		);
 
-		if ( $title_bottom_spacing_tablet && $title_bottom_spacing_responsive_status ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-info-box-title',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => sprintf( 'padding-bottom: %1$s!important;', $title_bottom_spacing_tablet ),
-				)
-			);
-		}
-
-		if ( $title_bottom_spacing_phone && $title_bottom_spacing_responsive_status ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-info-box-title',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => sprintf( 'padding-bottom: %1$s!important;', $title_bottom_spacing_phone ),
-				)
-			);
-		}
-
-		ET_Builder_Element::set_style(
-			$render_slug,
+		$this->get_responsive_styles(
+			'content_alignment',
+			'%%order_class%%',
 			array(
-				'selector'    => '%%order_class%%',
-				'declaration' => sprintf( 'text-align: %1$s;', $content_alignment ),
-			)
+				'primary'   => 'text-align',
+				'important' => false,
+			),
+			array( 'default' => 'left' ),
+			$render_slug
 		);
 
 		// Content Padding.
-		ET_Builder_Element::set_style(
-			$render_slug,
+		$this->get_responsive_styles(
+			'content_padding',
+			'%%order_class%% .ba-info-box-content',
 			array(
-				'selector'    => '%%order_class%% .ba-info-box-content',
-				'declaration' => $this->process_margin_padding( $content_padding, 'padding', false ),
-			)
+				'primary'   => 'padding',
+				'important' => false,
+			),
+			array( 'default' => '15px|0px|0px|0px' ),
+			$render_slug
 		);
 
-		// Content Padding Tablet.
-		if ( $content_padding_tablet && $content_padding_responsive_status ) {
+		// Icon.
+		if ( 'icon' === $main_figure ) {
+			if ( 'on' === $use_icon_box ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .ba-info-box-icon',
+						'declaration' => sprintf( 'background: %1$s;', $this->props['icon_bg'] ),
+					)
+				);
 
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-info-box-content',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => $this->process_margin_padding( $content_padding_tablet, 'padding', false ),
-				)
-			);
-		}
+				if ( ! empty( $icon_bg_hover ) ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .ba-info-box-icon:hover',
+							'declaration' => sprintf( 'background: %1$s', $icon_bg_hover ),
+						)
+					);
+				}
 
-		// Content Padding Phone
-		if ( $content_padding_phone && $content_padding_responsive_status ) {
+				$this->get_responsive_styles(
+					'icon_height',
+					'%%order_class%% .ba-info-box-icon',
+					array(
+						'primary'   => 'height',
+						'important' => false,
+					),
+					array( 'default' => '80px' ),
+					$render_slug
+				);
 
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-info-box-content',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => $this->process_margin_padding( $content_padding_phone, 'padding', false ),
-				)
-			);
-		}
+				$this->get_responsive_styles(
+					'icon_width',
+					'%%order_class%% .ba-info-box-icon',
+					array(
+						'primary'   => 'width',
+						'important' => false,
+					),
+					array( 'default' => '80px' ),
+					$render_slug
+				);
 
-		// Icon
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-info-box-icon',
-				'declaration' => sprintf( 'background: %1$s;', $this->props['icon_bg'] ),
-			)
-		);
-
-		if ( ! empty( $icon_bg_hover ) ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-info-box-icon:hover',
-					'declaration' => sprintf( 'background: %1$s', $icon_bg_hover ),
-				)
-			);
+			}
 		}
 
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .ba-info-box-icon i',
-				'declaration' => sprintf( 'color: %1$s; font-size: %2$s;', $this->props['icon_color'], $this->props['icon_size'] ),
+				'declaration' => sprintf( 'color: %1$s;', $this->props['icon_color'] ),
 			)
+		);
+
+		$this->get_responsive_styles(
+			'icon_size',
+			'%%order_class%% .ba-info-box-icon i',
+			array(
+				'primary'   => 'font-size',
+				'important' => false,
+			),
+			array( 'default' => '45px' ),
+			$render_slug
 		);
 
 		if ( ! empty( $icon_color_hover ) ) {
@@ -1057,46 +1209,22 @@ class BA_Info_Box extends BA_Builder_Module {
 			);
 		}
 
-		// Icon Padding
-		ET_Builder_Element::set_style(
-			$render_slug,
+		// Icon Padding.
+		$this->get_responsive_styles(
+			'icon_padding',
+			'%%order_class%% .ba-info-box-icon',
 			array(
-				'selector'    => '%%order_class%% .ba-info-box-icon',
-				'declaration' => $this->process_margin_padding( $icon_padding, 'padding', false ),
-			)
+				'primary'   => 'padding',
+				'important' => false,
+			),
+			array( 'default' => '0px|0px|0px|0px' ),
+			$render_slug
 		);
 
-		// Icon Padding tablet
-		if ( $icon_padding_tablet && $icon_padding_responsive_status ) {
-
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-info-box-icon',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => $this->process_margin_padding( $icon_padding_tablet, 'padding', false ),
-				)
-			);
-		}
-
-		// Icon Padding phone
-		if ( $icon_padding_phone && $icon_padding_responsive_status ) {
-
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-info-box-icon',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => $this->process_margin_padding( $icon_padding_phone, 'padding', false ),
-				)
-			);
-		}
-
-		// Overlay Styles
+		// Overlay Styles.
 		$this->get_overlay_style( $render_slug, 'photo', '%%order_class%%' );
 
-		// video overlay
-
+		// video Icon.
 		if ( ! empty( $vo_icon_color ) ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -1107,12 +1235,15 @@ class BA_Info_Box extends BA_Builder_Module {
 			);
 		}
 		if ( ! empty( $vo_icon_size ) ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
+			$this->get_responsive_styles(
+				'vo_icon_size',
+				'%%order_class%% .et_pb_video_overlay .et_pb_video_play',
 				array(
-					'selector'    => '%%order_class%% .et_pb_video_overlay .et_pb_video_play',
-					'declaration' => sprintf( 'font-size: %1$s;', $vo_icon_size ),
-				)
+					'primary'   => 'font-size',
+					'important' => false,
+				),
+				array( 'default' => '6rem' ),
+				$render_slug
 			);
 		}
 
@@ -1128,4 +1259,4 @@ class BA_Info_Box extends BA_Builder_Module {
 	}
 }
 
-new BA_Info_Box();
+new DTQ_Info_Box();
