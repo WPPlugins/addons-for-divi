@@ -68,11 +68,15 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'form_id'    => array(
 				'label'    => esc_html__( 'Form Fields', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-cf7-styler input',
+				'selector' => '%%order_class%% .dtq-cf7-styler input',
 			),
 			'cf7_labels' => array(
 				'label'    => esc_html__( 'Form Label', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-cf7-styler label',
+				'selector' => '%%order_class%% .dtq-cf7-styler label',
+			),
+			'cf7_submit' => array(
+				'label'    => esc_html__( 'Button', 'addons-for-divi' ),
+				'selector' => '%%order_class%% .bck-cf7 input.wpcf7-submit',
 			),
 		);
 
@@ -167,7 +171,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 					'use_form_header' => 'on',
 					'use_icon'        => 'on',
 				),
-				'default'     => '',
+				'default'     => '&#xe076;||divi||400',
 				'toggle_slug' => 'general',
 			),
 
@@ -666,11 +670,11 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				'main'      => implode(
 					', ',
 					array(
-						"{$this->main_css_element} .ba-cf7 .wpcf7 input:not([type=submit])",
-						"{$this->main_css_element} .ba-cf7 .wpcf7 input::placeholder",
-						"{$this->main_css_element} .ba-cf7 .wpcf7 select",
-						"{$this->main_css_element} .ba-cf7 .wpcf7 textarea",
-						"{$this->main_css_element} .ba-cf7 .wpcf7 textarea::placeholder",
+						"{$this->main_css_element} .dtq-cf7 .wpcf7 input:not([type=submit])",
+						"{$this->main_css_element} .dtq-cf7 .wpcf7 input::placeholder",
+						"{$this->main_css_element} .dtq-cf7 .wpcf7 select",
+						"{$this->main_css_element} .dtq-cf7 .wpcf7 textarea",
+						"{$this->main_css_element} .dtq-cf7 .wpcf7 textarea::placeholder",
 					)
 				),
 				'important' => array(
@@ -689,7 +693,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		$advanced_fields['fonts']['labels'] = array(
 			'label'       => esc_html__( 'Label', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => "{$this->main_css_element} .ba-cf7 .wpcf7 label",
+				'main'      => "{$this->main_css_element} .dtq-cf7 .wpcf7 label",
 				'important' => 'all',
 			),
 			'toggle_slug' => 'form_text',
@@ -702,8 +706,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				'main'      => implode(
 					', ',
 					array(
-						"{$this->main_css_element} .ba-cf7 .wpcf7 input::placeholder",
-						"{$this->main_css_element} .ba-cf7 .wpcf7 textarea::placeholder",
+						"{$this->main_css_element} .dtq-cf7 .wpcf7 input::placeholder",
+						"{$this->main_css_element} .dtq-cf7 .wpcf7 textarea::placeholder",
 					)
 				),
 				'important' => 'all',
@@ -715,7 +719,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		$advanced_fields['fonts']['title'] = array(
 			'label'            => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'              => array(
-				'main'      => '%%order_class%% .ba-form-header-title',
+				'main'      => '%%order_class%% .dtq-form-header-title',
 				'important' => 'all',
 			),
 			'depends_show_if'  => 'on',
@@ -728,7 +732,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		$advanced_fields['fonts']['text'] = array(
 			'label'            => esc_html__( 'Text', 'addons-for-divi' ),
 			'css'              => array(
-				'main'      => '%%order_class%% .ba-form-header-text',
+				'main'      => '%%order_class%% .dtq-form-header-text',
 				'important' => 'all',
 			),
 			'depends_show_if'  => 'on',
@@ -769,27 +773,27 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				'main'      => array(
 					'border_radii'  => sprintf(
 						'
-						%1$s .ba-cf7-styler .wpcf7 input:not([type=submit]),
-						%1$s .ba-cf7-styler .wpcf7 input[type=email],
-						%1$s .ba-cf7-styler .wpcf7 input[type=text],
-						%1$s .ba-cf7-styler .wpcf7 input[type=url],
-						%1$s .ba-cf7-styler .wpcf7 input[type=tel],
-						%1$s .ba-cf7-styler .wpcf7 input[type=date],
-						%1$s .ba-cf7-styler .wpcf7 select,
-						%1$s .ba-cf7-styler .wpcf7 textarea',
+						%1$s .dtq-cf7-styler .wpcf7 input:not([type=submit]),
+						%1$s .dtq-cf7-styler .wpcf7 input[type=email],
+						%1$s .dtq-cf7-styler .wpcf7 input[type=text],
+						%1$s .dtq-cf7-styler .wpcf7 input[type=url],
+						%1$s .dtq-cf7-styler .wpcf7 input[type=tel],
+						%1$s .dtq-cf7-styler .wpcf7 input[type=date],
+						%1$s .dtq-cf7-styler .wpcf7 select,
+						%1$s .dtq-cf7-styler .wpcf7 textarea',
 						$this->main_css_element
 					),
 
 					'border_styles' => sprintf(
 						'
-						%1$s .ba-cf7-styler .wpcf7 input:not([type=submit]),
-						%1$s .ba-cf7-styler .wpcf7 input[type=email],
-						%1$s .ba-cf7-styler .wpcf7 input[type=text],
-						%1$s .ba-cf7-styler .wpcf7 input[type=url],
-						%1$s .ba-cf7-styler .wpcf7 input[type=tel],
-						%1$s .ba-cf7-styler .wpcf7 input[type=date],
-						%1$s .ba-cf7-styler .wpcf7 select,
-						%1$s .ba-cf7-styler .wpcf7 textarea
+						%1$s .dtq-cf7-styler .wpcf7 input:not([type=submit]),
+						%1$s .dtq-cf7-styler .wpcf7 input[type=email],
+						%1$s .dtq-cf7-styler .wpcf7 input[type=text],
+						%1$s .dtq-cf7-styler .wpcf7 input[type=url],
+						%1$s .dtq-cf7-styler .wpcf7 input[type=tel],
+						%1$s .dtq-cf7-styler .wpcf7 input[type=date],
+						%1$s .dtq-cf7-styler .wpcf7 select,
+						%1$s .dtq-cf7-styler .wpcf7 textarea
 						',
 						$this->main_css_element
 					),
@@ -825,7 +829,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		return $cf7_shortcode;
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->apply_css( $render_slug );
 
@@ -843,11 +847,11 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		if ( 'on' === $use_form_header ) {
 
 			$header_img  = '' !== $this->props['header_img'] ? $this->props['header_img'] : false;
-			$image       = $header_img ? sprintf( '<div class="ba-form-header-image"><img src="%1$s" alt=""/></div>', $header_img ) : '';
+			$image       = $header_img ? sprintf( '<div class="dtq-form-header-image"><img src="%1$s" alt=""/></div>', $header_img ) : '';
 			$header_icon = esc_attr( et_pb_process_font_icon( $this->props['header_icon'] ) );
 
 			$icon = sprintf(
-				'<div class="ba-form-header-icon">
+				'<div class="dtq-form-header-icon">
 					<span class="et-pb-icon">
 						%1$s
 					</span>
@@ -857,23 +861,26 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 			$icon_image = 'on' === $this->props['use_icon'] ? $icon : $image;
 
+			// Inject Font Awesome Manually!.
+			dtq_inject_fa_icons( $this->props['header_icon'] );
+
 			$title = isset( $form_header_title ) ? sprintf(
-				'<h2 class="ba-form-header-title">%1$s</h2>',
+				'<h2 class="dtq-form-header-title">%1$s</h2>',
 				$form_header_title
 			) : '';
 
 			$text = isset( $form_header_text ) ? sprintf(
-				'<div class="ba-form-header-text">%1$s</div>',
+				'<div class="dtq-form-header-text">%1$s</div>',
 				$form_header_text
 			) : '';
 
-			$header_info = $title || $text ? sprintf( '<div class="ba-form-header-info">%1$s%2$s</div>', $title, $text ) : '';
+			$header_info = $title || $text ? sprintf( '<div class="dtq-form-header-info">%1$s%2$s</div>', $title, $text ) : '';
 
 			if ( ! empty( $form_header_title ) || ! empty( $form_header_text ) ) {
 				$form_header = sprintf(
 					'
-                    <div class="ba-form-header-container">
-                        <div class="ba-form-header">
+                    <div class="dtq-form-header-container">
+                        <div class="dtq-form-header">
                             %1$s%2$s
                         </div>
                     </div>',
@@ -883,13 +890,13 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			}
 		}
 
-		$cr_custom_class = 'on' === $cr_custom_styles ? 'ba-cf7-cr' : '';
+		$cr_custom_class = 'on' === $cr_custom_styles ? 'dtq-cf7-cr' : '';
 
 		return sprintf(
 			'
-			<div class="ba-module ba-cf7 ba-cf7-container ba-cf7-styler-button-%4$s">
+			<div class="dtq-module dtq-cf7 dtq-cf7-container dtq-cf7-styler-button-%4$s">
 				%3$s
-				<div class="ba-cf7-styler %2$s">
+				<div class="dtq-cf7-styler %2$s">
 					%1$s
 				</div>
 			</div>
@@ -942,11 +949,25 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		$form_label_spacing_last_edited       = $this->props['form_label_spacing_last_edited'];
 		$form_label_spacing_responsive_status = et_pb_get_responsive_status( $form_label_spacing_last_edited );
 
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'header_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-form-header-icon span',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
+
 		if ( 'on' === $use_form_button_fullwidth ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7 .wpcf7 input[type=submit], %%order_class%% .wpcf7-form button.wpcf7-submit',
+					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7 input[type=submit], %%order_class%% .wpcf7-form button.wpcf7-submit',
 					'declaration' => 'width: 100% !important;',
 				)
 			);
@@ -956,7 +977,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler input:not([type=submit]), %%order_class%% .ba-cf7-styler select, %%order_class%% .ba-cf7-styler textarea, %%order_class%% .ba-cf7 .wpcf7-checkbox input[type="checkbox"] + span:before, %%order_class%% .ba-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before, %%order_class%% .ba-cf7 .wpcf7-radio input[type="radio"]:not(:checked) + span:before',
+					'selector'    => '%%order_class%% .dtq-cf7-styler input:not([type=submit]), %%order_class%% .dtq-cf7-styler select, %%order_class%% .dtq-cf7-styler textarea, %%order_class%% .dtq-cf7 .wpcf7-checkbox input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"]:not(:checked) + span:before',
 					'declaration' => sprintf(
 						'background-color: %1$s!important;',
 						$form_background_color
@@ -980,8 +1001,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'form_field_padding',
-			'.ba-cf7-styler .wpcf7 input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
-			.ba-cf7-styler .wpcf7 select, .ba-cf7-styler .wpcf7 textarea',
+			'.dtq-cf7-styler .wpcf7 input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+			.dtq-cf7-styler .wpcf7 select, .dtq-cf7-styler .wpcf7 textarea',
 			array(
 				'primary'   => 'padding',
 				'important' => true,
@@ -994,7 +1015,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7 .wpcf7 input:not([type=submit]):focus, %%order_class%% .ba-cf7 .wpcf7 select:focus, %%order_class%% .ba-cf7 .wpcf7 textarea:focus',
+					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7 input:not([type=submit]):focus, %%order_class%% .dtq-cf7 .wpcf7 select:focus, %%order_class%% .dtq-cf7 .wpcf7 textarea:focus',
 					'declaration' => sprintf( 'border-color: %1$s!important;', $form_field_active_color ),
 				)
 			);
@@ -1006,7 +1027,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-cf7 .wpcf7-checkbox input[type="checkbox"] + span:before, %%order_class%% .ba-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before, %%order_class%% .ba-cf7 .wpcf7-radio input[type="radio"] + span:before',
+						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"] + span:before',
 						'declaration' => sprintf(
 							'width: %1$s!important; height: %1$s!important; border-width:%2$s!important;',
 							esc_html( $cr_size ),
@@ -1021,7 +1042,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-cf7 .wpcf7-acceptance input[type=checkbox]:checked + span:before, %%order_class%% .ba-cf7 .wpcf7-checkbox input[type=checkbox]:checked + span:before',
+						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-acceptance input[type=checkbox]:checked + span:before, %%order_class%% .dtq-cf7 .wpcf7-checkbox input[type=checkbox]:checked + span:before',
 						'declaration' => sprintf(
 							'font-size: %1$s!important;',
 							esc_html( $font_size )
@@ -1034,7 +1055,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-cf7 .wpcf7-checkbox input[type="checkbox"] + span:before, %%order_class%% .ba-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before, %%order_class%% .ba-cf7 .wpcf7-radio input[type="radio"]:not(:checked) + span:before',
+						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"]:not(:checked) + span:before',
 						'declaration' => sprintf(
 							'background-color: %1$s!important;',
 							esc_html( $cr_background_color )
@@ -1047,7 +1068,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-cf7 .wpcf7-radio input[type="radio"]:checked + span:before',
+						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"]:checked + span:before',
 						'declaration' => sprintf(
 							'box-shadow:inset 0px 0px 0px 4px %1$s!important;',
 							esc_html( $cr_background_color )
@@ -1060,7 +1081,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-cf7 .wpcf7-checkbox input[type="checkbox"]:checked + span:before, %%order_class%% .ba-cf7 .wpcf7-acceptance input[type="checkbox"]:checked + span:before',
+						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox input[type="checkbox"]:checked + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"]:checked + span:before',
 						'declaration' => sprintf(
 							'color: %1$s!important;',
 							esc_html( $cr_selected_color )
@@ -1073,7 +1094,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-cf7 .wpcf7-radio input[type="radio"]:checked + span:before',
+						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"]:checked + span:before',
 						'declaration' => sprintf(
 							'background-color: %1$s!important;',
 							esc_html( $cr_selected_color )
@@ -1086,7 +1107,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-cf7 .wpcf7-checkbox input[type=radio] + span:before, %%order_class%% .ba-cf7 .wpcf7-radio input[type=checkbox] + span:before, %%order_class%% .ba-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before',
+						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox input[type=radio] + span:before, %%order_class%% .dtq-cf7 .wpcf7-radio input[type=checkbox] + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before',
 						'declaration' => sprintf(
 							'border-color: %1$s!important;',
 							esc_html( $cr_border_color )
@@ -1099,7 +1120,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-cf7 .wpcf7-checkbox label, %%order_class%% .wpcf7-radio label',
+						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox label, %%order_class%% .wpcf7-radio label',
 						'declaration' => sprintf(
 							'color: %1$s!important;',
 							esc_html( $cr_label_color )
@@ -1113,7 +1134,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler span.wpcf7-not-valid-tip',
+					'selector'    => '%%order_class%% .dtq-cf7-styler span.wpcf7-not-valid-tip',
 					'declaration' => sprintf(
 						'color: %1$s!important;',
 						esc_html( $cf7_message_color )
@@ -1126,7 +1147,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler span.wpcf7-not-valid-tip',
+					'selector'    => '%%order_class%% .dtq-cf7-styler span.wpcf7-not-valid-tip',
 					'declaration' => sprintf(
 						'background-color: %1$s!important;',
 						esc_html( $cf7_message_bg_color )
@@ -1139,7 +1160,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler span.wpcf7-not-valid-tip',
+					'selector'    => '%%order_class%% .dtq-cf7-styler span.wpcf7-not-valid-tip',
 					'declaration' => sprintf(
 						'border-color: %1$s!important;',
 						esc_html( $cf7_border_highlight_color )
@@ -1153,7 +1174,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler .wpcf7-mail-sent-ok',
+					'selector'    => '%%order_class%% .dtq-cf7-styler .wpcf7-mail-sent-ok',
 					'declaration' => sprintf(
 						'color: %1$s!important;',
 						esc_html( $cf7_success_message_color )
@@ -1166,7 +1187,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler .wpcf7-mail-sent-ok',
+					'selector'    => '%%order_class%% .dtq-cf7-styler .wpcf7-mail-sent-ok',
 					'declaration' => sprintf(
 						'background-color: %1$s!important;',
 						esc_html( $cf7_success_message_bg_color )
@@ -1179,7 +1200,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler .wpcf7-mail-sent-ok',
+					'selector'    => '%%order_class%% .dtq-cf7-styler .wpcf7-mail-sent-ok',
 					'declaration' => sprintf(
 						'border-color: %1$s!important;',
 						esc_html( $cf7_success_border_color )
@@ -1258,7 +1279,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
+				'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
 				'declaration' => sprintf( 'margin-top: %1$s;', $form_label_spacing ),
 			)
 		);
@@ -1267,7 +1288,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
+					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'margin-top: %1$s;', $form_label_spacing_tablet ),
 				)
@@ -1279,7 +1300,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
+					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'margin-top: %1$s;', $form_label_spacing_phone ),
 				)
@@ -1290,7 +1311,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
+				'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
 				'declaration' => sprintf( 'margin-bottom: %1$s;', $form_field_spacing ),
 			)
 		);
@@ -1299,7 +1320,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
+					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'margin-bottom: %1$s;', $form_field_spacing_tablet ),
 				)
@@ -1311,7 +1332,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
+					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'margin-bottom: %1$s;', $form_field_spacing_phone ),
 				)
@@ -1333,7 +1354,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-form-header .ba-form-header-title',
+				'selector'    => '%%order_class%% .dtq-form-header .dtq-form-header-title',
 				'declaration' => "padding-bottom: {$header_title_spacing}!important;",
 			)
 		);
@@ -1341,7 +1362,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-form-header-container',
+				'selector'    => '%%order_class%% .dtq-form-header-container',
 				'declaration' => "background-color: {$form_header_bg}!important;",
 			)
 		);
@@ -1349,7 +1370,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-form-header-container',
+				'selector'    => '%%order_class%% .dtq-form-header-container',
 				'declaration' => "margin-bottom: {$form_header_bottom}!important;",
 			)
 		);
@@ -1357,7 +1378,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-form-header-icon, %%order_class%% .ba-form-header-image',
+				'selector'    => '%%order_class%% .dtq-form-header-icon, %%order_class%% .dtq-form-header-image',
 				'declaration' => "background-color: {$form_header_img_bg}!important;",
 			)
 		);
@@ -1365,7 +1386,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-form-header-icon, %%order_class%% .ba-form-header-image',
+				'selector'    => '%%order_class%% .dtq-form-header-icon, %%order_class%% .dtq-form-header-image',
 				'declaration' => $this->process_margin_padding( $form_header_icon_padding, 'padding', true ),
 			)
 		);
@@ -1373,14 +1394,14 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-form-header-icon span',
+				'selector'    => '%%order_class%% .dtq-form-header-icon span',
 				'declaration' => "color: {$form_header_icon_color}!important;",
 			)
 		);
 
 		$this->get_responsive_styles(
 			'form_header_icon_size',
-			'%%order_class%% .ba-form-header-icon span',
+			'%%order_class%% .dtq-form-header-icon span',
 			array(
 				'primary'   => 'font-size',
 				'important' => false,
@@ -1392,7 +1413,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-cf7-styler',
+				'selector'    => '%%order_class%% .dtq-cf7-styler',
 				'declaration' => "background-color: {$form_bg}!important;",
 			)
 		);
@@ -1409,7 +1430,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-form-header-container',
+				'selector'    => '%%order_class%% .dtq-form-header-container',
 				'declaration' => $this->process_margin_padding( $form_header_padding, 'padding', true ),
 			)
 		);
@@ -1418,7 +1439,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-form-header-container',
+					'selector'    => '%%order_class%% .dtq-form-header-container',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => $this->process_margin_padding( $form_header_padding_tablet, 'padding', true ),
 				)
@@ -1429,7 +1450,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-form-header-container',
+					'selector'    => '%%order_class%% .dtq-form-header-container',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => $this->process_margin_padding( $form_header_padding_phone, 'padding', true ),
 				)
@@ -1448,7 +1469,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-cf7-styler',
+				'selector'    => '%%order_class%% .dtq-cf7-styler',
 				'declaration' => BA_Builder_Module::process_margin_padding( $form_padding, 'padding', false ),
 			)
 		);
@@ -1457,7 +1478,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler',
+					'selector'    => '%%order_class%% .dtq-cf7-styler',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => BA_Builder_Module::process_margin_padding( $form_padding_tablet, 'padding', false ),
 				)
@@ -1468,7 +1489,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-cf7-styler',
+					'selector'    => '%%order_class%% .dtq-cf7-styler',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => BA_Builder_Module::process_margin_padding( $form_padding_phone, 'padding', false ),
 				)

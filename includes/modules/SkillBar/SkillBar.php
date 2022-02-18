@@ -25,8 +25,9 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'general' => esc_html__( 'General', 'addons-for-divi' ),
-					'title'   => esc_html__( 'Title', 'addons-for-divi' ),
+					'title' => esc_html__( 'Title Text', 'addons-for-divi' ),
+					'name'  => esc_html__( 'Name Text', 'addons-for-divi' ),
+					'level' => esc_html__( 'Level Text', 'addons-for-divi' ),
 				),
 			),
 		);
@@ -34,7 +35,7 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'title' => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-skill__title',
+				'selector' => '%%order_class%% .dtq-skill__title',
 			),
 		);
 	}
@@ -62,6 +63,7 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 				),
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'title',
+				'mobile_options' => true,
 			),
 
 			'bar_spacing_bottom'   => array(
@@ -75,8 +77,38 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 					'step' => 1,
 				),
 				'tab_slug'       => 'advanced',
-				'toggle_slug'    => 'general',
+				'toggle_slug'    => 'margin_padding',
 				'mobile_options' => true,
+			),
+
+			'name_spacing'         => array(
+				'label'          => esc_html__( 'Name Spacing', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define name spacing from the edge.', 'addons-for-divi' ),
+				'type'           => 'range',
+				'default'        => '15px',
+				'default_unit'   => 'px',
+				'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'tab_slug'       => 'advanced',
+				'toggle_slug'    => 'name',
+			),
+
+			'level_spacing'        => array(
+				'label'          => esc_html__( 'Level Spacing', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define level spacing from the edge.', 'addons-for-divi' ),
+				'type'           => 'range',
+				'default'        => '15px',
+				'default_unit'   => 'px',
+				'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'tab_slug'       => 'advanced',
+				'toggle_slug'    => 'level',
 			),
 
 		);
@@ -94,7 +126,7 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['title'] = array(
 			'css'             => array(
-				'main' => '%%order_class%% .ba-skill__title',
+				'main' => '%%order_class%% .dtq-skill__title',
 			),
 			'important'       => 'all',
 			'hide_text_align' => true,
@@ -111,6 +143,40 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 			),
 		);
 
+		$advanced_fields['fonts']['name'] = array(
+			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
+			'css'             => array(
+				'main'      => '%%order_class%% .dtq-skillbar__name',
+				'important' => 'all',
+			),
+			'hide_text_align' => true,
+			'tab_slug'        => 'advanced',
+			'toggle_slug'     => 'name',
+			'line_height'     => array(
+				'default' => '1em',
+			),
+			'font_size'       => array(
+				'default' => '14px',
+			),
+		);
+
+		$advanced_fields['fonts']['level'] = array(
+			'label'           => esc_html__( 'Level', 'addons-for-divi' ),
+			'css'             => array(
+				'main'      => '%%order_class%% .dtq-skillbar__level',
+				'important' => 'all',
+			),
+			'hide_text_align' => true,
+			'tab_slug'        => 'advanced',
+			'toggle_slug'     => 'level',
+			'line_height'     => array(
+				'default' => '1em',
+			),
+			'font_size'       => array(
+				'default' => '14px',
+			),
+		);
+
 		return $advanced_fields;
 	}
 
@@ -123,7 +189,7 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 
 		if ( ! empty( $title ) ) {
 			return sprintf(
-				'<%1$s class="ba-skill__title">%2$s</%1$s>',
+				'<%1$s class="dtq-skill__title">%2$s</%1$s>',
 				$processed_title_level,
 				$title
 			);
@@ -131,57 +197,47 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 	}
 
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
-		$content                              = $this->props['content'];
-		$title_spacing_bottom                 = $this->props['title_spacing_bottom'];
-		$bar_spacing_bottom                   = $this->props['bar_spacing_bottom'];
-		$bar_spacing_bottom_tablet            = $this->props['bar_spacing_bottom_tablet'];
-		$bar_spacing_bottom_phone             = $this->props['bar_spacing_bottom_phone'];
-		$bar_spacing_bottom_last_edited       = $this->props['bar_spacing_bottom_last_edited'];
-		$bar_spacing_bottom_responsive_status = et_pb_get_responsive_status( $bar_spacing_bottom_last_edited );
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-skill__title',
-				'declaration' => sprintf( 'margin-bottom: %1$s;', $title_spacing_bottom ),
-			)
+		$this->get_responsive_styles(
+			'name_spacing',
+			'%%order_class%% .dtq-skillbar__name',
+			array( 'primary' => 'margin-left' ),
+			array( 'default' => '15px' ),
+			$render_slug
 		);
 
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba_skill_bar_child',
-				'declaration' => sprintf( ' margin-bottom: %1$s!important;', $bar_spacing_bottom ),
-			)
+		$this->get_responsive_styles(
+			'level_spacing',
+			'%%order_class%% .dtq-skillbar__level',
+			array( 'primary' => 'margin-right' ),
+			array( 'default' => '15px' ),
+			$render_slug
 		);
 
-		if ( $bar_spacing_bottom_tablet && $bar_spacing_bottom_responsive_status ) {
+		$this->get_responsive_styles(
+			'title_spacing_bottom',
+			'%%order_class%% .dtq-skill__title',
+			array(
+				'primary'   => 'margin-bottom',
+				'important' => false,
+			),
+			array( 'default' => '10px' ),
+			$render_slug
+		);
 
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-form-header-container',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => sprintf( 'margin-bottom: %1$s!important;', $bar_spacing_bottom_tablet ),
-				)
-			);
-		}
+		$this->get_responsive_styles(
+			'bar_spacing_bottom',
+			'%%order_class%% .ba_skill_bar_child',
+			array(
+				'primary'   => 'margin-bottom',
+				'important' => true,
+			),
+			array( 'default' => '20px' ),
+			$render_slug
+		);
 
-		if ( $bar_spacing_bottom_phone && $bar_spacing_bottom_responsive_status ) {
-
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-form-header-container',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => sprintf( 'margin-bottom: %1$s!important;', $bar_spacing_bottom_phone ),
-				)
-			);
-		}
-
-		return sprintf( '<div class="ba-module ba-parent ba-skill">%1$s %2$s </div>', $this->render_title(), $content );
+		return sprintf( '<div class="dtq-module dtq-parent dtq-skill">%1$s %2$s </div>', $this->render_title(), $this->props['content'] );
 	}
 }
 

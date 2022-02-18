@@ -91,7 +91,7 @@ class DTQ_Image_Carousel extends BA_Builder_Module {
 	}
 
 	public function get_fields() {
-		return $this->get_carousel_option_fields( array( 'lightbox' ) );
+		return $this->get_carousel_option_fields( array( 'lightbox' ), array(), array() );
 	}
 
 	public function get_advanced_fields_config() {
@@ -107,10 +107,10 @@ class DTQ_Image_Carousel extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
-		wp_enqueue_script( 'baj-slick' );
-		wp_enqueue_style( 'bac-slick' );
+		wp_enqueue_script( 'dtqj-slick' );
+		wp_enqueue_style( 'dtqc-slick' );
 		$this->render_css( $render_slug );
 
 		$content          = $this->props['content'];
@@ -120,19 +120,19 @@ class DTQ_Image_Carousel extends BA_Builder_Module {
 		$custom_cursor    = $this->props['custom_cursor'];
 		$classes          = array();
 
-		array_push( $classes, "ba-lightbox-{$use_lightbox}" );
+		array_push( $classes, "dtq-lightbox-{$use_lightbox}" );
 
 		if ( 'on' === $is_center ) {
-			array_push( $classes, 'ba-centered' );
-			array_push( $classes, "ba-centered--{$center_mode_type}" );
+			array_push( $classes, 'dtq-centered' );
+			array_push( $classes, "dtq-centered--{$center_mode_type}" );
 		}
 
 		if ( 'on' === $custom_cursor ) {
-			array_push( $classes, 'ba-cursor' );
+			array_push( $classes, 'dtq-cursor' );
 		}
 
 		$output = sprintf(
-			'<div class="ba-carousel ba-image-carousel ba-carousel-frontend %3$s" %2$s >
+			'<div class="dtq-carousel dtq-image-carousel dtq-carousel-frontend %3$s" %2$s >
                     %1$s
                 </div>',
 			$content,

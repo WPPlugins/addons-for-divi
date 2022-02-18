@@ -41,6 +41,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 						),
 					),
 					'separator'  => esc_html__( 'Separator', 'addons-for-divi' ),
+					'border'     => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 		);
@@ -48,19 +49,19 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'title'     => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-business-hour-title h2',
+				'selector' => '%%order_class%% .dtq-business-hour-title h2',
 			),
 			'day'       => array(
 				'label'    => esc_html__( 'Day', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-business-hour-day',
+				'selector' => '%%order_class%% .dtq-business-hour-day',
 			),
 			'time'      => array(
 				'label'    => esc_html__( 'Time', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-business-hour-time',
+				'selector' => '%%order_class%% .dtq-business-hour-time',
 			),
 			'separator' => array(
 				'label'    => esc_html__( 'Separator', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-business-hour-separator',
+				'selector' => '%%order_class%% .dtq-business-hour-separator',
 			),
 		);
 	}
@@ -369,12 +370,12 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		$advanced_fields['text_shadow'] = false;
 		$advanced_fields['fonts']       = false;
 
-		$advanced_fields['borders']['item'] = array(
-			'toggle_slug' => 'general',
+		$advanced_fields['borders']['main'] = array(
+			'toggle_slug' => 'border',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-business-hour-child',
-					'border_styles' => '%%order_class%% .ba-business-hour-child',
+					'border_radii'  => '%%order_class%%',
+					'border_styles' => '%%order_class%%',
 				),
 				'important' => 'all',
 			),
@@ -388,10 +389,30 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			),
 		);
 
+		$advanced_fields['borders']['item'] = array(
+			'label_prefix' => esc_html__( 'Item', 'addons-for-divi' ),
+			'toggle_slug'  => 'general',
+			'css'          => array(
+				'main'      => array(
+					'border_radii'  => '%%order_class%% .dtq-business-hour-child',
+					'border_styles' => '%%order_class%% .dtq-business-hour-child',
+				),
+				'important' => 'all',
+			),
+			'defaults'     => array(
+				'border_radii'  => 'on|0px|0px|0px|0px',
+				'border_styles' => array(
+					'width' => '0px',
+					'color' => '#333333',
+					'style' => 'solid',
+				),
+			),
+		);
+
 		$advanced_fields['box_shadow']['item'] = array(
 			'label'       => esc_html__( 'Item Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-business-hour-child',
+				'main'      => '%%order_class%% .dtq-business-hour-child',
 				'important' => 'all',
 			),
 			'tab_slug'    => 'advanced',
@@ -402,8 +423,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			'toggle_slug' => 'bh_title',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-business-hour-title',
-					'border_styles' => '%%order_class%% .ba-business-hour-title',
+					'border_radii'  => '%%order_class%% .dtq-business-hour-title',
+					'border_styles' => '%%order_class%% .dtq-business-hour-title',
 				),
 				'important' => 'all',
 			),
@@ -419,7 +440,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['title'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-business-hour-title h2',
+				'main'      => '%%order_class%% .dtq-business-hour-title h2',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -433,7 +454,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		$advanced_fields['fonts']['day'] = array(
 			'label'           => esc_html__( 'Day', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-business-hour-day',
+				'main'      => '%%order_class%% .dtq-business-hour-day',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -448,7 +469,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		$advanced_fields['fonts']['time'] = array(
 			'label'           => esc_html__( 'Time', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-business-hour-time',
+				'main'      => '%%order_class%% .dtq-business-hour-time',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -466,7 +487,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 	protected function render_title() {
 		if ( 'on' === $this->props['show_title'] ) {
 			return sprintf(
-				'<div class="ba-business-hour-title">
+				'<div class="dtq-business-hour-title">
 					<h2>%1$s</h2>
 			 	</div>',
 				$this->props['title']
@@ -474,14 +495,14 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
 		return sprintf(
-			'<div class="ba-module ba-business-hour">
+			'<div class="dtq-module dtq-business-hour">
 				%2$s
-				<div class="ba-business-hour-content">
+				<div class="dtq-business-hour-content">
 					%1$s
            	 	</div>
             </div>',
@@ -496,7 +517,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-business-hour-separator',
+					'selector'    => '%%order_class%% .dtq-business-hour-separator',
 					'declaration' => 'display: none!important;',
 				)
 			);
@@ -505,7 +526,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		if ( 'auto' !== $this->props['time_text_width'] ) {
 			$this->get_responsive_styles(
 				'time_text_width',
-				'%%order_class%% .ba-business-hour-time',
+				'%%order_class%% .dtq-business-hour-time',
 				array(
 					'primary'   => 'flex',
 					'important' => false,
@@ -518,7 +539,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		if ( 'auto' !== $this->props['day_text_width'] ) {
 			$this->get_responsive_styles(
 				'day_text_width',
-				'%%order_class%% .ba-business-hour-day',
+				'%%order_class%% .dtq-business-hour-day',
 				array(
 					'primary'   => 'flex',
 					'important' => false,
@@ -530,7 +551,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'title_spacing',
-			'%%order_class%% .ba-business-hour-title',
+			'%%order_class%% .dtq-business-hour-title',
 			array(
 				'primary'   => 'margin-bottom',
 				'important' => true,
@@ -541,7 +562,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'item_padding',
-			'%%order_class%% .ba_business_hour_child .ba-business-hour-child',
+			'%%order_class%% .ba_business_hour_child .dtq-business-hour-child',
 			array(
 				'primary'   => 'padding',
 				'important' => true,
@@ -552,7 +573,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'title_padding',
-			'%%order_class%% .ba-business-hour-title',
+			'%%order_class%% .dtq-business-hour-title',
 			array(
 				'primary'   => 'padding',
 				'important' => true,
@@ -638,7 +659,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-business-hour-separator',
+					'selector'    => '%%order_class%% .dtq-business-hour-separator',
 					'declaration' => sprintf(
 						'margin-right: %1$s;
 						margin-left: %1$s;',
@@ -665,7 +686,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-business-hour-separator',
+						'selector'    => '%%order_class%% .dtq-business-hour-separator',
 						'declaration' => sprintf(
 							'border-top: %1$s %2$s %3$s;
 							height: %4$s;',
@@ -685,7 +706,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-business-hour-separator',
+						'selector'    => '%%order_class%% .dtq-business-hour-separator',
 						'declaration' => sprintf(
 							'background-image: url("%1$s");
 							height: %2$s;
@@ -698,9 +719,9 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			}
 		}
 
-		$this->get_custom_bg_style( $render_slug, 'title', '%%order_class%% .ba-business-hour-title', '%%order_class%% .ba-business-hour-title:hover' );
+		$this->get_custom_bg_style( $render_slug, 'title', '%%order_class%% .dtq-business-hour-title', '%%order_class%% .dtq-business-hour-title:hover' );
 
-		$this->get_custom_bg_style( $render_slug, 'item', '%%order_class%% .ba-business-hour-child', '%%order_class%% .ba-business-hour-child:hover' );
+		$this->get_custom_bg_style( $render_slug, 'item', '%%order_class%% .dtq-business-hour-child', '%%order_class%% .dtq-business-hour-child:hover' );
 
 	}
 }

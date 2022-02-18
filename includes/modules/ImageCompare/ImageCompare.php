@@ -248,6 +248,19 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 
+			'handle_style'    => array(
+				'label'       => esc_html__( 'Handle Style', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can select a different handle type.', 'addons-for-divi' ),
+				'type'        => 'select',
+				'default'     => 'handle-1',
+				'options'     => array(
+					'handle-1' => __( 'Style 1', 'addons-for-divi' ),
+					'handle-2' => __( 'Style 2', 'addons-for-divi' ),
+				),
+				'toggle_slug' => 'handle',
+				'tab_slug'    => 'advanced',
+			),
+
 			'handle_color'    => array(
 				'default'      => '#ffffff',
 				'label'        => esc_html__( 'Handle Color', 'addons-for-divi' ),
@@ -256,6 +269,19 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 				'custom_color' => true,
 				'toggle_slug'  => 'handle',
 				'tab_slug'     => 'advanced',
+			),
+
+			'arrow_color'     => array(
+				'default'      => '#ffffff',
+				'label'        => esc_html__( 'Arrow Color', 'addons-for-divi' ),
+				'description'  => esc_html__( 'Here you can define a custom color for the arrows.', 'addons-for-divi' ),
+				'type'         => 'color-alpha',
+				'custom_color' => true,
+				'toggle_slug'  => 'handle',
+				'tab_slug'     => 'advanced',
+				'show_if'      => array(
+					'handle_style' => 'handle-2',
+				),
 			),
 
 			'__compare'       => array(
@@ -334,8 +360,8 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 
 	static function get_image_compare( $args = array() ) {
 
-		wp_enqueue_script( 'baj-event-move' );
-		wp_enqueue_script( 'baj-twentytwenty' );
+		wp_enqueue_script( 'dtqj-event-move' );
+		wp_enqueue_script( 'dtqj-twentytwenty' );
 
 		$defaults = array(
 			'before_img'   => '',
@@ -353,8 +379,8 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		$after_label  = $args['after_label'];
 
 		$html = sprintf(
-			'<img class="ba-before-img" style="position: absolute;" src=" %1$s " alt="%3$s"/>
-			<img class="ba-after-img" src=" %2$s " alt="%4$s"/>',
+			'<img class="dtq-before-img" style="position: absolute;" src=" %1$s " alt="%3$s"/>
+			<img class="dtq-after-img" src=" %2$s " alt="%4$s"/>',
 			esc_attr( $before_img ),
 			esc_attr( $after_img ),
 			esc_attr( $before_label ),
@@ -364,7 +390,7 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		return $html;
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$before_img    = $this->props['before_img'];
 		$after_img     = $this->props['after_img'];
@@ -408,8 +434,8 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		);
 
 		$html = sprintf(
-			'<div class="ba-image-compare" %2$s>
-				<div class="ba-image-compare-container">
+			'<div class="dtq-image-compare" %2$s>
+				<div class="dtq-image-compare-container">
 				 %1$s
 				</div>
 			</div>',
@@ -435,10 +461,23 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		$label_width     = $this->props['label_width'];
 
 		// handle_color.
+		if ( 'handle-1' === $this->props['handle_style'] ) {
+			$arrow_color = $this->props['handle_color'];
+		} elseif ( 'handle-2' === $this->props['handle_style'] ) {
+			$arrow_color = $this->props['arrow_color'];
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .dtq-image-compare .twentytwenty-handle',
+					'declaration' => 'background-color:' . $handle_color . ';',
+				)
+			);
+		}
+
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-horizontal .twentytwenty-handle:before, %%order_class%% .ba-image-compare .twentytwenty-horizontal .twentytwenty-handle:after, %%order_class%% .ba-image-compare .twentytwenty-vertical .twentytwenty-handle:before, %%order_class%% .ba-image-compare .twentytwenty-vertical .twentytwenty-handle:after',
+				'selector'    => '%%order_class%% .dtq-image-compare .twentytwenty-horizontal .twentytwenty-handle:before, %%order_class%% .dtq-image-compare .twentytwenty-horizontal .twentytwenty-handle:after, %%order_class%% .dtq-image-compare .twentytwenty-vertical .twentytwenty-handle:before, %%order_class%% .dtq-image-compare .twentytwenty-vertical .twentytwenty-handle:after',
 				'declaration' => 'background:' . $handle_color . ';',
 			)
 		);
@@ -446,40 +485,40 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-right-arrow',
-				'declaration' => 'border-left: 6px solid ' . $handle_color . ';',
-			)
-		);
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-left-arrow',
-				'declaration' => 'border-right: 6px solid ' . $handle_color . ';',
-			)
-		);
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-up-arrow',
-				'declaration' => 'border-bottom: 6px solid ' . $handle_color . ';',
-			)
-		);
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-down-arrow',
-				'declaration' => 'border-top: 6px solid ' . $handle_color . ';',
-			)
-		);
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-image-compare .twentytwenty-handle',
+				'selector'    => '%%order_class%% .dtq-image-compare .twentytwenty-handle',
 				'declaration' => 'border: 3px solid ' . $handle_color . ';',
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .dtq-image-compare .twentytwenty-right-arrow',
+				'declaration' => 'border-left: 6px solid ' . $arrow_color . ';',
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .dtq-image-compare .twentytwenty-left-arrow',
+				'declaration' => 'border-right: 6px solid ' . $arrow_color . ';',
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .dtq-image-compare .twentytwenty-up-arrow',
+				'declaration' => 'border-bottom: 6px solid ' . $arrow_color . ';',
+			)
+		);
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .dtq-image-compare .twentytwenty-down-arrow',
+				'declaration' => 'border-top: 6px solid ' . $arrow_color . ';',
 			)
 		);
 		// handle_color end.

@@ -15,28 +15,14 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content' => array(
-						'title' => esc_html( 'Content', 'addons-for-divi' ),
-					),
+					'content' => esc_html__( 'Content', 'addons-for-divi' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'bar'   => array(
-						'title' => esc_html( 'Bar', 'addons-for-divi' ),
-					),
-					'texts' => array(
-						'title'             => esc_html( 'Texts', 'addons-for-divi' ),
-						'tabbed_subtoggles' => true,
-						'sub_toggles'       => array(
-							'name'  => array(
-								'name' => esc_html( 'Name', 'addons-for-divi' ),
-							),
-							'level' => array(
-								'name' => esc_html( 'Level', 'addons-for-divi' ),
-							),
-						),
-					),
+					'bar'   => esc_html__( 'Bar Style', 'addons-for-divi' ),
+					'name'  => esc_html__( 'Name Text', 'addons-for-divi' ),
+					'level' => esc_html__( 'Level Text', 'addons-for-divi' ),
 				),
 			),
 		);
@@ -44,19 +30,19 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'name_text'  => array(
 				'label'    => esc_html__( 'Name Text', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-skillbar__name',
+				'selector' => '%%order_class%% .dtq-skillbar__name',
 			),
 			'level_text' => array(
 				'label'    => esc_html__( 'Level Text', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-skillbar__level',
+				'selector' => '%%order_class%% .dtq-skillbar__level',
 			),
 			'level'      => array(
 				'label'    => esc_html__( 'Level', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-skillbar__inner',
+				'selector' => '%%order_class%% .dtq-skillbar__inner',
 			),
 			'bar'        => array(
 				'label'    => esc_html__( 'Bar', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-skillbar__wrapper',
+				'selector' => '%%order_class%% .dtq-skillbar__wrapper',
 			),
 		);
 	}
@@ -179,30 +165,30 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 				'label'          => esc_html__( 'Name Spacing', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Define name spacing from the edge.', 'addons-for-divi' ),
 				'type'           => 'range',
-				'default'        => '15px',
 				'range_settings' => array(
 					'min'  => 0,
 					'max'  => 100,
 					'step' => 1,
 				),
 				'tab_slug'       => 'advanced',
-				'toggle_slug'    => 'texts',
-				'sub_toggle'     => 'name',
+				'toggle_slug'    => 'name',
+				'default_unit'   => 'px',
+				'mobile_options' => true,
 			),
 
 			'level_spacing'  => array(
 				'label'          => esc_html__( 'Level Spacing', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Define level spacing from the edge.', 'addons-for-divi' ),
 				'type'           => 'range',
-				'default'        => '15px',
+				'default_unit'   => 'px',
 				'range_settings' => array(
 					'min'  => 0,
 					'max'  => 100,
 					'step' => 1,
 				),
 				'tab_slug'       => 'advanced',
-				'toggle_slug'    => 'texts',
-				'sub_toggle'     => 'level',
+				'toggle_slug'    => 'level',
+				'mobile_options' => true,
 			),
 
 		);
@@ -252,13 +238,12 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		$advanced_fields['fonts']['name'] = array(
 			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-skillbar__name',
+				'main'      => '.dtq-skill %%order_class%% .dtq-skillbar__name',
 				'important' => 'all',
 			),
 			'hide_text_align' => true,
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'name',
+			'toggle_slug'     => 'name',
 			'line_height'     => array(
 				'default' => '1em',
 			),
@@ -270,13 +255,12 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		$advanced_fields['fonts']['level'] = array(
 			'label'           => esc_html__( 'Level', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-skillbar__level',
+				'main'      => '.dtq-skill %%order_class%% .dtq-skillbar__level',
 				'important' => 'all',
 			),
 			'hide_text_align' => true,
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'level',
+			'toggle_slug'     => 'level',
 			'line_height'     => array(
 				'default' => '1em',
 			),
@@ -289,7 +273,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 			'toggle_slug' => 'bar',
 			'label'       => esc_html__( 'Bar Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-skillbar__wrapper',
+				'main'      => '%%order_class%% .dtq-skillbar__wrapper',
 				'important' => 'all',
 			),
 		);
@@ -302,7 +286,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		$name     = $this->props['name'];
 
 		if ( $use_name === 'on' ) {
-			return '<span class="ba-skillbar__name">' . $name . '</span>';
+			return '<span class="dtq-skillbar__name">' . $name . '</span>';
 		}
 	}
 
@@ -311,7 +295,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		$is_hide_level = $this->props['is_hide_level'];
 
 		if ( $is_hide_level !== 'on' ) {
-			return '<span class="ba-skillbar__level">' . $level . '</span>';
+			return '<span class="dtq-skillbar__level">' . $level . '</span>';
 		}
 	}
 
@@ -321,7 +305,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 
 		if ( $use_name === 'on' || $is_hide_level === 'off' ) {
 			return sprintf(
-				'<div class="ba-skillbar__inner__text">%1$s %2$s</div>',
+				'<div class="dtq-skillbar__inner__text">%1$s %2$s</div>',
 				$this->_renderName(),
 				$this->_renderLevel()
 			);
@@ -330,7 +314,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 	}
 
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		// Module classnames
 		$this->remove_classname( 'et_pb_module' );
@@ -341,9 +325,9 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 
 		return sprintf(
 			'
-			<div class="ba-module ba-child ba-skillbar">
-				<div class="ba-skillbar__wrapper">
-				    <div class="ba-skillbar__inner">%1$s</div>
+			<div class="dtq-module dtq-child dtq-skillbar">
+				<div class="dtq-skillbar__wrapper">
+				    <div class="dtq-skillbar__inner">%1$s</div>
 				</div>
 			</div>',
 			$this->_renderInnerText()
@@ -361,15 +345,13 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		$bar_height_responsive_status = et_pb_get_responsive_status( $bar_height_last_edited );
 		$text_placement               = $this->props['text_placement'];
 		$bar_radius                   = $this->props['bar_radius'];
-		$name_spacing                 = $this->props['name_spacing'];
-		$level_spacing                = $this->props['level_spacing'];
 		$use_name                     = $this->props['use_name'];
 
 		if ( $use_name === 'off' ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-skillbar__inner__text',
+					'selector'    => '%%order_class%% .dtq-skillbar__inner__text',
 					'declaration' => 'justify-content: flex-end;',
 				)
 			);
@@ -377,7 +359,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-skillbar__inner__text',
+					'selector'    => '%%order_class%% .dtq-skillbar__inner__text',
 					'declaration' => 'justify-content: space-between;',
 				)
 			);
@@ -386,7 +368,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-skillbar__inner',
+				'selector'    => '%%order_class%% .dtq-skillbar__inner',
 				'declaration' => sprintf(
 					'
                 width:%1$s;
@@ -401,7 +383,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-skillbar__inner',
+					'selector'    => '%%order_class%% .dtq-skillbar__inner',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'height: %1$s;', $bar_height_tablet ),
 				)
@@ -412,7 +394,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-skillbar__inner',
+					'selector'    => '%%order_class%% .dtq-skillbar__inner',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'height: %1$s;', $bar_height_phone ),
 				)
@@ -422,7 +404,7 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-skillbar__wrapper',
+				'selector'    => '%%order_class%% .dtq-skillbar__wrapper',
 				'declaration' => sprintf(
 					'border-radius:%1$s;',
 					$bar_radius
@@ -430,27 +412,30 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 			)
 		);
 
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-skillbar__name',
-				'declaration' => sprintf( 'margin-left:%1$s;', $name_spacing ),
-			)
-		);
+		if ( ! empty( $this->props['name_spacing'] ) ) {
+			$this->get_responsive_styles(
+				'name_spacing',
+				'.dtq-skill %%order_class%% .dtq-skillbar__name',
+				array( 'primary' => 'margin-left' ),
+				array( 'default' => '0px' ),
+				$render_slug
+			);
+		}
+		if ( ! empty( $this->props['level_spacing'] ) ) {
+			$this->get_responsive_styles(
+				'level_spacing',
+				'.dtq-skill %%order_class%% .dtq-skillbar__level',
+				array( 'primary' => 'margin-right' ),
+				array( 'default' => '0px' ),
+				$render_slug
+			);
+		}
 
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-skillbar__level',
-				'declaration' => sprintf( 'margin-right:%1$s;', $level_spacing ),
-			)
-		);
-
-		if ( $text_placement === 'out' ) {
+		if ( 'out' === $text_placement ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-skillbar__inner__text',
+					'selector'    => '%%order_class%% .dtq-skillbar__inner__text',
 					'declaration' => sprintf(
 						'
                         position:absolute;
@@ -463,19 +448,19 @@ class DTQ_Skill_Bar_Child extends BA_Builder_Module {
 					),
 				)
 			);
-		} elseif ( $text_placement === 'in' ) {
+		} elseif ( 'in' === $text_placement ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-skillbar__inner__text',
+					'selector'    => '%%order_class%% .dtq-skillbar__inner__text',
 					'declaration' => 'width: 100%;height: 100%;',
 				)
 			);
 		}
 
-		$this->get_custom_bg_style( $render_slug, 'level', '%%order_class%% .ba-skillbar__inner', '%%order_class%%:hover .ba-skillbar__inner' );
+		$this->get_custom_bg_style( $render_slug, 'level', '%%order_class%% .dtq-skillbar__inner', '%%order_class%%:hover .dtq-skillbar__inner' );
 
-		$this->get_custom_bg_style( $render_slug, 'bar', '%%order_class%% .ba-skillbar__wrapper', '%%order_class%%:hover .ba-skillbar__wrapper' );
+		$this->get_custom_bg_style( $render_slug, 'bar', '%%order_class%% .dtq-skillbar__wrapper', '%%order_class%%:hover .dtq-skillbar__wrapper' );
 
 	}
 }

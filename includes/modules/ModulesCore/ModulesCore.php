@@ -8,8 +8,8 @@ class BA_Builder_Module extends ET_Builder_Module {
 		$option_label,
 		$tab_slug,
 		$toggle_slug,
-		array $background_tab = array(),
-		$show_if = array(),
+		$background_tab,
+		$show_if,
 		$default
 	) {
 
@@ -83,7 +83,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		return $advanced_fields;
 	}
 
-	protected function get_custom_gradient( $args = array() ) {
+	protected function get_custom_gradient( $args ) {
 
 		$defaults = apply_filters(
 			'et_pb_default_gradient',
@@ -257,9 +257,9 @@ class BA_Builder_Module extends ET_Builder_Module {
 	}
 
 	public static function process_margin_padding(
-		$val = '0|0|0|0',
-		$type = 'padding',
-		$imp = false
+		$val,
+		$type,
+		$imp
 	) {
 
 		$_top     = '';
@@ -292,7 +292,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		return esc_html( "{$_top} {$_right} {$_bottom} {$_left}" );
 	}
 
-	function get_conditional_responsive_styles( $styles = array(), $data, $style ) {
+	public function get_conditional_responsive_styles( $styles, $data, $style ) {
 		$important = isset( $styles['important'] ) ? $styles['important'] : false;
 
 		if ( 'padding' === $style || 'margin' === $style ) {
@@ -315,13 +315,15 @@ class BA_Builder_Module extends ET_Builder_Module {
 	protected function get_responsive_styles(
 		$opt_name,
 		$selector,
-		$styles = array(),
-		$pre_values = array(),
-		$render_slug
+		$styles = null,
+		$pre_values = null,
+		$render_slug = null
 	) {
 
+		$styles     = ! empty( $styles ) ? $styles : array();
+		$pre_values = ! empty( $styles ) ? $styles : array();
 		$is_enabled = false;
-		$style      = $styles['primary'];
+		$style      = isset( $styles['primary'] ) ? $styles['primary'] : '';
 		$_data      = $this->props[ $opt_name ];
 
 		if ( isset( $this->props[ "{$opt_name}_last_edited" ] ) ) {
@@ -341,7 +343,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			}
 
 			if ( $is_default ) {
-				$_data = $pre_values['default'];
+				$_data = isset( $pre_values['default'] ) ? $pre_values['default'] : null;
 			}
 		}
 
@@ -359,7 +361,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 					$render_slug,
 					array(
 						'selector'    => $selector,
-						'declaration' => $styles['secondary'],
+						'declaration' => isset( $styles['secondary'] ) ? isset( $styles['secondary'] ) : '',
 					)
 				);
 			}
@@ -696,9 +698,9 @@ class BA_Builder_Module extends ET_Builder_Module {
 		}
 	}
 
-	protected function get_overlay_option_fields( $opt_slug, $hover_status, $show_if = array() ) {
-
-		$fields = array(
+	protected function get_overlay_option_fields( $opt_slug, $hover_status, $show_if ) {
+		$show_if = ! empty( $show_if ) ? $show_if : array();
+		$fields  = array(
 			'overlay_on_hover'     => array(
 				'label'           => esc_html__( 'Show Overlay on Hover', 'addons-for-divi' ),
 				'description'     => esc_html__( 'Enable overlay during hover.', 'addons-for-divi' ),
@@ -797,9 +799,13 @@ class BA_Builder_Module extends ET_Builder_Module {
 
 	protected function get_overlay_style(
 		$render_slug,
-		$photo_opt_name = '',
-		$hover_element = '%%order_class%%'
+		$photo_opt_name,
+		$hover_element = null
 	) {
+
+		if ( empty( $hover_element ) ) {
+			$hover_element = '%%order_class%%';
+		}
 
 		$overlay_icon_color         = $this->props['overlay_icon_color'];
 		$overlay_on_hover           = $this->props['overlay_on_hover'];
@@ -822,7 +828,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-overlay',
+						'selector'    => '%%order_class%% .dtq-overlay',
 						'declaration' => sprintf(
 							'
                         border-radius: %1$s %2$s %3$s %4$s;',
@@ -840,14 +846,14 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-overlay',
+					'selector'    => '%%order_class%% .dtq-overlay',
 					'declaration' => 'opacity:0;',
 				)
 			);
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => $hover_element . ':hover .ba-overlay',
+					'selector'    => $hover_element . ':hover .dtq-overlay',
 					'declaration' => 'opacity:1;',
 				)
 			);
@@ -856,7 +862,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-overlay',
+				'selector'    => '%%order_class%% .dtq-overlay',
 				'declaration' => sprintf(
 					'color: %1$s;
 					transition: all %2$s;',
@@ -870,7 +876,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => $hover_element . ':hover .ba-overlay',
+					'selector'    => $hover_element . ':hover .dtq-overlay',
 					'declaration' => sprintf( 'color: %1$s;', $overlay_icon_color_hover ),
 				)
 			);
@@ -879,7 +885,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-overlay:after',
+				'selector'    => '%%order_class%% .dtq-overlay .dtq-overlay-icon',
 				'declaration' => "font-size:{$overlay_icon_size};",
 			)
 		);
@@ -888,7 +894,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => $hover_element . ':hover .ba-overlay:after',
+					'selector'    => $hover_element . ':hover .dtq-overlay .dtq-overlay-icon',
 					'declaration' => "font-size:{$overlay_icon_size_hover};",
 				)
 			);
@@ -897,7 +903,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-overlay:after',
+				'selector'    => '%%order_class%% .dtq-overlay .dtq-overlay-icon',
 				'declaration' => "opacity:{$overlay_icon_opacity};",
 			)
 		);
@@ -906,19 +912,21 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => $hover_element . ':hover .ba-overlay:after',
+					'selector'    => $hover_element . ':hover .dtq-overlay .dtq-overlay-icon',
 					'declaration' => "opacity:{$overlay_icon_opacity_hover};",
 				)
 			);
 		}
 		// Overlay background.
-		$this->get_custom_bg_style( $render_slug, 'overlay', '%%order_class%% .ba-overlay', '' );
+		$this->get_custom_bg_style( $render_slug, 'overlay', '%%order_class%% .dtq-overlay', '' );
 	}
 
-
-	protected function get_carousel_option_fields( $supports = array(), $default = array(), $show_if = array() ) {
+	protected function get_carousel_option_fields( $supports = null, $default = null, $show_if = null ) {
 		$aditional   = array();
 		$slide_count = isset( $default['slide_count'] ) ? $default['slide_count'] : '3';
+		$supports    = ! empty( $supports ) ? $supports : array();
+		$default     = ! empty( $default ) ? $default : array();
+		$show_if     = ! empty( $show_if ) ? $show_if : array();
 
 		$fields = array(
 
@@ -1588,6 +1596,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'sub_toggle'      => 'nav_left',
 				'show_if'         => $show_if,
+				'default'         => '&#x34;||divi||400',
 			),
 
 			'left_border_radius'      => array(
@@ -1611,6 +1620,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'sub_toggle'      => 'nav_right',
 				'show_if'         => $show_if,
+				'default'         => '&#x35;||divi||400',
 			),
 
 			'right_border_radius'     => array(
@@ -2184,7 +2194,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-dots li button',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-dots li button',
 					'declaration' => 'font-size: 0!important;',
 				)
 			);
@@ -2192,7 +2202,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-dots li button',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-dots li button',
 					'declaration' => "font-size: {$pagi_text}!important; color: {$pagi_color};",
 				)
 			);
@@ -2201,7 +2211,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-carousel .slick-dots li:hover button',
+						'selector'    => '%%order_class%% .dtq-carousel .slick-dots li:hover button',
 						'declaration' => "color: {$pagi_color_hover};",
 					)
 				);
@@ -2211,7 +2221,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-carousel .slick-dots',
+				'selector'    => '%%order_class%% .dtq-carousel .slick-dots',
 				'declaration' => sprintf( ' text-align: %1$s; transform: translateY(%2$s); ', $pagi_alignment, $pagi_pos_y ),
 			)
 		);
@@ -2219,7 +2229,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-carousel .slick-dots li',
+				'selector'    => '%%order_class%% .dtq-carousel .slick-dots li',
 				'declaration' => sprintf( ' margin: 0 %1$s;', $pagi_spacing ),
 			)
 		);
@@ -2227,7 +2237,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-carousel .slick-dots li button',
+				'selector'    => '%%order_class%% .dtq-carousel .slick-dots li button',
 				'declaration' => sprintf(
 					' background: %1$s; height: %2$s; width: %3$s; border-radius: %4$s %5$s %6$s %7$s;',
 					$pagi_bg,
@@ -2245,7 +2255,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-dots li:hover button',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-dots li:hover button',
 					'declaration' => sprintf( ' background: %1$s;', $pagi_bg_hover ),
 				)
 			);
@@ -2255,7 +2265,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-dots li.slick-active button',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-dots li.slick-active button',
 					'declaration' => sprintf( 'background: %1$s;', $pagi_bg_active ),
 				)
 			);
@@ -2265,7 +2275,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-dots li.slick-active button',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-dots li.slick-active button',
 					'declaration' => sprintf( 'width: %1$s;', $pagi_width_active ),
 				)
 			);
@@ -2275,7 +2285,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-dots li.slick-active button',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-dots li.slick-active button',
 					'declaration' => sprintf( 'color: %1$s;', $pagi_text_active ),
 				)
 			);
@@ -2336,16 +2346,45 @@ class BA_Builder_Module extends ET_Builder_Module {
 		$carousel_spacing_bottom_phone             = $this->props['carousel_spacing_bottom_phone'];
 		$carousel_spacing_bottom_last_edited       = $this->props['carousel_spacing_bottom_last_edited'];
 		$carousel_spacing_bottom_responsive_status = et_pb_get_responsive_status( $carousel_spacing_bottom_last_edited );
-
+		dtq_inject_fa_icons( $this->props['icon_left'] );
+		dtq_inject_fa_icons( $this->props['icon_right'] );
 		$data_cursor = array(
 			'pizza'  => 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAIVBMVEUAAAAAAAD/////zGb/mTOZAAAAzAD/zDP/AAD/Zmb/mZm5WRymAAAAAXRSTlMAQObYZgAAAAFiS0dEAmYLfGQAAAAJcEhZcwAAAMgAAADIAGP6560AAAAHdElNRQfkBRkTCRh4PlpnAAAA8ElEQVQoz12QsbnDIAyExQaWQ0ySztngfW8BMgIFA3gEVardEXfu3KbzmJEgTrCvEfo5wQEgABjMakDVNgZP/1l/GbX9p81ISHuvgJL23tfgIUAs5VCxWgWyjKoQ8GRlpO2lwXOM3TkG9IACAkoTg7pKKsc6hWKzGg1ZhVKohHVMGUkhr8Bw57Kjc5RfA0626Jmk2A9g7m7LNDL6AsRNlynNNJQezOL4ktK4TQDcRr5OMtJswMxMaXXkv2BkJ3kJvkIamAb7A441mv8Bo+9AqIR8fdoadJjWpgaGltnvwfqCnXB/hH6kPwCCg+wRbJe+ATasSMvHEwtpAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTA1LTI1VDE5OjA5OjIzKzAwOjAwCTF7LQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wNS0yNVQxOTowOTowNiswMDowMGhx60sAAAAASUVORK5CYII=',
 			'burger' => 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfBAMAAADtgAsKAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAALVBMVEUAAAAAAAD////MZgBmMwCZMwD/zDP/mQD/zAB4eHhGRkbc3NygoKDIyMhmAAAKaD9VAAAAAXRSTlMAQObYZgAAAAFiS0dEAmYLfGQAAAAJcEhZcwAAAMgAAADIAGP6560AAAAHdElNRQfkBRkTGhFgDaNRAAAAEGNhTnYAAAAgAAAAIAAAAAAAAAAAYrnu+gAAATdJREFUKM9lkbFOwzAQhl2lM4qrLLW68AYgG2VtlIu6sVTxCzCwA5XzACCydmyUpWNNl670CVLyBkxImXkG7i6oSOFXlv+7/85nR4RiIDkEk2FkcvkPUCSA9DyDvMlyDVc9CKmca9Q5FMAS7c2dNr/ELNmiDHcFmdaWPms1R0zOVa1j98gRwCp1xKt7R4A60FlnnXugnnGK3pFs8doDi92OAiVPHWd4JvmyLDWBEa0Vk33Bydd4l4j3cCs63ExDIbfAq7OSdwQ7GQHkdD0jpwqBqrYSSImsP99CMVLN2kvS7ORnByEupG/aTdWu1/VOHSMEX1Ltvd+3zWnzcQAEt1IqX3tfHb2MDIKuS3iEwtkLTIhvMMAkguJpLiiSaj52UZTAb9oBb+ncM8z7Vx4DvwnA3+/jlr78AzvMazraOl3vAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIwLTA1LTI1VDE5OjI2OjE2KzAwOjAwfOGxJQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMC0wNS0yNVQxOToyNjoxNiswMDowMA28CZkAAAAASUVORK5CYII=',
 		);
 
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'icon_left',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-carousel .slick-prev:before',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
+
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'icon_right',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-carousel .slick-next:before',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
+
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-centered--highlighted .slick-slide',
+				'selector'    => '%%order_class%% .dtq-centered--highlighted .slick-slide',
 				'declaration' => sprintf( 'transition: transform %1$s;', $animation_speed ),
 			)
 		);
@@ -2378,7 +2417,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-carousel .slick-track',
+				'selector'    => '%%order_class%% .dtq-carousel .slick-track',
 				'declaration' => sprintf( 'padding-top: %1$s; padding-bottom: %2$s;', $carousel_spacing_top, $carousel_spacing_bottom ),
 			)
 		);
@@ -2388,7 +2427,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-track',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-track',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'padding-top: %1$s;', $carousel_spacing_top_tablet ),
 				)
@@ -2400,7 +2439,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-track',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-track',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'padding-top: %1$s;', $carousel_spacing_top_phone ),
 				)
@@ -2412,7 +2451,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-track',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-track',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'padding-bottom: %1$s;', $carousel_spacing_bottom_tablet ),
 				)
@@ -2424,7 +2463,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-track',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-track',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'padding-bottom: %1$s;', $carousel_spacing_bottom_phone ),
 				)
@@ -2436,7 +2475,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-slide',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-slide',
 					'declaration' => sprintf( 'width: %1$s;', $slide_width ),
 				)
 			);
@@ -2446,7 +2485,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-carousel .slick-slide',
+						'selector'    => '%%order_class%% .dtq-carousel .slick-slide',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'width: %1$s;', $slide_width_tablet ),
 					)
@@ -2458,7 +2497,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-carousel .slick-slide',
+						'selector'    => '%%order_class%% .dtq-carousel .slick-slide',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'width: %1$s;', $slide_width_phone ),
 					)
@@ -2471,7 +2510,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-slide, .et-db #et-boc %%order_class%% .ba-carousel .slick-slide',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-slide, .et-db #et-boc %%order_class%% .dtq-carousel .slick-slide',
 					'declaration' => sprintf( ' padding-left: %1$s!important; padding-right: %1$s!important;', $slide_spacing ),
 				)
 			);
@@ -2480,7 +2519,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-carousel .slick-list, .et-db #et-boc %%order_class%% .ba-carousel .slick-list',
+						'selector'    => '%%order_class%% .dtq-carousel .slick-list, .et-db #et-boc %%order_class%% .dtq-carousel .slick-list',
 						'declaration' => sprintf( ' margin-left: -%1$s!important; margin-right: -%1$s!important;', $slide_spacing ),
 					)
 				);
@@ -2489,7 +2528,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-slide, .et-db #et-boc %%order_class%% .ba-carousel .slick-slide',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-slide, .et-db #et-boc %%order_class%% .dtq-carousel .slick-slide',
 					'declaration' => sprintf( ' padding-top: %1$s!important; padding-bottom: %1$s!important;', $slide_spacing ),
 				)
 			);
@@ -2499,7 +2538,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-carousel .slick-arrow',
+				'selector'    => '%%order_class%% .dtq-carousel .slick-arrow',
 				'declaration' => sprintf(
 					'height: %1$s; width: %2$s; color: %3$s; background: %4$s; border: %5$s %6$s %7$s; transform: skew(%8$s);margin-top:-%9$spx;',
 					$nav_height,
@@ -2520,7 +2559,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow:hover',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow:hover',
 					'declaration' => sprintf( 'color: %1$s;', $nav_color_hover ),
 				)
 			);
@@ -2530,7 +2569,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow:hover',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow:hover',
 					'declaration' => sprintf( 'background: %1$s;', $nav_bg_hover ),
 				)
 			);
@@ -2540,7 +2579,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow:hover',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow:hover',
 					'declaration' => sprintf( 'border-color: %1$s;', $nav_border_color_hover ),
 				)
 			);
@@ -2551,7 +2590,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow',
 					'declaration' => sprintf( 'height: %1$s; ', $nav_height_tablet ),
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 				)
@@ -2562,7 +2601,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow',
 					'declaration' => sprintf( 'height: %1$s; ', $nav_height_phone ),
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 				)
@@ -2574,7 +2613,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( ' width: %1$s; ', $nav_width_tablet ),
 				)
@@ -2585,7 +2624,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow',
 					'declaration' => sprintf( 'width: %1$s; ', $nav_width_phone ),
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 				)
@@ -2596,7 +2635,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-carousel .slick-arrow:before',
+				'selector'    => '%%order_class%% .dtq-carousel .slick-arrow:before',
 				'declaration' => sprintf(
 					'font-size: %1$s; transform: skew(%2$sdeg); display: inline-block;',
 					$nav_icon_size,
@@ -2610,7 +2649,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow:before',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow:before',
 					'declaration' => sprintf( ' font-size: %1$s; ', $nav_icon_size_tablet ),
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 				)
@@ -2621,7 +2660,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-carousel .slick-arrow:before',
+					'selector'    => '%%order_class%% .dtq-carousel .slick-arrow:before',
 					'declaration' => sprintf( ' font-size: %1$s; ', $nav_icon_size_phone ),
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 				)
@@ -2632,7 +2671,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-carousel .slick-next',
+				'selector'    => '%%order_class%% .dtq-carousel .slick-next',
 				'declaration' => sprintf(
 					'border-radius: %1$s %2$s %3$s %4$s;',
 					$right_border_radius[1],
@@ -2646,7 +2685,7 @@ class BA_Builder_Module extends ET_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-carousel .slick-prev',
+				'selector'    => '%%order_class%% .dtq-carousel .slick-prev',
 				'declaration' => sprintf(
 					'border-radius: %1$s %2$s %3$s %4$s;',
 					$left_border_radius[1],
@@ -2864,14 +2903,14 @@ class BA_Builder_Module extends ET_Builder_Module {
 			endif;
 
 			if ( 'on' === $use_icon && 'right' === $icon_placement ) {
+
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => "body #page-container {$selector}:after, .et-db #et-boc {$selector}:after",
 						'declaration' => '
                         display: inline-block;
-                        content: attr(data-icon)!important;
-                        font-family: "ETmodules"!important;',
+                        content: attr(data-icon)!important;',
 					)
 				);
 			}
@@ -2926,5 +2965,9 @@ class BA_Builder_Module extends ET_Builder_Module {
 		);
 
 		return $pattern[ $name ];
+	}
+
+	protected function get_masking_shapes() {
+		return array();
 	}
 }

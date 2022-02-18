@@ -27,7 +27,7 @@ if ( ! class_exists( 'Library_Shortcodes' ) ) :
 		public function columns_content_et_pb_layout( $column_name, $post_id ) {
 
 			if ( 'shortcode_id' === $column_name ) {
-				echo sprintf( '<code class="ba-divi-shortcode">[divi_library_shortcode id="%1$s"]</code>', esc_attr( $post_id ) );
+				echo sprintf( '<code class="dtq-divi-shortcode">[divi_library_shortcode id="%1$s"]</code>', esc_attr( $post_id ) );
 			}
 		}
 

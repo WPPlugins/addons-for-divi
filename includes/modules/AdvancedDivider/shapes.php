@@ -1,6 +1,6 @@
 <?php
 $shapes            = array();
-$shapes['shape_1'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_1'] = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 300 30" style="enable-background:new 0 0 300 30;" xml:space="preserve">
         <g>
         <g>
@@ -21,7 +21,7 @@ $shapes['shape_1'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2
         </g>
     </svg>';
 
-	$shapes['shape_2'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	$shapes['shape_2'] = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 23" style="enable-background:new 0 0 300 23;" xml:space="preserve">
 <g>
 <polygon style="fill:none;stroke:#000000;stroke-width:0.4;stroke-miterlimit:10;" points="162.3,11.5 150,18.6 137.7,11.5
@@ -51,7 +51,7 @@ viewBox="0 0 300 23" style="enable-background:new 0 0 300 23;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_3'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_3'] = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 40" style="enable-background:new 0 0 300 40;" xml:space="preserve">
 <path style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-miterlimit:10;" d="M284.1,28.7
 c0,0.2,0.2,0.3,0.4,0.3c0.3,0,0.5-0.1,0.7-0.3c0.2-0.2,0.3-0.4,0.3-0.7c0-0.5-0.2-1-0.6-1.3s-0.9-0.5-1.4-0.5
@@ -63,7 +63,7 @@ c8.6-6.1,26.3-5.1,52.5,3c28.7,8.9,48.8,15,64.7,17.2c17.2,2.4,28.2-0.1,35.7-8c4.6
 c-3.8,0-7.1,2.4-9,6.7c-0.1,0.3,0.3,0.9,0.3,0.9"/>
 </svg>';
 
-$shapes['shape_4'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_4'] = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 23" style="enable-background:new 0 0 300 23;" xml:space="preserve">
 <g>
 <g>
@@ -93,7 +93,7 @@ viewBox="0 0 300 23" style="enable-background:new 0 0 300 23;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_5'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_5'] = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 37" style="enable-background:new 0 0 300 37;" xml:space="preserve">
 <g>
 <g>
@@ -123,7 +123,7 @@ viewBox="0 0 300 37" style="enable-background:new 0 0 300 37;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_6'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_6'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 27" style="enable-background:new 0 0 300 27;" xml:space="preserve">
 <g>
 <g>
@@ -141,7 +141,7 @@ viewBox="0 0 300 27" style="enable-background:new 0 0 300 27;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_7'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_7'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 28" style="enable-background:new 0 0 300 28;" xml:space="preserve">
 <g>
 <g>
@@ -165,7 +165,7 @@ viewBox="0 0 300 28" style="enable-background:new 0 0 300 28;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_8'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_8'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 27" style="enable-background:new 0 0 300 27;" xml:space="preserve">
 <g>
 <g>
@@ -189,7 +189,7 @@ viewBox="0 0 300 27" style="enable-background:new 0 0 300 27;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_9'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_9'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 21" style="enable-background:new 0 0 300 21;" xml:space="preserve">
 <g>
 <g>
@@ -215,7 +215,7 @@ viewBox="0 0 300 21" style="enable-background:new 0 0 300 21;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_10'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_10'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 27" style="enable-background:new 0 0 300 27;" xml:space="preserve">
 <g>
 <g>
@@ -239,7 +239,7 @@ viewBox="0 0 300 27" style="enable-background:new 0 0 300 27;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_11'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_11'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 29" style="enable-background:new 0 0 300 29;" xml:space="preserve">
 <g>
 <g>
@@ -291,7 +291,7 @@ viewBox="0 0 300 29" style="enable-background:new 0 0 300 29;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_12'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_12'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 20" style="enable-background:new 0 0 300 20;" xml:space="preserve">
 <g>
 
@@ -315,7 +315,7 @@ viewBox="0 0 300 20" style="enable-background:new 0 0 300 20;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_13'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_13'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 37" style="enable-background:new 0 0 300 37;" xml:space="preserve">
 <g>
 <g>
@@ -333,7 +333,7 @@ viewBox="0 0 300 37" style="enable-background:new 0 0 300 37;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_14'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_14'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 51" style="enable-background:new 0 0 300 51;" xml:space="preserve">
 <g>
 <g>
@@ -352,7 +352,7 @@ viewBox="0 0 300 51" style="enable-background:new 0 0 300 51;" xml:space="preser
 </svg>';
 
 
-$shapes['shape_15'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_15'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 37" style="enable-background:new 0 0 300 37;" xml:space="preserve">
 <g>
 <g id="XMLID_163_">
@@ -420,7 +420,7 @@ viewBox="0 0 300 37" style="enable-background:new 0 0 300 37;" xml:space="preser
 </svg>';
 
 
-$shapes['shape_16'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_16'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 44" style="enable-background:new 0 0 300 44;" xml:space="preserve">
 <g>
 <g id="XMLID_138_">
@@ -474,7 +474,7 @@ viewBox="0 0 300 44" style="enable-background:new 0 0 300 44;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_17'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_17'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 22" style="enable-background:new 0 0 300 22;" xml:space="preserve">
 <g>
 
@@ -491,7 +491,7 @@ viewBox="0 0 300 22" style="enable-background:new 0 0 300 22;" xml:space="preser
 </g>
 </svg>';
 
-$shapes['shape_18'] = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+$shapes['shape_18'] = '<svg   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 viewBox="0 0 300 25" style="enable-background:new 0 0 300 25;" xml:space="preserve">
 <g>
 <path style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" d="

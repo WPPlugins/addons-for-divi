@@ -23,25 +23,14 @@ class DTQ_Review extends BA_Builder_Module {
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'common'  => esc_html__( 'General', 'addons-for-divi' ),
-					'rating'  => esc_html__( 'Rating', 'addons-for-divi' ),
-					'image'   => esc_html__( 'Image', 'addons-for-divi' ),
-					'overlay' => esc_html__( 'Overlay', 'addons-for-divi' ),
-					'badge'   => esc_html__( 'Badge', 'addons-for-divi' ),
-					'texts'   => array(
-						'title'             => esc_html__( 'Title & Description', 'addons-for-divi' ),
-						'tabbed_subtoggles' => true,
-						'sub_toggles'       => array(
-							'title'       => array(
-								'name' => esc_html__( 'Title', 'addons-for-divi' ),
-							),
-							'description' => array(
-								'name' => esc_html__( 'Description', 'addons-for-divi' ),
-							),
-						),
-					),
-					'button'  => esc_html__( 'Button', 'addons-for-divi' ),
-					'borders' => esc_html__( 'Border', 'addons-for-divi' ),
+					'common'      => esc_html__( 'General', 'addons-for-divi' ),
+					'rating'      => esc_html__( 'Rating', 'addons-for-divi' ),
+					'image'       => esc_html__( 'Image', 'addons-for-divi' ),
+					'badge'       => esc_html__( 'Badge', 'addons-for-divi' ),
+					'title'       => esc_html__( 'Title', 'addons-for-divi' ),
+					'description' => esc_html__( 'Description', 'addons-for-divi' ),
+					'button'      => esc_html__( 'Button', 'addons-for-divi' ),
+					'borders'     => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 		);
@@ -49,31 +38,31 @@ class DTQ_Review extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'rating'        => array(
 				'label'    => esc_html__( 'Ratings', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-ratings',
+				'selector' => '%%order_class%% .dtq-ratings',
 			),
 			'rating_number' => array(
 				'label'    => esc_html__( 'Rating Number', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-ratings-number',
+				'selector' => '%%order_class%% .dtq-ratings-number',
 			),
 			'image'         => array(
 				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-rating-figure img',
+				'selector' => '%%order_class%% .dtq-rating-figure img',
 			),
 			'title'         => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-rating-star-title',
+				'selector' => '%%order_class%% .dtq-rating-star-title',
 			),
 			'desc'          => array(
 				'label'    => esc_html__( 'Description', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-rating-star-desc',
+				'selector' => '%%order_class%% .dtq-rating-star-desc',
 			),
 			'button_wrap'   => array(
 				'label'    => esc_html__( 'Button Wrapper', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-rating-btn-wrap',
+				'selector' => '%%order_class%% .dtq-rating-btn-wrap',
 			),
 			'button'        => array(
 				'label'    => esc_html__( 'Button', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-rating-btn',
+				'selector' => '%%order_class%% .dtq-rating-btn',
 			),
 		);
 	}
@@ -198,6 +187,7 @@ class DTQ_Review extends BA_Builder_Module {
 					'off' => esc_html__( 'No', 'addons-for-divi' ),
 				),
 				'toggle_slug'     => 'button',
+				'default'         => 'off',
 			),
 
 			'button_text'           => array(
@@ -469,9 +459,8 @@ class DTQ_Review extends BA_Builder_Module {
 					'step' => 1,
 					'max'  => 100,
 				),
-				'toggle_slug'    => 'texts',
+				'toggle_slug'    => 'title',
 				'tab_slug'       => 'advanced',
-				'sub_toggle'     => 'title',
 			),
 
 			// Common.
@@ -486,6 +475,7 @@ class DTQ_Review extends BA_Builder_Module {
 				'default_on_front' => 'left',
 				'toggle_slug'      => 'common',
 				'tab_slug'         => 'advanced',
+				'mobile_options'   => true,
 			),
 
 			'content_padding'       => array(
@@ -514,14 +504,7 @@ class DTQ_Review extends BA_Builder_Module {
 			$badge_defaults
 		);
 
-		$overlay = $this->get_overlay_option_fields( 'overlay', 'on', array() );
-
-		// Default values.
-		if ( dt_if_not_migrated() ) {
-			$fields['use_button']['default'] = 'off';
-		} else {
-			$fields['use_button']['default'] = 'on';
-		}
+		$overlay = $this->get_overlay_option_fields( 'image', 'on', array() );
 
 		return array_merge( $fields, $overlay, $badge_options );
 	}
@@ -538,8 +521,8 @@ class DTQ_Review extends BA_Builder_Module {
 			'label_prefix' => esc_html__( 'Badge', 'addons-for-divi' ),
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-review-badge',
-					'border_styles' => '%%order_class%% .ba-review-badge',
+					'border_radii'  => '%%order_class%% .dtq-review-badge',
+					'border_styles' => '%%order_class%% .dtq-review-badge',
 				),
 				'important' => 'all',
 			),
@@ -556,7 +539,7 @@ class DTQ_Review extends BA_Builder_Module {
 		$advanced_fields['fonts']['badge'] = array(
 			'label'           => esc_html__( 'Badge', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-review-badge',
+				'main'      => '%%order_class%% .dtq-review-badge',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -570,13 +553,12 @@ class DTQ_Review extends BA_Builder_Module {
 		$advanced_fields['fonts']['title'] = array(
 			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-rating-star-title',
+				'main'      => '%%order_class%% .dtq-rating-star-title',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
 			'hide_text_align' => true,
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'title',
+			'toggle_slug'     => 'title',
 			'header_level'    => array(
 				'default' => 'h3',
 			),
@@ -588,13 +570,12 @@ class DTQ_Review extends BA_Builder_Module {
 		$advanced_fields['fonts']['desc'] = array(
 			'label'           => esc_html__( 'Description', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-rating-star-desc',
+				'main'      => '%%order_class%% .dtq-rating-star-desc',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
 			'hide_text_align' => true,
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'description',
+			'toggle_slug'     => 'description',
 			'line_height'     => array(
 				'range_settings' => array(
 					'min'  => '1',
@@ -631,8 +612,8 @@ class DTQ_Review extends BA_Builder_Module {
 			'toggle_slug'  => 'image',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-rating-figure img',
-					'border_styles' => '%%order_class%% .ba-rating-figure img',
+					'border_radii'  => '%%order_class%% .dtq-rating-figure img',
+					'border_styles' => '%%order_class%% .dtq-rating-figure img',
 				),
 				'important' => 'all',
 			),
@@ -649,13 +630,13 @@ class DTQ_Review extends BA_Builder_Module {
 		$advanced_fields['button']['button'] = array(
 			'label'          => esc_html__( 'Button', 'addons-for-divi' ),
 			'css'            => array(
-				'main'      => '%%order_class%% .ba-rating-btn',
+				'main'      => '%%order_class%% .dtq-rating-btn',
 				'important' => 'all',
 			),
 			'use_alignment'  => false,
 			'box_shadow'     => array(
 				'css' => array(
-					'main' => '%%order_class%% .ba-btn-card',
+					'main' => '%%order_class%% .dtq-btn-card',
 				),
 			),
 			'borders'        => array(
@@ -683,7 +664,7 @@ class DTQ_Review extends BA_Builder_Module {
 	public function render_badge() {
 		if ( 'off' !== $this->props['use_badge'] ) {
 			return sprintf(
-				'<div class="ba-review-badge">%1$s</div>',
+				'<div class="dtq-review-badge">%1$s</div>',
 				$this->props['badge_text']
 			);
 		}
@@ -696,19 +677,19 @@ class DTQ_Review extends BA_Builder_Module {
 		$processed_overlay_icon = esc_attr( et_pb_process_font_icon( $this->props['overlay_icon'] ) );
 		$overlay_icon           = ! empty( $processed_overlay_icon ) ? $processed_overlay_icon : '';
 		$data_schema            = $this->get_swapped_img_schema( 'image' );
-
+		dtq_inject_fa_icons( $this->props['overlay_icon'] );
 		if ( ! empty( $image ) ) {
 			return sprintf(
-				'<div class="ba-rating-figure">
+				'<div class="dtq-rating-figure">
                     %6$s
-                    <div class="ba-overlay" data-icon="%3$s"></div>
-                    <img class="ba-img-cover ba-swapped-img %5$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%4$s"/>
+                    <div class="dtq-overlay"><i class="dtq-overlay-icon">%3$s</i></div>
+                    <img class="dtq-img-cover dtq-swapped-img %5$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%4$s"/>
                 </div>',
 				$image,
 				$data_schema,
 				$overlay_icon,
 				$image_alt,
-				$use_lightbox === 'on' ? 'ba-lightbox' : '',
+				'on' === $use_lightbox ? 'dtq-lightbox' : '',
 				$this->render_badge()
 			);
 		}
@@ -722,14 +703,14 @@ class DTQ_Review extends BA_Builder_Module {
 		$processed_title_level = esc_html( $processed_title_level );
 
 		if ( ! empty( $title_text ) ) {
-			return sprintf( '<%2$s class="ba-rating-star-title">%1$s</%2$s>', $title_text, $processed_title_level );
+			return sprintf( '<%2$s class="dtq-rating-star-title">%1$s</%2$s>', $title_text, $processed_title_level );
 		}
 	}
 
 	public function render_description() {
 		$description = $this->props['description'];
 		if ( ! empty( $description ) ) {
-			return sprintf( '<div class="ba-rating-star-desc">%1$s</div>', $description );
+			return sprintf( '<div class="dtq-rating-star-desc">%1$s</div>', $description );
 		}
 	}
 
@@ -739,7 +720,7 @@ class DTQ_Review extends BA_Builder_Module {
 		$show_number = $this->props['show_number'];
 
 		if ( $show_number === 'on' ) {
-			return '<div class="ba-ratings-number">(' . $rating . '/' . $scale . ')</div>';
+			return '<div class="dtq-ratings-number">(' . $rating . '/' . $scale . ')</div>';
 		}
 	}
 
@@ -747,14 +728,14 @@ class DTQ_Review extends BA_Builder_Module {
 		$stars = '';
 		$scale = $this->props['scale'];
 		for ( $i = 1; $i <= intval( $scale ); $i++ ) {
-			$stars .= '<span class="ba-star">' . $icon . '</span>';
+			$stars .= '<span class="dtq-star">' . $icon . '</span>';
 		}
 		return $stars;
 	}
 
 	public function _render_button() {
 
-		if ( $this->props['use_button'] === 'on' ) {
+		if ( 'on' === $this->props['use_button'] ) {
 
 			$button_custom = $this->props['custom_button'];
 			$button_text   = isset( $this->props['button_text'] ) ? $this->props['button_text'] : 'Click Here';
@@ -762,32 +743,54 @@ class DTQ_Review extends BA_Builder_Module {
 			$button_url    = trim( $button_link );
 			$new_tab       = $this->props['is_new_window'];
 			$button_rel    = $this->props['button_rel'];
-			$button_icon   = ! empty( $this->props['button_icon'] ) ? $this->props['button_icon'] : '5';
 
-			$button_output = $this->render_button(
+			$custom_icon_values = et_pb_responsive_options()->get_property_values( $this->props, 'button_icon' );
+			$custom_icon        = isset( $custom_icon_values['desktop'] ) ? $custom_icon_values['desktop'] : '';
+			$custom_icon_tablet = isset( $custom_icon_values['tablet'] ) ? $custom_icon_values['tablet'] : '';
+			$custom_icon_phone  = isset( $custom_icon_values['phone'] ) ? $custom_icon_values['phone'] : '';
+			$multi_view         = et_pb_multi_view_options( $this );
+
+			if ( function_exists( 'dtq_inject_fa_icons' ) ) {
+				// Inject Font Awesome Manually!.
+				dtq_inject_fa_icons( $this->props['button_icon'] );
+			}
+
+			$button = $this->render_button(
 				array(
-					'button_classname' => array( 'ba-btn-default', 'ba-rating-btn' ),
-					'button_custom'    => $button_custom,
-					'button_rel'       => $button_rel,
-					'button_text'      => $button_text,
-					'button_url'       => $button_url,
-					'custom_icon'      => $button_icon,
-					'has_wrapper'      => false,
-					'url_new_window'   => $new_tab,
+					'button_id'           => $this->module_id( false ),
+					'button_classname'    => array( 'dtq-btn-default', 'dtq-rating-btn' ),
+					'button_custom'       => $button_custom,
+					'button_text'         => $button_text,
+					'button_rel'          => $button_rel,
+					'button_text_escaped' => true,
+					'button_url'          => $button_url,
+					'custom_icon'         => $custom_icon,
+					'custom_icon_tablet'  => $custom_icon_tablet,
+					'custom_icon_phone'   => $custom_icon_phone,
+					'url_new_window'      => $new_tab,
+					'has_wrapper'         => false,
+					'multi_view_data'     => $multi_view->render_attrs(
+						array(
+							'content'        => '{{button_text}}',
+							'hover_selector' => '%%order_class%% .dtq-rating-btn',
+							'visibility'     => array(
+								'button_text' => '__not_empty',
+							),
+						)
+					),
 				)
 			);
 
 			return sprintf(
-				'
-                <div class="ba-rating-btn-wrap">
+				'<div class="dtq-rating-btn-wrap">
                     %1$s
                 </div>',
-				$button_output
+				$button
 			);
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
@@ -795,19 +798,19 @@ class DTQ_Review extends BA_Builder_Module {
 		$rating   = $this->props['rating'];
 		$scale    = $this->props['scale'];
 		$tag      = ! empty( $this->props['link_option_url'] ) ? 'a' : 'div';
-		$classes  = sprintf( 'ba-hover--%1$s', $img_anim );
+		$classes  = sprintf( 'dtq-hover--%1$s', $img_anim );
 		$width    = ( 100 * floatval( $rating ) ) / floatval( $scale );
 
 		// Output
 		return sprintf(
-			'<%1$s %2$s class="ba-module ba-module ba-review ba-swapped-img-selector %3$s">
+			'<%1$s %2$s class="dtq-module dtq-module dtq-review dtq-swapped-img-selector %3$s">
                 %4$s
-                <div class="ba-review-content">
+                <div class="dtq-review-content">
                     %5$s
-                    <div class="ba-ratings ba-flex">
-                        <div class="ba-stars-wrap" style="--active-width:%6$s%%">
-                            <div class="ba-stars-inact">%7$s</div>
-                            <div class="ba-stars-act">%8$s</div>
+                    <div class="dtq-ratings dtq-flex">
+                        <div class="dtq-stars-wrap" style="--active-width:%6$s%%">
+                            <div class="dtq-stars-inact">%7$s</div>
+                            <div class="dtq-stars-act">%8$s</div>
                         </div>
                         %9$s
                     </div>
@@ -831,7 +834,6 @@ class DTQ_Review extends BA_Builder_Module {
 
 	public function render_css( $render_slug ) {
 
-		$content_alignment                 = $this->props['content_alignment'];
 		$img_pos                           = $this->props['img_pos'];
 		$star_spacing                      = $this->props['star_spacing'];
 		$star_color                        = $this->props['star_color'];
@@ -854,7 +856,7 @@ class DTQ_Review extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-review',
+					'selector'    => '%%order_class%% .dtq-review',
 					'declaration' => 'flex-direction: column;',
 				)
 			);
@@ -862,7 +864,7 @@ class DTQ_Review extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-review',
+					'selector'    => '%%order_class%% .dtq-review',
 					'declaration' => 'flex-direction: column-reverse;',
 				)
 			);
@@ -870,7 +872,7 @@ class DTQ_Review extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-review',
+					'selector'    => '%%order_class%% .dtq-review',
 					'declaration' => 'flex-direction: row;',
 				)
 			);
@@ -878,7 +880,7 @@ class DTQ_Review extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-review',
+					'selector'    => '%%order_class%% .dtq-review',
 					'declaration' => 'flex-direction: row-reverse;',
 				)
 			);
@@ -888,7 +890,7 @@ class DTQ_Review extends BA_Builder_Module {
 		if ( ! empty( $this->props['img_height'] ) ) {
 			$this->get_responsive_styles(
 				'img_height',
-				'%%order_class%% .ba-rating-figure',
+				'%%order_class%% .dtq-rating-figure',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -901,7 +903,7 @@ class DTQ_Review extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-rating-figure',
+					'selector'    => '%%order_class%% .dtq-rating-figure',
 					'declaration' => sprintf( 'flex: 0 0 %1$s; max-width: %1$s;', $img_width ),
 				)
 			);
@@ -910,7 +912,7 @@ class DTQ_Review extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-rating-figure',
+						'selector'    => '%%order_class%% .dtq-rating-figure',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'flex:0 0 %1$s;max-width: %1$s;', $img_width_tablet ),
 					)
@@ -921,7 +923,7 @@ class DTQ_Review extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-rating-figure',
+						'selector'    => '%%order_class%% .dtq-rating-figure',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'flex:0 0 %1$s;max-width: %1$s;', $img_width_phone ),
 					)
@@ -932,7 +934,7 @@ class DTQ_Review extends BA_Builder_Module {
 		// Image Padding.
 		$this->get_responsive_styles(
 			'img_padding',
-			'%%order_class%% .ba-rating-figure img',
+			'%%order_class%% .dtq-rating-figure img',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0px|0px|0px|0px' ),
 			$render_slug
@@ -941,42 +943,39 @@ class DTQ_Review extends BA_Builder_Module {
 		// texts.
 		$this->get_responsive_styles(
 			'title_bottom_spacing',
-			'%%order_class%% .ba-rating-star-title',
+			'%%order_class%% .dtq-rating-star-title',
 			array( 'primary' => 'padding-bottom' ),
 			array( 'default' => '0px' ),
 			$render_slug
 		);
 
-		// Content alignment
-		ET_Builder_Element::set_style(
-			$render_slug,
+		// Content alignment.
+		$this->get_responsive_styles(
+			'content_alignment',
+			'%%order_class%% .dtq-review-content',
 			array(
-				'selector'    => '%%order_class%% .ba-review-content',
-				'declaration' => sprintf( 'text-align: %1$s!important;', $content_alignment ),
-			)
+				'primary'   => 'text-align',
+				'important' => true,
+			),
+			array( 'default' => 'left' ),
+			$render_slug
 		);
-		if ( $content_alignment === 'right' ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-ratings',
-					'declaration' => 'justify-content: flex-end;',
-				)
-			);
-		} elseif ( $content_alignment === 'center' ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-ratings',
-					'declaration' => 'justify-content: center;',
-				)
-			);
-		}
+
+		$this->get_responsive_styles(
+			'content_alignment',
+			'%%order_class%% .dtq-ratings',
+			array(
+				'primary'   => 'justify-content',
+				'important' => false,
+			),
+			array( 'default' => 'left' ),
+			$render_slug
+		);
 
 		// Content Padding.
 		$this->get_responsive_styles(
 			'content_padding',
-			'%%order_class%% .ba-review-content',
+			'%%order_class%% .dtq-review-content',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '15px|0px|0px|0px' ),
 			$render_slug
@@ -985,7 +984,7 @@ class DTQ_Review extends BA_Builder_Module {
 		// rating bottom spacing.
 		$this->get_responsive_styles(
 			'rating_bottom_spacing',
-			'%%order_class%% .ba-ratings',
+			'%%order_class%% .dtq-ratings',
 			array( 'primary' => 'padding-bottom' ),
 			array( 'default' => '10px' ),
 			$render_slug
@@ -994,7 +993,7 @@ class DTQ_Review extends BA_Builder_Module {
 		// Star Size.
 		$this->get_responsive_styles(
 			'star_size',
-			'%%order_class%% .ba-stars-wrap .ba-star',
+			'%%order_class%% .dtq-stars-wrap .dtq-star',
 			array( 'primary' => 'font-size' ),
 			array( 'default' => '23px' ),
 			$render_slug
@@ -1004,7 +1003,7 @@ class DTQ_Review extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-stars-wrap .ba-star',
+				'selector'    => '%%order_class%% .dtq-stars-wrap .dtq-star',
 				'declaration' => sprintf(
 					'
                 margin-left: %1$s;
@@ -1016,7 +1015,7 @@ class DTQ_Review extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-stars-wrap',
+				'selector'    => '%%order_class%% .dtq-stars-wrap',
 				'declaration' => sprintf(
 					'
                 margin-left: -%1$s;
@@ -1030,21 +1029,21 @@ class DTQ_Review extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-star',
+				'selector'    => '%%order_class%% .dtq-star',
 				'declaration' => sprintf( 'color: %1$s;', $star_color ),
 			)
 		);
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-stars-act .ba-star',
+				'selector'    => '%%order_class%% .dtq-stars-act .dtq-star',
 				'declaration' => sprintf( 'color: %1$s;', $star_active_color ),
 			)
 		);
 		// Rating text.
 		$this->get_responsive_styles(
 			'rating_text_size',
-			'%%order_class%% .ba-ratings-number',
+			'%%order_class%% .dtq-ratings-number',
 			array( 'primary' => 'font-size' ),
 			array( 'default' => '16px' ),
 			$render_slug
@@ -1052,7 +1051,7 @@ class DTQ_Review extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-ratings-number',
+				'selector'    => '%%order_class%% .dtq-ratings-number',
 				'declaration' => sprintf(
 					'
                 padding-left: %2$s;
@@ -1067,7 +1066,7 @@ class DTQ_Review extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-rating-btn-wrap',
+				'selector'    => '%%order_class%% .dtq-rating-btn-wrap',
 				'declaration' => sprintf( 'padding-top: %1$s!important;', $btn_spacing_top ),
 			)
 		);
@@ -1076,7 +1075,7 @@ class DTQ_Review extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-rating-btn-wrap',
+					'selector'    => '%%order_class%% .dtq-rating-btn-wrap',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'padding-top: %1$s!important;', $btn_spacing_top_tablet ),
 				)
@@ -1087,16 +1086,31 @@ class DTQ_Review extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-rating-btn-wrap',
+					'selector'    => '%%order_class%% .dtq-rating-btn-wrap',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'padding-top: %1$s!important;', $btn_spacing_top_phone ),
 				)
 			);
 		}
 
-		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .ba-review .ba-rating-btn' );
+		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .dtq-review .dtq-rating-btn' );
 		$this->get_overlay_style( $render_slug, 'image', '%%order_class%%' );
-		$this->get_badge_styles( $render_slug, 'badge', '%%order_class%% .ba-review-badge', '%%order_class%%:hover .ba-review-badge' );
+		$this->get_badge_styles( $render_slug, 'badge', '%%order_class%% .dtq-review-badge', '%%order_class%%:hover .dtq-review-badge' );
+
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'overlay_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-overlay .dtq-overlay-icon',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
+
 	}
 }
 

@@ -16,11 +16,11 @@ jQuery(function($) {
         }
     }
 
-    var swapped_img_parent = $('.ba-swapped-img-selector');
+    var swapped_img_parent = $('.dtq-swapped-img-selector');
 
     if (swapped_img_parent.length > 0) {
         swapped_img_parent.each(function() {
-            var swapped_img = $(this).find('.ba-swapped-img'),
+            var swapped_img = $(this).find('.dtq-swapped-img'),
                 img_schema = swapped_img.data('schema');
 
             if (img_schema && typeof img_schema === 'object') {
@@ -32,7 +32,7 @@ jQuery(function($) {
                 if (photo_hover && photo_hover.length > 0) {
                     $(this).on('hover', function() {
                         $(swapped_img).attr('src', photo_hover);
-                        $(swapped_img).addClass('ba-img-hovered');
+                        $(swapped_img).addClass('dtq-img-hovered');
                     });
 
                     $(this).on('mouseleave', function() {
@@ -42,7 +42,7 @@ jQuery(function($) {
                             photo_tablet,
                             photo_phone
                         );
-                        $(swapped_img).removeClass('ba-img-hovered');
+                        $(swapped_img).removeClass('dtq-img-hovered');
                     });
                 }
 
@@ -65,7 +65,7 @@ jQuery(function($) {
         });
     }
 
-    var ba_img_lightbox = $('.ba-lightbox');
+    var ba_img_lightbox = $('.dtq-lightbox');
     if (ba_img_lightbox) {
         try {
             ba_img_lightbox.magnificPopup({
@@ -83,7 +83,7 @@ jQuery(function($) {
         }
     }
 
-    var ba_carousel = $('.ba-carousel');
+    var ba_carousel = $('.dtq-carousel');
 
     if (ba_carousel) {
         var _pre_settings = {
@@ -131,13 +131,13 @@ jQuery(function($) {
         };
 
         self.initCloseEvent = function() {
-            $popup.on('click', '.ba-popup-close-button', function(event) {
+            $popup.on('click', '.dtq-popup-close-button', function(event) {
                 var target = event.currentTarget;
 
                 self.hidePopup();
             });
 
-            $popup.on('click', '.ba-popup-overlay', function(event) {
+            $popup.on('click', '.dtq-popup-overlay', function(event) {
                 var target = event.currentTarget;
                 self.hidePopup();
             });
@@ -179,7 +179,7 @@ jQuery(function($) {
             $(document).on('mouseleave', 'body', function(event) {
                 pageY = event.pageY - $window.scrollTop();
 
-                if (0 > pageY && $popup.hasClass('ba-popup-hide-state')) {
+                if (0 > pageY && $popup.hasClass('dtq-popup-hide-state')) {
                     self.showPopup();
                 }
             });
@@ -212,13 +212,13 @@ jQuery(function($) {
                 animeContainer = null,
                 animeOverlaySettings = jQuery.extend(
                     {
-                        targets: $('.ba-popup-overlay', $popup)[0],
+                        targets: $('.dtq-popup-overlay', $popup)[0],
                     },
                     self.avaliableEffects['fade']['show']
                 ),
                 animeContainerSettings = jQuery.extend(
                     {
-                        targets: $('.ba-popup-container', $popup)[0],
+                        targets: $('.dtq-popup-container', $popup)[0],
                         begin: function(anime) {
                             isAnimation = true;
                         },
@@ -231,7 +231,7 @@ jQuery(function($) {
                 );
 
             animeOverlay = anime(animeOverlaySettings);
-            $popup.toggleClass('ba-popup-hide-state ba-popup-show-state');
+            $popup.toggleClass('dtq-popup-hide-state dtq-popup-show-state');
             animeContainer = anime(animeContainerSettings);
         };
 
@@ -240,13 +240,13 @@ jQuery(function($) {
                 animeContainer = null,
                 animeOverlaySettings = jQuery.extend(
                     {
-                        targets: $('.ba-popup-overlay', $popup)[0],
+                        targets: $('.dtq-popup-overlay', $popup)[0],
                     },
                     self.avaliableEffects['fade']['hide']
                 ),
                 animeContainerSettings = jQuery.extend(
                     {
-                        targets: $('.ba-popup-container', $popup)[0],
+                        targets: $('.dtq-popup-container', $popup)[0],
 
                         begin: function(anime) {
                             isAnimation = true;
@@ -256,7 +256,7 @@ jQuery(function($) {
                             isAnimation = false;
                             isOpen = false;
                             $popup.toggleClass(
-                                'ba-popup-show-state ba-popup-hide-state'
+                                'dtq-popup-show-state dtq-popup-hide-state'
                             );
                         },
                     },
@@ -267,7 +267,7 @@ jQuery(function($) {
                 return false;
             }
 
-            if ($popup.hasClass('ba-popup-show-state')) {
+            if ($popup.hasClass('dtq-popup-show-state')) {
                 animeOverlay = anime(animeOverlaySettings);
                 animeContainer = anime(animeContainerSettings);
             }

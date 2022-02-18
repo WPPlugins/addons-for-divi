@@ -34,19 +34,19 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'image'        => array(
 				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-video-popup .ba-video-popup-figure img',
+				'selector' => '%%order_class%% .dtq-video-popup .dtq-video-popup-figure img',
 			),
 			'icon_wrapper' => array(
 				'label'    => esc_html__( 'Icon Wrapper', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-video-popup .ba-video-popup-icon',
+				'selector' => '%%order_class%% .dtq-video-popup .dtq-video-popup-icon',
 			),
 			'icon'         => array(
 				'label'    => esc_html__( 'Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-video-popup .ba-video-popup-icon svg',
+				'selector' => '%%order_class%% .dtq-video-popup .dtq-video-popup-icon svg',
 			),
 			'text'         => array(
 				'label'    => esc_html__( 'Text', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-video-popup .ba-video-popup-text',
+				'selector' => '%%order_class%% .dtq-video-popup .dtq-video-popup-text',
 			),
 		);
 	}
@@ -221,7 +221,6 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
 				'description'    => esc_html__( 'Here you can define static height for your image.', 'addons-for-divi' ),
 				'type'           => 'range',
-				'default'        => '300px',
 				'default_unit'   => 'px',
 				'mobile_options' => true,
 				'range_settings' => array(
@@ -482,7 +481,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['trigger'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-video-popup .ba-video-popup-text',
+				'main'      => '%%order_class%% .dtq-video-popup .dtq-video-popup-text',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -515,17 +514,17 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				'6' => '<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 310 310"><g><path d="M297.917,64.645c-11.19-13.302-31.85-18.728-71.306-18.728H83.386c-40.359,0-61.369,5.776-72.517,19.938 C0,79.663,0,100.008,0,128.166v53.669c0,54.551,12.896,82.248,83.386,82.248h143.226c34.216,0,53.176-4.788,65.442-16.527 C304.633,235.518,310,215.863,310,181.835v-53.669C310,98.471,309.159,78.006,297.917,64.645z M199.021,162.41l-65.038,33.991 c-1.454,0.76-3.044,1.137-4.632,1.137c-1.798,0-3.592-0.484-5.181-1.446c-2.992-1.813-4.819-5.056-4.819-8.554v-67.764 c0-3.492,1.822-6.732,4.808-8.546c2.987-1.814,6.702-1.938,9.801-0.328l65.038,33.772c3.309,1.718,5.387,5.134,5.392,8.861 C204.394,157.263,202.325,160.684,199.021,162.41z"/></g></svg>',
 			);
 
-			$svg_icon = sprintf( '<span class="ba-video-popup-icon">%1$s</span>', $icons[ $icon ] );
+			$svg_icon = sprintf( '<span class="dtq-video-popup-icon">%1$s</span>', $icons[ $icon ] );
 		}
 
 		if ( 'icon' !== $this->props['trigger_element'] ) {
-			$text = sprintf( '<span class="ba-video-popup-text">%1$s</span>', $this->props['text'] );
+			$text = sprintf( '<span class="dtq-video-popup-text">%1$s</span>', $this->props['text'] );
 		}
 
 		return $svg_icon . $text;
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$inline_modal     = '';
 		$image            = $this->props['image'];
@@ -543,20 +542,20 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 		$video_id         = '';
 		$order_class      = self::get_module_order_class( $render_slug );
 		$order_number     = str_replace( '_', '', str_replace( $this->slug, '', $order_class ) );
-		$data_modal       = 'video' === $type ? sprintf( 'data-mfp-src="#ba-video-popup-%1$s"', $order_number ) : '';
+		$data_modal       = 'video' === $type ? sprintf( 'data-mfp-src="#dtq-video-popup-%1$s"', $order_number ) : '';
 
 		// popup style.
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => ".ba-video-popup-{$order_number} .mfp-bg",
+				'selector'    => ".dtq-video-popup-{$order_number} .mfp-bg",
 				'declaration' => sprintf( 'opacity:1!important;background: %1$s!important;', $popup_bg ),
 			)
 		);
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => ".ba-video-popup-{$order_number} .mfp-iframe-holder .mfp-close",
+				'selector'    => ".dtq-video-popup-{$order_number} .mfp-iframe-holder .mfp-close",
 				'declaration' => sprintf( 'color: %1$s!important;', $close_icon_color ),
 			)
 		);
@@ -565,8 +564,8 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 		if ( 'video' === $type ) {
 			$inline_modal = sprintf(
-				'<div class="mfp-hide ba-modal" id="ba-video-popup-%1$s" data-order="%1$s">
-                    <div class="ba-video-wrap">
+				'<div class="mfp-hide dtq-modal" id="dtq-video-popup-%1$s" data-order="%1$s">
+                    <div class="dtq-video-wrap">
                         <video controls><source type="video/mp4" src="%2$s"></video>
                     </div>
                 </div>',
@@ -592,7 +591,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 		if ( 'on' === $use_overlay ) {
 			$img_overlay = sprintf(
-				'<div class="ba-video-popup-figure">
+				'<div class="dtq-video-popup-figure">
 					<img src="%1$s" alt="%2$s"/>
 				</div>',
 				$image,
@@ -600,11 +599,11 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 			);
 		}
 		return sprintf(
-			'<div class="ba-module ba-video-popup">
+			'<div class="dtq-module dtq-video-popup">
                 %5$s
-                <div class="ba-video-popup-wrap">
+                <div class="dtq-video-popup-wrap">
 					<a
-						class="ba-video-popup-trigger ba-popup-%6$s"
+						class="dtq-video-popup-trigger dtq-popup-%6$s"
 						data-order="%4$s"
 						data-id="%8$s"
 						data-type="%6$s"
@@ -650,7 +649,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'icon_alignment',
-			'%%order_class%% .ba-video-popup-icon',
+			'%%order_class%% .dtq-video-popup-icon',
 			array( 'primary' => 'justify-content' ),
 			array( 'default' => 'center' ),
 			$render_slug
@@ -661,7 +660,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-video-popup svg',
+					'selector'    => '%%order_class%% .dtq-video-popup svg',
 					'declaration' => sprintf( 'fill: %1$s;', $icon_color ),
 				)
 			);
@@ -670,7 +669,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%%:hover .ba-video-popup svg',
+						'selector'    => '%%order_class%%:hover .dtq-video-popup svg',
 						'declaration' => sprintf( 'fill: %1$s;', $icon_color_hover ),
 					)
 				);
@@ -678,7 +677,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'icon_height',
-				'%%order_class%% .ba-video-popup .ba-video-popup-icon',
+				'%%order_class%% .dtq-video-popup .dtq-video-popup-icon',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'initial' ),
 				$render_slug
@@ -686,7 +685,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'icon_width',
-				'%%order_class%% .ba-video-popup .ba-video-popup-icon',
+				'%%order_class%% .dtq-video-popup .dtq-video-popup-icon',
 				array( 'primary' => 'width' ),
 				array( 'default' => 'initial' ),
 				$render_slug
@@ -695,14 +694,14 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-video-popup .ba-video-popup-icon',
+					'selector'    => '%%order_class%% .dtq-video-popup .dtq-video-popup-icon',
 					'declaration' => sprintf( 'border-radius:%1$s;', $icon_radius ),
 				)
 			);
 
 			$this->get_responsive_styles(
 				'icon_size',
-				'%%order_class%% .ba-video-popup-icon svg',
+				'%%order_class%% .dtq-video-popup-icon svg',
 				array( 'primary' => 'width' ),
 				array( 'default' => '60px' ),
 				$render_slug
@@ -712,7 +711,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%%:hover .ba-video-popup-icon svg',
+						'selector'    => '%%order_class%%:hover .dtq-video-popup-icon svg',
 						'declaration' => "width:{$icon_size_hover};",
 					)
 				);
@@ -720,7 +719,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-video-popup-icon svg',
+					'selector'    => '%%order_class%% .dtq-video-popup-icon svg',
 					'declaration' => "opacity:{$icon_opacity};",
 				)
 			);
@@ -729,7 +728,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%%:hover .ba-video-popup-icon svg',
+						'selector'    => '%%order_class%%:hover .dtq-video-popup-icon svg',
 						'declaration' => "opacity:{$icon_opacity_hover};",
 					)
 				);
@@ -739,7 +738,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-video-popup-icon',
+						'selector'    => '%%order_class%% .dtq-video-popup-icon',
 						'declaration' => sprintf( 'background: %1$s;', $icon_bg ),
 					)
 				);
@@ -749,7 +748,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%%:hover .ba-video-popup-icon',
+						'selector'    => '%%order_class%%:hover .dtq-video-popup-icon',
 						'declaration' => sprintf( 'background: %1$s;', $icon_bg_hover ),
 					)
 				);
@@ -761,14 +760,14 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-video-popup .ba-video-popup-text',
+						'selector'    => '%%order_class%% .dtq-video-popup .dtq-video-popup-text',
 						'declaration' => sprintf( 'border-radius:%1$s;', $text_box_radius ),
 					)
 				);
 
 				$this->get_responsive_styles(
 					'text_box_height',
-					'%%order_class%% .ba-video-popup .ba-video-popup-text',
+					'%%order_class%% .dtq-video-popup .dtq-video-popup-text',
 					array( 'primary' => 'height' ),
 					array( 'default' => '80px' ),
 					$render_slug
@@ -776,7 +775,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 				$this->get_responsive_styles(
 					'text_box_width',
-					'%%order_class%% .ba-video-popup .ba-video-popup-text',
+					'%%order_class%% .dtq-video-popup .dtq-video-popup-text',
 					array( 'primary' => 'width' ),
 					array( 'default' => '80px' ),
 					$render_slug
@@ -786,7 +785,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-video-popup .ba-video-popup-text',
+							'selector'    => '%%order_class%% .dtq-video-popup .dtq-video-popup-text',
 							'declaration' => sprintf( 'background: %1$s;', $text_box_bg ),
 						)
 					);
@@ -796,7 +795,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%%:hover .ba-video-popup .ba-video-popup-text',
+							'selector'    => '%%order_class%%:hover .dtq-video-popup .dtq-video-popup-text',
 							'declaration' => sprintf( 'background: %1$s;', $text_box_bg_hover ),
 						)
 					);
@@ -806,7 +805,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-video-popup-trigger',
+						'selector'    => '%%order_class%% .dtq-video-popup-trigger',
 						'declaration' => 'justify-content: center; position: absolute; left: 0; top: 0;',
 					)
 				);
@@ -816,7 +815,7 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 		if ( 'icon_text' === $trigger_element ) {
 			$this->get_responsive_styles(
 				'icon_spacing',
-				'%%order_class%% .ba-video-popup-icon',
+				'%%order_class%% .dtq-video-popup-icon',
 				array( 'primary' => 'margin-right' ),
 				array( 'default' => '20px' ),
 				$render_slug
@@ -827,23 +826,23 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'img_height',
-				'%%order_class%% .ba-video-popup-figure',
+				'%%order_class%% .dtq-video-popup-figure',
 				array( 'primary' => 'height' ),
-				array( 'default' => '300px' ),
+				array( 'default' => 'auto' ),
 				$render_slug
 			);
 
 			$this->get_custom_bg_style(
 				$render_slug,
 				'image',
-				'%%order_class%% .ba-video-popup-figure:before',
-				'%%order_class%%:hover .ba-video-popup-figure:before'
+				'%%order_class%% .dtq-video-popup-figure:before',
+				'%%order_class%%:hover .dtq-video-popup-figure:before'
 			);
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-video-popup-trigger',
+					'selector'    => '%%order_class%% .dtq-video-popup-trigger',
 					'declaration' => 'justify-content: center; position: absolute; left: 0; top: 0;',
 				)
 			);
@@ -851,9 +850,9 @@ class DTQ_Video_Popup extends BA_Builder_Module {
 
 		// Animation.
 		if ( 'on' === $use_animation ) {
-			$selector = '%%order_class%% .ba-video-popup a:after';
+			$selector = '%%order_class%% .dtq-video-popup a:after';
 			if ( 'icon_text' === $trigger_element ) {
-				$selector = '%%order_class%% .ba-video-popup .ba-video-popup-icon:after';
+				$selector = '%%order_class%% .dtq-video-popup .dtq-video-popup-icon:after';
 			}
 
 			if ( 'icon' !== $trigger_element ) {

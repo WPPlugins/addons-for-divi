@@ -114,7 +114,7 @@ class DTQ_Logo_Carousel_Child extends BA_Builder_Module {
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-logo-carousel-item',
+				'main'      => '%%order_class%% .dtq-logo-carousel-item',
 				'important' => 'all',
 			),
 		);
@@ -169,7 +169,7 @@ class DTQ_Logo_Carousel_Child extends BA_Builder_Module {
 			$link_url     = $this->props['link_url'];
 
 			return sprintf(
-				'<a target="%1$s" href="%2$s" %3$s><img class="ba-swapped-img" data-mfp-src="%4$s" src="%4$s" alt="%5$s" %6$s /></a>',
+				'<a target="%1$s" href="%2$s" %3$s><img class="dtq-swapped-img" data-mfp-src="%4$s" src="%4$s" alt="%5$s" %6$s /></a>',
 				$target,
 				$link_url,
 				$this->render_ref_attr(),
@@ -181,28 +181,41 @@ class DTQ_Logo_Carousel_Child extends BA_Builder_Module {
 
 		return sprintf(
 			'
-            <div class="ba-lightbox-ctrl"><img class="ba-swapped-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s" %3$s /></div>',
+            <div class="dtq-lightbox-ctrl"><img class="dtq-swapped-img" data-mfp-src="%1$s" src="%1$s" alt="%2$s" %3$s /></div>',
 			$logo,
 			$brand_name,
 			$data_schema
 		);
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		// Module classes.
 		$this->remove_classname( 'et_pb_module' );
-		$this->add_classname( 'ba_et_pb_module' );
+
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'overlay_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-overlay .dtq-overlay-icon',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
 
 		// Overlay Styles.
-		$this->get_overlay_style( $render_slug, 'logo', '%%order_class%% .ba-carousel-item' );
-
+		$this->get_overlay_style( $render_slug, 'logo', '%%order_class%% .dtq-carousel-item' );
+		dtq_inject_fa_icons( $this->props['overlay_icon'] );
 		$processed_overlay_icon = esc_attr( et_pb_process_font_icon( $this->props['overlay_icon'] ) );
 		$overlay_icon           = ! empty( $processed_overlay_icon ) ? $processed_overlay_icon : '';
 
 		return sprintf(
-			'<div class="ba-carousel-item ba-logo-carousel-item ba-swapped-img-selector">
-			<div class = "ba-overlay" data-icon = "%2$s"></div>
+			'<div class="dtq-carousel-item dtq-logo-carousel-item dtq-swapped-img-selector">
+			    <div class="dtq-overlay"><i class="dtq-overlay-icon">%2$s</i></div>
 				%1$s
 			</div>',
 			$this->render_logo(),

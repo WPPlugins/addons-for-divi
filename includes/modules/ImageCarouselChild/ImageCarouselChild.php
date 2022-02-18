@@ -14,48 +14,43 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'carousel_content' => esc_html__( 'Content', 'addons-for-divi' ),
+					'content' => esc_html__( 'Content', 'addons-for-divi' ),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'image'   => esc_html__( 'Image', 'addons-for-divi' ),
-					'overlay' => esc_html__( 'Overlay', 'addons-for-divi' ),
-					'content' => esc_html__( 'Content', 'addons-for-divi' ),
-					'texts'   => array(
-						'title'             => esc_html__( 'Title & Subtitle', 'addons-for-divi' ),
-						'tabbed_subtoggles' => true,
-						'sub_toggles'       => array(
-							'title_tab'    => array(
-								'name' => esc_html__( 'Title', 'addons-for-divi' ),
-							),
-							'subtitle_tab' => array(
-								'name' => esc_html__( 'Subtitle', 'addons-for-divi' ),
-							),
-						),
-					),
-					'borders' => esc_html__( 'Border', 'addons-for-divi' ),
+					'image'    => esc_html__( 'Image', 'addons-for-divi' ),
+					'overlay'  => esc_html__( 'Overlay', 'addons-for-divi' ),
+					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
+					'title'    => esc_html__( 'Title Text', 'addons-for-divi' ),
+					'subtitle' => esc_html__( 'Subtitle Text', 'addons-for-divi' ),
+					'button'   => esc_html__( 'Button', 'addons-for-divi' ),
+					'borders'  => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
-			'image_wrap'  => array(
+			'image_wrap' => array(
 				'label'    => esc_html__( 'Image Wrapper', 'addons-for-divi' ),
 				'selector' => '%%order_class%% figure',
 			),
-			'image'  => array(
+			'image'      => array(
 				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
 				'selector' => '%%order_class%% figure img',
 			),
-			'title'  => array(
+			'title'      => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-image-title',
+				'selector' => '%%order_class%% .dtq-image-title',
 			),
 			'sub_title'  => array(
 				'label'    => esc_html__( 'Sub Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-image-subtitle',
+				'selector' => '%%order_class%% .dtq-image-subtitle',
+			),
+			'button'     => array(
+				'label'    => esc_html__( 'Button', 'addons-for-divi' ),
+				'selector' => '%%order_class%% .dtq-btn-img-carousel',
 			),
 		);
 	}
@@ -69,7 +64,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display.', 'addons-for-divi' ),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'toggle_slug'        => 'carousel_content',
+				'toggle_slug'        => 'content',
 				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
 				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
 				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
@@ -81,21 +76,71 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
 				'description' => esc_html__( 'Define the HTML ALT text for your image here.', 'addons-for-divi' ),
 				'type'        => 'text',
-				'toggle_slug' => 'carousel_content',
+				'toggle_slug' => 'content',
 			),
 
 			'title'                 => array(
 				'label'       => esc_html__( 'Title', 'addons-for-divi' ),
 				'description' => esc_html__( 'Define the title text for the item.', 'addons-for-divi' ),
 				'type'        => 'text',
-				'toggle_slug' => 'carousel_content',
+				'toggle_slug' => 'content',
 			),
 
 			'sub_title'             => array(
 				'label'       => esc_html__( 'Subtitle', 'addons-for-divi' ),
 				'description' => esc_html__( 'Define the sub-title text for the item.', 'addons-for-divi' ),
 				'type'        => 'text',
-				'toggle_slug' => 'carousel_content',
+				'toggle_slug' => 'content',
+			),
+
+			'use_button'            => array(
+				'label'           => esc_html__( 'Use Button', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether button should be used.', 'addons-for-divi' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
+				),
+				'default'         => 'off',
+				'toggle_slug'     => 'content',
+			),
+			'button_text'           => array(
+				'label'           => esc_html__( 'Button Text', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the button text for your button.', 'addons-for-divi' ),
+				'type'            => 'text',
+				'default'         => 'Click Here',
+				'toggle_slug'     => 'content',
+				'dynamic_content' => 'text',
+				'show_if'         => array(
+					'use_button' => 'on',
+				),
+			),
+			'button_link'           => array(
+				'label'           => esc_html__( 'Button Link', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Define the button link url for your button.', 'addons-for-divi' ),
+				'type'            => 'text',
+				'default'         => '',
+				'toggle_slug'     => 'content',
+				'dynamic_content' => 'url',
+				'show_if'         => array(
+					'use_button' => 'on',
+				),
+			),
+			'is_new_window'         => array(
+				'label'           => esc_html__( 'Open Button link in new window', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether button URL should be opened in new window.', 'addons-for-divi' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
+				),
+				'default'         => 'off',
+				'toggle_slug'     => 'content',
+				'show_if'         => array(
+					'use_button' => 'on',
+				),
 			),
 
 			'content_alignment'     => array(
@@ -278,11 +323,24 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 					'step' => 1,
 					'max'  => 100,
 				),
-				'toggle_slug'    => 'texts',
+				'toggle_slug'    => 'title',
 				'tab_slug'       => 'advanced',
-				'sub_toggle'     => 'title_tab',
 			),
-
+			'btn_spacing_top'       => array(
+				'label'          => esc_html__( 'Spacing Top', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the button.', 'addons-for-divi' ),
+				'type'           => 'range',
+				'default'        => '15px',
+				'mobile_options' => true,
+				'default_unit'   => 'px',
+				'range_settings' => array(
+					'min'  => 0,
+					'step' => 1,
+					'max'  => 500,
+				),
+				'toggle_slug'    => 'button',
+				'tab_slug'       => 'advanced',
+			),
 		);
 
 		$label = array(
@@ -318,6 +376,33 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 		$advanced_fields['borders']     = false;
 
+		$advanced_fields['button']['button'] = array(
+			'label'          => esc_html__( 'Button', 'addons-for-divi' ),
+			'css'            => array(
+				'main'      => '%%order_class%% .dtq-btn-img-carousel',
+				'alignment' => '%%order_class%% .dtq-btn-wrap',
+				'important' => 'all',
+			),
+			'tab_slug'       => 'advanced',
+			'toggle_slug'    => 'button',
+			'use_alignment'  => false,
+			'box_shadow'     => array(
+				'css' => array(
+					'main' => '%%order_class%% .dtq-btn-img-carousel',
+				),
+			),
+			'borders'        => array(
+				'css' => array(
+					'important' => 'all',
+				),
+			),
+			'margin_padding' => array(
+				'css' => array(
+					'important' => 'all',
+				),
+			),
+		);
+
 		$advanced_fields['box_shadow']['content'] = array(
 			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
@@ -331,12 +416,11 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		$advanced_fields['fonts']['title'] = array(
 			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-image-title, .et-db #et-boc %%order_class%% .ba-image-title',
+				'main'      => '%%order_class%% .dtq-image-title, .et-db #et-boc %%order_class%% .dtq-image-title',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'title_tab',
+			'toggle_slug'     => 'title',
 			'line_height'     => array(
 				'range_settings' => array(
 					'min'  => '1',
@@ -353,12 +437,11 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		$advanced_fields['fonts']['subtitle'] = array(
 			'label'           => esc_html__( 'Subtitle', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-image-subtitle, .et-db #et-boc %%order_class%% .ba-image-subtitle',
+				'main'      => '%%order_class%% .dtq-image-subtitle, .et-db #et-boc %%order_class%% .dtq-image-subtitle',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'subtitle_tab',
+			'toggle_slug'     => 'subtitle',
 			'hide_text_align' => true,
 			'line_height'     => array(
 				'range_settings' => array(
@@ -394,17 +477,18 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		$data_schema            = $this->get_swapped_img_schema( 'photo' );
 		$parent_module          = self::get_parent_modules( 'page' )['ba_image_carousel'];
 		$use_lightbox           = $parent_module->shortcode_atts['use_lightbox'];
+		dtq_inject_fa_icons( $this->props['overlay_icon'] );
 
 		if ( ! empty( $photo ) ) {
 			return sprintf(
-				'<figure class="ba-figure">
-                    <div class="ba-overlay" data-icon="%3$s"></div>
-                    <img class="ba-swapped-img %4$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%5$s"/>
+				'<figure class="dtq-figure">
+                    <div class="dtq-overlay"><i class="dtq-overlay-icon">%3$s</i></div>
+                    <img class="dtq-swapped-img %4$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%5$s"/>
                 </figure>',
 				$photo,
 				$data_schema,
 				$overlay_icon,
-				$use_lightbox === 'on' ? 'ba-lightbox' : '',
+				$use_lightbox === 'on' ? 'dtq-lightbox' : '',
 				$photo_alt
 			);
 		}
@@ -417,7 +501,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		$processed_title_level = esc_html( $processed_title_level );
 
 		if ( ! empty( $title_text ) ) {
-			return sprintf( '<%2$s class="ba-image-title">%1$s</%2$s>', $title_text, $processed_title_level );
+			return sprintf( '<%2$s class="dtq-image-title">%1$s</%2$s>', $title_text, $processed_title_level );
 		}
 	}
 
@@ -429,7 +513,64 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		$processed_subtitle_level = esc_html( $processed_subtitle_level );
 
 		if ( ! empty( $sub_title ) ) {
-			return sprintf( '<%2$s class="ba-image-subtitle">%1$s</%2$s>', $sub_title, $processed_subtitle_level );
+			return sprintf( '<%2$s class="dtq-image-subtitle">%1$s</%2$s>', $sub_title, $processed_subtitle_level );
+		}
+	}
+
+	public function render_module_button() {
+
+		if ( 'on' === $this->props['use_button'] ) {
+
+			$button_custom = $this->props['custom_button'];
+			$button_text   = isset( $this->props['button_text'] ) ? $this->props['button_text'] : 'Click Here';
+			$button_link   = isset( $this->props['button_link'] ) ? $this->props['button_link'] : '#';
+			$button_url    = trim( $button_link );
+			$new_tab       = $this->props['is_new_window'];
+			$button_rel    = $this->props['button_rel'];
+
+			$custom_icon_values = et_pb_responsive_options()->get_property_values( $this->props, 'button_icon' );
+			$custom_icon        = isset( $custom_icon_values['desktop'] ) ? $custom_icon_values['desktop'] : '';
+			$custom_icon_tablet = isset( $custom_icon_values['tablet'] ) ? $custom_icon_values['tablet'] : '';
+			$custom_icon_phone  = isset( $custom_icon_values['phone'] ) ? $custom_icon_values['phone'] : '';
+			$multi_view         = et_pb_multi_view_options( $this );
+
+			if ( function_exists( 'dtq_inject_fa_icons' ) ) {
+				// Inject Font Awesome Manually!.
+				dtq_inject_fa_icons( $this->props['button_icon'] );
+			}
+
+			$button = $this->render_button(
+				array(
+					// 'button_id'           => $this->module_id( false ),
+					'button_classname'    => array( 'dtq-btn-default', 'dtq-btn-img-carousel' ),
+					'button_custom'       => $button_custom,
+					'button_text'         => $button_text,
+					'button_rel'          => $button_rel,
+					'button_text_escaped' => true,
+					'button_url'          => $button_url,
+					'custom_icon'         => $custom_icon,
+					'custom_icon_tablet'  => $custom_icon_tablet,
+					'custom_icon_phone'   => $custom_icon_phone,
+					'url_new_window'      => $new_tab,
+					'has_wrapper'         => false,
+					'multi_view_data'     => $multi_view->render_attrs(
+						array(
+							'content'        => '{{button_text}}',
+							'hover_selector' => '%%order_class%% .dtq-btn-img-carousel',
+							'visibility'     => array(
+								'button_text' => '__not_empty',
+							),
+						)
+					),
+				)
+			);
+
+			return sprintf(
+				'<div class="dtq-btn-wrap">
+                    %1$s
+                </div>',
+				$button
+			);
 		}
 	}
 
@@ -446,15 +587,16 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		}
 
 		return sprintf(
-			'<div class="content content--%3$s content--%4$s"><div class="content-inner"> %1$s %2$s </div></div>',
+			'<div class="content content--%3$s content--%4$s"><div class="content-inner"> %1$s %2$s %5$s</div></div>',
 			$this->render_title(),
 			$this->render_subTitle(),
 			$this->props['content_alignment'],
-			$content_type
+			$content_type,
+			$this->render_module_button()
 		);
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$content_pos_x                     = $this->props['content_pos_x'];
 		$content_pos_y                     = $this->props['content_pos_y'];
@@ -486,7 +628,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-image-carousel-item .content-inner',
+				'selector'    => '%%order_class%% .dtq-image-carousel-item .content-inner',
 				'declaration' => sprintf( 'text-align: %1$s;', $content_alignment ),
 			)
 		);
@@ -497,7 +639,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-image-carousel-item figure',
+					'selector'    => '%%order_class%% .dtq-image-carousel-item figure',
 					'declaration' => sprintf( 'height: %1$s;', $image_height ),
 				)
 			);
@@ -505,7 +647,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-image-carousel-item figure',
+						'selector'    => '%%order_class%% .dtq-image-carousel-item figure',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'height: %1$s;', $image_height_tablet ),
 					)
@@ -516,7 +658,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-image-carousel-item figure',
+						'selector'    => '%%order_class%% .dtq-image-carousel-item figure',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'height: %1$s;', $image_height_phone ),
 					)
@@ -525,16 +667,25 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-image-carousel-item figure img',
+					'selector'    => '%%order_class%% .dtq-image-carousel-item figure img',
 					'declaration' => 'height: 100%; object-fit: cover;width:100%;',
 				)
 			);
 		}
 
+		// Button.
+		$this->get_responsive_styles(
+			'btn_spacing_top',
+			'%%order_class%% .dtq-btn-wrap',
+			array( 'primary' => 'padding-top' ),
+			array( 'default' => '15px' ),
+			$render_slug
+		);
+
 		// Texts.
 		$this->get_responsive_styles(
 			'title_bottom_spacing',
-			'%%order_class%% .ba-image-carousel-item h3',
+			'%%order_class%% .dtq-image-carousel-item h3',
 			array( 'primary' => 'padding-bottom' ),
 			array( 'default' => '5px' ),
 			$render_slug
@@ -602,7 +753,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-image-carousel-item .content .content-inner',
+				'selector'    => '%%order_class%% .dtq-image-carousel-item .content .content-inner',
 				'declaration' => sprintf(
 					'%1$s',
 					$this->process_margin_padding( $content_padding, 'padding', false )
@@ -612,7 +763,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'content_width',
-			'%%order_class%% .ba-image-carousel-item .content .content-inner',
+			'%%order_class%% .dtq-image-carousel-item .content .content-inner',
 			array( 'primary' => 'width' ),
 			array( 'default' => '100%' ),
 			$render_slug
@@ -623,7 +774,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-image-carousel-item .content .content-inner',
+					'selector'    => '%%order_class%% .dtq-image-carousel-item .content .content-inner',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => $this->process_margin_padding( $content_padding_tablet, 'padding', false ),
 				)
@@ -635,18 +786,35 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-image-carousel-item .content .content-inner',
+					'selector'    => '%%order_class%% .dtq-image-carousel-item .content .content-inner',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => $this->process_margin_padding( $content_padding_phone, 'padding', false ),
 				)
 			);
 		endif;
 
+		// Button Styles.
+		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .dtq-btn-wrap .dtq-btn-img-carousel' );
+
 		// Content background.
-		$this->get_custom_bg_style( $render_slug, 'content', '%%order_class%% .ba-image-carousel-item .content .content-inner', '%%order_class%% .ba-image-carousel-item .content .content-inner:hover' );
+		$this->get_custom_bg_style( $render_slug, 'content', '%%order_class%% .dtq-image-carousel-item .content .content-inner', '%%order_class%% .dtq-image-carousel-item .content .content-inner:hover' );
 
 		// Overlay Styles.
-		$this->get_overlay_style( $render_slug, 'photo', '%%order_class%% .ba-image-carousel-item' );
+		$this->get_overlay_style( $render_slug, 'photo', '%%order_class%% .dtq-image-carousel-item' );
+
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'overlay_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-overlay .dtq-overlay-icon',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
 
 		$is_bottom = true;
 
@@ -660,7 +828,7 @@ class DTQ_Image_Carousel_Child extends BA_Builder_Module {
 		$this->add_classname( 'ba_et_pb_module' );
 
 		return sprintf(
-			'<div class="ba-carousel-item ba-image-carousel-item ba-swapped-img-selector ba-hover--%3$s">
+			'<div class="dtq-carousel-item dtq-image-carousel-item dtq-swapped-img-selector dtq-hover--%3$s">
                 %4$s %1$s %2$s
 			</div>',
 			$this->render_figure(),

@@ -22,31 +22,32 @@ class AssetsManager {
 		$version  = DIVI_TORQUE_PLUGIN_VERSION;
 
 		// All vendor js.
-		wp_register_script( 'baj-slick', $js_path . 'slick.min.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'baj-twentytwenty', $js_path . 'twentytwenty.min.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'baj-tippy', $js_path . 'tippy.min.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'baj-event-move', $js_path . 'event_move.min.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'baj-popper', $js_path . 'popper.min.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'baj-typed', $js_path . 'typed.min.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'baj-anime', $js_path . 'anime.min.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'baj-text-animation', $js_path . 'text-animation.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-slick', $js_path . 'slick.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-twentytwenty', $js_path . 'twentytwenty.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-tippy', $js_path . 'tippy.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-event-move', $js_path . 'event_move.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-popper', $js_path . 'popper.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-typed', $js_path . 'typed.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-anime', $js_path . 'anime.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-text-animation', $js_path . 'text-animation.min.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-counter', $js_path . 'counter-up.min.js', array( 'jquery' ), $version, true );
 
-		// Temp Fix
-		wp_enqueue_script( 'baj-magnific-popup', $js_path . 'magnific-popup.js', array( 'jquery' ), $version, true );
-		wp_enqueue_style( 'bac-magnific', $css_path . 'magnific-popup.min.css', array(), $version, 'all' );
+		// Temp Fix.
+		wp_enqueue_script( 'dtqj-magnific-popup', $js_path . 'magnific-popup.js', array( 'jquery' ), $version, true );
+		wp_enqueue_style( 'dtqc-magnific', $css_path . 'magnific-popup.min.css', array(), $version, 'all' );
 
 		// All vendor css.
-		wp_register_style( 'bac-slick', $css_path . 'slick.min.css', array(), $version, 'all' );
-		wp_register_style( 'bac-tippy', $css_path . 'tippy.min.css', array(), $version, 'all' );
+		wp_register_style( 'dtqc-slick', $css_path . 'slick.min.css', array(), $version, 'all' );
+		wp_register_style( 'dtqc-tippy', $css_path . 'tippy.min.css', array(), $version, 'all' );
 
 		$prefix = defined( 'DTQ_DEBUG' ) && true === constant( 'DTQ_DEBUG' ) ? '' : '.min';
-		wp_enqueue_style( 'bac-core', $css_path . 'core' . $prefix . '.css', null, $version );
-		wp_enqueue_script( 'baj-main', $js_path . 'main' . $prefix . '.js', array( 'jquery' ), $version, true );
-		wp_register_script( 'baj-marvin', $js_path . 'marvin' . $prefix . '.js', array( 'jquery' ), $version, true );
-		wp_enqueue_script( 'baj-default-vb', $js_path . 'ba-default-vb.js', array( 'jquery' ), $version, true );
+		wp_enqueue_style( 'dtqc-core', $css_path . 'core' . $prefix . '.css', null, $version );
+		wp_enqueue_script( 'dtqj-main', $js_path . 'main' . $prefix . '.js', array( 'jquery' ), $version, true );
+		wp_register_script( 'dtqj-marvin', $js_path . 'marvin' . $prefix . '.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( 'dtqj-default-vb', $js_path . 'dtq-default-vb.js', array( 'jquery' ), $version, true );
 
 		wp_localize_script(
-			'baj-main',
+			'dtqj-main',
 			'DTQ_PLUGIN',
 			array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -57,8 +58,8 @@ class AssetsManager {
 	}
 
 	public function enqueue_scripts_vb() {
-		wp_enqueue_style( 'bac-slick' );
-		wp_enqueue_script( 'baj-default-vb' );
+		wp_enqueue_style( 'dtqc-slick' );
+		wp_enqueue_script( 'dtqj-default-vb' );
 	}
 
 }

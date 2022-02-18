@@ -1,5 +1,5 @@
 <?php
-class DTQ_Flipbox extends BA_Builder_Module {
+class DTQ__Flipbox extends BA_Builder_Module {
 
 	protected $module_credits = array(
 		'module_uri' => 'https://divitorque.com/flip-box-module/',
@@ -68,47 +68,47 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'front_icon'      => array(
 				'label'    => esc_html__( 'Front Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-icon-front i',
+				'selector' => '%%order_class%% .dtq-flipbox-icon-front i',
 			),
 			'front_img'       => array(
 				'label'    => esc_html__( 'Front Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-figure-front img',
+				'selector' => '%%order_class%% .dtq-flipbox-figure-front img',
 			),
 			'front_title'     => array(
 				'label'    => esc_html__( 'Front Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-title-front',
+				'selector' => '%%order_class%% .dtq-flipbox-title-front',
 			),
 			'front_sub_title' => array(
 				'label'    => esc_html__( 'Front Sub Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-subtitle-front',
+				'selector' => '%%order_class%% .dtq-flipbox-subtitle-front',
 			),
 			'front_desc'      => array(
 				'label'    => esc_html__( 'Front Description', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-desc-front',
+				'selector' => '%%order_class%% .dtq-flipbox-desc-front',
 			),
 			'back_icon'       => array(
 				'label'    => esc_html__( 'Back Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-icon-back i',
+				'selector' => '%%order_class%% .dtq-flipbox-icon-back i',
 			),
 			'back_img'        => array(
 				'label'    => esc_html__( 'Back Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-figure-back img',
+				'selector' => '%%order_class%% .dtq-flipbox-figure-back img',
 			),
 			'back_title'      => array(
 				'label'    => esc_html__( 'Back Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-title-back',
+				'selector' => '%%order_class%% .dtq-flipbox-title-back',
 			),
 			'back_sub_title'  => array(
 				'label'    => esc_html__( 'Back Sub Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-subtitle-back',
+				'selector' => '%%order_class%% .dtq-flipbox-subtitle-back',
 			),
 			'back_desc'       => array(
 				'label'    => esc_html__( 'Back Description', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-desc-front',
+				'selector' => '%%order_class%% .dtq-flipbox-desc-front',
 			),
 			'back_btn'        => array(
 				'label'    => esc_html__( 'Back Button', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-flipbox-btn',
+				'selector' => '%%order_class%% .dtq-flipbox-btn',
 			),
 		);
 	}
@@ -132,7 +132,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 				'label'       => esc_html__( 'Select Icon', 'addons-for-divi' ),
 				'description' => esc_html__( 'Select front side icon.', 'addons-for-divi' ),
 				'type'        => 'select_icon',
-				'default'     => '',
+				'default'     => '&#xe60c;||divi||400',
 				'toggle_slug' => 'front',
 				'tab_slug'    => 'general',
 				'show_if'     => array(
@@ -202,7 +202,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 				'description' => esc_html__( 'Select back side icon.', 'addons-for-divi' ),
 				'type'        => 'select_icon',
 				'toggle_slug' => 'back',
-				'default'     => '+',
+				'default'     => '&#x2b;||divi||400',
 				'tab_slug'    => 'general',
 				'show_if'     => array(
 					'back_media_type' => 'icon',
@@ -836,7 +836,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'box_shadow',
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-flipbox-card',
+				'main'      => '%%order_class%% .dtq-flipbox-card',
 				'important' => 'all',
 			),
 		);
@@ -845,8 +845,8 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			'toggle_slug' => 'border',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-flipbox-card',
-					'border_styles' => '%%order_class%% .ba-flipbox-card',
+					'border_radii'  => '%%order_class%% .dtq-flipbox-card',
+					'border_styles' => '%%order_class%% .dtq-flipbox-card',
 				),
 				'important' => 'all',
 			),
@@ -864,8 +864,8 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			'toggle_slug' => 'front_media',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-flipbox-figure-front',
-					'border_styles' => '%%order_class%% .ba-flipbox-figure-front',
+					'border_radii'  => '%%order_class%% .dtq-flipbox-figure-front',
+					'border_styles' => '%%order_class%% .dtq-flipbox-figure-front',
 				),
 				'important' => 'all',
 			),
@@ -875,8 +875,8 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			'toggle_slug' => 'back_media',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-flipbox-figure-back',
-					'border_styles' => '%%order_class%% .ba-flipbox-figure-back',
+					'border_radii'  => '%%order_class%% .dtq-flipbox-figure-back',
+					'border_styles' => '%%order_class%% .dtq-flipbox-figure-back',
 				),
 				'important' => 'all',
 			),
@@ -884,7 +884,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['front_title'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-flipbox-title-front',
+				'main'      => '%%order_class%% .dtq-flipbox-title-front',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -901,7 +901,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['front_description'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-flipbox-desc-front',
+				'main'      => '%%order_class%% .dtq-flipbox-desc-front',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -918,7 +918,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['back_title'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-flipbox-title-back',
+				'main'      => '%%order_class%% .dtq-flipbox-title-back',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -935,7 +935,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['back_description'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-flipbox-desc-back',
+				'main'      => '%%order_class%% .dtq-flipbox-desc-back',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -954,13 +954,13 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			'label'          => esc_html__( 'Button', 'addons-for-divi' ),
 			'toggle_slug'    => 'button',
 			'css'            => array(
-				'main'      => '%%order_class%% .ba-flipbox-btn',
+				'main'      => '%%order_class%% .dtq-flipbox-btn',
 				'important' => 'all',
 			),
 			'use_alignment'  => false,
 			'box_shadow'     => array(
 				'css' => array(
-					'main' => '%%order_class%% .ba-flipbox-btn',
+					'main' => '%%order_class%% .dtq-flipbox-btn',
 				),
 			),
 			'borders'        => array(
@@ -977,7 +977,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['front_subtitle'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-flipbox-subtitle-front',
+				'main'      => '%%order_class%% .dtq-flipbox-subtitle-front',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -994,7 +994,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['back_subtitle'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-flipbox-subtitle-back',
+				'main'      => '%%order_class%% .dtq-flipbox-subtitle-back',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -1014,12 +1014,11 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 	public function render_icon_front() {
 
-		$selected_icon = esc_attr( et_pb_process_font_icon( $this->props['front_icon'] ) );
-		$icon_name     = $selected_icon ? $selected_icon : '+';
+		$icon_name = esc_attr( et_pb_process_font_icon( $this->props['front_icon'] ) );
 
 		return sprintf(
-			'<div class="ba-flipbox-icon ba-flipbox-icon-front">
-                <i class="ba-et-icon" data-icon="%1$s"></i>
+			'<div class="dtq-flipbox-icon dtq-flipbox-icon-front">
+                <i class="dtq-et-icon">%1$s</i>
             </div>',
 			$icon_name
 		);
@@ -1027,12 +1026,10 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 	public function render_icon_back() {
 
-		$selected_icon = esc_attr( et_pb_process_font_icon( $this->props['back_icon'] ) );
-		$icon_name     = $selected_icon ? $selected_icon : '';
-
+		$icon_name = esc_attr( et_pb_process_font_icon( $this->props['back_icon'] ) );
 		return sprintf(
-			'<div class="ba-flipbox-icon ba-flipbox-icon-back">
-                <i class="ba-et-icon" data-icon="%1$s"></i>
+			'<div class="dtq-flipbox-icon dtq-flipbox-icon-back">
+                <i class="dtq-et-icon">%1$s</i>
             </div>',
 			$icon_name
 		);
@@ -1040,7 +1037,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 	public function render_img_front() {
 		return sprintf(
-			'<div class="ba-flipbox-img-front">
+			'<div class="dtq-flipbox-img-front">
                 <img src="%1$s" alt="%2$s"/>
             </div>',
 			$this->props['front_img'],
@@ -1050,7 +1047,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 	public function render_img_back() {
 		return sprintf(
-			'<div class="ba-flipbox-img-back">
+			'<div class="dtq-flipbox-img-back">
                 <img src="%1$s" alt="%2$s"/>
             </div>',
 			$this->props['back_img'],
@@ -1070,12 +1067,14 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		if ( ! empty( $front_icon ) || ! empty( $front_img ) ) {
 			if ( 'icon' === $front_media_type ) {
 				$media = $this->render_icon_front();
+				// Inject Font Awesome Manually!.
+				dtq_inject_fa_icons( $this->props['front_icon'] );
 			} elseif ( 'image' === $front_media_type ) {
 				$media = $this->render_img_front();
 			}
 
 			return sprintf(
-				'<div class="ba-flipbox-figure-front">
+				'<div class="dtq-flipbox-figure-front">
 					%1$s
 				</div>',
 				$media
@@ -1095,12 +1094,14 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		if ( ! empty( $back_icon ) || ! empty( $back_img ) ) {
 			if ( 'icon' === $back_media_type ) {
 				$media = $this->render_icon_back();
+				// Inject Font Awesome Manually!.
+				dtq_inject_fa_icons( $this->props['back_icon'] );
 			} elseif ( 'image' === $back_media_type ) {
 				$media = $this->render_img_back();
 			}
 
 			return sprintf(
-				'<div class="ba-flipbox-figure-back">
+				'<div class="dtq-flipbox-figure-back">
 					%1$s
 				</div>',
 				$media
@@ -1112,7 +1113,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		$front_title = $this->props['front_title'];
 		if ( ! empty( $front_title ) ) {
 			return sprintf(
-				'<h2 class="ba-flipbox-title-front">%1$s</h2>',
+				'<h2 class="dtq-flipbox-title-front">%1$s</h2>',
 				$front_title
 			);
 		}
@@ -1122,7 +1123,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		$back_title = $this->props['back_title'];
 		if ( ! empty( $back_title ) ) {
 			return sprintf(
-				'<h2 class="ba-flipbox-title-back">%1$s</h2>',
+				'<h2 class="dtq-flipbox-title-back">%1$s</h2>',
 				$back_title
 			);
 		}
@@ -1132,7 +1133,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		$front_subtitle = $this->props['front_subtitle'];
 		if ( ! empty( $front_subtitle ) ) {
 			return sprintf(
-				'<h4 class="ba-flipbox-subtitle-front">%1$s</h4>',
+				'<h4 class="dtq-flipbox-subtitle-front">%1$s</h4>',
 				$front_subtitle
 			);
 		}
@@ -1142,7 +1143,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		$back_subtitle = $this->props['back_subtitle'];
 		if ( ! empty( $back_subtitle ) ) {
 			return sprintf(
-				'<h4 class="ba-flipbox-subtitle-back">%1$s</h4>',
+				'<h4 class="dtq-flipbox-subtitle-back">%1$s</h4>',
 				$back_subtitle
 			);
 		}
@@ -1152,7 +1153,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		$description = $this->props['front_description'];
 		if ( ! empty( $description ) ) {
 			return sprintf(
-				'<div class="ba-flipbox-desc-front">%1$s</div>',
+				'<div class="dtq-flipbox-desc-front">%1$s</div>',
 				$description
 			);
 		}
@@ -1162,7 +1163,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		$description = $this->props['back_description'];
 		if ( ! empty( $description ) ) {
 			return sprintf(
-				'<div class="ba-flipbox-desc-back">%1$s</div>',
+				'<div class="dtq-flipbox-desc-back">%1$s</div>',
 				$description
 			);
 		}
@@ -1177,30 +1178,53 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			$button_link   = isset( $this->props['button_link'] ) ? $this->props['button_link'] : '#';
 			$button_url    = trim( $button_link );
 			$new_tab       = $this->props['is_new_window'];
-			$button_icon   = ! empty( $this->props['back_btn_icon'] ) ? $this->props['back_btn_icon'] : '5';
 
-			$button_output = $this->render_button(
+			$custom_icon_values = et_pb_responsive_options()->get_property_values( $this->props, 'back_btn_icon' );
+			$custom_icon        = isset( $custom_icon_values['desktop'] ) ? $custom_icon_values['desktop'] : '';
+			$custom_icon_tablet = isset( $custom_icon_values['tablet'] ) ? $custom_icon_values['tablet'] : '';
+			$custom_icon_phone  = isset( $custom_icon_values['phone'] ) ? $custom_icon_values['phone'] : '';
+			$multi_view         = et_pb_multi_view_options( $this );
+
+			if ( function_exists( 'dtq_inject_fa_icons' ) ) {
+				// Inject Font Awesome Manually!.
+				dtq_inject_fa_icons( $this->props['back_btn_icon'] );
+			}
+
+			$button = $this->render_button(
 				array(
-					'button_classname' => array( 'ba-flipbox-btn' ),
-					'button_custom'    => $button_custom,
-					'button_text'      => $button_text,
-					'button_url'       => $button_url,
-					'custom_icon'      => $button_icon,
-					'has_wrapper'      => false,
-					'url_new_window'   => $new_tab,
+					'button_id'           => $this->module_id( false ),
+					'button_classname'    => array( 'dtq-flipbox-btn' ),
+					'button_custom'       => $button_custom,
+					'button_text'         => $button_text,
+					'button_text_escaped' => true,
+					'button_url'          => $button_url,
+					'custom_icon'         => $custom_icon,
+					'custom_icon_tablet'  => $custom_icon_tablet,
+					'custom_icon_phone'   => $custom_icon_phone,
+					'url_new_window'      => $new_tab,
+					'has_wrapper'         => false,
+					'multi_view_data'     => $multi_view->render_attrs(
+						array(
+							'content'        => '{{button_text}}',
+							'hover_selector' => '%%order_class%% .dtq-flipbox-btn',
+							'visibility'     => array(
+								'button_text' => '__not_empty',
+							),
+						)
+					),
 				)
 			);
 
 			return sprintf(
-				'<div class="ba-flipbox-btn-wrap">
+				'<div class="dtq-flipbox-btn-wrap">
                     %1$s
                 </div>',
-				$button_output
+				$button
 			);
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
@@ -1211,10 +1235,10 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		$direction_diagonal = $this->props['direction_diagonal'];
 		$classes            = array();
 
-		array_push( $classes, 'ba-flipbox--' . $animation_type );
+		array_push( $classes, 'dtq-flipbox--' . $animation_type );
 
 		if ( 'on' === $animation_3d ) {
-			array_push( $classes, 'ba-flipbox-3d' );
+			array_push( $classes, 'dtq-flipbox-3d' );
 		}
 
 		if (
@@ -1222,26 +1246,26 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			'slide' === $animation_type ||
 			'push' === $animation_type
 		  ) {
-			array_push( $classes, "ba-$animation_type-$direction" );
+			array_push( $classes, "dtq-$animation_type-$direction" );
 		}
 
 		if ( 'diagonal' === $animation_type ) {
-			array_push( $classes, "ba-$animation_type-$direction_diagonal" );
+			array_push( $classes, "dtq-$animation_type-$direction_diagonal" );
 		}
 
 		if ( 'rotate_3d' === $animation_type ) {
-			array_push( $classes, "ba-$animation_type-$direction_alt" );
+			array_push( $classes, "dtq-$animation_type-$direction_alt" );
 		}
 
 		return sprintf(
-			'<div class="ba-module ba-flipbox %1$s">
-                <div class="ba-flipbox-inner">
-					<div class="ba-flipbox-card-container">
-						<div class="ba-flipbox-front-card ba-flipbox-card">
-							<div class="ba-flipbox-card-inner">
-								<div class="ba-flipbox-front-content ba-flipbox-content">
+			'<div class="dtq-module dtq-flipbox %1$s">
+                <div class="dtq-flipbox-inner">
+					<div class="dtq-flipbox-card-container">
+						<div class="dtq-flipbox-front-card dtq-flipbox-card">
+							<div class="dtq-flipbox-card-inner">
+								<div class="dtq-flipbox-front-content dtq-flipbox-content">
 									%2$s
-									<div class="ba-flipbox-content-wrap">
+									<div class="dtq-flipbox-content-wrap">
 										%3$s
 										%9$s
 										%6$s
@@ -1249,11 +1273,11 @@ class DTQ_Flipbox extends BA_Builder_Module {
 								</div>
 							</div>
 						</div>
-						<div class="ba-flipbox-back-card ba-flipbox-card">
-							<div class="ba-flipbox-card-inner">
-								<div class="ba-flipbox-back-content ba-flipbox-content">
+						<div class="dtq-flipbox-back-card dtq-flipbox-card">
+							<div class="dtq-flipbox-card-inner">
+								<div class="dtq-flipbox-back-content dtq-flipbox-content">
 									%4$s
-									<div class="ba-flipbox-content-wrap">
+									<div class="dtq-flipbox-content-wrap">
 										%5$s
 										%10$s
 										%7$s
@@ -1262,7 +1286,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 								</div>
 							</div>
 						</div>
-						<div class="ba-flank"></div>
+						<div class="dtq-flank"></div>
 					</div>
 				</div>
             </div>',
@@ -1304,7 +1328,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-inner .ba-flank',
+					'selector'    => '%%order_class%% .dtq-flipbox-inner .dtq-flank',
 					'declaration' => sprintf(
 						'background: %1$s;',
 						$flank_color
@@ -1316,7 +1340,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-flipbox-inner .ba-flank',
+						'selector'    => '%%order_class%% .dtq-flipbox-inner .dtq-flank',
 						'declaration' => sprintf(
 							'transform: rotateX(-90deg) translateZ(calc(%1$s - 100px))!important;',
 							$main_height
@@ -1328,7 +1352,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'main_height',
-			'%%order_class%% .ba-flipbox-inner',
+			'%%order_class%% .dtq-flipbox-inner',
 			array( 'primary' => 'height' ),
 			array( 'default' => '300px' ),
 			$render_slug
@@ -1337,7 +1361,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-flipbox-front-card, %%order_class%% .ba-flipbox-back-card, %%order_class%% .ba-flipbox-card-container',
+				'selector'    => '%%order_class%% .dtq-flipbox-front-card, %%order_class%% .dtq-flipbox-back-card, %%order_class%% .dtq-flipbox-card-container',
 				'declaration' => "transition: all $duration ease;",
 			)
 		);
@@ -1346,7 +1370,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-flipbox-front-card',
+				'selector'    => '%%order_class%% .dtq-flipbox-front-card',
 				'declaration' => sprintf(
 					'align-items: %1$s;',
 					$front_align_items
@@ -1358,7 +1382,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-front-content',
+					'selector'    => '%%order_class%% .dtq-flipbox-front-content',
 					'declaration' => sprintf(
 						'align-items: %1$s;',
 						$front_align_items
@@ -1369,7 +1393,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'front_alignment',
-			'%%order_class%% .ba-flipbox-front-card',
+			'%%order_class%% .dtq-flipbox-front-card',
 			array( 'primary' => 'text-align' ),
 			array( 'default' => 'auto' ),
 			$render_slug
@@ -1377,7 +1401,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'front_padding',
-			'%%order_class%% .ba-flipbox-front-card',
+			'%%order_class%% .dtq-flipbox-front-card',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '30px|30px|30px|30px' ),
 			$render_slug
@@ -1387,7 +1411,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-front-content',
+					'selector'    => '%%order_class%% .dtq-flipbox-front-content',
 					'declaration' => 'display: flex;',
 				)
 			);
@@ -1397,7 +1421,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-front-content',
+					'selector'    => '%%order_class%% .dtq-flipbox-front-content',
 					'declaration' => 'flex-direction: row-reverse;',
 				)
 			);
@@ -1406,10 +1430,38 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-flipbox-icon-front',
+				'selector'    => '%%order_class%% .dtq-flipbox-icon-front',
 				'declaration' => sprintf(
 					'font-size: %1$s;',
 					$front_icon_size
+				),
+			)
+		);
+
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'front_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-flipbox-icon-front',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
+
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'back_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-flipbox-icon-back',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
 				),
 			)
 		);
@@ -1418,7 +1470,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-icon-front',
+					'selector'    => '%%order_class%% .dtq-flipbox-icon-front',
 					'declaration' => sprintf(
 						'color: %1$s;',
 						$front_icon_color
@@ -1430,21 +1482,21 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		if ( ! empty( $front_img_width ) ) {
 			$this->get_responsive_styles(
 				'front_img_width',
-				'%%order_class%% .ba-flipbox-figure-front',
+				'%%order_class%% .dtq-flipbox-figure-front',
 				array( 'primary' => 'width' ),
 				array( 'default' => 'auto' ),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'front_img_width',
-				'%%order_class%% .ba-flipbox-figure-front',
+				'%%order_class%% .dtq-flipbox-figure-front',
 				array( 'primary' => 'max-width' ),
 				array( 'default' => 'auto' ),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'front_img_width',
-				'%%order_class%% .ba-flipbox-figure-front',
+				'%%order_class%% .dtq-flipbox-figure-front',
 				array( 'primary' => 'flex' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -1454,14 +1506,14 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		if ( ! empty( $front_img_height ) ) {
 			$this->get_responsive_styles(
 				'front_img_height',
-				'%%order_class%% .ba-flipbox-figure-front',
+				'%%order_class%% .dtq-flipbox-figure-front',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'auto' ),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'front_img_height',
-				'%%order_class%% .ba-flipbox-figure-front img',
+				'%%order_class%% .dtq-flipbox-figure-front img',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -1470,7 +1522,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'front_img_padding',
-			'%%order_class%% .ba-flipbox-figure-front img',
+			'%%order_class%% .dtq-flipbox-figure-front img',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -1478,7 +1530,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'front_ct_padding',
-			'%%order_class%% .ba-flipbox-front-card .ba-flipbox-content-wrap',
+			'%%order_class%% .dtq-flipbox-front-card .dtq-flipbox-content-wrap',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -1488,7 +1540,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-flipbox-back-card',
+				'selector'    => '%%order_class%% .dtq-flipbox-back-card',
 				'declaration' => sprintf(
 					'align-items: %1$s;',
 					$back_align_items
@@ -1500,7 +1552,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-back-content',
+					'selector'    => '%%order_class%% .dtq-flipbox-back-content',
 					'declaration' => sprintf(
 						'align-items: %1$s;',
 						$back_align_items
@@ -1511,7 +1563,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'back_alignment',
-			'%%order_class%% .ba-flipbox-back-card',
+			'%%order_class%% .dtq-flipbox-back-card',
 			array( 'primary' => 'text-align' ),
 			array( 'default' => 'auto' ),
 			$render_slug
@@ -1519,7 +1571,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'back_padding',
-			'%%order_class%% .ba-flipbox-back-card',
+			'%%order_class%% .dtq-flipbox-back-card',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '30px|30px|30px|30px' ),
 			$render_slug
@@ -1529,7 +1581,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-back-content',
+					'selector'    => '%%order_class%% .dtq-flipbox-back-content',
 					'declaration' => 'display: flex;',
 				)
 			);
@@ -1539,7 +1591,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-back-content',
+					'selector'    => '%%order_class%% .dtq-flipbox-back-content',
 					'declaration' => 'flex-direction: row-reverse;',
 				)
 			);
@@ -1548,7 +1600,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-flipbox-icon-back',
+				'selector'    => '%%order_class%% .dtq-flipbox-icon-back',
 				'declaration' => sprintf(
 					'font-size: %1$s;',
 					$back_icon_size
@@ -1560,7 +1612,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-flipbox-icon-back',
+					'selector'    => '%%order_class%% .dtq-flipbox-icon-back',
 					'declaration' => sprintf(
 						'color: %1$s;',
 						$back_icon_color
@@ -1572,7 +1624,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		if ( ! empty( $back_img_width ) ) {
 			$this->get_responsive_styles(
 				'back_img_width',
-				'%%order_class%% .ba-flipbox-figure-back',
+				'%%order_class%% .dtq-flipbox-figure-back',
 				array( 'primary' => 'width' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -1580,7 +1632,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'back_img_width',
-				'%%order_class%% .ba-flipbox-figure-back',
+				'%%order_class%% .dtq-flipbox-figure-back',
 				array( 'primary' => 'max-width' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -1588,7 +1640,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'back_img_width',
-				'%%order_class%% .ba-flipbox-figure-back',
+				'%%order_class%% .dtq-flipbox-figure-back',
 				array( 'primary' => 'flex' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -1598,14 +1650,14 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		if ( ! empty( $back_img_height ) ) {
 			$this->get_responsive_styles(
 				'back_img_height',
-				'%%order_class%% .ba-flipbox-figure-back',
+				'%%order_class%% .dtq-flipbox-figure-back',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'auto' ),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'back_img_height',
-				'%%order_class%% .ba-flipbox-figure-back img',
+				'%%order_class%% .dtq-flipbox-figure-back img',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -1614,7 +1666,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'back_img_padding',
-			'%%order_class%% .ba-flipbox-figure-back img',
+			'%%order_class%% .dtq-flipbox-figure-back img',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -1622,7 +1674,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'back_ct_padding',
-			'%%order_class%% .ba-flipbox-back-card .ba-flipbox-content-wrap',
+			'%%order_class%% .dtq-flipbox-back-card .dtq-flipbox-content-wrap',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -1631,7 +1683,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 		// Texts Spacing.
 		$this->get_responsive_styles(
 			'front_subtitle_spacing',
-			'%%order_class%% .ba-flipbox-subtitle-front',
+			'%%order_class%% .dtq-flipbox-subtitle-front',
 			array( 'primary' => 'margin-top' ),
 			array( 'default' => '0px' ),
 			$render_slug
@@ -1639,7 +1691,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'back_subtitle_spacing',
-			'%%order_class%% .ba-flipbox-subtitle-back',
+			'%%order_class%% .dtq-flipbox-subtitle-back',
 			array( 'primary' => 'margin-top' ),
 			array( 'default' => '0px' ),
 			$render_slug
@@ -1647,7 +1699,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'front_desc_spacing',
-			'%%order_class%% .ba-flipbox-desc-front',
+			'%%order_class%% .dtq-flipbox-desc-front',
 			array( 'primary' => 'margin-top' ),
 			array( 'default' => '0px' ),
 			$render_slug
@@ -1655,7 +1707,7 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'back_desc_spacing',
-			'%%order_class%% .ba-flipbox-desc-back',
+			'%%order_class%% .dtq-flipbox-desc-back',
 			array( 'primary' => 'margin-top' ),
 			array( 'default' => '0px' ),
 			$render_slug
@@ -1663,19 +1715,20 @@ class DTQ_Flipbox extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'btn_spacing',
-			'%%order_class%% .ba-flipbox-btn-wrap',
+			'%%order_class%% .dtq-flipbox-btn-wrap',
 			array( 'primary' => 'margin-top' ),
 			array( 'default' => '15px' ),
 			$render_slug
 		);
 
-		$this->get_custom_bg_style( $render_slug, 'front', '%%order_class%% .ba-flipbox-front-card', '' );
-		$this->get_custom_bg_style( $render_slug, 'back', '%%order_class%% .ba-flipbox-back-card', '' );
-		$this->get_custom_bg_style( $render_slug, 'front_img', '%%order_class%% .ba-flipbox-figure-front', '' );
-		$this->get_custom_bg_style( $render_slug, 'back_img', '%%order_class%% .ba-flipbox-figure-back', '' );
+		$this->get_custom_bg_style( $render_slug, 'front', '%%order_class%% .dtq-flipbox-front-card', '' );
+		$this->get_custom_bg_style( $render_slug, 'back', '%%order_class%% .dtq-flipbox-back-card', '' );
+		$this->get_custom_bg_style( $render_slug, 'front_img', '%%order_class%% .dtq-flipbox-figure-front', '' );
+		$this->get_custom_bg_style( $render_slug, 'back_img', '%%order_class%% .dtq-flipbox-figure-back', '' );
+		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .dtq-flipbox-back-card .et_pb_button' );
 
 	}
 }
 
 
-new DTQ_Flipbox();
+new DTQ__Flipbox();

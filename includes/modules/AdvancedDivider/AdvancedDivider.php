@@ -46,19 +46,19 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'title'  => array(
 				'label'    => esc_html__( 'Divider Text', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-divider__text span',
+				'selector' => '%%order_class%% .dtq-divider__text span',
 			),
 			'icon'   => array(
 				'label'    => esc_html__( 'Divider Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-divider__icon i',
+				'selector' => '%%order_class%% .dtq-divider__icon i',
 			),
 			'image'  => array(
 				'label'    => esc_html__( 'Divider Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-divider__image img',
+				'selector' => '%%order_class%% .dtq-divider__image img',
 			),
 			'border' => array(
 				'label'    => esc_html__( 'Divider Border', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-divider__border',
+				'selector' => '%%order_class%% .dtq-divider__border',
 			),
 		);
 	}
@@ -108,7 +108,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
 				'toggle_slug'     => 'main_content',
-				'default'         => '',
+				'default'         => '&#xe0ed;||divi||400',
 				'show_if'         => array(
 					'active_element' => 'icon',
 				),
@@ -155,6 +155,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 				'default'         => 'center',
 				'toggle_slug'     => 'divider',
 				'tab_slug'        => 'advanced',
+				'mobile_options'  => true,
 			),
 			'use_shape'         => array(
 				'label'           => esc_html__( 'Use Bottom Shape', 'addons-for-divi' ),
@@ -605,7 +606,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['title'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-divider__text',
+				'main'      => '%%order_class%% .dtq-divider__text',
 				'important' => 'all',
 			),
 			'header_level'    => array(
@@ -627,8 +628,8 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 			'toggle_slug' => 'icon',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-divider__element i,%%order_class%% .ba-divider__element img',
-					'border_styles' => '%%order_class%% .ba-divider__element i,%%order_class%% .ba-divider__element img',
+					'border_radii'  => '%%order_class%% .dtq-divider__element i,%%order_class%% .dtq-divider__element img',
+					'border_styles' => '%%order_class%% .dtq-divider__element i,%%order_class%% .dtq-divider__element img',
 				),
 				'important' => 'all',
 			),
@@ -653,7 +654,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 
 		if ( ! empty( $title ) ) {
 			return sprintf(
-				'<%1$s class="ba-divider__element ba-divider__text"><span>%2$s</span></%1$s>',
+				'<%1$s class="dtq-divider__element dtq-divider__text"><span>%2$s</span></%1$s>',
 				$processed_title_level,
 				$title
 			);
@@ -664,11 +665,13 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 		$icon = $this->props['icon'];
 		$icon = esc_attr( et_pb_process_font_icon( $icon ) );
 
+		// Inject Font Awesome Manually!.
+		dtq_inject_fa_icons( $this->props['icon'] );
+
 		if ( ! empty( $icon ) ) {
 			return sprintf(
-				'
-                <div class="ba-divider__icon ba-divider__element">
-                    <i class="ba-icon ba-et-icon" data-icon="%1$s"></i>
+				'<div class="dtq-divider__icon dtq-divider__element">
+                    <i class="dtq-icon dtq-et-icon">%1$s</i>
                 </div>',
 				$icon
 			);
@@ -681,7 +684,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 		if ( ! empty( $img_url ) ) {
 			return sprintf(
 				'
-                <div class="ba-divider__image ba-divider__element">
+                <div class="dtq-divider__image dtq-divider__element">
                     <img src="%1$s" alt="" />
                 </div>',
 				$img_url
@@ -701,21 +704,16 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 	}
 
 	public function render_left_border() {
-
-		$use_shape         = $this->props['use_shape'];
-		$content_alignment = $this->props['content_alignment'];
-
-		if ( 'off' === $use_shape && 'left' !== $content_alignment ) {
-			return '<div class="ba-divider__border"></div>';
+		$use_shape = $this->props['use_shape'];
+		if ( 'off' === $use_shape ) {
+			return '<div class="dtq-divider__border dtq-divider__border-start"></div>';
 		}
 	}
 
 	public function render_right_border() {
-		$use_shape         = $this->props['use_shape'];
-		$content_alignment = $this->props['content_alignment'];
-
-		if ( 'off' === $use_shape && 'right' !== $content_alignment ) {
-			return '<div class="ba-divider__border"></div>';
+		$use_shape = $this->props['use_shape'];
+		if ( 'off' === $use_shape ) {
+			return '<div class="dtq-divider__border dtq-divider__border-end"></div>';
 		}
 	}
 
@@ -726,16 +724,16 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 		$shape     = $this->props['shape'];
 
 		if ( 'on' === $use_shape ) {
-			return '<div class="ba-divider__shape">' . $shapes[ $shape ] . '</div>';
+			return '<div class="dtq-divider__shape">' . $shapes[ $shape ] . '</div>';
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
 		return sprintf(
-			'<div class="ba-module ba-divider">
+			'<div class="dtq-module dtq-divider">
                 %1$s
                 %2$s
                 %3$s
@@ -750,38 +748,42 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 
 	protected function render_css( $render_slug ) {
 
-		$use_mask             = $this->props['use_mask'];
-		$mask_url             = $this->props['mask_url'];
-		$active_element       = $this->props['active_element'];
-		$content_alignment    = $this->props['content_alignment'];
-		$border_gap           = $this->props['border_gap'];
-		$mask_size            = $this->props['mask_size'];
-		$mask_pos             = $this->props['mask_pos'];
-		$mask_hz_pos          = $this->props['mask_hz_pos'];
-		$mask_vr_pos          = $this->props['mask_vr_pos'];
-		$icon_color           = $this->props['icon_color'];
-		$icon_size            = $this->props['icon_size'];
-		$icon_bg              = $this->props['icon_bg'];
-		$img_width            = $this->props['img_width'];
-		$border_type          = $this->props['border_type'];
-		$border_style_classic = $this->props['border_style_classic'];
-		$border_style_pattern = $this->props['border_style_pattern'];
-		$border_height        = $this->props['border_height'];
-		$border_color         = $this->props['border_color'];
-		$border_weight        = $this->props['border_weight'];
-		$mask_repeat          = $this->props['mask_repeat'];
-		$use_shape            = $this->props['use_shape'];
-		$shape_weight         = $this->props['shape_weight'];
-		$shape_color          = $this->props['shape_color'];
+		$use_mask                            = $this->props['use_mask'];
+		$mask_url                            = $this->props['mask_url'];
+		$active_element                      = $this->props['active_element'];
+		$content_alignment                   = $this->props['content_alignment'];
+		$content_alignment_tablet            = $this->props['content_alignment_tablet'];
+		$content_alignment_phone             = $this->props['content_alignment_phone'];
+		$content_alignment_last_edited       = $this->props['content_alignment_last_edited'];
+		$content_alignment_responsive_status = et_pb_get_responsive_status( $content_alignment_last_edited );
+		$border_gap                          = $this->props['border_gap'];
+		$mask_size                           = $this->props['mask_size'];
+		$mask_pos                            = $this->props['mask_pos'];
+		$mask_hz_pos                         = $this->props['mask_hz_pos'];
+		$mask_vr_pos                         = $this->props['mask_vr_pos'];
+		$icon_color                          = $this->props['icon_color'];
+		$icon_size                           = $this->props['icon_size'];
+		$icon_bg                             = $this->props['icon_bg'];
+		$img_width                           = $this->props['img_width'];
+		$border_type                         = $this->props['border_type'];
+		$border_style_classic                = $this->props['border_style_classic'];
+		$border_style_pattern                = $this->props['border_style_pattern'];
+		$border_height                       = $this->props['border_height'];
+		$border_color                        = $this->props['border_color'];
+		$border_weight                       = $this->props['border_weight'];
+		$mask_repeat                         = $this->props['mask_repeat'];
+		$use_shape                           = $this->props['use_shape'];
+		$shape_weight                        = $this->props['shape_weight'];
+		$shape_color                         = $this->props['shape_color'];
 
 		if ( 'image' !== $active_element
 			&& 'on' === $use_mask
 			&& ! empty( $mask_url )
 		) {
 
-			$selector = '%%order_class%% .ba-divider__icon i';
+			$selector = '%%order_class%% .dtq-divider__icon i';
 			if ( 'text' === $active_element ) {
-				$selector = '%%order_class%% .ba-divider__text';
+				$selector = '%%order_class%% .dtq-divider__text';
 			}
 
 			ET_Builder_Element::set_style(
@@ -828,7 +830,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-divider',
+					'selector'    => '%%order_class%% .dtq-divider',
 					'declaration' => 'align-items: center;',
 				)
 			);
@@ -837,32 +839,190 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-divider__element',
+						'selector'    => '%%order_class%% .dtq-divider__element',
 						'declaration' => sprintf( 'padding-right: %1$s;', $border_gap ),
+					)
+				);
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .dtq-divider__border-start',
+						'declaration' => 'display: none;',
 					)
 				);
 			} elseif ( 'right' === $content_alignment ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-divider__element',
+						'selector'    => '%%order_class%% .dtq-divider__element',
 						'declaration' => sprintf( 'padding-left: %1$s;', $border_gap ),
+					)
+				);
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .dtq-divider__border-end',
+						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+						'declaration' => 'display: none;',
 					)
 				);
 			} elseif ( 'center' === $content_alignment ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-divider__element',
+						'selector'    => '%%order_class%% .dtq-divider__element',
 						'declaration' => sprintf( 'padding-left: %1$s; padding-right: %1$s;', $border_gap ),
 					)
 				);
 			}
 
+			if ( $content_alignment_tablet && $content_alignment_responsive_status ) {
+				if ( 'left' === $content_alignment_tablet ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__element',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+							'declaration' => sprintf( 'padding-right: %1$s;', $border_gap ),
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-start',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+							'declaration' => 'display: none;',
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-end',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+							'declaration' => 'display: block;',
+						)
+					);
+				} elseif ( 'right' === $content_alignment_tablet ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__element',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+							'declaration' => sprintf( 'padding-left: %1$s;', $border_gap ),
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-end',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+							'declaration' => 'display: none;',
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-start',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+							'declaration' => 'display: block;',
+						)
+					);
+				} elseif ( 'center' === $content_alignment_tablet ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__element',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+							'declaration' => sprintf( 'padding-left: %1$s; padding-right: %1$s;', $border_gap ),
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-start, %%order_class%% .dtq-divider__border-end',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+							'declaration' => 'display: block;',
+						)
+					);
+				}
+			}
+
+			if ( $content_alignment_phone && $content_alignment_responsive_status ) {
+				if ( 'left' === $content_alignment_phone ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__element',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+							'declaration' => sprintf( 'padding-right: %1$s;', $border_gap ),
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-start',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+							'declaration' => 'display: none;',
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-end',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+							'declaration' => 'display: block;',
+						)
+					);
+				} elseif ( 'right' === $content_alignment_phone ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__element',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+							'declaration' => sprintf( 'padding-left: %1$s;', $border_gap ),
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-end',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+							'declaration' => 'display: none;',
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-start',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+							'declaration' => 'display: block;',
+						)
+					);
+				} elseif ( 'center' === $content_alignment_phone ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__element',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+							'declaration' => sprintf( 'padding-left: %1$s; padding-right: %1$s;', $border_gap ),
+						)
+					);
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .dtq-divider__border-start, %%order_class%% .dtq-divider__border-end',
+							'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
+							'declaration' => 'display: block;',
+						)
+					);
+				}
+			}
+
+			 // Border Offset.
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-divider__border',
+					'selector'    => '%%order_class%% .dtq-divider__border',
 					'declaration' => sprintf(
 						'margin-top: %1$s;',
 						$this->props['border_offset']
@@ -881,7 +1041,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-divider__border',
+							'selector'    => '%%order_class%% .dtq-divider__border',
 							'declaration' => sprintf(
 								'border-top: %1$s %2$s %3$s;',
 								$border_weight,
@@ -897,7 +1057,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-divider__border',
+							'selector'    => '%%order_class%% .dtq-divider__border',
 							'declaration' => sprintf(
 								'background-image: url("%1$s");
                             	height: %2$s;
@@ -913,41 +1073,23 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-divider',
+					'selector'    => '%%order_class%% .dtq-divider',
 					'declaration' => 'flex-direction: column;',
 				)
 			);
 
-			if ( 'center' === $content_alignment ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .ba-divider',
-						'declaration' => 'align-items: center;',
-					)
-				);
-			} elseif ( 'right' === $content_alignment ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .ba-divider',
-						'declaration' => 'align-items: flex-end;',
-					)
-				);
-			} elseif ( 'center' === $content_alignment ) {
-				ET_Builder_Element::set_style(
-					$render_slug,
-					array(
-						'selector'    => '%%order_class%% .ba-divider',
-						'declaration' => 'align-items: flex-start;',
-					)
-				);
-			}
+			$this->get_responsive_styles(
+				'content_alignment',
+				'%%order_class%% .dtq-divider',
+				array( 'primary' => 'align-items' ),
+				array( 'default' => 'center' ),
+				$render_slug
+			);
 
 			// shape margin.
 			$this->get_responsive_styles(
 				'shape_margin',
-				'%%order_class%% .ba-divider__shape',
+				'%%order_class%% .dtq-divider__shape',
 				array( 'primary' => 'margin' ),
 				array( 'default' => '0px|0px|0px|0px' ),
 				$render_slug
@@ -956,7 +1098,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 			// shape width.
 			$this->get_responsive_styles(
 				'shape_width',
-				'%%order_class%% .ba-divider__shape svg',
+				'%%order_class%% .dtq-divider__shape svg',
 				array(
 					'primary'   => 'width',
 					'important' => true,
@@ -969,7 +1111,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-divider__shape svg *',
+					'selector'    => '%%order_class%% .dtq-divider__shape svg *',
 					'declaration' => "stroke-width: {$shape_weight}!important;stroke: {$shape_color}!important;",
 				)
 			);
@@ -979,10 +1121,24 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 		// Icon.
 		if ( 'icon' === $active_element ) {
 
+			$this->generate_styles(
+				array(
+					'utility_arg'    => 'icon_font_family',
+					'render_slug'    => $render_slug,
+					'base_attr_name' => 'icon',
+					'important'      => true,
+					'selector'       => '%%order_class%% .dtq-divider__icon i',
+					'processor'      => array(
+						'ET_Builder_Module_Helper_Style_Processor',
+						'process_extended_icon',
+					),
+				)
+			);
+
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-divider__icon i',
+					'selector'    => '%%order_class%% .dtq-divider__icon i',
 					'declaration' => sprintf(
 						'
                     font-size: %1$s;',
@@ -993,7 +1149,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'icon_padding',
-				'%%order_class%% .ba-divider__icon i',
+				'%%order_class%% .dtq-divider__icon i',
 				array( 'primary' => 'padding' ),
 				array( 'default' => '0px|0px|0px|0px' ),
 				$render_slug
@@ -1005,7 +1161,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-divider__icon i',
+							'selector'    => '%%order_class%% .dtq-divider__icon i',
 							'declaration' => sprintf(
 								'background: %1$s;',
 								$icon_bg
@@ -1017,7 +1173,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-divider__icon i',
+						'selector'    => '%%order_class%% .dtq-divider__icon i',
 						'declaration' => sprintf(
 							'color: %1$s;',
 							$icon_color
@@ -1032,7 +1188,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-divider__element img',
+					'selector'    => '%%order_class%% .dtq-divider__element img',
 					'declaration' => sprintf(
 						'width: %1$s;',
 						$img_width
@@ -1044,7 +1200,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 		// Text Style.
 		$this->get_responsive_styles(
 			'text_padding',
-			'%%order_class%% .ba-divider__text span',
+			'%%order_class%% .dtq-divider__text span',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0px|0px|0px|0px' ),
 			$render_slug
@@ -1053,7 +1209,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 		if ( ! empty( $this->props['text_background'] ) ) {
 			$this->get_responsive_styles(
 				'text_background',
-				'%%order_class%% .ba-divider__text span',
+				'%%order_class%% .dtq-divider__text span',
 				array( 'primary' => 'background' ),
 				array( 'default' => 'transparent' ),
 				$render_slug
@@ -1064,7 +1220,7 @@ class DTQ_Advanced_Divider extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-divider__text span',
+				'selector'    => '%%order_class%% .dtq-divider__text span',
 				'declaration' => sprintf(
 					'border-radius: %1$s %2$s %3$s %4$s;',
 					$text_radius[1],

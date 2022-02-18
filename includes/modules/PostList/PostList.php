@@ -23,22 +23,12 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'common'    => esc_html__( 'General', 'addons-for-divi' ),
-					'list_icon' => esc_html__( 'List Icon', 'addons-for-divi' ),
-					'image'     => esc_html__( 'Featured Image', 'addons-for-divi' ),
-					'texts'     => array(
-						'title'             => esc_html__( 'Title & Excerpt', 'addons-for-divi' ),
-						'tabbed_subtoggles' => true,
-						'sub_toggles'       => array(
-							'title'   => array(
-								'name' => esc_html__( 'Title', 'addons-for-divi' ),
-							),
-							'content' => array(
-								'name' => esc_html__( 'Excerpt', 'addons-for-divi' ),
-							),
-						),
-					),
-					'meta'      => esc_html__( 'Meta', 'addons-for-divi' ),
+					'common'    => esc_html__( 'Post List', 'addons-for-divi' ),
+					'list_icon' => esc_html__( 'Icon Style', 'addons-for-divi' ),
+					'image'     => esc_html__( 'Post Thumbnail', 'addons-for-divi' ),
+					'title'     => esc_html__( 'Post Title', 'brain-divi-blog' ),
+					'excerpt'   => esc_html__( 'Post Excerpt', 'brain-divi-blog' ),
+					'meta'      => esc_html__( 'Post Meta', 'addons-for-divi' ),
 					'border'    => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
@@ -46,24 +36,24 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 
 		$this->custom_css_fields = array(
 			'image'   => array(
-				'label'    => esc_html__( 'Featured Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-post-list-thumb img',
+				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
+				'selector' => '%%order_class%% .dtq-post-list-thumb img',
 			),
 			'title'   => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-post-list-title',
+				'selector' => '%%order_class%% .dtq-post-list-title',
 			),
 			'excerpt' => array(
 				'label'    => esc_html__( 'Excerpt', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-post-list-excerpt',
+				'selector' => '%%order_class%% .dtq-post-list-excerpt',
 			),
 			'author'  => array(
 				'label'    => esc_html__( 'Author', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-post-list-author',
+				'selector' => '%%order_class%% .dtq-post-list-author',
 			),
 			'date'    => array(
 				'label'    => esc_html__( 'Date', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-post-list-date',
+				'selector' => '%%order_class%% .dtq-post-list-date',
 			),
 		);
 	}
@@ -185,7 +175,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			),
 			// Settings.
 			'show_thumb'            => array(
-				'label'            => esc_html__( 'Show Featured Image', 'addons-for-divi' ),
+				'label'            => esc_html__( 'Show Image', 'addons-for-divi' ),
 				'description'      => esc_html__( 'Here you can choose whether thumbnail should be used.', 'addons-for-divi' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
@@ -520,8 +510,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 					'step' => 1,
 					'max'  => 100,
 				),
-				'toggle_slug'    => 'texts',
-				'sub_toggle'     => 'content',
+				'toggle_slug'    => 'excerpt',
 				'tab_slug'       => 'advanced',
 			),
 
@@ -567,8 +556,8 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			'toggle_slug'  => 'image',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-post-list figure',
-					'border_styles' => '%%order_class%% .ba-post-list figure',
+					'border_radii'  => '%%order_class%% .dtq-post-list figure',
+					'border_styles' => '%%order_class%% .dtq-post-list figure',
 				),
 				'important' => 'all',
 			),
@@ -587,8 +576,8 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			'toggle_slug'  => 'common',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-post-list-child-inner',
-					'border_styles' => '%%order_class%% .ba-post-list-child-inner',
+					'border_radii'  => '%%order_class%% .dtq-post-list-child-inner',
+					'border_styles' => '%%order_class%% .dtq-post-list-child-inner',
 				),
 				'important' => 'all',
 			),
@@ -606,7 +595,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			'label'       => esc_html__( 'Post Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'common',
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-post-list-child-inner',
+				'main'      => '%%order_class%% .dtq-post-list-child-inner',
 				'important' => 'all',
 			),
 		);
@@ -633,12 +622,11 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		$advanced_fields['fonts']['title'] = array(
 			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-post-list-title',
+				'main'      => '%%order_class%% .dtq-post-list-title',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'title',
+			'toggle_slug'     => 'title',
 			'font_size'       => array(
 				'default' => '20px',
 			),
@@ -655,12 +643,11 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		$advanced_fields['fonts']['content'] = array(
 			'label'           => esc_html__( 'Content', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-post-list-excerpt',
+				'main'      => '%%order_class%% .dtq-post-list-excerpt',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'content',
+			'toggle_slug'     => 'excerpt',
 			'hide_text_align' => true,
 			'line_height'     => array(
 				'range_settings' => array(
@@ -677,7 +664,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		$advanced_fields['fonts']['meta'] = array(
 			'label'           => esc_html__( 'Meta', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-post-list-meta, %%order_class%% .ba-post-list-meta a',
+				'main'      => '%%order_class%% .dtq-post-list-meta, %%order_class%% .dtq-post-list-meta a',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -780,7 +767,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		return $output;
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
@@ -822,8 +809,8 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		);
 
 		return sprintf(
-			'<div class="ba-module ba-post-list type-%2$s">
-                <ul class="ba-post-list-parent">
+			'<div class="dtq-module dtq-post-list type-%2$s">
+                <ul class="dtq-post-list-parent">
                     %1$s
                 </ul>
             </div>',
@@ -886,7 +873,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child-inner',
+					'selector'    => '%%order_class%% .dtq-post-list-child-inner',
 					'declaration' => 'align-items: flex-start;',
 				)
 			);
@@ -895,14 +882,14 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child-inner',
+					'selector'    => '%%order_class%% .dtq-post-list-child-inner',
 					'declaration' => 'flex-direction: row-reverse;align-items: flex-start;',
 				)
 			);
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-meta',
+					'selector'    => '%%order_class%% .dtq-post-list-meta',
 					'declaration' => 'justify-content: flex-end;',
 				)
 			);
@@ -912,14 +899,14 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child-inner',
+					'selector'    => '%%order_class%% .dtq-post-list-child-inner',
 					'declaration' => 'flex-direction: column;align-items: center;',
 				)
 			);
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-meta',
+					'selector'    => '%%order_class%% .dtq-post-list-meta',
 					'declaration' => 'justify-content: center;',
 				)
 			);
@@ -928,7 +915,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-post-list-child-inner',
+				'selector'    => '%%order_class%% .dtq-post-list-child-inner',
 				'declaration' => 'text-align:' . $alignment . '!important;',
 			)
 		);
@@ -936,7 +923,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-post-list-child-inner',
+				'selector'    => '%%order_class%% .dtq-post-list-child-inner',
 				'declaration' => $this->process_margin_padding( $item_padding, 'padding', false ),
 			)
 		);
@@ -945,7 +932,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child-inner',
+					'selector'    => '%%order_class%% .dtq-post-list-child-inner',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => $this->process_margin_padding( $item_padding_tablet, 'padding', false ),
 				)
@@ -956,7 +943,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child-inner',
+					'selector'    => '%%order_class%% .dtq-post-list-child-inner',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => $this->process_margin_padding( $item_padding_phone, 'padding', false ),
 				)
@@ -967,7 +954,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child',
+					'selector'    => '%%order_class%% .dtq-post-list-child',
 					'declaration' => sprintf(
 						'
                     flex: 0 0 calc(100%%/%1$s);
@@ -982,7 +969,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-parent',
+					'selector'    => '%%order_class%% .dtq-post-list-parent',
 					'declaration' => sprintf( 'margin: -%1$s;', $item_spacing ),
 				)
 			);
@@ -990,7 +977,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child',
+					'selector'    => '%%order_class%% .dtq-post-list-child',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf(
 						'flex: 0 0 calc(100%%/%1$s);
@@ -1005,7 +992,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-parent',
+					'selector'    => '%%order_class%% .dtq-post-list-parent',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'margin: -%1$s;', $item_spacing_tablet ),
 				)
@@ -1014,7 +1001,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child',
+					'selector'    => '%%order_class%% .dtq-post-list-child',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf(
 						'flex: 0 0 calc(100%%/%1$s);
@@ -1029,7 +1016,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-parent',
+					'selector'    => '%%order_class%% .dtq-post-list-parent',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'margin: -%1$s;', $item_spacing_phone ),
 				)
@@ -1039,7 +1026,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-child',
+					'selector'    => '%%order_class%% .dtq-post-list-child',
 					'declaration' => sprintf( 'padding-bottom:%1$s;', $item_spacing ),
 				)
 			);
@@ -1048,7 +1035,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-post-list-child',
+						'selector'    => '%%order_class%% .dtq-post-list-child',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'padding-bottom:%1$s;', $item_spacing_tablet ),
 					)
@@ -1059,7 +1046,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-post-list-child',
+						'selector'    => '%%order_class%% .dtq-post-list-child',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'padding-bottom:%1$s;', $item_spacing_phone ),
 					)
@@ -1071,7 +1058,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-post-list-meta',
+				'selector'    => '%%order_class%% .dtq-post-list-meta',
 				'declaration' => sprintf( 'padding-top:%1$s;', $meta_spacing ),
 			)
 		);
@@ -1080,7 +1067,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-meta',
+					'selector'    => '%%order_class%% .dtq-post-list-meta',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'padding-top:%1$s;', $meta_spacing_tablet ),
 				)
@@ -1091,7 +1078,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-meta',
+					'selector'    => '%%order_class%% .dtq-post-list-meta',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'padding-top:%1$s;', $meta_spacing_phone ),
 				)
@@ -1101,7 +1088,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-post-list-content p',
+				'selector'    => '%%order_class%% .dtq-post-list-content p',
 				'declaration' => sprintf( 'padding-top:%1$s;', $excerpt_spacing ),
 			)
 		);
@@ -1110,7 +1097,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-content p',
+					'selector'    => '%%order_class%% .dtq-post-list-content p',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'padding-top:%1$s;', $excerpt_spacing_tablet ),
 				)
@@ -1121,7 +1108,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-content p',
+					'selector'    => '%%order_class%% .dtq-post-list-content p',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'padding-top:%1$s;', $excerpt_spacing_phone ),
 				)
@@ -1132,7 +1119,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		if ( 'on' === $show_thumb ) {
 			$this->get_responsive_styles(
 				'image_width',
-				'%%order_class%% .ba-post-list-thumb',
+				'%%order_class%% .dtq-post-list-thumb',
 				array(
 					'primary'   => $img_width_property,
 					'important' => true,
@@ -1143,7 +1130,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 
 			$this->get_responsive_styles(
 				'image_height',
-				'%%order_class%% .ba-post-list-thumb',
+				'%%order_class%% .dtq-post-list-thumb',
 				array(
 					'primary'   => 'height',
 					'important' => true,
@@ -1155,7 +1142,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-thumb',
+					'selector'    => '%%order_class%% .dtq-post-list-thumb',
 					'declaration' => sprintf( 'margin-%2$s:%1$s;', $image_spacing, $spacing_term ),
 				)
 			);
@@ -1164,7 +1151,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-post-list-thumb',
+						'selector'    => '%%order_class%% .dtq-post-list-thumb',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'margin-%2$s:%1$s;', $image_spacing_tablet, $spacing_term ),
 					)
@@ -1175,7 +1162,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-post-list-thumb',
+						'selector'    => '%%order_class%% .dtq-post-list-thumb',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'margin-%2$s:%1$s;', $image_spacing_phone, $spacing_term ),
 					)
@@ -1187,7 +1174,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-icon',
+					'selector'    => '%%order_class%% .dtq-post-list-icon',
 					'declaration' => sprintf( 'font-size:%1$s;color: %2$s;', $icon_size, $icon_color ),
 				)
 			);
@@ -1196,7 +1183,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-post-list-icon',
+						'selector'    => '%%order_class%% .dtq-post-list-icon',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'font-size:%1$s;', $icon_size_tablet ),
 					)
@@ -1207,7 +1194,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-post-list-icon',
+						'selector'    => '%%order_class%% .dtq-post-list-icon',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'font-size:%1$s;', $icon_size_phone ),
 					)
@@ -1216,7 +1203,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-post-list-icon',
+					'selector'    => '%%order_class%% .dtq-post-list-icon',
 					'declaration' => sprintf( 'margin-%2$s:%1$s;', $icon_spacing, $spacing_term ),
 				)
 			);
@@ -1225,7 +1212,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-post-list-icon',
+						'selector'    => '%%order_class%% .dtq-post-list-icon',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'margin-%2$s:%1$s;', $icon_spacing_tablet, $spacing_term ),
 					)
@@ -1236,7 +1223,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-post-list-icon',
+						'selector'    => '%%order_class%% .dtq-post-list-icon',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'margin-%2$s:%1$s;', $icon_spacing_phone, $spacing_term ),
 					)
@@ -1245,7 +1232,7 @@ class DTQ_Post_List extends BA_Builder_Module_Type_PostBased {
 		}
 
 		// Title bg.
-		$this->get_custom_bg_style( $render_slug, 'post', '%%order_class%% .ba-post-list-child a', '%%order_class%%:hover .ba-post-list-child a' );
+		$this->get_custom_bg_style( $render_slug, 'post', '%%order_class%% .dtq-post-list-child a', '%%order_class%%:hover .dtq-post-list-child a' );
 
 	}
 }

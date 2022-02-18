@@ -14,20 +14,19 @@ class Admin {
 		add_action( 'wp_ajax_' . self::MODULES_NONCE, array( __CLASS__, 'save_data' ) );
 		add_action( 'ba_save_admin_data', array( __CLASS__, 'save_modules_data' ) );
 		add_action( 'ba_save_admin_data', array( __CLASS__, 'save_extensions_data' ) );
-
-        add_action( 'admin_init', [ __CLASS__, 'activation_redirect' ] );
+		add_action( 'admin_init', array( __CLASS__, 'activation_redirect' ) );
 	}
 
 	public static function activation_redirect() {
-        if ( get_option( DIVI_TORQUE_REDIRECTION_FLAG, false ) ) {
-            delete_option( DIVI_TORQUE_REDIRECTION_FLAG );
-            if(!get_option( DIVI_TORQUE_REDIRECTION_FLAG, false ) || !divitorque_has_pro()){
-                die( wp_redirect( divitorque_dashboard_link() ) );
-            }else{
-                die( wp_redirect( divitorque_dashboard_link() ) );
-            }
-        }
-    }
+		if ( get_option( DIVI_TORQUE_REDIRECTION_FLAG, false ) ) {
+			delete_option( DIVI_TORQUE_REDIRECTION_FLAG );
+			if ( ! get_option( DIVI_TORQUE_REDIRECTION_FLAG, false ) || ! divitorque_has_pro() ) {
+				die( wp_redirect( divitorque_dashboard_link() ) );
+			} else {
+				die( wp_redirect( divitorque_dashboard_link() ) );
+			}
+		}
+	}
 
 	public static function add_menu() {
 		add_menu_page(
@@ -182,6 +181,15 @@ class Admin {
 				'is_free' => true,
 			),
 
+			'post-duplicator'         => array(
+				'title'   => __( 'Post Duplicator', 'addons-for-divi' ),
+				'desc'    => __( 'Post Duplicator extension provides functionality to make a clone of page or post. Also supports copying the custom post type and Divi pages including all attributes.' ),
+				'demo'    => '',
+				'icon'    => '',
+				'is_pro'  => false,
+				'is_free' => true,
+			),
+
 		);
 
 		return $extensions_map;
@@ -193,181 +201,136 @@ class Admin {
 
 			'advanced-divider'      => array(
 				'title' => __( 'Advanced Divider', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/advanced-divider/',
+				'demo'  => 'https://divitorque.com/advanced-divider-module/',
 				'icon'  => 'advanced_divider',
 			),
-
-			'card'                  => array(
-				'title' => __( 'Card', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/card/',
-				'icon'  => 'card',
-			),
-
-			'cf7-module'            => array(
-				'title' => __( 'CF7 Styler', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/cf7-styler/',
-				'icon'  => 'cf7_styler',
-			),
-
-			'twitter-feed'          => array(
-				'title' => __( 'Twitter Feed', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/twitter-feed',
-				'icon'  => 'twitter_feed',
-			),
-
-			'icon-box'              => array(
-				'title' => __( 'Icon Box', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/icon-box',
-				'icon'  => 'icon_box',
-			),
-
-			'logo-grid'             => array(
-				'title' => __( 'Logo Grid', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/logo-grid',
-				'icon'  => 'logo_grid',
-			),
-
-			'image-compare'         => array(
-				'title' => __( 'Image Compare', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/image-compare',
-				'icon'  => 'image_compare',
-			),
-
 			'advanced-team'         => array(
 				'title'  => __( 'Advanced Team', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/team',
+				'demo'   => 'https://divitorque.com/team-module',
 				'icon'   => 'team',
 				'is_pro' => false,
 			),
-
-			'skill-bars'            => array(
-				'title' => __( 'Skill Bars', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/skill-bars',
-				'icon'  => 'skill_bars',
-			),
-
-			'dual-button'           => array(
-				'title' => __( 'Dual Button', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/dual-button',
-				'icon'  => 'dual_button',
-			),
-
-			'video-popup'           => array(
-				'title' => __( 'Video Popup', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/video-popup',
-				'icon'  => 'video_popup',
-			),
-
-			'testimonial'           => array(
-				'title' => __( 'Testimonial', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/testimonial',
-				'icon'  => 'testimonial',
-			),
-
-			'info-box'              => array(
-				'title' => __( 'Info Box', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/info-box',
-				'icon'  => 'info_box',
-			),
-
-			'number'                => array(
-				'title' => __( 'Number', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/number',
-				'icon'  => 'number',
-			),
-
-			'scroll-image'          => array(
-				'title' => __( 'Scroll Image', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/scroll-image',
-				'icon'  => 'scroll_image',
-			),
-
-			'review'                => array(
-				'title' => __( 'Review', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/review',
-				'icon'  => 'review',
-			),
-
-			'flipbox'               => array(
-				'title'  => __( 'Flipbox', 'addons-for-divi' ),
-				'demo'   => divitorque_has_pro() ? 'https://divi.brainaddons.com/flip-box-pro/' : 'https://divi.brainaddons.com/flip-box/',
-				'icon'   => 'flipbox',
-				'is_pro' => divitorque_has_pro() ? true : false,
-			),
-
-			'news-ticker'           => array(
-				'title' => __( 'News Ticker', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/news-ticker',
-				'icon'  => 'news_ticker',
-			),
-
-			'post-list'             => array(
-				'title' => __( 'Post List', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/post-list',
-				'icon'  => 'post_list',
-			),
-
-			'twitter-feed-carousel' => array(
-				'title' => __( 'Twitter Feed Carousel', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/twitter-feed-carousel',
-				'icon'  => 'twitter_feed_carousel',
-			),
-
-			'image-carousel'        => array(
-				'title' => __( 'Image Carousel', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/image-carousel',
-				'icon'  => 'image_carousel',
-			),
-
-			'logo-carousel'         => array(
-				'title' => __( 'Logo Carousel', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/logo-carousel',
-				'icon'  => 'logo_carousel',
-			),
-
-			'review'                => array(
-				'title' => __( 'Review', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/review',
-				'icon'  => 'review',
-			),
-
-			'flipbox'               => array(
-				'title'  => __( 'Flipbox', 'addons-for-divi' ),
-				'demo'   => divitorque_has_pro() ? 'https://divi.brainaddons.com/flipbox-pro' : 'https://divi.brainaddons.com/flipbox',
-				'icon'   => 'flipbox',
-				'is_pro' => divitorque_has_pro() ? true : false,
-			),
-
-			'animated-text'         => array(
-				'title' => __( 'Animated Text', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/animated-text',
-				'icon'  => 'animated_text',
-			),
-
-			'business-hour'         => array(
-				'title' => __( 'Business Hour', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/business-hour',
-				'icon'  => 'business_hour',
-			),
-
-			'gradient-heading'      => array(
-				'title' => __( 'Gradient Heading', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/gradient-heading',
-				'icon'  => 'advanced_heading',
-			),
-
 			'alert'                 => array(
 				'title' => __( 'Alert', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/alert',
+				'demo'  => 'https://divitorque.com/alert-module',
 				'icon'  => 'alert',
 			),
-
-			'animated-gallery'      => array(
-				'title' => __( 'Animated Gallery', 'addons-for-divi' ),
-				'demo'  => 'https://divi.brainaddons.com/animated-gallery',
-				'icon'  => 'animated-gallery',
+			'animated-text'         => array(
+				'title' => __( 'Animated Text', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/animated-text-module',
+				'icon'  => 'animated_text',
 			),
-
+			'business-hour'         => array(
+				'title' => __( 'Business Hour', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/business-hour-module',
+				'icon'  => 'business_hour',
+			),
+			'card'                  => array(
+				'title' => __( 'Card', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/card-module/',
+				'icon'  => 'card',
+			),
+			'cf7-module'            => array(
+				'title' => __( 'CF7 Styler', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/cf7-styler-module/',
+				'icon'  => 'cf7_styler',
+			),
+			'dual-button'           => array(
+				'title' => __( 'Dual Button', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/dual-button-module',
+				'icon'  => 'dual_button',
+			),
+			'flipbox'               => array(
+				'title'  => __( 'Flipbox', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/flip-box-module',
+				'icon'   => 'flipbox',
+				'is_pro' => false,
+			),
+			'gradient-heading'      => array(
+				'title' => __( 'Gradient Heading', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/gradient-heading-module',
+				'icon'  => 'advanced_heading',
+			),
+			'icon-box'              => array(
+				'title' => __( 'Icon Box', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/icon-box-module/',
+				'icon'  => 'icon_box',
+			),
+			'image-carousel'        => array(
+				'title' => __( 'Image Carousel', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/image-carousel-module',
+				'icon'  => 'image_carousel',
+			),
+			'image-compare'         => array(
+				'title' => __( 'Image Compare', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/image-compare-module',
+				'icon'  => 'image_compare',
+			),
+			'info-box'              => array(
+				'title' => __( 'Info Box', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/info-box-module',
+				'icon'  => 'info_box',
+			),
+			'logo-carousel'         => array(
+				'title' => __( 'Logo Carousel', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/logo-carousel-module',
+				'icon'  => 'logo_carousel',
+			),
+			'logo-grid'             => array(
+				'title' => __( 'Logo Grid', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/logo-grid-module/',
+				'icon'  => 'logo_grid',
+			),
+			'news-ticker'           => array(
+				'title' => __( 'News Ticker', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/news-ticker-module',
+				'icon'  => 'news_ticker',
+			),
+			'number'                => array(
+				'title' => __( 'Number', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/number-module',
+				'icon'  => 'number',
+			),
+			'post-list'             => array(
+				'title' => __( 'Post List', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/post-list-module',
+				'icon'  => 'post_list',
+			),
+			'review'                => array(
+				'title' => __( 'Review', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/review-module',
+				'icon'  => 'review',
+			),
+			'scroll-image'          => array(
+				'title' => __( 'Scroll Image', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/scroll-image-module',
+				'icon'  => 'scroll_image',
+			),
+			'skill-bars'            => array(
+				'title' => __( 'Skill Bars', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/skill-bars-module',
+				'icon'  => 'skill_bars',
+			),
+			'testimonial'           => array(
+				'title' => __( 'Testimonial', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/testimonial-module',
+				'icon'  => 'testimonial',
+			),
+			'twitter-feed'          => array(
+				'title' => __( 'Twitter Feed', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/twitter-feed-module/',
+				'icon'  => 'twitter_feed',
+			),
+			'twitter-feed-carousel' => array(
+				'title' => __( 'Twitter Feed Carousel', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/twitter-feed-carousel-module',
+				'icon'  => 'twitter_feed_carousel',
+			),
+			'video-popup'           => array(
+				'title' => __( 'Video Popup', 'addons-for-divi' ),
+				'demo'  => 'https://divitorque.com/video-popup-module',
+				'icon'  => 'video_popup',
+			),
 		);
 
 		return $modules_map;
@@ -378,170 +341,200 @@ class Admin {
 		$modules_map = array(
 			'advanced-heading'     => array(
 				'title'  => __( 'Advanced Heading', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/advanced-heading/advanced-heading',
+				'demo'   => 'https://divitorque.com/advanced-heading-module',
 				'icon'   => 'advanced_heading',
 				'is_pro' => true,
 			),
-			'hover-box'            => array(
-				'title'  => __( 'Hover Box', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/hover-box',
-				'icon'   => 'hover_box',
-				'is_pro' => true,
-			),
-			'image-masking'        => array(
-				'title'  => __( 'Image Masking', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/image-masking',
-				'icon'   => 'image_masking',
-				'is_pro' => true,
-			),
-			'list-group'           => array(
-				'title'  => __( 'List Group', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/list-group',
-				'icon'   => 'list_group',
-				'is_pro' => true,
-			),
-			'price-menu'           => array(
-				'title'  => __( 'Price Menu', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/price-menu',
-				'icon'   => 'price_menu',
-				'is_pro' => true,
-			),
-			'vertical-timeline'    => array(
-				'title'  => __( 'Vertical Timeline', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/vertical-timeline/',
-				'icon'   => 'vertical_timeline',
-				'is_pro' => true,
-			),
-			'horizontal-timeline'  => array(
-				'title'  => __( 'Horizontal Timeline', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/horizontal-timeline/',
-				'icon'   => 'horizontal_timeline',
-				'is_pro' => true,
-			),
-			'image-accordion'      => array(
-				'title'  => __( 'Image Accordion', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/image-accordion',
-				'icon'   => 'image_accordion',
-				'is_pro' => true,
-			),
-			'image-magnifier'      => array(
-				'title'  => __( 'Image Magnifier', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/image-magnifier',
-				'icon'   => 'image_magnifier',
-				'is_pro' => true,
-			),
-			'hotspots'             => array(
-				'title'  => __( 'Hotspots', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/hotspots',
-				'icon'   => 'hotspots',
-				'is_pro' => true,
-			),
-			'floating-image'       => array(
-				'title'  => __( 'Floating Image', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/floating-image',
-				'icon'   => 'floating_image',
-				'is_pro' => true,
-			),
-			'instagram-feed'       => array(
-				'title'  => __( 'Instagram Feed', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/instagram-feed',
-				'icon'   => 'instagram_feed',
-				'is_pro' => true,
-			),
-			'inline-svg'           => array(
-				'title'  => __( 'Inline SVG', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/inline-svg',
-				'icon'   => 'inline_svg',
-				'is_pro' => true,
-			),
-			'lottie-animation'     => array(
-				'title'  => __( 'Lottie Animation', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/lottie-animation',
-				'icon'   => 'lottie',
-				'is_pro' => true,
-			),
-			'content-toggle'       => array(
-				'title'  => __( 'Content Toggle', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/content-toggle',
-				'icon'   => 'content_toggle',
-				'is_pro' => true,
-			),
-			'testimonial-carousel' => array(
-				'title'  => __( 'Testimonial Carousel', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/testimonial-carousel',
-				'icon'   => 'testimonial_carousel',
-				'is_pro' => true,
-			),
-			'team-carousel'        => array(
-				'title'  => __( 'Team Carousel', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/team-carousel',
-				'icon'   => 'team_carousel',
-				'is_pro' => true,
-			),
-			'post-grid'            => array(
-				'title'  => __( 'Post Grid', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/post-grid/',
-				'icon'   => 'post_grid',
-				'is_pro' => true,
-			),
-			'post-tiles'           => array(
-				'title'  => __( 'Post Tiles', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/post-tiles/',
-				'icon'   => 'post_tiles',
-				'is_pro' => true,
-			),
-			'post-carousel'        => array(
-				'title'  => __( 'Post Carousel', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/post-carousel/',
-				'icon'   => 'post_carousel',
-				'is_pro' => true,
-			),
-			'post-masonry'         => array(
-				'title'  => __( 'Post Masonry', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/post-masonry/',
-				'icon'   => 'post_masonry',
-				'is_pro' => true,
-			),
-			'smart-post-list'      => array(
-				'title'  => __( 'Smart Post List', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/smart-post',
-				'icon'   => 'smart_post_list',
-				'is_pro' => true,
-			),
-			'news-ticker-pro'      => array(
-				'title'  => __( 'News Ticker Pro', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/new-ticker-pro/',
-				'icon'   => 'news_ticker',
-				'is_pro' => true,
-			),
-			'author-list'          => array(
-				'title'  => __( 'Author List', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/author-list/',
-				'icon'   => 'author_list',
-				'is_pro' => true,
-			),
-			'instagram-carousel'   => array(
-				'title'  => __( 'Instagram Carousel', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/instagram-carousel',
-				'icon'   => 'instagram_carousel',
-				'is_pro' => true,
-			),
-			'social-share'         => array(
-				'title'  => __( 'Social Share', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/social-share',
-				'icon'   => 'social_share',
-				'is_pro' => true,
-			),
-			'image-hover'          => array(
-				'title'  => __( 'Image Hover', 'addons-for-divi' ),
-				'demo'   => 'https://divi.brainaddons.com/image-hover',
-				'icon'   => 'hover_box',
+			'animated-gallery'     => array(
+				'title'  => __( 'Animated Gallery', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/animated-gallery-module',
+				'icon'   => 'animated-gallery',
 				'is_pro' => true,
 			),
 			'author-box'           => array(
 				'title'  => __( 'Author Box', 'addons-for-divi' ),
 				'demo'   => 'https://divitorque.com/',
 				'icon'   => 'author_list',
+				'is_pro' => true,
+			),
+			'author-list'          => array(
+				'title'  => __( 'Author List', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/author-list-module',
+				'icon'   => 'author_list',
+				'is_pro' => true,
+			),
+			'content-toggle'       => array(
+				'title'  => __( 'Content Toggle', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/content-toggle-module',
+				'icon'   => 'content_toggle',
+				'is_pro' => true,
+			),
+			'floating-image'       => array(
+				'title'  => __( 'Floating Image', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/floating-image-module',
+				'icon'   => 'floating_image',
+				'is_pro' => true,
+			),
+			'horizontal-timeline'  => array(
+				'title'  => __( 'Horizontal Timeline', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/horizontal-timeline-module/',
+				'icon'   => 'horizontal_timeline',
+				'is_pro' => true,
+			),
+			'hotspots'             => array(
+				'title'  => __( 'Hotspots', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/hotspots-module',
+				'icon'   => 'hotspots',
+				'is_pro' => true,
+			),
+			'hover-box'            => array(
+				'title'  => __( 'Hover Box', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/hover-box-module',
+				'icon'   => 'hover_box',
+				'is_pro' => true,
+			),
+			'image-accordion'      => array(
+				'title'  => __( 'Image Accordion', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/image-accordion-module',
+				'icon'   => 'image_accordion',
+				'is_pro' => true,
+			),
+			'image-hover'          => array(
+				'title'  => __( 'Image Hover', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/image-hover-module',
+				'icon'   => 'hover_box',
+				'is_pro' => true,
+			),
+			'image-magnifier'      => array(
+				'title'  => __( 'Image Magnifier', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/image-magnifier-module',
+				'icon'   => 'image_magnifier',
+				'is_pro' => true,
+			),
+			'image-masking'        => array(
+				'title'  => __( 'Image Masking', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/image-masking-module',
+				'icon'   => 'image_masking',
+				'is_pro' => true,
+			),
+			'inline-svg'           => array(
+				'title'  => __( 'Inline SVG', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/inline-svg-module',
+				'icon'   => 'inline_svg',
+				'is_pro' => true,
+			),
+			'instagram-carousel'   => array(
+				'title'  => __( 'Instagram Carousel', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/instagram-carousel-module',
+				'icon'   => 'instagram_carousel',
+				'is_pro' => true,
+			),
+			'instagram-feed'       => array(
+				'title'  => __( 'Instagram Feed', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/instagram-feed-module',
+				'icon'   => 'instagram_feed',
+				'is_pro' => true,
+			),
+			'list-group'           => array(
+				'title'  => __( 'List Group', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/list-group-module',
+				'icon'   => 'list_group',
+				'is_pro' => true,
+			),
+			'lottie-animation'     => array(
+				'title'  => __( 'Lottie Animation', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/lottie-animation-module',
+				'icon'   => 'lottie',
+				'is_pro' => true,
+			),
+			'news-ticker-pro'      => array(
+				'title'  => __( 'News Ticker Pro', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/news-ticker-pro-module/',
+				'icon'   => 'news_ticker',
+				'is_pro' => true,
+			),
+			'post-carousel'        => array(
+				'title'  => __( 'Post Carousel', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/post-carousel-module/',
+				'icon'   => 'post_carousel',
+				'is_pro' => true,
+			),
+			'post-grid'            => array(
+				'title'  => __( 'Post Grid', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/post-grid-module/',
+				'icon'   => 'post_grid',
+				'is_pro' => true,
+			),
+			'post-masonry'         => array(
+				'title'  => __( 'Post Masonry', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/post-masonry-module/',
+				'icon'   => 'post_masonry',
+				'is_pro' => true,
+			),
+			'post-tiles'           => array(
+				'title'  => __( 'Post Tiles', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/post-tiles-module/',
+				'icon'   => 'post_tiles',
+				'is_pro' => true,
+			),
+			'price-menu'           => array(
+				'title'  => __( 'Price Menu', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/price-menu-module',
+				'icon'   => 'price_menu',
+				'is_pro' => true,
+			),
+			'smart-post-list'      => array(
+				'title'  => __( 'Smart Post List', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/smart-post-module',
+				'icon'   => 'smart_post_list',
+				'is_pro' => true,
+			),
+			'social-share'         => array(
+				'title'  => __( 'Social Share', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/social-share-module',
+				'icon'   => 'social_share',
+				'is_pro' => true,
+			),
+			'team-carousel'        => array(
+				'title'  => __( 'Team Carousel', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/team-carousel-module',
+				'icon'   => 'team_carousel',
+				'is_pro' => true,
+			),
+			'testimonial-carousel' => array(
+				'title'  => __( 'Testimonial Carousel', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/testimonial-carousel-module',
+				'icon'   => 'testimonial_carousel',
+				'is_pro' => true,
+			),
+			'vertical-timeline'    => array(
+				'title'  => __( 'Vertical Timeline', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/vertical-timeline-module/',
+				'icon'   => 'vertical_timeline',
+				'is_pro' => true,
+			),
+			'video-carousel'       => array(
+				'title'  => __( 'Video Carousel', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/video-carousel-module/',
+				'icon'   => 'video_carousel',
+				'is_pro' => true,
+			),
+			'text-highlight'       => array(
+				'title'  => __( 'Text Highlight', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/text-highlight-module/',
+				'icon'   => 'animated_text',
+				'is_pro' => true,
+			),
+			'off-canvas'           => array(
+				'title'  => __( 'Off-canvas', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/off-canvas-module/',
+				'icon'   => 'off_canvas',
+				'is_pro' => true,
+			),
+			'mega-menu'            => array(
+				'title'  => __( 'Mega Menu', 'addons-for-divi' ),
+				'demo'   => 'https://divitorque.com/mega-menu-module/',
+				'icon'   => 'mega_menu',
 				'is_pro' => true,
 			),
 		);
@@ -553,6 +546,74 @@ class Admin {
 
 		$extensions_map = self::get_all_extensions();
 		return $extensions_map;
+	}
+
+	public static function get_admin_templates() {
+		return array(
+			'foodie'        => array(
+				'name'     => 'Foodie',
+				'image'    => 'foodie.jpg',
+				'demo'     => 'https://library.divitorque.com/foodie-demo/',
+				'download' => 'https://divitorque.com/foodie/',
+				'is_pro'   => true,
+			),
+			'torqe-digital' => array(
+				'name'     => 'Torque Digital',
+				'image'    => 'torque-digital.jpg',
+				'demo'     => 'https://library.divitorque.com/torque-digital-demo/',
+				'download' => 'https://divitorque.com/torque-digital/',
+				'is_pro'   => false,
+			),
+			'justice'       => array(
+				'name'     => 'Justice',
+				'image'    => 'justice.jpg',
+				'demo'     => 'https://library.divitorque.com/justice-demo/',
+				'download' => 'https://divitorque.com/justice/',
+				'is_pro'   => false,
+			),
+			'travel'        => array(
+				'name'     => 'Travel',
+				'image'    => 'travel.jpg',
+				'demo'     => 'https://library.divitorque.com/travel-demo/',
+				'download' => 'https://divitorque.com/travel/',
+				'is_pro'   => true,
+			),
+			'pet-care'      => array(
+				'name'     => 'Pet Care',
+				'image'    => 'pet-care.jpg',
+				'demo'     => 'https://library.divitorque.com/pet-care-demo/',
+				'download' => 'https://divitorque.com/pet-care/',
+				'is_pro'   => true,
+			),
+			'news-magazine' => array(
+				'name'     => 'News Magazine',
+				'image'    => 'news-magazine.jpg',
+				'demo'     => 'https://library.divitorque.com/news-magazine-demo/',
+				'download' => 'https://divitorque.com/news-magazine/',
+				'is_pro'   => true,
+			),
+			'medical'       => array(
+				'name'     => 'Medical',
+				'image'    => 'medical.jpg',
+				'demo'     => 'https://library.divitorque.com/medical-demo/',
+				'download' => 'https://divitorque.com/medical/',
+				'is_pro'   => true,
+			),
+			'event'         => array(
+				'name'     => 'Event',
+				'image'    => 'event.jpg',
+				'demo'     => 'https://library.divitorque.com/event-demo/',
+				'download' => 'https://divitorque.com/event/',
+				'is_pro'   => true,
+			),
+			'education'     => array(
+				'name'     => 'Education',
+				'image'    => 'education.jpg',
+				'demo'     => 'https://library.divitorque.com/education-demo/',
+				'download' => 'https://divitorque.com/education/',
+				'is_pro'   => true,
+			),
+		);
 	}
 
 	public static function get_tabs() {
@@ -573,6 +634,11 @@ class Admin {
 			'extensions' => array(
 				'title'    => esc_html__( 'Extension', 'addons-for-divi' ),
 				'renderer' => array( __CLASS__, 'render_extensions' ),
+			),
+
+			'templates'  => array(
+				'title'    => esc_html__( 'Starter templates', 'addons-for-divi' ),
+				'renderer' => array( __CLASS__, 'render_templates' ),
 			),
 
 			'pro'        => array(
@@ -605,6 +671,10 @@ class Admin {
 
 	public static function render_extensions() {
 		self::load_template( 'extensions' );
+	}
+
+	public static function render_templates() {
+		self::load_template( 'templates' );
 	}
 
 	public static function render_pro() {

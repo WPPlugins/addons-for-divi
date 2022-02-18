@@ -28,21 +28,9 @@ class DTQ_Testimonial extends BA_Builder_Module {
 					'quote_icon' => esc_html__( 'Quote Icon', 'addons-for-divi' ),
 					'image'      => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
 					'rating'     => esc_html__( 'Rating', 'addons-for-divi' ),
-					'texts'      => array(
-						'title'             => esc_html__( 'Texts', 'addons-for-divi' ),
-						'tabbed_subtoggles' => true,
-						'sub_toggles'       => array(
-							'name'   => array(
-								'name' => esc_html__( 'Name', 'addons-for-divi' ),
-							),
-							'title'  => array(
-								'name' => esc_html__( 'Title', 'addons-for-divi' ),
-							),
-							'review' => array(
-								'name' => esc_html__( 'Review', 'addons-for-divi' ),
-							),
-						),
-					),
+					'name'       => esc_html__( 'Name Text', 'addons-for-divi' ),
+					'title'      => esc_html__( 'Title Text', 'addons-for-divi' ),
+					'review'     => esc_html__( 'Review Text', 'addons-for-divi' ),
 					'bubble'     => esc_html__( 'Bubble', 'addons-for-divi' ),
 				),
 			),
@@ -51,39 +39,39 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'image'        => array(
 				'label'    => esc_html__( 'Reviewer Wrapper', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-reviewer',
+				'selector' => '%%order_class%% .dtq-testimonial-reviewer',
 			),
 			'image'        => array(
 				'label'    => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-img img',
+				'selector' => '%%order_class%% .dtq-testimonial-img img',
 			),
 			'name'         => array(
 				'label'    => esc_html__( 'Reviewer Name', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-reviewer-text h3',
+				'selector' => '%%order_class%% .dtq-testimonial-reviewer-text h3',
 			),
 			'title'        => array(
 				'label'    => esc_html__( 'Reviewer Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-reviewer-text .ba-testimonial-title',
+				'selector' => '%%order_class%% .dtq-testimonial-reviewer-text .dtq-testimonial-title',
 			),
 			'rating'       => array(
 				'label'    => esc_html__( 'Rating', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-rating',
+				'selector' => '%%order_class%% .dtq-testimonial-rating',
 			),
 			'star'         => array(
 				'label'    => esc_html__( 'Rating Star', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-rating span',
+				'selector' => '%%order_class%% .dtq-testimonial-rating span',
 			),
 			'review'       => array(
 				'label'    => esc_html__( 'Review', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-review',
+				'selector' => '%%order_class%% .dtq-testimonial-review',
 			),
 			'icon_wrapper' => array(
 				'label'    => esc_html__( 'Quote Icon Wrapper', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-icon-wrap',
+				'selector' => '%%order_class%% .dtq-testimonial-icon-wrap',
 			),
 			'icon'         => array(
 				'label'    => esc_html__( 'Quote Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-testimonial-icon-wrap svg',
+				'selector' => '%%order_class%% .dtq-testimonial-icon-wrap svg',
 			),
 		);
 	}
@@ -742,9 +730,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 					'step' => 1,
 					'max'  => 100,
 				),
-				'toggle_slug'     => 'texts',
+				'toggle_slug'     => 'name',
 				'tab_slug'        => 'advanced',
-				'sub_toggle'      => 'name',
 			),
 
 			'title_bottom_spacing'   => array(
@@ -759,9 +746,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 					'step' => 1,
 					'max'  => 100,
 				),
-				'toggle_slug'     => 'texts',
+				'toggle_slug'     => 'title',
 				'tab_slug'        => 'advanced',
-				'sub_toggle'      => 'title',
 			),
 
 			// Review.
@@ -775,9 +761,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 					'step' => 1,
 					'max'  => 100,
 				),
-				'toggle_slug'    => 'texts',
+				'toggle_slug'    => 'review',
 				'tab_slug'       => 'advanced',
-				'sub_toggle'     => 'review',
 			),
 
 			'review_bottom_spacing'  => array(
@@ -791,9 +776,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 					'step' => 1,
 					'max'  => 100,
 				),
-				'toggle_slug'    => 'texts',
+				'toggle_slug'    => 'review',
 				'tab_slug'       => 'advanced',
-				'sub_toggle'     => 'review',
 			),
 
 			// Bubble.
@@ -935,7 +919,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			'label'       => esc_html__( 'Item Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'common',
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-testimonial-inner',
+				'main'      => '%%order_class%% .dtq-testimonial-inner',
 				'important' => 'all',
 			),
 		);
@@ -945,8 +929,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			'toggle_slug'  => 'image',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-testimonial-img',
-					'border_styles' => '%%order_class%% .ba-testimonial-img',
+					'border_radii'  => '%%order_class%% .dtq-testimonial-img',
+					'border_styles' => '%%order_class%% .dtq-testimonial-img',
 				),
 				'important' => 'all',
 			),
@@ -965,8 +949,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			'toggle_slug'  => 'quote_icon',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-testimonial-icon span',
-					'border_styles' => '%%order_class%% .ba-testimonial-icon span',
+					'border_radii'  => '%%order_class%% .dtq-testimonial-icon span',
+					'border_styles' => '%%order_class%% .dtq-testimonial-icon span',
 				),
 				'important' => 'all',
 			),
@@ -985,8 +969,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			'toggle_slug'  => 'common',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-testimonial-inner',
-					'border_styles' => '%%order_class%% .ba-testimonial-inner',
+					'border_radii'  => '%%order_class%% .dtq-testimonial-inner',
+					'border_styles' => '%%order_class%% .dtq-testimonial-inner',
 				),
 				'important' => 'all',
 			),
@@ -1002,14 +986,14 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 		$advanced_fields['background'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-testimonial-inner',
+				'main'      => '%%order_class%% .dtq-testimonial-inner',
 				'important' => 'all',
 			),
 		);
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-testimonial-inner',
+				'main'      => '%%order_class%% .dtq-testimonial-inner',
 				'important' => 'all',
 			),
 		);
@@ -1017,12 +1001,11 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$advanced_fields['fonts']['name'] = array(
 			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-testimonial-reviewer-text h3, .et-db #et-boc %%order_class%% .ba-testimonial-reviewer-text h3',
+				'main'      => '%%order_class%% .dtq-testimonial-reviewer-text h3, .et-db #et-boc %%order_class%% .dtq-testimonial-reviewer-text h3',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'name',
+			'toggle_slug'     => 'name',
 			'hide_text_align' => true,
 			'line_height'     => array(
 				'range_settings' => array(
@@ -1039,13 +1022,12 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$advanced_fields['fonts']['title'] = array(
 			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-testimonial-title',
+				'main'      => '%%order_class%% .dtq-testimonial-title',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
 			'hide_text_align' => true,
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'title',
+			'toggle_slug'     => 'title',
 			'line_height'     => array(
 				'range_settings' => array(
 					'min'  => '1',
@@ -1061,13 +1043,12 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$advanced_fields['fonts']['review'] = array(
 			'label'           => esc_html__( 'Review', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-testimonial-review',
+				'main'      => '%%order_class%% .dtq-testimonial-review',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
 			'hide_text_align' => true,
-			'toggle_slug'     => 'texts',
-			'sub_toggle'      => 'review',
+			'toggle_slug'     => 'review',
 			'line_height'     => array(
 				'range_settings' => array(
 					'min'  => '1',
@@ -1096,7 +1077,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 		if ( $use_rating === 'on' && $ratings_position === $pos ) {
 			return sprintf(
-				'<div class="ba-testimonial-rating">
+				'<div class="dtq-testimonial-rating">
                     %1$s
                 </div>',
 				$html
@@ -1131,7 +1112,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 		if ( $hide_quote === 'off' && $icon_placement === $placement ) {
 			return sprintf(
-				'<div class="ba-testimonial-icon %1$s">
+				'<div class="dtq-testimonial-icon %1$s">
                 	<span>%2$s</span>
             	</div> ',
 				$class,
@@ -1147,9 +1128,9 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$testimonial_html = sprintf( '<p>%1$s</p>', $testimonial );
 
 		return sprintf(
-			'<div class="ba-testimonial-review">%2$s %1$s</div>',
+			'<div class="dtq-testimonial-review">%2$s %1$s</div>',
 			! empty( $testimonial ) ? $testimonial_html : '',
-			$this->render_quote_icon( 'ba-icon-default', '_default' )
+			$this->render_quote_icon( 'dtq-icon-default', '_default' )
 		);
 
 	}
@@ -1163,8 +1144,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			if ( in_array( $img_position, $pos ) ) {
 				return sprintf(
 					'
-                        <figure class="ba-testimonial-img">
-                            <img class="ba-img-cover" src="%1$s" alt="%2$s" />
+                        <figure class="dtq-testimonial-img">
+                            <img class="dtq-img-cover" src="%1$s" alt="%2$s" />
                         </figure>',
 					$image,
 					$image_alt
@@ -1194,17 +1175,17 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 		if ( ! empty( $title ) ) {
 			if ( ! empty( $company_url ) ) {
-				$title_html = sprintf( '<a class="ba-testimonial-title" href="%2$s" target="%3$s"><p>%1$s</p></a>', $title, $company_url, $link_target );
+				$title_html = sprintf( '<a class="dtq-testimonial-title" href="%2$s" target="%3$s"><p>%1$s</p></a>', $title, $company_url, $link_target );
 			} else {
-				$title_html = sprintf( '<div class="ba-testimonial-title">%1$s</div>', $title );
+				$title_html = sprintf( '<div class="dtq-testimonial-title">%1$s</div>', $title );
 			}
 		}
 
 		if ( $reviewer_position === $pos ) {
 			return sprintf(
-				'<div class="ba-testimonial-reviewer">
+				'<div class="dtq-testimonial-reviewer">
                     %1$s
-                    <div class="ba-testimonial-reviewer-text">
+                    <div class="dtq-testimonial-reviewer-text">
                         %2$s %3$s %4$s
                     </div>
                 </div>',
@@ -1217,7 +1198,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
@@ -1225,11 +1206,11 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$img_position = $this->props['img_position'];
 
 		return sprintf(
-			'<div class="ba-module ba-testimonial ba-align-%1$s">
+			'<div class="dtq-module dtq-testimonial dtq-align-%1$s">
                 %3$s %5$s
-                <div class="ba-testimonial-inner ba-bg-support img-pos-%2$s">
+                <div class="dtq-testimonial-inner dtq-bg-support img-pos-%2$s">
                      %4$s %11$s
-                    <div class="ba-testimonial-content">
+                    <div class="dtq-testimonial-content">
                         %6$s %7$s %8$s
                         %9$s %10$s
                     </div>
@@ -1238,8 +1219,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			</div>',
 			$alignment,
 			$img_position,
-			$this->render_quote_icon( 'ba-icon-absolute', 'absolute' ),
-			$this->render_quote_icon( 'ba-icon-bg', 'background' ),
+			$this->render_quote_icon( 'dtq-icon-absolute', 'absolute' ),
+			$this->render_quote_icon( 'dtq-icon-bg', 'background' ),
 			$this->_render_image( array( 'absolute' ) ),
 			$this->render_reviewer( 'top' ),
 			$this->render_rating( '_default' ),
@@ -1293,14 +1274,14 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-content',
+					'selector'    => '%%order_class%% .dtq-testimonial-content',
 					'declaration' => 'flex: 1 1;',
 				)
 			);
 
 			$this->get_responsive_styles(
 				'content_padding',
-				'%%order_class%% .ba-testimonial-content',
+				'%%order_class%% .dtq-testimonial-content',
 				array(
 					'primary' => 'padding',
 				),
@@ -1314,7 +1295,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-testimonial-inner .ba-testimonial-icon',
+				'selector'    => '%%order_class%% .dtq-testimonial-inner .dtq-testimonial-icon',
 				'declaration' => sprintf( 'text-align: %1$s!important;', $icon_alignment ),
 			)
 		);
@@ -1323,7 +1304,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-inner .ba-testimonial-icon',
+					'selector'    => '%%order_class%% .dtq-testimonial-inner .dtq-testimonial-icon',
 					'declaration' => sprintf( 'justify-content: flex-end!important;' ),
 				)
 			);
@@ -1331,7 +1312,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-inner .ba-testimonial-icon',
+					'selector'    => '%%order_class%% .dtq-testimonial-inner .dtq-testimonial-icon',
 					'declaration' => sprintf( 'justify-content: center!important;' ),
 				)
 			);
@@ -1339,12 +1320,12 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 		if ( 'off' === $use_custom_icon ) {
 
-			$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .ba-testimonial-icon span', '%%order_class%%:hover .ba-testimonial-icon span' );
+			$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .dtq-testimonial-icon span', '%%order_class%%:hover .dtq-testimonial-icon span' );
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-icon span',
+					'selector'    => '%%order_class%% .dtq-testimonial-icon span',
 					'declaration' => sprintf(
 						'%1$s
                     	opacity: %2$s;',
@@ -1357,7 +1338,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-icon svg',
+					'selector'    => '%%order_class%% .dtq-testimonial-icon svg',
 					'declaration' => sprintf(
 						'fill: %1$s;',
 						$icon_color
@@ -1367,7 +1348,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			// Icon Size.
 			$this->get_responsive_styles(
 				'icon_size',
-				'%%order_class%% .ba-testimonial-icon svg',
+				'%%order_class%% .dtq-testimonial-icon svg',
 				array( 'primary' => 'width' ),
 				array( 'default' => '70px' ),
 				$render_slug
@@ -1376,7 +1357,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-icon span',
+					'selector'    => '%%order_class%% .dtq-testimonial-icon span',
 					'declaration' => sprintf(
 						'background: %1$s;
 						opacity: %2$s;
@@ -1394,14 +1375,14 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			// Icon Size.
 			$this->get_responsive_styles(
 				'icon_size',
-				'%%order_class%% .ba-testimonial-icon span',
+				'%%order_class%% .dtq-testimonial-icon span',
 				array( 'primary' => 'width' ),
 				array( 'default' => '70px' ),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'icon_size',
-				'%%order_class%% .ba-testimonial-icon span',
+				'%%order_class%% .dtq-testimonial-icon span',
 				array( 'primary' => 'height' ),
 				array( 'default' => '70px' ),
 				$render_slug
@@ -1412,7 +1393,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-icon span',
+					'selector'    => '%%order_class%% .dtq-testimonial-icon span',
 					'declaration' => sprintf(
 						'margin-top: %1$s;margin-bottom: %2$s;',
 						$icon_top_spacing,
@@ -1421,7 +1402,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				)
 			);
 		} else {
-			$this->get_absolute_element_styles( $render_slug, 'icon', '%%order_class%% .ba-icon-absolute' );
+			$this->get_absolute_element_styles( $render_slug, 'icon', '%%order_class%% .dtq-icon-absolute' );
 		}
 
 		// Image.
@@ -1429,7 +1410,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-img',
+					'selector'    => '%%order_class%% .dtq-testimonial-img',
 					'declaration' => 'position: absolute; z-index: 99;',
 				)
 			);
@@ -1439,7 +1420,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-img',
+						'selector'    => '%%order_class%% .dtq-testimonial-img',
 						'declaration' => sprintf( '%1$s: 50%%;', $image__placement[0] ),
 					)
 				);
@@ -1447,7 +1428,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-img',
+						'selector'    => '%%order_class%% .dtq-testimonial-img',
 						'declaration' => sprintf( '%1$s: %2$s;', $image__placement[0], $img_offset_x ),
 					)
 				);
@@ -1458,7 +1439,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-img',
+						'selector'    => '%%order_class%% .dtq-testimonial-img',
 						'declaration' => sprintf( '%1$s:50%%;', $image__placement[1] ),
 					)
 				);
@@ -1466,7 +1447,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-img',
+						'selector'    => '%%order_class%% .dtq-testimonial-img',
 						'declaration' => sprintf( '%1$s: %2$s;', $image__placement[1], $img_offset_y ),
 					)
 				);
@@ -1505,7 +1486,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-img',
+					'selector'    => '%%order_class%% .dtq-testimonial-img',
 					'declaration' => "transform : translateX({$val_x}) translateY({$val_y});",
 				)
 			);
@@ -1517,14 +1498,14 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-reviewer',
+						'selector'    => '%%order_class%% .dtq-testimonial-reviewer',
 						'declaration' => 'display: flex; align-items: center;',
 					)
 				);
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-inner .ba-testimonial-reviewer *',
+						'selector'    => '%%order_class%% .dtq-testimonial-inner .dtq-testimonial-reviewer *',
 						'declaration' => 'text-align:' . $image_placement_alt . ';',
 					)
 				);
@@ -1534,7 +1515,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-reviewer',
+						'selector'    => '%%order_class%% .dtq-testimonial-reviewer',
 						'declaration' => 'flex-direction: row-reverse;',
 					)
 				);
@@ -1544,7 +1525,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		// Image Height.
 		$this->get_responsive_styles(
 			'image_height',
-			'%%order_class%% .ba-testimonial-img',
+			'%%order_class%% .dtq-testimonial-img',
 			array(
 				'primary' => 'height',
 			),
@@ -1570,7 +1551,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		// Image width.
 		$this->get_responsive_styles(
 			'image_width',
-			'%%order_class%% .ba-testimonial-img',
+			'%%order_class%% .dtq-testimonial-img',
 			array(
 				'primary' => 'width',
 			),
@@ -1599,7 +1580,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-img',
+						'selector'    => '%%order_class%% .dtq-testimonial-img',
 						'declaration' => sprintf( 'margin-bottom: %1$s; margin-top: %2$s;', $image_spacing_bottom, $image_spacing_top ),
 					)
 				);
@@ -1607,7 +1588,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-img',
+						'selector'    => '%%order_class%% .dtq-testimonial-img',
 						'declaration' => sprintf( 'margin-right: %1$s;', $image_spacing ),
 					)
 				);
@@ -1615,7 +1596,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-img',
+						'selector'    => '%%order_class%% .dtq-testimonial-img',
 						'declaration' => sprintf( 'margin-left: %1$s;', $image_spacing ),
 					)
 				);
@@ -1624,7 +1605,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-img',
+					'selector'    => '%%order_class%% .dtq-testimonial-img',
 					'declaration' => sprintf( 'margin-bottom: %1$s; margin-top: %2$s;', $image_spacing_bottom, $image_spacing_top ),
 				)
 			);
@@ -1634,7 +1615,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-testimonial-rating',
+				'selector'    => '%%order_class%% .dtq-testimonial-rating',
 				'declaration' => sprintf( 'padding-bottom: %1$s; padding-top: %2$s;', $ratings_spacing_bottom, $ratings_spacing_top ),
 			)
 		);
@@ -1642,7 +1623,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-testimonial-rating span',
+				'selector'    => '%%order_class%% .dtq-testimonial-rating span',
 				'declaration' => sprintf( 'color: %1$s; font-size: %2$s;', $stars_color, $stars_size ),
 			)
 		);
@@ -1651,7 +1632,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-rating span',
+					'selector'    => '%%order_class%% .dtq-testimonial-rating span',
 					'declaration' => sprintf( 'margin: 0 calc(%1$s / 2);', $stars_spacing_between ),
 				)
 			);
@@ -1659,7 +1640,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-rating span',
+					'selector'    => '%%order_class%% .dtq-testimonial-rating span',
 					'declaration' => sprintf( 'margin-left: %1$s;', $stars_spacing_between ),
 				)
 			);
@@ -1667,7 +1648,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-rating span',
+					'selector'    => '%%order_class%% .dtq-testimonial-rating span',
 					'declaration' => sprintf( 'margin-right: %1$s;', $stars_spacing_between ),
 				)
 			);
@@ -1677,7 +1658,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-testimonial-reviewer-text h3',
+				'selector'    => '%%order_class%% .dtq-testimonial-reviewer-text h3',
 				'declaration' => sprintf( 'padding-bottom: %1$s;', $name_bottom_spacing ),
 			)
 		);
@@ -1685,7 +1666,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-testimonial-title',
+				'selector'    => '%%order_class%% .dtq-testimonial-title',
 				'declaration' => sprintf( 'padding-bottom: %1$s;', $title_bottom_spacing ),
 			)
 		);
@@ -1693,7 +1674,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-testimonial-review',
+				'selector'    => '%%order_class%% .dtq-testimonial-review',
 				'declaration' => sprintf( 'margin-bottom: %1$s; margin-top: %2$s;', $review_bottom_spacing, $review_top_spacing ),
 			)
 		);
@@ -1708,12 +1689,12 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$bubble_radius     = explode( '|', $this->props['bubble_radius'] );
 
 		if ( $review_design === 'bubble' ) {
-			$this->get_custom_bg_style( $render_slug, 'bubble', '%%order_class%% .ba-testimonial-review', '%%order_class%%:hover .ba-testimonial-review' );
+			$this->get_custom_bg_style( $render_slug, 'bubble', '%%order_class%% .dtq-testimonial-review', '%%order_class%%:hover .dtq-testimonial-review' );
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-review',
+					'selector'    => '%%order_class%% .dtq-testimonial-review',
 					'declaration' => sprintf(
 						'
                     position: relative;
@@ -1731,7 +1712,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-testimonial-review:after',
+					'selector'    => '%%order_class%% .dtq-testimonial-review:after',
 					'declaration' => 'content: ""; width: 0;height: 0;position: absolute;border-style: solid;',
 				)
 			);
@@ -1740,7 +1721,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-review:after',
+						'selector'    => '%%order_class%% .dtq-testimonial-review:after',
 						'declaration' => sprintf(
 							'
                         border-width: 13px 13px 0 13px;
@@ -1754,7 +1735,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-review:after',
+						'selector'    => '%%order_class%% .dtq-testimonial-review:after',
 						'declaration' => sprintf(
 							'
                         border-width: 0 13px 13px 13px;
@@ -1770,7 +1751,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-review:after',
+						'selector'    => '%%order_class%% .dtq-testimonial-review:after',
 						'declaration' => 'left:' . $arrow_position_x . ';',
 					)
 				);
@@ -1778,7 +1759,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-review:after',
+						'selector'    => '%%order_class%% .dtq-testimonial-review:after',
 						'declaration' => 'right:' . $arrow_position_x . ';',
 					)
 				);
@@ -1786,7 +1767,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-testimonial-review:after',
+						'selector'    => '%%order_class%% .dtq-testimonial-review:after',
 						'declaration' => 'left: 50%; transform: translateX(-13px);',
 					)
 				);

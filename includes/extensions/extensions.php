@@ -30,6 +30,10 @@ function brainaddons_register_extensions() {
 		require_once plugin_dir_path( __FILE__ ) . 'library-shortcodes/ext-library-shortcodes.php';
 	}
 
+	if ( ! in_array( 'post-duplicator', $inactive_extensions, true ) ) {
+		require_once plugin_dir_path( __FILE__ ) . 'post-duplicator/post-duplicator.php';
+	}
+
 }
 
 // Kickoff.

@@ -34,19 +34,19 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		$this->custom_css_fields = array(
 			'title'  => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-news-title',
+				'selector' => '%%order_class%% .dtq-news-title',
 			),
 			'item'   => array(
 				'label'    => esc_html__( 'News Item', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-news-wrap li',
+				'selector' => '%%order_class%% .dtq-news-wrap li',
 			),
 			'text'   => array(
 				'label'    => esc_html__( 'News Text', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-news-wrap li a',
+				'selector' => '%%order_class%% .dtq-news-wrap li a',
 			),
 			'bullet' => array(
 				'label'    => esc_html__( 'Bullet', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-news-wrap li a:before',
+				'selector' => '%%order_class%% .dtq-news-wrap li a:before',
 			),
 		);
 	}
@@ -79,6 +79,19 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 
+			'post_type'          => array(
+				'label'            => esc_html__( 'Post Type', 'addons-for-divi' ),
+				'type'             => 'select',
+				'option_category'  => 'configuration',
+				'options'          => et_get_registered_post_type_options( false, false ),
+				'description'      => esc_html__( 'Choose News of which post type you would like to display.', 'addons-for-divi' ),
+				'computed_affects' => array(
+					'__posts',
+				),
+				'toggle_slug'      => 'content',
+				'default'          => 'post',
+			),
+
 			'include_categories' => array(
 				'label'            => esc_html__( 'Included Categories', 'addons-for-divi' ),
 				'description'      => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'addons-for-divi' ),
@@ -92,6 +105,9 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'option_category'  => 'basic_option',
 				'toggle_slug'      => 'content',
 				'computed_affects' => array( '__news' ),
+				'show_if'          => array(
+					'post_type' => 'post',
+				),
 			),
 
 			'order_by'           => array(
@@ -257,6 +273,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'type'                => 'computed',
 				'computed_callback'   => array( 'DTQ_News_Ticker', 'get_news' ),
 				'computed_depends_on' => array(
+					'post_type',
 					'include_categories',
 					'news_count',
 					'exclude_posts',
@@ -293,8 +310,8 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			'toggle_slug'  => 'title',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-news-title',
-					'border_styles' => '%%order_class%% .ba-news-title',
+					'border_radii'  => '%%order_class%% .dtq-news-title',
+					'border_styles' => '%%order_class%% .dtq-news-title',
 				),
 				'important' => 'all',
 			),
@@ -330,7 +347,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		$advanced_fields['fonts']['title'] = array(
 			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-news-title',
+				'main'      => '%%order_class%% .dtq-news-title',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -350,7 +367,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 		$advanced_fields['fonts']['text'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-news-wrap li',
+				'main'      => '%%order_class%% .dtq-news-wrap li',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -373,6 +390,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 	public static function get_news( $args = array(), $conditional_tags = array(), $current_page = array() ) {
 		$defaults = array(
+			'post_type'          => '',
 			'include_categories' => '',
 			'order_by'           => '',
 			'order'              => '',
@@ -382,6 +400,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		);
 
 		$args               = wp_parse_args( $args, $defaults );
+		$post_type          = $args['post_type'];
 		$include_categories = $args['include_categories'];
 		$order_by           = $args['order_by'];
 		$order              = $args['order'];
@@ -391,7 +410,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 		$query_args = array(
 			'posts_per_page' => intval( $news_count ),
-			'post_type'      => 'post',
+			'post_type'      => $post_type,
 			'post_status'    => 'publish',
 			'orderby'        => $order_by,
 			'order'          => $order,
@@ -404,8 +423,11 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			$query_args['post__not_in'] = $exclude_posts;
 		}
 
-		$post_id           = isset( $current_page['id'] ) ? (int) $current_page['id'] : 0;
-		$query_args['cat'] = implode( ',', self::filter_include_categories( $include_categories, $post_id ) );
+		$post_id = isset( $current_page['id'] ) ? (int) $current_page['id'] : 0;
+
+		if ( 'post' === $post_type ) {
+			$query_args['cat'] = implode( ',', self::filter_include_categories( $include_categories, $post_id ) );
+		}
 
 		$query = new WP_Query( $query_args );
 
@@ -434,41 +456,25 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		$title     = $this->props['title'];
 
 		if ( 'on' === $use_title ) {
-			return sprintf( '<div class="ba-news-title">%1$s</div>', $title );
+			return sprintf( '<div class="dtq-news-title">%1$s</div>', $title );
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
-		$include_categories = $this->props['include_categories'];
-		$order_by           = $this->props['order_by'];
-		$order              = $this->props['order'];
-		$news_count         = $this->props['news_count'];
-		$post_offset        = $this->props['post_offset'];
-		$exclude_posts      = $this->props['exclude_posts'];
-
-		$post_query_var = array(
-			'include_categories' => $include_categories,
-			'order_by'           => $order_by,
-			'order'              => $order,
-			'news_count'         => $news_count,
-			'post_offset'        => $post_offset,
-			'exclude_posts'      => $exclude_posts,
-		);
-
 		return sprintf(
-			'<div class="ba-module ba-news-tricker">
+			'<div class="dtq-module dtq-news-tricker">
                 %1$s
-                <div id="parent" class="ba-news-container">
-                    <ul class="ba-news-wrap">
+                <div id="parent" class="dtq-news-container">
+                    <ul class="dtq-news-wrap">
                         %2$s
                     </ul>
                 </div>
             </div>',
 			$this->render_title(),
-			self::get_news( $post_query_var )
+			self::get_news( $this->props )
 		);
 	}
 
@@ -491,14 +497,14 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-news-wrap li a',
+					'selector'    => '%%order_class%% .dtq-news-wrap li a',
 					'declaration' => 'display: inline-block; position:relative;',
 				)
 			);
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-news-wrap li a:before',
+					'selector'    => '%%order_class%% .dtq-news-wrap li a:before',
 					'declaration' => sprintf(
 						'
                     content: "";
@@ -520,7 +526,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-news-title',
+				'selector'    => '%%order_class%% .dtq-news-title',
 				'declaration' => $this->process_margin_padding( $title_padding, 'padding', false ),
 			)
 		);
@@ -531,7 +537,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-news-title',
+					'selector'    => '%%order_class%% .dtq-news-title',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => $this->process_margin_padding( $title_padding_tablet, 'padding', false ),
 				)
@@ -544,7 +550,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-news-title',
+					'selector'    => '%%order_class%% .dtq-news-title',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => $this->process_margin_padding( $title_padding_phone, 'padding', false ),
 				)
@@ -554,7 +560,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-news-wrap',
+				'selector'    => '%%order_class%% .dtq-news-wrap',
 				'declaration' => sprintf(
 					'
                 animation: %1$s linear 0s infinite %2$s none running news-move;',
@@ -567,7 +573,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-news-wrap li',
+				'selector'    => '%%order_class%% .dtq-news-wrap li',
 				'declaration' => sprintf(
 					'
                 padding: 0 %1$s;',
@@ -580,7 +586,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%%:hover .ba-news-wrap',
+					'selector'    => '%%order_class%%:hover .dtq-news-wrap',
 					'declaration' => '
                     -webkit-animation-play-state: paused!important;
                     animation-play-state: paused!important;',
@@ -592,14 +598,14 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-news-tricker',
+					'selector'    => '%%order_class%% .dtq-news-tricker',
 					'declaration' => 'flex-direction: row-reverse;',
 				)
 			);
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-news-title',
+					'selector'    => '%%order_class%% .dtq-news-title',
 					'declaration' => 'margin-left: 10px;',
 				)
 			);
@@ -607,14 +613,14 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-news-title',
+					'selector'    => '%%order_class%% .dtq-news-title',
 					'declaration' => 'margin-right: 10px;',
 				)
 			);
 		}
 
 		// title bg.
-		$this->get_custom_bg_style( $render_slug, 'title', '%%order_class%% .ba-news-title', '%%order_class%%:hover .ba-news-title' );
+		$this->get_custom_bg_style( $render_slug, 'title', '%%order_class%% .dtq-news-title', '%%order_class%%:hover .dtq-news-title' );
 
 	}
 }

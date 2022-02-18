@@ -61,7 +61,7 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 			),
 			'connector' => array(
 				'label'    => esc_html__( 'Connector', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-btn__connector',
+				'selector' => '%%order_class%% .dtq-btn__connector',
 			),
 		);
 	}
@@ -80,6 +80,7 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 				'default_on_front' => 'left',
 				'toggle_slug'      => 'common',
 				'tab_slug'         => 'advanced',
+				'mobile_options'   => true,
 			),
 
 			'btn_a_text'             => array(
@@ -183,7 +184,7 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 				'description'     => esc_html__( 'Select icon for your button connector.', 'addons-for-divi' ),
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
-				'class'           => array( 'ba-btn__connector' ),
+				'class'           => array( 'dtq-btn__connector' ),
 				'toggle_slug'     => 'btns',
 				'tab_slug'        => 'general',
 				'sub_toggle'      => 'connector',
@@ -372,22 +373,45 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 		$button_url    = trim( $button_link );
 		$new_tab       = '_blank' === $this->props['btn_a_link_target'] ? 'on' : 'off';
 		$button_rel    = $this->props['btn_a_rel'];
-		$button_icon   = ! empty( $this->props['btn_a_icon'] ) ? $this->props['btn_a_icon'] : '5';
 
-		$button_output = $this->render_button(
+		$custom_icon_values = et_pb_responsive_options()->get_property_values( $this->props, 'btn_a_icon' );
+		$custom_icon        = isset( $custom_icon_values['desktop'] ) ? $custom_icon_values['desktop'] : '';
+		$custom_icon_tablet = isset( $custom_icon_values['tablet'] ) ? $custom_icon_values['tablet'] : '';
+		$custom_icon_phone  = isset( $custom_icon_values['phone'] ) ? $custom_icon_values['phone'] : '';
+		$multi_view         = et_pb_multi_view_options( $this );
+
+		if ( function_exists( 'dtq_inject_fa_icons' ) ) {
+			// Inject Font Awesome Manually!.
+			dtq_inject_fa_icons( $this->props['btn_a_icon'] );
+		}
+
+		$button = $this->render_button(
 			array(
-				'button_classname' => array( 'btn-el', 'btn-el--primary' ),
-				'button_custom'    => $button_custom,
-				'button_rel'       => $button_rel,
-				'button_text'      => $button_text,
-				'button_url'       => $button_url,
-				'custom_icon'      => $button_icon,
-				'has_wrapper'      => false,
-				'url_new_window'   => $new_tab,
+				'button_id'           => $this->module_id( false ),
+				'button_classname'    => array( 'btn-el', 'btn-el--primary' ),
+				'button_custom'       => $button_custom,
+				'button_text'         => $button_text,
+				'button_rel'          => $button_rel,
+				'button_text_escaped' => true,
+				'button_url'          => $button_url,
+				'custom_icon'         => $custom_icon,
+				'custom_icon_tablet'  => $custom_icon_tablet,
+				'custom_icon_phone'   => $custom_icon_phone,
+				'url_new_window'      => $new_tab,
+				'has_wrapper'         => false,
+				'multi_view_data'     => $multi_view->render_attrs(
+					array(
+						'content'        => '{{btn_a_text}}',
+						'hover_selector' => '%%order_class%% .btn-el--primary',
+						'visibility'     => array(
+							'button_text' => '__not_empty',
+						),
+					)
+				),
 			)
 		);
 
-		return sprintf( '%1$s', $button_output );
+		return $button;
 
 	}
 
@@ -399,22 +423,45 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 		$button_url    = trim( $button_link );
 		$new_tab       = '_blank' === $this->props['btn_b_link_target'] ? 'on' : 'off';
 		$button_rel    = $this->props['btn_b_rel'];
-		$button_icon   = ! empty( $this->props['btn_b_icon'] ) ? $this->props['btn_b_icon'] : '5';
 
-		$button_output = $this->render_button(
+		$custom_icon_values = et_pb_responsive_options()->get_property_values( $this->props, 'btn_b_icon' );
+		$custom_icon        = isset( $custom_icon_values['desktop'] ) ? $custom_icon_values['desktop'] : '';
+		$custom_icon_tablet = isset( $custom_icon_values['tablet'] ) ? $custom_icon_values['tablet'] : '';
+		$custom_icon_phone  = isset( $custom_icon_values['phone'] ) ? $custom_icon_values['phone'] : '';
+		$multi_view         = et_pb_multi_view_options( $this );
+
+		if ( function_exists( 'dtq_inject_fa_icons' ) ) {
+			// Inject Font Awesome Manually!.
+			dtq_inject_fa_icons( $this->props['btn_b_icon'] );
+		}
+
+		$button = $this->render_button(
 			array(
-				'button_classname' => array( 'btn-el', 'btn-el--secondary' ),
-				'button_custom'    => $button_custom,
-				'button_rel'       => $button_rel,
-				'button_text'      => $button_text,
-				'button_url'       => $button_url,
-				'custom_icon'      => $button_icon,
-				'has_wrapper'      => false,
-				'url_new_window'   => $new_tab,
+				'button_id'           => $this->module_id( false ),
+				'button_classname'    => array( 'btn-el', 'btn-el--secondary' ),
+				'button_custom'       => $button_custom,
+				'button_text'         => $button_text,
+				'button_rel'          => $button_rel,
+				'button_text_escaped' => true,
+				'button_url'          => $button_url,
+				'custom_icon'         => $custom_icon,
+				'custom_icon_tablet'  => $custom_icon_tablet,
+				'custom_icon_phone'   => $custom_icon_phone,
+				'url_new_window'      => $new_tab,
+				'has_wrapper'         => false,
+				'multi_view_data'     => $multi_view->render_attrs(
+					array(
+						'content'        => '{{btn_b_text}}',
+						'hover_selector' => '%%order_class%% .btn-el--secondary',
+						'visibility'     => array(
+							'button_text' => '__not_empty',
+						),
+					)
+				),
 			)
 		);
 
-		return sprintf( '%1$s', $button_output );
+		return $button;
 
 	}
 
@@ -431,12 +478,12 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 			$connector_text = $connector_text;
 		} elseif ( 'icon' === $this->props['connector_type'] ) {
 
-			$connector_text = sprintf( '<i class="ba-et-icon" data-icon="%1$s"></i>', $icon );
+			$connector_text = sprintf( '<i class="dtq-et-icon" data-icon="%1$s"></i>', $icon );
 		}
 
 		if ( 'empty' !== $connector_type ) {
 			return sprintf(
-				'<div class="ba-btn__connector ba-btn__connector--%1$s">
+				'<div class="dtq-btn__connector dtq-btn__connector--%1$s">
 					%2$s
 				</div>',
 				$connector_type,
@@ -445,21 +492,19 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
 		return sprintf(
-			'
-			<div class="ba-module ba-dual-btn content-%1$s">
-				<div class="ba-btn-wrap">
-					%2$s %3$s
+			'<div class="dtq-module dtq-dual-btn">
+				<div class="dtq-btn-wrap">
+					%1$s %2$s
 				</div>
-				<div class="ba-btn-wrap">
-					%4$s
+				<div class="dtq-btn-wrap">
+					%3$s
 				</div>
 			</div>',
-			$this->props['btn_alignment'],
 			$this->render_button_a(),
 			$this->renderConnector(),
 			$this->render_button_b()
@@ -468,8 +513,8 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 
 	public function render_css( $render_slug ) {
 
-		$this->get_buttons_styles( 'btn_a', $render_slug, '%%order_class%% .ba-dual-btn .btn-el--primary' );
-		$this->get_buttons_styles( 'btn_b', $render_slug, '%%order_class%% .ba-dual-btn .btn-el--secondary' );
+		$this->get_buttons_styles( 'btn_a', $render_slug, '%%order_class%% .dtq-dual-btn .btn-el--primary' );
+		$this->get_buttons_styles( 'btn_b', $render_slug, '%%order_class%% .dtq-dual-btn .btn-el--secondary' );
 
 		// advanced border radius.
 		$btn_a_radius = $this->props['btn_a_radius'];
@@ -481,7 +526,7 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => 'body #page-container %%order_class%% .ba-dual-btn .ba-btn-wrap .btn-el--primary, .et-db #et-boc %%order_class%% .ba-dual-btn .ba-btn-wrap .btn-el--primary',
+					'selector'    => 'body #page-container %%order_class%% .dtq-dual-btn .dtq-btn-wrap .btn-el--primary, .et-db #et-boc %%order_class%% .dtq-dual-btn .dtq-btn-wrap .btn-el--primary',
 					'declaration' => sprintf(
 						'
 					border-top-left-radius: %1$s!important;
@@ -503,7 +548,7 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => 'body #page-container %%order_class%% .ba-dual-btn .ba-btn-wrap .btn-el--secondary, .et-db #et-boc %%order_class%% .ba-dual-btn .ba-btn-wrap .btn-el--secondary',
+					'selector'    => 'body #page-container %%order_class%% .dtq-dual-btn .dtq-btn-wrap .btn-el--secondary, .et-db #et-boc %%order_class%% .dtq-dual-btn .dtq-btn-wrap .btn-el--secondary',
 					'declaration' => sprintf(
 						'
 					border-top-left-radius: %1$s!important;
@@ -523,7 +568,7 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-btn__connector',
+					'selector'    => '%%order_class%% .dtq-btn__connector',
 					'declaration' => sprintf(
 						'
 					width: %1$s;
@@ -611,6 +656,18 @@ class DTQ_Dual_Button extends BA_Builder_Module {
 				)
 			);
 		}
+
+		$this->get_responsive_styles(
+			'btn_alignment',
+			'%%order_class%% .dtq-dual-btn',
+			array(
+				'primary'   => 'justify-content',
+				'important' => true,
+			),
+			array( 'default' => 'left' ),
+			$render_slug
+		);
+
 	}
 }
 

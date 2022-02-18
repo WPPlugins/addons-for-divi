@@ -35,19 +35,19 @@ class DTQ_Alert extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'icon_wrapper' => array(
 				'label'    => esc_html__( 'Icon Wrapper', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-alert .ba-alert-icon',
+				'selector' => '%%order_class%% .dtq-alert .dtq-alert-icon',
 			),
 			'icon'         => array(
 				'label'    => esc_html__( 'Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-alert .ba-alert-icon .ba-alert-icon-inner',
+				'selector' => '%%order_class%% .dtq-alert .dtq-alert-icon .dtq-alert-icon-inner',
 			),
 			'title'        => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-alert .ba-alert-title',
+				'selector' => '%%order_class%% .dtq-alert .dtq-alert-title',
 			),
 			'desc'         => array(
 				'label'    => esc_html__( 'Description', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-alert .ba-alert-desc',
+				'selector' => '%%order_class%% .dtq-alert .dtq-alert-desc',
 			),
 		);
 	}
@@ -353,7 +353,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		$advanced_fields['fonts']['title'] = array(
 			'label'        => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'          => array(
-				'main'      => '%%order_class%% .ba-alert-title',
+				'main'      => '%%order_class%% .dtq-alert-title',
 				'important' => 'all',
 			),
 			'tab_slug'     => 'advanced',
@@ -372,16 +372,16 @@ class DTQ_Alert extends BA_Builder_Module {
 		$advanced_fields['fonts']['body'] = array(
 			'label'          => esc_html__( 'Body', 'addons-for-divi' ),
 			'css'            => array(
-				'main'        => '%%order_class%% .ba-alert-desc',
-				'line_height' => '%%order_class%% .ba-alert-desc',
-				'text_align'  => '%%order_class%% .ba-alert-desc',
-				'text_shadow' => '%%order_class%% .ba-alert-desc',
+				'main'        => '%%order_class%% .dtq-alert-desc',
+				'line_height' => '%%order_class%% .dtq-alert-desc',
+				'text_align'  => '%%order_class%% .dtq-alert-desc',
+				'text_shadow' => '%%order_class%% .dtq-alert-desc',
 				'important'   => 'all',
 			),
 			'block_elements' => array(
 				'tabbed_subtoggles' => true,
 				'css'               => array(
-					'main'      => '%%order_class%% .ba-alert-desc',
+					'main'      => '%%order_class%% .dtq-alert-desc',
 					'important' => 'all',
 				),
 			),
@@ -391,8 +391,8 @@ class DTQ_Alert extends BA_Builder_Module {
 			'toggle_slug'     => 'icon',
 			'css'             => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-alert-icon',
-					'border_styles' => '%%order_class%% .ba-alert-icon',
+					'border_radii'  => '%%order_class%% .dtq-alert-icon',
+					'border_styles' => '%%order_class%% .dtq-alert-icon',
 				),
 				'important' => 'all',
 			),
@@ -433,10 +433,14 @@ class DTQ_Alert extends BA_Builder_Module {
 	public function render_icon() {
 		if ( 'on' === $this->props['use_icon'] ) {
 			$icon = esc_attr( et_pb_process_font_icon( $this->props['icon'] ) );
+
+			// Inject Font Awesome Manually!.
+			dtq_inject_fa_icons( $this->props['icon'] );
+
 			if ( $icon ) {
 				return sprintf(
-					'<div class="ba-alert-icon">
-						<i class="ba-et-icon ba-alert-icon-inner" data-icon="%1$s"></i>
+					'<div class="dtq-alert-icon">
+						<i class="dtq-et-icon dtq-alert-icon-inner">%1$s</i>
 					</div>',
 					$icon
 				);
@@ -450,7 +454,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		$processed_title_level = et_pb_process_header_level( $title_level, 'h5' );
 		$processed_title_level = esc_html( $processed_title_level );
 		if ( ! empty( $title_text ) ) {
-			return sprintf( '<%2$s class="ba-alert-title">%1$s</%2$s>', $title_text, $processed_title_level );
+			return sprintf( '<%2$s class="dtq-alert-title">%1$s</%2$s>', $title_text, $processed_title_level );
 		}
 	}
 
@@ -459,7 +463,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		$content     = force_balance_tags( $description );
 		$content     = preg_replace( '~\s?<p></p>\s?~', '', $content );
 		if ( ! empty( $content ) ) {
-			return sprintf( '<div class="ba-alert-desc">%1$s</div>', $content );
+			return sprintf( '<div class="dtq-alert-desc">%1$s</div>', $content );
 		}
 	}
 
@@ -474,8 +478,8 @@ class DTQ_Alert extends BA_Builder_Module {
 
 		if ( $image ) {
 			return sprintf(
-				'<div class="ba-alert-icon">
-					<img class="ba-alert-icon-inner" src="%1$s" alt="%2$s">
+				'<div class="dtq-alert-icon">
+					<img class="dtq-alert-icon-inner" src="%1$s" alt="%2$s">
 				</div>',
 				$image,
 				$image_alt
@@ -485,18 +489,18 @@ class DTQ_Alert extends BA_Builder_Module {
 
 	public function render_dismiss() {
 		if ( 'on' === $this->props['show_dismiss'] ) {
-			return '<div class="ba-alert-dismiss"><i data-icon="M" class="ba-et-icon"></i></div>';
+			return '<div class="dtq-alert-dismiss"><i data-icon="M" class="dtq-et-icon"></i></div>';
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->apply_css( $render_slug );
 		$alert_type = $this->props['alert_type'];
 		return sprintf(
-			'<div class="ba-module ba-alert ba-alert-%1$s">
+			'<div class="dtq-module dtq-alert dtq-alert-%1$s">
 				%2$s
-				<div class="ba-alert-content">
+				<div class="dtq-alert-content">
 					%3$s %4$s
 				</div>
 				%5$s
@@ -569,7 +573,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%%, %%order_class%% .ba-alert-title',
+				'selector'    => '%%order_class%%, %%order_class%% .dtq-alert-title',
 				'declaration' => sprintf( 'color: %1$s;', $alerts_data[ $alert_type ]['color'] ),
 			)
 		);
@@ -577,7 +581,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% a, %%order_class%% .ba-alert-dismiss i, %%order_class%% strong, %%order_class%% b',
+				'selector'    => '%%order_class%% a, %%order_class%% .dtq-alert-dismiss i, %%order_class%% strong, %%order_class%% b',
 				'declaration' => sprintf( 'color: %1$s;', $alerts_data[ $alert_type ]['link'] ),
 			)
 		);
@@ -596,7 +600,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-alert',
+				'selector'    => '%%order_class%% .dtq-alert',
 				'declaration' => sprintf( 'align-items: %1$s;', $align_items ),
 			)
 		);
@@ -605,7 +609,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		if ( 'on' === $use_icon ) {
 			$this->get_responsive_styles(
 				'icon_size',
-				'%%order_class%% .ba-alert-icon',
+				'%%order_class%% .dtq-alert-icon',
 				array( 'primary' => 'font-size' ),
 				array( 'default' => '40px' ),
 				$render_slug
@@ -613,7 +617,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		} else {
 			$this->get_responsive_styles(
 				'icon_size',
-				'%%order_class%% .ba-alert-icon img',
+				'%%order_class%% .dtq-alert-icon img',
 				array( 'primary' => 'width' ),
 				array( 'default' => '40px' ),
 				$render_slug
@@ -621,11 +625,25 @@ class DTQ_Alert extends BA_Builder_Module {
 		}
 
 		if ( 'on' === $use_icon ) {
+			$this->generate_styles(
+				array(
+					'utility_arg'    => 'icon_font_family',
+					'render_slug'    => $render_slug,
+					'base_attr_name' => 'icon',
+					'important'      => true,
+					'selector'       => '%%order_class%% .dtq-alert-icon',
+					'processor'      => array(
+						'ET_Builder_Module_Helper_Style_Processor',
+						'process_extended_icon',
+					),
+				)
+			);
+
 			if ( $icon_color ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-alert-icon',
+						'selector'    => '%%order_class%% .dtq-alert-icon',
 						'declaration' => sprintf( 'color: %1$s;', $icon_color ),
 					)
 				);
@@ -635,7 +653,7 @@ class DTQ_Alert extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%%:hover .ba-alert-icon i',
+						'selector'    => '%%order_class%%:hover .dtq-alert-icon i',
 						'declaration' => sprintf( 'color: %1$s;', $icon_color_hover ),
 					)
 				);
@@ -644,7 +662,7 @@ class DTQ_Alert extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'icon_spacing',
-			'%%order_class%% .ba-alert-icon',
+			'%%order_class%% .dtq-alert-icon',
 			array( 'primary' => 'margin-right' ),
 			array( 'default' => '20px' ),
 			$render_slug
@@ -657,25 +675,25 @@ class DTQ_Alert extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-alert-icon',
+						'selector'    => '%%order_class%% .dtq-alert-icon',
 						'declaration' => 'background-color: rgba(0,0,0,.1);',
 					)
 				);
 			} else {
-				$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .ba-alert-icon', '%%order_class%%:hover .ba-alert-icon' );
+				$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .dtq-alert-icon', '%%order_class%%:hover .dtq-alert-icon' );
 			}
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-alert-icon',
+					'selector'    => '%%order_class%% .dtq-alert-icon',
 					'declaration' => 'display: flex; align-items: center; justify-content: center;',
 				)
 			);
 
 			$this->get_responsive_styles(
 				'icon_width',
-				'%%order_class%% .ba-alert-icon',
+				'%%order_class%% .dtq-alert-icon',
 				array( 'primary' => 'width' ),
 				array( 'default' => '80px' ),
 				$render_slug
@@ -683,7 +701,7 @@ class DTQ_Alert extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'icon_height',
-				'%%order_class%% .ba-alert-icon',
+				'%%order_class%% .dtq-alert-icon',
 				array( 'primary' => 'height' ),
 				array( 'default' => '80px' ),
 				$render_slug
@@ -692,7 +710,7 @@ class DTQ_Alert extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-alert-icon',
+					'selector'    => '%%order_class%% .dtq-alert-icon',
 					'declaration' => 'overflow: visible!important; border-radius: 0 0 0 0!important;',
 				)
 			);
@@ -701,7 +719,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		// Dismiss.
 		$this->get_responsive_styles(
 			'dismiss_size',
-			'%%order_class%% .ba-alert-dismiss i',
+			'%%order_class%% .dtq-alert-dismiss i',
 			array( 'primary' => 'font-size' ),
 			array( 'default' => '22px' ),
 			$render_slug
@@ -709,7 +727,7 @@ class DTQ_Alert extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'dismiss_spacing',
-			'%%order_class%% .ba-alert-dismiss',
+			'%%order_class%% .dtq-alert-dismiss',
 			array( 'primary' => 'margin-left' ),
 			array( 'default' => '20px' ),
 			$render_slug
@@ -719,7 +737,7 @@ class DTQ_Alert extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-alert-dismiss i',
+					'selector'    => '%%order_class%% .dtq-alert-dismiss i',
 					'declaration' => sprintf( 'color: %1$s;', $dismiss_color ),
 				)
 			);
@@ -729,7 +747,7 @@ class DTQ_Alert extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-alert-dismiss:hover i',
+					'selector'    => '%%order_class%% .dtq-alert-dismiss:hover i',
 					'declaration' => sprintf( 'color: %1$s;', $dismiss_color_hover ),
 				)
 			);
@@ -738,7 +756,7 @@ class DTQ_Alert extends BA_Builder_Module {
 		if ( $title_spacing ) {
 			$this->get_responsive_styles(
 				'title_spacing',
-				'%%order_class%% .ba-alert .ba-alert-title',
+				'%%order_class%% .dtq-alert .dtq-alert-title',
 				array( 'primary' => 'padding-bottom' ),
 				array( 'default' => '0px' ),
 				$render_slug

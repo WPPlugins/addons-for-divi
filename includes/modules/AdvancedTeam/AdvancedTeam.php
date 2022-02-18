@@ -53,23 +53,23 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'photo'     => array(
 				'label'    => esc_html__( 'Photo', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-team figure img',
+				'selector' => '%%order_class%% .dtq-team figure img',
 			),
 			'name'      => array(
 				'label'    => esc_html__( 'Member Name', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-team-content h3',
+				'selector' => '%%order_class%% .dtq-team-content h3',
 			),
 			'job_title' => array(
 				'label'    => esc_html__( 'Job Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-team-content .ba-team-content-job-title',
+				'selector' => '%%order_class%% .dtq-team-content .dtq-team-content-job-title',
 			),
 			'short_bio' => array(
 				'label'    => esc_html__( 'Member Bio', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-team-content p',
+				'selector' => '%%order_class%% .dtq-team-content p',
 			),
 			'social'    => array(
 				'label'    => esc_html__( 'Social Network', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-team-social .ba-icon',
+				'selector' => '%%order_class%% .dtq-team-social .dtq-icon',
 			),
 		);
 	}
@@ -597,7 +597,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		$advanced_fields['fonts']['name'] = array(
 			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-team-content .ba-team-content-name',
+				'main'      => '%%order_class%% .dtq-team-content .dtq-team-content-name',
 				'important' => 'all',
 			),
 			'important'       => 'all',
@@ -620,7 +620,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		$advanced_fields['fonts']['job_title'] = array(
 			'label'           => esc_html__( 'Job Title', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-team-content .ba-team-content-job-title',
+				'main'      => '%%order_class%% .dtq-team-content .dtq-team-content-job-title',
 				'important' => 'all',
 			),
 			'important'       => 'all',
@@ -643,7 +643,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		$advanced_fields['fonts']['short_bio'] = array(
 			'label'           => esc_html__( 'Bio', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-team-content .ba-team-content-bio',
+				'main'      => '%%order_class%% .dtq-team-content .dtq-team-content-bio',
 				'important' => 'all',
 			),
 			'important'       => 'all',
@@ -665,14 +665,14 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-team',
+				'main'      => '%%order_class%% .dtq-team',
 				'important' => 'all',
 			),
 		);
 
 		$advanced_fields['background'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-team',
+				'main'      => '%%order_class%% .dtq-team',
 				'important' => 'all',
 			),
 		);
@@ -681,7 +681,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			'label'       => esc_html__( 'Content Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'content',
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-team-content',
+				'main'      => '%%order_class%% .dtq-team-content',
 				'important' => 'all',
 			),
 		);
@@ -690,7 +690,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'toggle_slug' => 'box_shadow',
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-team',
+				'main'      => '%%order_class%% .dtq-team',
 				'important' => 'all',
 			),
 		);
@@ -700,8 +700,8 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			'toggle_slug'  => 'content',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-team-content',
-					'border_styles' => '%%order_class%% .ba-team-content',
+					'border_radii'  => '%%order_class%% .dtq-team-content',
+					'border_styles' => '%%order_class%% .dtq-team-content',
 				),
 				'important' => 'all',
 			),
@@ -719,8 +719,8 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			'toggle_slug' => 'border',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-team',
-					'border_styles' => '%%order_class%% .ba-team',
+					'border_radii'  => '%%order_class%% .dtq-team',
+					'border_styles' => '%%order_class%% .dtq-team',
 				),
 				'important' => 'all',
 			),
@@ -739,8 +739,8 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			'toggle_slug'  => 'photo',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-team figure img',
-					'border_styles' => '%%order_class%% .ba-team figure img',
+					'border_radii'  => '%%order_class%% .dtq-team figure img',
+					'border_styles' => '%%order_class%% .dtq-team figure img',
 				),
 				'important' => 'all',
 			),
@@ -756,21 +756,21 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-team',
+				'main'      => '%%order_class%% .dtq-team',
 				'important' => 'all',
 			),
 		);
 
 		$advanced_fields['width'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-team',
+				'main'      => '%%order_class%% .dtq-team',
 				'important' => 'all',
 			),
 		);
 
 		$advanced_fields['height'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-team',
+				'main'      => '%%order_class%% .dtq-team',
 				'important' => 'all',
 			),
 		);
@@ -786,10 +786,10 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		$photo_alt    = $this->props['photo_alt'];
 
 		return sprintf(
-			'<img class="ba-swapped-img %3$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%4$s"/>',
+			'<img class="dtq-swapped-img %3$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%4$s"/>',
 			$photo,
 			$data_schema,
-			'on' === $use_lightbox ? 'ba-lightbox' : '',
+			'on' === $use_lightbox ? 'dtq-lightbox' : '',
 			$photo_alt
 		);
 	}
@@ -797,7 +797,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 	public function render_name() {
 
 		if ( ! empty( $this->props['member_name'] ) ) {
-			return sprintf( '<h3 class="ba-team-content-name">%1$s</h3>', $this->props['member_name'] );
+			return sprintf( '<h3 class="dtq-team-content-name">%1$s</h3>', $this->props['member_name'] );
 		}
 
 	}
@@ -805,13 +805,13 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 	public function render_job_title() {
 
 		if ( ! empty( $this->props['job_title'] ) ) {
-			return sprintf( '<div class="ba-team-content-job-title">%1$s</div>', $this->props['job_title'] );
+			return sprintf( '<div class="dtq-team-content-job-title">%1$s</div>', $this->props['job_title'] );
 		}
 	}
 
 	public function render_bio() {
 		if ( ! empty( $this->props['short_bio'] ) ) {
-			return sprintf( '<div class="ba-team-content-bio">%1$s</div>', wp_strip_all_tags( $this->props['short_bio'] ) );
+			return sprintf( '<div class="dtq-team-content-bio">%1$s</div>', wp_strip_all_tags( $this->props['short_bio'] ) );
 		}
 	}
 
@@ -880,7 +880,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 				}
 
 				$html = $html . sprintf(
-					'<li><a class="ba-icon" href="%3$s%2$s"><span>%1$s</span></a></li>',
+					'<li><a class="dtq-icon" href="%3$s%2$s"><span>%1$s</span></a></li>',
 					$icon,
 					$this->props[ $item['type'] ],
 					$href_prefix
@@ -893,11 +893,11 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			return;
 		}
 
-		return sprintf( '<ul class="ba-team-social item-%1$s">%2$s</ul>', $this->props['content_alignment'], $html );
+		return sprintf( '<ul class="dtq-team-social item-%1$s">%2$s</ul>', $this->props['content_alignment'], $html );
 
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
@@ -907,20 +907,21 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		$links_position         = $this->props['links_position'];
 		$processed_overlay_icon = esc_attr( et_pb_process_font_icon( $this->props['overlay_icon'] ) );
 		$overlay_icon           = ! empty( $processed_overlay_icon ) ? $processed_overlay_icon : '';
+		dtq_inject_fa_icons( $this->props['overlay_icon'] );
+		array_push( $classes, 'dtq-module dtq-team dtq-bg-support dtq-swapped-img-selector' );
 
-		array_push( $classes, 'ba-module ba-team ba-bg-support ba-swapped-img-selector' );
 		if ( 'on' === $content_on_hover ) {
 			array_push( $classes, $hover_style );
 		}
 
 		return sprintf(
-			'<div class="%10$s ba-hover--%7$s">
+			'<div class="%10$s dtq-hover--%7$s">
                 %8$s
-				<figure class="ba-figure ba-team-figure">
-					<div class="ba-overlay" data-icon="%9$s"></div>
+				<figure class="dtq-figure dtq-team-figure">
+					<div class="dtq-overlay"><i class="dtq-overlay-icon">%9$s</i></div>
 					%1$s
                 </figure>
-				<div class="ba-team-content content-%2$s">
+				<div class="dtq-team-content content-%2$s">
                     <div class="flex-top">
                         %3$s %4$s %5$s
                     </div>
@@ -980,7 +981,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team-social',
+					'selector'    => '%%order_class%% .dtq-team-social',
 					'declaration' => '
                     position: absolute;
                     top: 25px;
@@ -994,7 +995,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team .ba-team-social li',
+					'selector'    => '%%order_class%% .dtq-team .dtq-team-social li',
 					'declaration' => '
                     transform: translateY(-20px);
                     transition: .3s;
@@ -1005,7 +1006,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team:hover .ba-team-social li',
+					'selector'    => '%%order_class%% .dtq-team:hover .dtq-team-social li',
 					'declaration' => '
                     transform: translateX(0) translateY(0);
                     transition: .3s;
@@ -1018,7 +1019,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => "%%order_class%% .ba-team .ba-team-social li:nth-child({$_i})",
+						'selector'    => "%%order_class%% .dtq-team .dtq-team-social li:nth-child({$_i})",
 						'declaration' => sprintf( 'transition-delay: .%1$ss;', $i ),
 					)
 				);
@@ -1029,7 +1030,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team-content, %%order_class%% .ba-team-content *',
+					'selector'    => '%%order_class%% .dtq-team-content, %%order_class%% .dtq-team-content *',
 					'declaration' => sprintf( 'transition: %1$s all ease-in-out;', $hover_speed ),
 				)
 			);
@@ -1038,7 +1039,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		// Text Spacing.
 		$this->get_responsive_styles(
 			'name_bottom_spacing',
-			'%%order_class%% .ba-team-content h3',
+			'%%order_class%% .dtq-team-content h3',
 			array(
 				'primary'   => 'padding-bottom',
 				'important' => false,
@@ -1049,7 +1050,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'job_bottom_spacing',
-			'%%order_class%% .ba-team-content-job-title',
+			'%%order_class%% .dtq-team-content-job-title',
 			array(
 				'primary'   => 'padding-bottom',
 				'important' => false,
@@ -1061,7 +1062,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		// Content Padding.
 		$this->get_responsive_styles(
 			'content_padding',
-			'%%order_class%% .ba-team-content',
+			'%%order_class%% .dtq-team-content',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '20px|20px|20px|20px' ),
 			$render_slug
@@ -1072,7 +1073,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team figure',
+					'selector'    => '%%order_class%% .dtq-team figure',
 					'declaration' => 'position: absolute; z-index: 99;',
 				)
 			);
@@ -1081,7 +1082,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team figure',
+					'selector'    => '%%order_class%% .dtq-team figure',
 					'declaration' => sprintf( '%1$s: %2$s;', $photo__placement[0], $photo_offset_x ),
 				)
 			);
@@ -1090,7 +1091,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team figure',
+					'selector'    => '%%order_class%% .dtq-team figure',
 					'declaration' => sprintf( '%1$s: %2$s;', $photo__placement[1], $photo_offset_y ),
 				)
 			);
@@ -1099,7 +1100,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-team figure',
+						'selector'    => '%%order_class%% .dtq-team figure',
 						'declaration' => 'transform : translateX(50%) translateY(-50%);',
 					)
 				);
@@ -1107,7 +1108,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-team figure',
+						'selector'    => '%%order_class%% .dtq-team figure',
 						'declaration' => 'transform : translateX(50%) translateY(50%);',
 					)
 				);
@@ -1115,7 +1116,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-team figure',
+						'selector'    => '%%order_class%% .dtq-team figure',
 						'declaration' => 'transform : translateX(-50%) translateY(50%);',
 					)
 				);
@@ -1123,7 +1124,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-team figure',
+						'selector'    => '%%order_class%% .dtq-team figure',
 						'declaration' => 'transform : translateX(-50%) translateY(-50%);',
 					)
 				);
@@ -1134,7 +1135,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-team figure',
+				'selector'    => '%%order_class%% .dtq-team figure',
 				'declaration' => sprintf( 'width: %1$s;', $photo_width ),
 			)
 		);
@@ -1143,7 +1144,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team figure',
+					'selector'    => '%%order_class%% .dtq-team figure',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'width: %1$s;', $photo_width_tablet ),
 				)
@@ -1154,7 +1155,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team figure',
+					'selector'    => '%%order_class%% .dtq-team figure',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'width: %1$s;', $photo_width_phone ),
 				)
@@ -1164,7 +1165,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		if ( 'auto' !== $photo_height ) {
 			$this->get_responsive_styles(
 				'photo_height',
-				'%%order_class%% .ba-team figure',
+				'%%order_class%% .dtq-team figure',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -1173,7 +1174,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team figure img',
+					'selector'    => '%%order_class%% .dtq-team figure img',
 					'declaration' => 'height: 100%; object-fit: cover;width:100%;',
 				)
 			);
@@ -1186,7 +1187,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-team figure',
+						'selector'    => '%%order_class%% .dtq-team figure',
 						'declaration' => 'margin-left: auto; margin-right: auto;',
 					)
 				);
@@ -1194,7 +1195,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-team figure',
+						'selector'    => '%%order_class%% .dtq-team figure',
 						'declaration' => 'margin-left: auto;',
 					)
 				);
@@ -1206,7 +1207,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team-social',
+					'selector'    => '%%order_class%% .dtq-team-social',
 					'declaration' => sprintf( 'padding-top: %1$s!important;', $links_margin_top ),
 				)
 			);
@@ -1215,7 +1216,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-icon',
+				'selector'    => '%%order_class%% .dtq-icon',
 				'declaration' => sprintf(
 					'background-color: %1$s;
 					border-radius: %2$s;
@@ -1232,7 +1233,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-icon svg',
+				'selector'    => '%%order_class%% .dtq-icon svg',
 				'declaration' => sprintf(
 					'fill: %1$s!important;
 					width: %2$s!important;',
@@ -1246,7 +1247,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team-social .ba-icon',
+					'selector'    => '%%order_class%% .dtq-team-social .dtq-icon',
 					'declaration' => sprintf( 'margin-right: %1$s;', $this->props['links_margin_between'] ),
 				)
 			);
@@ -1254,7 +1255,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team-social .ba-icon',
+					'selector'    => '%%order_class%% .dtq-team-social .dtq-icon',
 					'declaration' => sprintf( 'margin-left: %1$s;', $this->props['links_margin_between'] ),
 				)
 			);
@@ -1262,7 +1263,7 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-team-social .ba-icon',
+					'selector'    => '%%order_class%% .dtq-team-social .dtq-icon',
 					'declaration' => sprintf( 'margin-left: %1$s; margin-right: %1$s;', $this->props['links_margin_between'] ),
 				)
 			);
@@ -1272,15 +1273,37 @@ class DTQ_Advanced_Team extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-team-social .ba-icon:hover',
-				'declaration' => sprintf( 'background-color: %1$s; color: %2$s!important;', $link_bg_hover, $link_color_hover ),
+				'selector'    => '%%order_class%% .dtq-team-social .dtq-icon:hover',
+				'declaration' => sprintf( 'background-color: %1$s;', $link_bg_hover ),
 			)
 		);
 
-		$this->get_custom_bg_style( $render_slug, 'content', '%%order_class%% .ba-team-content', '%%order_class%%:hover .ba-team-content' );
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .dtq-team-social .dtq-icon:hover svg',
+				'declaration' => sprintf( 'fill: %1$s!important;', $link_color_hover ),
+			)
+		);
+
+		$this->get_custom_bg_style( $render_slug, 'content', '%%order_class%% .dtq-team-content', '%%order_class%%:hover .dtq-team-content' );
 
 		// Overlay Styles.
-		$this->get_overlay_style( $render_slug, 'photo' );
+		$this->get_overlay_style( $render_slug, 'photo', '%%order_class%%' );
+
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'overlay_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-overlay .dtq-overlay-icon',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
 
 	}
 }

@@ -539,7 +539,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			),
 		);
 
-		$carousel_options = $this->get_carousel_option_fields( array( 'equal_height' ) );
+		$carousel_options = $this->get_carousel_option_fields( array( 'equal_height' ), array(), array() );
 
 		$additional_options = $this->custom_background_fields(
 			'tweets_item',
@@ -565,8 +565,8 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		$advanced_fields['borders']['tweets'] = array(
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-twitter-feed-item-inner',
-					'border_styles' => '%%order_class%% .ba-twitter-feed-item-inner',
+					'border_radii'  => '%%order_class%% .dtq-twitter-feed-item-inner',
+					'border_styles' => '%%order_class%% .dtq-twitter-feed-item-inner',
 				),
 				'important' => 'all',
 			),
@@ -586,8 +586,8 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		$advanced_fields['borders']['avatar'] = array(
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-twitter-feed-avatar',
-					'border_styles' => '%%order_class%% .ba-twitter-feed-avatar',
+					'border_radii'  => '%%order_class%% .dtq-twitter-feed-avatar',
+					'border_styles' => '%%order_class%% .dtq-twitter-feed-avatar',
 				),
 				'important' => 'all',
 			),
@@ -607,7 +607,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		$advanced_fields['box_shadow']['tweets'] = array(
 			'label'       => esc_html__( 'Tweets Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-twitter-feed-item-inner',
+				'main'      => '%%order_class%% .dtq-twitter-feed-item-inner',
 				'important' => 'all',
 			),
 			'tab_slug'    => 'advanced',
@@ -617,7 +617,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		$advanced_fields['box_shadow']['avatar'] = array(
 			'label'       => esc_html__( 'Avatar Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-twitter-feed-avatar',
+				'main'      => '%%order_class%% .dtq-twitter-feed-avatar',
 				'important' => 'all',
 			),
 			'tab_slug'    => 'advanced',
@@ -626,7 +626,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['name'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-twitter-feed-author-name',
+				'main'      => '%%order_class%% .dtq-twitter-feed-author-name',
 				'important' => 'all',
 			),
 			'line_height'     => array(
@@ -644,7 +644,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['username'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-twitter-feed-username',
+				'main'      => '%%order_class%% .dtq-twitter-feed-username',
 				'important' => 'all',
 			),
 			'line_height'     => array(
@@ -662,7 +662,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['description'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-twitter-feed-content p',
+				'main'      => '%%order_class%% .dtq-twitter-feed-content p',
 				'important' => 'all',
 			),
 			'line_height'     => array(
@@ -680,7 +680,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['readmore'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-twitter-feed-content p a',
+				'main'      => '%%order_class%% .dtq-twitter-feed-content p a',
 				'important' => 'all',
 			),
 			'line_height'     => array(
@@ -698,7 +698,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['date'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-twitter-feed-date',
+				'main'      => '%%order_class%% .dtq-twitter-feed-date',
 				'important' => 'all',
 			),
 			'line_height'     => array(
@@ -799,7 +799,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		if ( ! empty( $messages ) ) {
 			foreach ( $messages as $key => $message ) {
-				$output = sprintf( '<div class="ba-%2$s ba-tweet-error-message">%1$s</div>', esc_html( $message ), esc_html( $key ) );
+				$output = sprintf( '<div class="dtq-%2$s dtq-tweet-error-message">%1$s</div>', esc_html( $message ), esc_html( $key ) );
 			}
 
 			return $output;
@@ -858,13 +858,13 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ob_start();
 
 		foreach ( $items as $item ) : ?>
-			<div class = "ba-twitter-feed-item">
-			<div class = "ba-twitter-has-shadow ba-twitter-feed-item-inner">
+			<div class = "dtq-twitter-feed-item">
+			<div class = "dtq-twitter-has-shadow dtq-twitter-feed-item-inner">
 
 					<?php if ( $args['show_twitter_icon'] == 'on' ) : ?>
-						<div class = "ba-twitter-feed-icon">
+						<div class = "dtq-twitter-feed-icon">
 							<span>
-								<svg  version="1.1" id="ba-twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space = "preserve">
+								<svg  version="1.1" id="dtq-twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space = "preserve">
 								<path style="fill:#1da1f2;" d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
 									c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
 									c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
@@ -878,37 +878,37 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 						</div>
 					<?php endif; ?>
 
-					<div class = "ba-twitter-feed-inner-wrapper">
-					<div class = "ba-twitter-feed-author">
+					<div class = "dtq-twitter-feed-inner-wrapper">
+					<div class = "dtq-twitter-feed-author">
 
 							<?php if ( $args['show_user_image'] == 'on' ) : ?>
 
-								<a class="ba-twitter-feed-avatar-wrapper" href="<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>">
+								<a class="dtq-twitter-feed-avatar-wrapper" href="<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>">
 									<img
 										src="<?php echo esc_url( $item['user']['profile_image_url_https'] ); ?>"
 										alt="<?php echo esc_attr( $item['user']['name'] ); ?>"
-										class="ba-twitter-feed-avatar"
+										class="dtq-twitter-feed-avatar"
 									>
 								</a>
 
 							<?php endif; ?>
 
-							<div class = "ba-twitter-feed-user">
+							<div class = "dtq-twitter-feed-user">
 
 								<?php if ( $args['show_name'] == 'on' ) : ?>
-									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "ba-twitter-feed-author-name">
+									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "dtq-twitter-feed-author-name">
 										<?php echo esc_html( $item['user']['name'] ); ?>
 									</a>
 								<?php endif; ?>
 
 								<?php if ( $args['show_user_name'] == 'on' ) : ?>
-									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "ba-twitter-feed-username">
+									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "dtq-twitter-feed-username">
 										<?php echo esc_html( $args['user_name'] ); ?>
 									</a>
 								<?php endif; ?>
 							</div>
 						</div>
-						<div class = "ba-twitter-feed-content">
+						<div class = "dtq-twitter-feed-content">
 
 							<?php
 							if ( isset( $item['entities']['urls'][0] ) ) {
@@ -918,7 +918,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 							}
 							?>
 
-							<div class = "ba-inner-twitter-feed-content">
+							<div class = "dtq-inner-twitter-feed-content">
 								<p>
 									<?php echo esc_html( $content ); ?>
 									<?php if ( $args['read_more'] == 'on' ) : ?>
@@ -930,7 +930,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 							</div>
 
 							<?php if ( $args['show_date'] == 'on' ) : ?>
-								<div class = "ba-twitter-feed-date">
+								<div class = "dtq-twitter-feed-date">
 									<?php echo esc_html( date( 'M d Y', strtotime( $item['created_at'] ) ) ); ?>
 								</div>
 							<?php endif; ?>
@@ -938,19 +938,19 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 					</div>
 
 					<?php if ( $args['show_favorite'] == 'on' || $args['show_retweet'] == 'on' ) : ?>
-						<div class = "ba-twitter-feed-footer-wrapper">
-						<div class = "ba-twitter-feed-footer">
+						<div class = "dtq-twitter-feed-footer-wrapper">
+						<div class = "dtq-twitter-feed-footer">
 								<?php if ( $args['show_favorite'] == 'on' ) : ?>
-									<div class = "ba-tweet-favorite">
+									<div class = "dtq-tweet-favorite">
 										<?php echo esc_html( $item['favorite_count'] ); ?>
-										<span class = "et-pb-icon ba-icon ba-tweet-favorite-icon"></span>
+										<span class = "et-pb-icon dtq-icon dtq-tweet-favorite-icon"></span>
 									</div>
 								<?php endif; ?>
 
 								<?php if ( $args['show_retweet'] == 'on' ) : ?>
-									<div class = "ba-tweet-retweet">
+									<div class = "dtq-tweet-retweet">
 										<?php echo esc_html( $item['retweet_count'] ); ?>
-										<span class = "et-pb-icon ba-icon ba-tweet-retweet-icon"></span>
+										<span class = "et-pb-icon dtq-icon dtq-tweet-retweet-icon"></span>
 									</div>
 								<?php endif; ?>
 							</div>
@@ -971,10 +971,10 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		return $output;
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
-		wp_enqueue_script( 'baj-slick' );
-		wp_enqueue_style( 'bac-slick' );
+		wp_enqueue_script( 'dtqj-slick' );
+		wp_enqueue_style( 'dtqc-slick' );
 		$this->render_css( $render_slug );
 
 		$user_name         = $this->props['user_name'];
@@ -1068,7 +1068,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		if ( ! empty( $messages ) ) {
 
 			foreach ( $messages as $key => $message ) {
-				$output = sprintf( '<div class="ba-tweet-error-message">%1$s</div>', esc_html( $message ) );
+				$output = sprintf( '<div class="dtq-tweet-error-message">%1$s</div>', esc_html( $message ) );
 			}
 			return $output;
 		}
@@ -1128,13 +1128,13 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 		foreach ( $items as $item ) :
 			?>
-			<div class = "ba-twitter-feed-item">
-			<div class = "ba-twitter-feed-item-inner">
+			<div class = "dtq-twitter-feed-item">
+			<div class = "dtq-twitter-feed-item-inner">
 
 					<?php if ( $show_twitter_icon == 'on' ) : ?>
-						<div class = "ba-twitter-feed-icon">
+						<div class = "dtq-twitter-feed-icon">
 							<span>
-								<svg  version = "1.1" id            = "ba-twitter" xmlns                           = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px"
+								<svg  version = "1.1" id            = "dtq-twitter" xmlns                           = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px"
 									  viewBox = "0 0 512 512" style = "enable-background:new 0 0 512 512;" xml:space = "preserve">
 								<path style   = "fill:#1da1f2;" d   = "M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
 									c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
@@ -1149,28 +1149,28 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 						</div>
 					<?php endif; ?>
 
-					<div class = "ba-twitter-feed-inner-wrapper">
-					<div class = "ba-twitter-feed-author">
+					<div class = "dtq-twitter-feed-inner-wrapper">
+					<div class = "dtq-twitter-feed-author">
 
 							<?php if ( $show_user_image == 'on' ) : ?>
-								<a class = "ba-twitter-feed-avatar-wrapper" href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>">
+								<a class = "dtq-twitter-feed-avatar-wrapper" href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>">
 									<img
 										src   = "<?php echo esc_url( $item['user']['profile_image_url_https'] ); ?>"
 										alt   = "<?php echo esc_attr( $item['user']['name'] ); ?>"
-										class = "ba-twitter-feed-avatar"
+										class = "dtq-twitter-feed-avatar"
 									>
 								</a>
 							<?php endif; ?>
-							<div class = "ba-twitter-feed-user">
+							<div class = "dtq-twitter-feed-user">
 
 								<?php if ( $show_name == 'on' ) : ?>
-									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "ba-twitter-feed-author-name">
+									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "dtq-twitter-feed-author-name">
 										<?php echo esc_html( $item['user']['name'] ); ?>
 									</a>
 								<?php endif; ?>
 
 								<?php if ( $show_user_name == 'on' ) : ?>
-									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "ba-twitter-feed-username">
+									<a href = "<?php echo esc_url( 'https://twitter.com/' . $user_name ); ?>" class = "dtq-twitter-feed-username">
 										<?php echo esc_html( $user_name ); ?>
 									</a>
 								<?php endif; ?>
@@ -1179,7 +1179,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 
 						</div>
 
-						<div class = "ba-twitter-feed-content">
+						<div class = "dtq-twitter-feed-content">
 
 							<?php
 							if ( isset( $item['entities']['urls'][0] ) ) {
@@ -1189,7 +1189,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 							}
 							?>
 
-							<div class = "ba-inner-twitter-feed-content">
+							<div class = "dtq-inner-twitter-feed-content">
 								<p>
 									<?php echo esc_html( $content ); ?>
 									<?php if ( $read_more == 'on' ) : ?>
@@ -1201,7 +1201,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 							</div>
 
 							<?php if ( $show_date == 'on' ) : ?>
-								<div class = "ba-twitter-feed-date">
+								<div class = "dtq-twitter-feed-date">
 									<?php echo esc_html( date( 'M d Y', strtotime( $item['created_at'] ) ) ); ?>
 								</div>
 							<?php endif; ?>
@@ -1209,19 +1209,19 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 					</div>
 
 					<?php if ( $show_favorite == 'on' || $show_retweet == 'on' ) : ?>
-						<div class = "ba-twitter-feed-footer-wrapper">
-						<div class = "ba-twitter-feed-footer">
+						<div class = "dtq-twitter-feed-footer-wrapper">
+						<div class = "dtq-twitter-feed-footer">
 								<?php if ( $show_favorite == 'on' ) : ?>
-									<div class = "ba-tweet-favorite">
+									<div class = "dtq-tweet-favorite">
 										<?php echo esc_html( $item['favorite_count'] ); ?>
-										<span class = "et-pb-icon ba-icon ba-tweet-favorite-icon"></span>
+										<span class = "et-pb-icon dtq-icon dtq-tweet-favorite-icon"></span>
 									</div>
 								<?php endif; ?>
 
 								<?php if ( $show_retweet == 'on' ) : ?>
-									<div class = "ba-tweet-retweet">
+									<div class = "dtq-tweet-retweet">
 										<?php echo esc_html( $item['retweet_count'] ); ?>
-										<span class = "et-pb-icon ba-icon ba-tweet-retweet-icon"></span>
+										<span class = "et-pb-icon dtq-icon dtq-tweet-retweet-icon"></span>
 									</div>
 								<?php endif; ?>
 							</div>
@@ -1241,20 +1241,20 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		$classes = array();
 
 		if ( $is_center === 'on' ) {
-			array_push( $classes, 'ba-centered' );
-			array_push( $classes, "ba-centered--{$center_mode_type}" );
+			array_push( $classes, 'dtq-centered' );
+			array_push( $classes, "dtq-centered--{$center_mode_type}" );
 		}
 
 		if ( $custom_cursor === 'on' ) {
-			array_push( $classes, 'ba-cursor' );
+			array_push( $classes, 'dtq-cursor' );
 		}
 
-		array_push( $classes, "ba-twitter-{$alignment}" );
+		array_push( $classes, "dtq-twitter-{$alignment}" );
 		array_push( $classes, "equal-height-{$is_equal_height}" );
 
 		$output = sprintf(
 			'
-            <div class = "ba-carousel ba-twitter-feed-carousel ba-carousel-frontend %2$s" %3$s>
+            <div class = "dtq-carousel dtq-twitter-feed-carousel dtq-carousel-frontend %2$s" %3$s>
                 %1$s
             </div>',
 			$twitter_items,
@@ -1271,7 +1271,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-feed-icon span',
+				'selector'    => '%%order_class%% .dtq-twitter-feed-icon span',
 				'declaration' => sprintf( 'width: %1$s; height: %1$s;', $this->props['twitter_icon_size'] ),
 			)
 		);
@@ -1280,7 +1280,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-feed-avatar',
+				'selector'    => '%%order_class%% .dtq-twitter-feed-avatar',
 				'declaration' => sprintf( 'width: %1$s; height: %1$s;', $this->props['avatar_size'] ),
 			)
 		);
@@ -1305,7 +1305,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-tweet-favorite',
+				'selector'    => '%%order_class%% .dtq-tweet-favorite',
 				'declaration' => sprintf( 'color: %1$s !important;', $favorite_color ),
 			)
 		);
@@ -1313,7 +1313,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-tweet-favorite',
+				'selector'    => '%%order_class%% .dtq-tweet-favorite',
 				'declaration' => sprintf( 'font-size: %1$s !important;', $favorite_font_size ),
 			)
 		);
@@ -1321,7 +1321,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-tweet-favorite span',
+				'selector'    => '%%order_class%% .dtq-tweet-favorite span',
 				'declaration' => sprintf( 'color: %1$s !important;', $favorite_icon_color ),
 			)
 		);
@@ -1329,7 +1329,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-tweet-favorite span',
+				'selector'    => '%%order_class%% .dtq-tweet-favorite span',
 				'declaration' => sprintf( 'font-size: %1$s !important;', $favorite_icon_size ),
 			)
 		);
@@ -1338,7 +1338,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-tweet-retweet',
+				'selector'    => '%%order_class%% .dtq-tweet-retweet',
 				'declaration' => sprintf( 'color: %1$s !important;', $retweet_color ),
 			)
 		);
@@ -1346,7 +1346,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-tweet-retweet span',
+				'selector'    => '%%order_class%% .dtq-tweet-retweet span',
 				'declaration' => sprintf( 'color: %1$s !important;', $retweet_icon_color ),
 			)
 		);
@@ -1354,7 +1354,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-tweet-retweet',
+				'selector'    => '%%order_class%% .dtq-tweet-retweet',
 				'declaration' => sprintf( 'font-size: %1$s !important;', $retweet_font_size ),
 			)
 		);
@@ -1362,7 +1362,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-tweet-retweet span',
+				'selector'    => '%%order_class%% .dtq-tweet-retweet span',
 				'declaration' => sprintf( 'font-size: %1$s !important;', $retweet_icon_size ),
 			)
 		);
@@ -1370,7 +1370,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-feed-footer-wrapper',
+				'selector'    => '%%order_class%% .dtq-twitter-feed-footer-wrapper',
 				'declaration' => $this->process_margin_padding( $footer_padding, 'padding', false ),
 			)
 		);
@@ -1380,7 +1380,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-footer-wrapper',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-footer-wrapper',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => $this->process_margin_padding( $footer_padding_tablet, 'padding', false ),
 				)
@@ -1392,7 +1392,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-footer-wrapper',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-footer-wrapper',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => $this->process_margin_padding( $footer_padding_phone, 'padding', false ),
 				)
@@ -1411,7 +1411,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-feed-content p',
+				'selector'    => '%%order_class%% .dtq-twitter-feed-content p',
 				'declaration' => sprintf( 'margin-bottom: %1$s !important;', $description_spacing ),
 			)
 		);
@@ -1420,7 +1420,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-content p',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-content p',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'margin-bottom: %1$s !important;', $description_spacing_tablet ),
 				)
@@ -1431,7 +1431,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-content p',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-content p',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'margin-bottom: %1$s !important;', $description_spacing_phone ),
 				)
@@ -1447,7 +1447,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-feed-inner-wrapper',
+				'selector'    => '%%order_class%% .dtq-twitter-feed-inner-wrapper',
 				'declaration' => $this->process_margin_padding( $content_padding, 'padding', false ),
 			)
 		);
@@ -1457,7 +1457,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-inner-wrapper',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-inner-wrapper',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => $this->process_margin_padding( $content_padding_tablet, 'padding', false ),
 				)
@@ -1469,7 +1469,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-inner-wrapper',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-inner-wrapper',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => $this->process_margin_padding( $content_padding_phone, 'padding', false ),
 				)
@@ -1498,7 +1498,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-feed-item-inner',
+				'selector'    => '%%order_class%% .dtq-twitter-feed-item-inner',
 				'declaration' => $tweets_item_background,
 			)
 		);
@@ -1509,7 +1509,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-feed-item-inner:hover',
+				'selector'    => '%%order_class%% .dtq-twitter-feed-item-inner:hover',
 				'declaration' => $tweets_item_hover_background,
 			)
 		);
@@ -1520,7 +1520,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+						'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 						'declaration' => sprintf( 'margin-bottom: %1$s;', $avatar_spacing ),
 					)
 				);
@@ -1528,7 +1528,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+						'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 						'declaration' => sprintf( 'margin-right: %1$s;', $avatar_spacing ),
 					)
 				);
@@ -1536,7 +1536,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+						'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 						'declaration' => sprintf( 'margin-left: %1$s;', $avatar_spacing ),
 					)
 				);
@@ -1548,7 +1548,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 					'declaration' => 'position: absolute; z-index: 99;',
 				)
 			);
@@ -1559,7 +1559,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+						'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 						'declaration' => 'left: 50%;',
 					)
 				);
@@ -1571,7 +1571,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+							'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 							'declaration' => sprintf(
 								'left: %1$s%%;',
 								abs( 50 + $avatar_offset_x )
@@ -1582,7 +1582,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+							'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 							'declaration' => sprintf(
 								'right: %1$s%%;',
 								50 - $avatar_offset_x
@@ -1596,7 +1596,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+						'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 						'declaration' => sprintf(
 							'top: 0;
 							transform : translateX(%1$s) translateY(-50%%);',
@@ -1608,7 +1608,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-twitter-feed-avatar-wrapper',
+						'selector'    => '%%order_class%% .dtq-twitter-feed-avatar-wrapper',
 						'declaration' => sprintf(
 							'bottom: 0;
 							transform : translateX(%1$s) translateY(50%%);',
@@ -1627,7 +1627,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-twitter-feed-footer',
+				'selector'    => '%%order_class%% .dtq-twitter-feed-footer',
 				'declaration' => sprintf( 'display: flex; justify-content: %1$s;', $footer_alignment ),
 			)
 		);
@@ -1637,7 +1637,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-item-inner',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-item-inner',
 					'declaration' => 'border-color: #efefef;',
 				)
 			);
@@ -1647,7 +1647,7 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-twitter-feed-item-inner',
+					'selector'    => '%%order_class%% .dtq-twitter-feed-item-inner',
 					'declaration' => 'border-width: 1px;',
 				)
 			);

@@ -36,27 +36,27 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'icon_wrap' => array(
 				'label'    => esc_html__( 'Icon Wrapper', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-iconbox__icon',
+				'selector' => '%%order_class%% .dtq-iconbox__icon',
 			),
 			'icon'      => array(
 				'label'    => esc_html__( 'Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-iconbox__icon i',
+				'selector' => '%%order_class%% .dtq-iconbox__icon i',
 			),
 			'icon_img'  => array(
 				'label'    => esc_html__( 'Icon Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-iconbox__icon img',
+				'selector' => '%%order_class%% .dtq-iconbox__icon img',
 			),
 			'badge'     => array(
 				'label'    => esc_html__( 'Badge', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-iconbox__badge',
+				'selector' => '%%order_class%% .dtq-iconbox__badge',
 			),
 			'title'     => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-iconbox__title',
+				'selector' => '%%order_class%% .dtq-iconbox__title',
 			),
 			'desc'      => array(
 				'label'    => esc_html__( 'Description', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-iconbox__desc',
+				'selector' => '%%order_class%% .dtq-iconbox__desc',
 			),
 		);
 	}
@@ -336,8 +336,8 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 			'toggle_slug'  => 'icon',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-iconbox__icon',
-					'border_styles' => '%%order_class%% .ba-iconbox__icon',
+					'border_radii'  => '%%order_class%% .dtq-iconbox__icon',
+					'border_styles' => '%%order_class%% .dtq-iconbox__icon',
 				),
 				'important' => 'all',
 			),
@@ -356,8 +356,8 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 			'toggle_slug'  => 'badge',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-iconbox__badge',
-					'border_styles' => '%%order_class%% .ba-iconbox__badge',
+					'border_radii'  => '%%order_class%% .dtq-iconbox__badge',
+					'border_styles' => '%%order_class%% .dtq-iconbox__badge',
 				),
 				'important' => 'all',
 			),
@@ -373,28 +373,28 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 
 		$advanced_fields['height'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-iconbox-inner',
+				'main'      => '%%order_class%% .dtq-iconbox-inner',
 				'important' => 'all',
 			),
 		);
 
 		$advanced_fields['width'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-iconbox-inner',
+				'main'      => '%%order_class%% .dtq-iconbox-inner',
 				'important' => 'all',
 			),
 		);
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-iconbox-inner',
+				'main'      => '%%order_class%% .dtq-iconbox-inner',
 				'important' => 'all',
 			),
 		);
 
 		$advanced_fields['background'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-iconbox-inner',
+				'main'      => '%%order_class%% .dtq-iconbox-inner',
 				'important' => 'all',
 			),
 		);
@@ -403,8 +403,8 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 			'toggle_slug' => 'border',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-iconbox-inner',
-					'border_styles' => '%%order_class%% .ba-iconbox-inner',
+					'border_radii'  => '%%order_class%% .dtq-iconbox-inner',
+					'border_styles' => '%%order_class%% .dtq-iconbox-inner',
 				),
 				'important' => 'all',
 			),
@@ -413,7 +413,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$advanced_fields['box_shadow']['item'] = array(
 			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-iconbox-inner',
+				'main'      => '%%order_class%% .dtq-iconbox-inner',
 				'important' => 'all',
 			),
 			'tab_slug'    => 'advanced',
@@ -423,7 +423,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$advanced_fields['box_shadow']['icon'] = array(
 			'label'       => esc_html__( 'Icon Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-iconbox__icon',
+				'main'      => '%%order_class%% .dtq-iconbox__icon',
 				'important' => 'all',
 			),
 			'tab_slug'    => 'advanced',
@@ -433,7 +433,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$advanced_fields['fonts']['title'] = array(
 			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-iconbox__title',
+				'main'      => '%%order_class%% .dtq-iconbox__title',
 				'important' => 'all',
 			),
 			'header_level'    => array(
@@ -453,7 +453,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$advanced_fields['fonts']['description'] = array(
 			'label'           => esc_html__( 'Description', 'addons-for-divi' ),
 			'css'             => array(
-				'main' => '%%order_class%% .ba-iconbox__desc',
+				'main' => '%%order_class%% .dtq-iconbox__desc',
 			),
 			'important'       => 'all',
 			'hide_text_align' => true,
@@ -470,7 +470,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$advanced_fields['fonts']['badge'] = array(
 			'label'           => esc_html__( 'Badge', 'addons-for-divi' ),
 			'css'             => array(
-				'main' => '%%order_class%% .ba-iconbox__badge',
+				'main' => '%%order_class%% .dtq-iconbox__badge',
 			),
 			'important'       => 'all',
 			'hide_text_align' => true,
@@ -514,18 +514,19 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$html       = '';
 
 		if ( 'off' === $use_image ) {
+			// Inject Font Awesome Manually!.
+			dtq_inject_fa_icons( $this->props['icon'] );
 
 			$icon = esc_attr( et_pb_process_font_icon( $icon ) );
-			$html = '<i class="ba-icon ba-et-icon" data-icon="' . $icon . '"></i>';
+			$html = '<i class="dtq-icon dtq-et-icon">' . $icon . '</i>';
 		} else {
-			$html = '<img class="ba-icon-image" src="' . $icon_image . '" alt="' . $image_alt . '" />';
+			$html = '<img class="dtq-icon-image" src="' . $icon_image . '" alt="' . $image_alt . '" />';
 		}
 
 		if ( ! empty( $icon ) || ! empty( $icon_image ) ) {
 			return sprintf(
-				'
-                <div class="ba-iconbox__icon-wrap">
-                    <div class="ba-iconbox__icon">
+				'<div class="dtq-iconbox__icon-wrap">
+                    <div class="dtq-iconbox__icon">
                         %1$s
                     </div>
                 </div>',
@@ -544,7 +545,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 
 		if ( ! empty( $title ) ) {
 			return sprintf(
-				'<%1$s class="ba-iconbox__title">%2$s</%1$s>',
+				'<%1$s class="dtq-iconbox__title">%2$s</%1$s>',
 				$processed_title_level,
 				$title
 			);
@@ -554,7 +555,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 	public function render_description() {
 		$description = $this->props['description'];
 		if ( ! empty( $description ) ) {
-			return sprintf( '<p class="ba-iconbox__desc">%1$s</p>', $description );
+			return sprintf( '<p class="dtq-iconbox__desc">%1$s</p>', $description );
 		}
 	}
 
@@ -562,7 +563,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$badge_text = $this->props['badge_text'];
 		if ( ! empty( $badge_text ) ) {
 			return sprintf(
-				'<div class="ba-iconbox__badge">
+				'<div class="dtq-iconbox__badge">
                     %1$s
                 </div>',
 				$badge_text
@@ -570,15 +571,15 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$icon__placement = $this->props['icon__placement'];
 		$this->render_css( $render_slug );
 
 		return sprintf(
-			'<div class="ba-module ba-module-parent ba-iconbox">
+			'<div class="dtq-module dtq-module-parent dtq-iconbox">
                 %1$s %5$s
-                <div class="ba-iconbox-inner ba-bg-support">
+                <div class="dtq-iconbox-inner dtq-bg-support">
                      %2$s %3$s %4$s
                 </div>
             </div>',
@@ -600,13 +601,27 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		$is_negative      = substr( $icon_bg_rotate, 0, 1 ) === '-';
 		$alignment        = $this->props['content_alignment'];
 
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-iconbox__icon',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
+
 		// Default Design.
 		if ( ! dt_if_not_migrated() ) {
 			if ( empty( $this->props['border_color_all_box'] ) ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-iconbox-inner',
+						'selector'    => '%%order_class%% .dtq-iconbox-inner',
 						'declaration' => 'border-color: #EBEBEB;',
 					)
 				);
@@ -615,7 +630,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-iconbox-inner',
+						'selector'    => '%%order_class%% .dtq-iconbox-inner',
 						'declaration' => 'border-width: 1px;',
 					)
 				);
@@ -624,7 +639,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-iconbox-inner',
+						'selector'    => '%%order_class%% .dtq-iconbox-inner',
 						'declaration' => 'padding: 60px 30px 60px 30px;',
 					)
 				);
@@ -644,7 +659,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-iconbox',
+				'selector'    => '%%order_class%% .dtq-iconbox',
 				'declaration' => sprintf( 'text-align: %1$s;', $alignment ),
 			)
 		);
@@ -653,7 +668,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-iconbox__icon-wrap',
+					'selector'    => '%%order_class%% .dtq-iconbox__icon-wrap',
 					'declaration' => 'justify-content: flex-end;',
 				)
 			);
@@ -661,7 +676,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-iconbox__icon-wrap',
+					'selector'    => '%%order_class%% .dtq-iconbox__icon-wrap',
 					'declaration' => 'justify-content: center;',
 				)
 			);
@@ -670,7 +685,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		if ( 'normal' === $icon__placement ) {
 			$this->get_responsive_styles(
 				'icon_spacing',
-				'%%order_class%% .ba-iconbox__icon-wrap',
+				'%%order_class%% .dtq-iconbox__icon-wrap',
 				array( 'primary' => 'margin-bottom' ),
 				array( 'default' => '10px' ),
 				$render_slug
@@ -680,7 +695,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		if ( 'auto' !== $this->props['icon_width'] ) {
 			$this->get_responsive_styles(
 				'icon_width',
-				'%%order_class%% .ba-iconbox__icon',
+				'%%order_class%% .dtq-iconbox__icon',
 				array( 'primary' => 'width' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -690,7 +705,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		if ( 'auto' !== $this->props['icon_height'] ) {
 			$this->get_responsive_styles(
 				'icon_height',
-				'%%order_class%% .ba-iconbox__icon',
+				'%%order_class%% .dtq-iconbox__icon',
 				array( 'primary' => 'height' ),
 				array( 'default' => 'auto' ),
 				$render_slug
@@ -700,7 +715,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-iconbox__icon',
+				'selector'    => '%%order_class%% .dtq-iconbox__icon',
 				'declaration' => sprintf(
 					'
                 transform: rotate(%1$s);',
@@ -712,7 +727,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-iconbox__icon i, %%order_class%% .ba-iconbox__icon img',
+				'selector'    => '%%order_class%% .dtq-iconbox__icon i, %%order_class%% .dtq-iconbox__icon img',
 				'declaration' => sprintf(
 					'transform: rotate(%1$s%2$sdeg);',
 					! $is_negative ? '-' : '',
@@ -724,7 +739,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		if ( 'off' === $use_image ) {
 			$this->get_responsive_styles(
 				'icon_size',
-				'%%order_class%% .ba-iconbox__icon i',
+				'%%order_class%% .dtq-iconbox__icon i',
 				array( 'primary' => 'font-size' ),
 				array( 'default' => '60px' ),
 				$render_slug
@@ -733,7 +748,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-iconbox__icon i',
+					'selector'    => '%%order_class%% .dtq-iconbox__icon i',
 					'declaration' => sprintf( 'color: %1$s;', $icon_color ),
 				)
 			);
@@ -742,7 +757,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%%:hover .ba-iconbox__icon i',
+						'selector'    => '%%order_class%%:hover .dtq-iconbox__icon i',
 						'declaration' => sprintf( ' color: %1$s;', $icon_color_hover ),
 					)
 				);
@@ -750,7 +765,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		} else {
 			$this->get_responsive_styles(
 				'icon_padding',
-				'%%order_class%% .ba-iconbox__icon',
+				'%%order_class%% .dtq-iconbox__icon',
 				array( 'primary' => 'padding' ),
 				array( 'default' => '0px|0px|0px|0px' ),
 				$render_slug
@@ -758,7 +773,7 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 
 			$this->get_responsive_styles(
 				'icon_size',
-				'%%order_class%% .ba-iconbox__icon img',
+				'%%order_class%% .dtq-iconbox__icon img',
 				array( 'primary' => 'width' ),
 				array( 'default' => '60px' ),
 				$render_slug
@@ -766,20 +781,20 @@ class DTQ_Icon_Box extends BA_Builder_Module {
 		}
 
 		if ( 'absolute' === $icon__placement ) {
-			$this->get_absolute_element_styles( $render_slug, 'icon', '%%order_class%% .ba-iconbox__icon' );
+			$this->get_absolute_element_styles( $render_slug, 'icon', '%%order_class%% .dtq-iconbox__icon' );
 		}
 
 		$this->get_responsive_styles(
 			'title_spacing',
-			'%%order_class%% .ba-iconbox__title',
+			'%%order_class%% .dtq-iconbox__title',
 			array( 'primary' => 'padding-bottom' ),
 			array( 'default' => '10px' ),
 			$render_slug
 		);
 
-		$this->get_badge_styles( $render_slug, 'badge', '%%order_class%% .ba-iconbox__badge', '%%order_class%%:hover .ba-iconbox__badge' );
+		$this->get_badge_styles( $render_slug, 'badge', '%%order_class%% .dtq-iconbox__badge', '%%order_class%%:hover .dtq-iconbox__badge' );
 
-		$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .ba-iconbox__icon', '%%order_class%%:hover .ba-iconbox__icon' );
+		$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .dtq-iconbox__icon', '%%order_class%%:hover .dtq-iconbox__icon' );
 
 	}
 }

@@ -1,5 +1,5 @@
 <?php
-class DTQ_Animated_Text extends BA_Builder_Module {
+class DTQ_AnimatedText extends BA_Builder_Module {
 
 	protected $module_credits = array(
 		'module_uri' => 'https://divitorque.com/animated-text-module/',
@@ -69,15 +69,15 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'prefix'        => array(
 				'label'    => esc_html__( 'Prefix', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-animated-text-prefix',
+				'selector' => '%%order_class%% .dtq-animated-text-prefix',
 			),
 			'animated_text' => array(
 				'label'    => esc_html__( 'Animated Text', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-animated-text-main',
+				'selector' => '%%order_class%% .dtq-animated-text-main',
 			),
 			'suffix'        => array(
 				'label'    => esc_html__( 'Suffix', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-animated-text-suffix',
+				'selector' => '%%order_class%% .dtq-animated-text-suffix',
 			),
 		);
 	}
@@ -741,7 +741,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['animated'] = array(
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-animated-text-head',
+				'main'      => '%%order_class%% .dtq-animated-text-head',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -758,7 +758,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		$advanced_fields['fonts']['prefix'] = array(
 			'label'           => esc_html__( 'Prefix', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-module .ba-animated-text-prefix',
+				'main'      => '%%order_class%% .dtq-module .dtq-animated-text-prefix',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -770,7 +770,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		$advanced_fields['fonts']['suffix'] = array(
 			'label'           => esc_html__( 'Suffix', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-module .ba-animated-text-suffix',
+				'main'      => '%%order_class%% .dtq-module .dtq-animated-text-suffix',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -782,7 +782,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		$advanced_fields['fonts']['main'] = array(
 			'label'           => esc_html__( 'Animated', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-module .ba-animated-text-main',
+				'main'      => '%%order_class%% .dtq-module .dtq-animated-text-main, %%order_class%% .dtq-module .dtq-animated-text-tilt',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -797,7 +797,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 	protected function render_prefix() {
 		if ( ! empty( $this->props['prefix'] ) ) {
 			return sprintf(
-				'<div class="ba-animated-text-prefix"><span>%1$s</span>%2$s</div>',
+				'<div class="dtq-animated-text-prefix"><span>%1$s</span>%2$s</div>',
 				$this->props['prefix'],
 				'inline' === $this->props['layout'] ? '&nbsp;' : ''
 			);
@@ -807,7 +807,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 	protected function render_suffix() {
 		if ( ! empty( $this->props['suffix'] ) ) {
 			return sprintf(
-				'<div class="ba-animated-text-suffix">%2$s<span>%1$s</span></div>',
+				'<div class="dtq-animated-text-suffix">%2$s<span>%1$s</span></div>',
 				$this->props['suffix'],
 				'inline' === $this->props['layout'] ? '&nbsp;' : ''
 			);
@@ -830,23 +830,23 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		}
 
 		if ( 'typed' === $this->props['animation_type'] ) {
-			return '<div class="ba-text-animation ba-animated-text-main ba-typed-text"></div>';
+			return '<div class="dtq-text-animation dtq-animated-text-main dtq-typed-text"></div>';
 		} elseif ( 'tilt' === $this->props['animation_type'] ) {
 			return sprintf(
-				'<div class="ba-animated-text-tilt">
-					<ul class="texts ba-animated-text-main">%1$s</ul>
+				'<div class="dtq-animated-text-tilt">
+					<ul class="texts dtq-animated-text-main">%1$s</ul>
 				</div>',
 				$items
 			);
 		} elseif ( 'slide' === $this->props['animation_type'] ) {
 			return sprintf(
-				'<ul class="ba-animated-text-slide ba-animated-text-main">%1$s</ul>',
+				'<ul class="dtq-animated-text-slide dtq-animated-text-main">%1$s</ul>',
 				$items
 			);
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->apply_css( $render_slug );
 
@@ -858,7 +858,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		$settings       = array();
 
 		if ( 'typed' === $animation_type ) {
-			wp_enqueue_script( 'baj-typed' );
+			wp_enqueue_script( 'dtqj-typed' );
 			$animated_text = str_replace(
 				array( '&#91;', '&#93;' ),
 				array( '[', ']' ),
@@ -882,7 +882,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			$settings['showCursor'] = true;
 
 		} elseif ( 'tilt' === $animation_type ) {
-			wp_enqueue_script( 'baj-text-animation' );
+			wp_enqueue_script( 'dtqj-text-animation' );
 
 			$tilt_sync    = explode( '|', $this->props['tilt_sync'] );
 			$tilt_reverse = explode( '|', $this->props['tilt_reverse'] );
@@ -898,12 +898,12 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			$settings['in']['reverse']    = 'on' === $tilt_reverse[0] ? true : false;
 			$settings['in']['shuffle']    = 'on' === $tilt_shuffle[0] ? true : false;
 			// Tilt Out.
-			$settings['out']['effect']    = $this->props['tilt_out'];
-			$settings['in']['delayScale'] = 1.5;
-			$settings['in']['delay']      = intval( $this->props['tilt_delay'] );
-			$settings['in']['sync']       = 'on' === $tilt_sync[1] ? true : false;
-			$settings['in']['reverse']    = 'on' === $tilt_reverse[1] ? true : false;
-			$settings['in']['shuffle']    = 'on' === $tilt_shuffle[1] ? true : false;
+			$settings['out']['effect']     = $this->props['tilt_out'];
+			$settings['out']['delayScale'] = 1.5;
+			$settings['out']['delay']      = intval( $this->props['tilt_delay'] );
+			$settings['out']['sync']       = 'on' === $tilt_sync[1] ? true : false;
+			$settings['out']['reverse']    = 'on' === $tilt_reverse[1] ? true : false;
+			$settings['out']['shuffle']    = 'on' === $tilt_shuffle[1] ? true : false;
 		} elseif ( 'slide' === $this->props['animation_type'] ) {
 			$settings['slide_gap'] = $this->props['slide_gap'];
 		}
@@ -911,8 +911,8 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		$data_settings = sprintf( 'data-settings="%1$s"', htmlspecialchars( wp_json_encode( $settings ), ENT_QUOTES, 'UTF-8' ) );
 
 		return sprintf(
-			'<div id="ba-animated-text-%3$s" class="ba-module ba-animated-text ba-front" %2$s data-type="%7$s">
-				<%1$s class="ba-animated-text-head">
+			'<div id="dtq-animated-text-%3$s" class="dtq-module dtq-animated-text dtq-front" %2$s data-type="%7$s">
+				<%1$s class="dtq-animated-text-head">
 					%4$s %5$s %6$s
 				</%1$s>
 			</div>',
@@ -939,7 +939,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		if ( 'inline' === $this->props['layout'] ) {
 			$this->get_responsive_styles(
 				'text_alignment',
-				'%%order_class%% .ba-animated-text-head',
+				'%%order_class%% .dtq-animated-text-head',
 				array( 'primary' => 'justify-content' ),
 				array( 'default' => 'left' ),
 				$render_slug
@@ -951,7 +951,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-module .ba-animated-text-prefix span',
+					'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-prefix span',
 					'declaration' => sprintf(
 						' -webkit-text-stroke-width: %1$s;
                     	-webkit-text-stroke-color: %2$s;',
@@ -966,7 +966,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-module .ba-animated-text-prefix span',
+					'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-prefix span',
 					'declaration' => sprintf(
 						' -webkit-text-fill-color: %1$s;',
 						$this->props['prefix_text_color']
@@ -977,7 +977,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'prefix_padding',
-			'%%order_class%% .ba-module .ba-animated-text-prefix span',
+			'%%order_class%% .dtq-module .dtq-animated-text-prefix span',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -985,7 +985,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'prefix_margin',
-			'%%order_class%% .ba-module .ba-animated-text-prefix span',
+			'%%order_class%% .dtq-module .dtq-animated-text-prefix span',
 			array( 'primary' => 'margin' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -993,7 +993,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'prefix_bg',
-			'%%order_class%% .ba-module .ba-animated-text-prefix span',
+			'%%order_class%% .dtq-module .dtq-animated-text-prefix span',
 			array( 'primary' => 'background' ),
 			array( 'default' => 'transparent' ),
 			$render_slug
@@ -1003,7 +1003,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-module .ba-animated-text-prefix span',
+				'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-prefix span',
 				'declaration' => sprintf(
 					'border-radius: %1$s %2$s %3$s %4$s;',
 					$prefix_radius[1],
@@ -1019,7 +1019,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-module .ba-animated-text-suffix span',
+					'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-suffix span',
 					'declaration' => sprintf(
 						' -webkit-text-stroke-width: %1$s;
                     	-webkit-text-stroke-color: %2$s;',
@@ -1034,7 +1034,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-module .ba-animated-text-suffix span',
+					'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-suffix span',
 					'declaration' => sprintf(
 						' -webkit-text-fill-color: %1$s;',
 						$this->props['suffix_text_color']
@@ -1045,7 +1045,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'suffix_padding',
-			'%%order_class%% .ba-module .ba-animated-text-suffix span',
+			'%%order_class%% .dtq-module .dtq-animated-text-suffix span',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -1053,7 +1053,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'suffix_margin',
-			'%%order_class%% .ba-module .ba-animated-text-suffix span',
+			'%%order_class%% .dtq-module .dtq-animated-text-suffix span',
 			array( 'primary' => 'margin' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -1061,7 +1061,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'suffix_bg',
-			'%%order_class%% .ba-module .ba-animated-text-suffix span',
+			'%%order_class%% .dtq-module .dtq-animated-text-suffix span',
 			array( 'primary' => 'background' ),
 			array( 'default' => 'transparent' ),
 			$render_slug
@@ -1071,7 +1071,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-module .ba-animated-text-suffix span',
+				'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-suffix span',
 				'declaration' => sprintf(
 					'border-radius: %1$s %2$s %3$s %4$s;',
 					$suffix_radius[1],
@@ -1087,7 +1087,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-module .ba-animated-text-main',
+					'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-main',
 					'declaration' => sprintf(
 						' -webkit-text-stroke-width: %1$s;
                     	-webkit-text-stroke-color: %2$s;',
@@ -1102,7 +1102,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-module .ba-animated-text-main',
+					'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-main',
 					'declaration' => sprintf(
 						' -webkit-text-fill-color: %1$s;',
 						$this->props['main_text_color']
@@ -1113,7 +1113,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'animated_padding',
-			'%%order_class%% .ba-module .ba-animated-text-main',
+			'%%order_class%% .dtq-module .dtq-animated-text-main',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -1121,7 +1121,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'animated_margin',
-			'%%order_class%% .ba-module .ba-animated-text-main',
+			'%%order_class%% .dtq-module .dtq-animated-text-main',
 			array( 'primary' => 'margin' ),
 			array( 'default' => '0|0|0|0' ),
 			$render_slug
@@ -1129,7 +1129,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'animated_bg',
-			'%%order_class%% .ba-module .ba-animated-text-main',
+			'%%order_class%% .dtq-module .dtq-animated-text-main',
 			array( 'primary' => 'background' ),
 			array( 'default' => 'transparent' ),
 			$render_slug
@@ -1139,7 +1139,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-module .ba-animated-text-main',
+				'selector'    => '%%order_class%% .dtq-module .dtq-animated-text-main',
 				'declaration' => sprintf(
 					'border-radius: %1$s %2$s %3$s %4$s;',
 					$animated_radius[1],
@@ -1155,7 +1155,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-text-animation:after',
+					'selector'    => '%%order_class%% .dtq-text-animation:after',
 					'declaration' => sprintf(
 						'display: block;
 						right: -%1$s;
@@ -1175,7 +1175,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-animated-text-slide li.text-in',
+				'selector'    => '%%order_class%% .dtq-animated-text-slide li.text-in',
 				'declaration' => sprintf(
 					'animation: %1$s 700ms;',
 					$this->props['slide_animation']
@@ -1187,7 +1187,7 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-animated-text-head',
+					'selector'    => '%%order_class%% .dtq-animated-text-head',
 					'declaration' => 'display: flex; align-items: center;',
 				)
 			);
@@ -1196,4 +1196,4 @@ class DTQ_Animated_Text extends BA_Builder_Module {
 	}
 }
 
-new DTQ_Animated_Text();
+new DTQ_AnimatedText();

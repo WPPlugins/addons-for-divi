@@ -12,9 +12,9 @@ class BaPostHelper {
 		if ( has_post_thumbnail() ) {
 			return sprintf(
 				'
-                <figure class="ba-post-thumb">
+                <figure class="dtq-post-thumb">
                     <a href="%1$s">
-                        <div class="ba-overlay" data-icon="%4$s"></div>
+                        <div class="dtq-overlay" data-icon="%4$s"></div>
                         <img src="%2$s" alt="%3$s">
                     </a>
                 </figure>',
@@ -25,7 +25,7 @@ class BaPostHelper {
 			);
 		} else {
 			if ( $render_empty_figure === true ) {
-				return '<figure class="ba-post-thumb ba-empty-thumb"></figure>';
+				return '<figure class="dtq-post-thumb dtq-empty-thumb"></figure>';
 			}
 		}
 	}
@@ -33,7 +33,7 @@ class BaPostHelper {
 	public static function get_post_title( $tag ) {
 		return sprintf(
 			'
-            <%1$s class="ba-post-title">
+            <%1$s class="dtq-post-title">
                 <a href="%2$s">%3$s</a>
             </%1$s>
         ',
@@ -43,9 +43,9 @@ class BaPostHelper {
 		);
 	}
 
-	//public static function get_post_categories() {
-		//return '<div class="ba-post-categories">' . et_builder_get_the_term_list( ', ' ) . '</div>';
-	//}
+	// public static function get_post_categories() {
+		// return '<div class="dtq-post-categories">' . et_builder_get_the_term_list( ', ' ) . '</div>';
+	// }
 
 	public static function get_post_categories( $show_first_category, $include_categories, $class_name ) {
 		if ( 'off' === $show_first_category ) {
@@ -70,7 +70,7 @@ class BaPostHelper {
 				);
 			}
 
-			//print_r( $categories_ids );
+			// print_r( $categories_ids );
 
 			return sprintf(
 				'<div class="%3$s"><a rel="tag" href="%2$s">%1$s</a></div>',
@@ -88,8 +88,8 @@ class BaPostHelper {
 		) {
 		return sprintf(
 			'
-            <div class="ba-post-btn-wrap %4$s">
-                <a href="%1$s" target="_self" class="et_pb_button ba-post-btn" data-icon="%2$s">
+            <div class="dtq-post-btn-wrap %4$s">
+                <a href="%1$s" target="_self" class="et_pb_button dtq-post-btn" data-icon="%2$s">
                     %3$s
                 </a>
             </div>',
@@ -106,7 +106,7 @@ class BaPostHelper {
 	}
 
 	public static function get_post_excerpt_html( $length = '150' ) {
-		return sprintf( '<div class="ba-post-excerpt">%1$s</div>', self::get_post_excerpt( $length ) );
+		return sprintf( '<div class="dtq-post-excerpt">%1$s</div>', self::get_post_excerpt( $length ) );
 	}
 
 }

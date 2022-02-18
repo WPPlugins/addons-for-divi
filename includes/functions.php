@@ -14,7 +14,7 @@ function ba_has_pro() {
 }
 
 function divitorque_dashboard_link() {
-	return add_query_arg(['page' => 'addons-for-divi'], admin_url('admin.php'));
+	return add_query_arg( array( 'page' => 'addons-for-divi' ), admin_url( 'admin.php' ) );
 }
 
 function ba_get_svg_user_icon() {
@@ -107,12 +107,12 @@ function ba_get_excerpt( $post_id = null, $length = 35 ) {
 }
 
 function ba_prev_arrow_icon() {
-	return '<span class="ba-svg-iconset svg-baseline"><svg aria-hidden="true" class="ba-svg-icon ba-arrow-left-alt-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28"><title>Previous</title><path d="M28 12.5v3c0 0.281-0.219 0.5-0.5 0.5h-19.5v3.5c0 0.203-0.109 0.375-0.297 0.453s-0.391 0.047-0.547-0.078l-6-5.469c-0.094-0.094-0.156-0.219-0.156-0.359v0c0-0.141 0.063-0.281 0.156-0.375l6-5.531c0.156-0.141 0.359-0.172 0.547-0.094 0.172 0.078 0.297 0.25 0.297 0.453v3.5h19.5c0.281 0 0.5 0.219 0.5 0.5z"></path>
+	return '<span class="dtq-svg-iconset svg-baseline"><svg aria-hidden="true" class="dtq-svg-icon dtq-arrow-left-alt-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="29" height="28" viewBox="0 0 29 28"><title>Previous</title><path d="M28 12.5v3c0 0.281-0.219 0.5-0.5 0.5h-19.5v3.5c0 0.203-0.109 0.375-0.297 0.453s-0.391 0.047-0.547-0.078l-6-5.469c-0.094-0.094-0.156-0.219-0.156-0.359v0c0-0.141 0.063-0.281 0.156-0.375l6-5.531c0.156-0.141 0.359-0.172 0.547-0.094 0.172 0.078 0.297 0.25 0.297 0.453v3.5h19.5c0.281 0 0.5 0.219 0.5 0.5z"></path>
 	</svg></span>';
 }
 
 function ba_next_arrow_icon() {
-	return '<span class="ba-svg-iconset svg-baseline"><svg aria-hidden="true" class="ba-svg-icon ba-arrow-right-alt-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28"><title>Continue</title><path d="M27 13.953c0 0.141-0.063 0.281-0.156 0.375l-6 5.531c-0.156 0.141-0.359 0.172-0.547 0.094-0.172-0.078-0.297-0.25-0.297-0.453v-3.5h-19.5c-0.281 0-0.5-0.219-0.5-0.5v-3c0-0.281 0.219-0.5 0.5-0.5h19.5v-3.5c0-0.203 0.109-0.375 0.297-0.453s0.391-0.047 0.547 0.078l6 5.469c0.094 0.094 0.156 0.219 0.156 0.359v0z"></path></svg></span>';
+	return '<span class="dtq-svg-iconset svg-baseline"><svg aria-hidden="true" class="dtq-svg-icon dtq-arrow-right-alt-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28"><title>Continue</title><path d="M27 13.953c0 0.141-0.063 0.281-0.156 0.375l-6 5.531c-0.156 0.141-0.359 0.172-0.547 0.094-0.172-0.078-0.297-0.25-0.297-0.453v-3.5h-19.5c-0.281 0-0.5-0.219-0.5-0.5v-3c0-0.281 0.219-0.5 0.5-0.5h19.5v-3.5c0-0.203 0.109-0.375 0.297-0.453s0.391-0.047 0.547 0.078l6 5.469c0.094 0.094 0.156 0.219 0.156 0.359v0z"></path></svg></span>';
 }
 
 function ba_related_posts_args( $post_id ) {
@@ -152,3 +152,22 @@ function dt_backend_helpers( $helpers ) {
 }
 
 add_filter( 'et_fb_backend_helpers', 'dt_backend_helpers' );
+
+function dtq_global_assets_list( $global_list ) {
+
+	$assets_list   = array();
+	$assets_prefix = et_get_dynamic_assets_path();
+
+	$assets_list['et_icons_fa'] = array(
+		'css' => "{$assets_prefix}/css/icons_fa_all.css",
+	);
+
+	return array_merge( $global_list, $assets_list );
+}
+
+function dtq_inject_fa_icons( $icon_data ) {
+	if ( et_pb_maybe_fa_font_icon( $icon_data ) ) {
+		add_filter( 'et_global_assets_list', 'dtq_global_assets_list' );
+		add_filter( 'et_late_global_assets_list', 'dtq_global_assets_list' );
+	}
+}

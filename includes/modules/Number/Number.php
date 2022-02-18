@@ -23,7 +23,8 @@ class DTQ_Number extends BA_Builder_Module {
 			'advanced' => array(
 				'toggles' => array(
 					'number'     => esc_html__( 'Number', 'addons-for-divi' ),
-					'text'       => esc_html__( 'Text', 'addons-for-divi' ),
+					'text'       => esc_html__( 'Number Text', 'addons-for-divi' ),
+					'title'      => esc_html__( 'Title Text', 'addons-for-divi' ),
 					'border'     => esc_html__( 'Border', 'addons-for-divi' ),
 					'box_shadow' => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 				),
@@ -33,121 +34,182 @@ class DTQ_Number extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'wrapper' => array(
 				'label'    => esc_html__( 'Text Wrapper', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-number-wrap',
+				'selector' => '%%order_class%% .dtq-number-wrap',
 			),
 			'text'    => array(
 				'label'    => esc_html__( 'Text', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-number-text',
+				'selector' => '%%order_class%% .dtq-number-text',
 			),
 		);
 	}
 
 	public function get_fields() {
 
-		$fields = array();
-
+		$fields          = array();
+		$_defaults       = array(
+			'position' => 'left_top',
+			'offset_x' => '50px',
+			'offset_y' => '50px',
+		);
+		$number_abs_opts = $this->get_absolute_element_options( 'number', '', 'number', $_defaults, array( 'number_placement' => 'absolute' ) );
 		// Content.
-		$fields['number'] = array(
-			'label'       => esc_html__( 'Number', 'addons-for-divi' ),
-			'description' => esc_html__( 'Define the number.', 'addons-for-divi' ),
-			'type'        => 'text',
-			'toggle_slug' => 'content',
-		);
-
-		// Number.
-		$fields['number_alignment'] = array(
-			'label'            => esc_html__( 'Alignment', 'addons-for-divi' ),
-			'description'      => esc_html__( 'Align number to the left, right or center.', 'addons-for-divi' ),
-			'type'             => 'text_align',
-			'option_category'  => 'layout',
-			'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
-			'options_icon'     => 'module_align',
-			'default_on_front' => 'center',
-			'toggle_slug'      => 'number',
-			'tab_slug'         => 'advanced',
-		);
-
-		$fields['number_height'] = array(
-			'label'          => esc_html__( 'Height', 'addons-for-divi' ),
-			'description'    => esc_html__( 'Here you can define a custom height for number text.', 'addons-for-divi' ),
-			'type'           => 'range',
-			'default'        => '100px',
-			'mobile_options' => true,
-			'range_settings' => array(
-				'min'  => 1,
-				'step' => 1,
-				'max'  => 1000,
+		$content = array(
+			'number'           => array(
+				'label'       => esc_html__( 'Number', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the number.', 'addons-for-divi' ),
+				'type'        => 'text',
+				'toggle_slug' => 'content',
 			),
-			'toggle_slug'    => 'number',
-			'tab_slug'       => 'advanced',
-		);
 
-		$fields['number_width'] = array(
-			'label'          => esc_html__( 'Width', 'addons-for-divi' ),
-			'description'    => esc_html__( 'Here you can define a custom width for number text.', 'addons-for-divi' ),
-			'type'           => 'range',
-			'default'        => '100px',
-			'mobile_options' => true,
-			'range_settings' => array(
-				'min'  => 1,
-				'step' => 1,
-				'max'  => 1000,
+			'use_counter'      => array(
+				'label'           => esc_html__( 'Use Counter', 'addons-for-divi' ),
+				'description'     => esc_html__( 'This won\'t work on visual builder', 'addons-for-divi' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'default'         => 'off',
+				'toggle_slug'     => 'content',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
+				),
 			),
-			'toggle_slug'    => 'number',
-			'tab_slug'       => 'advanced',
-		);
 
-		$fields['number_padding'] = array(
-			'label'          => esc_html__( 'Number Padding', 'addons-for-divi' ),
-			'description'    => esc_html__( 'Here you can define custom padding for your number.', 'addons-for-divi' ),
-			'type'           => 'custom_padding',
-			'default'        => '0px|0px|0px|0px',
-			'mobile_options' => true,
-			'toggle_slug'    => 'number',
-			'tab_slug'       => 'advanced',
-		);
-
-		$fields['number_rotate'] = array(
-			'label'          => esc_html__( 'Rotate', 'addons-for-divi' ),
-			'description'    => esc_html__( 'Rotate number box, number text will be in same position. Only container box will be rotated.', 'addons-for-divi' ),
-			'type'           => 'range',
-			'default'        => '0deg',
-			'fixed_unit'     => 'deg',
-			'range_settings' => array(
-				'min'  => -360,
-				'max'  => 360,
-				'step' => 1,
+			'title'            => array(
+				'label'       => esc_html__( 'Title', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the title.', 'addons-for-divi' ),
+				'type'        => 'text',
+				'toggle_slug' => 'content',
 			),
-			'toggle_slug'    => 'number',
-			'tab_slug'       => 'advanced',
-		);
 
-		$fields['number_inner_rotate'] = array(
-			'label'          => esc_html__( 'Inner Text Rotate', 'addons-for-divi' ),
-			'description'    => esc_html__( 'Rotate number text.', 'addons-for-divi' ),
-			'type'           => 'range',
-			'default'        => '0deg',
-			'fixed_unit'     => 'deg',
-			'range_settings' => array(
-				'min'  => -360,
-				'max'  => 360,
-				'step' => 1,
+			'number_placement' => array(
+				'label'           => esc_html__( 'Number Position', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can define the number position.', 'addons-for-divi' ),
+				'type'            => 'select',
+				'option_category' => 'configuration',
+				'toggle_slug'     => 'content',
+				'default'         => '_default',
+				'options'         => array(
+					'_default' => esc_html__( 'Default', 'addons-for-divi' ),
+					'absolute' => esc_html__( 'Absolute', 'addons-for-divi' ),
+				),
 			),
-			'toggle_slug'    => 'number',
-			'tab_slug'       => 'advanced',
 		);
 
-		$number_bg = $this->custom_background_fields(
-			'number',
-			esc_html__( 'Number', 'addons-for-divi' ),
-			'advanced',
-			'number',
-			array( 'color', 'gradient', 'hover' ),
-			array(),
-			''
-		);
+			// Number.
+				$fields['number_alignment'] = array(
+					'label'           => esc_html__( 'Alignment', 'addons-for-divi' ),
+					'description'     => esc_html__( 'Align number to the left, right or center.', 'addons-for-divi' ),
+					'type'            => 'text_align',
+					'option_category' => 'layout',
+					'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
+					'options_icon'    => 'module_align',
+					'toggle_slug'     => 'number',
+					'tab_slug'        => 'advanced',
+				);
+				$fields['use_box']          = array(
+					'label'           => esc_html__( 'Use Number Box', 'addons-for-divi' ),
+					'description'     => esc_html__( 'Here you can choose whether overlay image should be used.', 'addons-for-divi' ),
+					'type'            => 'yes_no_button',
+					'option_category' => 'configuration',
+					'options'         => array(
+						'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+						'off' => esc_html__( 'No', 'addons-for-divi' ),
+					),
+					'default'         => 'on',
+					'toggle_slug'     => 'number',
+					'tab_slug'        => 'advanced',
+				);
 
-		return array_merge( $fields, $number_bg );
+				$fields['number_height'] = array(
+					'label'          => esc_html__( 'Height', 'addons-for-divi' ),
+					'description'    => esc_html__( 'Here you can define a custom height for number text.', 'addons-for-divi' ),
+					'type'           => 'range',
+					'default'        => '100px',
+					'mobile_options' => true,
+					'range_settings' => array(
+						'min'  => 1,
+						'step' => 1,
+						'max'  => 1000,
+					),
+					'toggle_slug'    => 'number',
+					'tab_slug'       => 'advanced',
+					'show_if'        => array(
+						'use_box' => 'on',
+					),
+				);
+
+				$fields['number_width'] = array(
+					'label'          => esc_html__( 'Width', 'addons-for-divi' ),
+					'description'    => esc_html__( 'Here you can define a custom width for number text.', 'addons-for-divi' ),
+					'type'           => 'range',
+					'default'        => '100px',
+					'mobile_options' => true,
+					'range_settings' => array(
+						'min'  => 1,
+						'step' => 1,
+						'max'  => 1000,
+					),
+					'toggle_slug'    => 'number',
+					'tab_slug'       => 'advanced',
+					'show_if'        => array(
+						'use_box' => 'on',
+					),
+				);
+
+				$fields['number_rotate'] = array(
+					'label'          => esc_html__( 'Rotate', 'addons-for-divi' ),
+					'description'    => esc_html__( 'Rotate number box, number text will be in same position. Only container box will be rotated.', 'addons-for-divi' ),
+					'type'           => 'range',
+					'default'        => '0deg',
+					'fixed_unit'     => 'deg',
+					'range_settings' => array(
+						'min'  => -360,
+						'max'  => 360,
+						'step' => 1,
+					),
+					'toggle_slug'    => 'number',
+					'tab_slug'       => 'advanced',
+					'show_if'        => array(
+						'use_box' => 'on',
+					),
+				);
+
+				$fields['title_spacing'] = array(
+					'label'          => esc_html__( 'Title Spacing Top', 'addons-for-divi' ),
+					'description'    => esc_html__( 'Here you can define a custom spacing for the title.', 'addons-for-divi' ),
+					'type'           => 'range',
+					'default'        => '10px',
+					'mobile_options' => true,
+					'range_settings' => array(
+						'min'  => 1,
+						'step' => 1,
+						'max'  => 1000,
+					),
+					'toggle_slug'    => 'title',
+					'tab_slug'       => 'advanced',
+					'show_if'        => array(
+						'number_placement' => '_default',
+					),
+				);
+
+				$number_bg = $this->custom_background_fields(
+					'number',
+					'',
+					'advanced',
+					'number',
+					array( 'color', 'gradient', 'hover' ),
+					array( 'use_box' => 'on' ),
+					'#efefef'
+				);
+
+		// Default values.
+		if ( dt_if_not_migrated() ) {
+			$fields['number_alignment']['default'] = 'center';
+		} else {
+			$fields['number_alignment']['default'] = 'left'; // new.
+		}
+
+		return array_merge( $content, $number_abs_opts, $fields, $number_bg );
 	}
 
 	public function get_advanced_fields_config() {
@@ -156,16 +218,15 @@ class DTQ_Number extends BA_Builder_Module {
 		$advanced_fields['text_shadow'] = false;
 
 		$advanced_fields['borders']['number'] = array(
-			'label_prefix' => esc_html__( 'Number', 'addons-for-divi' ),
-			'toggle_slug'  => 'number',
-			'css'          => array(
+			'toggle_slug'     => 'number',
+			'css'             => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-number-wrap',
-					'border_styles' => '%%order_class%% .ba-number-wrap',
+					'border_radii'  => '%%order_class%% .dtq-number-wrap',
+					'border_styles' => '%%order_class%% .dtq-number-wrap',
 				),
 				'important' => 'all',
 			),
-			'defaults'     => array(
+			'defaults'        => array(
 				'border_radii'  => 'on|0px|0px|0px|0px',
 				'border_styles' => array(
 					'width' => '0px',
@@ -173,6 +234,8 @@ class DTQ_Number extends BA_Builder_Module {
 					'style' => 'solid',
 				),
 			),
+			'depends_on'      => array( 'use_box' ),
+			'depends_show_if' => 'on',
 		);
 
 		$advanced_fields['borders']['main'] = array(
@@ -195,13 +258,16 @@ class DTQ_Number extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['number'] = array(
-			'label'       => esc_html__( 'Number Box Shadow', 'addons-for-divi' ),
+			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => '%%order_class%% .ba-number-wrap',
+				'main'      => '%%order_class%% .dtq-number-wrap',
 				'important' => 'all',
 			),
 			'tab_slug'    => 'advanced',
 			'toggle_slug' => 'number',
+			'show_if'     => array(
+				'use_box' => 'on',
+			),
 		);
 
 		$advanced_fields['box_shadow']['main'] = array(
@@ -217,7 +283,7 @@ class DTQ_Number extends BA_Builder_Module {
 		$advanced_fields['fonts']['number'] = array(
 			'label'           => esc_html__( 'Number', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-number-text',
+				'main'      => '%%order_class%% .dtq-number-text',
 				'important' => 'all',
 			),
 			'hide_text_align' => true,
@@ -231,205 +297,177 @@ class DTQ_Number extends BA_Builder_Module {
 			),
 		);
 
+		$advanced_fields['fonts']['title'] = array(
+			'label'       => esc_html__( 'Title', 'addons-for-divi' ),
+			'css'         => array(
+				'main'      => '%%order_class%% .dtq-number-title h3',
+				'important' => 'all',
+			),
+			'tab_slug'    => 'advanced',
+			'toggle_slug' => 'title',
+			'line_height' => array(
+				'default' => '1.3em',
+			),
+			'font_size'   => array(
+				'default' => '22px',
+			),
+		);
+
 		return $advanced_fields;
 	}
 
 	public function render_number() {
-		$number = $this->props['number'];
-
-		if ( ! empty( $number ) ) {
+		if ( ! empty( $this->props['number'] ) ) {
 			return sprintf(
-				'
-                <div class="ba-number-wrap">
-                    <div class="ba-number-text">
+				'<div class="dtq-number-wrap">
+                    <div class="dtq-number-text">
                         %1$s
                     </div>
                 </div>',
-				$number
+				$this->props['number']
 			);
 		}
 	}
 
-
-	public function render_ref_attr() {
-		$url    = $this->props['link_option_url'];
-		$is_new = $this->props['link_option_url_new_window'];
-
-		if ( ! empty( $url ) ) {
-			$target = $is_new === 'off' ? '_self' : '_blank';
-			return sprintf( 'target="%1$s" href="%2$s"', $target, $url );
+	public function render_title() {
+		if ( ! empty( $this->props['title'] ) ) {
+			return sprintf(
+				'<div class="dtq-number-title">
+                   <h3>%1$s</h3>
+                </div>',
+				$this->props['title']
+			);
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
-		$tag = ! empty( $this->props['link_option_url'] ) ? 'a' : 'div';
-
-		// Render CSS
 		$this->render_css( $render_slug );
+		$use_counter = $this->props['use_counter'];
+
+		if ( 'on' === $use_counter ) {
+			wp_enqueue_script( 'dtqj-counter' );
+		}
 
 		return sprintf(
-			'
-            <%1$s %2$s class="ba-module ba-number">
-                %3$s
-            </%1$s>',
-			$tag,
-			$this->render_ref_attr(),
-			$this->render_number()
+			'<div class="dtq-module dtq-number %3$s">
+                %1$s
+                %2$s
+            </div>',
+			$this->render_number(),
+			$this->render_title(),
+			'on' === $use_counter ? 'dtq-counter' : ''
 		);
 	}
 
 	protected function render_css( $render_slug ) {
 
-		$number_height                   = $this->props['number_height'];
-		$number_height_tablet            = $this->props['number_height_tablet'];
-		$number_height_phone             = $this->props['number_height_phone'];
-		$number_height_last_edited       = $this->props['number_height_last_edited'];
-		$number_height_responsive_status = et_pb_get_responsive_status( $number_height_last_edited );
+		$number_rotate = $this->props['number_rotate'];
+		$use_box       = $this->props['use_box'];
 
-		$number_width                   = $this->props['number_width'];
-		$number_width_tablet            = $this->props['number_width_tablet'];
-		$number_width_phone             = $this->props['number_width_phone'];
-		$number_width_last_edited       = $this->props['number_width_last_edited'];
-		$number_width_responsive_status = et_pb_get_responsive_status( $number_width_last_edited );
+		if ( 'on' === $use_box ) {
+			$this->get_responsive_styles(
+				'number_height',
+				'%%order_class%% .dtq-number-wrap',
+				array(
+					'primary'   => 'height',
+					'important' => false,
+				),
+				array( 'default' => '100px' ),
+				$render_slug
+			);
 
-		$number_padding                   = $this->props['number_padding'];
-		$number_padding_tablet            = $this->props['number_padding_tablet'];
-		$number_padding_phone             = $this->props['number_padding_phone'];
-		$number_padding_last_edited       = $this->props['number_padding_last_edited'];
-		$number_padding_responsive_status = et_pb_get_responsive_status( $number_padding_last_edited );
+			$this->get_responsive_styles(
+				'number_width',
+				'%%order_class%% .dtq-number-wrap',
+				array(
+					'primary'   => 'width',
+					'important' => false,
+				),
+				array( 'default' => '100px' ),
+				$render_slug
+			);
 
-		$number_rotate       = $this->props['number_rotate'];
-		$number_inner_rotate = $this->props['number_inner_rotate'];
-		$number_alignment    = $this->props['number_alignment'];
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-number-wrap',
-				'declaration' => sprintf( '%1$s', $this->process_margin_padding( $number_padding, 'padding', false ) ),
-			)
-		);
-
-		if ( $number_padding_tablet && $number_padding_responsive_status ) :
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-number-wrap',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => $this->process_margin_padding( $number_padding_tablet, 'padding', false ),
+					'selector'    => '%%order_class%% .dtq-number-wrap',
+					'declaration' => sprintf(
+						'display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-style: solid;
+                        transform: rotate(%1$s);',
+						$number_rotate
+					),
 				)
 			);
-		endif;
 
-		if ( $number_padding_phone && $number_padding_responsive_status ) :
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-number-wrap',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => $this->process_margin_padding( $number_padding_phone, 'padding', false ),
-				)
-			);
-		endif;
+			// Number BG.
+			$this->get_custom_bg_style( $render_slug, 'number', '%%order_class%% .dtq-number-wrap', '%%order_class%%:hover .dtq-number-wrap' );
 
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-number-wrap',
-				'declaration' => sprintf( 'height: %1$s;', $number_height ),
-			)
-		);
-
-		if ( $number_height_tablet && $number_height_responsive_status ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-number-wrap',
-					'declaration' => sprintf( 'height: %1$s;', $number_height_tablet ),
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-				)
-			);
-		}
-
-		if ( $number_height_phone && $number_height_responsive_status ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .ba-number-wrap',
-					'declaration' => sprintf( 'height: %1$s;`', $number_height_phone ),
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-				)
-			);
 		}
 
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-number-wrap',
-				'declaration' => sprintf( 'width: %1$s;', $number_width ),
+				'selector'    => '%%order_class%% .dtq-number-wrap',
+				'declaration' => sprintf(
+					'text-align: %1$s;',
+					$this->props['number_alignment']
+				),
 			)
 		);
 
-		if ( $number_width_tablet && $number_width_responsive_status ) {
+		if ( 'center' === $this->props['number_alignment'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-number-wrap',
-					'declaration' => sprintf( 'width: %1$s;', $number_width_tablet ),
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
+					'selector'    => '%%order_class%% .dtq-number-wrap',
+					'declaration' => 'margin-right: auto;margin-left: auto;',
+				)
+			);
+		} elseif ( 'right' === $this->props['number_alignment'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .dtq-number-wrap',
+					'declaration' => 'margin-left: auto;',
 				)
 			);
 		}
 
-		if ( $number_width_phone && $number_width_responsive_status ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
+		if ( '_default' === $this->props['number_placement'] ) {
+			$this->get_responsive_styles(
+				'title_spacing',
+				'%%order_class%% .dtq-number-title',
 				array(
-					'selector'    => '%%order_class%% .ba-number-wrap',
-					'declaration' => sprintf( 'width: %1$s;`', $number_width_phone ),
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-				)
+					'primary'   => 'margin-top',
+					'important' => false,
+				),
+				array( 'default' => '10px' ),
+				$render_slug
 			);
 		}
 
-		// alignment
-		if ( $number_alignment === 'right' ) {
+		if ( 'absolute' === $this->props['number_placement'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-number',
-					'declaration' => 'justify-content: flex-end;',
+					'selector'    => '%%order_class%% .dtq-number-wrap',
+					'declaration' => 'z-index: 9!important;',
 				)
 			);
-		} elseif ( $number_alignment === 'center' ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-number',
-					'declaration' => 'justify-content: center;',
+					'selector'    => '%%order_class%% .dtq-number-title',
+					'declaration' => 'z-index: 999!important;position: relative;',
 				)
 			);
+
+			$this->get_absolute_element_styles( $render_slug, 'number', '%%order_class%% .dtq-number-wrap' );
 		}
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-number-wrap',
-				'declaration' => sprintf( 'transform: rotate(%1$s);', $number_rotate ),
-			)
-		);
-
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .ba-number-text',
-				'declaration' => sprintf( 'transform: rotate(%1$s);', $number_inner_rotate ),
-			)
-		);
-
-		// number BG.
-		$this->get_custom_bg_style( $render_slug, 'number', '%%order_class%% .ba-number-wrap', '%%order_class%%:hover .ba-number-wrap' );
 
 	}
 }

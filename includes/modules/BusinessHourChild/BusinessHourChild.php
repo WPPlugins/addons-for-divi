@@ -39,17 +39,17 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 		);
 
 		$this->custom_css_fields = array(
-			'day' => array(
+			'day'       => array(
 				'label'    => esc_html__( 'Day', 'addons-for-divi' ),
-				'selector' => '.ba-business-hour  %%order_class%% .ba-business-hour-day',
+				'selector' => '.dtq-business-hour  %%order_class%% .dtq-business-hour-day',
 			),
-			'time' => array(
+			'time'      => array(
 				'label'    => esc_html__( 'Time', 'addons-for-divi' ),
-				'selector' => '.ba-business-hour  %%order_class%% .ba-business-hour-time',
+				'selector' => '.dtq-business-hour  %%order_class%% .dtq-business-hour-time',
 			),
 			'separator' => array(
 				'label'    => esc_html__( 'Separator', 'addons-for-divi' ),
-				'selector' => '.ba-business-hour  %%order_class%% .ba-business-hour-separator',
+				'selector' => '.dtq-business-hour  %%order_class%% .dtq-business-hour-separator',
 			),
 		);
 	}
@@ -59,14 +59,14 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 		$content = array(
 			'day'  => array(
 				'label'       => esc_html__( 'Day', 'addons-for-divi' ),
-				'description'       => esc_html__( 'Define the day your for business hour.', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the day your for business hour.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
 
 			'time' => array(
 				'label'       => esc_html__( 'Time', 'addons-for-divi' ),
-				'description'       => esc_html__( 'Define the time your for business hour.', 'addons-for-divi' ),
+				'description' => esc_html__( 'Define the time your for business hour.', 'addons-for-divi' ),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
@@ -75,7 +75,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 		$separator = array(
 			'separator_type'   => array(
 				'label'       => esc_html__( 'Separator Type', 'addons-for-divi' ),
-				'description'       => esc_html__( 'Select text separator type.', 'addons-for-divi' ),
+				'description' => esc_html__( 'Select text separator type.', 'addons-for-divi' ),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
@@ -92,7 +92,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 			),
 			'separator_gap'    => array(
 				'label'          => esc_html__( 'Separator Spacing', 'addons-for-divi' ),
-				'description'          => esc_html__( 'Define separator both side spacing.', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Define separator both side spacing.', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '15px',
 				'fixed_unit'     => 'px',
@@ -109,7 +109,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 			),
 			'separator_color'  => array(
 				'label'       => esc_html__( 'Separator Color', 'addons-for-divi' ),
-				'description'       => esc_html__( 'Here you can define a custom color for your text separator.', 'addons-for-divi' ),
+				'description' => esc_html__( 'Here you can define a custom color for your text separator.', 'addons-for-divi' ),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
@@ -120,7 +120,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 			),
 			'separator_weight' => array(
 				'label'          => esc_html__( 'Separator Weight', 'addons-for-divi' ),
-				'description'          => esc_html__( 'Here you can define a custom depth for your text separator', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom depth for your text separator', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '1px',
 				'fixed_unit'     => 'px',
@@ -137,7 +137,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 			),
 			'separator_height' => array(
 				'label'          => esc_html__( 'Separator Height', 'addons-for-divi' ),
-				'description'          => esc_html__( 'Here you can define a custom height for your text separator', 'addons-for-divi' ),
+				'description'    => esc_html__( 'Here you can define a custom height for your text separator', 'addons-for-divi' ),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -178,7 +178,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(
-				'main'      => '.ba-business-hour %%order_class%% .ba-business-hour-child',
+				'main'      => '.dtq-business-hour %%order_class%% .dtq-business-hour-child',
 				'important' => 'all',
 			),
 		);
@@ -187,8 +187,8 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 			'toggle_slug' => 'border',
 			'css'         => array(
 				'main'      => array(
-					'border_radii'  => '.ba-business-hour %%order_class%% .ba-business-hour-child',
-					'border_styles' => '.ba-business-hour %%order_class%% .ba-business-hour-child',
+					'border_radii'  => '.dtq-business-hour %%order_class%% .dtq-business-hour-child',
+					'border_styles' => '.dtq-business-hour %%order_class%% .dtq-business-hour-child',
 				),
 				'important' => 'all',
 			),
@@ -205,7 +205,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 		$advanced_fields['box_shadow']['main'] = array(
 			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
 			'css'         => array(
-				'main'      => '.ba-business-hour %%order_class%% .ba-business-hour-child',
+				'main'      => '.dtq-business-hour %%order_class%% .dtq-business-hour-child',
 				'important' => 'all',
 			),
 			'tab_slug'    => 'advanced',
@@ -214,7 +214,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 
 		$advanced_fields['background'] = array(
 			'css' => array(
-				'main'      => '.ba-business-hour %%order_class%% .ba-business-hour-child',
+				'main'      => '.dtq-business-hour %%order_class%% .dtq-business-hour-child',
 				'important' => 'all',
 			),
 		);
@@ -222,7 +222,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 		$advanced_fields['fonts']['day'] = array(
 			'label'           => esc_html__( 'Day', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '.ba-business-hour %%order_class%% .ba-business-hour-day',
+				'main'      => '.dtq-business-hour %%order_class%% .dtq-business-hour-day',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -241,7 +241,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 		$advanced_fields['fonts']['time'] = array(
 			'label'           => esc_html__( 'Time', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '.ba-business-hour %%order_class%% .ba-business-hour-time',
+				'main'      => '.dtq-business-hour %%order_class%% .dtq-business-hour-time',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -262,25 +262,25 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 
 	protected function render_day() {
 		if ( ! empty( $this->props['day'] ) ) {
-			return '<div class="ba-business-hour-day">' . $this->props['day'] . '</div>';
+			return '<div class="dtq-business-hour-day">' . $this->props['day'] . '</div>';
 		}
 	}
 
 	protected function render_time() {
 		if ( ! empty( $this->props['time'] ) ) {
-			return '<div class="ba-business-hour-time">' . $this->props['time'] . '</div>';
+			return '<div class="dtq-business-hour-time">' . $this->props['time'] . '</div>';
 		}
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 		$this->add_classname( 'ba_et_pb_module' );
 
 		return sprintf(
-			'<div class="ba-module-child ba-business-hour-child">
+			'<div class="dtq-module-child dtq-business-hour-child">
 				%1$s
-				<div class="ba-business-hour-separator"></div>
+				<div class="dtq-business-hour-separator"></div>
 				%2$s
              </div>',
 			$this->render_day(),
@@ -300,7 +300,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '.ba-business-hour %%order_class%% .ba-business-hour-separator',
+					'selector'    => '.dtq-business-hour %%order_class%% .dtq-business-hour-separator',
 					'declaration' => sprintf(
 						'margin-right: %1$s;
 						margin-left: %1$s;',
@@ -322,7 +322,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '.ba-business-hour %%order_class%% .ba-business-hour-separator',
+						'selector'    => '.dtq-business-hour %%order_class%% .dtq-business-hour-separator',
 						'declaration' => sprintf(
 							'border-top: %1$s %2$s %3$s;
 							height: initial!important;
@@ -342,7 +342,7 @@ class DTQ_Business_Hour_Child extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '.ba-business-hour %%order_class%% .ba-business-hour-separator',
+						'selector'    => '.dtq-business-hour %%order_class%% .dtq-business-hour-separator',
 						'declaration' => sprintf(
 							'background-image: url("%1$s");
 							height: %2$s;

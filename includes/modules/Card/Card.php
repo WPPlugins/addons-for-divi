@@ -41,6 +41,7 @@ class DTQ_Card extends BA_Builder_Module {
 						),
 					),
 					'button'     => esc_html__( 'Button', 'addons-for-divi' ),
+					'border'     => esc_html__( 'Border', 'addons-for-divi' ),
 				),
 			),
 
@@ -49,27 +50,27 @@ class DTQ_Card extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'icon'   => array(
 				'label'    => esc_html__( 'Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-card-icon i',
+				'selector' => '%%order_class%% .dtq-card-icon i',
 			),
 			'image'  => array(
 				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-card-figure img',
+				'selector' => '%%order_class%% .dtq-card-figure img',
 			),
 			'badge'  => array(
 				'label'    => esc_html__( 'Badge', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-card .ba-card-badge',
+				'selector' => '%%order_class%% .dtq-card .dtq-card-badge',
 			),
 			'title'  => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-card .ba-card-title',
+				'selector' => '%%order_class%% .dtq-card .dtq-card-title',
 			),
 			'desc'   => array(
 				'label'    => esc_html__( 'Description', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-card .ba-card-desc',
+				'selector' => '%%order_class%% .dtq-card .dtq-card-desc',
 			),
 			'button' => array(
 				'label'    => esc_html__( 'Button', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-card .ba-btn-card',
+				'selector' => '%%order_class%% .dtq-card .dtq-btn-card',
 			),
 		);
 	}
@@ -97,7 +98,7 @@ class DTQ_Card extends BA_Builder_Module {
 				'option_category' => 'basic_option',
 				'toggle_slug'     => 'main_content',
 				'tab_slug'        => 'general',
-				'default'         => '+',
+				'default'         => '&#x2b;||divi||400',
 				'show_if'         => array(
 					'use_icon' => 'on',
 				),
@@ -302,7 +303,19 @@ class DTQ_Card extends BA_Builder_Module {
 					'visible' => esc_html__( 'Visible', 'addons-for-divi' ),
 				),
 			),
-
+			'custom_height'         => array(
+				'label'           => esc_html__( 'Custom Image Height', 'addons-for-divi' ),
+				'description'     => esc_html__( 'Here you can choose whether custom image height should be used.', 'addons-for-divi' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
+					'off' => esc_html__( 'No', 'addons-for-divi' ),
+				),
+				'default'         => 'on',
+				'toggle_slug'     => 'image_icon',
+				'tab_slug'        => 'advanced',
+			),
 			'image_height'          => array(
 				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
 				'description'    => esc_html__( 'This sets a static height value for your card image.', 'addons-for-divi' ),
@@ -318,7 +331,8 @@ class DTQ_Card extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'mobile_options' => true,
 				'show_if'        => array(
-					'use_icon' => 'off',
+					'custom_height' => 'on',
+					'use_icon'      => 'off',
 				),
 			),
 
@@ -477,7 +491,7 @@ class DTQ_Card extends BA_Builder_Module {
 		$advanced_fields['fonts']['badge'] = array(
 			'label'           => esc_html__( 'Badge', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-card-badge',
+				'main'      => '%%order_class%% .dtq-card-badge',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -498,7 +512,7 @@ class DTQ_Card extends BA_Builder_Module {
 		$advanced_fields['fonts']['title'] = array(
 			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-card-title',
+				'main'      => '%%order_class%% .dtq-card-title',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -516,7 +530,7 @@ class DTQ_Card extends BA_Builder_Module {
 		$advanced_fields['fonts']['description'] = array(
 			'label'           => esc_html__( 'Description', 'addons-for-divi' ),
 			'css'             => array(
-				'main'      => '%%order_class%% .ba-card-desc',
+				'main'      => '%%order_class%% .dtq-card-desc',
 				'important' => 'all',
 			),
 			'tab_slug'        => 'advanced',
@@ -536,7 +550,7 @@ class DTQ_Card extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['card'] = array(
-			'toggle_slug' => 'card',
+			'toggle_slug' => 'border',
 			'css'         => array(
 				'main'      => array(
 					'border_radii'  => '%%order_class%%',
@@ -559,8 +573,8 @@ class DTQ_Card extends BA_Builder_Module {
 			'toggle_slug'  => 'image_icon',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-card-icon, %%order_class%% .ba-card-figure img',
-					'border_styles' => '%%order_class%% .ba-card-icon, %%order_class%% .ba-card-figure img',
+					'border_radii'  => '%%order_class%% .dtq-card-icon, %%order_class%% .dtq-card-figure img',
+					'border_styles' => '%%order_class%% .dtq-card-icon, %%order_class%% .dtq-card-figure img',
 				),
 				'important' => 'all',
 			),
@@ -579,8 +593,8 @@ class DTQ_Card extends BA_Builder_Module {
 			'label_prefix' => esc_html__( 'Badge', 'addons-for-divi' ),
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-card-badge',
-					'border_styles' => '%%order_class%% .ba-card-badge',
+					'border_radii'  => '%%order_class%% .dtq-card-badge',
+					'border_styles' => '%%order_class%% .dtq-card-badge',
 				),
 				'important' => 'all',
 			),
@@ -597,14 +611,14 @@ class DTQ_Card extends BA_Builder_Module {
 		$advanced_fields['button']['button'] = array(
 			'label'          => esc_html__( 'Button', 'addons-for-divi' ),
 			'css'            => array(
-				'main'      => '%%order_class%% .ba-btn-card',
-				'alignment' => '%%order_class%% .ba-btn-card-wrap',
+				'main'      => '%%order_class%% .dtq-btn-card',
+				'alignment' => '%%order_class%% .dtq-btn-card-wrap',
 				'important' => 'all',
 			),
 			'use_alignment'  => false,
 			'box_shadow'     => array(
 				'css' => array(
-					'main' => '%%order_class%% .ba-btn-card',
+					'main' => '%%order_class%% .dtq-btn-card',
 				),
 			),
 			'borders'        => array(
@@ -632,7 +646,7 @@ class DTQ_Card extends BA_Builder_Module {
 	public function render_badge() {
 		if ( 'off' !== $this->props['use_badge'] ) {
 			return sprintf(
-				'<div class="ba-card-badge pos--%1$s">%2$s</div>',
+				'<div class="dtq-card-badge pos--%1$s">%2$s</div>',
 				$this->props['badge_position'],
 				$this->props['badge_text']
 			);
@@ -648,19 +662,19 @@ class DTQ_Card extends BA_Builder_Module {
 		$use_lightbox           = $this->props['use_lightbox'];
 		$photo_alt              = $this->props['photo_alt'];
 		$use_icon               = $this->props['use_icon'];
-
+		dtq_inject_fa_icons( $this->props['overlay_icon'] );
 		if ( 'on' !== $use_icon && ! empty( $photo ) ) {
 			return sprintf(
-				'<div class="ba-figure ba-card-figure">
+				'<div class="dtq-figure dtq-card-figure">
                     %1$s
-                    <div class="ba-overlay" data-icon="%4$s"></div>
-                    <img class="ba-img-cover ba-card-figure-img ba-swapped-img %5$s" data-mfp-src="%2$s" src="%2$s" %3$s alt="%6$s"/>
+                    <div class="dtq-overlay"><i class="dtq-overlay-icon">%4$s</i></div>
+                    <img class="dtq-img-cover dtq-card-figure-img dtq-swapped-img %5$s" data-mfp-src="%2$s" src="%2$s" %3$s alt="%6$s"/>
                 </div>',
 				$this->render_Badge(),
 				$photo,
 				$data_schema,
 				$overlay_icon,
-				'on' === $use_lightbox ? 'ba-lightbox' : '',
+				'on' === $use_lightbox ? 'dtq-lightbox' : '',
 				$photo_alt
 			);
 		}
@@ -674,14 +688,14 @@ class DTQ_Card extends BA_Builder_Module {
 		$processed_title_level = esc_html( $processed_title_level );
 
 		if ( ! empty( $title_text ) ) {
-			return sprintf( '<%2$s class="ba-card-title">%1$s</%2$s>', $title_text, $processed_title_level );
+			return sprintf( '<%2$s class="dtq-card-title">%1$s</%2$s>', $title_text, $processed_title_level );
 		}
 	}
 
 	public function render_description() {
 		$description = $this->props['description'];
 		if ( ! empty( $description ) ) {
-			return sprintf( '<div class="ba-card-desc">%1$s</div>', $description );
+			return sprintf( '<div class="dtq-card-desc">%1$s</div>', $description );
 		}
 	}
 
@@ -690,13 +704,15 @@ class DTQ_Card extends BA_Builder_Module {
 		if ( 'off' === $this->props['use_icon'] ) {
 			return;
 		}
-		$selected_icon = esc_attr( et_pb_process_font_icon( $this->props['icon'] ) );
-		$icon_name     = $selected_icon ? $selected_icon : '';
+		$icon_name = esc_attr( et_pb_process_font_icon( $this->props['icon'] ) );
+
+		// Inject Font Awesome Manually!.
+		dtq_inject_fa_icons( $this->props['icon'] );
 
 		return sprintf(
-			'<div class="ba-card-icon-wrap"> %1$s
-                <div class="ba-card-icon">
-                    <i class="ba-et-icon" data-icon="%2$s"></i>
+			'<div class="dtq-card-icon-wrap"> %1$s
+                <div class="dtq-card-icon">
+                    <i class="dtq-et-icon">%2$s</i>
                 </div>
             </div>',
 			$this->render_Badge(),
@@ -714,26 +730,49 @@ class DTQ_Card extends BA_Builder_Module {
 			$button_url    = trim( $button_link );
 			$new_tab       = $this->props['is_new_window'];
 			$button_rel    = $this->props['button_rel'];
-			$button_icon   = ! empty( $this->props['button_icon'] ) ? $this->props['button_icon'] : '5';
 
-			$button_output = $this->render_button(
+			$custom_icon_values = et_pb_responsive_options()->get_property_values( $this->props, 'button_icon' );
+			$custom_icon        = isset( $custom_icon_values['desktop'] ) ? $custom_icon_values['desktop'] : '';
+			$custom_icon_tablet = isset( $custom_icon_values['tablet'] ) ? $custom_icon_values['tablet'] : '';
+			$custom_icon_phone  = isset( $custom_icon_values['phone'] ) ? $custom_icon_values['phone'] : '';
+			$multi_view         = et_pb_multi_view_options( $this );
+
+			if ( function_exists( 'dtq_inject_fa_icons' ) ) {
+				// Inject Font Awesome Manually!.
+				dtq_inject_fa_icons( $this->props['button_icon'] );
+			}
+
+			$button = $this->render_button(
 				array(
-					'button_classname' => array( 'ba-btn-default', 'ba-btn-card' ),
-					'button_custom'    => $button_custom,
-					'button_rel'       => $button_rel,
-					'button_text'      => $button_text,
-					'button_url'       => $button_url,
-					'custom_icon'      => $button_icon,
-					'has_wrapper'      => false,
-					'url_new_window'   => $new_tab,
+					'button_id'           => $this->module_id( false ),
+					'button_classname'    => array( 'dtq-btn-default', 'dtq-btn-card' ),
+					'button_custom'       => $button_custom,
+					'button_text'         => $button_text,
+					'button_rel'          => $button_rel,
+					'button_text_escaped' => true,
+					'button_url'          => $button_url,
+					'custom_icon'         => $custom_icon,
+					'custom_icon_tablet'  => $custom_icon_tablet,
+					'custom_icon_phone'   => $custom_icon_phone,
+					'url_new_window'      => $new_tab,
+					'has_wrapper'         => false,
+					'multi_view_data'     => $multi_view->render_attrs(
+						array(
+							'content'        => '{{button_text}}',
+							'hover_selector' => '%%order_class%% .dtq-btn-card',
+							'visibility'     => array(
+								'button_text' => '__not_empty',
+							),
+						)
+					),
 				)
 			);
 
 			return sprintf(
-				'<div class="ba-btn-card-wrap">
+				'<div class="dtq-btn-card-wrap">
                     %1$s
                 </div>',
-				$button_output
+				$button
 			);
 		}
 	}
@@ -749,14 +788,14 @@ class DTQ_Card extends BA_Builder_Module {
 		}
 
 		return sprintf(
-			'<div class="ba-card-content">%1$s %2$s %3$s</div>',
+			'<div class="dtq-card-content">%1$s %2$s %3$s</div>',
 			$this->render_title(),
 			$this->render_description(),
 			$this->render_module_button()
 		);
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
@@ -764,13 +803,13 @@ class DTQ_Card extends BA_Builder_Module {
 		$use_icon              = $this->props['use_icon'];
 
 		$classes = sprintf(
-			'ba-hover--%1$s use-icon-%2$s',
+			'dtq-hover--%1$s use-icon-%2$s',
 			$image_hover_animation,
 			$use_icon
 		);
 
 		return sprintf(
-			'<div class="ba-module ba-card ba-swapped-img-selector %1$s">
+			'<div class="dtq-module dtq-card dtq-swapped-img-selector %1$s">
                 %2$s %3$s %4$s
             </div>',
 			$classes,
@@ -852,7 +891,7 @@ class DTQ_Card extends BA_Builder_Module {
 		// Content Alignment.
 		$this->get_responsive_styles(
 			'content_alignment',
-			'%%order_class%% .ba-card',
+			'%%order_class%% .dtq-card',
 			array( 'primary' => 'text-align' ),
 			array( 'default' => 'left' ),
 			$render_slug
@@ -860,7 +899,7 @@ class DTQ_Card extends BA_Builder_Module {
 
 		$this->get_responsive_styles(
 			'content_alignment',
-			'%%order_class%% .ba-card-figure',
+			'%%order_class%% .dtq-card-figure',
 			array( 'primary' => 'align-self' ),
 			array( 'default' => 'left' ),
 			$render_slug
@@ -871,7 +910,7 @@ class DTQ_Card extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-card',
+					'selector'    => '%%order_class%% .dtq-card',
 					'declaration' => 'flex-direction: column;',
 				)
 			);
@@ -879,7 +918,7 @@ class DTQ_Card extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-card',
+					'selector'    => '%%order_class%% .dtq-card',
 					'declaration' => 'flex-direction: row-reverse;',
 				)
 			);
@@ -890,7 +929,7 @@ class DTQ_Card extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-card',
+						'selector'    => '%%order_class%% .dtq-card',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => 'flex-direction: column;',
 					)
@@ -899,7 +938,7 @@ class DTQ_Card extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-card',
+						'selector'    => '%%order_class%% .dtq-card',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => 'flex-direction: row-reverse;',
 					)
@@ -908,7 +947,7 @@ class DTQ_Card extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-card',
+						'selector'    => '%%order_class%% .dtq-card',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => 'flex-direction: row;',
 					)
@@ -921,7 +960,7 @@ class DTQ_Card extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-card',
+						'selector'    => '%%order_class%% .dtq-card',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => 'flex-direction: column;',
 					)
@@ -930,7 +969,7 @@ class DTQ_Card extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-card',
+						'selector'    => '%%order_class%% .dtq-card',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => 'flex-direction: row-reverse;',
 					)
@@ -939,7 +978,7 @@ class DTQ_Card extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-card',
+						'selector'    => '%%order_class%% .dtq-card',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => 'flex-direction: row;',
 					)
@@ -960,7 +999,7 @@ class DTQ_Card extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-card-figure',
+				'selector'    => '%%order_class%% .dtq-card-figure',
 				'declaration' => "overflow:{$image_overflow}!important;",
 			)
 		);
@@ -968,28 +1007,43 @@ class DTQ_Card extends BA_Builder_Module {
 		// Button.
 		$this->get_responsive_styles(
 			'btn_spacing_top',
-			'%%order_class%% .ba-btn-card-wrap',
+			'%%order_class%% .dtq-btn-card-wrap',
 			array( 'primary' => 'padding-top' ),
 			array( 'default' => '15px' ),
 			$render_slug
 		);
 
-		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .ba-card .ba-btn-card' );
+		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .dtq-card .dtq-btn-card' );
 
 		// Texts.
 		$this->get_responsive_styles(
 			'title_bottom_spacing',
-			'%%order_class%% .ba-card-title, .et-db #et-boc %%order_class%% .ba-card-title',
+			'%%order_class%% .dtq-card-title, .et-db #et-boc %%order_class%% .dtq-card-title',
 			array( 'primary' => 'padding-bottom' ),
 			array( 'default' => '10px' ),
 			$render_slug
 		);
 
 		if ( 'on' === $use_icon ) {
+
+			$this->generate_styles(
+				array(
+					'utility_arg'    => 'icon_font_family',
+					'render_slug'    => $render_slug,
+					'base_attr_name' => 'icon',
+					'important'      => true,
+					'selector'       => '%%order_class%% .dtq-card .dtq-card-icon',
+					'processor'      => array(
+						'ET_Builder_Module_Helper_Style_Processor',
+						'process_extended_icon',
+					),
+				)
+			);
+
 			// Icon Padding.
 			$this->get_responsive_styles(
 				'icon_padding',
-				'%%order_class%% .ba-card .ba-card-icon',
+				'%%order_class%% .dtq-card .dtq-card-icon',
 				array( 'primary' => 'padding' ),
 				array( 'default' => '25px|25px|25px|25px' ),
 				$render_slug
@@ -998,26 +1052,28 @@ class DTQ_Card extends BA_Builder_Module {
 			// Image Padding.
 			$this->get_responsive_styles(
 				'image_padding',
-				'%%order_class%% .ba-card-figure img',
+				'%%order_class%% .dtq-card-figure img',
 				array( 'primary' => 'padding' ),
 				array( 'default' => '0px|0px|0px|0px' ),
 				$render_slug
 			);
 
 			// Figure Height.
-			$this->get_responsive_styles(
-				'image_height',
-				'%%order_class%% .ba-card-figure',
-				array( 'primary' => 'height' ),
-				array( 'default' => '200px' ),
-				$render_slug
-			);
+			if ( 'on' === $this->props['custom_height'] ) {
+				$this->get_responsive_styles(
+					'image_height',
+					'%%order_class%% .dtq-card-figure',
+					array( 'primary' => 'height' ),
+					array( 'default' => '200px' ),
+					$render_slug
+				);
+			}
 
 			// Figure  width.
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-card-figure',
+					'selector'    => '%%order_class%% .dtq-card-figure',
 					'declaration' => sprintf( 'width:%1$s;max-width: %1$s;', $image_width ),
 				)
 			);
@@ -1025,7 +1081,7 @@ class DTQ_Card extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-card-figure',
+						'selector'    => '%%order_class%% .dtq-card-figure',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'width:%1$s;max-width: %1$s;', $image_width_tablet ),
 					)
@@ -1035,7 +1091,7 @@ class DTQ_Card extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-card-figure',
+						'selector'    => '%%order_class%% .dtq-card-figure',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'width:%1$s;max-width: %1$s;', $image_width_phone ),
 					)
@@ -1046,7 +1102,7 @@ class DTQ_Card extends BA_Builder_Module {
 		// Content padding.
 		$this->get_responsive_styles(
 			'content_padding',
-			'%%order_class%% .ba-card-content',
+			'%%order_class%% .dtq-card-content',
 			array( 'primary' => 'padding' ),
 			array( 'default' => '25px|25px|25px|25px' ),
 			$render_slug
@@ -1056,17 +1112,31 @@ class DTQ_Card extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-card-icon i',
+				'selector'    => '%%order_class%% .dtq-card-icon i',
 				'declaration' => sprintf( 'color: %1$s; font-size: %2$s;', $this->props['icon_color'], $this->props['icon_size'] ),
 			)
 		);
 
 		if ( 'on' === $use_icon ) {
-			$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .ba-card-icon', '%%order_class%%:hover .ba-card-icon' );
+			$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .dtq-card-icon', '%%order_class%%:hover .dtq-card-icon' );
 		}
 
 		$this->get_overlay_style( $render_slug, 'photo', '%%order_class%%' );
-		$this->get_badge_styles( $render_slug, 'badge', '%%order_class%% .ba-card-badge', '%%order_class%%:hover .ba-card-badge' );
+		$this->get_badge_styles( $render_slug, 'badge', '%%order_class%% .dtq-card-badge', '%%order_class%%:hover .dtq-card-badge' );
+
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'overlay_icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-overlay .dtq-overlay-icon',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
 	}
 }
 

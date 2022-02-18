@@ -32,7 +32,7 @@ class DTQ_Gradient_Heading extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'title' => array(
 				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-gradient-heading',
+				'selector' => '%%order_class%% .dtq-gradient-heading',
 			),
 		);
 	}
@@ -210,7 +210,7 @@ class DTQ_Gradient_Heading extends BA_Builder_Module {
 
 		$advanced_fields['fonts']['title'] = array(
 			'css'             => array(
-				'main' => '%%order_class%% .ba-gradient-heading',
+				'main' => '%%order_class%% .dtq-gradient-heading',
 			),
 			'important'       => 'all',
 			'hide_text_color' => true,
@@ -263,14 +263,14 @@ class DTQ_Gradient_Heading extends BA_Builder_Module {
 		return $title;
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$title_font_weight = explode( '|', $this->props['title_font'] )[1];
 		if ( '700' === $title_font_weight ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-gradient-heading',
+					'selector'    => '%%order_class%% .dtq-gradient-heading',
 					'declaration' => 'font-weight: bold;',
 				)
 			);
@@ -279,7 +279,7 @@ class DTQ_Gradient_Heading extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-gradient-heading',
+				'selector'    => '%%order_class%% .dtq-gradient-heading',
 				'declaration' => sprintf(
 					'font-size: %1$s;
 					line-height: %2$s;
@@ -294,7 +294,7 @@ class DTQ_Gradient_Heading extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-gradient-heading',
+				'selector'    => '%%order_class%% .dtq-gradient-heading',
 				'declaration' => sprintf(
 					'-webkit-background-clip: text;
 					-webkit-text-fill-color: transparent;
@@ -307,7 +307,7 @@ class DTQ_Gradient_Heading extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-gradient-heading',
+					'selector'    => '%%order_class%% .dtq-gradient-heading',
 					'declaration' => sprintf(
 						'
 						background-image: linear-gradient(%1$sdeg, %2$s %3$s%%, %4$s %5$s%%);',
@@ -324,7 +324,7 @@ class DTQ_Gradient_Heading extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-gradient-heading',
+					'selector'    => '%%order_class%% .dtq-gradient-heading',
 					'declaration' => sprintf(
 						'
 						background-image: radial-gradient(at %1$s, %2$s %3$s%%, %4$s %5$s%%);',
@@ -339,7 +339,7 @@ class DTQ_Gradient_Heading extends BA_Builder_Module {
 		}
 
 		return sprintf(
-			'<%1$s class="ba-gradient-heading">%2$s</%1$s>',
+			'<%1$s class="dtq-gradient-heading">%2$s</%1$s>',
 			$this->props['html_tag'],
 			$this->render_title()
 		);

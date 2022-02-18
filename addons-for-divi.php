@@ -3,7 +3,7 @@
  * Plugin Name: DiviTorque
  * Plugin URI:  https://divitorque.com/
  * Description: DiviTorque is a plugin that turns Divi theme into a powerful Swiss army knife.
- * Version:     3.1.0
+ * Version:     3.4.2
  * Author:      DiviTorque
  * Author URI:  https://divitorque.com/
  * License: GPL3
@@ -27,8 +27,8 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *
- * Copyright 2021 DiviTorque <https://divitorque.com>
  * 
+ * Copyright 2022 DiviTorque <https://divitorque.com>
  */
 
 // Exit if accessed directly
@@ -36,7 +36,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'DIVI_TORQUE_PLUGIN_VERSION', '3.1.0' );
+define( 'DIVI_TORQUE_PLUGIN_VERSION', '3.4.2' );
 define( 'DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'DIVI_TORQUE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit( DIVI_TORQUE_PLUGIN_URL . 'assets' ) );
@@ -46,7 +46,7 @@ define( 'DIVI_TORQUE_REDIRECTION_FLAG', 'divitorque_activation_redirect' );
 
 do_action( 'divitorque_loaded' );
 
-//Compatibility - BrainAddons
+// Compatibility - BrainAddons
 define( 'BRAIN_ADDONS_PLUGIN_VERSION', '2.3.3' );
 define( 'BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
@@ -99,8 +99,11 @@ if ( !class_exists( 'DIVI_TORQUE_PLUGIN' ) ):
         public function activate() {
             
             update_option( 'divitorque_version', DIVI_TORQUE_PLUGIN_VERSION );
-            
             add_option( DIVI_TORQUE_REDIRECTION_FLAG, true );
+            
+            if ( false === get_transient( 'divitorque-notice-rating' ) ) {
+                set_transient( 'divitorque-notice-rating', true, WEEK_IN_SECONDS );
+            }
 
             $inactive_extensions = get_option( 'ba_inactive_extensions', array() );
             if ( !in_array( 'login-designer', $inactive_extensions, true ) ) {

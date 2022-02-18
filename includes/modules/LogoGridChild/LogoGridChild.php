@@ -144,14 +144,14 @@ class DTQ_Logo_Grid_Child extends BA_Builder_Module {
 
 		$advanced_fields['background'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-logo-grid__item',
+				'main'      => '%%order_class%% .dtq-logo-grid__item',
 				'important' => 'all',
 			),
 		);
 
 		$advanced_fields['margin_padding'] = array(
 			'css' => array(
-				'main'      => '%%order_class%% .ba-logo-grid__item',
+				'main'      => '%%order_class%% .dtq-logo-grid__item',
 				'important' => 'all',
 			),
 		);
@@ -161,8 +161,8 @@ class DTQ_Logo_Grid_Child extends BA_Builder_Module {
 			'toggle_slug'  => 'border',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-logo-grid__item',
-					'border_styles' => '%%order_class%% .ba-logo-grid__item',
+					'border_radii'  => '%%order_class%% .dtq-logo-grid__item',
+					'border_styles' => '%%order_class%% .dtq-logo-grid__item',
 				),
 				'important' => 'all',
 			),
@@ -195,7 +195,7 @@ class DTQ_Logo_Grid_Child extends BA_Builder_Module {
 
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$use_tooltip  = $this->props['use_tooltip'];
 		$tooltip_text = $this->props['tooltip_text'];
@@ -210,9 +210,9 @@ class DTQ_Logo_Grid_Child extends BA_Builder_Module {
 
 		if ( $use_tooltip === 'on' ) {
 
-			wp_enqueue_script( 'baj-popper' );
-			wp_enqueue_script( 'baj-tippy' );
-			wp_enqueue_style( 'bac-tippy' );
+			wp_enqueue_script( 'dtqj-popper' );
+			wp_enqueue_script( 'dtqj-tippy' );
+			wp_enqueue_style( 'dtqc-tippy' );
 
 			$tippy_opts = sprintf(
 				'data-tippy-content="%1$s"
@@ -227,13 +227,13 @@ class DTQ_Logo_Grid_Child extends BA_Builder_Module {
 		}
 
 		return sprintf(
-			'<div class="ba-module ba-child ba-logo-grid__item">
-                    <div class="ba-logo-grid__item__inner %2$s" %3$s>
+			'<div class="dtq-module dtq-child dtq-logo-grid__item">
+                    <div class="dtq-logo-grid__item__inner %2$s" %3$s>
 					    %1$s
 				    </div>
                 </div>',
 			$this->render_logo(),
-			'on' === $use_tooltip ? 'ba-tooltip' : '',
+			'on' === $use_tooltip ? 'dtq-tooltip' : '',
 			$tippy_opts
 		);
 	}

@@ -34,11 +34,11 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'image' => array(
 				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-scroll-image img',
+				'selector' => '%%order_class%% .dtq-scroll-image img',
 			),
 			'icon'  => array(
 				'label'    => esc_html__( 'Direction Icon', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-scroll-image-icon-el',
+				'selector' => '%%order_class%% .dtq-scroll-image-icon-el',
 			),
 		);
 	}
@@ -289,8 +289,8 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			'toggle_slug'  => 'icon',
 			'css'          => array(
 				'main'      => array(
-					'border_radii'  => '%%order_class%% .ba-scroll-image-icon-el',
-					'border_styles' => '%%order_class%% .ba-scroll-image-icon-el',
+					'border_radii'  => '%%order_class%% .dtq-scroll-image-icon-el',
+					'border_styles' => '%%order_class%% .dtq-scroll-image-icon-el',
 				),
 				'important' => 'all',
 			),
@@ -336,8 +336,8 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			if ( $use_image === 'on' ) {
 				return sprintf(
 					'
-                    <div class="ba-scroll-image-icon">
-                        <div class="ba-scroll-image-icon-el">
+                    <div class="dtq-scroll-image-icon">
+                        <div class="dtq-scroll-image-icon-el">
                             <img src="%1$s" alt=""/>
                         </div>
                     </div>',
@@ -345,11 +345,11 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				);
 			} else {
 				$icon = esc_attr( et_pb_process_font_icon( $icon ) );
-
+				dtq_inject_fa_icons( $this->props['icon'] );
 				return sprintf(
 					'
-                    <div class="ba-scroll-image-icon ba-et-font-icon">
-                        <div class="ba-scroll-image-icon-el">
+                    <div class="dtq-scroll-image-icon dtq-et-font-icon">
+                        <div class="dtq-scroll-image-icon-el">
                             %1$s
                         </div>
                     </div>',
@@ -362,13 +362,13 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 	public function render_overlay() {
 		$use_overlay = $this->props['use_overlay'];
 		if ( 'on' === $use_overlay ) {
-			return '<div class="ba-scroll-image-overlay"></div>';
+			return '<div class="dtq-scroll-image-overlay"></div>';
 		}
 	}
 
 
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$image             = $this->props['image'];
 		$image_alt         = $this->props['image_alt'];
@@ -382,11 +382,11 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		if ( ! empty( $image ) ) {
 			return sprintf(
 				'
-                <div class="ba-module ba-scroll-image" data-dir-hover="%5$s" data-dir-scroll="%6$s">
+                <div class="dtq-module dtq-scroll-image" data-dir-hover="%5$s" data-dir-scroll="%6$s">
                     %1$s
                     <div class="scroll-figure-wrap">
                         %2$s
-                        <img class="ba-scroll-image-el" src="%3$s" alt="%4$s" />
+                        <img class="dtq-scroll-image-el" src="%3$s" alt="%4$s" />
                     </div>
                 </div>',
 				$this->render_icon(),
@@ -397,7 +397,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				$scroll_type === 'on_scroll' ? $scroll_dir_scroll : 'none'
 			);
 		} else {
-			return '<div class="ba-module ba-scroll-image"></div>';
+			return '<div class="dtq-module dtq-scroll-image"></div>';
 		}
 	}
 
@@ -418,6 +418,20 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		$img_height_last_edited       = $this->props['img_height_last_edited'];
 		$img_height_responsive_status = et_pb_get_responsive_status( $img_height_last_edited );
 
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'icon',
+				'important'      => true,
+				'selector'       => '%%order_class%% .dtq-scroll-image-icon-el',
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
+
 		if ( $use_icon_anim === 'on' ) {
 			$anim_dir = '';
 			if ( $scroll_type === 'on_scroll' ) {
@@ -433,10 +447,10 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-scroll-image-icon-el',
+					'selector'    => '%%order_class%% .dtq-scroll-image-icon-el',
 					'declaration' => sprintf(
 						'
-                    animation-name: ba-scroll-%1$s;
+                    animation-name: dtq-scroll-%1$s;
                     animation-duration: .5s;
                     animation-iteration-count: infinite;
                     animation-direction: alternate;
@@ -453,7 +467,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-scroll-image-icon-el',
+						'selector'    => '%%order_class%% .dtq-scroll-image-icon-el',
 						'declaration' => sprintf( 'color: %1$s; font-size: %2$s;', $icon_color, $icon_size ),
 					)
 				);
@@ -461,7 +475,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-scroll-image-icon img',
+						'selector'    => '%%order_class%% .dtq-scroll-image-icon img',
 						'declaration' => sprintf( 'width: %1$s; ', $icon_size ),
 					)
 				);
@@ -474,14 +488,14 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-scroll-image',
+						'selector'    => '%%order_class%% .dtq-scroll-image',
 						'declaration' => 'overflow-y: auto;overflow-x:hidden;',
 					)
 				);
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+						'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 						'declaration' => 'max-width: 100%;width: 100%;',
 					)
 				);
@@ -489,7 +503,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-scroll-image',
+						'selector'    => '%%order_class%% .dtq-scroll-image',
 						'declaration' => 'overflow-y:hidden;overflow-x: auto;',
 					)
 				);
@@ -497,7 +511,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+						'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 						'declaration' => 'height: 100%; max-width: none;width: auto;',
 					)
 				);
@@ -520,14 +534,14 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-scroll-image',
+					'selector'    => '%%order_class%% .dtq-scroll-image',
 					'declaration' => 'overflow: hidden;',
 				)
 			);
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+					'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 					'declaration' => sprintf( 'position:absolute;transition: %1$s;', $scroll_speed ),
 				)
 			);
@@ -536,7 +550,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+						'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 						'declaration' => 'height: 100%; max-width: none;width: auto;top:0;',
 					)
 				);
@@ -545,7 +559,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+							'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 							'declaration' => 'right:0;',
 						)
 					);
@@ -553,7 +567,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+							'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 							'declaration' => 'left:0;',
 						)
 					);
@@ -562,7 +576,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+						'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 						'declaration' => 'max-width: 100%;width: 100%; left:0;',
 					)
 				);
@@ -571,7 +585,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+							'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 							'declaration' => 'bottom:0;',
 						)
 					);
@@ -579,7 +593,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
-							'selector'    => '%%order_class%% .ba-scroll-image .ba-scroll-image-el',
+							'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
 							'declaration' => 'top:0;',
 						)
 					);
@@ -591,7 +605,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-scroll-image',
+				'selector'    => '%%order_class%% .dtq-scroll-image',
 				'declaration' => sprintf( 'height: %1$s;', $img_height ),
 			)
 		);
@@ -600,7 +614,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-scroll-image',
+					'selector'    => '%%order_class%% .dtq-scroll-image',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'height: %1$s;', $img_height_tablet ),
 				)
@@ -611,7 +625,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-scroll-image',
+					'selector'    => '%%order_class%% .dtq-scroll-image',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'height: %1$s;', $img_height_phone ),
 				)
@@ -619,7 +633,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		}
 
 		// overlay
-		$this->get_custom_bg_style( $render_slug, 'overlay', '%%order_class%% .ba-scroll-image-overlay', '' );
+		$this->get_custom_bg_style( $render_slug, 'overlay', '%%order_class%% .dtq-scroll-image-overlay', '' );
 
 	}
 }

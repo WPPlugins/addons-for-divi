@@ -28,7 +28,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 		$this->custom_css_fields = array(
 			'logo' => array(
 				'label'    => esc_html__( 'Logo', 'addons-for-divi' ),
-				'selector' => '%%order_class%% .ba-logo-grid__item img',
+				'selector' => '%%order_class%% .dtq-logo-grid__item img',
 			),
 		);
 	}
@@ -144,12 +144,12 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 	}
 
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
 		$this->render_css( $render_slug );
 
 		return sprintf(
-			'<div class="ba-module ba-parent ba-logo-grid %2$s">
+			'<div class="dtq-module dtq-parent dtq-logo-grid %2$s">
                 %1$s
             </div>',
 			$this->props['content'],
@@ -182,7 +182,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-logo-grid__item',
+				'selector'    => '%%order_class%% .dtq-logo-grid__item',
 				'declaration' => sprintf( 'overflow: %1$s;', $logo_overflow ),
 			)
 		);
@@ -224,7 +224,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '.ba-logo-grid__item img',
+					'selector'    => '.dtq-logo-grid__item img',
 					'declaration' => sprintf( 'width: %1$s;', $logo_size ),
 				)
 			);
@@ -233,7 +233,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '.ba-logo-grid__item img',
+						'selector'    => '.dtq-logo-grid__item img',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 						'declaration' => sprintf( 'width: %1$s;', $logo_size_tablet ),
 					)
@@ -244,7 +244,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '.ba-logo-grid__item img',
+						'selector'    => '.dtq-logo-grid__item img',
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 						'declaration' => sprintf( 'width: %1$s;', $logo_size_phone ),
 					)
@@ -255,7 +255,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '.ba-logo-grid__item img',
+					'selector'    => '.dtq-logo-grid__item img',
 					'declaration' => 'width: 100%;',
 				)
 			);
@@ -264,7 +264,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
-				'selector'    => '%%order_class%% .ba-logo-grid',
+				'selector'    => '%%order_class%% .dtq-logo-grid',
 				'declaration' => sprintf( 'margin: -%1$s;', $grid_gap ),
 			)
 		);
@@ -273,7 +273,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-logo-grid',
+					'selector'    => '%%order_class%% .dtq-logo-grid',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					'declaration' => sprintf( 'margin: -%1$s;', $grid_gap_tablet ),
 				)
@@ -284,7 +284,7 @@ class DTQ_Logo_Grid extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-logo-grid',
+					'selector'    => '%%order_class%% .dtq-logo-grid',
 					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					'declaration' => sprintf( 'margin: -%1$s;', $grid_gap_phone ),
 				)

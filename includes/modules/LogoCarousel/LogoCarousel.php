@@ -97,7 +97,7 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 
 	public function get_fields() {
 
-		$carousel_options = $this->get_carousel_option_fields( array() );
+		$carousel_options = $this->get_carousel_option_fields( array(), array(), array() );
 
 		$logo_options = array(
 
@@ -163,10 +163,10 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
-		wp_enqueue_script( 'baj-slick' );
-		wp_enqueue_style( 'bac-slick' );
+		wp_enqueue_script( 'dtqj-slick' );
+		wp_enqueue_style( 'dtqc-slick' );
 		$this->render_css( $render_slug );
 
 		$content          = $this->props['content'];
@@ -179,16 +179,16 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 		array_push( $classes, $logo_hover );
 
 		if ( 'on' === $is_center ) {
-			array_push( $classes, 'ba-centered' );
-			array_push( $classes, "ba-centered--{$center_mode_type}" );
+			array_push( $classes, 'dtq-centered' );
+			array_push( $classes, "dtq-centered--{$center_mode_type}" );
 		}
 
 		if ( 'on' === $custom_cursor ) {
-			array_push( $classes, 'ba-cursor' );
+			array_push( $classes, 'dtq-cursor' );
 		}
 
 		$output = sprintf(
-			'<div class = "ba-carousel ba-logo-carousel ba-carousel-frontend %3$s" %2$s >
+			'<div class = "dtq-carousel dtq-logo-carousel dtq-carousel-frontend %3$s" %2$s >
                 %1$s
             </div>',
 			$content,
@@ -218,7 +218,7 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-logo-carousel-item',
+					'selector'    => '%%order_class%% .dtq-logo-carousel-item',
 					'declaration' => sprintf( 'height: %1$s;display: flex; justify-content: center; align-items: center;', $logo_height ),
 				)
 			);
@@ -227,7 +227,7 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-logo-carousel-item',
+						'selector'    => '%%order_class%% .dtq-logo-carousel-item',
 						'declaration' => sprintf( 'height: %1$s;display: flex; justify-content: center; align-items: center; ', $logo_height_tablet ),
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					)
@@ -238,7 +238,7 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-logo-carousel-item',
+						'selector'    => '%%order_class%% .dtq-logo-carousel-item',
 						'declaration' => sprintf( 'height: %1$s; display: flex; justify-content: center; align-items: center;`', $logo_height_phone ),
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					)
@@ -251,7 +251,7 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .ba-logo-carousel-item img',
+					'selector'    => '%%order_class%% .dtq-logo-carousel-item img',
 					'declaration' => sprintf( 'width: %1$s;', $logo_width ),
 				)
 			);
@@ -260,7 +260,7 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-logo-carousel-item img',
+						'selector'    => '%%order_class%% .dtq-logo-carousel-item img',
 						'declaration' => sprintf( 'width: %1$s;', $logo_width_tablet ),
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
 					)
@@ -271,7 +271,7 @@ class DTQ_Logo_Carousel extends BA_Builder_Module {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
-						'selector'    => '%%order_class%% .ba-logo-carousel-item img',
+						'selector'    => '%%order_class%% .dtq-logo-carousel-item img',
 						'declaration' => sprintf( 'width: %1$s;`', $logo_width_phone ),
 						'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
 					)
