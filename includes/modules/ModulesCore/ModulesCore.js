@@ -668,23 +668,24 @@ export const _getCustomBgCss = (
             props[opt_name + "_bg_color_gradient_type"] || "linear";
         let _bg_gradient_direction =
             props[opt_name + "_bg_color_gradient_direction"] || "180deg";
-        let _bg_gradient_radial_direction =
+        let _bg_grad_radial_direction =
             props[opt_name + "_bg_color_gradient_direction_radial"] || "center";
-        let _bg_gradient_color_start =
-            props[opt_name + "_bg_color_gradient_start"] || "#2b87da";
-        let _bg_gradient_color_end =
-            props[opt_name + "_bg_color_gradient_end"] || "#29c4a9";
-        let _bg_gradient_start_position =
-            props[opt_name + "_bg_color_gradient_start_position"] || "0%";
-        let _bg_gradient_end_position =
-            props[opt_name + "_bg_color_gradient_end_position"] || "100%";
+        let _bg_color_gradient_stops =
+            props[opt_name + "_bg_color_gradient_stops"] &&
+            props[opt_name + "_bg_color_gradient_stops"].split("|").join(",");
+        let _bg_repeat = props[opt_name + "_bg_color_gradient_repeat"];
+
+        _bg_gradient_type =
+            "circular" === _bg_gradient_type ? "radial" : _bg_gradient_type;
 
         _bg_gradient_direction =
             _bg_gradient_type === "linear"
                 ? _bg_gradient_direction
-                : `circle at ${_bg_gradient_radial_direction}`;
+                : `circle at ${_bg_grad_radial_direction}`;
 
-        let _bg_gradient_css = `${_bg_gradient_type}-gradient( ${_bg_gradient_direction}, ${_bg_gradient_color_start} ${_bg_gradient_start_position}, ${_bg_gradient_color_end} ${_bg_gradient_end_position} )`;
+        let _bg_gradient_css = `${
+            "on" === _bg_repeat ? "repeating-" : ""
+        }${_bg_gradient_type}-gradient( ${_bg_gradient_direction}, ${_bg_color_gradient_stops} )`;
 
         _bg_images.push(_bg_gradient_css);
 
@@ -723,31 +724,25 @@ export const _getCustomBgCss = (
             _bg_style += `background-blend-mode:${_bg_blend} !important;`;
         }
 
-        if (_bg_image && _bg_image.length > 0) {
-            let _bg_image_url = `url(${_bg_image})`;
-            _bg_images.push(_bg_image_url);
-        }
+        let _bg_image_url = `url(${_bg_image})`;
+
+        _bg_images.push(_bg_image_url);
     }
 
-    // if (_bg_images !== "") {
-    //   if ("on" !== _bg_gradient_overlays_image) {
-    // 	_bg_images = _bg_images.reverse();
-    //   }
-    //   _bg_style += `background-image:${_bg_images.join(", ")} !important;`;
-    // }
+    if (_bg_images !== "") {
+        if ("on" !== _bg_gradient_overlays_image) {
+            _bg_images = _bg_images.reverse();
+        }
+        _bg_style += `background-image:${_bg_images.join(", ")} !important;`;
+    }
 
     if (_bg_images !== "") {
         // The browsers stack the images in the opposite order to what you'd expect.
         if ("on" !== _bg_gradient_overlays_image) {
             _bg_images = _bg_images.reverse();
         }
-
-        if (_bg_images && _bg_images.length > 0) {
-            // Set background image styles only it's different compared to the larger device.
-            _bg_style += `background-image:${_bg_images.join(
-                ", "
-            )} !important;`;
-        }
+        // Set background image styles only it's different compared to the larger device.
+        _bg_style += `background-image: ${_bg_images.join(", ")} !important;`;
     }
 
     if (!has_bg_color_gradient) {
@@ -760,14 +755,12 @@ export const _getCustomBgCss = (
         }
     }
 
-    if (_bg_style.length > 0) {
-        additionalCss.push([
-            {
-                selector: selector,
-                declaration: `${_bg_style}`
-            }
-        ]);
-    }
+    additionalCss.push([
+        {
+            selector: selector,
+            declaration: `${_bg_style}`
+        }
+    ]);
 
     // hover
     let _bg_style_hover = "";
@@ -794,28 +787,32 @@ export const _getCustomBgCss = (
             let _bg_gradient_direction_hover =
                 props[opt_name + "_bg_color_gradient_direction__hover"] ||
                 "180deg";
-            let _bg_gradient_radial_direction_hover =
+            let _bg_grad_radial_direction_hover =
                 props[
                     opt_name + "_bg_color_gradient_direction_radial__hover"
-                ] || "circle";
-            let _bg_gradient_color_start_hover =
-                props[opt_name + "_bg_color_gradient_start__hover"] ||
-                "#2b87da";
-            let _bg_gradient_color_end_hover =
-                props[opt_name + "_bg_color_gradient_end__hover"] || "#29c4a9";
-            let _bg_gradient_start_position_hover =
-                props[opt_name + "_bg_color_gradient_start_position__hover"] ||
-                "0%";
-            let _bg_gradient_end_position_hover =
-                props[opt_name + "_bg_color_gradient_end_position__hover"] ||
-                "100%";
+                ] || "center";
+            let bg_color_gradient_stops_hover =
+                props[opt_name + "_bg_color_gradient_stops__hover"] &&
+                props[opt_name + "_bg_color_gradient_stops__hover"]
+                    .split("|")
+                    .join(",");
+            let _repeat_hover =
+                props[opt_name + "_bg_color_gradient_repeat__hover"];
+
+            _bg_gradient_type_hover =
+                "circular" === _bg_gradient_type_hover
+                    ? "radial"
+                    : _bg_gradient_type_hover;
 
             _bg_gradient_direction_hover =
                 _bg_gradient_type_hover === "linear"
                     ? _bg_gradient_direction_hover
-                    : `circle at ${_bg_gradient_radial_direction_hover}`;
+                    : `circle at ${_bg_grad_radial_direction_hover}`;
 
-            let _bg_gradient_css_hover = `${_bg_gradient_type_hover}-gradient( ${_bg_gradient_direction_hover}, ${_bg_gradient_color_start_hover} ${_bg_gradient_start_position_hover}, ${_bg_gradient_color_end_hover} ${_bg_gradient_end_position_hover} )`;
+            let _bg_gradient_css_hover = `${
+                "on" === _repeat_hover ? "repeating-" : ""
+            }${_bg_gradient_type_hover}-gradient( ${_bg_gradient_direction_hover}, ${bg_color_gradient_stops_hover} )`;
+
             _bg_images_hover.push(_bg_gradient_css_hover);
             has_bg_color_gradient_hover = true;
         }

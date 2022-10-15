@@ -102,7 +102,10 @@ function ba_get_date_link( $post_id = null ) {
 	return $url;
 }
 
-function ba_get_excerpt( $post_id = null, $length = 35 ) {
+function ba_get_excerpt( $post_id = null, $length = null ) {
+	if ( empty( $length ) ) {
+		$length = 35;
+	}
 	return wpautop( strip_shortcodes( truncate_post( $length, false, '', true ) ) );
 }
 
@@ -166,7 +169,7 @@ function dtq_global_assets_list( $global_list ) {
 }
 
 function dtq_inject_fa_icons( $icon_data ) {
-	if ( et_pb_maybe_fa_font_icon( $icon_data ) ) {
+	if ( function_exists( 'et_pb_maybe_fa_font_icon' ) && et_pb_maybe_fa_font_icon( $icon_data ) ) {
 		add_filter( 'et_global_assets_list', 'dtq_global_assets_list' );
 		add_filter( 'et_late_global_assets_list', 'dtq_global_assets_list' );
 	}
