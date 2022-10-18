@@ -3,7 +3,7 @@ Contributors: divitorque
 Tags: Divi, Divi theme, Divi builder, Divi modules, Divi template
 Requires at least: 4.8
 Tested up to: 6.0
-Stable tag: 3.5.1
+Stable tag: 3.5.2
 Requires PHP: 5.6
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -69,6 +69,9 @@ Unfortunately, No. You’ve to install Divi first. Divi Torque is dependent on D
 == Screenshots ==
 
 == Changelog ==
+
+3.5.2 - 18/10/2022
+- Fix: Fix the file missing issue
 
 3.5.1 - 11/10/2022
 - Fix: Many issues
