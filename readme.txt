@@ -1,11 +1,11 @@
 === Divi Torque – Ultimate Addons for Divi Builder – Support is Extremely Responsive and Helpful. ===
 
-Contributors: divitorque, wppaw
+Contributors: divitorque
 Donate link: https://wppaw.com
 Tags: divi, module, builder, addons, Divi builder, divi module, divi theme, divi builder, divi addons
 Requires at least: 5.9
 Tested up to: 6.0
-Stable tag: 3.5.3
+Stable tag: 3.5.4
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -14,12 +14,12 @@ Make the website easy with simple-to-use modules.
 
 == Description ==
 
-**Build website faster with DiviTorque!**
+**Build Website Faster with DiviTorque!**
 ★★★★★<br>
 
 Tired of complex modules, poor performance, and expensive add-ons for essential features, only to get meh results?
 
-Introducing DiviTorque – We have modules for every need, from the most familiar ones to some of the EXCLUSIVE & UNIQUE modules.
+Introducing DiviTorque
 
 ## What you will get in DiviTorque lite version ##
 
