@@ -1,116 +1,80 @@
-=== Divi Torque - Divi Theme, Divi Builder and Extra Theme ===
-Contributors: divitorque
-Tags: Divi, Divi theme, Divi builder, Divi modules, Divi template
-Requires at least: 4.8
-Tested up to: 6.0
-Stable tag: 3.5.2
-Requires PHP: 5.6
-License: GPLv2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+=== Divi Torque – Ultimate Addons for Divi Builder – Support is Extremely Responsive and Helpful. ===
 
-Divi Torque is a powerful plugin that turns Divi page builder into a swiss army knife.
+Contributors: divitorque, wppaw
+Donate link: https://wppaw.com
+Tags: divi, module, builder, addons, Divi builder, divi module, divi theme, divi builder, divi addons
+Requires at least: 5.9
+Tested up to: 6.0
+Stable tag: 3.5.3
+Requires PHP: 7.4
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Make the website easy with simple-to-use modules.
 
 == Description ==
-### Divi Torque - Swiss Army Knife for Divi Theme, Divi Builder and Extra theme ### 
+
+**Build website faster with DiviTorque!**
 ★★★★★<br>
 
-**Divi Torque is the pioneer of adding problem-solving premium quality Divi module collection.**
+Tired of complex modules, poor performance, and expensive add-ons for essential features, only to get meh results?
 
-Extend your Divi theme functionality with Divi Torque with various modules like Divi FlipBox, Divi Image Carousel, Divi Video Popup, Divi Logo Carousel, Divi Infobox, Divi Card, Divi Image Compare, Divi Business Hour, and Divi alert etc.
+Introducing DiviTorque – We have modules for every need, from the most familiar ones to some of the EXCLUSIVE & UNIQUE modules.
 
-[Demos](https://divitorque.com/) | [Get Pro](https://divitorque.com/pricing/)
+## What you will get in DiviTorque lite version ##
 
-== Modules ==
+** 25+ Free Divi Module Are Available in the DiviTorque Free
 
-We have built 30+ useful modules and extensions to enhance your Divi Page Building experience.
+* Torq Carousel - Build an image carousel with coding
+* Torq Logo Carousel - Showcase brand/company logos in a carousel
+* Torq Logo Grid - Showcase brand/company logos in a grid layout
+* Torq Team - Showcase your team on your website
+* Torq Testimonial - Display customer testimonials on your website
+* Torq Alert - Display notices, warnings, and attention texts on any website with an alert module
+* Torq Compare Image - Perfect for the image before-after image
+* Torq Business Hour - Showcase your office hours for clients and visitors
+* Torq Info Card - Demonstrate products, and creative posts using a beautiful combination of elements
+* Torq Contact Form 7 - It helps you to style existing Contact Form 7 forms
+* Torq Gradient Heading - Create a gradient heading in a few seconds
+* Torq Icon Box - Display a short brief about the services you provide
+* Torq Blurb - Extended version of Divi default blurb module
+* Torq Image Scroll - Show images in a way that scrolls horizontally or vertically
+* Torq Progress Bar - Showcase skills and other progressive information by this static module
+* Torq Twitter Feed - It will help to fetch specific Twitter account feeds on the web pages
+* Torq Twitter Carousel - This module will help to show Twitter feeds in the carousel
+* Torq Video Modal - You can make a video lightbox popup in Divi builder. YouTube and Vimeo videos are supported.
+* Torq Divider - Separate your section using some fancy divider
 
-* [Image Carousel](https://divitorque.com/image-carousel-module/) - Build an image carousel using this module which comes with various features.
-* [Divi Flipbox](https://divitorque.com/flip-box-module/) - It makes the content more attractive and engaging with an interactive before and after effect.
-* [Logo Carousel](https://divitorque.com/logo-carousel-module/) - Showcase brand logos, design logos elegantly into the carousel.
-* [Advanced Team](https://divitorque.com/team-module/) - Display your leading team in various styles using texts, images, and social links.
-* [Divi Testimonial](https://divitorque.com/testimonial-module/) - Elegantly publishing customer reviews on the business website.
-* [Divi Alert](https://divitorque.com/alert-module/) - Display notices, warnings, and attention texts on any websites with an alert module.
-* [Image Compare](https://divitorque.com/image-compare-module/) - This Divi module is perfect for the image before-after image.
-* [Animated Text](https://divitorque.com/animated-text-module/) - Showcase text by animation that gives a new outlook to the text content.
-* [Business Hour](https://divitorque.com/business-hour-module/) - Showcase office hours for clients and visitors.
-* [Divi Card Module](https://divitorque.com/card-module/) - An excellent module to demonstrate products, and creative posts using a beautiful combination of elements.
-* [CF7 Styler](https://divitorque.com/cf7-styler-module/) - It helps you to style existing Contact Form 7 forms.
-* [Dual Button](https://divitorque.com/dual-button-module/) - The dual Button module helps to add two flexible and trendy buttons to Divi webpages.
-* [Advanced Divider](https://divitorque.com/advanced-divider-module/) - Separate your section using fancy dividers.
-* [Gradient Heading](https://divitorque.com/gradient-heading-module/) - Create a gradient heading using this module.
-* [Icon Box](https://divitorque.com/icon-box-module/) - Icon Box allows you to give a short brief about the services you provide.
-* [Animated Gallery](https://divitorque.com/animated-gallery-module/) - Create an animated gallery that will give a stylish look to the website.
-* [Info Box](https://divitorque.com/info-box-module/) - Built information boxes using multiple various elements and make a unique type of infobox.
-* [Logo Grid](https://divitorque.com/logo-grid-module/) - Organize different types of logos on the same grid layout and showcase them to visitors.
-* [News Ticker](https://divitorque.com/news-ticker-module/) - Easily add custom news tickers to your site either through the Divi module.
-* [Number Module](https://divitorque.com/number-module/) - Create outstanding numbers and number blocks with diverse styles.
-* [Post List](https://divitorque.com/post-list-module/) - Showcase the post list more organized and elegantly on the web pages.
-* [Review Module](https://divitorque.com/review-module/) - An incredibly powerful module that helps to publish excellent reviews.
-* [Scroll Image](https://divitorque.com/scroll-image-module/) - Show images in a way that scrolls horizontally or vertically.
-* [Skill Bars](https://divitorque.com/skill-bars-module/) - Showcase skills and other progressive information by this static module.
-* [Twitter Feed](https://divitorque.com/twitter-feed-module/) - It will help to fetch specific Twitter account feeds on the web pages.
-* [Twitter Feed Carousel](https://divitorque.com/twitter-feed-carousel-module/) - This module will help to show Twitter feeds in the carousel.
-* [Video Popup](https://divitorque.com/video-popup-module/) - It will help to perfectly present the video content in the popup.
+## Join Our Facebook Group ##
+[Join our Facebook group community](https://www.facebook.com/groups/466506622180801): Learn the tricks and techniques that other Divi Torque users are using to grow their businesses. Also, get exciting insider information on upcoming feature releases.
+
+## Rate us on WordPress 🙂 ##
+We are thankful to you that you have chosen our plugin. If our plugin brings a smile to your face while working, please share your happiness by giving us a 5***** rating in WordPress Org. It will make us happy and won’t take more than 2 mins.
+
+[I’m Happy to Give You ⭐️ ⭐️ ⭐️ ⭐️ ⭐️](https://wordpress.org/support/plugin/addons-for-divi/reviews/?filter=5#new-post)
+
+## Backed by a Trusted Team ##
+Divi Torque is brought to you by [Divi Torque](https://divitorque.com) and [WPPaw](https://wppaw.com) Team, a dedicated WordPress product company, trusted by 5 million+ happy users.
 
 == Installation ==
 
-Note: This plugin works with Divi. Make sure you have [Divi Theme](https://www.elegantthemes.com/) installed.
+> Note: This plugin works with Divi. Make sure you have [Divi Theme](https://www.elegantthemes.com/) installed.
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
-3. You can type "Torque" on your module tabs within the Divi editor and all the available modules will appear.
+3. You can type "Torq" on your module tabs within the Divi editor and all the available modules will appear.
 
 == Frequently Asked Questions ==
-
-= Can I use the plugin without Divi Theme/Builder? =
-
-Unfortunately, No. You’ve to install Divi first. Divi Torque is dependent on Divi Theme/Builder.
 
 == Screenshots ==
 
 == Changelog ==
 
-3.5.2 - 18/10/2022
-- Fix: Fix the file missing issue
+v3.0.0
+Rebranding
 
-3.5.1 - 11/10/2022
-- Fix: Many issues
+v2.0.0
+Codebase change
 
-3.4.2 - 10/02/2022
-- Fix: PHP8 Support
-
-3.4.1 - 08/02/2022
-- Fixed: Admin image issue
-
-3.4.0 - 08/02/2022
-- Added: Image Carousel Module Feature
-- Added: Video Popup Full Screen
-- Added: New Features in Advanced Divider
-- Fixed: CF7 Styler Acceptance Validation
-- Fixed: Font Awesome Icon Render Issue
-
-3.3.0 - 06/01/2022
-- Updated: Minor code update.
-
-3.2.0 – 28/12/2021
-- Added: Post Duplicator extension
-- Fixed: Business hours module border issue
-- Fixed: Animated text module issue
-- Updated: Number module Improvement
-- Code optimization for modules
-
-3.1.2 – 12/12/2021
-– Update module options
-– Code optimization
-- Fix: module `not found issue`.
-
-3.1.1 – 11/14/2021
-- Update module options
-- Code optimization
-
-3.1.0 – 11/14/2021
-- Update default values
-- Code optimization
-
-3.0.0 – 11/14/2021
-- Rebrand name: BrainAddons to DiviTorque
+v1.0.0
+Public release

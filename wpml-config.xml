@@ -1,4 +1,5 @@
 <wpml-config>
+
 	<shortcodes>
 		<shortcode>
 			<tag>ba_advanced_divider</tag>
@@ -173,4 +174,3 @@
 		</shortcode>
 	</shortcodes>
 </wpml-config>
-

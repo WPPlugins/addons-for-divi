@@ -3,7 +3,7 @@
  * Plugin Name: Divi Torque
  * Plugin URI:  https://divitorque.com/
  * Description: Divi Torque is a plugin that turns Divi theme into a powerful Swiss army knife.
- * Version:     3.5.2
+ * Version:     3.5.3
  * Author:      Divi Torque
  * Author URI:  https://divitorque.com/
  * License: GPL3
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DIVI_TORQUE_PLUGIN_VERSION', '3.5.2');
+define('DIVI_TORQUE_PLUGIN_VERSION', '3.5.3');
 define('DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DIVI_TORQUE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit(DIVI_TORQUE_PLUGIN_URL . 'assets'));
@@ -27,7 +27,6 @@ define('DIVI_TORQUE_REDIRECTION_FLAG', 'divitorque_activation_redirect');
 
 do_action('divitorque_loaded');
 
-// Compatibility - BrainAddons
 define('BRAIN_ADDONS_PLUGIN_VERSION', '2.3.3');
 define('BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url(__FILE__));
