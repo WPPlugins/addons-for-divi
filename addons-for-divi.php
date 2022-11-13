@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name: Divi Torque
- * Plugin URI:  https://divitorque.com/
- * Description: Divi Torque is a plugin that turns Divi theme into a powerful Swiss army knife.
- * Version:     3.5.4
- * Author:      Divi Torque
- * Author URI:  https://divitorque.com/
+ * Plugin Name: Divi Torque Free
+ * Plugin URI:  https://divitorque.com
+ * Description: Powerful divi modules to create powerful websites.
+ * Version:     3.5.5
+ * Author:      WPPaw
+ * Author URI:  https://wppaw.com
  * License: GPL3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: addons-for-divi
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DIVI_TORQUE_PLUGIN_VERSION', '3.5.4');
+define('DIVI_TORQUE_PLUGIN_VERSION', '3.5.5');
 define('DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DIVI_TORQUE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit(DIVI_TORQUE_PLUGIN_URL . 'assets'));
@@ -27,18 +27,17 @@ define('DIVI_TORQUE_REDIRECTION_FLAG', 'divitorque_activation_redirect');
 
 do_action('divitorque_loaded');
 
-define('BRAIN_ADDONS_PLUGIN_VERSION', '2.3.3');
-define('BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path(__FILE__));
-define('BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('BRAIN_ADDONS_PLUGIN_ASSETS', trailingslashit(BRAIN_ADDONS_PLUGIN_URL . 'assets'));
-define('BRAIN_ADDONS_PLUGIN_FILE', __FILE__);
-define('BRAIN_ADDONS_PLUGIN_BASE', plugin_basename(__FILE__));
+// define('BRAIN_ADDONS_PLUGIN_VERSION', '2.3.3');
+// define('BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path(__FILE__));
+// define('BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url(__FILE__));
+// define('BRAIN_ADDONS_PLUGIN_ASSETS', trailingslashit(BRAIN_ADDONS_PLUGIN_URL . 'assets'));
+// define('BRAIN_ADDONS_PLUGIN_FILE', __FILE__);
+// define('BRAIN_ADDONS_PLUGIN_BASE', plugin_basename(__FILE__));
 
-do_action('brainaddons_loaded');
+// do_action('brainaddons_loaded');
 
-if (!class_exists('DIVI_TORQUE_PLUGIN')) :
-
-    final class DIVI_TORQUE_PLUGIN
+if (!class_exists('DiviTorqueLite')) :
+    final class DiviTorqueLite
     {
 
         private static $instance;
@@ -52,8 +51,8 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
         public static function instance()
         {
 
-            if (!isset(self::$instance) && !(self::$instance instanceof DIVI_TORQUE_PLUGIN)) {
-                self::$instance = new DIVI_TORQUE_PLUGIN();
+            if (!isset(self::$instance) && !(self::$instance instanceof DiviTorqueLite)) {
+                self::$instance = new DiviTorqueLite();
                 self::$instance->init();
                 self::$instance->includes();
             }
@@ -137,9 +136,9 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
     }
 endif;
 
-function divitorque_plugin()
+function divi_torque_lite_plugin()
 {
-    return DIVI_TORQUE_PLUGIN::instance();
+    return DiviTorqueLite::instance();
 }
 
-divitorque_plugin();
+divi_torque_lite_plugin();
