@@ -14,7 +14,7 @@ if (!function_exists('brainaddons_fs')) {
                     'type'             => 'plugin',
                     'public_key'       => 'pk_c7283f055cecf2bc84f0c13a22b7c',
                     'is_premium'       => false,
-                    'has_addons'       => false,
+                    'has_addons'       => true,
                     'has_paid_plans'   => false,
                     'is_org_compliant' => true,
                     'menu'             => array(

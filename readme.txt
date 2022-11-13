@@ -5,7 +5,7 @@ Donate link: https://wppaw.com
 Tags: Divi, Divi builder, Divi Module, Divi theme, Divi Addons
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 3.5.5
+Stable tag: 3.5.6
 Requires PHP: 7.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

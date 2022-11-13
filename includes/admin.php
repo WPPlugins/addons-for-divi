@@ -16,20 +16,20 @@ class Admin
 		add_action('wp_ajax_' . self::MODULES_NONCE, array(__CLASS__, 'save_data'));
 		add_action('ba_save_admin_data', array(__CLASS__, 'save_modules_data'));
 		add_action('ba_save_admin_data', array(__CLASS__, 'save_extensions_data'));
-		// add_action('admin_init', array(__CLASS__, 'activation_redirect'));
+		add_action('admin_init', array(__CLASS__, 'activation_redirect'));
 	}
 
-	// public static function activation_redirect()
-	// {
-	// 	if (get_option(DIVI_TORQUE_REDIRECTION_FLAG, false)) {
-	// 		delete_option(DIVI_TORQUE_REDIRECTION_FLAG);
-	// 		if (!get_option(DIVI_TORQUE_REDIRECTION_FLAG, false) || !divitorque_has_pro()) {
-	// 			die(wp_redirect(divitorque_dashboard_link()));
-	// 		} else {
-	// 			die(wp_redirect(divitorque_dashboard_link()));
-	// 		}
-	// 	}
-	// }
+	public static function activation_redirect()
+	{
+		if (get_option(DIVI_TORQUE_REDIRECTION_FLAG, false)) {
+			delete_option(DIVI_TORQUE_REDIRECTION_FLAG);
+			if (!get_option(DIVI_TORQUE_REDIRECTION_FLAG, false) || !divitorque_has_pro()) {
+				die(wp_redirect(divitorque_dashboard_link()));
+			} else {
+				die(wp_redirect(divitorque_dashboard_link()));
+			}
+		}
+	}
 
 	public static function add_menu()
 	{
@@ -118,7 +118,7 @@ class Admin
 	public static function get_modules()
 	{
 		$modules_map = self::get_free_modules();
-		// $modules_map = array_merge($modules_map, self::get_pro_modules());
+		$modules_map = array_merge($modules_map, self::get_pro_modules());
 		uksort($modules_map, array(__CLASS__, 'sort_widgets'));
 		return $modules_map;
 	}
@@ -355,212 +355,212 @@ class Admin
 		return $modules_map;
 	}
 
-	// private static function c()
-	// {
-	// 	$modules_map = [];
-	// 	// $modules_map = array(
-	// 	// 	'advanced-heading'     => array(
-	// 	// 		'title'  => __( 'Advanced Heading', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/advanced-heading-module',
-	// 	// 		'icon'   => 'advanced_heading',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'animated-gallery'     => array(
-	// 	// 		'title'  => __( 'Animated Gallery', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/animated-gallery-module',
-	// 	// 		'icon'   => 'animated-gallery',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'author-box'           => array(
-	// 	// 		'title'  => __( 'Author Box', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/',
-	// 	// 		'icon'   => 'author_list',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'author-list'          => array(
-	// 	// 		'title'  => __( 'Author List', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/author-list-module',
-	// 	// 		'icon'   => 'author_list',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'content-toggle'       => array(
-	// 	// 		'title'  => __( 'Content Toggle', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/content-toggle-module',
-	// 	// 		'icon'   => 'content_toggle',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'floating-image'       => array(
-	// 	// 		'title'  => __( 'Floating Image', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/floating-image-module',
-	// 	// 		'icon'   => 'floating_image',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'horizontal-timeline'  => array(
-	// 	// 		'title'  => __( 'Horizontal Timeline', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/horizontal-timeline-module/',
-	// 	// 		'icon'   => 'horizontal_timeline',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'hotspots'             => array(
-	// 	// 		'title'  => __( 'Hotspots', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/hotspots-module',
-	// 	// 		'icon'   => 'hotspots',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'hover-box'            => array(
-	// 	// 		'title'  => __( 'Hover Box', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/hover-box-module',
-	// 	// 		'icon'   => 'hover_box',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'image-accordion'      => array(
-	// 	// 		'title'  => __( 'Image Accordion', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/image-accordion-module',
-	// 	// 		'icon'   => 'image_accordion',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'image-hover'          => array(
-	// 	// 		'title'  => __( 'Image Hover', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/image-hover-module',
-	// 	// 		'icon'   => 'hover_box',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'image-magnifier'      => array(
-	// 	// 		'title'  => __( 'Image Magnifier', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/image-magnifier-module',
-	// 	// 		'icon'   => 'image_magnifier',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'image-masking'        => array(
-	// 	// 		'title'  => __( 'Image Masking', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/image-masking-module',
-	// 	// 		'icon'   => 'image_masking',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'inline-svg'           => array(
-	// 	// 		'title'  => __( 'Inline SVG', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/inline-svg-module',
-	// 	// 		'icon'   => 'inline_svg',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'instagram-carousel'   => array(
-	// 	// 		'title'  => __( 'Instagram Carousel', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/instagram-carousel-module',
-	// 	// 		'icon'   => 'instagram_carousel',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'instagram-feed'       => array(
-	// 	// 		'title'  => __( 'Instagram Feed', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/instagram-feed-module',
-	// 	// 		'icon'   => 'instagram_feed',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'list-group'           => array(
-	// 	// 		'title'  => __( 'List Group', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/list-group-module',
-	// 	// 		'icon'   => 'list_group',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'lottie-animation'     => array(
-	// 	// 		'title'  => __( 'Lottie Animation', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/lottie-animation-module',
-	// 	// 		'icon'   => 'lottie',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'news-ticker-pro'      => array(
-	// 	// 		'title'  => __( 'News Ticker Pro', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/news-ticker-pro-module/',
-	// 	// 		'icon'   => 'news_ticker',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'post-carousel'        => array(
-	// 	// 		'title'  => __( 'Post Carousel', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/post-carousel-module/',
-	// 	// 		'icon'   => 'post_carousel',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'post-grid'            => array(
-	// 	// 		'title'  => __( 'Post Grid', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/post-grid-module/',
-	// 	// 		'icon'   => 'post_grid',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'post-masonry'         => array(
-	// 	// 		'title'  => __( 'Post Masonry', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/post-masonry-module/',
-	// 	// 		'icon'   => 'post_masonry',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'post-tiles'           => array(
-	// 	// 		'title'  => __( 'Post Tiles', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/post-tiles-module/',
-	// 	// 		'icon'   => 'post_tiles',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'price-menu'           => array(
-	// 	// 		'title'  => __( 'Price Menu', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/price-menu-module',
-	// 	// 		'icon'   => 'price_menu',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'smart-post-list'      => array(
-	// 	// 		'title'  => __( 'Smart Post List', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/smart-post-module',
-	// 	// 		'icon'   => 'smart_post_list',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'social-share'         => array(
-	// 	// 		'title'  => __( 'Social Share', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/social-share-module',
-	// 	// 		'icon'   => 'social_share',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'team-carousel'        => array(
-	// 	// 		'title'  => __( 'Team Carousel', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/team-carousel-module',
-	// 	// 		'icon'   => 'team_carousel',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'testimonial-carousel' => array(
-	// 	// 		'title'  => __( 'Testimonial Carousel', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/testimonial-carousel-module',
-	// 	// 		'icon'   => 'testimonial_carousel',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'vertical-timeline'    => array(
-	// 	// 		'title'  => __( 'Vertical Timeline', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/vertical-timeline-module/',
-	// 	// 		'icon'   => 'vertical_timeline',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'video-carousel'       => array(
-	// 	// 		'title'  => __( 'Video Carousel', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/video-carousel-module/',
-	// 	// 		'icon'   => 'video_carousel',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'text-highlight'       => array(
-	// 	// 		'title'  => __( 'Text Highlight', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/text-highlight-module/',
-	// 	// 		'icon'   => 'animated_text',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'off-canvas'           => array(
-	// 	// 		'title'  => __( 'Off-canvas', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/off-canvas-module/',
-	// 	// 		'icon'   => 'off_canvas',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// 	'mega-menu'            => array(
-	// 	// 		'title'  => __( 'Mega Menu', 'addons-for-divi' ),
-	// 	// 		'demo'   => 'https://divitorque.com/mega-menu-module/',
-	// 	// 		'icon'   => 'mega_menu',
-	// 	// 		'is_pro' => true,
-	// 	// 	),
-	// 	// );
+	private static function get_pro_modules()
+	{
+		$modules_map = [];
+		$modules_map = array(
+			'advanced-heading'     => array(
+				'title'  => __('Advanced Heading', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/advanced-heading-module',
+				'icon'   => 'advanced_heading',
+				'is_pro' => true,
+			),
+			'animated-gallery'     => array(
+				'title'  => __('Animated Gallery', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/animated-gallery-module',
+				'icon'   => 'animated-gallery',
+				'is_pro' => true,
+			),
+			'author-box'           => array(
+				'title'  => __('Author Box', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/',
+				'icon'   => 'author_list',
+				'is_pro' => true,
+			),
+			'author-list'          => array(
+				'title'  => __('Author List', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/author-list-module',
+				'icon'   => 'author_list',
+				'is_pro' => true,
+			),
+			'content-toggle'       => array(
+				'title'  => __('Content Toggle', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/content-toggle-module',
+				'icon'   => 'content_toggle',
+				'is_pro' => true,
+			),
+			'floating-image'       => array(
+				'title'  => __('Floating Image', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/floating-image-module',
+				'icon'   => 'floating_image',
+				'is_pro' => true,
+			),
+			'horizontal-timeline'  => array(
+				'title'  => __('Horizontal Timeline', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/horizontal-timeline-module/',
+				'icon'   => 'horizontal_timeline',
+				'is_pro' => true,
+			),
+			'hotspots'             => array(
+				'title'  => __('Hotspots', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/hotspots-module',
+				'icon'   => 'hotspots',
+				'is_pro' => true,
+			),
+			'hover-box'            => array(
+				'title'  => __('Hover Box', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/hover-box-module',
+				'icon'   => 'hover_box',
+				'is_pro' => true,
+			),
+			'image-accordion'      => array(
+				'title'  => __('Image Accordion', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/image-accordion-module',
+				'icon'   => 'image_accordion',
+				'is_pro' => true,
+			),
+			'image-hover'          => array(
+				'title'  => __('Image Hover', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/image-hover-module',
+				'icon'   => 'hover_box',
+				'is_pro' => true,
+			),
+			'image-magnifier'      => array(
+				'title'  => __('Image Magnifier', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/image-magnifier-module',
+				'icon'   => 'image_magnifier',
+				'is_pro' => true,
+			),
+			'image-masking'        => array(
+				'title'  => __('Image Masking', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/image-masking-module',
+				'icon'   => 'image_masking',
+				'is_pro' => true,
+			),
+			'inline-svg'           => array(
+				'title'  => __('Inline SVG', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/inline-svg-module',
+				'icon'   => 'inline_svg',
+				'is_pro' => true,
+			),
+			'instagram-carousel'   => array(
+				'title'  => __('Instagram Carousel', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/instagram-carousel-module',
+				'icon'   => 'instagram_carousel',
+				'is_pro' => true,
+			),
+			'instagram-feed'       => array(
+				'title'  => __('Instagram Feed', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/instagram-feed-module',
+				'icon'   => 'instagram_feed',
+				'is_pro' => true,
+			),
+			'list-group'           => array(
+				'title'  => __('List Group', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/list-group-module',
+				'icon'   => 'list_group',
+				'is_pro' => true,
+			),
+			'lottie-animation'     => array(
+				'title'  => __('Lottie Animation', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/lottie-animation-module',
+				'icon'   => 'lottie',
+				'is_pro' => true,
+			),
+			'news-ticker-pro'      => array(
+				'title'  => __('News Ticker Pro', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/news-ticker-pro-module/',
+				'icon'   => 'news_ticker',
+				'is_pro' => true,
+			),
+			'post-carousel'        => array(
+				'title'  => __('Post Carousel', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/post-carousel-module/',
+				'icon'   => 'post_carousel',
+				'is_pro' => true,
+			),
+			'post-grid'            => array(
+				'title'  => __('Post Grid', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/post-grid-module/',
+				'icon'   => 'post_grid',
+				'is_pro' => true,
+			),
+			'post-masonry'         => array(
+				'title'  => __('Post Masonry', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/post-masonry-module/',
+				'icon'   => 'post_masonry',
+				'is_pro' => true,
+			),
+			'post-tiles'           => array(
+				'title'  => __('Post Tiles', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/post-tiles-module/',
+				'icon'   => 'post_tiles',
+				'is_pro' => true,
+			),
+			'price-menu'           => array(
+				'title'  => __('Price Menu', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/price-menu-module',
+				'icon'   => 'price_menu',
+				'is_pro' => true,
+			),
+			'smart-post-list'      => array(
+				'title'  => __('Smart Post List', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/smart-post-module',
+				'icon'   => 'smart_post_list',
+				'is_pro' => true,
+			),
+			'social-share'         => array(
+				'title'  => __('Social Share', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/social-share-module',
+				'icon'   => 'social_share',
+				'is_pro' => true,
+			),
+			'team-carousel'        => array(
+				'title'  => __('Team Carousel', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/team-carousel-module',
+				'icon'   => 'team_carousel',
+				'is_pro' => true,
+			),
+			'testimonial-carousel' => array(
+				'title'  => __('Testimonial Carousel', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/testimonial-carousel-module',
+				'icon'   => 'testimonial_carousel',
+				'is_pro' => true,
+			),
+			'vertical-timeline'    => array(
+				'title'  => __('Vertical Timeline', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/vertical-timeline-module/',
+				'icon'   => 'vertical_timeline',
+				'is_pro' => true,
+			),
+			'video-carousel'       => array(
+				'title'  => __('Video Carousel', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/video-carousel-module/',
+				'icon'   => 'video_carousel',
+				'is_pro' => true,
+			),
+			'text-highlight'       => array(
+				'title'  => __('Text Highlight', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/text-highlight-module/',
+				'icon'   => 'animated_text',
+				'is_pro' => true,
+			),
+			'off-canvas'           => array(
+				'title'  => __('Off-canvas', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/off-canvas-module/',
+				'icon'   => 'off_canvas',
+				'is_pro' => true,
+			),
+			'mega-menu'            => array(
+				'title'  => __('Mega Menu', 'addons-for-divi'),
+				'demo'   => 'https://divitorque.com/mega-menu-module/',
+				'icon'   => 'mega_menu',
+				'is_pro' => true,
+			),
+		);
 
-	// 	return $modules_map;
-	// }
+		return $modules_map;
+	}
 
 	public static function get_extensions()
 	{
