@@ -1,9 +1,9 @@
 <?php
 /*
- * Plugin Name: Divi Torque Free
+ * Plugin Name: DiviTorque
  * Plugin URI:  https://divitorque.com
  * Description: Powerful divi modules to create powerful websites.
- * Version:     3.5.7
+ * Version:     3.5.8
  * Author:      WPPaw
  * Author URI:  https://wppaw.com
  * License: GPL3
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DIVI_TORQUE_PLUGIN_VERSION', '3.5.7');
+define('DIVI_TORQUE_PLUGIN_VERSION', '3.5.8');
 define('DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DIVI_TORQUE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit(DIVI_TORQUE_PLUGIN_URL . 'assets'));
@@ -26,15 +26,6 @@ define('DIVI_TORQUE_PLUGIN_BASE', plugin_basename(__FILE__));
 define('DIVI_TORQUE_REDIRECTION_FLAG', 'divitorque_activation_redirect');
 
 do_action('divitorque_loaded');
-
-// define('BRAIN_ADDONS_PLUGIN_VERSION', '2.3.3');
-// define('BRAIN_ADDONS_PLUGIN_DIR', plugin_dir_path(__FILE__));
-// define('BRAIN_ADDONS_PLUGIN_URL', plugin_dir_url(__FILE__));
-// define('BRAIN_ADDONS_PLUGIN_ASSETS', trailingslashit(BRAIN_ADDONS_PLUGIN_URL . 'assets'));
-// define('BRAIN_ADDONS_PLUGIN_FILE', __FILE__);
-// define('BRAIN_ADDONS_PLUGIN_BASE', plugin_basename(__FILE__));
-
-// do_action('brainaddons_loaded');
 
 if (!class_exists('DIVI_TORQUE_PLUGIN')) :
     final class DIVI_TORQUE_PLUGIN
@@ -104,12 +95,12 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
 
         private function includes()
         {
-            require_once DIVI_TORQUE_PLUGIN_DIR . '/freemius.php';
+            // require_once DIVI_TORQUE_PLUGIN_DIR . '/freemius.php';
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/functions.php';
 
             if (is_admin()) {
                 require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin.php';
-                require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/feedback.php';
+                // require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/feedback.php';
             }
 
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/customizer.php';
@@ -130,7 +121,7 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
             $feedback = true;
 
             if ($feedback) {
-                new DiviTorque_Admin_Feedback();
+                // new DiviTorque_Admin_Feedback();
             }
         }
     }

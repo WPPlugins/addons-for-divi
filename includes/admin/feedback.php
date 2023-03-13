@@ -30,7 +30,7 @@ class DiviTorque_Admin_Feedback {
 		<div class="dtq-notice notice is-dismissible">
 			<div class="dtq-notice-container">
 				<div class="dtq-notice-image">
-					<img src="https://ps.w.org/addons-for-divi/assets/icon.svg?rev=2629350" alt="divitorque-logo">
+					<img src="https://ps.w.org/addons-for-divi/assets/icon-256x256.png?rev=2817203" alt="divitorque-logo">
 				</div>
 				<div class="dtq-notice-content">
 					<div class="dtq-notice-heading">

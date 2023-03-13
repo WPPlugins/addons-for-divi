@@ -309,7 +309,7 @@ class DTQ_Alert extends Component {
         if ("on" === this.props.show_dismiss) {
             return (
                 <div className="dtq-alert-dismiss">
-                    <i data-icon="M" className="dtq-et-icon"></i>
+                    {`✕`}
                 </div>
             );
         }

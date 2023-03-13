@@ -34,8 +34,8 @@ class Admin
 	public static function add_menu()
 	{
 		add_menu_page(
-			__('DiviTorque', 'addons-for-divi'),
-			__('DiviTorque', 'addons-for-divi'),
+			__('Divi Torque', 'addons-for-divi'),
+			__('Divi Torque', 'addons-for-divi'),
 			'manage_options',
 			'addons-for-divi',
 			array(__CLASS__, 'render_main'),
