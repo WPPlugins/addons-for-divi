@@ -3,7 +3,7 @@
  * Plugin Name: DiviTorque
  * Plugin URI:  https://divitorque.com
  * Description: Powerful divi modules to create powerful websites.
- * Version:     3.5.8
+ * Version:     3.6.0
  * Author:      WPPaw
  * Author URI:  https://wppaw.com
  * License: GPL3
@@ -17,14 +17,13 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DIVI_TORQUE_PLUGIN_VERSION', '3.5.8');
+define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.0');
 define('DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DIVI_TORQUE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit(DIVI_TORQUE_PLUGIN_URL . 'assets'));
 define('DIVI_TORQUE_PLUGIN_FILE', __FILE__);
 define('DIVI_TORQUE_PLUGIN_BASE', plugin_basename(__FILE__));
-define('DIVI_TORQUE_REDIRECTION_FLAG', 'divitorque_activation_redirect');
-
+// define('DIVI_TORQUE_REDIRECTION_FLAG', 'divitorque_activation_redirect');
 do_action('divitorque_loaded');
 
 if (!class_exists('DIVI_TORQUE_PLUGIN')) :
@@ -59,53 +58,67 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
         public function init_plugin()
         {
 
-            if (is_admin()) {
-                new DiviTorque\Includes\Admin();
-            } else {
-                new DiviTorque\Includes\AssetsManager();
-            }
 
-            if (is_admin()) {
-                $this->initFeedback();
-            }
+
+            new DiviTorque\Includes\AssetsManager();
+
+            // if (is_admin()) {
+            //     // new DiviTorque\Includes\Admin();
+            // } else {
+            // }
+
+            // // if (is_admin()) {
+            // //     $this->initFeedback();
+            // // }
         }
+
 
         public function activate()
         {
 
-            update_option('divitorque_version', DIVI_TORQUE_PLUGIN_VERSION);
-            add_option(DIVI_TORQUE_REDIRECTION_FLAG, true);
+            // update_option('divitorque_version', '3.5.8');
 
-            if (false === get_transient('divitorque-notice-rating')) {
-                set_transient('divitorque-notice-rating', true, WEEK_IN_SECONDS);
+            update_option('dt-version', DIVI_TORQUE_PLUGIN_VERSION);
+
+            $version = get_option('divitorque_version');
+
+            if ($version) {
+                if (version_compare($version, '3.5.7', '<')) {
+                    $deprecated = new DiviTorque_Deprecated();
+                    $deprecated->run();
+                }
             }
 
-            $inactive_extensions = get_option('ba_inactive_extensions', array());
-            if (!in_array('login-designer', $inactive_extensions, true)) {
-                $installer = new BrainAddons\Ext\LoginDesigner\Installer();
-                $installer->run();
-            }
+            // add_option(DIVI_TORQUE_REDIRECTION_FLAG, false);
 
-            if (!in_array('popup-maker', $inactive_extensions, true)) {
-                $installer = new BrainAddons\Popup_Post_Type();
-                $installer->register_post_type();
-                flush_rewrite_rules();
-            }
+            // Version compare and run deprecated functions only if the version is less than 3.5.8
+
+            // if (false === get_transient('divitorque-notice-rating')) {
+            //     set_transient('divitorque-notice-rating', true, WEEK_IN_SECONDS);
+            // }
+
+            // $inactive_extensions = get_option('ba_inactive_extensions', array());
+            // if (!in_array('login-designer', $inactive_extensions, true)) {
+            // }
+
+            // if (!in_array('popup-maker', $inactive_extensions, true)) {
+            // }
         }
 
         private function includes()
         {
             // require_once DIVI_TORQUE_PLUGIN_DIR . '/freemius.php';
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/functions.php';
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated.php';
 
-            if (is_admin()) {
-                require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin.php';
-                // require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/feedback.php';
-            }
+            // if (is_admin()) {
+            // require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin.php';
+            // require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/feedback.php';
+            // }
 
-            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/customizer.php';
+            // require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/customizer/customizer.php';
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/extensions/extensions.php';
-            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/static-icons.php';
+            // require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/admin/static-icons.php';
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/assets-manager.php';
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/functions-forms.php';
         }
@@ -115,16 +128,18 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/divi-extension.php';
         }
 
-        private function initFeedback()
-        {
+        // private function initFeedback()
+        // {
 
-            $feedback = true;
+        //     $feedback = true;
 
-            if ($feedback) {
-                // new DiviTorque_Admin_Feedback();
-            }
-        }
+        //     if ($feedback) {
+        //         // new DiviTorque_Admin_Feedback();
+        //     }
+        // }
     }
+
+
 endif;
 
 function divi_torque_lite_plugin()
