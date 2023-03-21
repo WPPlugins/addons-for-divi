@@ -170,15 +170,12 @@ span.dtq-admin-modules-item-icon.dtq-icon-svg {
 .dtq-et-font-icon {
     font-family: ETmodules;
     font-weight: 400;
-    -webkit-font-feature-settings: normal;
     font-feature-settings: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
-    -webkit-font-smoothing: antialiased;
     font-style: normal;
     display: inline-block;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 .dtq-et-icon {

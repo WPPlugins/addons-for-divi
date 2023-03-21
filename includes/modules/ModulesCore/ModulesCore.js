@@ -1691,7 +1691,7 @@ export const _getCarouselCss = props => {
                 {
                     selector:
                         "%%order_class%% .dtq-carousel .slick-list, .et-db #et-boc %%order_class%% .dtq-carousel .slick-list",
-                    declaration: `margin-left: -${slide_spacing}!important; margin-right: -${slide_spacing}!important;`
+                    declaration: `margin-left: -${slide_spacing}; margin-right: -${slide_spacing};`
                 }
             ]);
         }
@@ -1700,7 +1700,7 @@ export const _getCarouselCss = props => {
             {
                 selector:
                     "%%order_class%% .dtq-carousel .slick-slide, .et-db #et-boc %%order_class%% .dtq-carousel .slick-slide",
-                declaration: `padding-top: ${slide_spacing}!important; padding-bottom: ${slide_spacing}!important;`
+                declaration: `padding-top: ${slide_spacing}; padding-bottom: ${slide_spacing};`
             }
         ]);
 
@@ -1709,7 +1709,7 @@ export const _getCarouselCss = props => {
                 {
                     selector:
                         "%%order_class%% .dtq-carousel .slick-list, .et-db #et-boc %%order_class%% .dtq-carousel .slick-list",
-                    declaration: `margin-top: -${slide_spacing}!important; margin-bottom: -${slide_spacing}!important;`
+                    declaration: `margin-top: -${slide_spacing}; margin-bottom: -${slide_spacing};`
                 }
             ]);
         }

@@ -3,7 +3,7 @@
  * Plugin Name: DiviTorque
  * Plugin URI:  https://divitorque.com
  * Description: Powerful divi modules to create powerful websites.
- * Version:     3.6.0
+ * Version:     3.6.1
  * Author:      WPPaw
  * Author URI:  https://wppaw.com
  * License: GPL3
@@ -17,13 +17,13 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.0');
+define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.1');
 define('DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DIVI_TORQUE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit(DIVI_TORQUE_PLUGIN_URL . 'assets'));
 define('DIVI_TORQUE_PLUGIN_FILE', __FILE__);
 define('DIVI_TORQUE_PLUGIN_BASE', plugin_basename(__FILE__));
-// define('DIVI_TORQUE_REDIRECTION_FLAG', 'divitorque_activation_redirect');
+
 do_action('divitorque_loaded');
 
 if (!class_exists('DIVI_TORQUE_PLUGIN')) :
