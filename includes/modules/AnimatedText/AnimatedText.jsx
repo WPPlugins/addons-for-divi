@@ -8,6 +8,7 @@ import "./style.css";
 
 class DTQ_Animated_Text extends Component {
     static slug = "ba_animated_text";
+
     static css(props) {
         let additionalCss = [];
 

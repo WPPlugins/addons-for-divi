@@ -1,5 +1,6 @@
 <?php
-class DTQ_Image_Compare extends BA_Builder_Module {
+class DTQ_Image_Compare extends BA_Builder_Module
+{
 
 	protected $module_credits = array(
 		'module_uri' => 'https://divitorque.com/image-compare-module/',
@@ -7,86 +8,89 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		'author_uri' => 'https://divitorque.com/',
 	);
 
-	public function init() {
+	public function init()
+	{
 
-		$this->name       = esc_html__( 'Torque Image Compare', 'addons-for-divi' );
-		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'image-compare.svg';
+		$this->name       = esc_html__('Torq Image Compare', 'addons-for-divi');
+		$this->icon_path  = plugin_dir_path(__FILE__) . 'image-compare.svg';
 		$this->slug       = 'ba_image_compare';
 		$this->vb_support = 'on';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'before'      => esc_html__( 'Before', 'addons-for-divi' ),
-					'after'       => esc_html__( 'After', 'addons-for-divi' ),
-					'settings'    => esc_html__( 'Settings', 'addons-for-divi' ),
-					'orientation' => esc_html__( 'Orientation', 'addons-for-divi' ),
-					'handle'      => esc_html__( 'Comparison Handle', 'addons-for-divi' ),
+					'before'      => esc_html__('Before', 'addons-for-divi'),
+					'after'       => esc_html__('After', 'addons-for-divi'),
+					'settings'    => esc_html__('Settings', 'addons-for-divi'),
+					'orientation' => esc_html__('Orientation', 'addons-for-divi'),
+					'handle'      => esc_html__('Comparison Handle', 'addons-for-divi'),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'label'  => esc_html__( 'Label', 'addons-for-divi' ),
-					'handle' => esc_html__( 'Handle', 'addons-for-divi' ),
-					'border' => esc_html__( 'Border', 'addons-for-divi' ),
+					'label'  => esc_html__('Label', 'addons-for-divi'),
+					'handle' => esc_html__('Handle', 'addons-for-divi'),
+					'border' => esc_html__('Border', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'before_img'   => array(
-				'label'    => esc_html__( 'Before Image', 'addons-for-divi' ),
+				'label'    => esc_html__('Before Image', 'addons-for-divi'),
 				'selector' => '%%order_class%% .twentytwenty-before',
 			),
 			'after_img'    => array(
-				'label'    => esc_html__( 'After Image', 'addons-for-divi' ),
+				'label'    => esc_html__('After Image', 'addons-for-divi'),
 				'selector' => '%%order_class%% .twentytwenty-after',
 			),
 			'before_label' => array(
-				'label'    => esc_html__( 'Before Label', 'addons-for-divi' ),
+				'label'    => esc_html__('Before Label', 'addons-for-divi'),
 				'selector' => '%%order_class%% .twentytwenty-before-label',
 			),
 			'after_label'  => array(
-				'label'    => esc_html__( 'After Label', 'addons-for-divi' ),
+				'label'    => esc_html__('After Label', 'addons-for-divi'),
 				'selector' => '%%order_class%% .twentytwenty-after-label',
 			),
 		);
 	}
 
-	public function get_fields() {
+	public function get_fields()
+	{
 
 		return array(
 
 			'before_img'      => array(
-				'label'              => esc_html__( 'Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display as before image.', 'addons-for-divi' ),
+				'label'              => esc_html__('Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an image or type in the URL of the image you would like to display as before image.', 'addons-for-divi'),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an image to display as before image', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an image', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Image', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an image to display as before image', 'addons-for-divi'),
 				'hide_metadata'      => true,
 				'default'            => DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/placeholder.svg',
-				'computed_affects'   => array( '__compare' ),
+				'computed_affects'   => array('__compare'),
 				'toggle_slug'        => 'before',
 				'dynamic_content'    => 'image',
 			),
 
 			'before_label'    => array(
-				'label'           => esc_html__( 'Before Label', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define before label text.', 'addons-for-divi' ),
+				'label'           => esc_html__('Before Label', 'addons-for-divi'),
+				'description'     => esc_html__('Define before label text.', 'addons-for-divi'),
 				'default'         => 'Before',
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Define the HTML ALT text for your image here.', '' ),
+				'description'     => esc_html__('Define the HTML ALT text for your image here.', ''),
 				'toggle_slug'     => 'before',
 			),
 
 			'before_label_bg' => array(
-				'label'        => esc_html__( 'Before Label Background', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background for before label.', 'addons-for-divi' ),
+				'label'        => esc_html__('Before Label Background', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background for before label.', 'addons-for-divi'),
 				'default'      => $this->default_color,
 				'type'         => 'color-alpha',
 				'custom_color' => true,
@@ -94,17 +98,17 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 			),
 
 			'after_img'       => array(
-				'label'              => esc_html__( 'Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display as after image.', 'addons-for-divi' ),
+				'label'              => esc_html__('Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an image or type in the URL of the image you would like to display as after image.', 'addons-for-divi'),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'default'            => DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/placeholder.svg',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an image to display at as after image', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an image', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Image', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an image to display at as after image', 'addons-for-divi'),
 				'hide_metadata'      => true,
-				'computed_affects'   => array( '__compare' ),
+				'computed_affects'   => array('__compare'),
 
 				'toggle_slug'        => 'after',
 				'dynamic_content'    => 'image',
@@ -112,92 +116,92 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 
 			'after_label'     => array(
 				'default'         => 'After',
-				'label'           => esc_html__( 'After Label', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define after label text.', 'addons-for-divi' ),
+				'label'           => esc_html__('After Label', 'addons-for-divi'),
+				'description'     => esc_html__('Define after label text.', 'addons-for-divi'),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Define the HTML ALT text for your image here.', 'addons-for-divi' ),
+				'description'     => esc_html__('Define the HTML ALT text for your image here.', 'addons-for-divi'),
 				'toggle_slug'     => 'after',
 			),
 
 			'after_label_bg'  => array(
 				'default'      => $this->default_color,
-				'label'        => esc_html__( 'After Label Background', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background for after label.', 'addons-for-divi' ),
+				'label'        => esc_html__('After Label Background', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background for after label.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'toggle_slug'  => 'after',
 			),
 
 			'orientation'     => array(
-				'label'            => esc_html__( 'Orientation', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Select orientation.', 'addons-for-divi' ),
+				'label'            => esc_html__('Orientation', 'addons-for-divi'),
+				'description'      => esc_html__('Select orientation.', 'addons-for-divi'),
 				'type'             => 'select',
 				'option_category'  => 'layout',
 				'options'          => array(
-					'vertical'   => __( 'Vertical', 'addons-for-divi' ),
-					'horizontal' => __( 'Horizontal', 'addons-for-divi' ),
+					'vertical'   => __('Vertical', 'addons-for-divi'),
+					'horizontal' => __('Horizontal', 'addons-for-divi'),
 				),
-				'computed_affects' => array( '__compare' ),
+				'computed_affects' => array('__compare'),
 				'default'          => 'horizontal',
 				'toggle_slug'      => 'settings',
 			),
 
 			'offset_pct'      => array(
-				'label'            => esc_html__( 'Handle Initial Offset', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define handle initial offset.', 'addons-for-divi' ),
+				'label'            => esc_html__('Handle Initial Offset', 'addons-for-divi'),
+				'description'      => esc_html__('Define handle initial offset.', 'addons-for-divi'),
 				'type'             => 'select',
 				'option_category'  => 'layout',
 				'options'          => array(
-					'0.0' => __( '0.0', 'addons-for-divi' ),
-					'0.1' => __( '0.1', 'addons-for-divi' ),
-					'0.2' => __( '0.2', 'addons-for-divi' ),
-					'0.3' => __( '0.3', 'addons-for-divi' ),
-					'0.4' => __( '0.4', 'addons-for-divi' ),
-					'0.5' => __( '0.5', 'addons-for-divi' ),
-					'0.6' => __( '0.6', 'addons-for-divi' ),
-					'0.7' => __( '0.7', 'addons-for-divi' ),
-					'0.8' => __( '0.8', 'addons-for-divi' ),
-					'0.9' => __( '0.9', 'addons-for-divi' ),
+					'0.0' => __('0.0', 'addons-for-divi'),
+					'0.1' => __('0.1', 'addons-for-divi'),
+					'0.2' => __('0.2', 'addons-for-divi'),
+					'0.3' => __('0.3', 'addons-for-divi'),
+					'0.4' => __('0.4', 'addons-for-divi'),
+					'0.5' => __('0.5', 'addons-for-divi'),
+					'0.6' => __('0.6', 'addons-for-divi'),
+					'0.7' => __('0.7', 'addons-for-divi'),
+					'0.8' => __('0.8', 'addons-for-divi'),
+					'0.9' => __('0.9', 'addons-for-divi'),
 				),
-				'computed_affects' => array( '__compare' ),
+				'computed_affects' => array('__compare'),
 				'default'          => '0.5',
 				'toggle_slug'      => 'settings',
 			),
 
 			'move_on_hover'   => array(
-				'label'            => esc_html__( 'Move on Hover', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Here you can choose whether handle should be moved on hover.', 'addons-for-divi' ),
+				'label'            => esc_html__('Move on Hover', 'addons-for-divi'),
+				'description'      => esc_html__('Here you can choose whether handle should be moved on hover.', 'addons-for-divi'),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
-				'computed_affects' => array( '__compare' ),
+				'computed_affects' => array('__compare'),
 				'default'          => 'off',
 				'toggle_slug'      => 'settings',
 			),
 
 			'overlay'         => array(
-				'label'            => esc_html__( 'Use Overlay on Hover', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Here you can choose whether overlay should be used on hover.', 'addons-for-divi' ),
+				'label'            => esc_html__('Use Overlay on Hover', 'addons-for-divi'),
+				'description'      => esc_html__('Here you can choose whether overlay should be used on hover.', 'addons-for-divi'),
 				'type'             => 'yes_no_button',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
-				'computed_affects' => array( '__compare' ),
+				'computed_affects' => array('__compare'),
 				'default'          => 'on',
 				'toggle_slug'      => 'settings',
 			),
 
 			'show_label'      => array(
-				'label'       => esc_html__( 'Show Before/After Label', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can choose whether before/after label should be used.', 'addons-for-divi' ),
+				'label'       => esc_html__('Show Before/After Label', 'addons-for-divi'),
+				'description' => esc_html__('Here you can choose whether before/after label should be used.', 'addons-for-divi'),
 				'type'        => 'select',
 				'options'     => array(
-					'always'   => __( 'Always', 'addons-for-divi' ),
-					'on_hover' => __( 'On Hover', 'addons-for-divi' ),
+					'always'   => __('Always', 'addons-for-divi'),
+					'on_hover' => __('On Hover', 'addons-for-divi'),
 				),
 				'default'     => 'always',
 				'toggle_slug' => 'settings',
@@ -207,8 +211,8 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 			),
 
 			'label_padding'   => array(
-				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for the label.', 'addons-for-divi' ),
+				'label'          => esc_html__('Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom padding for the label.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'label',
@@ -217,8 +221,8 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 			),
 
 			'label_height'    => array(
-				'label'          => esc_html__( 'Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom label height.', 'addons-for-divi' ),
+				'label'          => esc_html__('Height', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom label height.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => 'initial',
@@ -233,8 +237,8 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 			),
 
 			'label_width'     => array(
-				'label'          => esc_html__( 'Width', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom label width.', 'addons-for-divi' ),
+				'label'          => esc_html__('Width', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom label width.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => 'initial',
@@ -249,13 +253,13 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 			),
 
 			'handle_style'    => array(
-				'label'       => esc_html__( 'Handle Style', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can select a different handle type.', 'addons-for-divi' ),
+				'label'       => esc_html__('Handle Style', 'addons-for-divi'),
+				'description' => esc_html__('Here you can select a different handle type.', 'addons-for-divi'),
 				'type'        => 'select',
 				'default'     => 'handle-1',
 				'options'     => array(
-					'handle-1' => __( 'Style 1', 'addons-for-divi' ),
-					'handle-2' => __( 'Style 2', 'addons-for-divi' ),
+					'handle-1' => __('Style 1', 'addons-for-divi'),
+					'handle-2' => __('Style 2', 'addons-for-divi'),
 				),
 				'toggle_slug' => 'handle',
 				'tab_slug'    => 'advanced',
@@ -263,8 +267,8 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 
 			'handle_color'    => array(
 				'default'      => '#ffffff',
-				'label'        => esc_html__( 'Handle Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom handle color.', 'addons-for-divi' ),
+				'label'        => esc_html__('Handle Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom handle color.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'toggle_slug'  => 'handle',
@@ -273,8 +277,8 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 
 			'arrow_color'     => array(
 				'default'      => '#ffffff',
-				'label'        => esc_html__( 'Arrow Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom color for the arrows.', 'addons-for-divi' ),
+				'label'        => esc_html__('Arrow Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom color for the arrows.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'toggle_slug'  => 'handle',
@@ -286,7 +290,7 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 
 			'__compare'       => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'DTQ_Image_Compare', 'get_image_compare' ),
+				'computed_callback'   => array('DTQ_Image_Compare', 'get_image_compare'),
 				'computed_depends_on' => array(
 					'before_img',
 					'after_img',
@@ -302,13 +306,14 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 	}
 
 
-	public function get_advanced_fields_config() {
+	public function get_advanced_fields_config()
+	{
 
 		$advanced_fields         = array();
 		$advanced_fields['text'] = false;
 
 		$advanced_fields['fonts']['label'] = array(
-			'label'           => esc_html__( 'Label', 'addons-for-divi' ),
+			'label'           => esc_html__('Label', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .twentytwenty-before-label:before, %%order_class%% .twentytwenty-after-label:before',
 				'important' => 'all',
@@ -358,10 +363,11 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	static function get_image_compare( $args = array() ) {
+	static function get_image_compare($args = array())
+	{
 
-		wp_enqueue_script( 'dtqj-event-move' );
-		wp_enqueue_script( 'dtqj-twentytwenty' );
+		wp_enqueue_script('dtqj-event-move');
+		wp_enqueue_script('dtqj-twentytwenty');
 
 		$defaults = array(
 			'before_img'   => '',
@@ -371,7 +377,7 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 			'overlay'      => '',
 		);
 
-		$args = wp_parse_args( $args, $defaults );
+		$args = wp_parse_args($args, $defaults);
 
 		$before_img   = $args['before_img'];
 		$after_img    = $args['after_img'];
@@ -381,16 +387,17 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		$html = sprintf(
 			'<img class="dtq-before-img" style="position: absolute;" src=" %1$s " alt="%3$s"/>
 			<img class="dtq-after-img" src=" %2$s " alt="%4$s"/>',
-			esc_attr( $before_img ),
-			esc_attr( $after_img ),
-			esc_attr( $before_label ),
-			esc_attr( $after_label )
+			esc_attr($before_img),
+			esc_attr($after_img),
+			esc_attr($before_label),
+			esc_attr($after_label)
 		);
 
 		return $html;
 	}
 
-	public function render( $attrs, $content, $render_slug ) {
+	public function render($attrs, $content, $render_slug)
+	{
 
 		$before_img    = $this->props['before_img'];
 		$after_img     = $this->props['after_img'];
@@ -400,10 +407,10 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		$move_on_hover = $this->props['move_on_hover'];
 		$offset_pct    = $this->props['offset_pct'];
 		$overlay       = $this->props['overlay'];
-		$order_class   = self::get_module_order_class( $render_slug );
-		$order_number  = str_replace( '_', '', str_replace( $this->slug, '', $order_class ) );
+		$order_class   = self::get_module_order_class($render_slug);
+		$order_number  = str_replace('_', '', str_replace($this->slug, '', $order_class));
 
-		$this->apply_css( $render_slug );
+		$this->apply_css($render_slug);
 
 		$data_string = sprintf(
 			'data-orientation = "%1$s"
@@ -445,13 +452,13 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 
 		ob_get_clean();
 
-		if ( ! empty( $before_img ) ) {
+		if (!empty($before_img)) {
 			return $html;
 		}
-
 	}
 
-	public function apply_css( $render_slug ) {
+	public function apply_css($render_slug)
+	{
 
 		$before_label_bg = $this->props['before_label_bg'];
 		$after_label_bg  = $this->props['after_label_bg'];
@@ -461,9 +468,9 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		$label_width     = $this->props['label_width'];
 
 		// handle_color.
-		if ( 'handle-1' === $this->props['handle_style'] ) {
+		if ('handle-1' === $this->props['handle_style']) {
 			$arrow_color = $this->props['handle_color'];
-		} elseif ( 'handle-2' === $this->props['handle_style'] ) {
+		} elseif ('handle-2' === $this->props['handle_style']) {
 			$arrow_color = $this->props['arrow_color'];
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -524,22 +531,22 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		// handle_color end.
 
 		// Label.
-		if ( 'initial' !== $label_height ) {
+		if ('initial' !== $label_height) {
 			$this->get_responsive_styles(
 				'label_height',
 				'%%order_class%% .twentytwenty-overlay div:before',
-				array( 'primary' => 'height' ),
-				array( 'default' => 'initial' ),
+				array('primary' => 'height'),
+				array('default' => 'initial'),
 				$render_slug
 			);
 		}
 
-		if ( 'initial' !== $label_width ) {
+		if ('initial' !== $label_width) {
 			$this->get_responsive_styles(
 				'label_width',
 				'%%order_class%% .twentytwenty-overlay div:before',
-				array( 'primary' => 'width' ),
-				array( 'default' => 'initial' ),
+				array('primary' => 'width'),
+				array('default' => 'initial'),
 				$render_slug
 			);
 		}
@@ -547,12 +554,12 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 		$this->get_responsive_styles(
 			'label_padding',
 			'%%order_class%% .twentytwenty-overlay div:before',
-			array( 'primary' => 'padding' ),
-			array( 'default' => '5px|20px|5px|20px' ),
+			array('primary' => 'padding'),
+			array('default' => '5px|20px|5px|20px'),
 			$render_slug
 		);
 
-		if ( $show_label === 'on_hover' ) {
+		if ($show_label === 'on_hover') {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -570,26 +577,25 @@ class DTQ_Image_Compare extends BA_Builder_Module {
 			);
 		}
 
-		if ( ! empty( $before_label_bg ) ) {
+		if (!empty($before_label_bg)) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .twentytwenty-before-label:before',
-					'declaration' => sprintf( 'background-color: %1$s!important;', $before_label_bg ),
+					'declaration' => sprintf('background-color: %1$s!important;', $before_label_bg),
 				)
 			);
 		}
 
-		if ( ! empty( $after_label_bg ) ) {
+		if (!empty($after_label_bg)) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .twentytwenty-after-label:before',
-					'declaration' => sprintf( 'background-color: %1$s!important;', esc_html( $after_label_bg ) ),
+					'declaration' => sprintf('background-color: %1$s!important;', esc_html($after_label_bg)),
 				)
 			);
 		}
-
 	}
 }
 

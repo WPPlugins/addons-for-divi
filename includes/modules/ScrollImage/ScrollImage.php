@@ -1,5 +1,6 @@
 <?php
-class DTQ_Scroll_Image extends BA_Builder_Module {
+class DTQ_Scroll_Image extends BA_Builder_Module
+{
 
 	public $slug       = 'ba_scroll_image';
 	public $vb_support = 'on';
@@ -10,77 +11,80 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		'author_uri' => 'https://divitorque.com/',
 	);
 
-	public function init() {
-		$this->name      = esc_html__( 'Torque Scroll Image', 'addons-for-divi' );
-		$this->icon_path = plugin_dir_path( __FILE__ ) . 'scroll-image.svg';
+	public function init()
+	{
+		$this->name      = esc_html__('Torq Scroll Image', 'addons-for-divi');
+		$this->icon_path = plugin_dir_path(__FILE__) . 'scroll-image.svg';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
-					'settings' => esc_html__( 'Settings', 'addons-for-divi' ),
+					'content'  => esc_html__('Content', 'addons-for-divi'),
+					'settings' => esc_html__('Settings', 'addons-for-divi'),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'image'   => esc_html__( 'Image', 'addons-for-divi' ),
-					'overlay' => esc_html__( 'Overlay', 'addons-for-divi' ),
-					'icon'    => esc_html__( 'Icon', 'addons-for-divi' ),
-					'border'  => esc_html__( 'Border', 'addons-for-divi' ),
+					'image'   => esc_html__('Image', 'addons-for-divi'),
+					'overlay' => esc_html__('Overlay', 'addons-for-divi'),
+					'icon'    => esc_html__('Icon', 'addons-for-divi'),
+					'border'  => esc_html__('Border', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'image' => array(
-				'label'    => esc_html__( 'Image', 'addons-for-divi' ),
+				'label'    => esc_html__('Image', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-scroll-image img',
 			),
 			'icon'  => array(
-				'label'    => esc_html__( 'Direction Icon', 'addons-for-divi' ),
+				'label'    => esc_html__('Direction Icon', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-scroll-image-icon-el',
 			),
 		);
 	}
 
-	public function get_fields() {
+	public function get_fields()
+	{
 
 		$fields = array(
 
 			// content.
 			'image'             => array(
-				'label'              => esc_html__( 'Upload Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display.', 'addons-for-divi' ),
+				'label'              => esc_html__('Upload Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an image or type in the URL of the image you would like to display.', 'addons-for-divi'),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
 				'toggle_slug'        => 'content',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an image', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Image', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Image', 'addons-for-divi'),
 			),
 
 			'image_alt'         => array(
-				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define the HTML ALT text for your image.', 'addons-for-divi' ),
+				'label'       => esc_html__('Image Alt Text', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define the HTML ALT text for your image.', 'addons-for-divi'),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
 
 			'show_icon'         => array(
-				'label'       => esc_html__( 'Show Direction Icon', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can choose whether direction icon should be displayed.', 'addons-for-divi' ),
+				'label'       => esc_html__('Show Direction Icon', 'addons-for-divi'),
+				'description' => esc_html__('Here you can choose whether direction icon should be displayed.', 'addons-for-divi'),
 				'type'        => 'yes_no_button',
 				'default'     => 'off',
 				'toggle_slug' => 'content',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 			),
 
 			'icon'              => array(
-				'label'           => esc_html__( 'Select Icon', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Select direction icon.', 'addons-for-divi' ),
+				'label'           => esc_html__('Select Icon', 'addons-for-divi'),
+				'description'     => esc_html__('Select direction icon.', 'addons-for-divi'),
 				'type'            => 'select_icon',
 				'option_category' => 'basic_option',
 				'toggle_slug'     => 'content',
@@ -92,13 +96,13 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'use_image'         => array(
-				'label'           => esc_html__( 'Use Icon Image', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether icon image should be used.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use Icon Image', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether icon image should be used.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'content',
@@ -108,13 +112,13 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'icon_image'        => array(
-				'label'              => esc_html__( 'Upload Icon Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an icon image or type in the URL of the image you would like to display.', 'addons-for-divi' ),
+				'label'              => esc_html__('Upload Icon Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an icon image or type in the URL of the image you would like to display.', 'addons-for-divi'),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload an Icon', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Icon', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Icon', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an Icon', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Icon', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Icon', 'addons-for-divi'),
 				'toggle_slug'        => 'content',
 				'show_if'            => array(
 					'use_image' => 'on',
@@ -124,14 +128,14 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 
 			// settings.
 			'use_icon_anim'     => array(
-				'label'       => esc_html__( 'Use Icon Animation', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can choose whether icon animation should be used.', 'addons-for-divi' ),
+				'label'       => esc_html__('Use Icon Animation', 'addons-for-divi'),
+				'description' => esc_html__('Here you can choose whether icon animation should be used.', 'addons-for-divi'),
 				'type'        => 'yes_no_button',
 				'default'     => 'off',
 				'toggle_slug' => 'content',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'show_icon' => 'on',
@@ -139,25 +143,25 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'scroll_type'       => array(
-				'label'       => esc_html__( 'Scroll Type', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define scroll type.', 'addons-for-divi' ),
+				'label'       => esc_html__('Scroll Type', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define scroll type.', 'addons-for-divi'),
 				'type'        => 'select',
 				'default'     => 'on_hover',
 				'options'     => array(
-					'on_hover'  => esc_html__( 'On Mouse Hover', 'addons-for-divi' ),
-					'on_scroll' => esc_html__( 'On Mouse Scroll', 'addons-for-divi' ),
+					'on_hover'  => esc_html__('On Mouse Hover', 'addons-for-divi'),
+					'on_scroll' => esc_html__('On Mouse Scroll', 'addons-for-divi'),
 				),
 				'toggle_slug' => 'settings',
 			),
 
 			'scroll_dir_scroll' => array(
-				'label'       => esc_html__( 'Scroll Direction', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define scroll direction.', 'addons-for-divi' ),
+				'label'       => esc_html__('Scroll Direction', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define scroll direction.', 'addons-for-divi'),
 				'type'        => 'select',
 				'default'     => 'vertical',
 				'options'     => array(
-					'vertical'   => esc_html__( 'Vertical', 'addons-for-divi' ),
-					'horizontal' => esc_html__( 'Horizontal', 'addons-for-divi' ),
+					'vertical'   => esc_html__('Vertical', 'addons-for-divi'),
+					'horizontal' => esc_html__('Horizontal', 'addons-for-divi'),
 				),
 				'toggle_slug' => 'settings',
 				'show_if'     => array(
@@ -166,15 +170,15 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'scroll_dir_hover'  => array(
-				'label'       => esc_html__( 'Scroll Direction', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define scroll direction.', 'addons-for-divi' ),
+				'label'       => esc_html__('Scroll Direction', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define scroll direction.', 'addons-for-divi'),
 				'type'        => 'select',
 				'default'     => 'Y_btt',
 				'options'     => array(
-					'Y_btt' => esc_html__( 'Bottom to Top', 'addons-for-divi' ),
-					'Y_ttb' => esc_html__( 'Top to Bottom', 'addons-for-divi' ),
-					'X_ltr' => esc_html__( 'Left to Right', 'addons-for-divi' ),
-					'X_rtl' => esc_html__( 'Right to Left', 'addons-for-divi' ),
+					'Y_btt' => esc_html__('Bottom to Top', 'addons-for-divi'),
+					'Y_ttb' => esc_html__('Top to Bottom', 'addons-for-divi'),
+					'X_ltr' => esc_html__('Left to Right', 'addons-for-divi'),
+					'X_rtl' => esc_html__('Right to Left', 'addons-for-divi'),
 				),
 				'toggle_slug' => 'settings',
 				'show_if'     => array(
@@ -183,8 +187,8 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'scroll_speed'      => array(
-				'label'          => esc_html__( 'Scroll Speed', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define timing for the scroll event.', 'addons-for-divi' ),
+				'label'          => esc_html__('Scroll Speed', 'addons-for-divi'),
+				'description'    => esc_html__('Define timing for the scroll event.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '700ms',
 				'fixed_unit'     => 'ms',
@@ -202,8 +206,8 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 
 			// image.
 			'img_height'        => array(
-				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define static height for the image.', 'addons-for-divi' ),
+				'label'          => esc_html__('Image Height', 'addons-for-divi'),
+				'description'    => esc_html__('Define static height for the image.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '200px',
 				'default_unit'   => 'px',
@@ -219,13 +223,13 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 
 			// overlay.
 			'use_overlay'       => array(
-				'label'           => esc_html__( 'Use Image Overlay', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether image overlay should be used.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use Image Overlay', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether image overlay should be used.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'off',
 				'tab_slug'        => 'advanced',
@@ -234,8 +238,8 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 
 			// icon.
 			'icon_color'        => array(
-				'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'addons-for-divi' ),
+				'label'       => esc_html__('Icon Color', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define a custom color for your icon.', 'addons-for-divi'),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'default'     => '#2EA3F2',
@@ -247,8 +251,8 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			),
 
 			'icon_size'         => array(
-				'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom size for your icon.', 'addons-for-divi' ),
+				'label'          => esc_html__('Icon Size', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom size for your icon.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '48px',
 				'range_settings' => array(
@@ -266,18 +270,19 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 
 		$overlay_bg = $this->custom_background_fields(
 			'overlay',
-			esc_html__( 'Overlay', 'addons-for-divi' ),
+			esc_html__('Overlay', 'addons-for-divi'),
 			'advanced',
 			'overlay',
-			array( 'color', 'gradient' ),
-			array( 'use_overlay' => 'on' ),
+			array('color', 'gradient'),
+			array('use_overlay' => 'on'),
 			'rgba(255,255,255,0.39)'
 		);
 
-		return array_merge( $fields, $overlay_bg );
+		return array_merge($fields, $overlay_bg);
 	}
 
-	public function get_advanced_fields_config() {
+	public function get_advanced_fields_config()
+	{
 
 		$advanced_fields                = array();
 		$advanced_fields['text']        = false;
@@ -285,7 +290,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['borders']['icon'] = array(
-			'label_prefix' => esc_html__( 'Icon', 'addons-for-divi' ),
+			'label_prefix' => esc_html__('Icon', 'addons-for-divi'),
 			'toggle_slug'  => 'icon',
 			'css'          => array(
 				'main'      => array(
@@ -326,14 +331,15 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	public function render_icon() {
+	public function render_icon()
+	{
 		$show_icon  = $this->props['show_icon'];
 		$use_image  = $this->props['use_image'];
 		$icon_image = $this->props['icon_image'];
 		$icon       = $this->props['icon'];
 
-		if ( $show_icon === 'on' ) {
-			if ( $use_image === 'on' ) {
+		if ($show_icon === 'on') {
+			if ($use_image === 'on') {
 				return sprintf(
 					'
                     <div class="dtq-scroll-image-icon">
@@ -344,8 +350,8 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					$icon_image
 				);
 			} else {
-				$icon = esc_attr( et_pb_process_font_icon( $icon ) );
-				dtq_inject_fa_icons( $this->props['icon'] );
+				$icon = esc_attr(et_pb_process_font_icon($icon));
+				dtq_inject_fa_icons($this->props['icon']);
 				return sprintf(
 					'
                     <div class="dtq-scroll-image-icon dtq-et-font-icon">
@@ -359,16 +365,18 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		}
 	}
 
-	public function render_overlay() {
+	public function render_overlay()
+	{
 		$use_overlay = $this->props['use_overlay'];
-		if ( 'on' === $use_overlay ) {
+		if ('on' === $use_overlay) {
 			return '<div class="dtq-scroll-image-overlay"></div>';
 		}
 	}
 
 
 
-	public function render( $attrs, $content, $render_slug ) {
+	public function render($attrs, $content, $render_slug)
+	{
 
 		$image             = $this->props['image'];
 		$image_alt         = $this->props['image_alt'];
@@ -377,9 +385,9 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		$scroll_dir_scroll = $this->props['scroll_dir_scroll'];
 
 		// Render CSS.
-		$this->render_css( $render_slug );
+		$this->render_css($render_slug);
 
-		if ( ! empty( $image ) ) {
+		if (!empty($image)) {
 			return sprintf(
 				'
                 <div class="dtq-module dtq-scroll-image" data-dir-hover="%5$s" data-dir-scroll="%6$s">
@@ -401,7 +409,8 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		}
 	}
 
-	protected function render_css( $render_slug ) {
+	protected function render_css($render_slug)
+	{
 
 		$icon_color                   = $this->props['icon_color'];
 		$use_image                    = $this->props['use_image'];
@@ -416,7 +425,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		$img_height_tablet            = $this->props['img_height_tablet'];
 		$img_height_phone             = $this->props['img_height_phone'];
 		$img_height_last_edited       = $this->props['img_height_last_edited'];
-		$img_height_responsive_status = et_pb_get_responsive_status( $img_height_last_edited );
+		$img_height_responsive_status = et_pb_get_responsive_status($img_height_last_edited);
 
 		$this->generate_styles(
 			array(
@@ -432,10 +441,10 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			)
 		);
 
-		if ( $use_icon_anim === 'on' ) {
+		if ($use_icon_anim === 'on') {
 			$anim_dir = '';
-			if ( $scroll_type === 'on_scroll' ) {
-				if ( $scroll_dir_scroll === 'vertical' ) {
+			if ($scroll_type === 'on_scroll') {
+				if ($scroll_dir_scroll === 'vertical') {
 					$anim_dir = 'Y';
 				} else {
 					$anim_dir = 'X';
@@ -462,13 +471,13 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 		}
 
 		// Icon
-		if ( $show_icon === 'on' ) {
-			if ( $use_image === 'off' ) {
+		if ($show_icon === 'on') {
+			if ($use_image === 'off') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-scroll-image-icon-el',
-						'declaration' => sprintf( 'color: %1$s; font-size: %2$s;', $icon_color, $icon_size ),
+						'declaration' => sprintf('color: %1$s; font-size: %2$s;', $icon_color, $icon_size),
 					)
 				);
 			} else {
@@ -476,15 +485,15 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-scroll-image-icon img',
-						'declaration' => sprintf( 'width: %1$s; ', $icon_size ),
+						'declaration' => sprintf('width: %1$s; ', $icon_size),
 					)
 				);
 			}
 		}
 
 		// Scroll
-		if ( $scroll_type === 'on_scroll' ) {
-			if ( $scroll_dir_scroll === 'vertical' ) {
+		if ($scroll_type === 'on_scroll') {
+			if ($scroll_dir_scroll === 'vertical') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -523,7 +532,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					)
 				);
 			}
-		} elseif ( $scroll_type === 'on_hover' ) {
+		} elseif ($scroll_type === 'on_hover') {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -542,11 +551,11 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-scroll-image .dtq-scroll-image-el',
-					'declaration' => sprintf( 'position:absolute;transition: %1$s;', $scroll_speed ),
+					'declaration' => sprintf('position:absolute;transition: %1$s;', $scroll_speed),
 				)
 			);
 
-			if ( $scroll_dir_hover === 'X_ltr' || $scroll_dir_hover === 'X_rtl' ) {
+			if ($scroll_dir_hover === 'X_ltr' || $scroll_dir_hover === 'X_rtl') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -555,7 +564,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					)
 				);
 
-				if ( $scroll_dir_hover === 'X_ltr' ) {
+				if ($scroll_dir_hover === 'X_ltr') {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
@@ -563,7 +572,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 							'declaration' => 'right:0;',
 						)
 					);
-				} elseif ( $scroll_dir_hover === 'X_rtl' ) {
+				} elseif ($scroll_dir_hover === 'X_rtl') {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
@@ -581,7 +590,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 					)
 				);
 
-				if ( $scroll_dir_hover === 'Y_ttb' ) {
+				if ($scroll_dir_hover === 'Y_ttb') {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
@@ -589,7 +598,7 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 							'declaration' => 'bottom:0;',
 						)
 					);
-				} elseif ( $scroll_dir_hover === 'Y_btt' ) {
+				} elseif ($scroll_dir_hover === 'Y_btt') {
 					ET_Builder_Element::set_style(
 						$render_slug,
 						array(
@@ -606,35 +615,34 @@ class DTQ_Scroll_Image extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-scroll-image',
-				'declaration' => sprintf( 'height: %1$s;', $img_height ),
+				'declaration' => sprintf('height: %1$s;', $img_height),
 			)
 		);
 
-		if ( $img_height_tablet && $img_height_responsive_status ) {
+		if ($img_height_tablet && $img_height_responsive_status) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-scroll-image',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => sprintf( 'height: %1$s;', $img_height_tablet ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					'declaration' => sprintf('height: %1$s;', $img_height_tablet),
 				)
 			);
 		}
 
-		if ( $img_height_phone && $img_height_responsive_status ) {
+		if ($img_height_phone && $img_height_responsive_status) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-scroll-image',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => sprintf( 'height: %1$s;', $img_height_phone ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					'declaration' => sprintf('height: %1$s;', $img_height_phone),
 				)
 			);
 		}
 
 		// overlay
-		$this->get_custom_bg_style( $render_slug, 'overlay', '%%order_class%% .dtq-scroll-image-overlay', '' );
-
+		$this->get_custom_bg_style($render_slug, 'overlay', '%%order_class%% .dtq-scroll-image-overlay', '');
 	}
 }
 

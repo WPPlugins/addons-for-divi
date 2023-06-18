@@ -1,5 +1,6 @@
 <?php
-class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
+class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased
+{
 
 	public $slug       = 'ba_news_ticker';
 	public $vb_support = 'on';
@@ -10,68 +11,71 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		'author_uri' => 'https://divitorque.com/',
 	);
 
-	public function init() {
-		$this->name      = esc_html__( 'Torque News Ticker', 'addons-for-divi' );
-		$this->icon_path = plugin_dir_path( __FILE__ ) . 'post-ticker.svg';
+	public function init()
+	{
+		$this->name      = esc_html__('Torq News Ticker', 'addons-for-divi');
+		$this->icon_path = plugin_dir_path(__FILE__) . 'post-ticker.svg';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
-					'settings' => esc_html__( 'Settings', 'addons-for-divi' ),
+					'content'  => esc_html__('Content', 'addons-for-divi'),
+					'settings' => esc_html__('Settings', 'addons-for-divi'),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'title'      => esc_html__( 'Title Style', 'addons-for-divi' ),
-					'title_text' => esc_html__( 'Title Text', 'addons-for-divi' ),
-					'text'       => esc_html__( 'News Text', 'addons-for-divi' ),
-					'border'     => esc_html__( 'Border', 'addons-for-divi' ),
+					'title'      => esc_html__('Title Style', 'addons-for-divi'),
+					'title_text' => esc_html__('Title Text', 'addons-for-divi'),
+					'text'       => esc_html__('News Text', 'addons-for-divi'),
+					'border'     => esc_html__('Border', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'title'  => array(
-				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
+				'label'    => esc_html__('Title', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-news-title',
 			),
 			'item'   => array(
-				'label'    => esc_html__( 'News Item', 'addons-for-divi' ),
+				'label'    => esc_html__('News Item', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-news-wrap li',
 			),
 			'text'   => array(
-				'label'    => esc_html__( 'News Text', 'addons-for-divi' ),
+				'label'    => esc_html__('News Text', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-news-wrap li a',
 			),
 			'bullet' => array(
-				'label'    => esc_html__( 'Bullet', 'addons-for-divi' ),
+				'label'    => esc_html__('Bullet', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-news-wrap li a:before',
 			),
 		);
 	}
 
-	public function get_fields() {
+	public function get_fields()
+	{
 
 		$fields = array(
 
 			// Content.
 			'use_title'          => array(
-				'label'           => esc_html__( 'Use Title', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether title should be used.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use Title', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether title should be used.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'on',
 				'toggle_slug'     => 'content',
 			),
 
 			'title'              => array(
-				'label'       => esc_html__( 'Title Text', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define the title text your for news ticker.', 'addons-for-divi' ),
+				'label'       => esc_html__('Title Text', 'addons-for-divi'),
+				'description' => esc_html__('Define the title text your for news ticker.', 'addons-for-divi'),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 				'show_if'     => array(
@@ -80,11 +84,11 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'post_type'          => array(
-				'label'            => esc_html__( 'Post Type', 'addons-for-divi' ),
+				'label'            => esc_html__('Post Type', 'addons-for-divi'),
 				'type'             => 'select',
 				'option_category'  => 'configuration',
-				'options'          => et_get_registered_post_type_options( false, false ),
-				'description'      => esc_html__( 'Choose News of which post type you would like to display.', 'addons-for-divi' ),
+				'options'          => et_get_registered_post_type_options(false, false),
+				'description'      => esc_html__('Choose News of which post type you would like to display.', 'addons-for-divi'),
 				'computed_affects' => array(
 					'__posts',
 				),
@@ -93,72 +97,72 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			),
 
 			'include_categories' => array(
-				'label'            => esc_html__( 'Included Categories', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Choose which categories you would like to include in the news ticker.', 'addons-for-divi' ),
+				'label'            => esc_html__('Included Categories', 'addons-for-divi'),
+				'description'      => esc_html__('Choose which categories you would like to include in the news ticker.', 'addons-for-divi'),
 				'type'             => 'categories',
 				'meta_categories'  => array(
-					'current' => esc_html__( 'Current Category', 'addons-for-divi' ),
+					'current' => esc_html__('Current Category', 'addons-for-divi'),
 				),
 				'renderer_options' => array(
 					'use_terms' => false,
 				),
 				'option_category'  => 'basic_option',
 				'toggle_slug'      => 'content',
-				'computed_affects' => array( '__news' ),
+				'computed_affects' => array('__news'),
 				'show_if'          => array(
 					'post_type' => 'post',
 				),
 			),
 
 			'order_by'           => array(
-				'label'            => esc_html__( 'Order By', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Choose how your News should be ordered.', 'addons-for-divi' ),
+				'label'            => esc_html__('Order By', 'addons-for-divi'),
+				'description'      => esc_html__('Choose how your News should be ordered.', 'addons-for-divi'),
 				'type'             => 'select',
 				'option_category'  => 'configuration',
 				'toggle_slug'      => 'content',
 				'default'          => 'date',
 				'options'          => array(
-					'date'  => esc_html__( 'Date', 'addons-for-divi' ),
-					'title' => esc_html__( 'Title', 'addons-for-divi' ),
+					'date'  => esc_html__('Date', 'addons-for-divi'),
+					'title' => esc_html__('Title', 'addons-for-divi'),
 				),
 
 				'default_on_front' => 'date',
-				'computed_affects' => array( '__news' ),
+				'computed_affects' => array('__news'),
 			),
 
 			'order'              => array(
-				'label'            => esc_html__( 'Sorted By', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Choose how your News should be sorted.', 'addons-for-divi' ),
+				'label'            => esc_html__('Sorted By', 'addons-for-divi'),
+				'description'      => esc_html__('Choose how your News should be sorted.', 'addons-for-divi'),
 				'type'             => 'select',
 				'option_category'  => 'configuration',
 				'toggle_slug'      => 'content',
 				'default'          => 'ASC',
 				'options'          => array(
-					'ASC'  => esc_html__( 'Ascending', 'addons-for-divi' ),
-					'DESC' => esc_html__( 'Descending', 'addons-for-divi' ),
+					'ASC'  => esc_html__('Ascending', 'addons-for-divi'),
+					'DESC' => esc_html__('Descending', 'addons-for-divi'),
 				),
 				'default_on_front' => 'ASC',
-				'computed_affects' => array( '__news' ),
+				'computed_affects' => array('__news'),
 			),
 
 			'news_count'         => array(
-				'label'            => esc_html__( 'News Limit', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Choose how much news you would like to display per module.', 'addons-for-divi' ),
+				'label'            => esc_html__('News Limit', 'addons-for-divi'),
+				'description'      => esc_html__('Choose how much news you would like to display per module.', 'addons-for-divi'),
 				'type'             => 'text',
 				'default'          => '5',
 				'toggle_slug'      => 'content',
-				'computed_affects' => array( '__news' ),
+				'computed_affects' => array('__news'),
 			),
 			'exclude_posts'      => array(
-				'label'            => esc_html__( 'Exclude news by IDs', 'addons-for-divi-pro' ),
-				'description'      => esc_html__( 'eg. 10, 22, 19 etc. If this is used by IDs, Selected news will be ignored.', 'addons-for-divi-pro' ),
+				'label'            => esc_html__('Exclude news by IDs', 'addons-for-divi-pro'),
+				'description'      => esc_html__('eg. 10, 22, 19 etc. If this is used by IDs, Selected news will be ignored.', 'addons-for-divi-pro'),
 				'type'             => 'text',
 				'toggle_slug'      => 'content',
-				'computed_affects' => array( '__news' ),
+				'computed_affects' => array('__news'),
 			),
 			'post_offset'        => array(
-				'label'            => esc_html__( 'News Offset', 'addons-for-divi-pro' ),
-				'description'      => esc_html__( 'Choose how many news you would like to skip. These news will not be shown.', 'addons-for-divi-pro' ),
+				'label'            => esc_html__('News Offset', 'addons-for-divi-pro'),
+				'description'      => esc_html__('Choose how many news you would like to skip. These news will not be shown.', 'addons-for-divi-pro'),
 				'type'             => 'range',
 				'default'          => '0',
 				'unitless'         => true,
@@ -168,16 +172,16 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 					'step' => 1,
 				),
 				'toggle_slug'      => 'content',
-				'computed_affects' => array( '__news' ),
+				'computed_affects' => array('__news'),
 			),
 
 			// settings.
 			'title_pos'          => array(
-				'label'            => esc_html__( 'Title Position', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define title position to the left, right or center.', 'addons-for-divi' ),
+				'label'            => esc_html__('Title Position', 'addons-for-divi'),
+				'description'      => esc_html__('Define title position to the left, right or center.', 'addons-for-divi'),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
-				'options'          => et_builder_get_text_orientation_options( array( 'justified', 'center' ) ),
+				'options'          => et_builder_get_text_orientation_options(array('justified', 'center')),
 				'options_icon'     => 'module_align',
 				'default_on_front' => 'left',
 				'toggle_slug'      => 'settings',
@@ -186,8 +190,8 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				),
 			),
 			'speed'              => array(
-				'label'          => esc_html__( 'Moving Speed', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define news moving speed.', 'addons-for-divi' ),
+				'label'          => esc_html__('Moving Speed', 'addons-for-divi'),
+				'description'    => esc_html__('Define news moving speed.', 'addons-for-divi'),
 				'type'           => 'range',
 				'fixed_unit'     => 'ms',
 				'default_unit'   => 'ms',
@@ -200,18 +204,18 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'toggle_slug'    => 'settings',
 			),
 			'slide_dir'          => array(
-				'label'            => esc_html__( 'Moving Direction', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Define news moving direction.', 'addons-for-divi' ),
+				'label'            => esc_html__('Moving Direction', 'addons-for-divi'),
+				'description'      => esc_html__('Define news moving direction.', 'addons-for-divi'),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
-				'options'          => et_builder_get_text_orientation_options( array( 'justified', 'center' ) ),
+				'options'          => et_builder_get_text_orientation_options(array('justified', 'center')),
 				'options_icon'     => 'module_align',
 				'default_on_front' => 'left',
 				'toggle_slug'      => 'settings',
 			),
 			'item_spacing'       => array(
-				'label'          => esc_html__( 'Item Spacing', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define spacing between news items.', 'addons-for-divi' ),
+				'label'          => esc_html__('Item Spacing', 'addons-for-divi'),
+				'description'    => esc_html__('Define spacing between news items.', 'addons-for-divi'),
 				'type'           => 'range',
 				'fixed_unit'     => 'px',
 				'default_unit'   => 'px',
@@ -224,32 +228,32 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 				'toggle_slug'    => 'settings',
 			),
 			'pause_on_hover'     => array(
-				'label'           => esc_html__( 'Pause on Hover ', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether pause on hover should be activated.', 'addons-for-divi' ),
+				'label'           => esc_html__('Pause on Hover ', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether pause on hover should be activated.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'on',
 				'toggle_slug'     => 'settings',
 			),
 			'use_bullet'         => array(
-				'label'           => esc_html__( 'Use Bullet Before Item', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether bullet should be used before news items.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use Bullet Before Item', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether bullet should be used before news items.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'settings',
 			),
 			'bullet_color'       => array(
-				'label'       => esc_html__( 'Bullet Color', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define a custom color for your bullet.', 'addons-for-divi' ),
+				'label'       => esc_html__('Bullet Color', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define a custom color for your bullet.', 'addons-for-divi'),
 				'type'        => 'color-alpha',
 				'toggle_slug' => 'settings',
 				'default'     => '#8a8585',
@@ -260,8 +264,8 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 			// title.
 			'title_padding'      => array(
-				'label'          => __( 'Title Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define custom padding for news ticker title.', 'addons-for-divi' ),
+				'label'          => __('Title Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Define custom padding for news ticker title.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'title',
@@ -271,7 +275,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 			'__news'             => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'DTQ_News_Ticker', 'get_news' ),
+				'computed_callback'   => array('DTQ_News_Ticker', 'get_news'),
 				'computed_depends_on' => array(
 					'post_type',
 					'include_categories',
@@ -287,18 +291,19 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 		$title_bg = $this->custom_background_fields(
 			'title',
-			esc_html__( 'Title', 'addons-for-divi' ),
+			esc_html__('Title', 'addons-for-divi'),
 			'advanced',
 			'title',
-			array( 'color', 'gradient', 'hover' ),
+			array('color', 'gradient', 'hover'),
 			array(),
 			'#333'
 		);
 
-		return array_merge( $fields, $title_bg );
+		return array_merge($fields, $title_bg);
 	}
 
-	public function get_advanced_fields_config() {
+	public function get_advanced_fields_config()
+	{
 
 		$advanced_fields                = array();
 		$advanced_fields['text']        = false;
@@ -306,7 +311,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['borders']['title'] = array(
-			'label_prefix' => esc_html__( 'Title', 'addons-for-divi' ),
+			'label_prefix' => esc_html__('Title', 'addons-for-divi'),
 			'toggle_slug'  => 'title',
 			'css'          => array(
 				'main'      => array(
@@ -345,7 +350,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		);
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
+			'label'           => esc_html__('Title', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dtq-news-title',
 				'important' => 'all',
@@ -388,7 +393,8 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		return $advanced_fields;
 	}
 
-	public static function get_news( $args = array(), $conditional_tags = array(), $current_page = array() ) {
+	public static function get_news($args = array(), $conditional_tags = array(), $current_page = array())
+	{
 		$defaults = array(
 			'post_type'          => '',
 			'include_categories' => '',
@@ -399,7 +405,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			'exclude_posts'      => '',
 		);
 
-		$args               = wp_parse_args( $args, $defaults );
+		$args               = wp_parse_args($args, $defaults);
 		$post_type          = $args['post_type'];
 		$include_categories = $args['include_categories'];
 		$order_by           = $args['order_by'];
@@ -409,40 +415,40 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		$post_offset        = $args['post_offset'];
 
 		$query_args = array(
-			'posts_per_page' => intval( $news_count ),
+			'posts_per_page' => intval($news_count),
 			'post_type'      => $post_type,
 			'post_status'    => 'publish',
 			'orderby'        => $order_by,
 			'order'          => $order,
-			'offset'         => intval( $post_offset ),
+			'offset'         => intval($post_offset),
 		);
 
-		if ( ! empty( $exclude_posts ) ) {
-			$exclude_posts              = str_replace( ' ', '', $exclude_posts );
-			$exclude_posts              = explode( ',', $exclude_posts );
+		if (!empty($exclude_posts)) {
+			$exclude_posts              = str_replace(' ', '', $exclude_posts);
+			$exclude_posts              = explode(',', $exclude_posts);
 			$query_args['post__not_in'] = $exclude_posts;
 		}
 
-		$post_id = isset( $current_page['id'] ) ? (int) $current_page['id'] : 0;
+		$post_id = isset($current_page['id']) ? (int) $current_page['id'] : 0;
 
-		if ( 'post' === $post_type ) {
-			$query_args['cat'] = implode( ',', self::filter_include_categories( $include_categories, $post_id ) );
+		if ('post' === $post_type) {
+			$query_args['cat'] = implode(',', self::filter_include_categories($include_categories, $post_id));
 		}
 
-		$query = new WP_Query( $query_args );
+		$query = new WP_Query($query_args);
 
 		ob_start();
 
-		if ( $query->have_posts() ) :
-			while ( $query->have_posts() ) :
+		if ($query->have_posts()) :
+			while ($query->have_posts()) :
 				$query->the_post();
-				echo '<li><a href="' . esc_url( get_the_permalink() ) . '">' . esc_html( get_the_title() ) . '</a></li>';
+				echo '<li><a href="' . esc_url(get_the_permalink()) . '">' . esc_html(get_the_title()) . '</a></li>';
 			endwhile;
 		endif;
 
 		$output = ob_get_clean();
 
-		if ( ! $output ) {
+		if (!$output) {
 			$output = '<li>No News Found</li>';
 		}
 
@@ -451,18 +457,20 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 
 
 
-	protected function render_title() {
+	protected function render_title()
+	{
 		$use_title = $this->props['use_title'];
 		$title     = $this->props['title'];
 
-		if ( 'on' === $use_title ) {
-			return sprintf( '<div class="dtq-news-title">%1$s</div>', $title );
+		if ('on' === $use_title) {
+			return sprintf('<div class="dtq-news-title">%1$s</div>', $title);
 		}
 	}
 
-	public function render( $attrs, $content, $render_slug ) {
+	public function render($attrs, $content, $render_slug)
+	{
 
-		$this->render_css( $render_slug );
+		$this->render_css($render_slug);
 
 		return sprintf(
 			'<div class="dtq-module dtq-news-tricker">
@@ -474,11 +482,12 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
                 </div>
             </div>',
 			$this->render_title(),
-			self::get_news( $this->props )
+			self::get_news($this->props)
 		);
 	}
 
-	protected function render_css( $render_slug ) {
+	protected function render_css($render_slug)
+	{
 
 		$title_pos                       = $this->props['title_pos'];
 		$speed                           = $this->props['speed'];
@@ -491,9 +500,9 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		$title_padding_tablet            = $this->props['title_padding_tablet'];
 		$title_padding_phone             = $this->props['title_padding_phone'];
 		$title_padding_last_edited       = $this->props['title_padding_last_edited'];
-		$title_padding_responsive_status = et_pb_get_responsive_status( $title_padding_last_edited );
+		$title_padding_responsive_status = et_pb_get_responsive_status($title_padding_last_edited);
 
-		if ( 'on' === $use_bullet ) {
+		if ('on' === $use_bullet) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -527,32 +536,32 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-news-title',
-				'declaration' => $this->process_margin_padding( $title_padding, 'padding', false ),
+				'declaration' => $this->process_margin_padding($title_padding, 'padding', false),
 			)
 		);
 
 		// title Padding Tablet.
-		if ( $title_padding_tablet && $title_padding_responsive_status ) {
+		if ($title_padding_tablet && $title_padding_responsive_status) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-news-title',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => $this->process_margin_padding( $title_padding_tablet, 'padding', false ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					'declaration' => $this->process_margin_padding($title_padding_tablet, 'padding', false),
 				)
 			);
 		}
 
 		// title Padding Phone.
-		if ( $title_padding_phone && $title_padding_responsive_status ) {
+		if ($title_padding_phone && $title_padding_responsive_status) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-news-title',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => $this->process_margin_padding( $title_padding_phone, 'padding', false ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					'declaration' => $this->process_margin_padding($title_padding_phone, 'padding', false),
 				)
 			);
 		}
@@ -582,7 +591,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			)
 		);
 
-		if ( 'on' === $pause_on_hover ) {
+		if ('on' === $pause_on_hover) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -594,7 +603,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 			);
 		}
 
-		if ( 'right' === $title_pos ) {
+		if ('right' === $title_pos) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -620,8 +629,7 @@ class DTQ_News_Ticker extends BA_Builder_Module_Type_PostBased {
 		}
 
 		// title bg.
-		$this->get_custom_bg_style( $render_slug, 'title', '%%order_class%% .dtq-news-title', '%%order_class%%:hover .dtq-news-title' );
-
+		$this->get_custom_bg_style($render_slug, 'title', '%%order_class%% .dtq-news-title', '%%order_class%%:hover .dtq-news-title');
 	}
 }
 

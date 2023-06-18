@@ -1,52 +1,50 @@
-=== Divi Torque for Divi Builder ===
+=== Divi Torque Lite ===
 
 Contributors: wppaw, badhonrocks
 Donate link: https://wppaw.com
-Tags: divi, divi module, divi theme, divi builder, divi templates
+Tags: divi, divi module, divi theme, divi builder, divi page builder, divi plugin, divi addons
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 3.6.1
+Stable tag: 3.6.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Supercharge your Divi page building experience with Divi Torque plugin.
+Supercharge your Divi page-building experience with the Divi Torque plugin.
 
 == Description ==
 
-= Ultimate divi modules library for Divi Builder =
+= Ultimate collection of Divi modules for the Divi Page Builder. =
 
-It is an ultimate all-in-one addon for Divi Page Builder. Under the hood, it includes the most comprehensive modules, such as *Image Carousel, Flip Box, Team Module, Divi Business Hour, Divi Logo Carousel, Testimonial Module, Video modal* etc. Why do you need multiple plugins? Where is everything under the one hood?
+[Divi Torque Lite](https://divitorque.com/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink) is an ultimate all-in-one addon for Divi Page Builder. Power up the Divi theme/builder with advanced and powerful modules that help you build websites in no time! This first Divi plugin is here to make website building an ultimate journey.
 
-Power-up the Divi theme/builder with advanced and powerful modules that help you build websites in no time! This first Divi plugin is here to make website building an ultimate journey.
+Check out [Divi Torque Lite](https://divitorque.com/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink)
 
-= FREE DIVI MODULES AND COUNTING =
-20 Free Divi Modules Are Available in the Divi Torque Free
+= OVER 20+ FREE MODULES AND COUNTING =
+[Divi Torque Lite](https://divitorque.com/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink) includes a variety of 20+ free modules for you to create professional websites:
 
-The free version offers a wide range of divi modules, each of which can be fully customized. In addition, we have provided design inspiration for every individual module. Take a look at what's included in our free version:
-
-- **Contact Form 7** - Style existing Contact Form 7 forms to match your website's design with customizable settings such as color and typography.
-- **Video Modal** - Create a video lightbox popup in Divi builder for YouTube and Vimeo videos with customizable settings for video titles and captions.
-- **Testimonial** - Display customer testimonials on your website with customizable settings, such as text alignment and typography.
-- **Image Carousel** - Easily create an interactive image carousel with customizable settings to showcase your images in a visually appealing way.
-- **Logo Carousel** - Display multiple brand or company logos in a carousel format, perfect for showcasing sponsor logos or partners.
-- **Logo Grid** - Showcase brand or company logos in a grid layout, with customization options such as the number of rows and columns.
-- **Team Module** - Showcase your team on your website with images, titles, and descriptions for each member, along with social media links.
-- **Alert Module** - Display notices, warnings, and attention texts on any website with an alert module that offers different alert styles and customization options.
-- **Compare Image** - Display a before and after image, perfect for showcasing the transformation of a product or service.
-- **Business Hour** - Showcase your office hours for clients and visitors, with customizable settings such as the days of the week and time intervals.
-- **Info Card** - Demonstrate products or creative posts using a beautiful combination of elements, such as images, text, and buttons.
-- **Gradient Heading** - Create a gradient heading in a few seconds with customizable settings for gradient colors and typography.
-- **Icon Box** - Display a short brief about the services you provide with customizable settings for icon size and color.
-- **Torq Blurb** - An extended version of Divi's default blurb module with additional customization options for text and icon size.
-- **Image Scroll** - Show images in a way that scrolls horizontally or vertically with customizable settings for animation speed and image spacing.
-- **Progress Bar** - Showcase skills and other progressive information with customizable settings such as bar color and percentage.
-- **Twitter Feed** - Fetch specific Twitter account feeds on your web pages with customizable settings for the tweet limit and display options.
-- **Twitter Carousel** - Show Twitter feeds in a carousel format with customizable settings for the tweet limit and display options.
-- **Divider Module** - Separate your section with fancy divider styles, such as dots or lines, with customizable settings for color and thickness.
-- **And counting...**
+1. **CF7 Styler** - Design your existing Contact Form 7 forms to match your website's design.
+2. **Video Popup** - Create a video popup in Divi builder for YouTube and Vimeo videos with customizable settings for video titles and captions.
+3. **Testimonial** - Display customer testimonials on your website with customizable settings, such as text alignment and typography.
+4. **Image Carousel** - Easily create an interactive image carousel with customizable settings to showcase your images in a visually appealing way.
+5. **Logo Carousel** - Display multiple brand logos in a carousel format, perfect for showcasing sponsor logos or partners.
+6. **Logo Grid** - Showcase your brand logos in a grid layout, with customization options such as the number of rows and columns.
+7. **Team Module** - Showcase your team on your website with images, titles, and descriptions for each member, along with social media links.
+8. **Alert Module** - Display notices, warnings, and attention texts on any website with an alert module.
+9. **Compare Image** - Display a before and after image, perfect for showcasing the transformation of a product or service.
+10. **Business Hour** - Showcase your office hours for clients and visitors, with customizable settings such as the days of the week and time intervals.
+11. **Info Card** - Demonstrate products or creative posts using a beautiful combination of elements, such as images, text, and buttons.
+12. **Gradient Heading** - Create a gradient heading in a few seconds with customizable settings for gradient colors and typography.
+13. **Icon Box** - Display a short brief about the services you provide with customizable settings for icon size and color.
+14. **Blurb Plus** - An extended version of Divi's default blurb module with additional customization options for text and icon size.
+15. **Image Scroll** - Show images in a way that scrolls horizontally or vertically with customizable settings for animation speed and image spacing.
+16. **Progress Bar** - Showcase skills and other progressive information with customizable settings such as bar color and percentage.
+17. **Twitter Feed** - Fetch specific Twitter account feeds on your web pages with customizable settings for the tweet limit and display options.
+18. **Twitter Carousel** - Show Twitter feeds in a carousel format with customizable settings for the tweet limit and display options.
+19. **Divider Module** - Separate your section with fancy divider styles, such as dots or lines, with customizable settings for color and thickness.
 
 ## Join Our Facebook Group ##
+
 [Join our Facebook group community](https://www.facebook.com/groups/466506622180801): Learn the tricks and techniques that other Divi Torque users are using to grow their businesses. Also, get exciting insider information on upcoming feature releases.
 
 ## Rate us on WordPress 🙂 ##
@@ -55,7 +53,7 @@ We are thankful to you that you have chosen our plugin. If our plugin brings a s
 [I’m Happy to Give You](https://wordpress.org/support/plugin/addons-for-divi/reviews/?filter=5#new-post) ⭐️ ⭐️ ⭐️ ⭐️ ⭐️
 
 ## Backed by a Trusted Team ##
-Divi Torque is brought to you by [Divi Torque](https://divitorque.com) and [WPPaw](https://wppaw.com) Team, a dedicated WordPress product company, trusted by 10k+ websites.
+Divi Torque is brought to you by [Divi Torque](https://divitorque.com/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink) and [WPPaw](https://wppaw.com) Team, a dedicated WordPress product company, trusted by 20k+ websites.
 
 == Installation ==
 
@@ -102,12 +100,20 @@ No, It won’t break your site or any page where you used our plugin. We put our
 
 == Changelog ==
 
+Version: 3.6.2
+- Added: Single folder for all modules
+- Fixed: Modules security issues with 6.2
+- Fixed: Swap image issues
+
+Version: 3.6.1
+- Minor changes
+
 Version: 3.6.0
 - Deprecated popup extension
 - Deprecated login designer extension
 - Deprecated the admin page
 - Clean codebase
-- Remove freemius
+- Remove freemium
 
 Version: 3.5.0
 - Merge with WPPaw Team

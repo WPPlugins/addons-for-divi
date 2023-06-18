@@ -1,6 +1,7 @@
 <?php
 
-class DTQ_Cf7_Styler extends BA_Builder_Module {
+class DTQ_Cf7_Styler extends BA_Builder_Module
+{
 
 	protected $module_credits = array(
 		'module_uri' => 'https://divitorque.com/cf7-styler-module/',
@@ -8,91 +9,93 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		'author_uri' => 'https://divitorque.com/',
 	);
 
-	public function init() {
+	public function init()
+	{
 
 		$this->vb_support       = 'on';
 		$this->slug             = 'ba_cf7_styler';
-		$this->name             = esc_html__( 'Torque CF7 Styler', 'addons-for-divi' );
-		$this->icon_path        = plugin_dir_path( __FILE__ ) . 'cf7.svg';
+		$this->name             = esc_html__('Torq CF7', 'addons-for-divi');
+		$this->icon_path        = plugin_dir_path(__FILE__) . 'cf7.svg';
 		$this->main_css_element = '%%order_class%%.ba_cf7_styler';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'general' => esc_html__( 'General', 'addons-for-divi' ),
+					'general' => esc_html__('General', 'addons-for-divi'),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'common'         => esc_html__( 'General', 'addons-for-divi' ),
+					'common'         => esc_html__('General', 'addons-for-divi'),
 					'form_header'    => array(
-						'title'             => esc_html__( 'Form Header', 'addons-for-divi' ),
+						'title'             => esc_html__('Form Header', 'addons-for-divi'),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'common_tab' => array(
-								'name' => esc_html__( 'General', 'addons-for-divi' ),
+								'name' => esc_html__('General', 'addons-for-divi'),
 							),
 							'title_tab'  => array(
-								'name' => esc_html__( 'Title', 'addons-for-divi' ),
+								'name' => esc_html__('Title', 'addons-for-divi'),
 							),
 							'text_tab'   => array(
-								'name' => esc_html__( 'Text', 'addons-for-divi' ),
+								'name' => esc_html__('Text', 'addons-for-divi'),
 							),
 						),
 					),
 					'form_text'      => array(
-						'title'             => esc_html__( 'Form Text', 'addons-for-divi' ),
+						'title'             => esc_html__('Form Text', 'addons-for-divi'),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'field_tab'       => array(
-								'name' => esc_html__( 'Field', 'addons-for-divi' ),
+								'name' => esc_html__('Field', 'addons-for-divi'),
 							),
 							'label_tab'       => array(
-								'name' => esc_html__( 'Label', 'addons-for-divi' ),
+								'name' => esc_html__('Label', 'addons-for-divi'),
 							),
 
 							'placeholder_tab' => array(
-								'name' => esc_html__( 'Placeholder', 'addons-for-divi' ),
+								'name' => esc_html__('Placeholder', 'addons-for-divi'),
 							),
 						),
 					),
-					'form_field'     => esc_html__( 'Fields', 'addons-for-divi' ),
-					'radio_checkbox' => esc_html__( 'Radio & Checkbox', 'addons-for-divi' ),
-					'submit_button'  => esc_html__( 'Button', 'addons-for-divi' ),
-					'suc_err_msg'    => esc_html__( 'Message', 'addons-for-divi' ),
+					'form_field'     => esc_html__('Fields', 'addons-for-divi'),
+					'radio_checkbox' => esc_html__('Radio & Checkbox', 'addons-for-divi'),
+					'submit_button'  => esc_html__('Button', 'addons-for-divi'),
+					'suc_err_msg'    => esc_html__('Message', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'form_id'    => array(
-				'label'    => esc_html__( 'Form Fields', 'addons-for-divi' ),
+				'label'    => esc_html__('Form Fields', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-cf7-styler input',
 			),
 			'cf7_labels' => array(
-				'label'    => esc_html__( 'Form Label', 'addons-for-divi' ),
+				'label'    => esc_html__('Form Label', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-cf7-styler label',
 			),
 			'cf7_submit' => array(
-				'label'    => esc_html__( 'Button', 'addons-for-divi' ),
+				'label'    => esc_html__('Button', 'addons-for-divi'),
 				'selector' => '%%order_class%% .bck-cf7 input.wpcf7-submit',
 			),
 		);
-
 	}
 
-	public function get_fields() {
+	public function get_fields()
+	{
 
 		return array(
 
 			'use_form_header'              => array(
-				'label'       => esc_html__( 'Show Form Header', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can choose whether form header should be used.', 'addons-for-divi' ),
+				'label'       => esc_html__('Show Form Header', 'addons-for-divi'),
+				'description' => esc_html__('Here you can choose whether form header should be used.', 'addons-for-divi'),
 				'type'        => 'yes_no_button',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'     => 'off',
 				'toggle_slug' => 'general',
@@ -115,8 +118,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_title'            => array(
-				'label'       => esc_html__( 'Header Title', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define the header title for your form.', 'addons-for-divi' ),
+				'label'       => esc_html__('Header Title', 'addons-for-divi'),
+				'description' => esc_html__('Define the header title for your form.', 'addons-for-divi'),
 				'type'        => 'text',
 				'show_if'     => array(
 					'use_form_header' => 'on',
@@ -125,8 +128,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_text'             => array(
-				'label'       => esc_html__( 'Header Text', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define the header description text for your form.', 'addons-for-divi' ),
+				'label'       => esc_html__('Header Text', 'addons-for-divi'),
+				'description' => esc_html__('Define the header description text for your form.', 'addons-for-divi'),
 				'type'        => 'text',
 				'show_if'     => array(
 					'use_form_header' => 'on',
@@ -135,12 +138,12 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'use_icon'                     => array(
-				'label'       => esc_html__( 'Use Icon', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can choose whether icon should be used.', 'addons-for-divi' ),
+				'label'       => esc_html__('Use Icon', 'addons-for-divi'),
+				'description' => esc_html__('Here you can choose whether icon should be used.', 'addons-for-divi'),
 				'type'        => 'yes_no_button',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'use_form_header' => 'on',
@@ -150,12 +153,12 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'header_img'                   => array(
-				'label'              => esc_html__( 'Header Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the form header.', 'addons-for-divi' ),
+				'label'              => esc_html__('Header Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an image or type in the URL of the image you would like to display for the form header.', 'addons-for-divi'),
 				'type'               => 'upload',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an image', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Image', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Image', 'addons-for-divi'),
 				'show_if'            => array(
 					'use_icon'        => 'off',
 					'use_form_header' => 'on',
@@ -164,8 +167,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'header_icon'                  => array(
-				'label'       => esc_html__( 'Header Icon', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select an icon for your form header.', 'addons-for-divi' ),
+				'label'       => esc_html__('Header Icon', 'addons-for-divi'),
+				'description' => esc_html__('Select an icon for your form header.', 'addons-for-divi'),
 				'type'        => 'select_icon',
 				'show_if'     => array(
 					'use_form_header' => 'on',
@@ -176,8 +179,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_bg'               => array(
-				'label'        => esc_html__( 'Form Header Background', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your form header.', 'addons-for-divi' ),
+				'label'        => esc_html__('Form Header Background', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background color for your form header.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -186,8 +189,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_padding'          => array(
-				'label'          => esc_html__( 'Header Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
+				'label'          => esc_html__('Header Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'default'        => '0px|0px|0px|0px',
 				'tab_slug'       => 'advanced',
@@ -197,8 +200,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_bottom'           => array(
-				'label'          => esc_html__( 'Bottom Spacing', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Set how much space the form header will take at the bottom.', 'addons-for-divi' ),
+				'label'          => esc_html__('Bottom Spacing', 'addons-for-divi'),
+				'description'    => esc_html__('Set how much space the form header will take at the bottom.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '0px',
@@ -213,8 +216,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_img_bg'           => array(
-				'label'        => esc_html__( 'Header Image/Icon Background', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your form header icon/image.', 'addons-for-divi' ),
+				'label'        => esc_html__('Header Image/Icon Background', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background color for your form header icon/image.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'default'      => '#efefef',
 				'custom_color' => true,
@@ -224,8 +227,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_icon_size'        => array(
-				'label'          => esc_html__( 'Header Icon Size', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom size for your form header icon.', 'addons-for-divi' ),
+				'label'          => esc_html__('Header Icon Size', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom size for your form header icon.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '32px',
@@ -245,8 +248,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_icon_color'       => array(
-				'label'        => esc_html__( 'Header Icon Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your form header icon.', 'addons-for-divi' ),
+				'label'        => esc_html__('Header Icon Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom color for your form header icon.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'show_if'      => array(
@@ -259,8 +262,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_header_icon_padding'     => array(
-				'label'       => esc_html__( 'Header Icon Padding', 'addons-for-divi' ),
-				'description' => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
+				'label'       => esc_html__('Header Icon Padding', 'addons-for-divi'),
+				'description' => esc_html__('Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi'),
 				'type'        => 'custom_padding',
 				'default'     => '15px|15px|15px|15px',
 				'show_if'     => array(
@@ -273,8 +276,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_bg'                      => array(
-				'label'        => esc_html__( 'Form Background', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your form.', 'addons-for-divi' ),
+				'label'        => esc_html__('Form Background', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background color for your form.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -282,8 +285,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_padding'                 => array(
-				'label'          => esc_html__( 'Form Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
+				'label'          => esc_html__('Form Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'default'        => '0px|0px|0px|0px',
 				'tab_slug'       => 'advanced',
@@ -292,12 +295,12 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'use_form_button_fullwidth'    => array(
-				'label'       => esc_html__( 'Fullwidth Button', 'addons-for-divi' ),
-				'description' => esc_html__( 'Force button always display fullwidth.', 'addons-for-divi' ),
+				'label'       => esc_html__('Fullwidth Button', 'addons-for-divi'),
+				'description' => esc_html__('Force button always display fullwidth.', 'addons-for-divi'),
 				'type'        => 'yes_no_button',
 				'options'     => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'     => 'off',
 				'tab_slug'    => 'advanced',
@@ -305,13 +308,13 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'button_alignment'             => array(
-				'label'       => esc_html__( 'Button Alignment', 'addons-for-divi' ),
-				'description' => esc_html__( 'Align button to the left, right or center.', 'addons-for-divi' ),
+				'label'       => esc_html__('Button Alignment', 'addons-for-divi'),
+				'description' => esc_html__('Align button to the left, right or center.', 'addons-for-divi'),
 				'type'        => 'select',
 				'options'     => array(
-					'left'   => esc_html__( 'Left', 'addons-for-divi' ),
-					'center' => esc_html__( 'Center', 'addons-for-divi' ),
-					'right'  => esc_html__( 'Right', 'addons-for-divi' ),
+					'left'   => esc_html__('Left', 'addons-for-divi'),
+					'center' => esc_html__('Center', 'addons-for-divi'),
+					'right'  => esc_html__('Right', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'use_form_button_fullwidth' => 'off',
@@ -322,11 +325,11 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_id'                      => array(
-				'label'            => esc_html__( 'Select Your Form', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Select form id from the list which you want to customize & display.', 'addons-for-divi' ),
+				'label'            => esc_html__('Select Your Form', 'addons-for-divi'),
+				'description'      => esc_html__('Select form id from the list which you want to customize & display.', 'addons-for-divi'),
 				'type'             => 'select',
 				'option_category'  => 'layout',
-				'options'          => array( '0' => __( 'Select a Form', 'addons-for-divi' ) ) + \ba_get_cf7_forms(),
+				'options'          => array('0' => __('Select a Form', 'addons-for-divi')) + \ba_get_cf7_forms(),
 				'computed_affects' => array(
 					'__cf7form',
 				),
@@ -334,8 +337,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_field_height'            => array(
-				'label'          => esc_html__( 'Common Text Fields Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define static height for the common text fields.', 'addons-for-divi' ),
+				'label'          => esc_html__('Common Text Fields Height', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define static height for the common text fields.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'mobile_options' => true,
@@ -349,8 +352,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_field_padding'           => array(
-				'label'          => esc_html__( 'Form Field Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for each field.', 'addons-for-divi' ),
+				'label'          => esc_html__('Form Field Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom padding for each field.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'form_field',
@@ -359,8 +362,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_background_color'        => array(
-				'label'        => esc_html__( 'Form Field Background Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for form field.', 'addons-for-divi' ),
+				'label'        => esc_html__('Form Field Background Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background color for form field.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'default'      => '#f5f5f5',
@@ -369,8 +372,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_field_active_color'      => array(
-				'label'        => esc_html__( 'Form Field Active Border Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom active color for form field.', 'addons-for-divi' ),
+				'label'        => esc_html__('Form Field Active Border Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom active color for form field.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -378,8 +381,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_field_spacing'           => array(
-				'label'          => esc_html__( 'Form Field Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Set how much space the form field will take at the bottom.', 'addons-for-divi' ),
+				'label'          => esc_html__('Form Field Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Set how much space the form field will take at the bottom.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '20px',
@@ -394,8 +397,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'form_label_spacing'           => array(
-				'label'          => esc_html__( 'Form Label Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Set how much space the form label will take at the bottom.', 'addons-for-divi' ),
+				'label'          => esc_html__('Form Label Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Set how much space the form label will take at the bottom.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '7px',
@@ -411,13 +414,13 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_custom_styles'             => array(
-				'label'            => esc_html__( 'Enable Custom Styles', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Here you can choose whether checkbox & radio custom styles should be used.', 'addons-for-divi' ),
+				'label'            => esc_html__('Enable Custom Styles', 'addons-for-divi'),
+				'description'      => esc_html__('Here you can choose whether checkbox & radio custom styles should be used.', 'addons-for-divi'),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'configuration',
 				'options'          => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'          => 'off',
 				'computed_affects' => array(
@@ -428,8 +431,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_size'                      => array(
-				'label'           => esc_html__( 'Size', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Increase or decrease the size of checkbox & radio.', 'addons-for-divi' ),
+				'label'           => esc_html__('Size', 'addons-for-divi'),
+				'description'     => esc_html__('Increase or decrease the size of checkbox & radio.', 'addons-for-divi'),
 				'type'            => 'range',
 				'option_category' => 'layout',
 				'default_unit'    => 'px',
@@ -447,8 +450,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_background_color'          => array(
-				'label'        => esc_html__( 'Background Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for checkbox & radio.', 'addons-for-divi' ),
+				'label'        => esc_html__('Background Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background color for checkbox & radio.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -459,8 +462,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_selected_color'            => array(
-				'label'        => esc_html__( 'Selected Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom selected color for checkbox & radio.', 'addons-for-divi' ),
+				'label'        => esc_html__('Selected Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom selected color for checkbox & radio.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'default'      => '#222222',
@@ -472,8 +475,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_border_color'              => array(
-				'label'        => esc_html__( 'Border Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom border color for checkbox & radio.', 'addons-for-divi' ),
+				'label'        => esc_html__('Border Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom border color for checkbox & radio.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'default'      => '#222222',
@@ -485,8 +488,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_border_size'               => array(
-				'label'           => esc_html__( 'Border Size', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define a custom border size for checkbox & radio.', 'addons-for-divi' ),
+				'label'           => esc_html__('Border Size', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define a custom border size for checkbox & radio.', 'addons-for-divi'),
 				'type'            => 'range',
 				'option_category' => 'layout',
 				'tab_slug'        => 'advanced',
@@ -504,8 +507,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cr_label_color'               => array(
-				'label'        => esc_html__( 'Label Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom label color for checkbox & radio.', 'addons-for-divi' ),
+				'label'        => esc_html__('Label Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom label color for checkbox & radio.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -517,8 +520,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 			// Success / Error Message.
 			'cf7_message_color'            => array(
-				'label'        => esc_html__( 'Message Text Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom text color for your message.', 'addons-for-divi' ),
+				'label'        => esc_html__('Message Text Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom text color for your message.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -526,8 +529,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_message_bg_color'         => array(
-				'label'        => esc_html__( 'Message Background Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your message.', 'addons-for-divi' ),
+				'label'        => esc_html__('Message Background Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background color for your message.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -535,8 +538,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_border_highlight_color'   => array(
-				'label'        => esc_html__( 'Border Highlight Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom border highlight color for your message.', 'addons-for-divi' ),
+				'label'        => esc_html__('Border Highlight Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom border highlight color for your message.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -545,8 +548,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 			// Success.
 			'cf7_success_message_color'    => array(
-				'label'        => esc_html__( 'Success Message Text Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom text color for your success message.', 'addons-for-divi' ),
+				'label'        => esc_html__('Success Message Text Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom text color for your success message.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -554,8 +557,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_success_message_bg_color' => array(
-				'label'        => esc_html__( 'Success Message Background Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your success message.', 'addons-for-divi' ),
+				'label'        => esc_html__('Success Message Background Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background color for your success message.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -563,8 +566,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_success_border_color'     => array(
-				'label'        => esc_html__( 'Success Border Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your success message border.', 'addons-for-divi' ),
+				'label'        => esc_html__('Success Border Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom color for your success message border.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -573,8 +576,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 			// Error.
 			'cf7_error_message_color'      => array(
-				'label'        => esc_html__( 'Error Message Text Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom text color for your error message.', 'addons-for-divi' ),
+				'label'        => esc_html__('Error Message Text Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom text color for your error message.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -582,8 +585,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_error_message_bg_color'   => array(
-				'label'        => esc_html__( 'Error Message Background Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom background color for your error message.', 'addons-for-divi' ),
+				'label'        => esc_html__('Error Message Background Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom background color for your error message.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -591,8 +594,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_error_border_color'       => array(
-				'label'        => esc_html__( 'Error Border Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your error message border.', 'addons-for-divi' ),
+				'label'        => esc_html__('Error Border Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom color for your error message border.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -600,8 +603,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_message_padding'          => array(
-				'label'          => esc_html__( 'Message Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
+				'label'          => esc_html__('Message Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi'),
 				'type'           => 'range',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'suc_err_msg',
@@ -615,8 +618,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			),
 
 			'cf7_message_margin_top'       => array(
-				'label'          => esc_html__( 'Message Margin Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the message.', 'addons-for-divi' ),
+				'label'          => esc_html__('Message Margin Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the message.', 'addons-for-divi'),
 				'type'           => 'range',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'suc_err_msg',
@@ -631,8 +634,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 			// Header Text.
 			'header_title_spacing'         => array(
-				'label'          => esc_html__( 'Title Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi' ),
+				'label'          => esc_html__('Title Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi'),
 				'type'           => 'range',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'form_header',
@@ -648,8 +651,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 			'__cf7form'                    => array(
 				'type'                => 'computed',
-				'computed_callback'   => array( 'DTQ_CF7_Styler', 'get_cf7_shortcode' ),
-				'description'         => esc_html__( '.', 'addons-for-divi' ),
+				'computed_callback'   => array('DTQ_CF7_Styler', 'get_cf7_shortcode'),
+				'description'         => esc_html__('.', 'addons-for-divi'),
 				'computed_depends_on' => array(
 					'form_id',
 				),
@@ -657,7 +660,8 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		);
 	}
 
-	public function get_advanced_fields_config() {
+	public function get_advanced_fields_config()
+	{
 
 		$advanced_fields                = array();
 		$advanced_fields['fonts']       = false;
@@ -665,7 +669,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		$advanced_fields['text_shadow'] = false;
 
 		$advanced_fields['fonts']['form_field_font'] = array(
-			'label'       => esc_html__( 'Field', 'addons-for-divi' ),
+			'label'       => esc_html__('Field', 'addons-for-divi'),
 			'css'         => array(
 				'main'      => implode(
 					', ',
@@ -691,7 +695,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['labels'] = array(
-			'label'       => esc_html__( 'Label', 'addons-for-divi' ),
+			'label'       => esc_html__('Label', 'addons-for-divi'),
 			'css'         => array(
 				'main'      => "{$this->main_css_element} .dtq-cf7 .wpcf7 label",
 				'important' => 'all',
@@ -701,7 +705,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['placeholder'] = array(
-			'label'       => esc_html__( 'Placeholder', 'addons-for-divi' ),
+			'label'       => esc_html__('Placeholder', 'addons-for-divi'),
 			'css'         => array(
 				'main'      => implode(
 					', ',
@@ -717,7 +721,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'            => esc_html__( 'Title', 'addons-for-divi' ),
+			'label'            => esc_html__('Title', 'addons-for-divi'),
 			'css'              => array(
 				'main'      => '%%order_class%% .dtq-form-header-title',
 				'important' => 'all',
@@ -730,7 +734,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['text'] = array(
-			'label'            => esc_html__( 'Text', 'addons-for-divi' ),
+			'label'            => esc_html__('Text', 'addons-for-divi'),
 			'css'              => array(
 				'main'      => '%%order_class%% .dtq-form-header-text',
 				'important' => 'all',
@@ -743,7 +747,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		);
 
 		$advanced_fields['button']['submit_button'] = array(
-			'label'          => esc_html__( 'Button', 'addons-for-divi' ),
+			'label'          => esc_html__('Button', 'addons-for-divi'),
 			'css'            => array(
 				'main'      => '%%order_class%% .wpcf7-form input[type=submit]',
 				'important' => 'all',
@@ -767,7 +771,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		$advanced_fields['borders']['default'] = array();
 
 		$advanced_fields['borders']['field'] = array(
-			'label_prefix' => esc_html__( 'Field', 'addons-for-divi' ),
+			'label_prefix' => esc_html__('Field', 'addons-for-divi'),
 			'toggle_slug'  => 'form_field',
 			'css'          => array(
 				'main'      => array(
@@ -814,24 +818,26 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	public static function get_cf7_shortcode( $args = array() ) {
+	public static function get_cf7_shortcode($args = array())
+	{
 
 		$form_id = $args['form_id'];
 
 		$cf7_shortcode = '';
 
-		if ( 0 === $form_id ) {
+		if (0 === $form_id) {
 			$cf7_shortcode = 'Please select a Contact Form 7.';
 		} else {
-			$cf7_shortcode = do_shortcode( sprintf( '[contact-form-7 id="%1$s"]', $form_id ) );
+			$cf7_shortcode = do_shortcode(sprintf('[contact-form-7 id="%1$s"]', $form_id));
 		}
 
 		return $cf7_shortcode;
 	}
 
-	public function render( $attrs, $content, $render_slug ) {
+	public function render($attrs, $content, $render_slug)
+	{
 
-		$this->apply_css( $render_slug );
+		$this->apply_css($render_slug);
 
 		$form_id = $this->props['form_id'];
 
@@ -844,11 +850,11 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 
 		$form_header = '';
 
-		if ( 'on' === $use_form_header ) {
+		if ('on' === $use_form_header) {
 
 			$header_img  = '' !== $this->props['header_img'] ? $this->props['header_img'] : false;
-			$image       = $header_img ? sprintf( '<div class="dtq-form-header-image"><img src="%1$s" alt=""/></div>', $header_img ) : '';
-			$header_icon = esc_attr( et_pb_process_font_icon( $this->props['header_icon'] ) );
+			$image       = $header_img ? sprintf('<div class="dtq-form-header-image"><img src="%1$s" alt=""/></div>', $header_img) : '';
+			$header_icon = esc_attr(et_pb_process_font_icon($this->props['header_icon']));
 
 			$icon = sprintf(
 				'<div class="dtq-form-header-icon">
@@ -862,21 +868,21 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			$icon_image = 'on' === $this->props['use_icon'] ? $icon : $image;
 
 			// Inject Font Awesome Manually!.
-			dtq_inject_fa_icons( $this->props['header_icon'] );
+			dtq_inject_fa_icons($this->props['header_icon']);
 
-			$title = isset( $form_header_title ) ? sprintf(
+			$title = isset($form_header_title) ? sprintf(
 				'<h2 class="dtq-form-header-title">%1$s</h2>',
 				$form_header_title
 			) : '';
 
-			$text = isset( $form_header_text ) ? sprintf(
+			$text = isset($form_header_text) ? sprintf(
 				'<div class="dtq-form-header-text">%1$s</div>',
 				$form_header_text
 			) : '';
 
-			$header_info = $title || $text ? sprintf( '<div class="dtq-form-header-info">%1$s%2$s</div>', $title, $text ) : '';
+			$header_info = $title || $text ? sprintf('<div class="dtq-form-header-info">%1$s%2$s</div>', $title, $text) : '';
 
-			if ( ! empty( $form_header_title ) || ! empty( $form_header_text ) ) {
+			if (!empty($form_header_title) || !empty($form_header_text)) {
 				$form_header = sprintf(
 					'
                     <div class="dtq-form-header-container">
@@ -901,18 +907,19 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				</div>
 			</div>
 			',
-			$this->get_cf7_shortcode( array( 'form_id' => $form_id ) ),
+			$this->get_cf7_shortcode(array('form_id' => $form_id)),
 			$cr_custom_class,
 			$form_header,
 			'on' !== $use_form_button_fullwidth ? $button_alignment : 'fullwidth'
 		);
 	}
 
-	public function apply_css( $render_slug ) {
+	public function apply_css($render_slug)
+	{
 
-		$this->render_header_css( $render_slug );
-		$this->render_form_header_padding( $render_slug );
-		$this->render_form_padding( $render_slug );
+		$this->render_header_css($render_slug);
+		$this->render_form_header_padding($render_slug);
+		$this->render_form_padding($render_slug);
 
 		$form_background_color        = $this->props['form_background_color'];
 		$form_field_height            = $this->props['form_field_height'];
@@ -941,13 +948,13 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		$form_field_spacing_tablet            = $this->props['form_field_spacing_tablet'];
 		$form_field_spacing_phone             = $this->props['form_field_spacing_phone'];
 		$form_field_spacing_last_edited       = $this->props['form_field_spacing_last_edited'];
-		$form_field_spacing_responsive_status = et_pb_get_responsive_status( $form_field_spacing_last_edited );
+		$form_field_spacing_responsive_status = et_pb_get_responsive_status($form_field_spacing_last_edited);
 
 		$form_label_spacing                   = $this->props['form_label_spacing'];
 		$form_label_spacing_tablet            = $this->props['form_label_spacing_tablet'];
 		$form_label_spacing_phone             = $this->props['form_label_spacing_phone'];
 		$form_label_spacing_last_edited       = $this->props['form_label_spacing_last_edited'];
-		$form_label_spacing_responsive_status = et_pb_get_responsive_status( $form_label_spacing_last_edited );
+		$form_label_spacing_responsive_status = et_pb_get_responsive_status($form_label_spacing_last_edited);
 
 		$this->generate_styles(
 			array(
@@ -963,7 +970,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			)
 		);
 
-		if ( 'on' === $use_form_button_fullwidth ) {
+		if ('on' === $use_form_button_fullwidth) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -973,7 +980,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			);
 		}
 
-		if ( '' !== $form_background_color ) {
+		if ('' !== $form_background_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -986,7 +993,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			);
 		}
 
-		if ( '' !== $form_field_height ) {
+		if ('' !== $form_field_height) {
 			$this->get_responsive_styles(
 				'form_field_height',
 				'%%order_class%% .wpcf7-form-control-wrap select, %%order_class%% .wpcf7-form-control-wrap input[type=text], %%order_class%% .wpcf7-form-control-wrap input[type=email], %%order_class%% .wpcf7-form-control-wrap input[type=number], %%order_class%% .wpcf7-form-control-wrap input[type=tel]',
@@ -994,7 +1001,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 					'primary'   => 'height',
 					'important' => true,
 				),
-				array( 'default' => 'initial' ),
+				array('default' => 'initial'),
 				$render_slug
 			);
 		}
@@ -1007,37 +1014,37 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				'primary'   => 'padding',
 				'important' => true,
 			),
-			array( 'default' => '0|15px|0|15px' ),
+			array('default' => '0|15px|0|15px'),
 			$render_slug
 		);
 
-		if ( '' !== $form_field_active_color ) {
+		if ('' !== $form_field_active_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7 input:not([type=submit]):focus, %%order_class%% .dtq-cf7 .wpcf7 select:focus, %%order_class%% .dtq-cf7 .wpcf7 textarea:focus',
-					'declaration' => sprintf( 'border-color: %1$s!important;', $form_field_active_color ),
+					'declaration' => sprintf('border-color: %1$s!important;', $form_field_active_color),
 				)
 			);
 		}
 
-		if ( 'on' === $cr_custom_styles ) {
+		if ('on' === $cr_custom_styles) {
 
-			if ( '' !== $cr_size || '' !== $cr_border_size ) {
+			if ('' !== $cr_size || '' !== $cr_border_size) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"] + span:before',
 						'declaration' => sprintf(
 							'width: %1$s!important; height: %1$s!important; border-width:%2$s!important;',
-							esc_html( $cr_size ),
-							esc_html( $cr_border_size )
+							esc_html($cr_size),
+							esc_html($cr_border_size)
 						),
 					)
 				);
 			}
 
-			if ( '' !== $cr_size && is_numeric( $cr_size ) ) {
+			if ('' !== $cr_size && is_numeric($cr_size)) {
 				$font_size = $cr_size / 1.2;
 				ET_Builder_Element::set_style(
 					$render_slug,
@@ -1045,231 +1052,231 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-acceptance input[type=checkbox]:checked + span:before, %%order_class%% .dtq-cf7 .wpcf7-checkbox input[type=checkbox]:checked + span:before',
 						'declaration' => sprintf(
 							'font-size: %1$s!important;',
-							esc_html( $font_size )
+							esc_html($font_size)
 						),
 					)
 				);
 			}
 
-			if ( '' !== $cr_background_color ) {
+			if ('' !== $cr_background_color) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before, %%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"]:not(:checked) + span:before',
 						'declaration' => sprintf(
 							'background-color: %1$s!important;',
-							esc_html( $cr_background_color )
+							esc_html($cr_background_color)
 						),
 					)
 				);
 			}
 
-			if ( '' !== $cr_background_color ) {
+			if ('' !== $cr_background_color) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"]:checked + span:before',
 						'declaration' => sprintf(
 							'box-shadow:inset 0px 0px 0px 4px %1$s!important;',
-							esc_html( $cr_background_color )
+							esc_html($cr_background_color)
 						),
 					)
 				);
 			}
 
-			if ( '' !== $cr_selected_color ) {
+			if ('' !== $cr_selected_color) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox input[type="checkbox"]:checked + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"]:checked + span:before',
 						'declaration' => sprintf(
 							'color: %1$s!important;',
-							esc_html( $cr_selected_color )
+							esc_html($cr_selected_color)
 						),
 					)
 				);
 			}
 
-			if ( '' !== $cr_selected_color ) {
+			if ('' !== $cr_selected_color) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-radio input[type="radio"]:checked + span:before',
 						'declaration' => sprintf(
 							'background-color: %1$s!important;',
-							esc_html( $cr_selected_color )
+							esc_html($cr_selected_color)
 						),
 					)
 				);
 			}
 
-			if ( '' !== $cr_border_color ) {
+			if ('' !== $cr_border_color) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox input[type=radio] + span:before, %%order_class%% .dtq-cf7 .wpcf7-radio input[type=checkbox] + span:before, %%order_class%% .dtq-cf7 .wpcf7-acceptance input[type="checkbox"] + span:before',
 						'declaration' => sprintf(
 							'border-color: %1$s!important;',
-							esc_html( $cr_border_color )
+							esc_html($cr_border_color)
 						),
 					)
 				);
 			}
 
-			if ( '' !== $cr_label_color ) {
+			if ('' !== $cr_label_color) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-checkbox label, %%order_class%% .wpcf7-radio label',
 						'declaration' => sprintf(
 							'color: %1$s!important;',
-							esc_html( $cr_label_color )
+							esc_html($cr_label_color)
 						),
 					)
 				);
 			}
 		}
 
-		if ( '' !== $cf7_message_color ) {
+		if ('' !== $cf7_message_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7-styler span.wpcf7-not-valid-tip',
 					'declaration' => sprintf(
 						'color: %1$s!important;',
-						esc_html( $cf7_message_color )
+						esc_html($cf7_message_color)
 					),
 				)
 			);
 		}
 
-		if ( '' !== $cf7_message_bg_color ) {
+		if ('' !== $cf7_message_bg_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7-styler span.wpcf7-not-valid-tip',
 					'declaration' => sprintf(
 						'background-color: %1$s!important;',
-						esc_html( $cf7_message_bg_color )
+						esc_html($cf7_message_bg_color)
 					),
 				)
 			);
 		}
 
-		if ( '' !== $cf7_border_highlight_color ) {
+		if ('' !== $cf7_border_highlight_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7-styler span.wpcf7-not-valid-tip',
 					'declaration' => sprintf(
 						'border-color: %1$s!important;',
-						esc_html( $cf7_border_highlight_color )
+						esc_html($cf7_border_highlight_color)
 					),
 				)
 			);
 		}
 
 		// Success.
-		if ( '' !== $cf7_success_message_color ) {
+		if ('' !== $cf7_success_message_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7-styler .wpcf7-mail-sent-ok',
 					'declaration' => sprintf(
 						'color: %1$s!important;',
-						esc_html( $cf7_success_message_color )
+						esc_html($cf7_success_message_color)
 					),
 				)
 			);
 		}
 
-		if ( '' !== $cf7_success_message_bg_color ) {
+		if ('' !== $cf7_success_message_bg_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7-styler .wpcf7-mail-sent-ok',
 					'declaration' => sprintf(
 						'background-color: %1$s!important;',
-						esc_html( $cf7_success_message_bg_color )
+						esc_html($cf7_success_message_bg_color)
 					),
 				)
 			);
 		}
 
-		if ( '' !== $cf7_success_border_color ) {
+		if ('' !== $cf7_success_border_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7-styler .wpcf7-mail-sent-ok',
 					'declaration' => sprintf(
 						'border-color: %1$s!important;',
-						esc_html( $cf7_success_border_color )
+						esc_html($cf7_success_border_color)
 					),
 				)
 			);
 		}
 
 		// Error.
-		if ( '' !== $cf7_error_message_color ) {
+		if ('' !== $cf7_error_message_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .wpcf7-validation-errors',
 					'declaration' => sprintf(
 						'color: %1$s!important;',
-						esc_html( $cf7_error_message_color )
+						esc_html($cf7_error_message_color)
 					),
 				)
 			);
 		}
 
-		if ( '' !== $cf7_error_message_bg_color ) {
+		if ('' !== $cf7_error_message_bg_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .wpcf7-validation-errors',
 					'declaration' => sprintf(
 						'background-color: %1$s!important;',
-						esc_html( $cf7_error_message_bg_color )
+						esc_html($cf7_error_message_bg_color)
 					),
 				)
 			);
 		}
 
-		if ( '' !== $cf7_error_border_color ) {
+		if ('' !== $cf7_error_border_color) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .wpcf7-validation-errors',
 					'declaration' => sprintf(
 						'border-color: %1$s!important;',
-						esc_html( $cf7_error_border_color )
+						esc_html($cf7_error_border_color)
 					),
 				)
 			);
 		}
 
-		if ( '' !== $cf7_message_padding ) {
+		if ('' !== $cf7_message_padding) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% span.wpcf7-not-valid-tip',
 					'declaration' => sprintf(
 						'padding: %1$s!important;',
-						esc_html( $cf7_message_padding )
+						esc_html($cf7_message_padding)
 					),
 				)
 			);
 		}
 
-		if ( '' !== $cf7_message_margin_top ) {
+		if ('' !== $cf7_message_margin_top) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% span.wpcf7-not-valid-tip',
 					'declaration' => sprintf(
 						'margin-top: %1$s!important;',
-						esc_html( $cf7_message_margin_top )
+						esc_html($cf7_message_margin_top)
 					),
 				)
 			);
@@ -1280,29 +1287,29 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
-				'declaration' => sprintf( 'margin-top: %1$s;', $form_label_spacing ),
+				'declaration' => sprintf('margin-top: %1$s;', $form_label_spacing),
 			)
 		);
 
-		if ( ! empty( $form_label_spacing_tablet ) && $form_label_spacing_responsive_status ) {
+		if (!empty($form_label_spacing_tablet) && $form_label_spacing_responsive_status) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => sprintf( 'margin-top: %1$s;', $form_label_spacing_tablet ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					'declaration' => sprintf('margin-top: %1$s;', $form_label_spacing_tablet),
 				)
 			);
 		}
 
-		if ( ! empty( $form_label_spacing_phone ) && $form_label_spacing_responsive_status ) {
+		if (!empty($form_label_spacing_phone) && $form_label_spacing_responsive_status) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => sprintf( 'margin-top: %1$s;', $form_label_spacing_phone ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					'declaration' => sprintf('margin-top: %1$s;', $form_label_spacing_phone),
 				)
 			);
 		}
@@ -1312,36 +1319,36 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
-				'declaration' => sprintf( 'margin-bottom: %1$s;', $form_field_spacing ),
+				'declaration' => sprintf('margin-bottom: %1$s;', $form_field_spacing),
 			)
 		);
 
-		if ( ! empty( $form_field_spacing_tablet ) && $form_field_spacing_responsive_status ) {
+		if (!empty($form_field_spacing_tablet) && $form_field_spacing_responsive_status) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => sprintf( 'margin-bottom: %1$s;', $form_field_spacing_tablet ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					'declaration' => sprintf('margin-bottom: %1$s;', $form_field_spacing_tablet),
 				)
 			);
 		}
 
-		if ( ! empty( $form_field_spacing_phone ) && $form_field_spacing_responsive_status ) {
+		if (!empty($form_field_spacing_phone) && $form_field_spacing_responsive_status) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7 .wpcf7-form-control:not(.wpcf7-submit)',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => sprintf( 'margin-bottom: %1$s;', $form_field_spacing_phone ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					'declaration' => sprintf('margin-bottom: %1$s;', $form_field_spacing_phone),
 				)
 			);
 		}
-
 	}
 
-	public function render_header_css( $render_slug ) {
+	public function render_header_css($render_slug)
+	{
 
 		$form_header_bg           = $this->props['form_header_bg'];
 		$form_header_bottom       = $this->props['form_header_bottom'];
@@ -1387,7 +1394,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-form-header-icon, %%order_class%% .dtq-form-header-image',
-				'declaration' => $this->process_margin_padding( $form_header_icon_padding, 'padding', true ),
+				'declaration' => $this->process_margin_padding($form_header_icon_padding, 'padding', true),
 			)
 		);
 
@@ -1406,7 +1413,7 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 				'primary'   => 'font-size',
 				'important' => false,
 			),
-			array( 'default' => '32px' ),
+			array('default' => '32px'),
 			$render_slug
 		);
 
@@ -1419,85 +1426,85 @@ class DTQ_Cf7_Styler extends BA_Builder_Module {
 		);
 	}
 
-	public function render_form_header_padding( $render_slug ) {
+	public function render_form_header_padding($render_slug)
+	{
 
 		$form_header_padding                   = $this->props['form_header_padding'];
 		$form_header_padding_tablet            = $this->props['form_header_padding_tablet'];
 		$form_header_padding_phone             = $this->props['form_header_padding_phone'];
 		$form_header_padding_last_edited       = $this->props['form_header_padding_last_edited'];
-		$form_header_padding_responsive_status = et_pb_get_responsive_status( $form_header_padding_last_edited );
+		$form_header_padding_responsive_status = et_pb_get_responsive_status($form_header_padding_last_edited);
 
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-form-header-container',
-				'declaration' => $this->process_margin_padding( $form_header_padding, 'padding', true ),
+				'declaration' => $this->process_margin_padding($form_header_padding, 'padding', true),
 			)
 		);
 
-		if ( $form_header_padding_tablet && $form_header_padding_responsive_status ) {
+		if ($form_header_padding_tablet && $form_header_padding_responsive_status) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-form-header-container',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => $this->process_margin_padding( $form_header_padding_tablet, 'padding', true ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					'declaration' => $this->process_margin_padding($form_header_padding_tablet, 'padding', true),
 				)
 			);
 		}
 
-		if ( $form_header_padding_phone && $form_header_padding_responsive_status ) {
+		if ($form_header_padding_phone && $form_header_padding_responsive_status) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-form-header-container',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => $this->process_margin_padding( $form_header_padding_phone, 'padding', true ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					'declaration' => $this->process_margin_padding($form_header_padding_phone, 'padding', true),
 				)
 			);
 		}
 	}
 
-	public function render_form_padding( $render_slug ) {
+	public function render_form_padding($render_slug)
+	{
 
 		$form_padding                   = $this->props['form_padding'];
 		$form_padding_tablet            = $this->props['form_padding_tablet'];
 		$form_padding_phone             = $this->props['form_padding_phone'];
 		$form_padding_last_edited       = $this->props['form_padding_last_edited'];
-		$form_padding_responsive_status = et_pb_get_responsive_status( $form_padding_last_edited );
+		$form_padding_responsive_status = et_pb_get_responsive_status($form_padding_last_edited);
 
 		ET_Builder_Element::set_style(
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-cf7-styler',
-				'declaration' => BA_Builder_Module::process_margin_padding( $form_padding, 'padding', false ),
+				'declaration' => BA_Builder_Module::process_margin_padding($form_padding, 'padding', false),
 			)
 		);
 
-		if ( $form_padding_tablet && $form_padding_responsive_status ) {
+		if ($form_padding_tablet && $form_padding_responsive_status) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7-styler',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_980' ),
-					'declaration' => BA_Builder_Module::process_margin_padding( $form_padding_tablet, 'padding', false ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					'declaration' => BA_Builder_Module::process_margin_padding($form_padding_tablet, 'padding', false),
 				)
 			);
 		}
 
-		if ( $form_padding_phone && $form_padding_responsive_status ) {
+		if ($form_padding_phone && $form_padding_responsive_status) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-cf7-styler',
-					'media_query' => ET_Builder_Element::get_media_query( 'max_width_767' ),
-					'declaration' => BA_Builder_Module::process_margin_padding( $form_padding_phone, 'padding', false ),
+					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					'declaration' => BA_Builder_Module::process_margin_padding($form_padding_phone, 'padding', false),
 				)
 			);
 		}
-
 	}
-
 }
 
 new DTQ_Cf7_Styler();

@@ -57,4 +57,8 @@ class DiviTorque_Deprecated
     }
 }
 
-new DiviTorque_Deprecated();
+$version_pro = get_option('divitorque_pro_version'); // old pro version
+
+if (empty($version_pro)) {
+    new DiviTorque_Deprecated();
+}

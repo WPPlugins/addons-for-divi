@@ -1,5 +1,6 @@
 <?php
-class DTQ_Business_Hour extends BA_Builder_Module {
+class DTQ_Business_Hour extends BA_Builder_Module
+{
 
 	public $slug       = 'ba_business_hour';
 	public $vb_support = 'on';
@@ -11,89 +12,92 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		'author_uri' => 'https://divitorque.com/',
 	);
 
-	public function init() {
+	public function init()
+	{
 
-		$this->name      = esc_html__( 'Torque Business Hour', 'addons-for-divi' );
-		$this->icon_path = plugin_dir_path( __FILE__ ) . 'business-hour.svg';
+		$this->name      = esc_html__('Torq Business Hours', 'addons-for-divi');
+		$this->icon_path = plugin_dir_path(__FILE__) . 'business-hour.svg';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
-					'settings' => esc_html__( 'Settings', 'addons-for-divi' ),
+					'content'  => esc_html__('Content', 'addons-for-divi'),
+					'settings' => esc_html__('Settings', 'addons-for-divi'),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'general'    => esc_html__( 'General', 'addons-for-divi' ),
-					'bh_title'   => esc_html__( 'Title', 'addons-for-divi' ),
-					'title_text' => esc_html__( 'Title Text', 'addons-for-divi' ),
+					'general'    => esc_html__('General', 'addons-for-divi'),
+					'bh_title'   => esc_html__('Title', 'addons-for-divi'),
+					'title_text' => esc_html__('Title Text', 'addons-for-divi'),
 					'texts'      => array(
-						'title'             => esc_html__( 'Day & Time', 'addons-for-divi' ),
+						'title'             => esc_html__('Day & Time', 'addons-for-divi'),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'day'  => array(
-								'name' => esc_html__( 'Day', 'addons-for-divi' ),
+								'name' => esc_html__('Day', 'addons-for-divi'),
 							),
 							'time' => array(
-								'name' => esc_html__( 'Time', 'addons-for-divi' ),
+								'name' => esc_html__('Time', 'addons-for-divi'),
 							),
 						),
 					),
-					'separator'  => esc_html__( 'Separator', 'addons-for-divi' ),
-					'border'     => esc_html__( 'Border', 'addons-for-divi' ),
+					'separator'  => esc_html__('Separator', 'addons-for-divi'),
+					'border'     => esc_html__('Border', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'title'     => array(
-				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
+				'label'    => esc_html__('Title', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-business-hour-title h2',
 			),
 			'day'       => array(
-				'label'    => esc_html__( 'Day', 'addons-for-divi' ),
+				'label'    => esc_html__('Day', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-business-hour-day',
 			),
 			'time'      => array(
-				'label'    => esc_html__( 'Time', 'addons-for-divi' ),
+				'label'    => esc_html__('Time', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-business-hour-time',
 			),
 			'separator' => array(
-				'label'    => esc_html__( 'Separator', 'addons-for-divi' ),
+				'label'    => esc_html__('Separator', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-business-hour-separator',
 			),
 		);
 	}
 
-	public function get_fields() {
+	public function get_fields()
+	{
 
 		$content = array(
 			'title' => array(
-				'label'       => esc_html__( 'Title', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define the title text your for business hour.', 'addons-for-divi' ),
+				'label'       => esc_html__('Title', 'addons-for-divi'),
+				'description' => esc_html__('Define the title text your for business hour.', 'addons-for-divi'),
 				'type'        => 'text',
-				'default'     => esc_html__( 'Business Hour', 'addons-for-divi' ),
+				'default'     => esc_html__('Business Hour', 'addons-for-divi'),
 				'toggle_slug' => 'content',
 			),
 		);
 
 		$settings = array(
 			'show_title'     => array(
-				'label'           => esc_html__( 'Show Title', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether title should be used.', 'addons-for-divi' ),
+				'label'           => esc_html__('Show Title', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether title should be used.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
 				'toggle_slug'     => 'settings',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 			),
 			'item_spacing'   => array(
-				'label'          => esc_html__( 'Item Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of each item.', 'addons-for-divi' ),
+				'label'          => esc_html__('Item Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the bottom of each item.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '25px',
 				'fixed_unit'     => 'px',
@@ -106,50 +110,50 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'toggle_slug'    => 'settings',
 			),
 			'show_separator' => array(
-				'label'           => esc_html__( 'Show Text Separator', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether a separator should be used between day and time.', 'addons-for-divi' ),
+				'label'           => esc_html__('Show Text Separator', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether a separator should be used between day and time.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'on',
 				'toggle_slug'     => 'settings',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 			),
 			'show_divider'   => array(
-				'label'           => esc_html__( 'Show Item Divider', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether a divider should be used at the bottom of each item.', 'addons-for-divi' ),
+				'label'           => esc_html__('Show Item Divider', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether a divider should be used at the bottom of each item.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
 				'toggle_slug'     => 'settings',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 			),
 			'divider_type'   => array(
-				'label'       => esc_html__( 'Divider Type', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select item divider type.', 'addons-for-divi' ),
+				'label'       => esc_html__('Divider Type', 'addons-for-divi'),
+				'description' => esc_html__('Select item divider type.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'solid_border',
 				'options'     => array(
-					'solid_border'   => esc_html__( 'Solid', 'addons-for-divi' ),
-					'double_border'  => esc_html__( 'Double', 'addons-for-divi' ),
-					'dotted_border'  => esc_html__( 'Dotted', 'addons-for-divi' ),
-					'dashed_border'  => esc_html__( 'Dashed', 'addons-for-divi' ),
-					'curved_pattern' => esc_html__( 'Curved', 'addons-for-divi' ),
-					'zigzag_pattern' => esc_html__( 'Zigzag', 'addons-for-divi' ),
+					'solid_border'   => esc_html__('Solid', 'addons-for-divi'),
+					'double_border'  => esc_html__('Double', 'addons-for-divi'),
+					'dotted_border'  => esc_html__('Dotted', 'addons-for-divi'),
+					'dashed_border'  => esc_html__('Dashed', 'addons-for-divi'),
+					'curved_pattern' => esc_html__('Curved', 'addons-for-divi'),
+					'zigzag_pattern' => esc_html__('Zigzag', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'show_divider' => 'on',
 				),
 			),
 			'divider_color'  => array(
-				'label'       => esc_html__( 'Divider Color', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define a custom color for your item divider.', 'addons-for-divi' ),
+				'label'       => esc_html__('Divider Color', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define a custom color for your item divider.', 'addons-for-divi'),
 				'type'        => 'color-alpha',
 				'toggle_slug' => 'settings',
 				'default'     => '#dddddd',
@@ -158,8 +162,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'divider_weight' => array(
-				'label'          => esc_html__( 'Divider Weight', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom depth for your item divider.', 'addons-for-divi' ),
+				'label'          => esc_html__('Divider Weight', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom depth for your item divider.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '1px',
 				'fixed_unit'     => 'px',
@@ -174,8 +178,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'divider_height' => array(
-				'label'          => esc_html__( 'Divider Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom height for your item divider.', 'addons-for-divi' ),
+				'label'          => esc_html__('Divider Height', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom height for your item divider.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -187,16 +191,16 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'toggle_slug'    => 'settings',
 				'show_if'        => array(
 					'show_divider' => 'on',
-					'divider_type' => array( 'curved_pattern', 'zigzag_pattern' ),
-					'label'        => esc_html__( '', 'addons-for-divi' ),
+					'divider_type' => array('curved_pattern', 'zigzag_pattern'),
+					'label'        => esc_html__('', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$general = array(
 			'day_text_width'  => array(
-				'label'          => esc_html__( 'Day Text Width', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom width for your day text.', 'addons-for-divi' ),
+				'label'          => esc_html__('Day Text Width', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom width for your day text.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'default_unit'   => '%',
@@ -210,8 +214,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'toggle_slug'    => 'general',
 			),
 			'time_text_width' => array(
-				'label'          => esc_html__( 'Time Text Width', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom width for your time text.', 'addons-for-divi' ),
+				'label'          => esc_html__('Time Text Width', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom width for your time text.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => 'auto',
 				'default_unit'   => '%',
@@ -225,8 +229,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'toggle_slug'    => 'general',
 			),
 			'item_padding'    => array(
-				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for each item.', 'addons-for-divi' ),
+				'label'          => esc_html__('Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom padding for each item.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'general',
@@ -237,27 +241,27 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 
 		$separator = array(
 			'separator_type'   => array(
-				'label'       => esc_html__( 'Separator Type', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select text separator type.', 'addons-for-divi' ),
+				'label'       => esc_html__('Separator Type', 'addons-for-divi'),
+				'description' => esc_html__('Select text separator type.', 'addons-for-divi'),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
 				'default'     => 'solid_border',
 				'options'     => array(
-					'solid_border'   => esc_html__( 'Solid', 'addons-for-divi' ),
-					'double_border'  => esc_html__( 'Double', 'addons-for-divi' ),
-					'dotted_border'  => esc_html__( 'Dotted', 'addons-for-divi' ),
-					'dashed_border'  => esc_html__( 'Dashed', 'addons-for-divi' ),
-					'curved_pattern' => esc_html__( 'Curved', 'addons-for-divi' ),
-					'zigzag_pattern' => esc_html__( 'Zigzag', 'addons-for-divi' ),
+					'solid_border'   => esc_html__('Solid', 'addons-for-divi'),
+					'double_border'  => esc_html__('Double', 'addons-for-divi'),
+					'dotted_border'  => esc_html__('Dotted', 'addons-for-divi'),
+					'dashed_border'  => esc_html__('Dashed', 'addons-for-divi'),
+					'curved_pattern' => esc_html__('Curved', 'addons-for-divi'),
+					'zigzag_pattern' => esc_html__('Zigzag', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'show_separator' => 'on',
 				),
 			),
 			'separator_gap'    => array(
-				'label'          => esc_html__( 'Separator Spacing', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define separator both side spacing.', 'addons-for-divi' ),
+				'label'          => esc_html__('Separator Spacing', 'addons-for-divi'),
+				'description'    => esc_html__('Define separator both side spacing.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '15px',
 				'fixed_unit'     => 'px',
@@ -273,8 +277,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'separator_color'  => array(
-				'label'       => esc_html__( 'Separator Color', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define a custom color for your text separator.', 'addons-for-divi' ),
+				'label'       => esc_html__('Separator Color', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define a custom color for your text separator.', 'addons-for-divi'),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'separator',
@@ -284,8 +288,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'separator_weight' => array(
-				'label'          => esc_html__( 'Separator Weight', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom depth for your text separator', 'addons-for-divi' ),
+				'label'          => esc_html__('Separator Weight', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom depth for your text separator', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '1px',
 				'fixed_unit'     => 'px',
@@ -301,8 +305,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				),
 			),
 			'separator_height' => array(
-				'label'          => esc_html__( 'Separator Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom height for your text separator', 'addons-for-divi' ),
+				'label'          => esc_html__('Separator Height', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom height for your text separator', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '10px',
 				'fixed_unit'     => 'px',
@@ -315,15 +319,15 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'toggle_slug'    => 'separator',
 				'show_if'        => array(
 					'show_separator' => 'on',
-					'separator_type' => array( 'curved_pattern', 'zigzag_pattern' ),
+					'separator_type' => array('curved_pattern', 'zigzag_pattern'),
 				),
 			),
 		);
 
 		$title = array(
 			'title_padding' => array(
-				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a padding for your title.', 'addons-for-divi' ),
+				'label'          => esc_html__('Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a padding for your title.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'tab_slug'       => 'advanced',
 				'toggle_slug'    => 'bh_title',
@@ -331,8 +335,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'title_spacing' => array(
-				'label'          => esc_html__( 'Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi' ),
+				'label'          => esc_html__('Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '25px',
 				'fixed_unit'     => 'px',
@@ -347,23 +351,24 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			),
 		);
 
-		$title_bg = $this->custom_background_fields( 'title', '', 'advanced', 'bh_title', array( 'color', 'gradient', 'hover', 'image' ), array(), '' );
+		$title_bg = $this->custom_background_fields('title', '', 'advanced', 'bh_title', array('color', 'gradient', 'hover', 'image'), array(), '');
 
 		$item_bg = $this->custom_background_fields(
 			'item',
-			esc_html__( 'Item', 'addons-for-divi' ),
+			esc_html__('Item', 'addons-for-divi'),
 			'advanced',
 			'general',
-			array( 'color', 'gradient', 'hover', 'image' ),
+			array('color', 'gradient', 'hover', 'image'),
 			array(),
 			''
 		);
 
-		return array_merge( $settings, $separator, $content, $general, $title, $title_bg, $item_bg );
+		return array_merge($settings, $separator, $content, $general, $title, $title_bg, $item_bg);
 	}
 
 
-	public function get_advanced_fields_config() {
+	public function get_advanced_fields_config()
+	{
 
 		$advanced_fields                = array();
 		$advanced_fields['text']        = false;
@@ -390,7 +395,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['item'] = array(
-			'label_prefix' => esc_html__( 'Item', 'addons-for-divi' ),
+			'label_prefix' => esc_html__('Item', 'addons-for-divi'),
 			'toggle_slug'  => 'general',
 			'css'          => array(
 				'main'      => array(
@@ -410,7 +415,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		);
 
 		$advanced_fields['box_shadow']['item'] = array(
-			'label'       => esc_html__( 'Item Box Shadow', 'addons-for-divi' ),
+			'label'       => esc_html__('Item Box Shadow', 'addons-for-divi'),
 			'css'         => array(
 				'main'      => '%%order_class%% .dtq-business-hour-child',
 				'important' => 'all',
@@ -452,7 +457,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['day'] = array(
-			'label'           => esc_html__( 'Day', 'addons-for-divi' ),
+			'label'           => esc_html__('Day', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dtq-business-hour-day',
 				'important' => 'all',
@@ -467,7 +472,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['time'] = array(
-			'label'           => esc_html__( 'Time', 'addons-for-divi' ),
+			'label'           => esc_html__('Time', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dtq-business-hour-time',
 				'important' => 'all',
@@ -484,8 +489,9 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	protected function render_title() {
-		if ( 'on' === $this->props['show_title'] ) {
+	protected function render_title()
+	{
+		if ('on' === $this->props['show_title']) {
 			return sprintf(
 				'<div class="dtq-business-hour-title">
 					<h2>%1$s</h2>
@@ -495,9 +501,10 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		}
 	}
 
-	public function render( $attrs, $content, $render_slug ) {
+	public function render($attrs, $content, $render_slug)
+	{
 
-		$this->render_css( $render_slug );
+		$this->render_css($render_slug);
 
 		return sprintf(
 			'<div class="dtq-module dtq-business-hour">
@@ -511,9 +518,10 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		);
 	}
 
-	protected function render_css( $render_slug ) {
+	protected function render_css($render_slug)
+	{
 
-		if ( 'off' === $this->props['show_separator'] ) {
+		if ('off' === $this->props['show_separator']) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -523,7 +531,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			);
 		}
 
-		if ( 'auto' !== $this->props['time_text_width'] ) {
+		if ('auto' !== $this->props['time_text_width']) {
 			$this->get_responsive_styles(
 				'time_text_width',
 				'%%order_class%% .dtq-business-hour-time',
@@ -531,12 +539,12 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 					'primary'   => 'flex',
 					'important' => false,
 				),
-				array( 'default' => 'auto' ),
+				array('default' => 'auto'),
 				$render_slug
 			);
 		}
 
-		if ( 'auto' !== $this->props['day_text_width'] ) {
+		if ('auto' !== $this->props['day_text_width']) {
 			$this->get_responsive_styles(
 				'day_text_width',
 				'%%order_class%% .dtq-business-hour-day',
@@ -544,7 +552,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 					'primary'   => 'flex',
 					'important' => false,
 				),
-				array( 'default' => 'auto' ),
+				array('default' => 'auto'),
 				$render_slug
 			);
 		}
@@ -556,7 +564,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'primary'   => 'margin-bottom',
 				'important' => true,
 			),
-			array( 'default' => '25px' ),
+			array('default' => '25px'),
 			$render_slug
 		);
 
@@ -567,7 +575,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'primary'   => 'padding',
 				'important' => true,
 			),
-			array( 'default' => '0|0|0|0' ),
+			array('default' => '0|0|0|0'),
 			$render_slug
 		);
 
@@ -578,7 +586,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				'primary'   => 'padding',
 				'important' => true,
 			),
-			array( 'default' => '0px|0px|0px|0px' ),
+			array('default' => '0px|0px|0px|0px'),
 			$render_slug
 		);
 
@@ -593,7 +601,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			)
 		);
 
-		if ( 'on' === $this->props['show_divider'] ) {
+		if ('on' === $this->props['show_divider']) {
 
 			$divider_color  = $this->props['divider_color'];
 			$divider_weight = $this->props['divider_weight'];
@@ -609,13 +617,13 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 					),
 				)
 			);
-			if ( '#' === $divider_color[0] ) {
-				$divider_color = $this->hex_to_rgb( $divider_color );
+			if ('#' === $divider_color[0]) {
+				$divider_color = $this->hex_to_rgb($divider_color);
 			}
 
-			$divider_type = explode( '_', $this->props['divider_type'] );
+			$divider_type = explode('_', $this->props['divider_type']);
 
-			if ( 'border' === $divider_type[1] ) {
+			if ('border' === $divider_type[1]) {
 
 				ET_Builder_Element::set_style(
 					$render_slug,
@@ -631,8 +639,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				);
 			} else {
 
-				if ( 'curved' === $divider_type[0] || 'zigzag' === $divider_type[0] ) {
-					$pattern_bg = $this->get_pattern( $divider_type[0], $divider_color, $divider_weight );
+				if ('curved' === $divider_type[0] || 'zigzag' === $divider_type[0]) {
+					$pattern_bg = $this->get_pattern($divider_type[0], $divider_color, $divider_weight);
 				}
 
 				ET_Builder_Element::set_style(
@@ -655,7 +663,7 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		}
 
 		// Separator.
-		if ( ! empty( $this->props['separator_gap'] ) ) {
+		if (!empty($this->props['separator_gap'])) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -674,14 +682,14 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 		$separator_height = $this->props['separator_height'];
 		$type             = $this->props['separator_type'];
 
-		if ( 'none_all' !== $type ) {
-			if ( '#' === $separator_color[0] ) {
-				$separator_color = $this->hex_to_rgb( $separator_color );
+		if ('none_all' !== $type) {
+			if ('#' === $separator_color[0]) {
+				$separator_color = $this->hex_to_rgb($separator_color);
 			}
 
-			$_type = explode( '_', $type );
+			$_type = explode('_', $type);
 
-			if ( 'border' === $_type[1] ) {
+			if ('border' === $_type[1]) {
 
 				ET_Builder_Element::set_style(
 					$render_slug,
@@ -699,8 +707,8 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 				);
 			} else {
 
-				if ( 'curved' === $_type[0] || 'zigzag' === $_type[0] ) {
-					$pattern_bg = $this->get_pattern( $_type[0], $separator_color, $separator_weight );
+				if ('curved' === $_type[0] || 'zigzag' === $_type[0]) {
+					$pattern_bg = $this->get_pattern($_type[0], $separator_color, $separator_weight);
 				}
 
 				ET_Builder_Element::set_style(
@@ -719,10 +727,9 @@ class DTQ_Business_Hour extends BA_Builder_Module {
 			}
 		}
 
-		$this->get_custom_bg_style( $render_slug, 'title', '%%order_class%% .dtq-business-hour-title', '%%order_class%% .dtq-business-hour-title:hover' );
+		$this->get_custom_bg_style($render_slug, 'title', '%%order_class%% .dtq-business-hour-title', '%%order_class%% .dtq-business-hour-title:hover');
 
-		$this->get_custom_bg_style( $render_slug, 'item', '%%order_class%% .dtq-business-hour-child', '%%order_class%% .dtq-business-hour-child:hover' );
-
+		$this->get_custom_bg_style($render_slug, 'item', '%%order_class%% .dtq-business-hour-child', '%%order_class%% .dtq-business-hour-child:hover');
 	}
 }
 

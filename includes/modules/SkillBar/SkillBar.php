@@ -1,6 +1,7 @@
 <?php
 
-class DTQ_Skill_Bar extends BA_Builder_Module {
+class DTQ_Skill_Bar extends BA_Builder_Module
+{
 
 	public $slug       = 'ba_skill_bar';
 	public $vb_support = 'on';
@@ -12,48 +13,51 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 		'author_uri' => 'https://divitorque.com/',
 	);
 
-	public function init() {
+	public function init()
+	{
 
-		$this->name      = esc_html__( 'Torque Skill Bars', 'addons-for-divi' );
-		$this->icon_path = plugin_dir_path( __FILE__ ) . 'skill-bars.svg';
+		$this->name      = esc_html__('Torq Skill Bar', 'addons-for-divi');
+		$this->icon_path = plugin_dir_path(__FILE__) . 'skill-bars.svg';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content' => esc_html__( 'Content', 'addons-for-divi' ),
+					'content' => esc_html__('Content', 'addons-for-divi'),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'title' => esc_html__( 'Title Text', 'addons-for-divi' ),
-					'name'  => esc_html__( 'Name Text', 'addons-for-divi' ),
-					'level' => esc_html__( 'Level Text', 'addons-for-divi' ),
+					'title' => esc_html__('Title Text', 'addons-for-divi'),
+					'name'  => esc_html__('Name Text', 'addons-for-divi'),
+					'level' => esc_html__('Level Text', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'title' => array(
-				'label'    => esc_html__( 'Title', 'addons-for-divi' ),
+				'label'    => esc_html__('Title', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-skill__title',
 			),
 		);
 	}
 
-	public function get_fields() {
+	public function get_fields()
+	{
 
 		$fields = array(
 
 			'title'                => array(
-				'label'       => esc_html__( 'Title', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define the title text for your module.', 'addons-for-divi' ),
+				'label'       => esc_html__('Title', 'addons-for-divi'),
+				'description' => esc_html__('Define the title text for your module.', 'addons-for-divi'),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
 
 			'title_spacing_bottom' => array(
-				'label'          => esc_html__( 'Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi' ),
+				'label'          => esc_html__('Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the bottom of the title.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '10px',
 				'range_settings' => array(
@@ -67,8 +71,8 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 			),
 
 			'bar_spacing_bottom'   => array(
-				'label'          => esc_html__( 'Bar Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the bar item.', 'addons-for-divi' ),
+				'label'          => esc_html__('Bar Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the bottom of the bar item.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '20px',
 				'range_settings' => array(
@@ -82,8 +86,8 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 			),
 
 			'name_spacing'         => array(
-				'label'          => esc_html__( 'Name Spacing', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define name spacing from the edge.', 'addons-for-divi' ),
+				'label'          => esc_html__('Name Spacing', 'addons-for-divi'),
+				'description'    => esc_html__('Define name spacing from the edge.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '15px',
 				'default_unit'   => 'px',
@@ -97,8 +101,8 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 			),
 
 			'level_spacing'        => array(
-				'label'          => esc_html__( 'Level Spacing', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define level spacing from the edge.', 'addons-for-divi' ),
+				'label'          => esc_html__('Level Spacing', 'addons-for-divi'),
+				'description'    => esc_html__('Define level spacing from the edge.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '15px',
 				'default_unit'   => 'px',
@@ -114,10 +118,10 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 		);
 
 		return $fields;
-
 	}
 
-	public function get_advanced_fields_config() {
+	public function get_advanced_fields_config()
+	{
 
 		$advanced_fields                = array();
 		$advanced_fields['text']        = false;
@@ -144,7 +148,7 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['name'] = array(
-			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
+			'label'           => esc_html__('Name', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dtq-skillbar__name',
 				'important' => 'all',
@@ -161,7 +165,7 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['level'] = array(
-			'label'           => esc_html__( 'Level', 'addons-for-divi' ),
+			'label'           => esc_html__('Level', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dtq-skillbar__level',
 				'important' => 'all',
@@ -180,14 +184,15 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	public function render_title() {
+	public function render_title()
+	{
 
 		$title                 = $this->props['title'];
 		$title_level           = $this->props['title_level'];
-		$processed_title_level = et_pb_process_header_level( $title_level, 'h3' );
-		$processed_title_level = esc_html( $processed_title_level );
+		$processed_title_level = et_pb_process_header_level($title_level, 'h3');
+		$processed_title_level = esc_html($processed_title_level);
 
-		if ( ! empty( $title ) ) {
+		if (!empty($title)) {
 			return sprintf(
 				'<%1$s class="dtq-skill__title">%2$s</%1$s>',
 				$processed_title_level,
@@ -197,21 +202,22 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 	}
 
 
-	public function render( $attrs, $content, $render_slug ) {
+	public function render($attrs, $content, $render_slug)
+	{
 
 		$this->get_responsive_styles(
 			'name_spacing',
 			'%%order_class%% .dtq-skillbar__name',
-			array( 'primary' => 'margin-left' ),
-			array( 'default' => '15px' ),
+			array('primary' => 'margin-left'),
+			array('default' => '15px'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'level_spacing',
 			'%%order_class%% .dtq-skillbar__level',
-			array( 'primary' => 'margin-right' ),
-			array( 'default' => '15px' ),
+			array('primary' => 'margin-right'),
+			array('default' => '15px'),
 			$render_slug
 		);
 
@@ -222,7 +228,7 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 				'primary'   => 'margin-bottom',
 				'important' => false,
 			),
-			array( 'default' => '10px' ),
+			array('default' => '10px'),
 			$render_slug
 		);
 
@@ -233,11 +239,11 @@ class DTQ_Skill_Bar extends BA_Builder_Module {
 				'primary'   => 'margin-bottom',
 				'important' => true,
 			),
-			array( 'default' => '20px' ),
+			array('default' => '20px'),
 			$render_slug
 		);
 
-		return sprintf( '<div class="dtq-module dtq-parent dtq-skill">%1$s %2$s </div>', $this->render_title(), $this->props['content'] );
+		return sprintf('<div class="dtq-module dtq-parent dtq-skill">%1$s %2$s </div>', $this->render_title(), $this->props['content']);
 	}
 }
 

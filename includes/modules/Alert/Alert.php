@@ -13,8 +13,9 @@ class DTQ_Alert extends BA_Builder_Module
 
 		$this->slug       = 'ba_alert';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__('Torque Alert', 'addons-for-divi');
+		$this->name       = esc_html__('Torq Alert', 'addons-for-divi');
 		$this->icon_path  = plugin_dir_path(__FILE__) . 'alert.svg';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

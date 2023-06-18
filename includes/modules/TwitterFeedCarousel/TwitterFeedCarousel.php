@@ -14,8 +14,9 @@ class DTQ_Twitter_Feed_Carousel extends BA_Builder_Module
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_twitter_feed_carousel';
-		$this->name       = esc_html__('Torque Twitter Carousel', 'addons-for-divi');
+		$this->name       = esc_html__('Torq Twitter Carousel', 'addons-for-divi');
 		$this->icon_path  = plugin_dir_path(__FILE__) . 'twitter-carousel.svg';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

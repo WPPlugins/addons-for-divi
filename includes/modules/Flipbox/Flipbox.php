@@ -1,5 +1,6 @@
 <?php
-class DTQ__Flipbox extends BA_Builder_Module {
+class DTQ__Flipbox extends BA_Builder_Module
+{
 
 	protected $module_credits = array(
 		'module_uri' => 'https://divitorque.com/flip-box-module/',
@@ -7,130 +8,133 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		'author_uri' => 'https://divitorque.com/',
 	);
 
-	public function init() {
+	public function init()
+	{
 
-		$this->name       = esc_html__( 'Torque Flipbox', 'addons-for-divi' );
-		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'flipbox.svg';
+		$this->name       = esc_html__('Torq Flip Box', 'addons-for-divi');
+		$this->icon_path  = plugin_dir_path(__FILE__) . 'flipbox.svg';
 		$this->slug       = 'ba_flipbox';
 		$this->vb_support = 'on';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'front'    => esc_html__( 'Front Side', 'addons-for-divi' ),
-					'back'     => esc_html__( 'Back Side', 'addons-for-divi' ),
-					'settings' => esc_html__( 'Settings', 'addons-for-divi' ),
+					'front'    => esc_html__('Front Side', 'addons-for-divi'),
+					'back'     => esc_html__('Back Side', 'addons-for-divi'),
+					'settings' => esc_html__('Settings', 'addons-for-divi'),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'front'       => esc_html__( 'Front Side', 'addons-for-divi' ),
-					'back'        => esc_html__( 'Back Side', 'addons-for-divi' ),
-					'front_media' => esc_html__( 'Front Media', 'addons-for-divi' ),
-					'back_media'  => esc_html__( 'Back Media', 'addons-for-divi' ),
+					'front'       => esc_html__('Front Side', 'addons-for-divi'),
+					'back'        => esc_html__('Back Side', 'addons-for-divi'),
+					'front_media' => esc_html__('Front Media', 'addons-for-divi'),
+					'back_media'  => esc_html__('Back Media', 'addons-for-divi'),
 					'front_text'  => array(
-						'title'             => esc_html__( 'Front Texts', 'addons-for-divi' ),
+						'title'             => esc_html__('Front Texts', 'addons-for-divi'),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'title'       => array(
-								'name' => esc_html__( 'Title', 'addons-for-divi' ),
+								'name' => esc_html__('Title', 'addons-for-divi'),
 							),
 							'subtitle'    => array(
-								'name' => esc_html__( 'Subtitle', 'addons-for-divi' ),
+								'name' => esc_html__('Subtitle', 'addons-for-divi'),
 							),
 							'description' => array(
-								'name' => esc_html__( 'Description', 'addons-for-divi' ),
+								'name' => esc_html__('Description', 'addons-for-divi'),
 							),
 						),
 					),
 					'back_text'   => array(
-						'title'             => esc_html__( 'Back Texts', 'addons-for-divi' ),
+						'title'             => esc_html__('Back Texts', 'addons-for-divi'),
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'title'       => array(
-								'name' => esc_html__( 'Title', 'addons-for-divi' ),
+								'name' => esc_html__('Title', 'addons-for-divi'),
 							),
 							'subtitle'    => array(
-								'name' => esc_html__( 'Subtitle', 'addons-for-divi' ),
+								'name' => esc_html__('Subtitle', 'addons-for-divi'),
 							),
 							'description' => array(
-								'name' => esc_html__( 'Description', 'addons-for-divi' ),
+								'name' => esc_html__('Description', 'addons-for-divi'),
 							),
 						),
 					),
-					'button'      => esc_html__( 'Button', 'addons-for-divi' ),
-					'border'      => esc_html__( 'Border', 'addons-for-divi' ),
-					'box_shadow'  => esc_html__( 'Box Shadow', 'addons-for-divi' ),
+					'button'      => esc_html__('Button', 'addons-for-divi'),
+					'border'      => esc_html__('Border', 'addons-for-divi'),
+					'box_shadow'  => esc_html__('Box Shadow', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'front_icon'      => array(
-				'label'    => esc_html__( 'Front Icon', 'addons-for-divi' ),
+				'label'    => esc_html__('Front Icon', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-icon-front i',
 			),
 			'front_img'       => array(
-				'label'    => esc_html__( 'Front Image', 'addons-for-divi' ),
+				'label'    => esc_html__('Front Image', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-figure-front img',
 			),
 			'front_title'     => array(
-				'label'    => esc_html__( 'Front Title', 'addons-for-divi' ),
+				'label'    => esc_html__('Front Title', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-title-front',
 			),
 			'front_sub_title' => array(
-				'label'    => esc_html__( 'Front Sub Title', 'addons-for-divi' ),
+				'label'    => esc_html__('Front Sub Title', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-subtitle-front',
 			),
 			'front_desc'      => array(
-				'label'    => esc_html__( 'Front Description', 'addons-for-divi' ),
+				'label'    => esc_html__('Front Description', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-desc-front',
 			),
 			'back_icon'       => array(
-				'label'    => esc_html__( 'Back Icon', 'addons-for-divi' ),
+				'label'    => esc_html__('Back Icon', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-icon-back i',
 			),
 			'back_img'        => array(
-				'label'    => esc_html__( 'Back Image', 'addons-for-divi' ),
+				'label'    => esc_html__('Back Image', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-figure-back img',
 			),
 			'back_title'      => array(
-				'label'    => esc_html__( 'Back Title', 'addons-for-divi' ),
+				'label'    => esc_html__('Back Title', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-title-back',
 			),
 			'back_sub_title'  => array(
-				'label'    => esc_html__( 'Back Sub Title', 'addons-for-divi' ),
+				'label'    => esc_html__('Back Sub Title', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-subtitle-back',
 			),
 			'back_desc'       => array(
-				'label'    => esc_html__( 'Back Description', 'addons-for-divi' ),
+				'label'    => esc_html__('Back Description', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-desc-front',
 			),
 			'back_btn'        => array(
-				'label'    => esc_html__( 'Back Button', 'addons-for-divi' ),
+				'label'    => esc_html__('Back Button', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-flipbox-btn',
 			),
 		);
 	}
 
-	public function get_fields() {
+	public function get_fields()
+	{
 
 		$front_content = array(
 			'front_media_type'  => array(
-				'label'       => esc_html__( 'Media Type', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select front side media type.', 'addons-for-divi' ),
+				'label'       => esc_html__('Media Type', 'addons-for-divi'),
+				'description' => esc_html__('Select front side media type.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'front',
 				'default'     => 'icon',
 				'options'     => array(
-					'none'  => esc_html__( 'None', 'addons-for-divi' ),
-					'icon'  => esc_html__( 'Icon', 'addons-for-divi' ),
-					'image' => esc_html__( 'Image', 'addons-for-divi' ),
+					'none'  => esc_html__('None', 'addons-for-divi'),
+					'icon'  => esc_html__('Icon', 'addons-for-divi'),
+					'image' => esc_html__('Image', 'addons-for-divi'),
 				),
 			),
 			'front_icon'        => array(
-				'label'       => esc_html__( 'Select Icon', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select front side icon.', 'addons-for-divi' ),
+				'label'       => esc_html__('Select Icon', 'addons-for-divi'),
+				'description' => esc_html__('Select front side icon.', 'addons-for-divi'),
 				'type'        => 'select_icon',
 				'default'     => '&#xe60c;||divi||400',
 				'toggle_slug' => 'front',
@@ -140,21 +144,21 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_img'         => array(
-				'label'              => esc_html__( 'Upload Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the front side.', 'addons-for-divi' ),
+				'label'              => esc_html__('Upload Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an image or type in the URL of the image you would like to display for the front side.', 'addons-for-divi'),
 				'type'               => 'upload',
 				'default'            => DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/placeholder.svg',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an image', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Image', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Image', 'addons-for-divi'),
 				'toggle_slug'        => 'front',
 				'show_if'            => array(
 					'front_media_type' => 'image',
 				),
 			),
 			'front_img_alt'     => array(
-				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define the front side image alt text for your flip box.', 'addons-for-divi' ),
+				'label'       => esc_html__('Image Alt Text', 'addons-for-divi'),
+				'description' => esc_html__('Define the front side image alt text for your flip box.', 'addons-for-divi'),
 				'type'        => 'text',
 				'toggle_slug' => 'front',
 				'show_if'     => array(
@@ -162,22 +166,22 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_title'       => array(
-				'label'           => esc_html__( 'Front Title', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the front side title for your flip box.', 'addons-for-divi' ),
+				'label'           => esc_html__('Front Title', 'addons-for-divi'),
+				'description'     => esc_html__('Define the front side title for your flip box.', 'addons-for-divi'),
 				'type'            => 'text',
 				'toggle_slug'     => 'front',
 				'dynamic_content' => 'text',
 			),
 			'front_subtitle'    => array(
-				'label'           => esc_html__( 'Front Sub Title', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the front side sub-title for your flip box.', 'addons-for-divi' ),
+				'label'           => esc_html__('Front Sub Title', 'addons-for-divi'),
+				'description'     => esc_html__('Define the front side sub-title for your flip box.', 'addons-for-divi'),
 				'type'            => 'text',
 				'toggle_slug'     => 'front',
 				'dynamic_content' => 'text',
 			),
 			'front_description' => array(
-				'label'           => esc_html__( 'Front Description', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the front side description text for your flip box.', 'addons-for-divi' ),
+				'label'           => esc_html__('Front Description', 'addons-for-divi'),
+				'description'     => esc_html__('Define the front side description text for your flip box.', 'addons-for-divi'),
 				'type'            => 'textarea',
 				'toggle_slug'     => 'front',
 				'dynamic_content' => 'text',
@@ -186,20 +190,20 @@ class DTQ__Flipbox extends BA_Builder_Module {
 
 		$back_content = array(
 			'back_media_type'  => array(
-				'label'       => esc_html__( 'Media Type', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select back side media type.', 'addons-for-divi' ),
+				'label'       => esc_html__('Media Type', 'addons-for-divi'),
+				'description' => esc_html__('Select back side media type.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'back',
 				'default'     => 'icon',
 				'options'     => array(
-					'none'  => esc_html__( 'None', 'addons-for-divi' ),
-					'icon'  => esc_html__( 'Icon', 'addons-for-divi' ),
-					'image' => esc_html__( 'Image', 'addons-for-divi' ),
+					'none'  => esc_html__('None', 'addons-for-divi'),
+					'icon'  => esc_html__('Icon', 'addons-for-divi'),
+					'image' => esc_html__('Image', 'addons-for-divi'),
 				),
 			),
 			'back_icon'        => array(
-				'label'       => esc_html__( 'Select Icon', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select back side icon.', 'addons-for-divi' ),
+				'label'       => esc_html__('Select Icon', 'addons-for-divi'),
+				'description' => esc_html__('Select back side icon.', 'addons-for-divi'),
 				'type'        => 'select_icon',
 				'toggle_slug' => 'back',
 				'default'     => '&#x2b;||divi||400',
@@ -209,21 +213,21 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_img'         => array(
-				'label'              => esc_html__( 'Upload Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload an image or type in the URL of the image you would like to display for the back side.', 'addons-for-divi' ),
+				'label'              => esc_html__('Upload Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload an image or type in the URL of the image you would like to display for the back side.', 'addons-for-divi'),
 				'type'               => 'upload',
 				'default'            => DIVI_TORQUE_PLUGIN_ASSETS . 'imgs/placeholder.svg',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an image', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Image', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Image', 'addons-for-divi'),
 				'toggle_slug'        => 'back',
 				'show_if'            => array(
 					'back_media_type' => 'image',
 				),
 			),
 			'back_img_alt'     => array(
-				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define the back side image alt text for your flip box.', 'addons-for-divi' ),
+				'label'       => esc_html__('Image Alt Text', 'addons-for-divi'),
+				'description' => esc_html__('Define the back side image alt text for your flip box.', 'addons-for-divi'),
 				'type'        => 'text',
 				'toggle_slug' => 'back',
 				'show_if'     => array(
@@ -231,41 +235,41 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_title'       => array(
-				'label'           => esc_html__( 'Back Title', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the back side title for your flip box.', 'addons-for-divi' ),
+				'label'           => esc_html__('Back Title', 'addons-for-divi'),
+				'description'     => esc_html__('Define the back side title for your flip box.', 'addons-for-divi'),
 				'type'            => 'text',
 				'toggle_slug'     => 'back',
 				'dynamic_content' => 'text',
 			),
 			'back_subtitle'    => array(
-				'label'           => esc_html__( 'Back Sub Title', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the back side sub-title for your flip box.', 'addons-for-divi' ),
+				'label'           => esc_html__('Back Sub Title', 'addons-for-divi'),
+				'description'     => esc_html__('Define the back side sub-title for your flip box.', 'addons-for-divi'),
 				'type'            => 'text',
 				'toggle_slug'     => 'back',
 				'dynamic_content' => 'text',
 			),
 			'back_description' => array(
-				'label'           => esc_html__( 'Back Description', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the back side description text for your flip box.', 'addons-for-divi' ),
+				'label'           => esc_html__('Back Description', 'addons-for-divi'),
+				'description'     => esc_html__('Define the back side description text for your flip box.', 'addons-for-divi'),
 				'type'            => 'textarea',
 				'toggle_slug'     => 'back',
 				'dynamic_content' => 'text',
 			),
 			'use_button'       => array(
-				'label'           => esc_html__( 'Use Button', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether button should be used.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use Button', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether button should be used.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'back',
 			),
 			'button_text'      => array(
-				'label'           => esc_html__( 'Button Text', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define the button text.', 'addons-for-divi' ),
+				'label'           => esc_html__('Button Text', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define the button text.', 'addons-for-divi'),
 				'type'            => 'text',
 				'default'         => 'Click Here',
 				'toggle_slug'     => 'back',
@@ -275,8 +279,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'button_link'      => array(
-				'label'           => esc_html__( 'Button Link', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the button link url for your button.', 'addons-for-divi' ),
+				'label'           => esc_html__('Button Link', 'addons-for-divi'),
+				'description'     => esc_html__('Define the button link url for your button.', 'addons-for-divi'),
 				'type'            => 'text',
 				'default'         => '',
 				'toggle_slug'     => 'back',
@@ -286,13 +290,13 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'is_new_window'    => array(
-				'label'           => esc_html__( 'Open Button link in new window', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether button URL should be opened in new window.', 'addons-for-divi' ),
+				'label'           => esc_html__('Open Button link in new window', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether button URL should be opened in new window.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'back',
@@ -304,27 +308,27 @@ class DTQ__Flipbox extends BA_Builder_Module {
 
 		$settings = array(
 			'animation_type'     => array(
-				'label'       => esc_html__( 'Animation Type', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select the animation type.', 'addons-for-divi' ),
+				'label'       => esc_html__('Animation Type', 'addons-for-divi'),
+				'description' => esc_html__('Select the animation type.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'flip',
 				'options'     => array(
-					'flip'      => esc_html__( 'Flip', 'addons-for-divi' ),
-					'diagonal'  => esc_html__( 'Flip Diagonal', 'addons-for-divi' ),
-					'shake'     => esc_html__( 'Flip Shake', 'addons-for-divi' ),
-					'push'      => esc_html__( 'Push', 'addons-for-divi' ),
-					'slide'     => esc_html__( 'Slide', 'addons-for-divi' ),
-					'fade'      => esc_html__( 'Fade', 'addons-for-divi' ),
-					'zoom_in'   => esc_html__( 'Zoom In', 'addons-for-divi' ),
-					'zoom_out'  => esc_html__( 'Zoom Out', 'addons-for-divi' ),
-					'rotate_3d' => esc_html__( 'Rotate 3D', 'addons-for-divi' ),
-					'open_up'   => esc_html__( 'Open Up', 'addons-for-divi' ),
+					'flip'      => esc_html__('Flip', 'addons-for-divi'),
+					'diagonal'  => esc_html__('Flip Diagonal', 'addons-for-divi'),
+					'shake'     => esc_html__('Flip Shake', 'addons-for-divi'),
+					'push'      => esc_html__('Push', 'addons-for-divi'),
+					'slide'     => esc_html__('Slide', 'addons-for-divi'),
+					'fade'      => esc_html__('Fade', 'addons-for-divi'),
+					'zoom_in'   => esc_html__('Zoom In', 'addons-for-divi'),
+					'zoom_out'  => esc_html__('Zoom Out', 'addons-for-divi'),
+					'rotate_3d' => esc_html__('Rotate 3D', 'addons-for-divi'),
+					'open_up'   => esc_html__('Open Up', 'addons-for-divi'),
 				),
 			),
 			'flank_color'        => array(
-				'label'        => esc_html__( 'Divider Flank Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Pick a color to use for the flank color.', 'addons-for-divi' ),
+				'label'        => esc_html__('Divider Flank Color', 'addons-for-divi'),
+				'description'  => esc_html__('Pick a color to use for the flank color.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'default'      => '#dddddd',
@@ -334,57 +338,57 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'direction'          => array(
-				'label'       => esc_html__( 'Animation Direction', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select the animation direction.', 'addons-for-divi' ),
+				'label'       => esc_html__('Animation Direction', 'addons-for-divi'),
+				'description' => esc_html__('Select the animation direction.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'right',
 				'options'     => array(
-					'up'    => esc_html__( 'Up', 'addons-for-divi' ),
-					'right' => esc_html__( 'Right', 'addons-for-divi' ),
-					'down'  => esc_html__( 'Down', 'addons-for-divi' ),
-					'left'  => esc_html__( 'Left', 'addons-for-divi' ),
+					'up'    => esc_html__('Up', 'addons-for-divi'),
+					'right' => esc_html__('Right', 'addons-for-divi'),
+					'down'  => esc_html__('Down', 'addons-for-divi'),
+					'left'  => esc_html__('Left', 'addons-for-divi'),
 				),
 				'show_if'     => array(
-					'animation_type' => array( 'flip', 'push', 'slide' ),
+					'animation_type' => array('flip', 'push', 'slide'),
 				),
 			),
 			'direction_diagonal' => array(
-				'label'       => esc_html__( 'Animation Direction', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select the animation direction.', 'addons-for-divi' ),
+				'label'       => esc_html__('Animation Direction', 'addons-for-divi'),
+				'description' => esc_html__('Select the animation direction.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'right',
 				'options'     => array(
-					'right' => esc_html__( 'Right', 'addons-for-divi' ),
-					'left'  => esc_html__( 'Left', 'addons-for-divi' ),
+					'right' => esc_html__('Right', 'addons-for-divi'),
+					'left'  => esc_html__('Left', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'animation_type' => 'diagonal',
 				),
 			),
 			'direction_alt'      => array(
-				'label'       => esc_html__( 'Animation Direction', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select the animation direction.', 'addons-for-divi' ),
+				'label'       => esc_html__('Animation Direction', 'addons-for-divi'),
+				'description' => esc_html__('Select the animation direction.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'settings',
 				'default'     => 'h',
 				'options'     => array(
-					'v' => esc_html__( 'Vertical', 'addons-for-divi' ),
-					'h' => esc_html__( 'Horizontal', 'addons-for-divi' ),
+					'v' => esc_html__('Vertical', 'addons-for-divi'),
+					'h' => esc_html__('Horizontal', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'animation_type' => 'rotate_3d',
 				),
 			),
 			'animation_3d'       => array(
-				'label'           => esc_html__( 'Use 3d Animation', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether 3d animation should be used.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use 3d Animation', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether 3d animation should be used.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'settings',
@@ -393,8 +397,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'duration'           => array(
-				'label'          => esc_html__( 'Animation Duration', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define the length of time that the animation takes.', 'addons-for-divi' ),
+				'label'          => esc_html__('Animation Duration', 'addons-for-divi'),
+				'description'    => esc_html__('Define the length of time that the animation takes.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '600ms',
 				'fixed_unit'     => 'ms',
@@ -406,8 +410,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'toggle_slug'    => 'settings',
 			),
 			'main_height'        => array(
-				'label'          => esc_html__( 'Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define height for your flip box.', 'addons-for-divi' ),
+				'label'          => esc_html__('Height', 'addons-for-divi'),
+				'description'    => esc_html__('Define height for your flip box.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '300px',
 				'default_unit'   => 'px',
@@ -423,21 +427,21 @@ class DTQ__Flipbox extends BA_Builder_Module {
 
 		$front_media = array(
 			'front_img_position' => array(
-				'label'       => esc_html__( 'Position', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select image position for the front side.', 'addons-for-divi' ),
+				'label'       => esc_html__('Position', 'addons-for-divi'),
+				'description' => esc_html__('Select image position for the front side.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'front_media',
 				'tab_slug'    => 'advanced',
 				'default'     => 'center',
 				'options'     => array(
-					'left'   => esc_html__( 'Left', 'addons-for-divi' ),
-					'center' => esc_html__( 'Center', 'addons-for-divi' ),
-					'right'  => esc_html__( 'Right', 'addons-for-divi' ),
+					'left'   => esc_html__('Left', 'addons-for-divi'),
+					'center' => esc_html__('Center', 'addons-for-divi'),
+					'right'  => esc_html__('Right', 'addons-for-divi'),
 				),
 			),
 			'front_img_padding'  => array(
-				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for your front side icon/image.', 'addons-for-divi' ),
+				'label'          => esc_html__('Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom padding for your front side icon/image.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'front_media',
 				'tab_slug'       => 'advanced',
@@ -448,8 +452,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_icon_color'   => array(
-				'label'        => esc_html__( 'Icon Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your front side icon.', 'addons-for-divi' ),
+				'label'        => esc_html__('Icon Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom color for your front side icon.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -459,8 +463,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_icon_size'    => array(
-				'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom size for your front side icon.', 'addons-for-divi' ),
+				'label'          => esc_html__('Icon Size', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom size for your front side icon.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'default'        => '60px',
@@ -477,8 +481,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'front_img_height'   => array(
-				'label'          => esc_html__( 'Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom height for your front side image/icon.', 'addons-for-divi' ),
+				'label'          => esc_html__('Height', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom height for your front side image/icon.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -491,8 +495,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'front_img_width'    => array(
-				'label'          => esc_html__( 'Width', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom width for your front side image/icon.', 'addons-for-divi' ),
+				'label'          => esc_html__('Width', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom width for your front side image/icon.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -508,21 +512,21 @@ class DTQ__Flipbox extends BA_Builder_Module {
 
 		$back_media = array(
 			'back_img_position' => array(
-				'label'       => esc_html__( 'Position', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select image position for the back side.', 'addons-for-divi' ),
+				'label'       => esc_html__('Position', 'addons-for-divi'),
+				'description' => esc_html__('Select image position for the back side.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'back_media',
 				'tab_slug'    => 'advanced',
 				'default'     => 'center',
 				'options'     => array(
-					'flex-start' => esc_html__( 'Left', 'addons-for-divi' ),
-					'center'     => esc_html__( 'Center', 'addons-for-divi' ),
-					'flex-end'   => esc_html__( 'Right', 'addons-for-divi' ),
+					'flex-start' => esc_html__('Left', 'addons-for-divi'),
+					'center'     => esc_html__('Center', 'addons-for-divi'),
+					'flex-end'   => esc_html__('Right', 'addons-for-divi'),
 				),
 			),
 			'back_img_padding'  => array(
-				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom padding for your back side icon/image.', 'addons-for-divi' ),
+				'label'          => esc_html__('Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom padding for your back side icon/image.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'back_media',
 				'tab_slug'       => 'advanced',
@@ -533,8 +537,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_icon_color'   => array(
-				'label'        => esc_html__( 'Icon Color', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Here you can define a custom color for your back side icon.', 'addons-for-divi' ),
+				'label'        => esc_html__('Icon Color', 'addons-for-divi'),
+				'description'  => esc_html__('Here you can define a custom color for your back side icon.', 'addons-for-divi'),
 				'type'         => 'color-alpha',
 				'custom_color' => true,
 				'tab_slug'     => 'advanced',
@@ -544,8 +548,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_icon_size'    => array(
-				'label'          => esc_html__( 'Icon Size', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom size for your back side icon.', 'addons-for-divi' ),
+				'label'          => esc_html__('Icon Size', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom size for your back side icon.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -562,8 +566,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				),
 			),
 			'back_img_height'   => array(
-				'label'          => esc_html__( 'Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom height for your back side image/icon.', 'addons-for-divi' ),
+				'label'          => esc_html__('Height', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom height for your back side image/icon.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -576,8 +580,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'back_img_width'    => array(
-				'label'          => esc_html__( 'Width', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom width for your back side image/icon.', 'addons-for-divi' ),
+				'label'          => esc_html__('Width', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom width for your back side image/icon.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -593,11 +597,11 @@ class DTQ__Flipbox extends BA_Builder_Module {
 
 		$front_design = array(
 			'front_alignment'   => array(
-				'label'            => esc_html__( 'Content Alignment', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
+				'label'            => esc_html__('Content Alignment', 'addons-for-divi'),
+				'description'      => esc_html__('Align content to the left, right or center.', 'addons-for-divi'),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
-				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
+				'options'          => et_builder_get_text_orientation_options(array('justified')),
 				'options_icon'     => 'text_align',
 				'default_on_front' => 'center',
 				'toggle_slug'      => 'front',
@@ -605,21 +609,21 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'mobile_options'   => true,
 			),
 			'front_align_items' => array(
-				'label'       => esc_html__( 'Content Vertical Alignment', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select front side content vertical alignment.', 'addons-for-divi' ),
+				'label'       => esc_html__('Content Vertical Alignment', 'addons-for-divi'),
+				'description' => esc_html__('Select front side content vertical alignment.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'front',
 				'tab_slug'    => 'advanced',
 				'default'     => 'center',
 				'options'     => array(
-					'flex-start' => esc_html__( 'Start', 'addons-for-divi' ),
-					'center'     => esc_html__( 'Center', 'addons-for-divi' ),
-					'flex-end'   => esc_html__( 'End', 'addons-for-divi' ),
+					'flex-start' => esc_html__('Start', 'addons-for-divi'),
+					'center'     => esc_html__('Center', 'addons-for-divi'),
+					'flex-end'   => esc_html__('End', 'addons-for-divi'),
 				),
 			),
 			'front_padding'     => array(
-				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
+				'label'          => esc_html__('Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'front',
 				'tab_slug'       => 'advanced',
@@ -627,8 +631,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'front_ct_padding'  => array(
-				'label'          => esc_html__( 'Content Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Set front side card content padding.', 'addons-for-divi' ),
+				'label'          => esc_html__('Content Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Set front side card content padding.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'front',
 				'tab_slug'       => 'advanced',
@@ -639,11 +643,11 @@ class DTQ__Flipbox extends BA_Builder_Module {
 
 		$back_design = array(
 			'back_alignment'   => array(
-				'label'            => esc_html__( 'Content Alignment', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
+				'label'            => esc_html__('Content Alignment', 'addons-for-divi'),
+				'description'      => esc_html__('Align content to the left, right or center.', 'addons-for-divi'),
 				'type'             => 'text_align',
 				'option_category'  => 'layout',
-				'options'          => et_builder_get_text_orientation_options( array( 'justified' ) ),
+				'options'          => et_builder_get_text_orientation_options(array('justified')),
 				'options_icon'     => 'text_align',
 				'default_on_front' => 'center',
 				'toggle_slug'      => 'back',
@@ -651,21 +655,21 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'mobile_options'   => true,
 			),
 			'back_align_items' => array(
-				'label'       => esc_html__( 'Content Vertical Alignment', 'addons-for-divi' ),
-				'description' => esc_html__( 'Select back side content vertical alignment.', 'addons-for-divi' ),
+				'label'       => esc_html__('Content Vertical Alignment', 'addons-for-divi'),
+				'description' => esc_html__('Select back side content vertical alignment.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'back',
 				'tab_slug'    => 'advanced',
 				'default'     => 'center',
 				'options'     => array(
-					'flex-start' => esc_html__( 'Start', 'addons-for-divi' ),
-					'center'     => esc_html__( 'Center', 'addons-for-divi' ),
-					'flex-end'   => esc_html__( 'End', 'addons-for-divi' ),
+					'flex-start' => esc_html__('Start', 'addons-for-divi'),
+					'center'     => esc_html__('Center', 'addons-for-divi'),
+					'flex-end'   => esc_html__('End', 'addons-for-divi'),
 				),
 			),
 			'back_padding'     => array(
-				'label'          => esc_html__( 'Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi' ),
+				'label'          => esc_html__('Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Padding adds extra space to the inside of the element, increasing the distance between the edge of the element and its inner contents.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'back',
 				'tab_slug'       => 'advanced',
@@ -673,8 +677,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'mobile_options' => true,
 			),
 			'back_ct_padding'  => array(
-				'label'          => esc_html__( 'Content Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Set back side card content padding.', 'addons-for-divi' ),
+				'label'          => esc_html__('Content Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Set back side card content padding.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'toggle_slug'    => 'back',
 				'tab_slug'       => 'advanced',
@@ -688,7 +692,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			'',
 			'advanced',
 			'front',
-			array( 'color', 'gradient', 'image' ),
+			array('color', 'gradient', 'image'),
 			array(),
 			'#efefef'
 		);
@@ -698,7 +702,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			'',
 			'advanced',
 			'back',
-			array( 'color', 'gradient', 'image' ),
+			array('color', 'gradient', 'image'),
 			array(),
 			'#efefef'
 		);
@@ -708,7 +712,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			'',
 			'advanced',
 			'front_media',
-			array( 'color', 'gradient', 'image' ),
+			array('color', 'gradient', 'image'),
 			array(),
 			''
 		);
@@ -718,15 +722,15 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			'',
 			'advanced',
 			'back_media',
-			array( 'color', 'gradient', 'image' ),
+			array('color', 'gradient', 'image'),
 			array(),
 			''
 		);
 
 		$texts_spacing = array(
 			'front_subtitle_spacing' => array(
-				'label'          => esc_html__( 'Spacing Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the front card subtitle.', 'addons-for-divi' ),
+				'label'          => esc_html__('Spacing Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the front card subtitle.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -741,8 +745,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'back_subtitle_spacing'  => array(
-				'label'          => esc_html__( 'Spacing Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the back card subtitle.', 'addons-for-divi' ),
+				'label'          => esc_html__('Spacing Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the back card subtitle.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -757,8 +761,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'front_desc_spacing'     => array(
-				'label'          => esc_html__( 'Spacing Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the front card description.', 'addons-for-divi' ),
+				'label'          => esc_html__('Spacing Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the front card description.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -773,8 +777,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 			),
 			'back_desc_spacing'      => array(
-				'label'          => esc_html__( 'Spacing Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the back card description.', 'addons-for-divi' ),
+				'label'          => esc_html__('Spacing Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the back card description.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -792,8 +796,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 
 		$button = array(
 			'btn_spacing' => array(
-				'label'          => esc_html__( 'Spacing Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the back card button.', 'addons-for-divi' ),
+				'label'          => esc_html__('Spacing Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the back card button.', 'addons-for-divi'),
 				'type'           => 'range',
 				'mobile_options' => true,
 				'default_unit'   => 'px',
@@ -825,7 +829,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		);
 	}
 
-	public function get_advanced_fields_config() {
+	public function get_advanced_fields_config()
+	{
 
 		$advanced_fields                = array();
 		$advanced_fields['text']        = false;
@@ -833,7 +838,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['box_shadow']['card'] = array(
-			'label'       => esc_html__( 'Box Shadow', 'addons-for-divi' ),
+			'label'       => esc_html__('Box Shadow', 'addons-for-divi'),
 			'toggle_slug' => 'box_shadow',
 			'css'         => array(
 				'main'      => '%%order_class%% .dtq-flipbox-card',
@@ -951,7 +956,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		);
 
 		$advanced_fields['button']['back_btn'] = array(
-			'label'          => esc_html__( 'Button', 'addons-for-divi' ),
+			'label'          => esc_html__('Button', 'addons-for-divi'),
 			'toggle_slug'    => 'button',
 			'css'            => array(
 				'main'      => '%%order_class%% .dtq-flipbox-btn',
@@ -1012,9 +1017,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	public function render_icon_front() {
+	public function render_icon_front()
+	{
 
-		$icon_name = esc_attr( et_pb_process_font_icon( $this->props['front_icon'] ) );
+		$icon_name = esc_attr(et_pb_process_font_icon($this->props['front_icon']));
 
 		return sprintf(
 			'<div class="dtq-flipbox-icon dtq-flipbox-icon-front">
@@ -1024,9 +1030,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		);
 	}
 
-	public function render_icon_back() {
+	public function render_icon_back()
+	{
 
-		$icon_name = esc_attr( et_pb_process_font_icon( $this->props['back_icon'] ) );
+		$icon_name = esc_attr(et_pb_process_font_icon($this->props['back_icon']));
 		return sprintf(
 			'<div class="dtq-flipbox-icon dtq-flipbox-icon-back">
                 <i class="dtq-et-icon">%1$s</i>
@@ -1035,7 +1042,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		);
 	}
 
-	public function render_img_front() {
+	public function render_img_front()
+	{
 		return sprintf(
 			'<div class="dtq-flipbox-img-front">
                 <img src="%1$s" alt="%2$s"/>
@@ -1045,7 +1053,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		);
 	}
 
-	public function render_img_back() {
+	public function render_img_back()
+	{
 		return sprintf(
 			'<div class="dtq-flipbox-img-back">
                 <img src="%1$s" alt="%2$s"/>
@@ -1055,21 +1064,22 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		);
 	}
 
-	public function render_media_front() {
+	public function render_media_front()
+	{
 		$front_icon       = $this->props['front_icon'];
 		$front_media_type = $this->props['front_media_type'];
 		$front_img        = $this->props['front_img'];
 
-		if ( 'none' === $front_media_type ) {
+		if ('none' === $front_media_type) {
 			return;
 		}
 
-		if ( ! empty( $front_icon ) || ! empty( $front_img ) ) {
-			if ( 'icon' === $front_media_type ) {
+		if (!empty($front_icon) || !empty($front_img)) {
+			if ('icon' === $front_media_type) {
 				$media = $this->render_icon_front();
 				// Inject Font Awesome Manually!.
-				dtq_inject_fa_icons( $this->props['front_icon'] );
-			} elseif ( 'image' === $front_media_type ) {
+				dtq_inject_fa_icons($this->props['front_icon']);
+			} elseif ('image' === $front_media_type) {
 				$media = $this->render_img_front();
 			}
 
@@ -1082,21 +1092,22 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render_media_back() {
+	public function render_media_back()
+	{
 		$back_icon       = $this->props['back_icon'];
 		$back_media_type = $this->props['back_media_type'];
 		$back_img        = $this->props['back_img'];
 
-		if ( 'none' === $back_media_type ) {
+		if ('none' === $back_media_type) {
 			return;
 		}
 
-		if ( ! empty( $back_icon ) || ! empty( $back_img ) ) {
-			if ( 'icon' === $back_media_type ) {
+		if (!empty($back_icon) || !empty($back_img)) {
+			if ('icon' === $back_media_type) {
 				$media = $this->render_icon_back();
 				// Inject Font Awesome Manually!.
-				dtq_inject_fa_icons( $this->props['back_icon'] );
-			} elseif ( 'image' === $back_media_type ) {
+				dtq_inject_fa_icons($this->props['back_icon']);
+			} elseif ('image' === $back_media_type) {
 				$media = $this->render_img_back();
 			}
 
@@ -1109,9 +1120,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render_title_front() {
+	public function render_title_front()
+	{
 		$front_title = $this->props['front_title'];
-		if ( ! empty( $front_title ) ) {
+		if (!empty($front_title)) {
 			return sprintf(
 				'<h2 class="dtq-flipbox-title-front">%1$s</h2>',
 				$front_title
@@ -1119,9 +1131,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render_title_back() {
+	public function render_title_back()
+	{
 		$back_title = $this->props['back_title'];
-		if ( ! empty( $back_title ) ) {
+		if (!empty($back_title)) {
 			return sprintf(
 				'<h2 class="dtq-flipbox-title-back">%1$s</h2>',
 				$back_title
@@ -1129,9 +1142,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render_subtitle_front() {
+	public function render_subtitle_front()
+	{
 		$front_subtitle = $this->props['front_subtitle'];
-		if ( ! empty( $front_subtitle ) ) {
+		if (!empty($front_subtitle)) {
 			return sprintf(
 				'<h4 class="dtq-flipbox-subtitle-front">%1$s</h4>',
 				$front_subtitle
@@ -1139,9 +1153,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render_subtitle_back() {
+	public function render_subtitle_back()
+	{
 		$back_subtitle = $this->props['back_subtitle'];
-		if ( ! empty( $back_subtitle ) ) {
+		if (!empty($back_subtitle)) {
 			return sprintf(
 				'<h4 class="dtq-flipbox-subtitle-back">%1$s</h4>',
 				$back_subtitle
@@ -1149,9 +1164,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render_description_front() {
+	public function render_description_front()
+	{
 		$description = $this->props['front_description'];
-		if ( ! empty( $description ) ) {
+		if (!empty($description)) {
 			return sprintf(
 				'<div class="dtq-flipbox-desc-front">%1$s</div>',
 				$description
@@ -1159,9 +1175,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render_description_back() {
+	public function render_description_back()
+	{
 		$description = $this->props['back_description'];
-		if ( ! empty( $description ) ) {
+		if (!empty($description)) {
 			return sprintf(
 				'<div class="dtq-flipbox-desc-back">%1$s</div>',
 				$description
@@ -1169,31 +1186,32 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render_module_button() {
+	public function render_module_button()
+	{
 
-		if ( 'on' === $this->props['use_button'] ) {
+		if ('on' === $this->props['use_button']) {
 
 			$button_custom = $this->props['custom_back_btn'];
-			$button_text   = isset( $this->props['button_text'] ) ? $this->props['button_text'] : 'Click Here';
-			$button_link   = isset( $this->props['button_link'] ) ? $this->props['button_link'] : '#';
-			$button_url    = trim( $button_link );
+			$button_text   = isset($this->props['button_text']) ? $this->props['button_text'] : 'Click Here';
+			$button_link   = isset($this->props['button_link']) ? $this->props['button_link'] : '#';
+			$button_url    = trim($button_link);
 			$new_tab       = $this->props['is_new_window'];
 
-			$custom_icon_values = et_pb_responsive_options()->get_property_values( $this->props, 'back_btn_icon' );
-			$custom_icon        = isset( $custom_icon_values['desktop'] ) ? $custom_icon_values['desktop'] : '';
-			$custom_icon_tablet = isset( $custom_icon_values['tablet'] ) ? $custom_icon_values['tablet'] : '';
-			$custom_icon_phone  = isset( $custom_icon_values['phone'] ) ? $custom_icon_values['phone'] : '';
-			$multi_view         = et_pb_multi_view_options( $this );
+			$custom_icon_values = et_pb_responsive_options()->get_property_values($this->props, 'back_btn_icon');
+			$custom_icon        = isset($custom_icon_values['desktop']) ? $custom_icon_values['desktop'] : '';
+			$custom_icon_tablet = isset($custom_icon_values['tablet']) ? $custom_icon_values['tablet'] : '';
+			$custom_icon_phone  = isset($custom_icon_values['phone']) ? $custom_icon_values['phone'] : '';
+			$multi_view         = et_pb_multi_view_options($this);
 
-			if ( function_exists( 'dtq_inject_fa_icons' ) ) {
+			if (function_exists('dtq_inject_fa_icons')) {
 				// Inject Font Awesome Manually!.
-				dtq_inject_fa_icons( $this->props['back_btn_icon'] );
+				dtq_inject_fa_icons($this->props['back_btn_icon']);
 			}
 
 			$button = $this->render_button(
 				array(
-					'button_id'           => $this->module_id( false ),
-					'button_classname'    => array( 'dtq-flipbox-btn' ),
+					'button_id'           => $this->module_id(false),
+					'button_classname'    => array('dtq-flipbox-btn'),
 					'button_custom'       => $button_custom,
 					'button_text'         => $button_text,
 					'button_text_escaped' => true,
@@ -1224,9 +1242,10 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		}
 	}
 
-	public function render( $attrs, $content, $render_slug ) {
+	public function render($attrs, $content, $render_slug)
+	{
 
-		$this->render_css( $render_slug );
+		$this->render_css($render_slug);
 
 		$animation_type     = $this->props['animation_type'];
 		$animation_3d       = $this->props['animation_3d'];
@@ -1235,26 +1254,26 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$direction_diagonal = $this->props['direction_diagonal'];
 		$classes            = array();
 
-		array_push( $classes, 'dtq-flipbox--' . $animation_type );
+		array_push($classes, 'dtq-flipbox--' . $animation_type);
 
-		if ( 'on' === $animation_3d ) {
-			array_push( $classes, 'dtq-flipbox-3d' );
+		if ('on' === $animation_3d) {
+			array_push($classes, 'dtq-flipbox-3d');
 		}
 
 		if (
 			'flip' === $animation_type ||
 			'slide' === $animation_type ||
 			'push' === $animation_type
-		  ) {
-			array_push( $classes, "dtq-$animation_type-$direction" );
+		) {
+			array_push($classes, "dtq-$animation_type-$direction");
 		}
 
-		if ( 'diagonal' === $animation_type ) {
-			array_push( $classes, "dtq-$animation_type-$direction_diagonal" );
+		if ('diagonal' === $animation_type) {
+			array_push($classes, "dtq-$animation_type-$direction_diagonal");
 		}
 
-		if ( 'rotate_3d' === $animation_type ) {
-			array_push( $classes, "dtq-$animation_type-$direction_alt" );
+		if ('rotate_3d' === $animation_type) {
+			array_push($classes, "dtq-$animation_type-$direction_alt");
 		}
 
 		return sprintf(
@@ -1290,7 +1309,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 					</div>
 				</div>
             </div>',
-			join( ' ', $classes ), // 1.
+			join(' ', $classes), // 1.
 			$this->render_media_front(), // 2.
 			$this->render_title_front(), // 3.
 			$this->render_media_back(), // 4.
@@ -1303,7 +1322,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		);
 	}
 
-	public function render_css( $render_slug ) {
+	public function render_css($render_slug)
+	{
 
 		$front_img_position = $this->props['front_img_position'];
 		$animation_type     = $this->props['animation_type'];
@@ -1323,7 +1343,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$front_align_items  = $this->props['front_align_items'];
 		$back_align_items   = $this->props['back_align_items'];
 
-		if ( 'rotate_3d' === $animation_type ) {
+		if ('rotate_3d' === $animation_type) {
 
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -1336,7 +1356,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 				)
 			);
 
-			if ( 'v' === $direction_alt ) {
+			if ('v' === $direction_alt) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1353,8 +1373,8 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$this->get_responsive_styles(
 			'main_height',
 			'%%order_class%% .dtq-flipbox-inner',
-			array( 'primary' => 'height' ),
-			array( 'default' => '300px' ),
+			array('primary' => 'height'),
+			array('default' => '300px'),
 			$render_slug
 		);
 
@@ -1378,7 +1398,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			)
 		);
 
-		if ( 'center' !== $front_img_position ) {
+		if ('center' !== $front_img_position) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1394,20 +1414,20 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$this->get_responsive_styles(
 			'front_alignment',
 			'%%order_class%% .dtq-flipbox-front-card',
-			array( 'primary' => 'text-align' ),
-			array( 'default' => 'auto' ),
+			array('primary' => 'text-align'),
+			array('default' => 'auto'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'front_padding',
 			'%%order_class%% .dtq-flipbox-front-card',
-			array( 'primary' => 'padding' ),
-			array( 'default' => '30px|30px|30px|30px' ),
+			array('primary' => 'padding'),
+			array('default' => '30px|30px|30px|30px'),
 			$render_slug
 		);
 
-		if ( 'center' !== $front_img_position ) {
+		if ('center' !== $front_img_position) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1417,7 +1437,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			);
 		}
 
-		if ( 'right' === $front_img_position ) {
+		if ('right' === $front_img_position) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1466,7 +1486,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			)
 		);
 
-		if ( ! empty( $front_icon_color ) ) {
+		if (!empty($front_icon_color)) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1479,43 +1499,43 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			);
 		}
 
-		if ( ! empty( $front_img_width ) ) {
+		if (!empty($front_img_width)) {
 			$this->get_responsive_styles(
 				'front_img_width',
 				'%%order_class%% .dtq-flipbox-figure-front',
-				array( 'primary' => 'width' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'width'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'front_img_width',
 				'%%order_class%% .dtq-flipbox-figure-front',
-				array( 'primary' => 'max-width' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'max-width'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'front_img_width',
 				'%%order_class%% .dtq-flipbox-figure-front',
-				array( 'primary' => 'flex' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'flex'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 		}
 
-		if ( ! empty( $front_img_height ) ) {
+		if (!empty($front_img_height)) {
 			$this->get_responsive_styles(
 				'front_img_height',
 				'%%order_class%% .dtq-flipbox-figure-front',
-				array( 'primary' => 'height' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'height'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'front_img_height',
 				'%%order_class%% .dtq-flipbox-figure-front img',
-				array( 'primary' => 'height' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'height'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 		}
@@ -1523,16 +1543,16 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$this->get_responsive_styles(
 			'front_img_padding',
 			'%%order_class%% .dtq-flipbox-figure-front img',
-			array( 'primary' => 'padding' ),
-			array( 'default' => '0|0|0|0' ),
+			array('primary' => 'padding'),
+			array('default' => '0|0|0|0'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'front_ct_padding',
 			'%%order_class%% .dtq-flipbox-front-card .dtq-flipbox-content-wrap',
-			array( 'primary' => 'padding' ),
-			array( 'default' => '0|0|0|0' ),
+			array('primary' => 'padding'),
+			array('default' => '0|0|0|0'),
 			$render_slug
 		);
 
@@ -1548,7 +1568,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			)
 		);
 
-		if ( 'center' !== $back_img_position ) {
+		if ('center' !== $back_img_position) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1564,20 +1584,20 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$this->get_responsive_styles(
 			'back_alignment',
 			'%%order_class%% .dtq-flipbox-back-card',
-			array( 'primary' => 'text-align' ),
-			array( 'default' => 'auto' ),
+			array('primary' => 'text-align'),
+			array('default' => 'auto'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'back_padding',
 			'%%order_class%% .dtq-flipbox-back-card',
-			array( 'primary' => 'padding' ),
-			array( 'default' => '30px|30px|30px|30px' ),
+			array('primary' => 'padding'),
+			array('default' => '30px|30px|30px|30px'),
 			$render_slug
 		);
 
-		if ( 'center' !== $back_img_position ) {
+		if ('center' !== $back_img_position) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1587,7 +1607,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			);
 		}
 
-		if ( 'right' === $back_img_position ) {
+		if ('right' === $back_img_position) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1608,7 +1628,7 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			)
 		);
 
-		if ( ! empty( $back_icon_color ) ) {
+		if (!empty($back_icon_color)) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1621,45 +1641,45 @@ class DTQ__Flipbox extends BA_Builder_Module {
 			);
 		}
 
-		if ( ! empty( $back_img_width ) ) {
+		if (!empty($back_img_width)) {
 			$this->get_responsive_styles(
 				'back_img_width',
 				'%%order_class%% .dtq-flipbox-figure-back',
-				array( 'primary' => 'width' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'width'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 
 			$this->get_responsive_styles(
 				'back_img_width',
 				'%%order_class%% .dtq-flipbox-figure-back',
-				array( 'primary' => 'max-width' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'max-width'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 
 			$this->get_responsive_styles(
 				'back_img_width',
 				'%%order_class%% .dtq-flipbox-figure-back',
-				array( 'primary' => 'flex' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'flex'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 		}
 
-		if ( ! empty( $back_img_height ) ) {
+		if (!empty($back_img_height)) {
 			$this->get_responsive_styles(
 				'back_img_height',
 				'%%order_class%% .dtq-flipbox-figure-back',
-				array( 'primary' => 'height' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'height'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'back_img_height',
 				'%%order_class%% .dtq-flipbox-figure-back img',
-				array( 'primary' => 'height' ),
-				array( 'default' => 'auto' ),
+				array('primary' => 'height'),
+				array('default' => 'auto'),
 				$render_slug
 			);
 		}
@@ -1667,16 +1687,16 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$this->get_responsive_styles(
 			'back_img_padding',
 			'%%order_class%% .dtq-flipbox-figure-back img',
-			array( 'primary' => 'padding' ),
-			array( 'default' => '0|0|0|0' ),
+			array('primary' => 'padding'),
+			array('default' => '0|0|0|0'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'back_ct_padding',
 			'%%order_class%% .dtq-flipbox-back-card .dtq-flipbox-content-wrap',
-			array( 'primary' => 'padding' ),
-			array( 'default' => '0|0|0|0' ),
+			array('primary' => 'padding'),
+			array('default' => '0|0|0|0'),
 			$render_slug
 		);
 
@@ -1684,49 +1704,48 @@ class DTQ__Flipbox extends BA_Builder_Module {
 		$this->get_responsive_styles(
 			'front_subtitle_spacing',
 			'%%order_class%% .dtq-flipbox-subtitle-front',
-			array( 'primary' => 'margin-top' ),
-			array( 'default' => '0px' ),
+			array('primary' => 'margin-top'),
+			array('default' => '0px'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'back_subtitle_spacing',
 			'%%order_class%% .dtq-flipbox-subtitle-back',
-			array( 'primary' => 'margin-top' ),
-			array( 'default' => '0px' ),
+			array('primary' => 'margin-top'),
+			array('default' => '0px'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'front_desc_spacing',
 			'%%order_class%% .dtq-flipbox-desc-front',
-			array( 'primary' => 'margin-top' ),
-			array( 'default' => '0px' ),
+			array('primary' => 'margin-top'),
+			array('default' => '0px'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'back_desc_spacing',
 			'%%order_class%% .dtq-flipbox-desc-back',
-			array( 'primary' => 'margin-top' ),
-			array( 'default' => '0px' ),
+			array('primary' => 'margin-top'),
+			array('default' => '0px'),
 			$render_slug
 		);
 
 		$this->get_responsive_styles(
 			'btn_spacing',
 			'%%order_class%% .dtq-flipbox-btn-wrap',
-			array( 'primary' => 'margin-top' ),
-			array( 'default' => '15px' ),
+			array('primary' => 'margin-top'),
+			array('default' => '15px'),
 			$render_slug
 		);
 
-		$this->get_custom_bg_style( $render_slug, 'front', '%%order_class%% .dtq-flipbox-front-card', '' );
-		$this->get_custom_bg_style( $render_slug, 'back', '%%order_class%% .dtq-flipbox-back-card', '' );
-		$this->get_custom_bg_style( $render_slug, 'front_img', '%%order_class%% .dtq-flipbox-figure-front', '' );
-		$this->get_custom_bg_style( $render_slug, 'back_img', '%%order_class%% .dtq-flipbox-figure-back', '' );
-		$this->get_buttons_styles( 'button', $render_slug, '%%order_class%% .dtq-flipbox-back-card .et_pb_button' );
-
+		$this->get_custom_bg_style($render_slug, 'front', '%%order_class%% .dtq-flipbox-front-card', '');
+		$this->get_custom_bg_style($render_slug, 'back', '%%order_class%% .dtq-flipbox-back-card', '');
+		$this->get_custom_bg_style($render_slug, 'front_img', '%%order_class%% .dtq-flipbox-figure-front', '');
+		$this->get_custom_bg_style($render_slug, 'back_img', '%%order_class%% .dtq-flipbox-figure-back', '');
+		$this->get_buttons_styles('button', $render_slug, '%%order_class%% .dtq-flipbox-back-card .et_pb_button');
 	}
 }
 

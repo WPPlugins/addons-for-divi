@@ -11,8 +11,9 @@ class DTQ_Video_Popup extends BA_Builder_Module
 	{
 		$this->slug       = 'ba_video_popup';
 		$this->vb_support = 'on';
-		$this->name       = esc_html__('Torque Video Popup', 'addons-for-divi');
+		$this->name       = esc_html__('Torq Video Popup', 'addons-for-divi');
 		$this->icon_path  = plugin_dir_path(__FILE__) . 'video-popup.svg';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(

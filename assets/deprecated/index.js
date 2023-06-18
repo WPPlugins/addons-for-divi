@@ -190,9 +190,6 @@ jQuery(function($) {
                     $c_width_unit +
                     "!important; }</style>"
             );
-
-            console.log($c_width);
-            console.log($c_width_unit);
         }
 
         if ("on" === $c_use_height) {

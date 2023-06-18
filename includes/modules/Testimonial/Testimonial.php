@@ -1,5 +1,6 @@
 <?php
-class DTQ_Testimonial extends BA_Builder_Module {
+class DTQ_Testimonial extends BA_Builder_Module
+{
 
 	protected $module_credits = array(
 		'module_uri' => 'https://divitorque.com/testimonial-module/',
@@ -7,89 +8,92 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		'author_uri' => 'https://divitorque.com/',
 	);
 
-	public function init() {
+	public function init()
+	{
 
 		$this->vb_support = 'on';
 		$this->slug       = 'ba_testimonial';
-		$this->name       = esc_html__( 'Torque Testimonial', 'addons-for-divi' );
-		$this->icon_path  = plugin_dir_path( __FILE__ ) . 'testimonial.svg';
+		$this->name       = esc_html__('Torq Testimonial', 'addons-for-divi');
+		$this->icon_path  = plugin_dir_path(__FILE__) . 'testimonial.svg';
+		$this->folder_name = 'divi_torque_lite';
 
 		$this->settings_modal_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'content'  => esc_html__( 'Content', 'addons-for-divi' ),
-					'elements' => esc_html__( 'Elements', 'addons-for-divi' ),
+					'content'  => esc_html__('Content', 'addons-for-divi'),
+					'elements' => esc_html__('Elements', 'addons-for-divi'),
 				),
 			),
 
 			'advanced' => array(
 				'toggles' => array(
-					'common'     => esc_html__( 'General', 'addons-for-divi' ),
-					'quote_icon' => esc_html__( 'Quote Icon', 'addons-for-divi' ),
-					'image'      => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
-					'rating'     => esc_html__( 'Rating', 'addons-for-divi' ),
-					'name'       => esc_html__( 'Name Text', 'addons-for-divi' ),
-					'title'      => esc_html__( 'Title Text', 'addons-for-divi' ),
-					'review'     => esc_html__( 'Review Text', 'addons-for-divi' ),
-					'bubble'     => esc_html__( 'Bubble', 'addons-for-divi' ),
+					'common'     => esc_html__('General', 'addons-for-divi'),
+					'quote_icon' => esc_html__('Quote Icon', 'addons-for-divi'),
+					'image'      => esc_html__('Reviewer Image', 'addons-for-divi'),
+					'rating'     => esc_html__('Rating', 'addons-for-divi'),
+					'name'       => esc_html__('Name Text', 'addons-for-divi'),
+					'title'      => esc_html__('Title Text', 'addons-for-divi'),
+					'review'     => esc_html__('Review Text', 'addons-for-divi'),
+					'bubble'     => esc_html__('Bubble', 'addons-for-divi'),
 				),
 			),
 		);
 
 		$this->custom_css_fields = array(
 			'image'        => array(
-				'label'    => esc_html__( 'Reviewer Wrapper', 'addons-for-divi' ),
+				'label'    => esc_html__('Reviewer Wrapper', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-reviewer',
 			),
 			'image'        => array(
-				'label'    => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
+				'label'    => esc_html__('Reviewer Image', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-img img',
 			),
 			'name'         => array(
-				'label'    => esc_html__( 'Reviewer Name', 'addons-for-divi' ),
+				'label'    => esc_html__('Reviewer Name', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-reviewer-text h3',
 			),
 			'title'        => array(
-				'label'    => esc_html__( 'Reviewer Title', 'addons-for-divi' ),
+				'label'    => esc_html__('Reviewer Title', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-reviewer-text .dtq-testimonial-title',
 			),
 			'rating'       => array(
-				'label'    => esc_html__( 'Rating', 'addons-for-divi' ),
+				'label'    => esc_html__('Rating', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-rating',
 			),
 			'star'         => array(
-				'label'    => esc_html__( 'Rating Star', 'addons-for-divi' ),
+				'label'    => esc_html__('Rating Star', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-rating span',
 			),
 			'review'       => array(
-				'label'    => esc_html__( 'Review', 'addons-for-divi' ),
+				'label'    => esc_html__('Review', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-review',
 			),
 			'icon_wrapper' => array(
-				'label'    => esc_html__( 'Quote Icon Wrapper', 'addons-for-divi' ),
+				'label'    => esc_html__('Quote Icon Wrapper', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-icon-wrap',
 			),
 			'icon'         => array(
-				'label'    => esc_html__( 'Quote Icon', 'addons-for-divi' ),
+				'label'    => esc_html__('Quote Icon', 'addons-for-divi'),
 				'selector' => '%%order_class%% .dtq-testimonial-icon-wrap svg',
 			),
 		);
 	}
 
-	public function get_fields() {
+	public function get_fields()
+	{
 
 		$primary_fields = array(
 			'icon_placement' => array(
-				'label'       => esc_html__( 'Icon Placement', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define Placement for the quote icon.', 'addons-for-divi' ),
+				'label'       => esc_html__('Icon Placement', 'addons-for-divi'),
+				'description' => esc_html__('Define Placement for the quote icon.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'quote_icon',
 				'tab_slug'    => 'advanced',
 				'default'     => 'background',
 				'options'     => array(
-					'_default'   => esc_html__( 'Default', 'addons-for-divi' ),
-					'absolute'   => esc_html__( 'Absolute', 'addons-for-divi' ),
-					'background' => esc_html__( 'Background', 'addons-for-divi' ),
+					'_default'   => esc_html__('Default', 'addons-for-divi'),
+					'absolute'   => esc_html__('Absolute', 'addons-for-divi'),
+					'background' => esc_html__('Background', 'addons-for-divi'),
 				),
 			),
 		);
@@ -97,64 +101,64 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$fields = array(
 
 			'image'                  => array(
-				'label'              => esc_html__( 'Reviewer Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload reviewer image or type in the URL of the image you would like to display.', 'addons-for-divi' ),
+				'label'              => esc_html__('Reviewer Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload reviewer image or type in the URL of the image you would like to display.', 'addons-for-divi'),
 				'type'               => 'upload',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload an image', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an image', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Image', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Image', 'addons-for-divi'),
 				'toggle_slug'        => 'content',
 			),
 
 			'image_alt'              => array(
-				'label'       => esc_html__( 'Image Alt Text', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define the HTML ALT text for your image.', 'addons-for-divi' ),
+				'label'       => esc_html__('Image Alt Text', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define the HTML ALT text for your image.', 'addons-for-divi'),
 				'type'        => 'text',
 				'toggle_slug' => 'content',
 			),
 
 			'name'                   => array(
-				'label'           => esc_html__( 'Reviewer Name', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the name of the reviewer.', 'addons-for-divi' ),
+				'label'           => esc_html__('Reviewer Name', 'addons-for-divi'),
+				'description'     => esc_html__('Define the name of the reviewer.', 'addons-for-divi'),
 				'type'            => 'text',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
 			),
 
 			'title'                  => array(
-				'label'           => esc_html__( 'Reviewer Title', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the title/position of the reviewer.', 'addons-for-divi' ),
+				'label'           => esc_html__('Reviewer Title', 'addons-for-divi'),
+				'description'     => esc_html__('Define the title/position of the reviewer.', 'addons-for-divi'),
 				'type'            => 'text',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
-				'description'     => esc_html__( '.', 'addons-for-divi' ),
+				'description'     => esc_html__('.', 'addons-for-divi'),
 			),
 
 			'use_rating'             => array(
-				'label'           => esc_html__( 'Use Rating', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether rating should be used.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use Rating', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether rating should be used.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'toggle_slug'     => 'content',
 			),
 
 			'rating'                 => array(
-				'label'       => esc_html__( 'Rating', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define your rating number from the list.', 'addons-for-divi' ),
+				'label'       => esc_html__('Rating', 'addons-for-divi'),
+				'description' => esc_html__('Define your rating number from the list.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'default'     => '5',
 				'options'     => array(
-					'1' => esc_html__( '1', 'addons-for-divi' ),
-					'2' => esc_html__( '2', 'addons-for-divi' ),
-					'3' => esc_html__( '3', 'addons-for-divi' ),
-					'4' => esc_html__( '4', 'addons-for-divi' ),
-					'5' => esc_html__( '5', 'addons-for-divi' ),
+					'1' => esc_html__('1', 'addons-for-divi'),
+					'2' => esc_html__('2', 'addons-for-divi'),
+					'3' => esc_html__('3', 'addons-for-divi'),
+					'4' => esc_html__('4', 'addons-for-divi'),
+					'5' => esc_html__('5', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'use_rating' => 'on',
@@ -162,38 +166,38 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'testimonial'            => array(
-				'label'           => esc_html__( 'Review', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the testimonial.', 'addons-for-divi' ),
+				'label'           => esc_html__('Review', 'addons-for-divi'),
+				'description'     => esc_html__('Define the testimonial.', 'addons-for-divi'),
 				'type'            => 'textarea',
 				'toggle_slug'     => 'content',
 				'dynamic_content' => 'text',
 			),
 
 			'use_custom_icon'        => array(
-				'label'           => esc_html__( 'Upload Custom Quote Icon', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether custom icon should be used.', 'addons-for-divi' ),
+				'label'           => esc_html__('Upload Custom Quote Icon', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether custom icon should be used.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'default'         => 'off',
 				'toggle_slug'     => 'content',
 			),
 
 			'selected_icon'          => array(
-				'label'       => esc_html__( 'Select Quote Icon', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define quote icon from the list.', 'addons-for-divi' ),
+				'label'       => esc_html__('Select Quote Icon', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define quote icon from the list.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'content',
 				'default'     => '5',
 				'options'     => array(
-					'5' => esc_html__( 'Icon 5', 'addons-for-divi' ),
-					'4' => esc_html__( 'Icon 4', 'addons-for-divi' ),
-					'3' => esc_html__( 'Icon 3', 'addons-for-divi' ),
-					'2' => esc_html__( 'Icon 2', 'addons-for-divi' ),
-					'1' => esc_html__( 'Icon 1', 'addons-for-divi' ),
+					'5' => esc_html__('Icon 5', 'addons-for-divi'),
+					'4' => esc_html__('Icon 4', 'addons-for-divi'),
+					'3' => esc_html__('Icon 3', 'addons-for-divi'),
+					'2' => esc_html__('Icon 2', 'addons-for-divi'),
+					'1' => esc_html__('Icon 1', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'use_custom_icon' => 'off',
@@ -201,14 +205,14 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'icon_img'               => array(
-				'label'              => esc_html__( 'Upload Quote Icon Image', 'addons-for-divi' ),
-				'description'        => esc_html__( 'Upload your custom quote icon or type in the URL of the icon image you would like to display.', 'addons-for-divi' ),
+				'label'              => esc_html__('Upload Quote Icon Image', 'addons-for-divi'),
+				'description'        => esc_html__('Upload your custom quote icon or type in the URL of the icon image you would like to display.', 'addons-for-divi'),
 				'type'               => 'upload',
 				'data_type'          => 'image',
 				'option_category'    => 'basic_option',
-				'upload_button_text' => esc_attr__( 'Upload an Image', 'addons-for-divi' ),
-				'choose_text'        => esc_attr__( 'Choose an Image', 'addons-for-divi' ),
-				'update_text'        => esc_attr__( 'Set As Image', 'addons-for-divi' ),
+				'upload_button_text' => esc_attr__('Upload an Image', 'addons-for-divi'),
+				'choose_text'        => esc_attr__('Choose an Image', 'addons-for-divi'),
+				'update_text'        => esc_attr__('Set As Image', 'addons-for-divi'),
 				'toggle_slug'        => 'content',
 				'show_if'            => array(
 					'use_custom_icon' => 'on',
@@ -217,53 +221,53 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 			// elements.
 			'hide_quote'             => array(
-				'label'           => esc_html__( 'Hide Quote Icon', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can choose whether quote should be hidden.', 'addons-for-divi' ),
+				'label'           => esc_html__('Hide Quote Icon', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can choose whether quote should be hidden.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'toggle_slug'     => 'elements',
 			),
 
 			'reviewer_position'      => array(
-				'label'       => esc_html__( 'Reviewer Position', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define reviewer position.', 'addons-for-divi' ),
+				'label'       => esc_html__('Reviewer Position', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define reviewer position.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
 				'options'     => array(
-					'top'    => esc_html__( 'Top', 'addons-for-divi' ),
-					'bottom' => esc_html__( 'Bottom', 'addons-for-divi' ),
+					'top'    => esc_html__('Top', 'addons-for-divi'),
+					'bottom' => esc_html__('Bottom', 'addons-for-divi'),
 				),
 			),
 
 			'img_position'           => array(
-				'label'       => esc_html__( 'Reviewer Image Position', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define reviewer image position.', 'addons-for-divi' ),
+				'label'       => esc_html__('Reviewer Image Position', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define reviewer image position.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
 				'default'     => 'relative',
 				'options'     => array(
-					'top'      => esc_html__( 'Top', 'addons-for-divi' ),
-					'left'     => esc_html__( 'Left', 'addons-for-divi' ),
-					'right'    => esc_html__( 'Right', 'addons-for-divi' ),
-					'absolute' => esc_html__( 'Absolute', 'addons-for-divi' ),
-					'relative' => esc_html__( 'Relative to Reviewer', 'addons-for-divi' ),
+					'top'      => esc_html__('Top', 'addons-for-divi'),
+					'left'     => esc_html__('Left', 'addons-for-divi'),
+					'right'    => esc_html__('Right', 'addons-for-divi'),
+					'absolute' => esc_html__('Absolute', 'addons-for-divi'),
+					'relative' => esc_html__('Relative to Reviewer', 'addons-for-divi'),
 				),
 			),
 
 			'ratings_position'       => array(
-				'label'       => esc_html__( 'Rating Position', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define rating position.', 'addons-for-divi' ),
+				'label'       => esc_html__('Rating Position', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define rating position.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
 				'default'     => '_default',
 				'options'     => array(
-					'_default' => esc_html__( 'Default', 'addons-for-divi' ),
-					'bottom'   => esc_html__( 'Bottom', 'addons-for-divi' ),
-					'reviewer' => esc_html__( 'Relative to Reviewer', 'addons-for-divi' ),
+					'_default' => esc_html__('Default', 'addons-for-divi'),
+					'bottom'   => esc_html__('Bottom', 'addons-for-divi'),
+					'reviewer' => esc_html__('Relative to Reviewer', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'use_rating' => 'on',
@@ -271,21 +275,21 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'review_design'          => array(
-				'label'       => esc_html__( 'Review Design', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define review design layout.', 'addons-for-divi' ),
+				'label'       => esc_html__('Review Design', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define review design layout.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'elements',
 				'default'     => 'normal',
 				'options'     => array(
-					'normal' => esc_html__( 'Normal', 'addons-for-divi' ),
-					'bubble' => esc_html__( 'Bubble', 'addons-for-divi' ),
+					'normal' => esc_html__('Normal', 'addons-for-divi'),
+					'bubble' => esc_html__('Bubble', 'addons-for-divi'),
 				),
 			),
 
 			// links.
 			'website_url'            => array(
-				'label'           => esc_html__( 'Personal Website URL', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define personal website URL of the reviewer.', 'addons-for-divi' ),
+				'label'           => esc_html__('Personal Website URL', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define personal website URL of the reviewer.', 'addons-for-divi'),
 				'type'            => 'text',
 				'toggle_slug'     => 'link_options',
 				'tab_slug'        => 'general',
@@ -293,8 +297,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 			),
 			'company_url'            => array(
-				'label'           => esc_html__( 'Company URL', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define company Website URL of the reviewer.', 'addons-for-divi' ),
+				'label'           => esc_html__('Company URL', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define company Website URL of the reviewer.', 'addons-for-divi'),
 				'type'            => 'text',
 				'toggle_slug'     => 'link_options',
 				'tab_slug'        => 'general',
@@ -304,35 +308,35 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 			// General.
 			'alignment'              => array(
-				'label'        => esc_html__( 'Content Alignment', 'addons-for-divi' ),
-				'description'  => esc_html__( 'Align content to the left, right or center.', 'addons-for-divi' ),
+				'label'        => esc_html__('Content Alignment', 'addons-for-divi'),
+				'description'  => esc_html__('Align content to the left, right or center.', 'addons-for-divi'),
 				'type'         => 'text_align',
-				'options'      => et_builder_get_text_orientation_options( array( 'justified' ) ),
+				'options'      => et_builder_get_text_orientation_options(array('justified')),
 				'options_icon' => 'module_align',
 				'default'      => 'center',
 				'toggle_slug'  => 'common',
 				'tab_slug'     => 'advanced',
 			),
 			'content_padding'        => array(
-				'label'          => esc_html__( 'Content Padding', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define custom padding for the content.', 'addons-for-divi' ),
+				'label'          => esc_html__('Content Padding', 'addons-for-divi'),
+				'description'    => esc_html__('Define custom padding for the content.', 'addons-for-divi'),
 				'type'           => 'custom_padding',
 				'default'        => '30px|30px|30px|30px',
 				'mobile_options' => true,
 				'toggle_slug'    => 'common',
 				'tab_slug'       => 'advanced',
 				'show_if'        => array(
-					'img_position' => array( 'left', 'right' ),
+					'img_position' => array('left', 'right'),
 				),
 			),
 
 			// Quote Icon.
 			'icon_alignment'         => array(
-				'label'           => esc_html__( 'Icon Alignment', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Align icon to the left, right or center.', 'addons-for-divi' ),
+				'label'           => esc_html__('Icon Alignment', 'addons-for-divi'),
+				'description'     => esc_html__('Align icon to the left, right or center.', 'addons-for-divi'),
 				'type'            => 'text_align',
 				'option_category' => 'layout',
-				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
+				'options'         => et_builder_get_text_orientation_options(array('justified')),
 				'options_icon'    => 'module_align',
 				'default'         => 'center',
 				'toggle_slug'     => 'quote_icon',
@@ -342,8 +346,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_color'             => array(
-				'label'       => esc_html__( 'Icon Color', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define a custom color for your icon.', 'addons-for-divi' ),
+				'label'       => esc_html__('Icon Color', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define a custom color for your icon.', 'addons-for-divi'),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'quote_icon',
@@ -353,8 +357,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_bg'                => array(
-				'label'       => esc_html__( 'Icon Background', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define a custom background color for your icon.', 'addons-for-divi' ),
+				'label'       => esc_html__('Icon Background', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define a custom background color for your icon.', 'addons-for-divi'),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'quote_icon',
@@ -364,8 +368,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_size'              => array(
-				'label'           => esc_html__( 'Icon Size', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define a custom size for your icon.', 'addons-for-divi' ),
+				'label'           => esc_html__('Icon Size', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define a custom size for your icon.', 'addons-for-divi'),
 				'type'            => 'range',
 				'default'         => '70px',
 				'option_category' => 'basic_option',
@@ -380,8 +384,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				'tab_slug'        => 'advanced',
 			),
 			'icon_opacity'           => array(
-				'label'           => esc_html__( 'Icon Opacity', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Define the opacity for the icon. Set the value from 0 - 1. The lower value, the more transparent.', 'addons-for-divi' ),
+				'label'           => esc_html__('Icon Opacity', 'addons-for-divi'),
+				'description'     => esc_html__('Define the opacity for the icon. Set the value from 0 - 1. The lower value, the more transparent.', 'addons-for-divi'),
 				'type'            => 'range',
 				'default'         => '.2',
 				'option_category' => 'basic_option',
@@ -395,8 +399,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				'tab_slug'        => 'advanced',
 			),
 			'icon_padding'           => array(
-				'label'       => esc_html__( 'Icon Padding', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define custom padding for the icon.', 'addons-for-divi' ),
+				'label'       => esc_html__('Icon Padding', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define custom padding for the icon.', 'addons-for-divi'),
 				'type'        => 'custom_padding',
 				'default'     => '0px|0px|0px|0px',
 				'toggle_slug' => 'quote_icon',
@@ -406,8 +410,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_top_spacing'       => array(
-				'label'           => esc_html__( 'Icon Spacing Top', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define a custom spacing at the top of the icon.', 'addons-for-divi' ),
+				'label'           => esc_html__('Icon Spacing Top', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define a custom spacing at the top of the icon.', 'addons-for-divi'),
 				'type'            => 'range',
 				'default'         => '40px',
 				'option_category' => 'basic_option',
@@ -424,8 +428,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				),
 			),
 			'icon_bottom_spacing'    => array(
-				'label'           => esc_html__( 'Icon Spacing Bottom', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the icon.', 'addons-for-divi' ),
+				'label'           => esc_html__('Icon Spacing Bottom', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define a custom spacing at the bottom of the icon.', 'addons-for-divi'),
 				'type'            => 'range',
 				'default'         => '5px',
 				'option_category' => 'basic_option',
@@ -444,17 +448,17 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 			// image.
 			'image_placement'        => array(
-				'label'       => esc_html__( 'Image Placement', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define reviewer image placement.', 'addons-for-divi' ),
+				'label'       => esc_html__('Image Placement', 'addons-for-divi'),
+				'description' => esc_html__('Define reviewer image placement.', 'addons-for-divi'),
 				'type'        => 'select',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'image',
 				'default'     => 'left_top',
 				'options'     => array(
-					'left_top'     => esc_html__( 'Left Top', 'addons-for-divi' ),
-					'left_bottom'  => esc_html__( 'Left Bottom', 'addons-for-divi' ),
-					'right_top'    => esc_html__( 'Right Top', 'addons-for-divi' ),
-					'right_bottom' => esc_html__( 'Right Bottom', 'addons-for-divi' ),
+					'left_top'     => esc_html__('Left Top', 'addons-for-divi'),
+					'left_bottom'  => esc_html__('Left Bottom', 'addons-for-divi'),
+					'right_top'    => esc_html__('Right Top', 'addons-for-divi'),
+					'right_bottom' => esc_html__('Right Bottom', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'img_position' => 'absolute',
@@ -462,16 +466,16 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'img_is_center_x'        => array(
-				'label'           => esc_html__( 'Use Horizontal Position Center', 'addons-for-divi' ),
-				'description'     => esc_html__( 'If enabled reviewer image will be placed horizontally center.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use Horizontal Position Center', 'addons-for-divi'),
+				'description'     => esc_html__('If enabled reviewer image will be placed horizontally center.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
 				'toggle_slug'     => 'image',
 				'tab_slug'        => 'advanced',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'show_if'         => array(
 					'img_position' => 'absolute',
@@ -479,8 +483,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'img_offset_x'           => array(
-				'label'          => esc_html__( 'Image Offset X', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define horizontal offset value.', 'addons-for-divi' ),
+				'label'          => esc_html__('Image Offset X', 'addons-for-divi'),
+				'description'    => esc_html__('Define horizontal offset value.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '50%',
 				'range_settings' => array(
@@ -497,16 +501,16 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'img_is_center_y'        => array(
-				'label'           => esc_html__( 'Use Vertical Position Center', 'addons-for-divi' ),
-				'description'     => esc_html__( 'If enabled reviewer image will be placed vertically center.', 'addons-for-divi' ),
+				'label'           => esc_html__('Use Vertical Position Center', 'addons-for-divi'),
+				'description'     => esc_html__('If enabled reviewer image will be placed vertically center.', 'addons-for-divi'),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'default'         => 'off',
 				'toggle_slug'     => 'image',
 				'tab_slug'        => 'advanced',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'addons-for-divi' ),
-					'off' => esc_html__( 'No', 'addons-for-divi' ),
+					'on'  => esc_html__('Yes', 'addons-for-divi'),
+					'off' => esc_html__('No', 'addons-for-divi'),
 				),
 				'show_if'         => array(
 					'img_position' => 'absolute',
@@ -514,8 +518,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'img_offset_y'           => array(
-				'label'          => esc_html__( 'Image Offset Y', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define vertical offset value.', 'addons-for-divi' ),
+				'label'          => esc_html__('Image Offset Y', 'addons-for-divi'),
+				'description'    => esc_html__('Define vertical offset value.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '0px',
 				'range_settings' => array(
@@ -533,16 +537,16 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_placement_alt'    => array(
-				'label'       => esc_html__( 'Image Placement', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define reviewer image placement.', 'addons-for-divi' ),
+				'label'       => esc_html__('Image Placement', 'addons-for-divi'),
+				'description' => esc_html__('Define reviewer image placement.', 'addons-for-divi'),
 				'type'        => 'select',
 				'toggle_slug' => 'image',
 				'tab_slug'    => 'advanced',
 				'default'     => 'top',
 				'options'     => array(
-					'top'   => esc_html__( 'Top', 'addons-for-divi' ),
-					'left'  => esc_html__( 'Left', 'addons-for-divi' ),
-					'right' => esc_html__( 'Right', 'addons-for-divi' ),
+					'top'   => esc_html__('Top', 'addons-for-divi'),
+					'left'  => esc_html__('Left', 'addons-for-divi'),
+					'right' => esc_html__('Right', 'addons-for-divi'),
 				),
 				'show_if'     => array(
 					'img_position' => 'relative',
@@ -550,8 +554,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_spacing'          => array(
-				'label'          => esc_html__( 'Image Spacing Left/Right', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define custom spacing for the image left/right.', 'addons-for-divi' ),
+				'label'          => esc_html__('Image Spacing Left/Right', 'addons-for-divi'),
+				'description'    => esc_html__('Define custom spacing for the image left/right.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '15px',
 				'default_unit'   => 'px',
@@ -564,13 +568,13 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'show_if'        => array(
 					'img_position'        => 'relative',
-					'image_placement_alt' => array( 'left', 'right' ),
+					'image_placement_alt' => array('left', 'right'),
 				),
 			),
 
 			'image_width'            => array(
-				'label'          => esc_html__( 'Image Width', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define static width for the image.', 'addons-for-divi' ),
+				'label'          => esc_html__('Image Width', 'addons-for-divi'),
+				'description'    => esc_html__('Define static width for the image.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'range_settings' => array(
@@ -584,8 +588,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_height'           => array(
-				'label'          => esc_html__( 'Image Height', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define static height for the image.', 'addons-for-divi' ),
+				'label'          => esc_html__('Image Height', 'addons-for-divi'),
+				'description'    => esc_html__('Define static height for the image.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'range_settings' => array(
@@ -599,8 +603,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_spacing_top'      => array(
-				'label'          => esc_html__( 'Image Spacing Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the image.', 'addons-for-divi' ),
+				'label'          => esc_html__('Image Spacing Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the image.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '10px',
 				'default_unit'   => 'px',
@@ -618,8 +622,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'image_spacing_bottom'   => array(
-				'label'          => esc_html__( 'Image Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the image.', 'addons-for-divi' ),
+				'label'          => esc_html__('Image Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the bottom of the image.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '10px',
 				'default_unit'   => 'px',
@@ -638,8 +642,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 			// rating.
 			'ratings_spacing_top'    => array(
-				'label'          => esc_html__( 'Rating Spacing Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the rating.', 'addons-for-divi' ),
+				'label'          => esc_html__('Rating Spacing Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the rating.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '0px',
 				'range_settings' => array(
@@ -655,8 +659,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'ratings_spacing_bottom' => array(
-				'label'          => esc_html__( 'Rating Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the rating.', 'addons-for-divi' ),
+				'label'          => esc_html__('Rating Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the bottom of the rating.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '0px',
 				'range_settings' => array(
@@ -672,8 +676,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'stars_size'             => array(
-				'label'          => esc_html__( 'Stars Size', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Control the size of the stars by increasing or decreasing the range.', 'addons-for-divi' ),
+				'label'          => esc_html__('Stars Size', 'addons-for-divi'),
+				'description'    => esc_html__('Control the size of the stars by increasing or decreasing the range.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '20px',
 				'range_settings' => array(
@@ -689,8 +693,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'stars_color'            => array(
-				'label'       => esc_html__( 'Stars Color', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can define a custom color for stars.', 'addons-for-divi' ),
+				'label'       => esc_html__('Stars Color', 'addons-for-divi'),
+				'description' => esc_html__('Here you can define a custom color for stars.', 'addons-for-divi'),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'rating',
@@ -701,8 +705,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'stars_spacing_between'  => array(
-				'label'          => __( 'Stars Spacing Between', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define the spacing between stars.', 'addons-for-divi' ),
+				'label'          => __('Stars Spacing Between', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define the spacing between stars.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '5px',
 				'range_settings' => array(
@@ -719,8 +723,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 			// texts.
 			'name_bottom_spacing'    => array(
-				'label'           => esc_html__( 'Name Spacing Bottom', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the reviewer name.', 'addons-for-divi' ),
+				'label'           => esc_html__('Name Spacing Bottom', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define a custom spacing at the bottom of the reviewer name.', 'addons-for-divi'),
 				'type'            => 'range',
 				'default'         => '5px',
 				'option_category' => 'basic_option',
@@ -735,8 +739,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'title_bottom_spacing'   => array(
-				'label'           => esc_html__( 'Title Spacing Bottom', 'addons-for-divi' ),
-				'description'     => esc_html__( 'Here you can define a custom spacing at the bottom of the reviewer title.', 'addons-for-divi' ),
+				'label'           => esc_html__('Title Spacing Bottom', 'addons-for-divi'),
+				'description'     => esc_html__('Here you can define a custom spacing at the bottom of the reviewer title.', 'addons-for-divi'),
 				'type'            => 'range',
 				'default'         => '5px',
 				'option_category' => 'basic_option',
@@ -752,8 +756,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 			// Review.
 			'review_top_spacing'     => array(
-				'label'          => esc_html__( 'Review Spacing Top', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the top of the review.', 'addons-for-divi' ),
+				'label'          => esc_html__('Review Spacing Top', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the top of the review.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default_unit'   => 'px',
 				'range_settings' => array(
@@ -766,8 +770,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'review_bottom_spacing'  => array(
-				'label'          => esc_html__( 'Review Spacing Bottom', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Here you can define a custom spacing at the bottom of the review.', 'addons-for-divi' ),
+				'label'          => esc_html__('Review Spacing Bottom', 'addons-for-divi'),
+				'description'    => esc_html__('Here you can define a custom spacing at the bottom of the review.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '20px',
 				'default_unit'   => 'px',
@@ -782,8 +786,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 			// Bubble.
 			'bubble_padding'         => array(
-				'label'       => esc_html__( 'Bubble Padding', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define custom padding for the bubble area.', 'addons-for-divi' ),
+				'label'       => esc_html__('Bubble Padding', 'addons-for-divi'),
+				'description' => esc_html__('Define custom padding for the bubble area.', 'addons-for-divi'),
 				'type'        => 'custom_padding',
 				'toggle_slug' => 'bubble',
 				'tab_slug'    => 'advanced',
@@ -794,8 +798,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'bubble_radius'          => array(
-				'label'       => esc_html__( 'Bubble Border Radius', 'addons-for-divi' ),
-				'description' => esc_html__( 'Here you can control the corner radius of this bubble area. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'addons-for-divi' ),
+				'label'       => esc_html__('Bubble Border Radius', 'addons-for-divi'),
+				'description' => esc_html__('Here you can control the corner radius of this bubble area. Enable the link icon to control all four corners at once, or disable to define custom values for each.', 'addons-for-divi'),
 				'type'        => 'border-radius',
 				'toggle_slug' => 'bubble',
 				'tab_slug'    => 'advanced',
@@ -806,8 +810,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'arrow_color'            => array(
-				'label'       => esc_html__( 'Arrow Color', 'addons-for-divi' ),
-				'description' => esc_html__( 'Define custom color for the bubble arrow.', 'addons-for-divi' ),
+				'label'       => esc_html__('Arrow Color', 'addons-for-divi'),
+				'description' => esc_html__('Define custom color for the bubble arrow.', 'addons-for-divi'),
 				'type'        => 'color-alpha',
 				'tab_slug'    => 'advanced',
 				'toggle_slug' => 'bubble',
@@ -818,13 +822,13 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'arrow_placement'        => array(
-				'label'            => esc_html__( 'Arrow Placement', 'addons-for-divi' ),
-				'description'      => esc_html__( 'Place the bubble arrow at the left, right or center.', 'addons-for-divi' ),
+				'label'            => esc_html__('Arrow Placement', 'addons-for-divi'),
+				'description'      => esc_html__('Place the bubble arrow at the left, right or center.', 'addons-for-divi'),
 				'type'             => 'select',
 				'options'          => array(
-					'left'   => esc_html__( 'Left', 'addons-for-divi' ),
-					'right'  => esc_html__( 'Right', 'addons-for-divi' ),
-					'center' => esc_html__( 'Center', 'addons-for-divi' ),
+					'left'   => esc_html__('Left', 'addons-for-divi'),
+					'right'  => esc_html__('Right', 'addons-for-divi'),
+					'center' => esc_html__('Center', 'addons-for-divi'),
 				),
 				'default_on_front' => 'center',
 				'tab_slug'         => 'advanced',
@@ -835,8 +839,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			),
 
 			'arrow_position_x'       => array(
-				'label'          => esc_html__( 'Arrow Custom Position', 'addons-for-divi' ),
-				'description'    => esc_html__( 'Define arrow offset left/right value.', 'addons-for-divi' ),
+				'label'          => esc_html__('Arrow Custom Position', 'addons-for-divi'),
+				'description'    => esc_html__('Define arrow offset left/right value.', 'addons-for-divi'),
 				'type'           => 'range',
 				'default'        => '15px',
 				'default_unit'   => 'px',
@@ -849,7 +853,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				'tab_slug'       => 'advanced',
 				'show_if'        => array(
 					'review_design'   => 'bubble',
-					'arrow_placement' => array( 'left', 'right' ),
+					'arrow_placement' => array('left', 'right'),
 				),
 			),
 
@@ -863,34 +867,34 @@ class DTQ_Testimonial extends BA_Builder_Module {
 
 		$abs_quote = $this->get_absolute_element_options(
 			'icon',
-			esc_html__( 'Icon', 'addons-for-divi' ),
+			esc_html__('Icon', 'addons-for-divi'),
 			'quote_icon',
 			$defaults,
-			array( 'icon_placement' => 'absolute' )
+			array('icon_placement' => 'absolute')
 		);
 
 		$quote_icon_bg = $this->custom_background_fields(
 			'icon',
-			esc_html__( 'Icon', 'addons-for-divi' ),
+			esc_html__('Icon', 'addons-for-divi'),
 			'advanced',
 			'quote_icon',
-			array( 'color', 'gradient', 'hover' ),
-			array( 'use_custom_icon' => 'off' ),
+			array('color', 'gradient', 'hover'),
+			array('use_custom_icon' => 'off'),
 			''
 		);
 
 		$bubble_bg = $this->custom_background_fields(
 			'bubble',
-			esc_html__( 'Bubble', 'addons-for-divi' ),
+			esc_html__('Bubble', 'addons-for-divi'),
 			'advanced',
 			'bubble',
-			array( 'color', 'gradient', 'hover' ),
-			array( 'review_design' => 'bubble' ),
+			array('color', 'gradient', 'hover'),
+			array('review_design' => 'bubble'),
 			'#efefef'
 		);
 
 		// Default values.
-		if ( dt_if_not_migrated() ) {
+		if (dt_if_not_migrated()) {
 			$fields['hide_quote']['default']         = 'off';
 			$fields['use_rating']['default']         = 'off';
 			$fields['reviewer_position']['default']  = 'bottom';
@@ -904,10 +908,11 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$fields['ratings_position']['default']   = 'bottom';
 		}
 
-		return array_merge( $primary_fields, $bubble_bg, $abs_quote, $fields, $quote_icon_bg );
+		return array_merge($primary_fields, $bubble_bg, $abs_quote, $fields, $quote_icon_bg);
 	}
 
-	public function get_advanced_fields_config() {
+	public function get_advanced_fields_config()
+	{
 
 		$advanced_fields                = array();
 		$advanced_fields['text']        = false;
@@ -916,7 +921,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$advanced_fields['fonts']       = false;
 
 		$advanced_fields['box_shadow']['item'] = array(
-			'label'       => esc_html__( 'Item Box Shadow', 'addons-for-divi' ),
+			'label'       => esc_html__('Item Box Shadow', 'addons-for-divi'),
 			'toggle_slug' => 'common',
 			'css'         => array(
 				'main'      => '%%order_class%% .dtq-testimonial-inner',
@@ -925,7 +930,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['image'] = array(
-			'label_prefix' => esc_html__( 'Image', 'addons-for-divi' ),
+			'label_prefix' => esc_html__('Image', 'addons-for-divi'),
 			'toggle_slug'  => 'image',
 			'css'          => array(
 				'main'      => array(
@@ -945,7 +950,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['icon'] = array(
-			'label_prefix' => esc_html__( 'Icon', 'addons-for-divi' ),
+			'label_prefix' => esc_html__('Icon', 'addons-for-divi'),
 			'toggle_slug'  => 'quote_icon',
 			'css'          => array(
 				'main'      => array(
@@ -965,7 +970,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['borders']['item'] = array(
-			'label_prefix' => esc_html__( 'Item', 'addons-for-divi' ),
+			'label_prefix' => esc_html__('Item', 'addons-for-divi'),
 			'toggle_slug'  => 'common',
 			'css'          => array(
 				'main'      => array(
@@ -999,7 +1004,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['name'] = array(
-			'label'           => esc_html__( 'Name', 'addons-for-divi' ),
+			'label'           => esc_html__('Name', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dtq-testimonial-reviewer-text h3, .et-db #et-boc %%order_class%% .dtq-testimonial-reviewer-text h3',
 				'important' => 'all',
@@ -1020,7 +1025,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['title'] = array(
-			'label'           => esc_html__( 'Title', 'addons-for-divi' ),
+			'label'           => esc_html__('Title', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dtq-testimonial-title',
 				'important' => 'all',
@@ -1041,7 +1046,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		);
 
 		$advanced_fields['fonts']['review'] = array(
-			'label'           => esc_html__( 'Review', 'addons-for-divi' ),
+			'label'           => esc_html__('Review', 'addons-for-divi'),
 			'css'             => array(
 				'main'      => '%%order_class%% .dtq-testimonial-review',
 				'important' => 'all',
@@ -1064,18 +1069,19 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		return $advanced_fields;
 	}
 
-	public function render_rating( $pos ) {
+	public function render_rating($pos)
+	{
 
 		$html             = '';
 		$ratings_position = $this->props['ratings_position'];
 		$use_rating       = $this->props['use_rating'];
 		$rating           = $this->props['rating'];
 
-		for ( $i = 0; $i < intval( $rating ); $i++ ) {
+		for ($i = 0; $i < intval($rating); $i++) {
 			$html = $html . '<span>★</span>';
 		}
 
-		if ( $use_rating === 'on' && $ratings_position === $pos ) {
+		if ($use_rating === 'on' && $ratings_position === $pos) {
 			return sprintf(
 				'<div class="dtq-testimonial-rating">
                     %1$s
@@ -1083,10 +1089,10 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				$html
 			);
 		}
-
 	}
 
-	public function render_quote_icon( $class, $placement ) {
+	public function render_quote_icon($class, $placement)
+	{
 
 		$icons = array(
 			'1' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.591 24.006"><g><path d="M232.2,72.969l-1.078,4.955c-7.76-.356-13.138-3.584-13.138-13.078V53.918h13.553V67.653H226.4C226.406,70.7,228.317,72.491,232.2,72.969Z" transform="translate(-198.609 -53.918)"/><path d="M14.216,72.969l-1.078,4.955C5.378,77.569,0,74.341,0,64.846V53.918H13.556V67.654H8.42C8.42,70.7,10.331,72.491,14.216,72.969Z" transform="translate(0 -53.918)"/></g> </svg>',
@@ -1106,11 +1112,11 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$use_custom_icon = $this->props['use_custom_icon'];
 		$icon            = '';
 
-		if ( 'off' === $use_custom_icon ) {
-			$icon = $icons[ $selected_icon ];
+		if ('off' === $use_custom_icon) {
+			$icon = $icons[$selected_icon];
 		}
 
-		if ( $hide_quote === 'off' && $icon_placement === $placement ) {
+		if ($hide_quote === 'off' && $icon_placement === $placement) {
 			return sprintf(
 				'<div class="dtq-testimonial-icon %1$s">
                 	<span>%2$s</span>
@@ -1119,29 +1125,29 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				$icon
 			);
 		}
-
 	}
 
-	public function render_review() {
+	public function render_review()
+	{
 
 		$testimonial      = $this->props['testimonial'];
-		$testimonial_html = sprintf( '<p>%1$s</p>', $testimonial );
+		$testimonial_html = sprintf('<p>%1$s</p>', $testimonial);
 
 		return sprintf(
 			'<div class="dtq-testimonial-review">%2$s %1$s</div>',
-			! empty( $testimonial ) ? $testimonial_html : '',
-			$this->render_quote_icon( 'dtq-icon-default', '_default' )
+			!empty($testimonial) ? $testimonial_html : '',
+			$this->render_quote_icon('dtq-icon-default', '_default')
 		);
-
 	}
 
-	public function _render_image( $pos ) {
+	public function _render_image($pos)
+	{
 		$image        = $this->props['image'];
 		$img_position = $this->props['img_position'];
 		$image_alt    = $this->props['image_alt'];
 
-		if ( ! empty( $image ) ) {
-			if ( in_array( $img_position, $pos ) ) {
+		if (!empty($image)) {
+			if (in_array($img_position, $pos)) {
 				return sprintf(
 					'
                         <figure class="dtq-testimonial-img">
@@ -1154,7 +1160,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		}
 	}
 
-	public function render_reviewer( $pos ) {
+	public function render_reviewer($pos)
+	{
 
 		$reviewer_position = $this->props['reviewer_position'];
 		$name              = $this->props['name'];
@@ -1165,23 +1172,23 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$name_html         = '';
 		$title_html        = '';
 
-		if ( ! empty( $name ) ) {
-			if ( ! empty( $website_url ) ) {
-				$name_html = sprintf( '<a href="%2$s" target="%3$s"><h3>%1$s</h3></a>', $name, $website_url, $link_target );
+		if (!empty($name)) {
+			if (!empty($website_url)) {
+				$name_html = sprintf('<a href="%2$s" target="%3$s"><h3>%1$s</h3></a>', $name, $website_url, $link_target);
 			} else {
-				$name_html = sprintf( '<h3>%1$s</h3>', $name );
+				$name_html = sprintf('<h3>%1$s</h3>', $name);
 			}
 		}
 
-		if ( ! empty( $title ) ) {
-			if ( ! empty( $company_url ) ) {
-				$title_html = sprintf( '<a class="dtq-testimonial-title" href="%2$s" target="%3$s"><p>%1$s</p></a>', $title, $company_url, $link_target );
+		if (!empty($title)) {
+			if (!empty($company_url)) {
+				$title_html = sprintf('<a class="dtq-testimonial-title" href="%2$s" target="%3$s"><p>%1$s</p></a>', $title, $company_url, $link_target);
 			} else {
-				$title_html = sprintf( '<div class="dtq-testimonial-title">%1$s</div>', $title );
+				$title_html = sprintf('<div class="dtq-testimonial-title">%1$s</div>', $title);
 			}
 		}
 
-		if ( $reviewer_position === $pos ) {
+		if ($reviewer_position === $pos) {
 			return sprintf(
 				'<div class="dtq-testimonial-reviewer">
                     %1$s
@@ -1189,18 +1196,18 @@ class DTQ_Testimonial extends BA_Builder_Module {
                         %2$s %3$s %4$s
                     </div>
                 </div>',
-				$this->_render_image( array( 'relative' ) ),
+				$this->_render_image(array('relative')),
 				$name_html,
 				$title_html,
-				$this->render_rating( 'reviewer' )
+				$this->render_rating('reviewer')
 			);
 		}
-
 	}
 
-	public function render( $attrs, $content, $render_slug ) {
+	public function render($attrs, $content, $render_slug)
+	{
 
-		$this->render_css( $render_slug );
+		$this->render_css($render_slug);
 
 		$alignment    = $this->props['alignment'];
 		$img_position = $this->props['img_position'];
@@ -1219,21 +1226,22 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			</div>',
 			$alignment,
 			$img_position,
-			$this->render_quote_icon( 'dtq-icon-absolute', 'absolute' ),
-			$this->render_quote_icon( 'dtq-icon-bg', 'background' ),
-			$this->_render_image( array( 'absolute' ) ),
-			$this->render_reviewer( 'top' ),
-			$this->render_rating( '_default' ),
+			$this->render_quote_icon('dtq-icon-absolute', 'absolute'),
+			$this->render_quote_icon('dtq-icon-bg', 'background'),
+			$this->_render_image(array('absolute')),
+			$this->render_reviewer('top'),
+			$this->render_rating('_default'),
 			$this->render_review(),
-			$this->render_reviewer( 'bottom' ),
-			$this->render_rating( 'bottom' ),
-			$this->_render_image( array( 'top', 'left' ) ),
-			$this->_render_image( array( 'right' ) )
+			$this->render_reviewer('bottom'),
+			$this->render_rating('bottom'),
+			$this->_render_image(array('top', 'left')),
+			$this->_render_image(array('right'))
 		);
 	}
 
 
-	public function render_css( $render_slug ) {
+	public function render_css($render_slug)
+	{
 
 		$alignment              = $this->props['alignment'];
 		$image_spacing          = $this->props['image_spacing'];
@@ -1265,12 +1273,12 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$image_placement        = $this->props['image_placement'];
 		$img_is_center_y        = $this->props['img_is_center_y'];
 		$img_is_center_x        = $this->props['img_is_center_x'];
-		$image__placement       = explode( '_', $image_placement );
+		$image__placement       = explode('_', $image_placement);
 		$val_x                  = 0;
 		$val_y                  = 0;
 
 		// content.
-		if ( $img_position === 'left' || $img_position === 'right' ) {
+		if ($img_position === 'left' || $img_position === 'right') {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1285,10 +1293,9 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				array(
 					'primary' => 'padding',
 				),
-				array( 'default' => '30px|30px|30px|30px' ),
+				array('default' => '30px|30px|30px|30px'),
 				$render_slug
 			);
-
 		}
 
 		// Quote Icon.
@@ -1296,31 +1303,31 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-testimonial-inner .dtq-testimonial-icon',
-				'declaration' => sprintf( 'text-align: %1$s!important;', $icon_alignment ),
+				'declaration' => sprintf('text-align: %1$s!important;', $icon_alignment),
 			)
 		);
 
-		if ( 'right' === $icon_alignment ) {
+		if ('right' === $icon_alignment) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-testimonial-inner .dtq-testimonial-icon',
-					'declaration' => sprintf( 'justify-content: flex-end!important;' ),
+					'declaration' => sprintf('justify-content: flex-end!important;'),
 				)
 			);
-		} elseif ( 'center' === $icon_alignment ) {
+		} elseif ('center' === $icon_alignment) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-testimonial-inner .dtq-testimonial-icon',
-					'declaration' => sprintf( 'justify-content: center!important;' ),
+					'declaration' => sprintf('justify-content: center!important;'),
 				)
 			);
 		}
 
-		if ( 'off' === $use_custom_icon ) {
+		if ('off' === $use_custom_icon) {
 
-			$this->get_custom_bg_style( $render_slug, 'icon', '%%order_class%% .dtq-testimonial-icon span', '%%order_class%%:hover .dtq-testimonial-icon span' );
+			$this->get_custom_bg_style($render_slug, 'icon', '%%order_class%% .dtq-testimonial-icon span', '%%order_class%%:hover .dtq-testimonial-icon span');
 
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -1329,7 +1336,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 					'declaration' => sprintf(
 						'%1$s
                     	opacity: %2$s;',
-						$this->process_margin_padding( $icon_padding, 'padding', false ),
+						$this->process_margin_padding($icon_padding, 'padding', false),
 						$icon_opacity
 					),
 				)
@@ -1349,8 +1356,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$this->get_responsive_styles(
 				'icon_size',
 				'%%order_class%% .dtq-testimonial-icon svg',
-				array( 'primary' => 'width' ),
-				array( 'default' => '70px' ),
+				array('primary' => 'width'),
+				array('default' => '70px'),
 				$render_slug
 			);
 		} else {
@@ -1376,20 +1383,20 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$this->get_responsive_styles(
 				'icon_size',
 				'%%order_class%% .dtq-testimonial-icon span',
-				array( 'primary' => 'width' ),
-				array( 'default' => '70px' ),
+				array('primary' => 'width'),
+				array('default' => '70px'),
 				$render_slug
 			);
 			$this->get_responsive_styles(
 				'icon_size',
 				'%%order_class%% .dtq-testimonial-icon span',
-				array( 'primary' => 'height' ),
-				array( 'default' => '70px' ),
+				array('primary' => 'height'),
+				array('default' => '70px'),
 				$render_slug
 			);
 		}
 
-		if ( 'absolute' !== $icon_placement ) {
+		if ('absolute' !== $icon_placement) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1402,11 +1409,11 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				)
 			);
 		} else {
-			$this->get_absolute_element_styles( $render_slug, 'icon', '%%order_class%% .dtq-icon-absolute' );
+			$this->get_absolute_element_styles($render_slug, 'icon', '%%order_class%% .dtq-icon-absolute');
 		}
 
 		// Image.
-		if ( 'absolute' === $img_position ) {
+		if ('absolute' === $img_position) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1416,12 +1423,12 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			);
 
 			// image offset X.
-			if ( 'on' === $img_is_center_x ) {
+			if ('on' === $img_is_center_x) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-testimonial-img',
-						'declaration' => sprintf( '%1$s: 50%%;', $image__placement[0] ),
+						'declaration' => sprintf('%1$s: 50%%;', $image__placement[0]),
 					)
 				);
 			} else {
@@ -1429,18 +1436,18 @@ class DTQ_Testimonial extends BA_Builder_Module {
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-testimonial-img',
-						'declaration' => sprintf( '%1$s: %2$s;', $image__placement[0], $img_offset_x ),
+						'declaration' => sprintf('%1$s: %2$s;', $image__placement[0], $img_offset_x),
 					)
 				);
 			}
 
 			// image offset Y.
-			if ( 'on' === $img_is_center_y ) {
+			if ('on' === $img_is_center_y) {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-testimonial-img',
-						'declaration' => sprintf( '%1$s:50%%;', $image__placement[1] ),
+						'declaration' => sprintf('%1$s:50%%;', $image__placement[1]),
 					)
 				);
 			} else {
@@ -1448,37 +1455,37 @@ class DTQ_Testimonial extends BA_Builder_Module {
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-testimonial-img',
-						'declaration' => sprintf( '%1$s: %2$s;', $image__placement[1], $img_offset_y ),
+						'declaration' => sprintf('%1$s: %2$s;', $image__placement[1], $img_offset_y),
 					)
 				);
 			}
 
-			if ( 'right_top' === $image_placement ) {
-				if ( 'on' === $img_is_center_y ) {
+			if ('right_top' === $image_placement) {
+				if ('on' === $img_is_center_y) {
 					$val_y = '-50%';
 				}
-				if ( 'on' === $img_is_center_x ) {
+				if ('on' === $img_is_center_x) {
 					$val_x = '50%';
 				}
-			} elseif ( 'right_bottom' === $image_placement ) {
-				if ( $img_is_center_y === 'on' ) {
+			} elseif ('right_bottom' === $image_placement) {
+				if ($img_is_center_y === 'on') {
 					$val_y = '50%';
 				}
-				if ( $img_is_center_x === 'on' ) {
+				if ($img_is_center_x === 'on') {
 					$val_x = '50%';
 				}
-			} elseif ( $image_placement === 'left_bottom' ) {
-				if ( $img_is_center_y === 'on' ) {
+			} elseif ($image_placement === 'left_bottom') {
+				if ($img_is_center_y === 'on') {
 					$val_y = '50%';
 				}
-				if ( $img_is_center_x === 'on' ) {
+				if ($img_is_center_x === 'on') {
 					$val_x = '-50%';
 				}
-			} elseif ( $image_placement === 'left_top' ) {
-				if ( $img_is_center_y === 'on' ) {
+			} elseif ($image_placement === 'left_top') {
+				if ($img_is_center_y === 'on') {
 					$val_y = '-50%';
 				}
-				if ( $img_is_center_x === 'on' ) {
+				if ($img_is_center_x === 'on') {
 					$val_x = '-50%';
 				}
 			}
@@ -1493,8 +1500,8 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		}
 
 		// image placement left/right.
-		if ( $img_position === 'relative' ) {
-			if ( $image_placement_alt !== 'top' ) {
+		if ($img_position === 'relative') {
+			if ($image_placement_alt !== 'top') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1511,7 +1518,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				);
 			}
 
-			if ( $image_placement_alt === 'right' ) {
+			if ($image_placement_alt === 'right') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1575,38 +1582,38 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		);
 
 		// Image spacing.
-		if ( $img_position === 'relative' ) {
-			if ( $image_placement_alt === 'top' ) {
+		if ($img_position === 'relative') {
+			if ($image_placement_alt === 'top') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-testimonial-img',
-						'declaration' => sprintf( 'margin-bottom: %1$s; margin-top: %2$s;', $image_spacing_bottom, $image_spacing_top ),
+						'declaration' => sprintf('margin-bottom: %1$s; margin-top: %2$s;', $image_spacing_bottom, $image_spacing_top),
 					)
 				);
-			} elseif ( $image_placement_alt === 'left' ) {
+			} elseif ($image_placement_alt === 'left') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-testimonial-img',
-						'declaration' => sprintf( 'margin-right: %1$s;', $image_spacing ),
+						'declaration' => sprintf('margin-right: %1$s;', $image_spacing),
 					)
 				);
-			} elseif ( $image_placement_alt === 'right' ) {
+			} elseif ($image_placement_alt === 'right') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
 						'selector'    => '%%order_class%% .dtq-testimonial-img',
-						'declaration' => sprintf( 'margin-left: %1$s;', $image_spacing ),
+						'declaration' => sprintf('margin-left: %1$s;', $image_spacing),
 					)
 				);
 			}
-		} elseif ( $img_position === 'top' ) {
+		} elseif ($img_position === 'top') {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-testimonial-img',
-					'declaration' => sprintf( 'margin-bottom: %1$s; margin-top: %2$s;', $image_spacing_bottom, $image_spacing_top ),
+					'declaration' => sprintf('margin-bottom: %1$s; margin-top: %2$s;', $image_spacing_bottom, $image_spacing_top),
 				)
 			);
 		}
@@ -1616,7 +1623,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-testimonial-rating',
-				'declaration' => sprintf( 'padding-bottom: %1$s; padding-top: %2$s;', $ratings_spacing_bottom, $ratings_spacing_top ),
+				'declaration' => sprintf('padding-bottom: %1$s; padding-top: %2$s;', $ratings_spacing_bottom, $ratings_spacing_top),
 			)
 		);
 
@@ -1624,24 +1631,24 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-testimonial-rating span',
-				'declaration' => sprintf( 'color: %1$s; font-size: %2$s;', $stars_color, $stars_size ),
+				'declaration' => sprintf('color: %1$s; font-size: %2$s;', $stars_color, $stars_size),
 			)
 		);
 
-		if ( $alignment === 'center' ) {
+		if ($alignment === 'center') {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-testimonial-rating span',
-					'declaration' => sprintf( 'margin: 0 calc(%1$s / 2);', $stars_spacing_between ),
+					'declaration' => sprintf('margin: 0 calc(%1$s / 2);', $stars_spacing_between),
 				)
 			);
-		} elseif ( $alignment === 'right' ) {
+		} elseif ($alignment === 'right') {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-testimonial-rating span',
-					'declaration' => sprintf( 'margin-left: %1$s;', $stars_spacing_between ),
+					'declaration' => sprintf('margin-left: %1$s;', $stars_spacing_between),
 				)
 			);
 		} else {
@@ -1649,7 +1656,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .dtq-testimonial-rating span',
-					'declaration' => sprintf( 'margin-right: %1$s;', $stars_spacing_between ),
+					'declaration' => sprintf('margin-right: %1$s;', $stars_spacing_between),
 				)
 			);
 		}
@@ -1659,7 +1666,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-testimonial-reviewer-text h3',
-				'declaration' => sprintf( 'padding-bottom: %1$s;', $name_bottom_spacing ),
+				'declaration' => sprintf('padding-bottom: %1$s;', $name_bottom_spacing),
 			)
 		);
 
@@ -1667,7 +1674,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-testimonial-title',
-				'declaration' => sprintf( 'padding-bottom: %1$s;', $title_bottom_spacing ),
+				'declaration' => sprintf('padding-bottom: %1$s;', $title_bottom_spacing),
 			)
 		);
 
@@ -1675,7 +1682,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 			$render_slug,
 			array(
 				'selector'    => '%%order_class%% .dtq-testimonial-review',
-				'declaration' => sprintf( 'margin-bottom: %1$s; margin-top: %2$s;', $review_bottom_spacing, $review_top_spacing ),
+				'declaration' => sprintf('margin-bottom: %1$s; margin-top: %2$s;', $review_bottom_spacing, $review_top_spacing),
 			)
 		);
 
@@ -1686,10 +1693,10 @@ class DTQ_Testimonial extends BA_Builder_Module {
 		$arrow_placement   = $this->props['arrow_placement'];
 		$arrow_position_x  = $this->props['arrow_position_x'];
 		$reviewer_position = $this->props['reviewer_position'];
-		$bubble_radius     = explode( '|', $this->props['bubble_radius'] );
+		$bubble_radius     = explode('|', $this->props['bubble_radius']);
 
-		if ( $review_design === 'bubble' ) {
-			$this->get_custom_bg_style( $render_slug, 'bubble', '%%order_class%% .dtq-testimonial-review', '%%order_class%%:hover .dtq-testimonial-review' );
+		if ($review_design === 'bubble') {
+			$this->get_custom_bg_style($render_slug, 'bubble', '%%order_class%% .dtq-testimonial-review', '%%order_class%%:hover .dtq-testimonial-review');
 
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -1704,7 +1711,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 						$bubble_radius[2],
 						$bubble_radius[3],
 						$bubble_radius[4],
-						$this->process_margin_padding( $bubble_padding, 'padding', false )
+						$this->process_margin_padding($bubble_padding, 'padding', false)
 					),
 				)
 			);
@@ -1717,7 +1724,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				)
 			);
 
-			if ( $reviewer_position === 'bottom' ) {
+			if ($reviewer_position === 'bottom') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1731,7 +1738,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 						),
 					)
 				);
-			} elseif ( $reviewer_position === 'top' ) {
+			} elseif ($reviewer_position === 'top') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1747,7 +1754,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				);
 			}
 
-			if ( $arrow_placement === 'left' ) {
+			if ($arrow_placement === 'left') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1755,7 +1762,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 						'declaration' => 'left:' . $arrow_position_x . ';',
 					)
 				);
-			} elseif ( $arrow_placement === 'right' ) {
+			} elseif ($arrow_placement === 'right') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1763,7 +1770,7 @@ class DTQ_Testimonial extends BA_Builder_Module {
 						'declaration' => 'right:' . $arrow_position_x . ';',
 					)
 				);
-			} elseif ( $arrow_placement === 'center' ) {
+			} elseif ($arrow_placement === 'center') {
 				ET_Builder_Element::set_style(
 					$render_slug,
 					array(
@@ -1773,7 +1780,6 @@ class DTQ_Testimonial extends BA_Builder_Module {
 				);
 			}
 		}
-
 	}
 }
 

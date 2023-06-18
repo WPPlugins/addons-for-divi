@@ -9,6 +9,7 @@ import "./style.css";
 
 class DTQ_Business_Hour extends Component {
     static slug = "ba_business_hour";
+    static folder_name = 'dt_lite_modules';
 
     static css(props) {
         let additionalCss = [],
