@@ -6,7 +6,7 @@ Tags: divi, divi module, divi theme, divi builder, divi page builder, divi plugi
 Requires at least: 5.0
 Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 3.6.2
+Stable tag: 3.6.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -99,6 +99,8 @@ No, It won’t break your site or any page where you used our plugin. We put our
 4. Image Carousel
 
 == Changelog ==
+Version: 3.6.3
+- Fixed: Big close icon issue.
 
 Version: 3.6.2
 - Added: Single folder for all modules

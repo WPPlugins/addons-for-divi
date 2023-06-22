@@ -1,6 +1,7 @@
 <?php
 
-class DTQ_DiviExtension extends DiviExtension {
+class DTQ_DiviExtension extends DiviExtension
+{
 
 	/**
 	 * The gettext domain for the extension's translations.
@@ -35,11 +36,12 @@ class DTQ_DiviExtension extends DiviExtension {
 	 * @param string $name
 	 * @param array  $args
 	 */
-	public function __construct( $name = 'addons-for-divi', $args = array() ) {
-		$this->plugin_dir     = plugin_dir_path( __FILE__ );
-		$this->plugin_dir_url = plugin_dir_url( $this->plugin_dir );
+	public function __construct($name = 'addons-for-divi', $args = array())
+	{
+		$this->plugin_dir     = plugin_dir_path(__FILE__);
+		$this->plugin_dir_url = plugin_dir_url($this->plugin_dir);
 
-		parent::__construct( $name, $args );
+		parent::__construct($name, $args);
 	}
 }
 

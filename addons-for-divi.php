@@ -3,7 +3,7 @@
  * Plugin Name: Divi Torque Lite
  * Plugin URI:  https://divitorque.com
  * Description: Powerful divi modules to create powerful websites.
- * Version:     3.6.2
+ * Version:     3.6.3
  * Author:      WPPaw
  * Author URI:  https://wppaw.com
  * License: GPL3
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.2');
+define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.3');
 define('DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DIVI_TORQUE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit(DIVI_TORQUE_PLUGIN_URL . 'assets'));
@@ -40,7 +40,6 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
 
         public static function instance()
         {
-
             if (!isset(self::$instance) && !(self::$instance instanceof DIVI_TORQUE_PLUGIN)) {
                 self::$instance = new DIVI_TORQUE_PLUGIN();
                 self::$instance->init();
@@ -66,18 +65,17 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
 
             update_option('dt-version', DIVI_TORQUE_PLUGIN_VERSION);
 
-            $version = get_option('divitorque_version'); // old version
-            $version_pro = get_option('divitorque_pro_version'); // old pro version
+            $version = get_option('divitorque_version');
 
-            if (isset($version) && !isset($version_pro)) {
-                if (version_compare($version, '3.5.7', '<')) {
+            if ($version) {
+                if (version_compare($version, '3.5.7', '<=')) {
                     $deprecated = new DiviTorque_Deprecated();
                     $deprecated->run();
                 }
             }
         }
 
-        private function includes()
+        public function includes()
         {
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/functions.php';
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated.php';
@@ -91,7 +89,6 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/divi-extension.php';
         }
     }
-
 
 endif;
 

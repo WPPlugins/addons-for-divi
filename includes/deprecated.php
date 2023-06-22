@@ -1,5 +1,4 @@
 <?php
-
 class DiviTorque_Deprecated
 {
 
@@ -10,7 +9,7 @@ class DiviTorque_Deprecated
         $version = get_option('divitorque_version');
 
         if ($version && is_admin()) {
-            if (version_compare($version, '3.5.8', '<')) {
+            if (version_compare($version, '3.5.7', '<=')) {
                 new Deprecated_DiviTorque_Admin();
             }
         }
@@ -57,8 +56,4 @@ class DiviTorque_Deprecated
     }
 }
 
-$version_pro = get_option('divitorque_pro_version'); // old pro version
-
-if (empty($version_pro)) {
-    new DiviTorque_Deprecated();
-}
+new DiviTorque_Deprecated();
