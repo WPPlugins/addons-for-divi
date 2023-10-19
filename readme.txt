@@ -1,229 +1,130 @@
-=== Divi Torque Lite ===
-Contributors: divipeople, plugpressco, badhonrocks
-Tags: divi, divi 5, divi modules, divi builder, divi carousel
-Requires at least: 7.0
-Tested up to: 7.1
-Requires PHP: 7.4
-Stable tag: 4.17.1
+=== Torque Modules for Divi and Extra Theme ===
+
+Contributors: wppaw, badhonrocks
+Donate link: https://divitorque.com
+Tags: Divi, Divi module, Divi theme, Divi builder, Divi page builder, Divi plugin, Divi addons
+Requires at least: 5.0
+Tested up to: 6.2
+Requires PHP: 7.0
+Stable tag: 3.6.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-41 free Divi 5 modules and Divi extensions: image carousel, logo carousel, accordion, tabs, modal popup, video popup, FAQ, and more.
+The essential plugin to install after the Divi theme! It comes packed with over 20 stunning free modules, including an image carousel, hotspots, and flip box modules. 
 
 == Description ==
 
-Divi Torque Lite adds 41 free modules to the Divi Builder. Use them to build image carousels, logo carousels, accordions, tabs, popups, FAQ sections, team sections, and more. You do not need to write any code.
+<strong>TORQUE MODULES - BEST PLUGIN TO EXTEND THE DIVI BUILDER WITH 4+ POWERFUL EXTENSIONS, 20+ FREE CUSTOMIZABLE MODULE</strong>
 
-It is made for anyone who builds websites with Divi, from freelancers and agencies to site owners.
+★★★★★
 
-Every module is a native Divi 5 module. 26 of them also work in Divi 4, so you can use the plugin on both versions of Divi.
+Most helpful links
+<ul>
+ 	<li><a href="https://divitorque.com/" target="_blank" rel="">Divi Torque Plugin</a></li>
+ 	<li><a href="https://divitorque.com/changelog/" target="_blank" rel="">Divi Torque Changelog</a></li>
+ 	<li><a href="https://divitorque.com/docs/" target="_blank" rel="">Knowledge Base</a></li>
+</ul>
 
-**[View demos](https://divitorque.com/features/?utm_campaign=lite-readme&utm_source=wp.org&utm_medium=textlink-features) · [Documentation](https://divitorque.com/docs/?utm_campaign=lite-readme&utm_source=wp.org&utm_medium=textlink-docs) · [Divi Torque Pro](https://divitorque.com/pricing/?utm_campaign=lite-readme&utm_source=wp.org&utm_medium=textlink-pro)**
+Enhance your Divi page-building journey with over 40 innovative modules and extensions. Empower your page builder with our intuitive modules, simplifying and beautifying your upcoming WordPress page and post designs like never before.
 
-Before your next update, take a restore point with [Snapback](https://snapbackwp.com/?utm_source=addons-for-divi&utm_medium=readme&utm_campaign=bf26), a backup and recovery plugin from the same team.
+<a href="https://divitorque.com/modules?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink" target="_blank" rel="">Check the Demos</a>
 
-= Divi Modules for Divi 5 =
+<strong>INCLUDES 20+ FREE ESSENTIAL MODULES 🔥</strong>
 
-Each module does one job and keeps its settings focused. Modules use Divi's own design options for fonts, spacing, borders, and backgrounds, so they look and edit like built-in Divi modules.
+Elevate your Divi website with a selection of over 20 specialized, free modules:
 
-You can turn off any module you do not need in the Module Manager. After you activate the plugin, a short welcome tour shows you where everything is.
+- **Contact Form 7** - Seamlessly integrate your Contact Form 7 into your website's design.
+- **Video Popup Module** - Engage visitors with customizable video popups for YouTube and Vimeo.
+- **Testimonial Module** - Build trust by effortlessly showcasing customer testimonials.
+- **Interactive Image Carousel** - Highlight your images with a visually engaging carousel.
+- **Brand Logo Carousel** - Ideal for displaying sponsor logos or your professional partnerships.
+- **Logo Grid Gallery** - Organize brand logos in a visually appealing grid layout.
+- **Team Showcase** - Display your team's expertise with image, title, and social media link options.
+- **Alert Notifications** - Implement alert boxes for urgent messages or warnings.
+- **Before and After Image Comparison** - Showcase your service's impact with before-and-after images.
+- **Business Hours** - Keep your clients updated with adjustable business hours.
+- **Info Cards** - Ideal for presenting products or services with image, text, and CTA button options.
+- **Gradient Heading** - Add colorful flair with gradient heading options.
+- **Icon Box** - Summarize your services with adjustable icons and text.
+- **Blurb Plus** - An advanced blurb module with extra features for text and icon customization.
+- **Scrollable Image Gallery** - Show off your images in a scrollable layout, either horizontally or vertically.
+- **Progress Bars** - Graphically display skills or milestones.
+- **Custom Dividers** - Separate your content with stylish dividers, fully customizable.
 
-= Carousels and Sliders =
+<strong>SUPPORT THAT CARES! ⛑️</strong>
 
-* **Image Carousel**: A Divi image carousel with arrows, dots, and autoplay, or a strip that scrolls continuously like a film. Add thumbnails, pinch to zoom, rows, and Fade, Coverflow, Cards, Flip or Cube effects, with a separate slide count for desktop, tablet, and phone.
-* **Logo Carousel**: Show client or partner logos in a sliding strip.
-* **Post Carousel**: Slide through your blog posts with six ready-made card designs.
-* **X (Twitter) Carousel**: Show your latest X posts in a carousel.
-* **Before & After Slider**: Compare two images by dragging a handle across them.
+We know you want a good product with strong support. We're here to answer your questions and help you use our plugin effectively.
 
-The slider scripts load only on pages that use a carousel.
+<a href="https://divitorque.com/support/" target="_blank" rel="">Need help? We are just a click away!</a>
 
-= Images and Media =
+<strong>CONNECT WITH OUR TEAM AND COMMUNITY 🌐</strong>
 
-* **Image Accordion**: Image panels that expand when a visitor hovers or clicks.
-* **Image Card**: An image card with an icon, text, and a badge.
-* **Flip Card**: A card that flips over to show more content on the back.
-* **Scroll Image**: A tall image that scrolls inside its frame on hover. Good for showing full page designs.
-* **Logo Grid**: Client and sponsor logos laid out in a grid.
-* **Video Modal**: A Divi video popup for YouTube and Vimeo videos.
-* **Sticky Video**: A video that moves to a corner of the screen when you scroll past it.
-* **SVG Draw**: Draws an SVG line by line as it scrolls into view.
-
-= Content Modules =
-
-* **Icon Box**: An icon with a title and text. In Divi 5 you can place the icon above the text, or to its left or right.
-* **Feature Box**: Highlight key information in a box with an icon and text.
-* **Gradient Heading**: A Divi heading with gradient colored text, no CSS needed.
-* **Animated Text**: Text that animates when the page loads.
-* **Fancy Text**: Rotating, typed, or gradient text effects.
-* **Dual Buttons**: Two buttons side by side, for two calls to action.
-* **Creative Button**: A Divi button with ten hover effects.
-* **Call To Action**: A headline paired with one or two buttons.
-* **Alert Box**: A styled box for notes, tips, and warnings.
-* **Separator**: A divider between sections, in several shapes.
-* **News Ticker**: A line of scrolling news or announcements.
-* **Table of Contents**: Builds a list of links from the headings on your page.
-* **Code Snippet**: Code blocks with syntax highlighting, line numbers, and a copy button.
-
-= Interactive Modules =
-
-* **Accordion Pro**: A Divi accordion. Panels open on click, on hover, or on their own with autoplay.
-* **Tabs Pro**: Divi tabs that split related content into panels.
-* **FAQ**: Questions and answers with FAQ schema markup for search engines.
-* **Modal Popup**: A Divi modal that opens any content when a visitor clicks.
-* **Tooltip**: A small tip on text, an icon, or an image.
-
-= People, Reviews, and Numbers =
-
-* **Team Member**: Divi team member cards with a photo, bio, and social links.
-* **Testimonial Card**: A customer quote with a name, photo, and star rating.
-* **Review Box**: A customer rating with written feedback.
-* **X (Twitter) Feed**: Your latest X posts in a list.
-* **Animated Counter**: Numbers that count up when they come into view.
-* **Skill Bar**: Progress bars that fill as they scroll into view.
-* **Business Hours**: Your opening hours in an easy to read list.
-
-= Blog, Navigation, and Forms =
-
-* **Post List**: A Divi blog module that lists your posts.
-* **Breadcrumb Trail**: Breadcrumb links with schema markup.
-* **Contact Form 7 Styler**: Style Contact Form 7 forms to match your design.
-
-= Divi Extensions =
-
-* **Sharing Buttons**: Add inline or floating social share buttons to your posts and pages.
-* **Divi Library Shortcode**: Every saved Divi Library layout gets its own shortcode, such as `[divi_library_shortcode id="123"]`. Use it in widgets, other plugins, or anywhere shortcodes work.
-
-= Divi 5 Support =
-
-Divi Torque Lite is a native Divi 5 plugin. All 41 modules are built on the Divi 5 module system. They do not run through Divi's backward compatibility mode.
-
-* 26 modules work in both Divi 4 and Divi 5.
-* 15 modules need Divi 5: Accordion Pro, Tabs Pro, Table of Contents, Fancy Text, FAQ, Call To Action, Creative Button, Tooltip, Image Accordion, SVG Draw, Sticky Video, Post Carousel, Modal Popup, Code Snippet, and Breadcrumb Trail.
-* Some newer options are also Divi 5 only, such as left and right icon placement in Icon Box.
-
-When you move a site from Divi 4 to Divi 5, Divi converts your saved layouts. We map each module's settings so they carry across, and most settings do.
-
-= Divi Torque Pro =
-
-Divi Torque Pro adds 62 more modules, for 103 in total. It includes a Divi filterable gallery, a masonry gallery, a timeline, pricing tables, a testimonial slider, a post grid, Ajax search, and Lottie animations.
-
-[See what Pro includes](https://divitorque.com/pricing/?utm_campaign=lite-readme&utm_source=wp.org&utm_medium=textlink-pro)
-
-= Divi Torque + AI =
-
-Want to manage your WordPress site with AI? Saddle is a free plugin from PlugPress, the team behind Divi Torque. It connects AI apps like Claude and ChatGPT to your site through MCP. It runs on your own site, and it asks before it deletes anything.
-
-With Saddle Pro, your AI can also build and edit Divi 5 pages with real Divi modules. The Divi Torque + AI plan includes both Divi Torque Pro and Saddle Pro.
-
-Learn more at [saddle.to](https://saddle.to/).
-
-= Requirements =
-
-* WordPress 7.0 or newer
-* PHP 7.4 or newer
-* The [Divi Theme or the Divi Builder plugin](https://www.elegantthemes.com/gallery/divi/)
-
-= Support =
-
-Need help? [Contact our support team](https://divitorque.com/contact/?utm_campaign=lite-readme&utm_source=wp.org&utm_medium=textlink-contact) or [follow @PlugPressHQ on X](https://x.com/PlugPressHQ) for updates.
+<ul>
+	<li><a href="https://www.facebook.com/groups/divitorque" target="_blank" rel="">https://www.facebook.com/groups/divitorque</a></li>
+	<li><a href="https://www.facebook.com/divitorque" target="_blank" rel="">https://www.facebook.com/divitorque</a></li>
+	<li><a href="https://twitter.com/divitorque" target="_blank" rel="">https://twitter.com/divitorque</a></li>
+</ul>
 
 == Installation ==
 
-1. In your WordPress dashboard, go to **Plugins > Add New** and search for "Divi Torque Lite". You can also upload the plugin folder to `/wp-content/plugins/`.
-2. Activate the plugin on the **Plugins** screen.
-3. Make sure the Divi Theme or the Divi Builder plugin is active.
-4. Open a page in the Divi Builder, add a module, and search for it by name, such as Image Carousel.
+> Note: This plugin works with Divi. Make sure you have [Divi Theme](https://www.elegantthemes.com/) installed.
 
-A short welcome tour opens after activation. For setup guides, see the [documentation](https://divitorque.com/docs/?utm_campaign=lite-readme&utm_source=wp.org&utm_medium=textlink-docs).
+Install the Torque Modules either via the WordPress plugin directory or by uploading the files to your server at wp-content/plugins.
+
+For more information, please visit our <a href="https://divitorque.com/docs/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank" rel="">Knowledge Base.</a>
 
 == Frequently Asked Questions ==
 
-= Is Divi Torque Lite free? =
+= Is Divi Torque free? =
 
-Yes. All 41 modules and both extensions are free. Divi Torque Pro is optional and adds more modules.
+Yes! Divi Torque's core features are and always will be free.
 
-= Do I need Divi? =
+= Can I use Divi Torque without Divi Theme/Builder? =
 
-Yes. Divi Torque Lite adds modules to Divi, so you need the Divi Theme or the Divi Builder plugin.
+I’m afraid, you cannot use Divi Torque without Divi Theme/Builder.
 
-= Does it work with Divi 5? =
+= Will Divi Torque break my site after an update? =
 
-Yes. All 41 modules are native Divi 5 modules. 26 of them also work in Divi 4.
-
-= Does it include a Divi carousel? =
-
-Yes, four: Image Carousel, Logo Carousel, Post Carousel, and X (Twitter) Carousel. Each has autoplay, loop, arrows, dots, and a slide count for each screen size. The Image Carousel can also scroll continuously without stopping between slides: set its Autoplay Style to Continuous Scroll.
-
-= Does it include a filterable gallery? =
-
-Not in the free version. Divi Torque Pro includes a Filterable Gallery and a Masonry Gallery.
-
-= Does it have WooCommerce modules? =
-
-No. Divi Torque Lite does not include WooCommerce modules.
-
-= Will it slow down my site? =
-
-Slider and counter scripts load only on pages that use them. You can also turn off any module you do not use in the Module Manager.
-
-= Will updating break my existing pages? =
-
-Updates are made to keep existing pages working. We still recommend a backup before any update. If you need to, you can roll back to an earlier version from the Divi Torque dashboard.
-
-== External services ==
-
-Divi Torque Lite sends no usage data unless you choose to. It can send data to PlugPress Console (`console.plugpress.io`), run by PlugPress, which makes Divi Torque, only after you click:
-
-* **Allow** on the card on the Divi Torque Overview and the Plugins screen: the name and email of the account that clicked it (for support), your site address and title, WordPress and PHP versions, language, timezone, theme, your plugins with their versions, and a random id for your site. After that, once a week while sharing is on, and only when something changed. **No thanks** sends nothing. Turn it off with **Stop sharing site info** under Divi Torque Lite on the Plugins screen.
-* **Divi Torque news** ticked on that card, or **Subscribe** on the news card: the email address you typed, for Divi Torque news. You confirm it by email first. PlugPress Console passes it to the PlugPress newsletter and does not keep it.
-* **Send and deactivate** when you turn the plugin off: the reason you picked, what you typed, your email only if you tick **Email me back**, the plugin's version, your site's random id, and your WordPress and PHP versions and language. It never sends your site address. **Skip** sends nothing.
-
-Add `define( 'PLUGPRESS_INSIGHT', false );` to `wp-config.php` to remove the card and the form. See the [PlugPress Privacy Policy](https://plugpress.io/privacy/).
-
-The X (Twitter) Feed and X (Twitter) Carousel modules connect to the X API (`api.twitter.com`), run by X Corp., only on pages that use one of them with the API key and secret you entered in the module. Your site sends the key and secret to get an access token, then the X username you entered to load that account's posts. Posts are cached for an hour. See the [X Terms of Service](https://x.com/en/tos) and [X Privacy Policy](https://x.com/en/privacy).
+No, It won’t break your site or any page where you used our plugin. We put our best effort to make you happy. But we always recommend keeping a backup of your site before updating our plugin. In case anything happens you can revert and contact our support team immediately.
 
 == Screenshots ==
 
-1. Review Box module
-2. Testimonial Card module
-3. Image Carousel module
+1. Testimonial Module
+2. Review Card
+3. Pricing Menu
+4. Image Carousel
 
 == Changelog ==
 
-= Version 4.17.1 =
-* Updated Black Friday card on the overview, with the right dates and link.
+= 3.6.4 =
+* Fix: Modules php error
 
-= Version 4.17.0 =
-* New Divi 5 MCP page in the Divi Torque menu, and a cleaner overview.
+= 3.6.3 =
+* Fix: Big close icon issue.
 
-= Version 4.16.2 =
-* Fixes for switched-off modules in the Divi 5 builder, Accordion Pro and FAQ gaps, Table of Contents, the welcome tour and Feature Box borders.
+= 3.6.2 =
+* Added a single folder for all modules
+* Fix: Modules security issues with 6.2
+* Fix: Swap image issues
 
-= Version 4.16.0 =
-* Five-step welcome tour, optional usage sharing, Modal Popup trigger design, and many Divi 5 fixes.
+= 3.6.1 =
+* Security Update
 
-= Version 4.15.0 =
-* Optional Saddle and Saddle Analytics install on the overview, and Flip Card button fixes.
+= 3.6.0 =
+* Deprecated popup extension
+* Deprecated login designer extension
+* Deprecated the admin page
+* Clean codebase
+* Remove freemium
 
-= Version 4.14.3 =
-* Divi 5 fixes for Feature Box, Flip Card, Business Hours and carousel tablet and phone settings.
+= 3.5.0 =
+* Merge with WPPaw Team
 
-= Version 4.14.2 =
-* Button styles set in the Divi 5 builder now show, and carry over from Divi 4.
+= 3.0.0 =
+* Rebranding BrainAddons to Divi Torque
 
-= Version 4.14.1 =
-* Image Carousel images show on sites with a lazy-loading plugin.
+= 2.0.0 =
+* Codebase optimize 
 
-= Version 4.14.0 =
-* Image Carousel: continuous scroll, new transition effects, thumbnails and a pause button.
-
-= Version 4.13.0 =
-* Fixes a critical error on PHP 7.4 to 8.1; Image Carousel Image Height; Modal Popup opens from links.
-
-Older versions: [full changelog](https://divitorque.com/changelog/?product=lite-releases).
-
-== Upgrade Notice ==
-
-= 4.17.1 =
-Updates the Black Friday card on the overview.
+= 1.0.0 =
+* Public beta release

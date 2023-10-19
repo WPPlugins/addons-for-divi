@@ -70,8 +70,8 @@ class BrainAddons_Range extends WP_Customize_Control
 	public function enqueue()
 	{
 
-		$css_path    = DIVI_TORQUE_LITE_URL . '/includes/deprecated/customizer/controls/css/';
-		$js_path     = DIVI_TORQUE_LITE_URL . '/includes/deprecated/customizer/controls/js/';
+		$css_path    = DIVI_TORQUE_PLUGIN_URL . '/includes/deprecated/customizer/controls/css/';
+		$js_path     = DIVI_TORQUE_PLUGIN_URL . '/includes/deprecated/customizer/controls/js/';
 
 		$file_prefix = (defined('DTQ_DEBUG') && true === constant('DTQ_DEBUG')) ? '' : '.min';
 
@@ -79,7 +79,7 @@ class BrainAddons_Range extends WP_Customize_Control
 			'brainaddons-range-control',
 			$js_path . 'range-control' . $file_prefix . '.js',
 			array('customize-controls'),
-			DIVI_TORQUE_LITE_VERSION,
+			DIVI_TORQUE_PLUGIN_VERSION,
 			true
 		);
 
@@ -87,7 +87,7 @@ class BrainAddons_Range extends WP_Customize_Control
 			'brainaddons-range',
 			$css_path . 'range' . $file_prefix . '.css',
 			false,
-			DIVI_TORQUE_LITE_VERSION
+			DIVI_TORQUE_PLUGIN_VERSION
 		);
 	}
 

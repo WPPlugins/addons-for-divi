@@ -19,12 +19,12 @@ class Deprecated_DiviTorque_Admin
 	public static function add_menu()
 	{
 		add_menu_page(
-			__('DiviTorque', 'addons-for-divi'),
-			__('DiviTorque', 'addons-for-divi'),
+			__('Divi Torque', 'addons-for-divi'),
+			__('Divi Torque', 'addons-for-divi'),
 			'manage_options',
 			'addons-for-divi',
 			array(__CLASS__, 'render_main'),
-			// ba_get_b64_icon(),
+			ba_get_b64_icon(),
 			90
 		);
 	}
@@ -40,17 +40,17 @@ class Deprecated_DiviTorque_Admin
 
 		wp_enqueue_style(
 			'torque-admin',
-			DIVI_TORQUE_LITE_ASSETS . 'deprecated/admin/css/admin' . $prefix . '.css',
+			DIVI_TORQUE_PLUGIN_ASSETS . 'deprecated/admin/css/admin' . $prefix . '.css',
 			array(),
-			DIVI_TORQUE_LITE_VERSION,
+			DIVI_TORQUE_PLUGIN_VERSION,
 			'all'
 		);
 
 		wp_enqueue_script(
 			'torque-admin-js',
-			DIVI_TORQUE_LITE_ASSETS . 'deprecated/admin/js/admin' . $prefix . '.js',
+			DIVI_TORQUE_PLUGIN_ASSETS . 'deprecated/admin/js/admin' . $prefix . '.js',
 			array('jquery'),
-			DIVI_TORQUE_LITE_VERSION,
+			DIVI_TORQUE_PLUGIN_VERSION,
 			true
 		);
 
@@ -161,32 +161,32 @@ class Deprecated_DiviTorque_Admin
 				'is_free' => true,
 			),
 
-			// 'unfiltered-file-uploads' => array(
-			// 	'title'   => __('Unfiltered File Uploads', 'addons-for-divi'),
-			// 	'desc'    => __('Please note! Allowing uploads SVG & JSON files is a potential security risk. We recommend you only enable this feature if you understand the security risks involved.'),
-			// 	'demo'    => '',
-			// 	'icon'    => '',
-			// 	'is_pro'  => false,
-			// 	'is_free' => true,
-			// ),
+			'unfiltered-file-uploads' => array(
+				'title'   => __('Unfiltered File Uploads', 'addons-for-divi'),
+				'desc'    => __('Please note! Allowing uploads SVG & JSON files is a potential security risk. We recommend you only enable this feature if you understand the security risks involved.'),
+				'demo'    => '',
+				'icon'    => '',
+				'is_pro'  => false,
+				'is_free' => true,
+			),
 
-			// 'library-shortcodes'      => array(
-			// 	'title'   => __('Divi Library Shortcodes', 'addons-for-divi'),
-			// 	'desc'    => __('This extension allows you to display any Divi library template as a shortcode. Embed any Divi library template inside any divi module or inside a .php files by using a shortcode.'),
-			// 	'demo'    => '',
-			// 	'icon'    => '',
-			// 	'is_pro'  => false,
-			// 	'is_free' => true,
-			// ),
+			'library-shortcodes'      => array(
+				'title'   => __('Divi Library Shortcodes', 'addons-for-divi'),
+				'desc'    => __('This extension allows you to display any Divi library template as a shortcode. Embed any Divi library template inside any divi module or inside a .php files by using a shortcode.'),
+				'demo'    => '',
+				'icon'    => '',
+				'is_pro'  => false,
+				'is_free' => true,
+			),
 
-			// 'post-duplicator'         => array(
-			// 	'title'   => __('Post Duplicator', 'addons-for-divi'),
-			// 	'desc'    => __('Post Duplicator extension provides functionality to make a clone of page or post. Also supports copying the custom post type and Divi pages including all attributes.'),
-			// 	'demo'    => '',
-			// 	'icon'    => '',
-			// 	'is_pro'  => false,
-			// 	'is_free' => true,
-			// ),
+			'post-duplicator'         => array(
+				'title'   => __('Post Duplicator', 'addons-for-divi'),
+				'desc'    => __('Post Duplicator extension provides functionality to make a clone of page or post. Also supports copying the custom post type and Divi pages including all attributes.'),
+				'demo'    => '',
+				'icon'    => '',
+				'is_pro'  => false,
+				'is_free' => true,
+			),
 
 		);
 
@@ -580,7 +580,7 @@ class Deprecated_DiviTorque_Admin
 
 	private static function load_template($template)
 	{
-		$file = DIVI_TORQUE_LITE_DIR . 'includes/deprecated/admin/view/admin-' . $template . '.php';
+		$file = DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/admin/view/admin-' . $template . '.php';
 		if (is_readable($file)) {
 			include $file;
 		}

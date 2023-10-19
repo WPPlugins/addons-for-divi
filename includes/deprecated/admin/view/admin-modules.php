@@ -56,7 +56,7 @@ $total_modules_count = count($modules);
 										<a href="<?php //echo esc_url($demo_url); 
 													?>" target="_blank" rel="noopener" data-tooltip="<?php // echo esc_attr_e('Click and view demo', 'addons-for-divi'); 
 																										?>" class="dtq-admin-modules-item-preview">
-											<img class="dtq-img-fluid dtq-item-icon-size" src="<?php // echo DIVI_TORQUE_LITE_ASSETS . '/imgs/admin/desktop.svg'; 
+											<img class="dtq-img-fluid dtq-item-icon-size" src="<?php // echo DIVI_TORQUE_PLUGIN_ASSETS . '/imgs/admin/desktop.svg'; 
 																								?>" alt="demo-link">
 										</a>
 									<?php endif; ?> -->
