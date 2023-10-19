@@ -2,11 +2,11 @@
 
 Contributors: wppaw, badhonrocks
 Donate link: https://divitorque.com
-Tags: Divi, Divi module, Divi theme, Divi builder, Divi page builder, Divi plugin, Divi addons
+Tags: divi, divi builder, divi theme, divi module, divi popup, divi carousel
 Requires at least: 5.0
 Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 3.6.4
+Stable tag: 3.6.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,7 +14,7 @@ The essential plugin to install after the Divi theme! It comes packed with over 
 
 == Description ==
 
-<strong>TORQUE MODULES - BEST PLUGIN TO EXTEND THE DIVI BUILDER WITH 4+ POWERFUL EXTENSIONS, 20+ FREE CUSTOMIZABLE MODULE</strong>
+<strong>TORQUE MODULES - BEST PLUGIN TO EXTEND THE DIVI BUILDER WITH 20+ FREE CUSTOMIZABLE MODULES</strong>
 
 ★★★★★
 
@@ -95,6 +95,9 @@ No, It won’t break your site or any page where you used our plugin. We put our
 4. Image Carousel
 
 == Changelog ==
+
+= 3.6.5 =
+* Fix: Module deprecated warnings
 
 = 3.6.4 =
 * Fix: Modules php error
