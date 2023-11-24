@@ -1,12 +1,12 @@
-=== Torque Modules for Divi and Extra Theme ===
+=== Divi Torque Lite - Divi Theme and Extra Theme ===
 
-Contributors: wppaw, badhonrocks
+Contributors: divitorque, wppaw, badhonrocks
 Donate link: https://divitorque.com
-Tags: divi, divi builder, divi theme, divi module, divi popup, divi carousel
+Tags: divi, divi builder, Divi theme, divi module, divi popup, divi carousel
 Requires at least: 5.0
-Tested up to: 6.2
+Tested up to: 6.4
 Requires PHP: 7.0
-Stable tag: 3.6.5
+Stable tag: 3.6.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,15 +14,15 @@ The essential plugin to install after the Divi theme! It comes packed with over 
 
 == Description ==
 
-<strong>TORQUE MODULES - BEST PLUGIN TO EXTEND THE DIVI BUILDER WITH 20+ FREE CUSTOMIZABLE MODULES</strong>
+<strong>DIVI TORQUE LITE - BEST PLUGIN TO EXTEND THE DIVI BUILDER WITH 20+ FREE CUSTOMIZABLE MODULES</strong>
 
 ★★★★★
 
 Most helpful links
 <ul>
- 	<li><a href="https://divitorque.com/" target="_blank" rel="">Divi Torque Plugin</a></li>
- 	<li><a href="https://divitorque.com/changelog/" target="_blank" rel="">Divi Torque Changelog</a></li>
- 	<li><a href="https://divitorque.com/docs/" target="_blank" rel="">Knowledge Base</a></li>
+ 	<li><a href="https://divitorque.com/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink" target="_blank" rel="">Divi Torque Plugin</a></li>
+ 	<li><a href="https://divitorque.com/changelog/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink" target="_blank" rel="">Divi Torque Changelog</a></li>
+ 	<li><a href="https://divitorque.com/docs/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink" target="_blank" rel="">Knowledge Base</a></li>
 </ul>
 
 Enhance your Divi page-building journey with over 40 innovative modules and extensions. Empower your page builder with our intuitive modules, simplifying and beautifying your upcoming WordPress page and post designs like never before.
@@ -55,7 +55,7 @@ Elevate your Divi website with a selection of over 20 specialized, free modules:
 
 We know you want a good product with strong support. We're here to answer your questions and help you use our plugin effectively.
 
-<a href="https://divitorque.com/support/" target="_blank" rel="">Need help? We are just a click away!</a>
+<a href="https://divitorque.com/support/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink" target="_blank" rel="">Need help? We are just a click away!</a>
 
 <strong>CONNECT WITH OUR TEAM AND COMMUNITY 🌐</strong>
 
@@ -71,7 +71,7 @@ We know you want a good product with strong support. We're here to answer your q
 
 Install the Torque Modules either via the WordPress plugin directory or by uploading the files to your server at wp-content/plugins.
 
-For more information, please visit our <a href="https://divitorque.com/docs/?utm_source=wp-repo&utm_medium=link&utm_campaign=readme" target="_blank" rel="">Knowledge Base.</a>
+For more information, please visit our <a href="https://divitorque.com/docs/?utm_campaign=wporg&utm_source=divitorquelite&utm_medium=textlink" target="_blank" rel="">Knowledge Base.</a>
 
 == Frequently Asked Questions ==
 
@@ -95,6 +95,8 @@ No, It won’t break your site or any page where you used our plugin. We put our
 4. Image Carousel
 
 == Changelog ==
+= 3.6.6 =
+* Fix: Moduuels php error
 
 = 3.6.5 =
 * Fix: Module deprecated warnings

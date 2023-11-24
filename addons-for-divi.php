@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name: Torque Modules Lite
+ * Plugin Name: Divi Torque Lite
  * Plugin URI:  https://divitorque.com
  * Description: Powerful divi modules to create powerful websites.
- * Version:     3.6.5
- * Author:      WPPaw
- * Author URI:  https://wppaw.com
+ * Version:     3.6.6
+ * Author:      Divi Torque
+ * Author URI:  https://divitorque.com
  * License: GPL3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: addons-for-divi
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.5');
+define('DIVI_TORQUE_PLUGIN_VERSION', '3.6.6');
 define('DIVI_TORQUE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('DIVI_TORQUE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DIVI_TORQUE_PLUGIN_ASSETS', trailingslashit(DIVI_TORQUE_PLUGIN_URL . 'assets'));
@@ -30,12 +30,16 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
     final class DIVI_TORQUE_PLUGIN
     {
 
+        const DOCS_LINK = 'https://divitorque.com/docs/';
+        const PRICING_LINK = 'https://divitorque.com/pricing/';
+
         private static $instance;
 
         private function __construct()
         {
             register_activation_hook(__FILE__, array($this, 'activate'));
             add_action('plugins_loaded', array($this, 'init_plugin'));
+            add_filter('plugin_action_links_' . DIVI_TORQUE_PLUGIN_BASE, array($this, 'add_plugin_action_links'));
         }
 
         public static function instance()
@@ -81,11 +85,20 @@ if (!class_exists('DIVI_TORQUE_PLUGIN')) :
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/extensions/extensions.php';
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/assets-manager.php';
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/functions-forms.php';
+            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/special-notices.php';
         }
 
         public function initialize_extension()
         {
             require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/divi-extension.php';
+        }
+
+        public function add_plugin_action_links($links)
+        {
+
+            $links[] = sprintf('<a href="%s" target="_blank" style="color: #197efb;font-weight: 600;">%s</a>', self::DOCS_LINK, __('Docs', 'divitorque'));
+            $links[] = sprintf('<a href="%s" target="_blank" style="color: #FF6900;font-weight: 600;">%s</a>', self::PRICING_LINK, __('Get Torque Pro', 'divitorque'));
+            return $links;
         }
     }
 
