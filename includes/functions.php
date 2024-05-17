@@ -1,11 +1,6 @@
 <?php
 defined('ABSPATH') || die();
 
-function ba_get_b64_icon()
-{
-	return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDMwQzAgMTMuNDMxNSAxMy40MzE2IDAgMzAgMEM0Ni41Njg0IDAgNjAgMTMuNDMxNSA2MCAzMEM2MCA0Ni41Njg1IDQ2LjU2ODQgNjAgMzAgNjBDMTMuNDMxNiA2MCAwIDQ2LjU2ODUgMCAzMFpNMTEuMzMxNSAyOC41NDc1QzExLjE4MzYgMjguNjgzNiAxMC45ODc4IDI4Ljc2MTIgMTAuNzkxNSAyOC43NjEyQzEwLjYyODQgMjguNzYxMiAxMC40NjUzIDI4LjcwNzUgMTAuMzMwMSAyOC42MTExQzEwLjEzNjcgMjguNDczNCAxMCAyOC4yNDg5IDEwIDI3Ljk2OTZWMjcuNjUzQzEwLjA3OTEgMjcuMzM2MyAxMC4zOTYgMjcuMDk4OSAxMC43OTE1IDI3LjA5ODlDMTEuMTg3NSAyNy4xNzggMTEuNTgzIDI3LjQ5NDYgMTEuNTgzIDI3Ljk2OTZDMTEuNTgzIDI4LjIwOTQgMTEuNDgyNCAyOC40MDg3IDExLjMzMTUgMjguNTQ3NVpNMzAuMTA2OSA1MC43NjgyQzQxLjM0ODEgNTAuNzY4MiA1MC41MzA4IDQxLjY2NDYgNTAuNTMwOCAzMC40MjM2QzUwLjUzMDggMTkuMTgyNyA0MS40MjcyIDEwIDMwLjE4NiAxMEMyNi4xNDg5IDEwIDIyLjQyODIgMTEuMTg3NCAxOS4yNjE3IDEzLjE2NjVDMTUuNjk5NyAxNS40NjIyIDEyLjg1MDEgMTguNzg2OSAxMS4yNjY2IDIyLjc0NUMxMS4wMjkzIDIzLjQ1NzQgMTAuNjMzMyAyNC42NDQ5IDEwLjM5NiAyNS41MTU2QzEwLjM0NDcgMjUuNzczMiAxMC40NjA0IDI2LjAzMDYgMTAuNjU3MiAyNi4yMDFDMTAuNzYyNyAyNi4yOTI1IDEwLjg5MTEgMjYuMzU4OCAxMS4wMjkzIDI2LjM4NjVDMTEuNTAzOSAyNi40NjU2IDExLjg5OTkgMjYuMjI4MSAxMS45NzkgMjUuODMyM0MxMi4wMTk1IDI1LjY2OTQgMTIuMTAyMSAyNS40MjMgMTIuMTcyOSAyNS4yMTEyQzEyLjIzOTcgMjUuMDExIDEyLjI5NTkgMjQuODQxNyAxMi4yOTU5IDI0LjgwMzJDMTIuNDU0MSAyNC40MDczIDEyLjg1MDEgMjQuMTY5OSAxMy4yNDU2IDI0LjMyODJDMTMuNTYyNSAyNC40ODY2IDEzLjc5OTggMjQuODAzMiAxMy43OTk4IDI1LjExOTlDMTMuNzIwNyAyNS4xOTkgMTMuNzIwNyAyNS4xOTkgMTMuNzIwNyAyNS4yNzgyQzEzLjQwMzggMjYuNDY1NiAxMy4wODc0IDI3Ljg5MDUgMTMuMDA4MyAyOS4yMzYyQzEyLjkyOTIgMjkuNjMyMSAxMy4yNDU2IDMwLjAyNzggMTMuNzIwNyAzMC4wMjc4QzE0LjExNjcgMzAuMTA3MSAxNC41MTIyIDI5LjcxMTIgMTQuNTEyMiAyOS4zMTU0QzE0LjUxMjIgMjkuMjc1OSAxNC41MzIyIDI5LjA3NzkgMTQuNTUxOCAyOC44OEMxNC41NzEzIDI4LjY4MjEgMTQuNTkxMyAyOC40ODQxIDE0LjU5MTMgMjguNDQ0NkMxNC44MjkxIDI3LjAxOTcgMTUuMjI0NiAyNS41OTQ4IDE1Ljc3ODggMjQuMjQ5QzE1Ljg1NzkgMjQuMDExNiAxNi4wMTYxIDIzLjg1MzMgMTYuMDk1NyAyMy42MTU3QzE2LjI1MzkgMjMuMjk5MSAxNi43MjkgMjMuMTQwNyAxNy4xMjQ1IDIzLjI5OTFIMTcuMjAzNkMxNy41OTk2IDIzLjQ1NzQgMTcuNzU3OCAyMy44NTMzIDE3LjU5OTYgMjQuMjQ5QzE3LjUyMDUgMjQuMzI4MiAxNy4wNDU0IDI1LjE5OSAxNi43MjkgMjYuNTQ0N0MxNi41NzAzIDI2Ljk0MDYgMTYuODg3MiAyNy40MTU1IDE3LjM2MjMgMjcuNDk0NkMxNy43NTc4IDI3LjU3MzkgMTguMDc0NyAyNy4zMzYzIDE4LjIzMjkgMjYuOTQwNkMxOC41NDkzIDI1LjkxMTUgMTkuMDI0NCAyNC44ODIzIDE5LjEwMzUgMjQuNzI0QzIwLjIxMTkgMjIuNTA3NCAyMS45NTM2IDIwLjY4NjggMjQuMDkwOCAxOS40OTk0QzI1LjgzMjUgMTguNDcwMiAyNy44OTA2IDE3LjkxNjEgMzAuMTA2OSAxNy45MTYxQzM2Ljk5NDEgMTcuOTE2MSA0Mi41MzU2IDIzLjQ1NzQgNDIuNTM1NiAzMC4zNDQ1QzQyLjUzNTYgMzYuNjc3NCAzNy44NjQ3IDQxLjgyMjkgMzEuODQ4NiA0Mi42OTM2VjI5LjA3NzlDMzEuODQ4NiAyNi44NjEzIDMwLjEwNjkgMjUuMTE5OSAyNy44OTA2IDI1LjExOTlDMjUuNjczOCAyNS4xMTk5IDIzLjkzMjYgMjYuODYxMyAyMy45MzI2IDI5LjA3NzlWNDYuODEwMUMyMy45MzI2IDQ5LjAyNjYgMjUuNjczOCA1MC43NjgyIDI3Ljg5MDYgNTAuNzY4MkgzMC4xMDY5WiIgZmlsbD0iIzFGMjkzNyIvPgo8L3N2Zz4K';
-}
-
 function divitorque_has_pro()
 {
 	return defined('DIVI_TORQUE_PRO_VERSION') || defined('BRAIN_ADDONS_PRO_VERSION');
@@ -14,11 +9,6 @@ function divitorque_has_pro()
 function ba_has_pro()
 {
 	return defined('BRAIN_ADDONS_PRO_VERSION');
-}
-
-function divitorque_dashboard_link()
-{
-	return add_query_arg(array('page' => 'addons-for-divi'), admin_url('admin.php'));
 }
 
 function ba_get_svg_user_icon()
@@ -48,15 +38,6 @@ function ba_get_img_masking_shapes($shape)
 	);
 
 	return $masking_shapes[$shape];
-}
-
-function brainaddons_login_page()
-{
-
-	$options = get_option('brainaddons_settings', array());
-	$page    = array_key_exists('login_page', $options) ? get_post($options['login_page']) : false;
-
-	return $page;
 }
 
 function ba_get_post_types()
@@ -130,27 +111,6 @@ function ba_prev_arrow_icon()
 function ba_next_arrow_icon()
 {
 	return '<span class="dtq-svg-iconset svg-baseline"><svg aria-hidden="true" class="dtq-svg-icon dtq-arrow-right-alt-svg" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" width="27" height="28" viewBox="0 0 27 28"><title>Continue</title><path d="M27 13.953c0 0.141-0.063 0.281-0.156 0.375l-6 5.531c-0.156 0.141-0.359 0.172-0.547 0.094-0.172-0.078-0.297-0.25-0.297-0.453v-3.5h-19.5c-0.281 0-0.5-0.219-0.5-0.5v-3c0-0.281 0.219-0.5 0.5-0.5h19.5v-3.5c0-0.203 0.109-0.375 0.297-0.453s0.391-0.047 0.547 0.078l6 5.469c0.094 0.094 0.156 0.219 0.156 0.359v0z"></path></svg></span>';
-}
-
-function ba_related_posts_args($post_id)
-{
-	$categories = get_the_terms($post_id, 'category');
-	if (empty($categories) || is_wp_error($categories)) {
-		$categories = array();
-	}
-	$category_list = wp_list_pluck($categories, 'term_id');
-	$related_args  = array(
-		'post_type'      => 'post',
-		'posts_per_page' => 6,
-		'no_found_rows'  => true,
-		'post_status'    => 'publish',
-		'post__not_in'   => array($post_id),
-		'orderby'        => 'rand',
-		'category__in'   => $category_list,
-
-	);
-
-	return $related_args;
 }
 
 function dt_if_not_migrated()

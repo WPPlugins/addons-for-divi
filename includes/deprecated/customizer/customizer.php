@@ -23,7 +23,7 @@ class Customizer
      */
     public function controls_helpers()
     {
-        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/customizer-sanitizes.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/customizer-sanitizes.php'; // phpcs:ignore
     }
 
     /**
@@ -36,8 +36,8 @@ class Customizer
     {
 
         // Extend panel and section.
-        require DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/extend-customizer/customizer-panel.php';
-        require DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/extend-customizer/customizer-section.php';
+        require DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/extend-customizer/customizer-panel.php';
+        require DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/extend-customizer/customizer-section.php';
 
         // Register the panel and section.
         if (class_exists('BrainAddons_WP_Customize_Panel')) {
@@ -49,10 +49,10 @@ class Customizer
         }
 
         // Add custom controls.
-        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/controls/radio-image.php'; // phpcs:ignore
-        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/controls/title.php'; // phpcs:ignore
-        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/controls/toggle.php'; // phpcs:ignore
-        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/controls/range.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/controls/radio-image.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/controls/title.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/controls/toggle.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/controls/range.php'; // phpcs:ignore
 
         // Register the control types that we're using as JavaScript controls.
         if (class_exists('BrainAddons_Title_Control')) {
@@ -72,18 +72,18 @@ class Customizer
         }
 
         // $inactive_extensions = get_option( 'ba_inactive_extensions', array() );
-        $customizer_imgs     = DIVI_TORQUE_PLUGIN_URL . '/includes/deprecated/customizer/imgs/';
+        $customizer_imgs     = DIVI_TORQUE_LITE_URL . '/includes/deprecated/customizer/imgs/';
 
         // if ( !in_array( 'login-designer', $inactive_extensions, true ) ) {
         $ld_defaults = Login_Designer::defaults();
-        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/options/login-designer.php'; // phpcs:ignore
+        require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/options/login-designer.php'; // phpcs:ignore
         // }
 
         // if ( !in_array( 'blog-designer', $inactive_extensions, true ) && ba_has_pro() ) {
 
         if (ba_has_pro()) {
             $bd_defaults = \BrainAddons\Blog_Designer::defaults();
-            require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/deprecated/customizer/options/blog-designer.php'; // phpcs:ignore
+            require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated/customizer/options/blog-designer.php'; // phpcs:ignore
         }
 
         // }
@@ -105,7 +105,7 @@ class Customizer
     public function customize_controls_enqueue_scripts()
     {
 
-        $path = DIVI_TORQUE_PLUGIN_URL . 'includes/deprecated/customizer/';
+        $path = DIVI_TORQUE_LITE_URL . 'includes/deprecated/customizer/';
 
         $file_prefix = (defined('DTQ_DEBUG') && true === constant('DTQ_DEBUG')) ? '' : '.min';
 
@@ -113,14 +113,14 @@ class Customizer
             'brainaddons-customizer',
             $path . 'css/customizer' . $file_prefix . '.css',
             false,
-            DIVI_TORQUE_PLUGIN_VERSION
+            DIVI_TORQUE_LITE_VERSION
         );
 
         wp_enqueue_style(
             'brainaddons-customizer-preview',
             $path . 'css/customizer-preview' . $file_prefix . '.css',
             false,
-            DIVI_TORQUE_PLUGIN_VERSION
+            DIVI_TORQUE_LITE_VERSION
         );
 
         wp_enqueue_script(
@@ -148,7 +148,7 @@ class Customizer
             return;
         }
 
-        $path = DIVI_TORQUE_PLUGIN_URL . 'includes/deprecated/customizer/js/';
+        $path = DIVI_TORQUE_LITE_URL . 'includes/deprecated/customizer/js/';
 
         $file_prefix = (defined('DTQ_DEBUG') && true === constant('DTQ_DEBUG')) ? '' : '.min';
 

@@ -17,10 +17,10 @@ class BrainAddons_Toggle_Control extends WP_Customize_Control
 	public function enqueue()
 	{
 
-		$css_path    = DIVI_TORQUE_PLUGIN_URL . '/includes/deprecated/customizer/controls/css/';
-		$js_path     = DIVI_TORQUE_PLUGIN_URL . '/includes/deprecated/customizer/controls/js/';
+		$css_path    = DIVI_TORQUE_LITE_URL . '/includes/deprecated/customizer/controls/css/';
+		$js_path     = DIVI_TORQUE_LITE_URL . '/includes/deprecated/customizer/controls/js/';
 		$file_prefix = (defined('DTQ_DEBUG') && true === constant('DTQ_DEBUG')) ? '' : '.min';
-		wp_enqueue_script('brainaddons-toggle-control', $js_path . 'toggle-control' . $file_prefix . '.js', array('customize-controls'), DIVI_TORQUE_PLUGIN_VERSION, true);
+		wp_enqueue_script('brainaddons-toggle-control', $js_path . 'toggle-control' . $file_prefix . '.js', array('customize-controls'), DIVI_TORQUE_LITE_VERSION, true);
 	}
 
 	public function to_json()
