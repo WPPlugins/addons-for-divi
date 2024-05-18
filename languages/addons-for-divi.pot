@@ -7,7 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: DiviEpic <hello@diviepic.com>\n"
-"POT-Creation-Date: 2024-05-17 06:57+0000\n"
+"POT-Creation-Date: 2024-05-18 21:52+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -127,20 +127,24 @@ msgstr ""
 msgid "Divi Torque Lite <p>Rollback to Previous Version</p>"
 msgstr ""
 
-#: includes/review.php:78
+#: includes/review.php:69
+msgid "If you have a minute, can you write a little review for me? That would really bring me joy and motivation! 💫 </br>Don't hesitate to share your feature requests with the review, I always check them and try my best."
+msgstr ""
+
+#: includes/review.php:75
 msgid "Leave a review"
 msgstr ""
 
-#: includes/review.php:83
+#: includes/review.php:80
 msgid "Don't show again"
 msgstr ""
 
-#: includes/review.php:84
+#: includes/review.php:85
 msgid "Maybe later"
 msgstr ""
 
 #: includes/deprecated/admin.php:22, includes/deprecated/admin.php:23
-msgid "Divi Torque"
+msgid "DiviTorque"
 msgstr ""
 
 #: includes/deprecated/admin.php:140, includes/deprecated/customizer/options/blog-designer.php:6
@@ -159,24 +163,12 @@ msgstr ""
 msgid "It is incredibly versatile & flexible. Bend it to create any type of popup, modal, or content overlay for your website."
 msgstr ""
 
-#: includes/deprecated/admin.php:156, includes/deprecated/customizer/options/login-designer.php:8
+#: includes/deprecated/admin.php:156, includes/deprecated/customizer/options/login-designer.php:8, includes/deprecated/extensions/login-designer/ext-page-template.php:31
 msgid "Login Designer"
 msgstr ""
 
 #: includes/deprecated/admin.php:157
 msgid "Design and build an on-brand custom WordPress login page."
-msgstr ""
-
-#: includes/deprecated/admin.php:165
-msgid "Unfiltered File Uploads"
-msgstr ""
-
-#: includes/deprecated/admin.php:174
-msgid "Divi Library Shortcodes"
-msgstr ""
-
-#: includes/deprecated/admin.php:183
-msgid "Post Duplicator"
 msgstr ""
 
 #: includes/deprecated/admin.php:202
@@ -567,11 +559,11 @@ msgstr ""
 msgid " will be in horizontally center position."
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:472, includes/modules/base/BuilderModules.php:500, includes/modules/base/BuilderModules.php:736, includes/modules/base/BuilderModules.php:1013, includes/modules/base/BuilderModules.php:1045, includes/modules/base/BuilderModules.php:1061, includes/modules/base/BuilderModules.php:1076, includes/modules/base/BuilderModules.php:1145, includes/modules/base/BuilderModules.php:1160, includes/modules/base/BuilderModules.php:1191, includes/modules/base/BuilderModules.php:1224, includes/modules/base/BuilderModules.php:1239, includes/modules/base/BuilderModules.php:1297, includes/modules/base/BuilderModules.php:1312, includes/modules/base/BuilderModules.php:1563, includes/modules/base/BuilderModules.php:1887, includes/modules/base/BuilderModules.php:1901, includes/modules/divi-4/AnimatedText/AnimatedText.php:341, includes/modules/divi-4/AnimatedText/AnimatedText.php:356, includes/modules/divi-4/BusinessHour/BusinessHour.php:79, includes/modules/divi-4/BusinessHour/BusinessHour.php:114, includes/modules/divi-4/BusinessHour/BusinessHour.php:126, includes/modules/divi-4/CompareImage/CompareImage.php:170, includes/modules/divi-4/CompareImage/CompareImage.php:183, includes/modules/divi-4/ContactForm7/ContactForm7.php:88, includes/modules/divi-4/ContactForm7/ContactForm7.php:136, includes/modules/divi-4/ContactForm7/ContactForm7.php:293, includes/modules/divi-4/ContactForm7/ContactForm7.php:413, includes/modules/divi-4/Divider/Divider.php:120, includes/modules/divi-4/Divider/Divider.php:164, includes/modules/divi-4/FlipBox/FlipBox.php:257, includes/modules/divi-4/FlipBox/FlipBox.php:291, includes/modules/divi-4/FlipBox/FlipBox.php:383, includes/modules/divi-4/GradientHeading/GradientHeading.php:54, includes/modules/divi-4/IconBox/IconBox.php:83, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:105, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:142, includes/modules/divi-4/InfoBox/InfoBox.php:378, includes/modules/divi-4/InfoBox/InfoBox.php:415, includes/modules/divi-4/InfoBox/InfoBox.php:432, includes/modules/divi-4/InfoBox/InfoBox.php:509, includes/modules/divi-4/InfoBox/InfoBox.php:704, includes/modules/divi-4/InfoCard/InfoCard.php:88, includes/modules/divi-4/InfoCard/InfoCard.php:148, includes/modules/divi-4/InfoCard/InfoCard.php:187, includes/modules/divi-4/InfoCard/InfoCard.php:221, includes/modules/divi-4/InfoCard/InfoCard.php:312, includes/modules/divi-4/InlineNotice/InlineNotice.php:63, includes/modules/divi-4/InlineNotice/InlineNotice.php:142, includes/modules/divi-4/InlineNotice/InlineNotice.php:214, includes/modules/divi-4/LogoCarouselChild/LogoCarouselChild.php:63, includes/modules/divi-4/NewsTicker/NewsTicker.php:63, includes/modules/divi-4/NewsTicker/NewsTicker.php:229, includes/modules/divi-4/NewsTicker/NewsTicker.php:241, includes/modules/divi-4/Number/Number.php:68, includes/modules/divi-4/Number/Number.php:110, includes/modules/divi-4/PostList/PostList.php:167, includes/modules/divi-4/PostList/PostList.php:182, includes/modules/divi-4/PostList/PostList.php:196, includes/modules/divi-4/PostList/PostList.php:226, includes/modules/divi-4/PostList/PostList.php:252, includes/modules/divi-4/PostList/PostList.php:266, includes/modules/divi-4/Review/Review.php:101, includes/modules/divi-4/Review/Review.php:145, includes/modules/divi-4/Review/Review.php:184, includes/modules/divi-4/Review/Review.php:222, includes/modules/divi-4/ScrollImage/ScrollImage.php:72, includes/modules/divi-4/ScrollImage/ScrollImage.php:95, includes/modules/divi-4/ScrollImage/ScrollImage.php:128, includes/modules/divi-4/ScrollImage/ScrollImage.php:222, includes/modules/divi-4/SkillBarChild/SkillBarChild.php:62, includes/modules/divi-4/SkillBarChild/SkillBarChild.php:100, includes/modules/divi-4/TeamBox/TeamBox.php:204, includes/modules/divi-4/TeamBox/TeamBox.php:270, includes/modules/divi-4/Testimonial/Testimonial.php:137, includes/modules/divi-4/Testimonial/Testimonial.php:175, includes/modules/divi-4/Testimonial/Testimonial.php:222, includes/modules/divi-4/Testimonial/Testimonial.php:470, includes/modules/divi-4/Testimonial/Testimonial.php:505, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:132, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:145, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:158, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:171, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:184, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:197, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:210, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:223, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:162, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:174, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:186, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:198, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:210, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:222, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:234, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:246, includes/modules/divi-4/VideoModal/VideoModal.php:58, includes/modules/divi-4/VideoModal/VideoModal.php:167, includes/modules/divi-4/VideoModal/VideoModal.php:375
+#: includes/modules/base/BuilderModules.php:472, includes/modules/base/BuilderModules.php:500, includes/modules/base/BuilderModules.php:736, includes/modules/base/BuilderModules.php:1013, includes/modules/base/BuilderModules.php:1045, includes/modules/base/BuilderModules.php:1061, includes/modules/base/BuilderModules.php:1076, includes/modules/base/BuilderModules.php:1145, includes/modules/base/BuilderModules.php:1160, includes/modules/base/BuilderModules.php:1191, includes/modules/base/BuilderModules.php:1224, includes/modules/base/BuilderModules.php:1239, includes/modules/base/BuilderModules.php:1297, includes/modules/base/BuilderModules.php:1312, includes/modules/base/BuilderModules.php:1563, includes/modules/base/BuilderModules.php:1887, includes/modules/base/BuilderModules.php:1901, includes/deprecated/extensions/popup-maker/popup-settings.php:144, includes/deprecated/extensions/popup-maker/popup-settings.php:299, includes/deprecated/extensions/popup-maker/popup-settings.php:369, includes/modules/divi-4/AnimatedText/AnimatedText.php:341, includes/modules/divi-4/AnimatedText/AnimatedText.php:356, includes/modules/divi-4/BusinessHour/BusinessHour.php:79, includes/modules/divi-4/BusinessHour/BusinessHour.php:114, includes/modules/divi-4/BusinessHour/BusinessHour.php:126, includes/modules/divi-4/CompareImage/CompareImage.php:170, includes/modules/divi-4/CompareImage/CompareImage.php:183, includes/modules/divi-4/ContactForm7/ContactForm7.php:88, includes/modules/divi-4/ContactForm7/ContactForm7.php:136, includes/modules/divi-4/ContactForm7/ContactForm7.php:293, includes/modules/divi-4/ContactForm7/ContactForm7.php:413, includes/modules/divi-4/Divider/Divider.php:120, includes/modules/divi-4/Divider/Divider.php:164, includes/modules/divi-4/FlipBox/FlipBox.php:257, includes/modules/divi-4/FlipBox/FlipBox.php:291, includes/modules/divi-4/FlipBox/FlipBox.php:383, includes/modules/divi-4/GradientHeading/GradientHeading.php:54, includes/modules/divi-4/IconBox/IconBox.php:83, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:105, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:142, includes/modules/divi-4/InfoBox/InfoBox.php:378, includes/modules/divi-4/InfoBox/InfoBox.php:415, includes/modules/divi-4/InfoBox/InfoBox.php:432, includes/modules/divi-4/InfoBox/InfoBox.php:509, includes/modules/divi-4/InfoBox/InfoBox.php:704, includes/modules/divi-4/InfoCard/InfoCard.php:88, includes/modules/divi-4/InfoCard/InfoCard.php:148, includes/modules/divi-4/InfoCard/InfoCard.php:187, includes/modules/divi-4/InfoCard/InfoCard.php:221, includes/modules/divi-4/InfoCard/InfoCard.php:312, includes/modules/divi-4/InlineNotice/InlineNotice.php:63, includes/modules/divi-4/InlineNotice/InlineNotice.php:142, includes/modules/divi-4/InlineNotice/InlineNotice.php:214, includes/modules/divi-4/LogoCarouselChild/LogoCarouselChild.php:63, includes/modules/divi-4/NewsTicker/NewsTicker.php:63, includes/modules/divi-4/NewsTicker/NewsTicker.php:229, includes/modules/divi-4/NewsTicker/NewsTicker.php:241, includes/modules/divi-4/Number/Number.php:68, includes/modules/divi-4/Number/Number.php:110, includes/modules/divi-4/PostList/PostList.php:167, includes/modules/divi-4/PostList/PostList.php:182, includes/modules/divi-4/PostList/PostList.php:196, includes/modules/divi-4/PostList/PostList.php:226, includes/modules/divi-4/PostList/PostList.php:252, includes/modules/divi-4/PostList/PostList.php:266, includes/modules/divi-4/Review/Review.php:101, includes/modules/divi-4/Review/Review.php:145, includes/modules/divi-4/Review/Review.php:184, includes/modules/divi-4/Review/Review.php:222, includes/modules/divi-4/ScrollImage/ScrollImage.php:72, includes/modules/divi-4/ScrollImage/ScrollImage.php:95, includes/modules/divi-4/ScrollImage/ScrollImage.php:128, includes/modules/divi-4/ScrollImage/ScrollImage.php:222, includes/modules/divi-4/SkillBarChild/SkillBarChild.php:62, includes/modules/divi-4/SkillBarChild/SkillBarChild.php:100, includes/modules/divi-4/TeamBox/TeamBox.php:204, includes/modules/divi-4/TeamBox/TeamBox.php:270, includes/modules/divi-4/Testimonial/Testimonial.php:137, includes/modules/divi-4/Testimonial/Testimonial.php:175, includes/modules/divi-4/Testimonial/Testimonial.php:222, includes/modules/divi-4/Testimonial/Testimonial.php:470, includes/modules/divi-4/Testimonial/Testimonial.php:505, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:132, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:145, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:158, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:171, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:184, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:197, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:210, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:223, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:162, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:174, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:186, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:198, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:210, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:222, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:234, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:246, includes/modules/divi-4/VideoModal/VideoModal.php:58, includes/modules/divi-4/VideoModal/VideoModal.php:167, includes/modules/divi-4/VideoModal/VideoModal.php:375
 msgid "Yes"
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:473, includes/modules/base/BuilderModules.php:501, includes/modules/base/BuilderModules.php:737, includes/modules/base/BuilderModules.php:1014, includes/modules/base/BuilderModules.php:1046, includes/modules/base/BuilderModules.php:1062, includes/modules/base/BuilderModules.php:1077, includes/modules/base/BuilderModules.php:1146, includes/modules/base/BuilderModules.php:1161, includes/modules/base/BuilderModules.php:1192, includes/modules/base/BuilderModules.php:1225, includes/modules/base/BuilderModules.php:1240, includes/modules/base/BuilderModules.php:1298, includes/modules/base/BuilderModules.php:1313, includes/modules/base/BuilderModules.php:1564, includes/modules/base/BuilderModules.php:1888, includes/modules/base/BuilderModules.php:1902, includes/modules/divi-4/AnimatedText/AnimatedText.php:342, includes/modules/divi-4/AnimatedText/AnimatedText.php:357, includes/modules/divi-4/BusinessHour/BusinessHour.php:80, includes/modules/divi-4/BusinessHour/BusinessHour.php:115, includes/modules/divi-4/BusinessHour/BusinessHour.php:127, includes/modules/divi-4/CompareImage/CompareImage.php:171, includes/modules/divi-4/CompareImage/CompareImage.php:184, includes/modules/divi-4/ContactForm7/ContactForm7.php:89, includes/modules/divi-4/ContactForm7/ContactForm7.php:137, includes/modules/divi-4/ContactForm7/ContactForm7.php:294, includes/modules/divi-4/ContactForm7/ContactForm7.php:414, includes/modules/divi-4/Divider/Divider.php:121, includes/modules/divi-4/Divider/Divider.php:165, includes/modules/divi-4/FlipBox/FlipBox.php:258, includes/modules/divi-4/FlipBox/FlipBox.php:292, includes/modules/divi-4/FlipBox/FlipBox.php:384, includes/modules/divi-4/GradientHeading/GradientHeading.php:55, includes/modules/divi-4/IconBox/IconBox.php:84, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:106, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:143, includes/modules/divi-4/InfoBox/InfoBox.php:379, includes/modules/divi-4/InfoBox/InfoBox.php:416, includes/modules/divi-4/InfoBox/InfoBox.php:433, includes/modules/divi-4/InfoBox/InfoBox.php:510, includes/modules/divi-4/InfoBox/InfoBox.php:705, includes/modules/divi-4/InfoCard/InfoCard.php:89, includes/modules/divi-4/InfoCard/InfoCard.php:149, includes/modules/divi-4/InfoCard/InfoCard.php:188, includes/modules/divi-4/InfoCard/InfoCard.php:222, includes/modules/divi-4/InfoCard/InfoCard.php:313, includes/modules/divi-4/InlineNotice/InlineNotice.php:64, includes/modules/divi-4/InlineNotice/InlineNotice.php:143, includes/modules/divi-4/InlineNotice/InlineNotice.php:215, includes/modules/divi-4/LogoCarouselChild/LogoCarouselChild.php:64, includes/modules/divi-4/NewsTicker/NewsTicker.php:64, includes/modules/divi-4/NewsTicker/NewsTicker.php:230, includes/modules/divi-4/NewsTicker/NewsTicker.php:242, includes/modules/divi-4/Number/Number.php:69, includes/modules/divi-4/Number/Number.php:111, includes/modules/divi-4/PostList/PostList.php:168, includes/modules/divi-4/PostList/PostList.php:183, includes/modules/divi-4/PostList/PostList.php:197, includes/modules/divi-4/PostList/PostList.php:227, includes/modules/divi-4/PostList/PostList.php:253, includes/modules/divi-4/PostList/PostList.php:267, includes/modules/divi-4/Review/Review.php:102, includes/modules/divi-4/Review/Review.php:146, includes/modules/divi-4/Review/Review.php:185, includes/modules/divi-4/Review/Review.php:223, includes/modules/divi-4/ScrollImage/ScrollImage.php:73, includes/modules/divi-4/ScrollImage/ScrollImage.php:96, includes/modules/divi-4/ScrollImage/ScrollImage.php:129, includes/modules/divi-4/ScrollImage/ScrollImage.php:223, includes/modules/divi-4/SkillBarChild/SkillBarChild.php:63, includes/modules/divi-4/SkillBarChild/SkillBarChild.php:101, includes/modules/divi-4/TeamBox/TeamBox.php:205, includes/modules/divi-4/TeamBox/TeamBox.php:271, includes/modules/divi-4/Testimonial/Testimonial.php:138, includes/modules/divi-4/Testimonial/Testimonial.php:176, includes/modules/divi-4/Testimonial/Testimonial.php:223, includes/modules/divi-4/Testimonial/Testimonial.php:471, includes/modules/divi-4/Testimonial/Testimonial.php:506, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:133, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:146, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:159, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:172, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:185, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:198, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:211, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:224, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:163, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:175, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:187, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:199, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:211, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:223, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:235, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:247, includes/modules/divi-4/VideoModal/VideoModal.php:59, includes/modules/divi-4/VideoModal/VideoModal.php:168, includes/modules/divi-4/VideoModal/VideoModal.php:376
+#: includes/modules/base/BuilderModules.php:473, includes/modules/base/BuilderModules.php:501, includes/modules/base/BuilderModules.php:737, includes/modules/base/BuilderModules.php:1014, includes/modules/base/BuilderModules.php:1046, includes/modules/base/BuilderModules.php:1062, includes/modules/base/BuilderModules.php:1077, includes/modules/base/BuilderModules.php:1146, includes/modules/base/BuilderModules.php:1161, includes/modules/base/BuilderModules.php:1192, includes/modules/base/BuilderModules.php:1225, includes/modules/base/BuilderModules.php:1240, includes/modules/base/BuilderModules.php:1298, includes/modules/base/BuilderModules.php:1313, includes/modules/base/BuilderModules.php:1564, includes/modules/base/BuilderModules.php:1888, includes/modules/base/BuilderModules.php:1902, includes/deprecated/extensions/popup-maker/popup-settings.php:145, includes/deprecated/extensions/popup-maker/popup-settings.php:300, includes/deprecated/extensions/popup-maker/popup-settings.php:370, includes/modules/divi-4/AnimatedText/AnimatedText.php:342, includes/modules/divi-4/AnimatedText/AnimatedText.php:357, includes/modules/divi-4/BusinessHour/BusinessHour.php:80, includes/modules/divi-4/BusinessHour/BusinessHour.php:115, includes/modules/divi-4/BusinessHour/BusinessHour.php:127, includes/modules/divi-4/CompareImage/CompareImage.php:171, includes/modules/divi-4/CompareImage/CompareImage.php:184, includes/modules/divi-4/ContactForm7/ContactForm7.php:89, includes/modules/divi-4/ContactForm7/ContactForm7.php:137, includes/modules/divi-4/ContactForm7/ContactForm7.php:294, includes/modules/divi-4/ContactForm7/ContactForm7.php:414, includes/modules/divi-4/Divider/Divider.php:121, includes/modules/divi-4/Divider/Divider.php:165, includes/modules/divi-4/FlipBox/FlipBox.php:258, includes/modules/divi-4/FlipBox/FlipBox.php:292, includes/modules/divi-4/FlipBox/FlipBox.php:384, includes/modules/divi-4/GradientHeading/GradientHeading.php:55, includes/modules/divi-4/IconBox/IconBox.php:84, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:106, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:143, includes/modules/divi-4/InfoBox/InfoBox.php:379, includes/modules/divi-4/InfoBox/InfoBox.php:416, includes/modules/divi-4/InfoBox/InfoBox.php:433, includes/modules/divi-4/InfoBox/InfoBox.php:510, includes/modules/divi-4/InfoBox/InfoBox.php:705, includes/modules/divi-4/InfoCard/InfoCard.php:89, includes/modules/divi-4/InfoCard/InfoCard.php:149, includes/modules/divi-4/InfoCard/InfoCard.php:188, includes/modules/divi-4/InfoCard/InfoCard.php:222, includes/modules/divi-4/InfoCard/InfoCard.php:313, includes/modules/divi-4/InlineNotice/InlineNotice.php:64, includes/modules/divi-4/InlineNotice/InlineNotice.php:143, includes/modules/divi-4/InlineNotice/InlineNotice.php:215, includes/modules/divi-4/LogoCarouselChild/LogoCarouselChild.php:64, includes/modules/divi-4/NewsTicker/NewsTicker.php:64, includes/modules/divi-4/NewsTicker/NewsTicker.php:230, includes/modules/divi-4/NewsTicker/NewsTicker.php:242, includes/modules/divi-4/Number/Number.php:69, includes/modules/divi-4/Number/Number.php:111, includes/modules/divi-4/PostList/PostList.php:168, includes/modules/divi-4/PostList/PostList.php:183, includes/modules/divi-4/PostList/PostList.php:197, includes/modules/divi-4/PostList/PostList.php:227, includes/modules/divi-4/PostList/PostList.php:253, includes/modules/divi-4/PostList/PostList.php:267, includes/modules/divi-4/Review/Review.php:102, includes/modules/divi-4/Review/Review.php:146, includes/modules/divi-4/Review/Review.php:185, includes/modules/divi-4/Review/Review.php:223, includes/modules/divi-4/ScrollImage/ScrollImage.php:73, includes/modules/divi-4/ScrollImage/ScrollImage.php:96, includes/modules/divi-4/ScrollImage/ScrollImage.php:129, includes/modules/divi-4/ScrollImage/ScrollImage.php:223, includes/modules/divi-4/SkillBarChild/SkillBarChild.php:63, includes/modules/divi-4/SkillBarChild/SkillBarChild.php:101, includes/modules/divi-4/TeamBox/TeamBox.php:205, includes/modules/divi-4/TeamBox/TeamBox.php:271, includes/modules/divi-4/Testimonial/Testimonial.php:138, includes/modules/divi-4/Testimonial/Testimonial.php:176, includes/modules/divi-4/Testimonial/Testimonial.php:223, includes/modules/divi-4/Testimonial/Testimonial.php:471, includes/modules/divi-4/Testimonial/Testimonial.php:506, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:133, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:146, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:159, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:172, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:185, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:198, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:211, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:224, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:163, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:175, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:187, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:199, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:211, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:223, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:235, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:247, includes/modules/divi-4/VideoModal/VideoModal.php:59, includes/modules/divi-4/VideoModal/VideoModal.php:168, includes/modules/divi-4/VideoModal/VideoModal.php:376
 msgid "No"
 msgstr ""
 
@@ -655,7 +647,7 @@ msgstr ""
 msgid "Select the opacity of the overlay icon. Set the value from 0 - 1. The lower value, the more transparent."
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:816
+#: includes/modules/base/BuilderModules.php:816, includes/deprecated/extensions/popup-maker/popup-settings.php:381
 msgid "Overlay Color"
 msgstr ""
 
@@ -949,11 +941,11 @@ msgstr ""
 msgid "Define navigation vertical placement."
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1397, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:200, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:254, includes/modules/divi-4/InfoBox/InfoBox.php:540, includes/modules/divi-4/InfoBox/InfoBox.php:569, includes/modules/divi-4/InfoCard/InfoCard.php:242, includes/modules/divi-4/InlineNotice/InlineNotice.php:153, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:99, includes/modules/divi-4/Review/Review.php:347, includes/modules/divi-4/Testimonial/Testimonial.php:234, includes/modules/divi-4/Testimonial/Testimonial.php:246, includes/modules/divi-4/Testimonial/Testimonial.php:540, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:288
+#: includes/modules/base/BuilderModules.php:1397, includes/deprecated/extensions/popup-maker/popup-settings.php:92, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:200, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:254, includes/modules/divi-4/InfoBox/InfoBox.php:540, includes/modules/divi-4/InfoBox/InfoBox.php:569, includes/modules/divi-4/InfoCard/InfoCard.php:242, includes/modules/divi-4/InlineNotice/InlineNotice.php:153, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:99, includes/modules/divi-4/Review/Review.php:347, includes/modules/divi-4/Testimonial/Testimonial.php:234, includes/modules/divi-4/Testimonial/Testimonial.php:246, includes/modules/divi-4/Testimonial/Testimonial.php:540, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:288
 msgid "Top"
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1398, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:201, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:255, includes/modules/divi-4/InfoBox/InfoBox.php:542, includes/modules/divi-4/InlineNotice/InlineNotice.php:155, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:100, includes/modules/divi-4/Review/Review.php:348, includes/modules/divi-4/Testimonial/Testimonial.php:235, includes/modules/divi-4/Testimonial/Testimonial.php:262, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:289
+#: includes/modules/base/BuilderModules.php:1398, includes/deprecated/extensions/popup-maker/popup-settings.php:94, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:201, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:255, includes/modules/divi-4/InfoBox/InfoBox.php:542, includes/modules/divi-4/InlineNotice/InlineNotice.php:155, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:100, includes/modules/divi-4/Review/Review.php:348, includes/modules/divi-4/Testimonial/Testimonial.php:235, includes/modules/divi-4/Testimonial/Testimonial.php:262, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:289
 msgid "Bottom"
 msgstr ""
 
@@ -965,15 +957,15 @@ msgstr ""
 msgid "Define navigation horizontal placement."
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1412, includes/modules/divi-4/ContactForm7/ContactForm7.php:306, includes/modules/divi-4/FlipBox/FlipBox.php:343, includes/modules/divi-4/FlipBox/FlipBox.php:357, includes/modules/divi-4/FlipBox/FlipBox.php:430, includes/modules/divi-4/FlipBox/FlipBox.php:515, includes/modules/divi-4/ImageCarousel/ImageCarousel.php:48, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:217, includes/modules/divi-4/InfoBox/InfoBox.php:570, includes/modules/divi-4/InfoCard/InfoCard.php:243, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:44, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:101, includes/modules/divi-4/Review/Review.php:349, includes/modules/divi-4/Testimonial/Testimonial.php:247, includes/modules/divi-4/Testimonial/Testimonial.php:541, includes/modules/divi-4/Testimonial/Testimonial.php:822, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:451, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:399
+#: includes/modules/base/BuilderModules.php:1412, includes/deprecated/extensions/popup-maker/popup-settings.php:77, includes/modules/divi-4/ContactForm7/ContactForm7.php:306, includes/modules/divi-4/FlipBox/FlipBox.php:343, includes/modules/divi-4/FlipBox/FlipBox.php:357, includes/modules/divi-4/FlipBox/FlipBox.php:430, includes/modules/divi-4/FlipBox/FlipBox.php:515, includes/modules/divi-4/ImageCarousel/ImageCarousel.php:48, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:217, includes/modules/divi-4/InfoBox/InfoBox.php:570, includes/modules/divi-4/InfoCard/InfoCard.php:243, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:44, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:101, includes/modules/divi-4/Review/Review.php:349, includes/modules/divi-4/Testimonial/Testimonial.php:247, includes/modules/divi-4/Testimonial/Testimonial.php:541, includes/modules/divi-4/Testimonial/Testimonial.php:822, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:451, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:399
 msgid "Left"
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1413, includes/modules/divi-4/ContactForm7/ContactForm7.php:308, includes/modules/divi-4/FlipBox/FlipBox.php:341, includes/modules/divi-4/FlipBox/FlipBox.php:356, includes/modules/divi-4/FlipBox/FlipBox.php:432, includes/modules/divi-4/FlipBox/FlipBox.php:517, includes/modules/divi-4/ImageCarousel/ImageCarousel.php:51, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:218, includes/modules/divi-4/InfoBox/InfoBox.php:571, includes/modules/divi-4/InfoCard/InfoCard.php:244, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:47, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:102, includes/modules/divi-4/Review/Review.php:350, includes/modules/divi-4/Testimonial/Testimonial.php:248, includes/modules/divi-4/Testimonial/Testimonial.php:542, includes/modules/divi-4/Testimonial/Testimonial.php:823, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:452, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:400
+#: includes/modules/base/BuilderModules.php:1413, includes/deprecated/extensions/popup-maker/popup-settings.php:79, includes/modules/divi-4/ContactForm7/ContactForm7.php:308, includes/modules/divi-4/FlipBox/FlipBox.php:341, includes/modules/divi-4/FlipBox/FlipBox.php:356, includes/modules/divi-4/FlipBox/FlipBox.php:432, includes/modules/divi-4/FlipBox/FlipBox.php:517, includes/modules/divi-4/ImageCarousel/ImageCarousel.php:51, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:218, includes/modules/divi-4/InfoBox/InfoBox.php:571, includes/modules/divi-4/InfoCard/InfoCard.php:244, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:47, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:102, includes/modules/divi-4/Review/Review.php:350, includes/modules/divi-4/Testimonial/Testimonial.php:248, includes/modules/divi-4/Testimonial/Testimonial.php:542, includes/modules/divi-4/Testimonial/Testimonial.php:823, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:452, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:400
 msgid "Right"
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1419, includes/modules/base/BuilderModules.php:1763, includes/deprecated/customizer/options/login-designer.php:248, includes/modules/divi-4/AnimatedText/AnimatedText.php:682, includes/modules/divi-4/CompareImage/CompareImage.php:217, includes/modules/divi-4/FlipBox/FlipBox.php:406, includes/modules/divi-4/FlipBox/FlipBox.php:477, includes/modules/divi-4/FlipBox/FlipBox.php:562, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:103, includes/modules/divi-4/Number/Number.php:119, includes/modules/divi-4/TeamBox/TeamBox.php:472, includes/modules/divi-4/VideoModal/VideoModal.php:283
+#: includes/modules/base/BuilderModules.php:1419, includes/modules/base/BuilderModules.php:1763, includes/deprecated/customizer/options/login-designer.php:248, includes/deprecated/extensions/popup-maker/popup-settings.php:315, includes/modules/divi-4/AnimatedText/AnimatedText.php:682, includes/modules/divi-4/CompareImage/CompareImage.php:217, includes/modules/divi-4/FlipBox/FlipBox.php:406, includes/modules/divi-4/FlipBox/FlipBox.php:477, includes/modules/divi-4/FlipBox/FlipBox.php:562, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:103, includes/modules/divi-4/Number/Number.php:119, includes/modules/divi-4/TeamBox/TeamBox.php:472, includes/modules/divi-4/VideoModal/VideoModal.php:283
 msgid "Height"
 msgstr ""
 
@@ -981,7 +973,7 @@ msgstr ""
 msgid "Here you can define custom height for the navigation buttons."
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1438, includes/modules/base/BuilderModules.php:1780, includes/modules/base/BuilderModules.php:1861, includes/deprecated/customizer/options/login-designer.php:220, includes/deprecated/customizer/options/login-designer.php:365, includes/modules/divi-4/AnimatedText/AnimatedText.php:664, includes/modules/divi-4/CompareImage/CompareImage.php:233, includes/modules/divi-4/FlipBox/FlipBox.php:491, includes/modules/divi-4/FlipBox/FlipBox.php:576, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:119, includes/modules/divi-4/Number/Number.php:137, includes/modules/divi-4/TeamBox/TeamBox.php:487, includes/modules/divi-4/VideoModal/VideoModal.php:301
+#: includes/modules/base/BuilderModules.php:1438, includes/modules/base/BuilderModules.php:1780, includes/modules/base/BuilderModules.php:1861, includes/deprecated/customizer/options/login-designer.php:220, includes/deprecated/customizer/options/login-designer.php:365, includes/deprecated/extensions/popup-maker/popup-settings.php:264, includes/modules/divi-4/AnimatedText/AnimatedText.php:664, includes/modules/divi-4/CompareImage/CompareImage.php:233, includes/modules/divi-4/FlipBox/FlipBox.php:491, includes/modules/divi-4/FlipBox/FlipBox.php:576, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:119, includes/modules/divi-4/Number/Number.php:137, includes/modules/divi-4/TeamBox/TeamBox.php:487, includes/modules/divi-4/VideoModal/VideoModal.php:301
 msgid "Width"
 msgstr ""
 
@@ -1017,7 +1009,7 @@ msgstr ""
 msgid "Define spacing between navigation buttons."
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1537, includes/modules/base/BuilderModules.php:1808
+#: includes/modules/base/BuilderModules.php:1537, includes/modules/base/BuilderModules.php:1808, includes/deprecated/extensions/popup-maker/popup-settings.php:88
 msgid "Vertical Position"
 msgstr ""
 
@@ -1029,7 +1021,7 @@ msgstr ""
 msgid "Here you can choose whether navigation should be horizontal center."
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1570
+#: includes/modules/base/BuilderModules.php:1570, includes/deprecated/extensions/popup-maker/popup-settings.php:73
 msgid "Horizontal Position"
 msgstr ""
 
@@ -1101,7 +1093,7 @@ msgstr ""
 msgid "Define custom icon for the prev navigation button."
 msgstr ""
 
-#: includes/modules/base/BuilderModules.php:1656, includes/modules/base/BuilderModules.php:1680, includes/modules/base/BuilderModules.php:1797, includes/deprecated/customizer/options/login-designer.php:449, includes/deprecated/customizer/options/login-designer.php:795, includes/deprecated/customizer/options/login-designer.php:1279, includes/modules/divi-4/AnimatedText/AnimatedText.php:483, includes/modules/divi-4/AnimatedText/AnimatedText.php:547, includes/modules/divi-4/AnimatedText/AnimatedText.php:611, includes/modules/divi-4/Divider/Divider.php:584, includes/modules/divi-4/TeamBox/TeamBox.php:517, includes/modules/divi-4/VideoModal/VideoModal.php:331
+#: includes/modules/base/BuilderModules.php:1656, includes/modules/base/BuilderModules.php:1680, includes/modules/base/BuilderModules.php:1797, includes/deprecated/customizer/options/login-designer.php:449, includes/deprecated/customizer/options/login-designer.php:795, includes/deprecated/customizer/options/login-designer.php:1279, includes/deprecated/extensions/popup-maker/popup-settings.php:114, includes/modules/divi-4/AnimatedText/AnimatedText.php:483, includes/modules/divi-4/AnimatedText/AnimatedText.php:547, includes/modules/divi-4/AnimatedText/AnimatedText.php:611, includes/modules/divi-4/Divider/Divider.php:584, includes/modules/divi-4/TeamBox/TeamBox.php:517, includes/modules/divi-4/VideoModal/VideoModal.php:331
 msgid "Border Radius"
 msgstr ""
 
@@ -1393,7 +1385,7 @@ msgstr ""
 msgid "Featured Image"
 msgstr ""
 
-#: includes/deprecated/customizer/options/blog-designer.php:509
+#: includes/deprecated/customizer/options/blog-designer.php:509, includes/deprecated/extensions/popup-maker/popup-settings.php:293
 msgid "Custom Height"
 msgstr ""
 
@@ -1413,7 +1405,7 @@ msgstr ""
 msgid "Hover Animation"
 msgstr ""
 
-#: includes/deprecated/customizer/options/blog-designer.php:610, includes/modules/divi-4/FlipBox/FlipBox.php:315, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:144, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:117
+#: includes/deprecated/customizer/options/blog-designer.php:610, includes/deprecated/extensions/popup-maker/popup-settings.php:52, includes/modules/divi-4/FlipBox/FlipBox.php:315, includes/modules/divi-4/LogoCarousel/LogoCarousel.php:144, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:117
 msgid "Fade"
 msgstr ""
 
@@ -1621,7 +1613,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: includes/deprecated/customizer/options/login-designer.php:1142
+#: includes/deprecated/customizer/options/login-designer.php:1142, includes/deprecated/extensions/login-designer/ext-login-designer.php:64, includes/deprecated/extensions/login-designer/ext-template-login-designer.php:100
 msgid "Password"
 msgstr ""
 
@@ -1643,6 +1635,248 @@ msgstr ""
 
 #: includes/deprecated/extensions/library-shortcodes/ext-library-shortcodes.php:23
 msgid "Shortcode"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-installer.php:60, includes/deprecated/extensions/login-designer/ext-template-login-designer.php:3
+msgid "Divi Login Designer"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-installer.php:61
+msgid "This page is used for Divi Login Designer extension. It will not be visible to your readers. Do not delete it."
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-login-designer.php:63, includes/deprecated/extensions/login-designer/ext-template-login-designer.php:91
+msgid "Username or Email Address"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-template-login-designer.php:29
+msgid "%1$s &lsaquo; %2$s &#8212; WordPress"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-template-login-designer.php:30, includes/deprecated/extensions/login-designer/ext-template-login-designer.php:124
+msgid "Log In"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-template-login-designer.php:53
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-template-login-designer.php:54
+msgid "Powered by WordPress"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-template-login-designer.php:104
+msgid "Show Password"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-template-login-designer.php:133
+msgid "Register"
+msgstr ""
+
+#: includes/deprecated/extensions/login-designer/ext-template-login-designer.php:139
+msgid "Lost your password?"
+msgstr ""
+
+#. translators: %s: site title
+#: includes/deprecated/extensions/login-designer/ext-template-login-designer.php:147
+msgctxt "site"
+msgid "&larr; Back to %s"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/ext-popup-maker.php:43, includes/deprecated/extensions/popup-maker/ext-popup-maker.php:44
+msgid "Options"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/ext-popup-maker.php:51, includes/deprecated/extensions/popup-maker/ext-popup-maker.php:52, includes/deprecated/extensions/popup-maker/ext-post-type.php:145, includes/deprecated/extensions/popup-maker/ext-post-type.php:146, includes/deprecated/extensions/popup-maker/ext-post-type.php:151
+msgid "Popups"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/ext-post-type.php:130
+msgid "Active Conditions"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/ext-post-type.php:131, includes/modules/divi-4/NewsTicker/NewsTicker.php:119, includes/modules/divi-4/PostList/PostList.php:50, includes/modules/divi-4/PostList/PostList.php:81, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:51, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:62
+msgid "Date"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/ext-post-type.php:147
+msgid "All Popups"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/ext-post-type.php:148, includes/deprecated/extensions/popup-maker/ext-post-type.php:149
+msgid "Add New Popup"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/ext-post-type.php:150
+msgid "Edit Popup"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:9
+msgid "General Settings"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:10
+msgid "Popup Container"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:11
+msgid "Close Button"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:12
+msgid "Popup Overlay"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:30
+msgid "Close Color"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:40
+msgid "Close Button Radius"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:49, includes/modules/divi-4/LogoGridChild/LogoGridChild.php:110
+msgid "Animation"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:53
+msgid "ZoomIn"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:54
+msgid "ZoomOut"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:55, includes/modules/divi-4/Number/Number.php:155
+msgid "Rotate"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:56
+msgid "MoveUp"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:57
+msgid "Horizontal Flip"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:58
+msgid "Vertical Flip"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:59
+msgid "BounceIn"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:60
+msgid "BounceOut"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:61
+msgid "SlideInUp"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:62
+msgid "SlideInRight"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:63
+msgid "SlideInDown"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:64
+msgid "SlideInLeft"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:78, includes/modules/divi-4/ContactForm7/ContactForm7.php:307, includes/modules/divi-4/FlipBox/FlipBox.php:431, includes/modules/divi-4/FlipBox/FlipBox.php:516, includes/modules/divi-4/FlipBox/FlipBox.php:613, includes/modules/divi-4/FlipBox/FlipBox.php:659, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:216, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:253, includes/modules/divi-4/InfoBox/InfoBox.php:541, includes/modules/divi-4/InlineNotice/InlineNotice.php:154, includes/modules/divi-4/Testimonial/Testimonial.php:824, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:453, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:401
+msgid "Center"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:93
+msgid "Middle"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:104, includes/modules/divi-4/AnimatedText/AnimatedText.php:454, includes/modules/divi-4/AnimatedText/AnimatedText.php:518, includes/modules/divi-4/AnimatedText/AnimatedText.php:582, includes/modules/divi-4/BusinessHour/BusinessHour.php:226, includes/modules/divi-4/BusinessHour/BusinessHour.php:323, includes/modules/divi-4/CompareImage/CompareImage.php:207, includes/modules/divi-4/Divider/Divider.php:566, includes/modules/divi-4/FlipBox/FlipBox.php:436, includes/modules/divi-4/FlipBox/FlipBox.php:521, includes/modules/divi-4/FlipBox/FlipBox.php:618, includes/modules/divi-4/FlipBox/FlipBox.php:664
+msgid "Padding"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:123
+msgid "Try Exit"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:124
+msgid "Custom Selector Click"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:128
+msgid "Not Selected"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:129
+msgid "On page load(s)"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:130
+msgid "Page Scrolled(%)"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:138
+msgid "Use Close Button"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:161
+msgid "Icon Transform ( Translate X )"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:162
+msgid "Change the position of the Close button moving it along the x-axis. Default: 0"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:176
+msgid "Icon Transform ( Translate Y )"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:177
+msgid "Change the position of the Close button moving it along the y-axis. Default: 0"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:191
+msgid "Open event"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:207
+msgid "Open delay"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:225
+msgid "Custom Selector"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:243
+msgid "Scroll Page Progress(%)"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:280
+msgid "Width Unit"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:284, includes/deprecated/extensions/popup-maker/popup-settings.php:339
+msgid "Pixel"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:285, includes/deprecated/extensions/popup-maker/popup-settings.php:340
+msgid "Percent"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:335
+msgid "Height Unit"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:355
+msgid "Container Background"
+msgstr ""
+
+#: includes/deprecated/extensions/popup-maker/popup-settings.php:363
+msgid "Use Overlay"
 msgstr ""
 
 #: includes/deprecated/extensions/unfiltered-file-uploads/ext-unfiltered-file-uploads.php:53
@@ -2071,10 +2305,6 @@ msgstr ""
 
 #: includes/modules/divi-4/AnimatedText/AnimatedText.php:447
 msgid "Inline"
-msgstr ""
-
-#: includes/modules/divi-4/AnimatedText/AnimatedText.php:454, includes/modules/divi-4/AnimatedText/AnimatedText.php:518, includes/modules/divi-4/AnimatedText/AnimatedText.php:582, includes/modules/divi-4/BusinessHour/BusinessHour.php:226, includes/modules/divi-4/BusinessHour/BusinessHour.php:323, includes/modules/divi-4/CompareImage/CompareImage.php:207, includes/modules/divi-4/Divider/Divider.php:566, includes/modules/divi-4/FlipBox/FlipBox.php:436, includes/modules/divi-4/FlipBox/FlipBox.php:521, includes/modules/divi-4/FlipBox/FlipBox.php:618, includes/modules/divi-4/FlipBox/FlipBox.php:664
-msgid "Padding"
 msgstr ""
 
 #: includes/modules/divi-4/AnimatedText/AnimatedText.php:455
@@ -2779,10 +3009,6 @@ msgstr ""
 
 #: includes/modules/divi-4/ContactForm7/ContactForm7.php:303
 msgid "Align button to the left, right or center."
-msgstr ""
-
-#: includes/modules/divi-4/ContactForm7/ContactForm7.php:307, includes/modules/divi-4/FlipBox/FlipBox.php:431, includes/modules/divi-4/FlipBox/FlipBox.php:516, includes/modules/divi-4/FlipBox/FlipBox.php:613, includes/modules/divi-4/FlipBox/FlipBox.php:659, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:216, includes/modules/divi-4/ImageCarouselChild/ImageCarouselChild.php:253, includes/modules/divi-4/InfoBox/InfoBox.php:541, includes/modules/divi-4/InlineNotice/InlineNotice.php:154, includes/modules/divi-4/Testimonial/Testimonial.php:824, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:453, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:401
-msgid "Center"
 msgstr ""
 
 #: includes/modules/divi-4/ContactForm7/ContactForm7.php:319
@@ -4909,10 +5135,6 @@ msgstr ""
 msgid "Select tooltip position."
 msgstr ""
 
-#: includes/modules/divi-4/LogoGridChild/LogoGridChild.php:110
-msgid "Animation"
-msgstr ""
-
 #: includes/modules/divi-4/LogoGridChild/LogoGridChild.php:111
 msgid "Select tooltip animation."
 msgstr ""
@@ -4971,10 +5193,6 @@ msgstr ""
 
 #: includes/modules/divi-4/NewsTicker/NewsTicker.php:113
 msgid "Choose how your News should be ordered."
-msgstr ""
-
-#: includes/modules/divi-4/NewsTicker/NewsTicker.php:119, includes/modules/divi-4/PostList/PostList.php:50, includes/modules/divi-4/PostList/PostList.php:81, includes/modules/divi-4/TwitterFeed/TwitterFeed.php:51, includes/modules/divi-4/TwitterFeedCarousel/TwitterFeedCarousel.php:62
-msgid "Date"
 msgstr ""
 
 #: includes/modules/divi-4/NewsTicker/NewsTicker.php:128
@@ -5115,10 +5333,6 @@ msgstr ""
 
 #: includes/modules/divi-4/Number/Number.php:138
 msgid "Here you can define a custom width for number text."
-msgstr ""
-
-#: includes/modules/divi-4/Number/Number.php:155
-msgid "Rotate"
 msgstr ""
 
 #: includes/modules/divi-4/Number/Number.php:156
@@ -6905,6 +7119,6 @@ msgstr ""
 msgid "Here you can define the radius value for your text box border."
 msgstr ""
 
-#: plugin-loader.php:118
+#: plugin-loader.php:112
 msgid "Dashboard"
 msgstr ""

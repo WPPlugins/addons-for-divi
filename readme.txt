@@ -1,11 +1,11 @@
 === Divi Torque Lite - Divi Theme and Extra Theme ===
 Contributors: diviepic, plugpressco, badhonrocks
 Donate link: https://diviepic.com
-Tags: divi, divi builder, divi theme, divi module, divi carousel
+Tags: divi, divi builder, divi theme, divi module
 Requires at least: 5.0
-Tested up to: 6.5.2
+Tested up to: 6.5.3
 Requires PHP: 7.0
-Stable tag: 4.0.1
+Stable tag: 4.0.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -121,6 +121,10 @@ No, It won’t break your site or any page where you used our plugin. We put our
 4. Image Carousel
 
 == Changelog ==
+
+= Version 4.0.2 = 
+Fix: SVN version issue 4.0.0 to 4.0.1
+Add: Loading icon to rollback button
 
 = Version 4.0.1 = 
 Fix: Resolved various user-facing issues encountered during the update from version 3.6.6 to 4.0.0.

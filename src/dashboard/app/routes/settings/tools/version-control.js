@@ -6,7 +6,7 @@ const VersionControl = () => {
 	const currentVersion = window.diviTorqueLite?.currentVersion || '';
 	const rollbackVersions = window.diviTorqueLite?.rollbackVersions || [];
 	const [selectedVersion, setSelectedVersion] = useState();
-	const [rollbackLoading, setRollbackLoading] = useState();
+	const [rollbackLoading, setRollbackLoading] = useState(false);
 	const [isOpen, setOpen] = useState(false);
 
 	let rollbackLink = window.diviTorqueLite?.rollbackLink;
@@ -37,10 +37,9 @@ const VersionControl = () => {
 					: console.log('No window.location');
 			},
 
-			5000
+			3000
 		);
 
-		// Close the modal
 		closeModal();
 	};
 
@@ -73,9 +72,27 @@ const VersionControl = () => {
 					})}
 				</select>
 				<button
-					className="bg-de-app-color text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:bg-de-app-color-dark focus:ring-opacity-50"
+					className="bg-de-app-color text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:bg-de-app-color-dark focus:ring-opacity-50 flex items-center gap-1"
 					onClick={openModal}
 				>
+					{rollbackLoading && (
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							className="animate-spin h-5 w-5 mr-3"
+						>
+							<polyline points="23 4 23 10 17 10"></polyline>
+							<polyline points="1 20 1 14 7 14"></polyline>
+							<path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+						</svg>
+					)}
 					{__('Rollback', 'addons-for-divi')}
 				</button>
 
