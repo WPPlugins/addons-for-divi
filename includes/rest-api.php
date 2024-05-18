@@ -207,6 +207,6 @@ class RestApi
             wp_send_json_error($status);
         }
 
-        return ['success' => true, 'message' => "Plugin activated successfully"];
+        return ['success' => true, 'message' => "Plugin installed successfully"];
     }
 }

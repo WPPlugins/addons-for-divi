@@ -34,7 +34,6 @@ class PluginLoader
     public function hooks_init()
     {
         add_action('divi_extensions_init', array($this, 'init_extension'));
-
         add_filter('plugin_action_links_' . plugin_basename(DIVI_TORQUE_LITE_FILE), array($this, 'add_pro_link'));
 
         AssetsManager::get_instance();
@@ -61,6 +60,7 @@ class PluginLoader
 
         // Deprecated related
         if (get_option('divitorque_version') && version_compare(get_option('divitorque_version'), '3.5.7', '<=')) {
+            require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated.php';
             $deprecated = new Deprecated();
             $deprecated->run();
         }

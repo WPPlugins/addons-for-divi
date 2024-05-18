@@ -5,7 +5,7 @@ Tags: divi, divi builder, divi theme, divi module, divi carousel
 Requires at least: 5.0
 Tested up to: 6.5.2
 Requires PHP: 7.0
-Stable tag: 4.0.0
+Stable tag: 4.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -122,48 +122,51 @@ No, It won’t break your site or any page where you used our plugin. We put our
 
 == Changelog ==
 
-= 4.0.0 =
+= Version 4.0.1 = 
+Fix: Resolved various user-facing issues encountered during the update from version 3.6.6 to 4.0.0.
+
+= Version 4.0.0 =
 * Fix: Security issues
 * Added: Module on-load demos
 * Added: New module manager
 * Update: Revamp dashboard
 * Update: Clean codebase
 
-= 3.6.6 =
+= Version 3.6.6 =
 * Fix: Moduuels php error
 
-= 3.6.5 =
+= Version 3.6.5 =
 * Fix: Module deprecated warnings
 
-= 3.6.4 =
+= Version 3.6.4 =
 * Fix: Modules php error
 
-= 3.6.3 =
+= Version 3.6.3 =
 * Fix: Big close icon issue.
 
-= 3.6.2 =
+= Version 3.6.2 =
 * Added a single folder for all modules
 * Fix: Modules security issues with 6.2
 * Fix: Swap image issues
 
-= 3.6.1 =
+= Version 3.6.1 =
 * Security Update
 
-= 3.6.0 =
+= Version 3.6.0 =
 * Deprecated popup extension
 * Deprecated login designer extension
 * Deprecated the admin page
 * Clean codebase
 * Remove freemium
 
-= 3.5.0 =
-* Merge with WPPaw Team
+= Version 3.5.0 =
+* Clean Code
 
-= 3.0.0 =
+= Version 3.0.0 =
 * Rebranding BrainAddons to Divi Torque
 
-= 2.0.0 =
+= Version 2.0.0 =
 * Codebase optimize 
 
-= 1.0.0 =
+= Version 1.0.0 =
 * Public beta release
