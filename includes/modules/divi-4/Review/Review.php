@@ -679,17 +679,32 @@ class DTQ_Review extends Divi_Torque_Lite_Module
 		$processed_overlay_icon = esc_attr(et_pb_process_font_icon($this->props['overlay_icon']));
 		$overlay_icon           = !empty($processed_overlay_icon) ? $processed_overlay_icon : '';
 		$data_schema            = $this->get_swapped_img_schema('image');
-		dtq_inject_fa_icons($this->props['overlay_icon']);
+
+		$overlay_on_hover 		= $this->props['overlay_on_hover'];
+
+		$overlay = '';
+
+		if ('on' === $overlay_on_hover) {
+			dtq_inject_fa_icons($this->props['overlay_icon']);
+
+			$overlay = sprintf(
+				'<div class="dtq-overlay">
+					<i class="dtq-overlay-icon">%1$s</i>
+				</div>',
+				$overlay_icon
+			);
+		}
+
 		if (!empty($image)) {
 			return sprintf(
 				'<div class="dtq-rating-figure">
                     %6$s
-                    <div class="dtq-overlay"><i class="dtq-overlay-icon">%3$s</i></div>
+					%3$s
                     <img class="dtq-img-cover dtq-swapped-img %5$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%4$s"/>
                 </div>',
 				$image,
 				$data_schema,
-				$overlay_icon,
+				$overlay,
 				$image_alt,
 				'on' === $use_lightbox ? 'dtq-lightbox' : '',
 				$this->render_badge()

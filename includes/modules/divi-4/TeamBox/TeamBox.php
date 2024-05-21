@@ -908,18 +908,33 @@ class DTQ_Advanced_Team extends Divi_Torque_Lite_Module
 		$links_position         = $this->props['links_position'];
 		$processed_overlay_icon = esc_attr(et_pb_process_font_icon($this->props['overlay_icon']));
 		$overlay_icon           = !empty($processed_overlay_icon) ? $processed_overlay_icon : '';
-		dtq_inject_fa_icons($this->props['overlay_icon']);
+
 		array_push($classes, 'dtq-module dtq-team dtq-bg-support dtq-swapped-img-selector');
 
 		if ('on' === $content_on_hover) {
 			array_push($classes, $hover_style);
 		}
 
+		$overlay_on_hover = $this->props['overlay_on_hover'];
+
+		$overlay = '';
+
+		if ('on' === $overlay_on_hover) {
+			dtq_inject_fa_icons($this->props['overlay_icon']);
+
+			$overlay = sprintf(
+				'<div class="dtq-overlay">
+					<i class="dtq-overlay-icon">%1$s</i>
+				</div>',
+				$overlay_icon
+			);
+		}
+
 		return sprintf(
 			'<div class="%10$s dtq-hover--%7$s">
                 %8$s
 				<figure class="dtq-figure dtq-team-figure">
-					<div class="dtq-overlay"><i class="dtq-overlay-icon">%9$s</i></div>
+					%9$s
 					%1$s
                 </figure>
 				<div class="dtq-team-content content-%2$s">
@@ -937,7 +952,7 @@ class DTQ_Advanced_Team extends Divi_Torque_Lite_Module
 			('on' === $content_on_hover || 'content' === $links_position) ? $this->render_links() : '',
 			$this->props['photo_hover_animation'],
 			('off' === $content_on_hover && 'photo' === $links_position) ? $this->render_links() : '',
-			$overlay_icon,
+			$overlay,
 			join(' ', $classes)
 		);
 	}

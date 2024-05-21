@@ -215,17 +215,31 @@ class DTQ_Logo_Carousel_Child extends Divi_Torque_Lite_Module
 
 		// Overlay Styles.
 		$this->get_overlay_style($render_slug, 'logo', '%%order_class%% .dtq-carousel-item');
-		dtq_inject_fa_icons($this->props['overlay_icon']);
+
 		$processed_overlay_icon = esc_attr(et_pb_process_font_icon($this->props['overlay_icon']));
 		$overlay_icon           = !empty($processed_overlay_icon) ? $processed_overlay_icon : '';
+		$overlay_on_hover 		= $this->props['overlay_on_hover'];
+
+		$overlay = '';
+
+		if ('on' === $overlay_on_hover) {
+			dtq_inject_fa_icons($this->props['overlay_icon']);
+
+			$overlay = sprintf(
+				'<div class="dtq-overlay">
+					<i class="dtq-overlay-icon">%1$s</i>
+				</div>',
+				$overlay_icon
+			);
+		}
 
 		return sprintf(
 			'<div class="dtq-carousel-item dtq-logo-carousel-item dtq-swapped-img-selector">
-			    <div class="dtq-overlay"><i class="dtq-overlay-icon">%2$s</i></div>
+			    %2$s
 				%1$s
 			</div>',
 			$this->render_logo(),
-			$overlay_icon
+			$overlay
 		);
 	}
 }

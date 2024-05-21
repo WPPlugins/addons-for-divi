@@ -485,17 +485,30 @@ class DTQ_Image_Carousel_Child extends Divi_Torque_Lite_Module
 		$data_schema            = $this->get_swapped_img_schema('photo');
 		$parent_module          = self::get_parent_modules('page')['ba_image_carousel'];
 		$use_lightbox           = $parent_module->shortcode_atts['use_lightbox'];
-		dtq_inject_fa_icons($this->props['overlay_icon']);
+		$overlay_on_hover 		= $this->props['overlay_on_hover'];
+
+		$overlay = '';
+
+		if ('on' === $overlay_on_hover) {
+			dtq_inject_fa_icons($this->props['overlay_icon']);
+
+			$overlay = sprintf(
+				'<div class="dtq-overlay">
+					<i class="dtq-overlay-icon">%1$s</i>
+				</div>',
+				$overlay_icon
+			);
+		}
 
 		if (!empty($photo)) {
 			return sprintf(
 				'<figure class="dtq-figure">
-                    <div class="dtq-overlay"><i class="dtq-overlay-icon">%3$s</i></div>
+                    %3$s
                     <img class="dtq-swapped-img %4$s" data-mfp-src="%1$s" src="%1$s" %2$s alt="%5$s"/>
                 </figure>',
 				$photo,
 				$data_schema,
-				$overlay_icon,
+				$overlay,
 				$use_lightbox === 'on' ? 'dtq-lightbox' : '',
 				$photo_alt
 			);

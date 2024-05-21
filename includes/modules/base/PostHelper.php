@@ -11,19 +11,34 @@ class BaPostHelper
 		$processed_overlay_icon = esc_attr(et_pb_process_font_icon($overlay_icon));
 		$overlay_icon           = !empty($processed_overlay_icon) ? $processed_overlay_icon : '';
 
+		$overlay_on_hover 		= $this->props['overlay_on_hover'];
+
+		$overlay = '';
+
+		if ('on' === $overlay_on_hover) {
+			dtq_inject_fa_icons($this->props['overlay_icon']);
+
+			$overlay = sprintf(
+				'<div class="dtq-overlay">
+					<i class="dtq-overlay-icon">%1$s</i>
+				</div>',
+				$overlay_icon
+			);
+		}
+
 		if (has_post_thumbnail()) {
 			return sprintf(
 				'
                 <figure class="dtq-post-thumb">
                     <a href="%1$s">
-                        <div class="dtq-overlay" data-icon="%4$s"></div>
+                        %4$s
                         <img src="%2$s" alt="%3$s">
                     </a>
                 </figure>',
 				esc_url(get_the_permalink()),
 				esc_url(get_the_post_thumbnail_url()),
 				$alt,
-				$overlay_icon
+				$overlay
 			);
 		} else {
 			if ($render_empty_figure === true) {
