@@ -95,7 +95,7 @@ class DTQ_Logo_Carousel extends Divi_Torque_Lite_Module
 	public function get_fields()
 	{
 
-		$carousel_options = $this->get_carousel_option_fields(array(), array(), array());
+		$carousel_options = $this->get_carousel_option_fields(array(), array(), array(), 'carousel_settings');
 
 		$logo_options = array(
 

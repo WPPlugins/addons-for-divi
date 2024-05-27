@@ -11,6 +11,8 @@ use DiviTorqueLite\Review;
 
 use DiviTorqueLite\Deprecated;
 
+use DiviTorqueLite\Divi_Library_Shortcode;
+
 class PluginLoader
 {
     private static $instance;
@@ -39,6 +41,10 @@ class PluginLoader
         AssetsManager::get_instance();
         RestApi::get_instance();
         Dashboard::get_instance();
+
+        if (!get_option('divitorque_version')) {
+            Divi_Library_Shortcode::get_instance();
+        }
 
         Review::get_instance(array(
             'plugin_name'   => 'DiviTorque Lite',

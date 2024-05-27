@@ -4,8 +4,8 @@ Donate link: https://diviepic.com
 Tags: divi, divi builder, divi theme, divi module
 Requires at least: 5.0
 Tested up to: 6.5.3
-Requires PHP: 7.0
-Stable tag: 4.0.4
+Requires PHP: 7.4
+Stable tag: 4.0.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -121,6 +121,12 @@ No, It won’t break your site or any page where you used our plugin. We put our
 4. Image Carousel
 
 == Changelog ==
+
+= Version 4.0.5 = 
+Fix: Divi Library Shortcode issue
+Fix: Infobox overlay issue
+Added: Custom Icon for Video Modal
+
 = Version 4.0.4 = 
 Fix: Image overlay issue - Showing blue images
 

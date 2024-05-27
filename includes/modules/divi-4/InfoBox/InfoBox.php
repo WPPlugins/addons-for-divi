@@ -826,19 +826,33 @@ class DTQ_Info_Box extends Divi_Torque_Lite_Module
 	public function render_figure()
 	{
 
-		if ('image' === $this->props['main_figure']) {
+		$use_overlay = $this->props['use_overlay'];
 
+		$overlay_html = '';
+
+		if ('on' === $use_overlay) {
 			$processed_overlay_icon = esc_attr(et_pb_process_font_icon($this->props['overlay_icon']));
 			$overlay_icon           = !empty($processed_overlay_icon) ? $processed_overlay_icon : '';
+			dtq_inject_fa_icons($this->props['overlay_icon']);
+
+
+			$overlay_html = sprintf(
+				'<div class="dtq-overlay">
+					<i class="dtq-overlay-icon">%1$s</i>
+				</div>',
+				$overlay_icon
+			);
+		}
+
+		if ('image' === $this->props['main_figure']) {
+
 			$photo                  = $this->props['photo'];
 			$data_schema            = $this->get_swapped_img_schema('photo');
-			dtq_inject_fa_icons($this->props['overlay_icon']);
 			return sprintf(
-				'<div class="dtq-overlay"><i class="dtq-overlay-icon">%3$s</i></div>
-				<img class="dtq-info-box-img dtq-swapped-img" src="%1$s" %2$s alt=""/>',
+				'<img class="dtq-info-box-img dtq-swapped-img" src="%1$s" %2$s alt=""/>',
 				$photo,
 				$data_schema,
-				$overlay_icon
+				$overlay_html
 			);
 		} elseif ('icon' === $this->props['main_figure']) {
 

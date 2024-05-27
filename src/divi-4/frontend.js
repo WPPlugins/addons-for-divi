@@ -239,12 +239,12 @@ jQuery(function ($) {
 function updateImageSource(selector, imageConfig) {
 	const updateSrc = (selector, src) => {
 		if (src && src.length > 0) {
-			$(selector).attr('src', src);
+			jQuery(selector).attr('src', src);
 		}
 	};
 
 	const handleResize = () => {
-		const screenWidth = $(document).width();
+		const screenWidth = jQuery(document).width();
 		if (screenWidth < 768) {
 			updateSrc(selector, imageConfig.phone);
 		} else if (screenWidth >= 768 && screenWidth < 981) {
@@ -254,20 +254,20 @@ function updateImageSource(selector, imageConfig) {
 		}
 	};
 
-	handleResize(); // Call immediately to set initial source
+	handleResize(); // Call immediately to set the initial source
 
-	$(window).on('resize', handleResize);
+	jQuery(window).on('resize', handleResize);
 
-	$(selector)
+	jQuery(selector)
 		.closest('.dtq-swapped-img-selector')
 		.on({
 			mouseenter: () => {
 				updateSrc(selector, imageConfig.hover);
-				$(selector).addClass('dtq-img-hovered');
+				jQuery(selector).addClass('dtq-img-hovered');
 			},
 			mouseleave: () => {
 				handleResize();
-				$(selector).removeClass('dtq-img-hovered');
+				jQuery(selector).removeClass('dtq-img-hovered');
 			},
 		});
 }

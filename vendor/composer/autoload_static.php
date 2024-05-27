@@ -19,6 +19,7 @@ class ComposerStaticInit0091dd1a442bec0f6d7c3c4f0540df6a
         'DiviTorqueLite\\AssetsManager' => __DIR__ . '/../..' . '/includes/assets-manager.php',
         'DiviTorqueLite\\BackendHelpers' => __DIR__ . '/../..' . '/includes/backend-helpers.php',
         'DiviTorqueLite\\Dashboard' => __DIR__ . '/../..' . '/includes/dashboard.php',
+        'DiviTorqueLite\\Divi_Library_Shortcode' => __DIR__ . '/../..' . '/includes/extensions/divi-library-shortcode.php',
         'DiviTorqueLite\\Filesystem' => __DIR__ . '/../..' . '/includes/filesystem.php',
         'DiviTorqueLite\\Helpers' => __DIR__ . '/../..' . '/includes/helpers.php',
         'DiviTorqueLite\\ModulesManager' => __DIR__ . '/../..' . '/includes/modules-manager.php',

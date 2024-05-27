@@ -13,6 +13,7 @@ return array(
     'DiviTorqueLite\\AssetsManager' => $baseDir . '/includes/assets-manager.php',
     'DiviTorqueLite\\BackendHelpers' => $baseDir . '/includes/backend-helpers.php',
     'DiviTorqueLite\\Dashboard' => $baseDir . '/includes/dashboard.php',
+    'DiviTorqueLite\\Divi_Library_Shortcode' => $baseDir . '/includes/extensions/divi-library-shortcode.php',
     'DiviTorqueLite\\Filesystem' => $baseDir . '/includes/filesystem.php',
     'DiviTorqueLite\\Helpers' => $baseDir . '/includes/helpers.php',
     'DiviTorqueLite\\ModulesManager' => $baseDir . '/includes/modules-manager.php',
