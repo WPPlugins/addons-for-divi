@@ -1,15 +1,5 @@
 <?php
 
-/**
- * Plugin Loader Class
- * 
- * Main loader class that initializes the plugin functionality.
- * Handles plugin activation, text domain loading, and core functionality initialization.
- * 
- * @package DiviTorqueLite
- * @since 1.0.0
- */
-
 namespace DiviTorqueLite;
 
 use DiviTorqueLite\AdminHelper;
@@ -19,7 +9,6 @@ use DiviTorqueLite\Dashboard;
 use DiviTorqueLite\ModulesManager;
 use DiviTorqueLite\Deprecated;
 use DiviTorqueLite\Divi_Library_Shortcode;
-use DiviTorqueLite\Admin_Notices;
 
 class PluginLoader
 {
