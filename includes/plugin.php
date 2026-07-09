@@ -37,7 +37,6 @@ class PluginLoader
     public function __construct()
     {
         register_activation_hook(DIVI_TORQUE_LITE_FILE, array($this, 'activation'));
-        register_deactivation_hook(DIVI_TORQUE_LITE_FILE, array($this, 'deactivation'));
         add_action('init', array($this, 'load_textdomain'));
         add_action('plugins_loaded', array($this, 'hooks_init'));
     }
@@ -53,26 +52,7 @@ class PluginLoader
 
         AssetsManager::get_instance();
         RestApi::get_instance();
-        // Explicit require — composer classmaps includes/, and a stale map
-        // would silently skip a newly added class.
-        require_once DIVI_TORQUE_LITE_DIR . 'includes/module-usage.php';
-        Module_Usage::get_instance();
-        require_once DIVI_TORQUE_LITE_DIR . 'includes/recommended-plugins.php';
-        Recommended_Plugins::get_instance();
-        require_once DIVI_TORQUE_LITE_DIR . 'includes/snapback-card.php';
-        Snapback_Card::get_instance();
         Dashboard::get_instance();
-
-        // Share My Post extension. After Dashboard, which owns the parent menu
-        // its settings page attaches to. Same explicit-require reason as above.
-        require_once DIVI_TORQUE_LITE_DIR . 'includes/extensions/share-my-post/share-my-post.php';
-        Share_My_Post::get_instance();
-
-        // Extensions screen. After Share My Post, because the manifest reads its
-        // settings for the on/off state. Same explicit-require reason as above.
-        require_once DIVI_TORQUE_LITE_DIR . 'includes/extensions-manager.php';
-        require_once DIVI_TORQUE_LITE_DIR . 'includes/extensions-api.php';
-        Extensions_Api::get_instance();
 
         if (!get_option('divitorque_version')) {
             Divi_Library_Shortcode::get_instance();
@@ -86,15 +66,8 @@ class PluginLoader
     /**
      * Handles plugin activation tasks
      */
-    public function activation($network_wide = false)
+    public function activation()
     {
-        // A fresh install (no earlier Lite on this site) gets the welcome tour on
-        // every Divi Torque screen until someone finishes or skips it. Updates
-        // and reactivations never do: earlier Lite's options survive deactivation.
-        if (Dashboard::is_fresh_install()) {
-            update_option(Dashboard::SETUP_OPTION, 1);
-        }
-
         // Deprecated related
         if (get_option('divitorque_version') && version_compare(get_option('divitorque_version'), '3.5.7', '<=')) {
             require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated.php';
@@ -115,23 +88,7 @@ class PluginLoader
         // Set the version
         update_option('divitorque_lite_version', DIVI_TORQUE_LITE_VERSION);
 
-        // Queue the one-time welcome tour redirect. Dashboard::maybe_redirect_to_onboarding()
-        // consumes it and decides (bulk activation, Pro present, tour already done).
-        if (!(defined('WP_CLI') && WP_CLI) && !$network_wide) {
-            set_transient(Dashboard::ONBOARDING_TRANSIENT, 1, MINUTE_IN_SECONDS);
-        }
-
         self::init();
-    }
-
-    /**
-     * Handles plugin deactivation tasks
-     */
-    public function deactivation()
-    {
-        // The weekly PlugPress Insight update waits too; any PlugPress plugin
-        // still active schedules it again on admin_init while site info is shared.
-        wp_clear_scheduled_hook('plugpress_insight_weekly');
     }
 
     /**
@@ -182,14 +139,14 @@ class PluginLoader
         $links[] = sprintf(
             '<a href="%s" target="_blank">%s</a>',
             esc_url_raw(self::get_url()),
-            __('Dashboard', 'addons-for-divi')
+            __('Dashboard', 'divitorque')
         );
 
         if (current_user_can('update_plugins')) {
             $links[] = sprintf(
                 '<a href="%s">%s</a>',
                 esc_url(admin_url('admin.php?page=divitorque-rollback')),
-                __('Rollback', 'addons-for-divi')
+                __('Rollback', 'divitorque')
             );
         }
 
@@ -200,8 +157,8 @@ class PluginLoader
     {
         add_submenu_page(
             'divitorque',
-            __('Rollback Divi Torque Lite', 'addons-for-divi'),
-            __('Rollback', 'addons-for-divi'),
+            __('Rollback Divi Torque Lite', 'divitorque'),
+            __('Rollback', 'divitorque'),
             'update_plugins',
             'divitorque-rollback',
             array($this, 'render_rollback_page')
@@ -212,7 +169,7 @@ class PluginLoader
     public function render_rollback_page()
     {
         if (!current_user_can('update_plugins')) {
-            wp_die(__('You do not have permission to access this page.', 'addons-for-divi'));
+            wp_die(__('You do not have permission to access this page.', 'divitorque'));
         }
 
         $rest_root  = esc_url_raw(rest_url('divitorque-lite/v1'));
@@ -220,24 +177,23 @@ class PluginLoader
         $current    = DIVI_TORQUE_LITE_VERSION;
         ?>
         <div class="wrap" style="max-width:560px;">
-            <h1><?php esc_html_e('Rollback Divi Torque Lite', 'addons-for-divi'); ?></h1>
-            <?php /* translators: %s: the currently installed plugin version number. */ ?>
-            <p><?php printf(esc_html__('Currently installed: %s', 'addons-for-divi'), '<code>' . esc_html($current) . '</code>'); ?></p>
+            <h1><?php esc_html_e('Rollback Divi Torque Lite', 'divitorque'); ?></h1>
+            <p><?php printf(esc_html__('Currently installed: %s', 'divitorque'), '<code>' . esc_html($current) . '</code>'); ?></p>
 
             <p class="description" style="margin:12px 0;">
-                <?php esc_html_e('Choose a previous version published on WordPress.org. Your active state will be preserved.', 'addons-for-divi'); ?>
+                <?php esc_html_e('Choose a previous version published on WordPress.org. Your active state will be preserved.', 'divitorque'); ?>
             </p>
 
             <p>
-                <label for="dtl-rollback-version"><strong><?php esc_html_e('Version', 'addons-for-divi'); ?></strong></label><br>
+                <label for="dtl-rollback-version"><strong><?php esc_html_e('Version', 'divitorque'); ?></strong></label><br>
                 <select id="dtl-rollback-version" style="min-width:240px;margin-top:6px;">
-                    <option value=""><?php esc_html_e('Loading versions…', 'addons-for-divi'); ?></option>
+                    <option value=""><?php esc_html_e('Loading versions…', 'divitorque'); ?></option>
                 </select>
             </p>
 
             <p>
                 <button type="button" class="button button-primary" id="dtl-rollback-btn" disabled>
-                    <?php esc_html_e('Rollback', 'addons-for-divi'); ?>
+                    <?php esc_html_e('Rollback', 'divitorque'); ?>
                 </button>
                 <span id="dtl-rollback-status" style="margin-left:12px;"></span>
             </p>

@@ -181,15 +181,6 @@ if (!function_exists('dtq_global_assets_list')) {
  * Divi icon font (icons_all) — otherwise only the small base set renders and
  * extended glyphs (e.g. warning) fall back to a literal letter.
  *
- * Pass the full "unicode||type||weight" string: et_pb_maybe_fa_font_icon()
- * detects FontAwesome by the "||" separator, so a bare unicode is always read
- * as a Divi icon and the FA font is never requested.
- *
- * The two filters below are DIVI 4 ONLY. Divi 4's Dynamic Assets still calls
- * them, so they must stay. Divi 5 never fires them and has no third-party
- * equivalent — see dtq_print_full_icon_font(), which is what actually delivers
- * the font there.
- *
  * @param string $icon_data Icon value (unicode, optionally "||type||weight").
  */
 if (!function_exists('dtq_inject_fa_icons')) {
@@ -204,159 +195,29 @@ if (!function_exists('dtq_inject_fa_icons')) {
 }
 
 /**
- * Locate Divi on disk and on the web, whichever way it is installed.
+ * Ensure the COMPLETE Divi icon font is available on the front end.
  *
- * Divi 5 ships two ways: as the Divi (or Extra) theme, and as the Divi Builder
- * plugin sitting under any third-party theme. get_template_directory_uri() is
- * only correct for the first. Under the Builder plugin it returns the ACTIVE
- * THEME, so a Divi-relative asset URL built from it 404s.
- *
- * That is worse than it sounds for @font-face: our rule prints at wp_footer 99,
- * after Divi's own, and for a given family the last matching rule wins. A rule
- * pointing at a 404 therefore *overrides* Divi's working font and breaks icons
- * that would otherwise have rendered. Hence the file_exists() checks in
- * dtq_icon_font_face() — we would rather emit nothing than emit a broken face.
- *
- * Mirrors Divi's own resolver, DynamicAssetsUtils::get_dynamic_assets_path().
- *
- * @return array{dir:string,uri:string} Divi root as a filesystem path and a URL.
- */
-if (!function_exists('dtq_divi_root')) {
-	function dtq_divi_root()
-	{
-		if (
-			function_exists('et_is_builder_plugin_active') && et_is_builder_plugin_active()
-			&& defined('ET_BUILDER_PLUGIN_DIR') && defined('ET_BUILDER_PLUGIN_URI')
-		) {
-			return array(
-				'dir' => untrailingslashit(ET_BUILDER_PLUGIN_DIR),
-				'uri' => untrailingslashit(ET_BUILDER_PLUGIN_URI),
-			);
-		}
-
-		return array(
-			'dir' => untrailingslashit(get_template_directory()),
-			'uri' => untrailingslashit(get_template_directory_uri()),
-		);
-	}
-}
-
-/**
- * Build one @font-face rule for a Divi-bundled icon font.
- *
- * Probes woff2 then woff and emits only the formats that actually exist, so the
- * same call works for FontAwesome (ships woff2 + woff) and for ETmodules (ships
- * woff, no woff2). Returns an empty string when no file is found, which is what
- * keeps a wrong Divi root from producing a face that shadows a working one.
- *
- * @param string $family Font family name to declare.
- * @param array  $root   Divi root from dtq_divi_root().
- * @param string $rel    Path below the Divi root, without extension.
- * @param int    $weight font-weight for this face.
- *
- * @return string One @font-face rule, or '' if the font files are missing.
- */
-if (!function_exists('dtq_icon_font_face')) {
-	function dtq_icon_font_face($family, $root, $rel, $weight)
-	{
-		$sources = array();
-
-		foreach (array('woff2', 'woff') as $format) {
-			if (file_exists($root['dir'] . $rel . '.' . $format)) {
-				$sources[] = sprintf(
-					'url("%1$s") format("%2$s")',
-					esc_url($root['uri'] . $rel . '.' . $format),
-					$format
-				);
-			}
-		}
-
-		if (empty($sources)) {
-			return '';
-		}
-
-		return sprintf(
-			'@font-face{font-family:"%1$s";font-style:normal;font-weight:%2$d;font-display:swap;src:%3$s;}',
-			$family,
-			(int) $weight,
-			implode(',', $sources)
-		);
-	}
-}
-
-/**
- * Ensure the icon fonts our modules just rendered are actually available.
- *
- * Two separate problems, one cure.
- *
- * ETmodules: Divi's "Dynamic Icons" feature only ships the subset of glyphs it
- * detects in page content, and its detector does not see icons stored in our D5
- * module attributes. Extended Divi icons (warning, star, heart, …) then have no
- * glyph and fall back to a literal letter.
- *
- * FontAwesome: worse. dtq_inject_fa_icons() asks for the FA stylesheet through
- * et_global_assets_list / et_late_global_assets_list, and under Divi 5 NEITHER
- * FILTER EVER FIRES — verified by instrumenting both, plus their Divi 5
- * replacements (divi_frontend_assets_dynamic_assets_[late_]global_assets_list),
- * on a real front-end render. Divi 5 gates FA on $feature_state->use_fa_icons,
- * set from DynamicAssetsUtils::get_font_icon_modules(), a hard-coded list of
- * divi/* module names with no filter on it. A third-party module can never
- * enter that list, so Divi will never load FA on our behalf and every FA icon
- * renders as an empty box. There is no hook to fix this upstream; declare the
- * faces ourselves.
- *
- * @param string[] $handles Handles to declare (et_icons_all|et_icons_fa).
- *
- * @return string The @font-face rules, or '' when none could be built.
- */
-if (!function_exists('dtq_icon_font_css')) {
-	function dtq_icon_font_css($handles)
-	{
-		$root = dtq_divi_root();
-		$css  = '';
-
-		if (in_array('et_icons_all', (array) $handles, true)) {
-			$css .= dtq_icon_font_face('ETmodules', $root, '/core/admin/fonts/modules/all/modules', 400);
-		}
-
-		if (in_array('et_icons_fa', (array) $handles, true)) {
-			// The three faces Divi's own icons_fa_all.css declares. Regular and
-			// Brands share weight 400 but cover disjoint codepoints, so both are
-			// needed and neither shadows the other.
-			$fa_faces = array(
-				array('fa-regular-400', 400),
-				array('fa-solid-900', 900),
-				array('fa-brands-400', 400),
-			);
-
-			foreach ($fa_faces as $face) {
-				$css .= dtq_icon_font_face('FontAwesome', $root, '/core/admin/fonts/fontawesome/' . $face[0], $face[1]);
-			}
-		}
-
-		return $css;
-	}
-}
-
-/**
- * Print the icon fonts this request's modules actually rendered.
- *
- * Runs at wp_footer because dtq_needed_icon_assets() is only populated while
- * modules render, which is long after wp_head. Emits nothing on a page with no
- * icons, so the cost on the rest of the site is zero.
+ * Divi's "Dynamic Icons" performance feature only ships the small subset of
+ * glyphs it detects in the page content, and its detector does not see icons
+ * stored in our D5 module attributes. So extended Divi icons (warning, star,
+ * heart, …) have no glyph and fall back to a literal letter. When one of our
+ * modules has rendered a Divi icon, register the full ETmodules @font-face so
+ * every glyph resolves. The full font is a superset of the base one, so this
+ * is safe for base glyphs too.
  */
 if (!function_exists('dtq_print_full_icon_font')) {
 	function dtq_print_full_icon_font()
 	{
-		$css = dtq_icon_font_css(dtq_needed_icon_assets());
-
-		if ('' === $css) {
+		if (! in_array('et_icons_all', dtq_needed_icon_assets(), true)) {
 			return;
 		}
 
-		// Element id kept from when this only handled ETmodules; changing it
-		// would break any site targeting it from custom CSS.
-		printf('<style id="dtq-et-icons-all">%s</style>', $css);
+		$font_url = get_template_directory_uri() . '/core/admin/fonts/modules/all/modules.woff';
+
+		printf(
+			'<style id="dtq-et-icons-all">@font-face{font-family:"ETmodules";font-display:swap;src:url("%s") format("woff");}</style>',
+			esc_url($font_url)
+		);
 	}
 }
 add_action('wp_footer', 'dtq_print_full_icon_font', 99);
@@ -368,17 +229,12 @@ add_action('wp_footer', 'dtq_print_full_icon_font', 99);
  * "||type||weight") or as the legacy index format "%%NN%%". When a layout using
  * the legacy format is migrated to Divi 5, that "%%NN%%" string can survive into
  * the D5 icon object's `unicode` field and would otherwise render as raw glyphs.
- * Resolve it the same way Divi 4 did, via et_pb_process_font_icon().
- *
- * The result is escaped with esc_html() before it is returned: the stored value
- * is a module attribute and therefore author-controlled, so printing it raw into
- * the icon <i> would let crafted markup reach the DOM. esc_html() passes
- * `$double_encode = false`, so an existing "&#xe0XX;" entity survives untouched
- * and the browser still renders the glyph — the call is idempotent for entities.
+ * Resolve it the same way Divi 4 did, via et_pb_process_font_icon(). Values that
+ * are already a unicode entity are returned unchanged.
  *
  * @param string $unicode Raw unicode value from the icon attribute.
  *
- * @return string Escaped unicode entity, safe to print inside the icon <i>.
+ * @return string Unicode entity safe to print inside the icon <i>.
  */
 if (!function_exists('dtq_resolve_icon_unicode')) {
 	function dtq_resolve_icon_unicode($unicode)
@@ -388,216 +244,8 @@ if (!function_exists('dtq_resolve_icon_unicode')) {
 			// et_pb_process_font_icon() returns the entity with the ampersand already
 			// escaped ("&amp;#xe0XX;"); decode once so the raw entity ("&#xe0XX;") is
 			// what lands inside the icon <i> and the browser renders the glyph.
-			$unicode = html_entity_decode(et_pb_process_font_icon($unicode));
+			return html_entity_decode(et_pb_process_font_icon($unicode));
 		}
-		return esc_html($unicode);
-	}
-}
-
-/**
- * mbstring-safe string helpers.
- *
- * mbstring is not guaranteed to be present — it is a non-default PHP extension
- * and some shared hosts ship without it. Calling mb_* unguarded is a fatal on
- * those hosts, which took the whole page down whenever a module truncated an
- * excerpt. These wrappers fall back to the single-byte equivalents; the fallback
- * can split a multi-byte character mid-sequence, which is cosmetically imperfect
- * but far better than a white screen.
- */
-if (!function_exists('dtq_strlen')) {
-	function dtq_strlen($string)
-	{
-		$string = (string) $string;
-		return function_exists('mb_strlen') ? mb_strlen($string) : strlen($string);
-	}
-}
-
-if (!function_exists('dtq_substr')) {
-	function dtq_substr($string, $start, $length = null)
-	{
-		$string = (string) $string;
-		if (function_exists('mb_substr')) {
-			return null === $length ? mb_substr($string, $start) : mb_substr($string, $start, $length);
-		}
-		return null === $length ? substr($string, $start) : substr($string, $start, $length);
-	}
-}
-
-if (!function_exists('dtq_strimwidth')) {
-	function dtq_strimwidth($string, $start, $width, $trim_marker = '')
-	{
-		$string = (string) $string;
-		if (function_exists('mb_strimwidth')) {
-			return mb_strimwidth($string, $start, $width, $trim_marker);
-		}
-		return dtq_strimwidth_fallback($string, $start, $width, $trim_marker);
-	}
-}
-
-/**
- * Single-byte implementation of dtq_strimwidth().
- *
- * Split out from the wrapper so it stays reachable — and therefore testable —
- * on hosts that DO have mbstring, where the wrapper always delegates. Matches
- * mb_strimwidth(), including its quirk of returning the trim marker itself when
- * $width is not larger than the marker.
- */
-if (!function_exists('dtq_strimwidth_fallback')) {
-	function dtq_strimwidth_fallback($string, $start, $width, $trim_marker = '')
-	{
-		$slice = substr((string) $string, $start);
-		if (strlen($slice) <= $width) {
-			return $slice;
-		}
-		return substr($slice, 0, max(0, $width - strlen($trim_marker))) . $trim_marker;
-	}
-}
-
-/**
- * Resolve a Divi `$variable(...)$` token (global colour / variable) to CSS.
- *
- * Divi 5 stores a global colour as an encoded `$variable({...})$` string. Style
- * output that bypasses Divi's own resolver emits that token literally, so the
- * colour renders as raw text instead of a colour. Run author-supplied values
- * through this before sanitizing them.
- *
- * Returns the value unchanged when it holds no dynamic variable, or when Divi's
- * resolver is unavailable.
- *
- * @param mixed $value Raw attribute value.
- *
- * @return mixed
- */
-if (!function_exists('dtq_resolve_css_value')) {
-	function dtq_resolve_css_value($value)
-	{
-		if (is_string($value)
-			&& false !== strpos($value, '$variable(')
-			&& class_exists('\ET\Builder\Packages\StyleLibrary\Utils\Utils')
-		) {
-			return \ET\Builder\Packages\StyleLibrary\Utils\Utils::resolve_dynamic_variables_recursive($value);
-		}
-
-		return $value;
-	}
-}
-
-/**
- * Sanitize a colour value destined for interpolation into a CSS declaration.
- *
- * Module colour attributes are author-controlled. Interpolating them into a
- * stylesheet unchecked lets a value such as `#fff}</style><script>…` terminate
- * the rule set (and, in an inline <style>, the element itself). Anything that is
- * not recognisably a colour is replaced with the caller's fallback rather than
- * emitted. Divi global colours arrive as `var(--gcid-…)` once resolved through
- * StyleLibrary\Utils::resolve_dynamic_variables_recursive(), so `var()` is
- * allowed through.
- *
- * @param mixed  $value    Raw attribute value.
- * @param string $fallback Value to use when $value is not a valid colour.
- *
- * @return string A safe CSS colour token.
- */
-if (!function_exists('dtq_css_color')) {
-	function dtq_css_color($value, $fallback = 'transparent')
-	{
-		$value = trim((string) $value);
-
-		if ('' === $value) {
-			return $fallback;
-		}
-
-		// #rgb, #rgba, #rrggbb, #rrggbbaa
-		if (preg_match('/^#(?:[0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/i', $value)) {
-			return $value;
-		}
-
-		// rgb()/rgba()/hsl()/hsla() — digits, separators and units only.
-		if (preg_match('/^(?:rgba?|hsla?)\(\s*[0-9.,%\/\s-]+\)$/i', $value)) {
-			return $value;
-		}
-
-		// var(--custom-property) — how resolved global colours arrive.
-		if (preg_match('/^var\(\s*--[A-Za-z0-9_-]+\s*\)$/', $value)) {
-			return $value;
-		}
-
-		// Bare keywords: transparent, currentColor, inherit, red, …
-		if (preg_match('/^[A-Za-z]+$/', $value)) {
-			return $value;
-		}
-
-		return $fallback;
-	}
-}
-
-/**
- * Turn a Divi spacing value into a sanitized CSS shorthand.
- *
- * Divi stores spacing either as a "top|right|bottom|left" string (the D4 shape,
- * which survives conversion) or as an array with those keys. Each side is run
- * through dtq_css_length() so a crafted value cannot terminate the declaration.
- *
- * @param mixed  $value   Raw spacing attribute value.
- * @param string $default Value used for a side that is empty or unparseable.
- *
- * @return string Shorthand like "10px 0px 10px 0px", or '' when unusable.
- */
-if (!function_exists('dtq_css_padding')) {
-	function dtq_css_padding($value, $default = '0px')
-	{
-		if (is_array($value)) {
-			$parts = array(
-				$value['top'] ?? '',
-				$value['right'] ?? '',
-				$value['bottom'] ?? '',
-				$value['left'] ?? '',
-			);
-		} elseif (is_string($value) && '' !== $value) {
-			$parts = explode('|', $value);
-		} else {
-			return '';
-		}
-
-		$sides = array();
-		for ($i = 0; $i < 4; $i++) {
-			$side    = isset($parts[$i]) ? trim((string) $parts[$i]) : '';
-			$sides[] = ('' === $side) ? $default : dtq_css_length($side, $default);
-		}
-
-		return implode(' ', $sides);
-	}
-}
-
-/**
- * Sanitize a length value destined for interpolation into a CSS declaration.
- *
- * Same threat model as dtq_css_color(): a length such as `10px;}</style>…` would
- * otherwise break out of the declaration. Accepts a plain number with an optional
- * CSS unit, plus the `auto`/`inherit`/`initial`/`unset` keywords.
- *
- * @param mixed  $value    Raw attribute value.
- * @param string $fallback Value to use when $value is not a valid length.
- *
- * @return string A safe CSS length token.
- */
-if (!function_exists('dtq_css_length')) {
-	function dtq_css_length($value, $fallback = '0')
-	{
-		$value = trim((string) $value);
-
-		if ('' === $value) {
-			return $fallback;
-		}
-
-		if (preg_match('/^-?(?:\d+(?:\.\d+)?|\.\d+)(?:px|em|rem|%|vh|vw|vmin|vmax|pt|pc|ch|ex|cm|mm|in|q|s|ms|deg)?$/i', $value)) {
-			return $value;
-		}
-
-		if (preg_match('/^(?:auto|inherit|initial|unset)$/i', $value)) {
-			return $value;
-		}
-
-		return $fallback;
+		return $unicode;
 	}
 }

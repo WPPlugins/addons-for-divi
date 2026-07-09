@@ -14,7 +14,6 @@ if (!defined('ABSPATH')) {
 
 use ET\Builder\Packages\Module\Module;
 use WP_Block;
-use DiviTorqueLite\Modules\Shared\DynamicValue;
 
 trait RenderCallbackTrait
 {
@@ -185,7 +184,7 @@ trait RenderCallbackTrait
         if ('' !== $prefix) {
             $prefix_html = sprintf(
                 '<div class="dtq-animated-text-prefix"><span>%1$s</span>%2$s</div>',
-                esc_html(DynamicValue::resolve($prefix)),
+                esc_html($prefix),
                 $nbsp
             );
         }
@@ -193,7 +192,7 @@ trait RenderCallbackTrait
         if ('' !== $suffix) {
             $suffix_html = sprintf(
                 '<div class="dtq-animated-text-suffix">%2$s<span>%1$s</span></div>',
-                esc_html(DynamicValue::resolve($suffix)),
+                esc_html($suffix),
                 $nbsp
             );
         }
@@ -223,13 +222,7 @@ trait RenderCallbackTrait
         }
 
         $children = sprintf(
-            // `dtq-d5` marks this as the Divi 5 module. The D4 module renders an
-            // otherwise identical wrapper, and the D4 frontend script is enqueued
-            // site-wide, so without this marker it also picks up D5 markup and
-            // calls `new Typed(...)` — a ReferenceError, since the D5 module uses
-            // its own typing engine and never loads that library — and starts a
-            // second `slide` interval on top of ours.
-            '<div id="dtq-animated-text-%6$s" class="dtq-module dtq-animated-text dtq-front dtq-d5" %1$s data-type="%2$s"><%3$s class="dtq-animated-text-head">%4$s%5$s%7$s</%3$s></div>',
+            '<div id="dtq-animated-text-%6$s" class="dtq-module dtq-animated-text dtq-front" %1$s data-type="%2$s"><%3$s class="dtq-animated-text-head">%4$s%5$s%7$s</%3$s></div>',
             $data_settings,
             esc_attr($animation_type),
             esc_attr($heading_level),
@@ -251,14 +244,7 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => [
-                    // Background pattern/mask and the box-shadow overlay are DOM,
-                    // not CSS. Without this call Divi renders them in the builder
-                    // and nowhere else, so the options silently do nothing on the
-                    // front end.
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

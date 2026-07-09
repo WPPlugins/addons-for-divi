@@ -7,7 +7,6 @@
   "titles": "News Tickers",
   "moduleIcon": "divitorque/news-ticker",
   "category": "module",
-  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -19,7 +18,7 @@
           "postType": { "desktop": { "value": "post" } },
           "includeCategories": { "desktop": { "value": "" } },
           "orderBy": { "desktop": { "value": "date" } },
-          "order": { "desktop": { "value": "DESC" } },
+          "order": { "desktop": { "value": "ASC" } },
           "newsCount": { "desktop": { "value": "5" } },
           "excludePosts": { "desktop": { "value": "" } },
           "postOffset": { "desktop": { "value": "0" } },

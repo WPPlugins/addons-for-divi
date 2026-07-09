@@ -82,10 +82,7 @@ trait RenderCallbackTrait
                 'classnamesFunction'  => [self::class, 'module_classnames'],
                 'stylesComponent'     => [self::class, 'module_styles'],
                 'scriptDataComponent' => [self::class, 'module_script_data'],
-                'children'            => [
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

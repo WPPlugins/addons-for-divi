@@ -12,7 +12,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-use DiviTorqueLite\Modules\Shared\DynamicValue;
 use ET\Builder\Packages\Module\Module;
 
 trait RenderCallbackTrait
@@ -93,8 +92,8 @@ trait RenderCallbackTrait
         $use_header  = self::get_attr($attrs, 'module.advanced.useFormHeader', 'off');
         $use_icon    = self::get_attr($attrs, 'module.advanced.useIcon', 'off');
         $header_img  = self::get_attr($attrs, 'module.advanced.headerImg', '');
-        $title       = DynamicValue::resolve(self::get_attr($attrs, 'module.advanced.formHeaderTitle', ''));
-        $text        = DynamicValue::resolve(self::get_attr($attrs, 'module.advanced.formHeaderText', ''));
+        $title       = self::get_attr($attrs, 'module.advanced.formHeaderTitle', '');
+        $text        = self::get_attr($attrs, 'module.advanced.formHeaderText', '');
         $cr_styles   = self::get_attr($attrs, 'module.advanced.crCustomStyles', 'off');
         $fullwidth   = self::get_attr($attrs, 'module.advanced.useFormButtonFullwidth', 'off');
         $btn_align   = 'on' === $fullwidth ? 'fullwidth' : self::get_attr($attrs, 'module.advanced.buttonAlignment', 'left');
@@ -125,8 +124,6 @@ trait RenderCallbackTrait
         // CF7 form.
         if ('' === $form_id || '0' === (string) $form_id) {
             $form = esc_html__('Please select a Contact Form 7.', 'addons-for-divi');
-        } elseif (!class_exists('WPCF7')) {
-            $form = esc_html__('Contact Form 7 is not active.', 'addons-for-divi');
         } else {
             $form = do_shortcode(sprintf('[contact-form-7 id="%1$s"]', esc_attr($form_id)));
         }
@@ -153,10 +150,7 @@ trait RenderCallbackTrait
                 'classnamesFunction'  => [self::class, 'module_classnames'],
                 'stylesComponent'     => [self::class, 'module_styles'],
                 'scriptDataComponent' => [self::class, 'module_script_data'],
-                'children'            => [
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

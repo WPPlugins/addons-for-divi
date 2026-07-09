@@ -7,7 +7,6 @@
   "titles": "Team Members",
   "moduleIcon": "divitorque/team-box",
   "category": "module",
-  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -643,8 +642,8 @@
               "groupSlug": "designContent",
               "attrName": "module.advanced.contentBgColor",
               "label": "Content Background",
-              "description": "Background color for the content area. This paints on top of the module Background, so set it to transparent if you want the module Background to show through.",
-              "priority": 5,
+              "description": "Pick a background color for the content area.",
+              "priority": 30,
               "render": true,
               "features": {
                 "sticky": false,

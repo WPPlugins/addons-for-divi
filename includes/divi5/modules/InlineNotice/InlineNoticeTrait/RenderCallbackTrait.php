@@ -12,7 +12,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-use DiviTorqueLite\Modules\Shared\DynamicValue;
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Packages\Module\Layout\Components\ModuleElements\ModuleElements;
 use WP_Block;
@@ -62,7 +61,7 @@ trait RenderCallbackTrait
             return '';
         }
 
-        $image     = DynamicValue::resolve($advanced['image']['desktop']['value'] ?? '');
+        $image     = $advanced['image']['desktop']['value'] ?? '';
         $image_alt = $advanced['imageAlt']['desktop']['value'] ?? '';
 
         if ($image) {
@@ -89,14 +88,7 @@ trait RenderCallbackTrait
         $show_dismiss = ($advanced['showDismiss']['desktop']['value'] ?? 'on') === 'on';
 
         if ($show_dismiss) {
-            // A real <button> so it is focusable and operable by keyboard; the
-            // glyph is decorative and hidden from assistive tech, with the
-            // accessible name coming from aria-label. As a bare <div> this was
-            // mouse-only and announced as "✕" or nothing at all.
-            return sprintf(
-                '<button type="button" class="dtq-alert-dismiss" aria-label="%1$s"><span aria-hidden="true">✕</span></button>',
-                esc_attr__('Dismiss this notice', 'addons-for-divi')
-            );
+            return '<div class="dtq-alert-dismiss">✕</div>';
         }
 
         return '';
@@ -148,14 +140,7 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => [
-                    // Background pattern/mask and the box-shadow overlay are DOM,
-                    // not CSS. Without this call Divi renders them in the builder
-                    // and nowhere else, so the options silently do nothing on the
-                    // front end.
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

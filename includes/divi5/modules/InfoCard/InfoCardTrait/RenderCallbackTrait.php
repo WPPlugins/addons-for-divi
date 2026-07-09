@@ -13,7 +13,6 @@ if (!defined('ABSPATH')) {
 }
 
 use ET\Builder\Packages\Module\Module;
-use DiviTorqueLite\Modules\Shared\ButtonElement;
 use ET\Builder\Packages\Module\Layout\Components\ModuleElements\ModuleElements;
 use WP_Block;
 
@@ -130,7 +129,7 @@ trait RenderCallbackTrait
         if ($use_button) {
             $button_html = sprintf(
                 '<div class="dtq-btn-card-wrap">%1$s</div>',
-                ButtonElement::render($attrs['button'] ?? [], 'dtq-btn-default dtq-btn-card')
+                $elements->render(['attrName' => 'button'])
             );
         }
 
@@ -167,14 +166,7 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => [
-                    // Background pattern/mask and the box-shadow overlay are DOM,
-                    // not CSS. Without this call Divi renders them in the builder
-                    // and nowhere else, so the options silently do nothing on the
-                    // front end.
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

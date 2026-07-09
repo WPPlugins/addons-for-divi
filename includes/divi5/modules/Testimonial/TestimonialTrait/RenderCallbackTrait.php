@@ -12,8 +12,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-use DiviTorqueLite\Modules\Shared\DynamicValue;
-use DiviTorqueLite\Modules\Shared\TextValue;
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Packages\Module\Layout\Components\ModuleElements\ModuleElements;
 use WP_Block;
@@ -81,13 +79,13 @@ trait RenderCallbackTrait
         $icon_placement    = $advanced['iconPlacement']['desktop']['value'] ?? 'background';
         $use_custom_icon   = $advanced['useCustomIcon']['desktop']['value'] ?? 'off';
         $selected_icon     = $advanced['selectedIcon']['desktop']['value'] ?? '5';
-        $website_url       = DynamicValue::resolve($advanced['websiteUrl']['desktop']['value'] ?? '');
-        $company_url       = DynamicValue::resolve($advanced['companyUrl']['desktop']['value'] ?? '');
+        $website_url       = $advanced['websiteUrl']['desktop']['value'] ?? '';
+        $company_url       = $advanced['companyUrl']['desktop']['value'] ?? '';
         $link_target       = ('on' === ($advanced['linkNewWindow']['desktop']['value'] ?? 'off')) ? '_blank' : '_self';
 
         // The D5 upload field stores the image as an object (`{ src, ... }`);
         // accept both that and a plain URL string (the migrated D4 value).
-        $image_val = DynamicValue::resolve($attrs['image']['innerContent']['desktop']['value'] ?? '');
+        $image_val = $attrs['image']['innerContent']['desktop']['value'] ?? '';
         $image_src = is_array($image_val) ? ($image_val['src'] ?? '') : $image_val;
         $image_alt = $attrs['image']['advanced']['alt']['desktop']['value'] ?? '';
 
@@ -136,11 +134,9 @@ trait RenderCallbackTrait
         };
 
         // Reviewer name/title — rendered through elements->render (dynamic
-        // content) and wrapped in the optional D4 link. A value that is only
-        // whitespace or empty markup counts as empty, or the wrapper prints
-        // with its bottom padding and nothing in it (#112).
+        // content) and wrapped in the optional D4 link.
         $name_html = '';
-        if (TextValue::visible($name_val)) {
+        if ('' !== $name_val) {
             $name_inner = $elements->render(['attrName' => 'name']);
             $name_html  = !empty($website_url)
                 ? sprintf('<a href="%1$s" target="%2$s">%3$s</a>', esc_url($website_url), esc_attr($link_target), $name_inner)
@@ -148,7 +144,7 @@ trait RenderCallbackTrait
         }
 
         $title_html = '';
-        if (TextValue::visible($title_val)) {
+        if ('' !== $title_val) {
             $title_inner = $elements->render(['attrName' => 'title']);
             $title_html  = !empty($company_url)
                 ? sprintf('<a href="%1$s" target="%2$s">%3$s</a>', esc_url($company_url), esc_attr($link_target), $title_inner)
@@ -174,8 +170,7 @@ trait RenderCallbackTrait
         $review_html = sprintf(
             '<div class="dtq-testimonial-review">%1$s%2$s</div>',
             $render_quote_icon('dtq-icon-default', '_default'),
-            // Gate on the raw value, print the resolved one (#86).
-            ('' !== $testimonial_val) ? sprintf('<p>%1$s</p>', DynamicValue::resolve($testimonial_val)) : ''
+            ('' !== $testimonial_val) ? sprintf('<p>%1$s</p>', $testimonial_val) : ''
         );
 
         $children = sprintf(
@@ -206,14 +201,7 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => [
-                    // Background pattern/mask and the box-shadow overlay are DOM,
-                    // not CSS. Without this call Divi renders them in the builder
-                    // and nowhere else, so the options silently do nothing on the
-                    // front end.
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

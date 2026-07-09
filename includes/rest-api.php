@@ -64,13 +64,6 @@ class RestApi
                 'callback' => [$this, 'save_common_settings'],
                 'permission_callback' => [$this, 'get_permissions_check'],
             ],
-            // Welcome tour finished or skipped: stop the activation redirect
-            // for this user. Per user, so each admin gets the tour once.
-            '/onboarding/done' => [
-                'methods' => \WP_REST_Server::CREATABLE,
-                'callback' => [$this, 'mark_onboarding_done'],
-                'permission_callback' => [$this, 'get_permissions_check'],
-            ],
             '/check_plugin_installed_and_active' => [
                 'methods' => \WP_REST_Server::EDITABLE,
                 'callback' => [$this, 'check_plugin_installed_and_active'],
@@ -247,10 +240,6 @@ class RestApi
         $excerpt_l  = absint($request->get_param('excerpt_length'));
         $excerpt_l  = $excerpt_l > 0 ? $excerpt_l : 150;
         $only_image = sanitize_text_field((string) $request->get_param('only_with_image'));
-        // The Post List preview sends its Date Format so the builder shows the
-        // date the published list prints (get_the_time() with that format).
-        // Without one, the site's date format, as before.
-        $date_fmt   = sanitize_text_field((string) $request->get_param('date_format'));
 
         $query_args = [
             'posts_per_page' => $post_count,
@@ -284,12 +273,10 @@ class RestApi
                 'id'        => $post->ID,
                 'title'     => get_the_title($post),
                 'permalink' => get_permalink($post),
-                'date'      => '' !== $date_fmt ? get_the_time($date_fmt, $post) : get_the_date('', $post),
+                'date'      => get_the_date('', $post),
                 'author'    => get_the_author_meta('display_name', $post->post_author),
-                // Default size, as the Post List render calls it (it used to
-                // preview the full-size file).
-                'thumbnail' => get_the_post_thumbnail_url($post) ?: '',
-                'excerpt'   => dtq_strimwidth(wp_strip_all_tags(get_the_excerpt($post)), 0, $excerpt_l, '...'),
+                'thumbnail' => get_the_post_thumbnail_url($post, 'full') ?: '',
+                'excerpt'   => mb_strimwidth(wp_strip_all_tags(get_the_excerpt($post)), 0, $excerpt_l, '...'),
             ];
         }
 
@@ -335,10 +322,7 @@ class RestApi
 
         // Category filter — comma-separated IDs OR slugs.
         if ('' !== $categories) {
-            // array_values: array_filter preserves keys, and $terms[0] below
-            // must be the first *surviving* element (",5" would otherwise
-            // leave it at key 1 → undefined index + wrong branch).
-            $terms = array_values(array_filter(array_map('trim', explode(',', $categories))));
+            $terms = array_filter(array_map('trim', explode(',', $categories)));
             if (!empty($terms)) {
                 if (ctype_digit((string) $terms[0])) {
                     $query_args['category__in'] = array_map('intval', $terms);
@@ -350,7 +334,7 @@ class RestApi
 
         // Custom taxonomy filter.
         if ('' !== $taxonomy && '' !== $taxonomy_terms) {
-            $terms = array_values(array_filter(array_map('trim', explode(',', $taxonomy_terms))));
+            $terms = array_filter(array_map('trim', explode(',', $taxonomy_terms)));
             if (!empty($terms)) {
                 $field = ctype_digit((string) $terms[0]) ? 'term_id' : 'slug';
                 $query_args['tax_query'][] = [
@@ -388,8 +372,8 @@ class RestApi
                     $excerpt = get_the_content();
                 }
                 $excerpt = wp_strip_all_tags(strip_shortcodes($excerpt));
-                if ($content_length > 0 && dtq_strlen($excerpt) > $content_length) {
-                    $excerpt = dtq_substr($excerpt, 0, $content_length) . '...';
+                if ($content_length > 0 && mb_strlen($excerpt) > $content_length) {
+                    $excerpt = mb_substr($excerpt, 0, $content_length) . '...';
                 }
 
                 $categories_list = [];
@@ -459,50 +443,11 @@ class RestApi
         return AdminHelper::get_options();
     }
 
-    /**
-     * Normalize a modules_settings payload to the only shape the readers
-     * (AdminHelper::get_modules, divi5/Modules.php) understand:
-     * [name => name|'disabled'].
-     *
-     * @param mixed $modules Raw request payload.
-     * @return array<string,string>
-     */
-    public static function normalize_modules_settings($modules)
-    {
-        $clean = [];
-        foreach ((array) $modules as $name => $value) {
-            $name = sanitize_key($name);
-            if ('' === $name) {
-                continue;
-            }
-            $clean[$name] = ('disabled' === $value) ? 'disabled' : $name;
-        }
-        return $clean;
-    }
-
     public function save_common_settings(WP_REST_Request $request)
     {
-        $clean = self::normalize_modules_settings($request->get_param('modules_settings'));
-
-        // Mirror the readers (AdminHelper::get_modules, divi5/Modules.php):
-        // when Pro is active both plugins share the _divitorque_modules option.
-        // Keep the lite option in sync too, so the loader reads consistent
-        // state even if Pro is deactivated later (the D5 loader falls back to
-        // _divitorque_lite_modules when Pro is inactive).
-        if (AdminHelper::is_pro_installed()) {
-            update_option('_divitorque_modules', $clean);
-            update_option('_divitorque_lite_modules', $clean);
-        } else {
-            update_option('_divitorque_lite_modules', $clean);
-        }
+        $modules = $request->get_param('modules_settings');
+        update_option('_divitorque_lite_modules', $modules);
         return ['success' => true];
-    }
-
-    public function mark_onboarding_done()
-    {
-        Dashboard::finish_onboarding();
-
-        return new WP_REST_Response(['done' => true], 200);
     }
 
     public function check_plugin_installed_and_active(WP_REST_Request $request)
@@ -664,7 +609,6 @@ class RestApi
 
         return [
             'success' => true,
-            /* translators: %s: the plugin version that was rolled back to. */
             'message' => sprintf(__('Rolled back to %s.', 'addons-for-divi'), $version),
             'version' => $version,
         ];

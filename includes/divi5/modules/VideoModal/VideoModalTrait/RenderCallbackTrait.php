@@ -12,7 +12,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-use DiviTorqueLite\Modules\Shared\DynamicValue;
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Packages\Module\Layout\Components\ModuleElements\ModuleElements;
 use WP_Block;
@@ -98,11 +97,11 @@ trait RenderCallbackTrait
         $trigger_element = $advanced['triggerElement']['desktop']['value'] ?? 'icon';
         $icon            = $advanced['icon']['desktop']['value'] ?? '1';
         $type            = $advanced['type']['desktop']['value'] ?? 'yt';
-        $video_link      = DynamicValue::resolve($advanced['videoLink']['desktop']['value'] ?? '');
+        $video_link      = $advanced['videoLink']['desktop']['value'] ?? '';
         $video           = self::upload_src($advanced['video']['desktop']['value'] ?? '');
         $custom_icon     = self::upload_src($advanced['customPlayIcon']['desktop']['value'] ?? '');
 
-        $image_src = self::upload_src(DynamicValue::resolve($attrs['image']['innerContent']['desktop']['value'] ?? ''));
+        $image_src = self::upload_src($attrs['image']['innerContent']['desktop']['value'] ?? '');
         $image_alt = $attrs['image']['advanced']['alt']['desktop']['value'] ?? '';
 
         // Per-instance order number (matches the order class suffix).
@@ -159,12 +158,8 @@ trait RenderCallbackTrait
             $video_link = str_replace('youtu.be/', 'youtube.com/watch?v=', $video_link);
         }
 
-        // The trigger must not be a navigating link: the video URL lives in
-        // data-video-url and frontend.js preventDefaults the click, so the
-        // browser can never follow it to YouTube/Vimeo if the popup script
-        // hasn't bound yet (deferred/optimized JS, load races).
         $children = sprintf(
-            '<div class="dtq-module dtq-video-popup">%1$s<div class="dtq-video-popup-wrap"><a class="dtq-video-popup-trigger dtq-popup-%2$s" role="button" data-order="%3$s" data-type="%2$s" data-video-url="%4$s" href="#"%5$s>%6$s%7$s</a></div>%8$s</div>',
+            '<div class="dtq-module dtq-video-popup">%1$s<div class="dtq-video-popup-wrap"><a class="dtq-video-popup-trigger dtq-popup-%2$s" data-order="%3$s" data-type="%2$s" href="%4$s"%5$s>%6$s%7$s</a></div>%8$s</div>',
             $inline_modal,
             esc_attr($type),
             esc_attr($order_number),
@@ -187,14 +182,7 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => [
-                    // Background pattern/mask and the box-shadow overlay are DOM,
-                    // not CSS. Without this call Divi renders them in the builder
-                    // and nowhere else, so the options silently do nothing on the
-                    // front end.
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

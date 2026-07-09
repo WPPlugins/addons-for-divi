@@ -12,8 +12,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-use DiviTorqueLite\Modules\Shared\DynamicValue;
-use DiviTorqueLite\Modules\Shared\TextValue;
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Packages\Module\Layout\Components\ModuleElements\ModuleElements;
 use WP_Block;
@@ -32,7 +30,7 @@ trait RenderCallbackTrait
     {
         $use_image  = ($advanced['useImage']['desktop']['value'] ?? 'off') === 'on';
         $icon_value = $advanced['icon']['desktop']['value'] ?? '';
-        $icon_image = DynamicValue::resolve($advanced['iconImage']['desktop']['value'] ?? '');
+        $icon_image = $advanced['iconImage']['desktop']['value'] ?? '';
         $image_alt  = $advanced['imageAlt']['desktop']['value'] ?? '';
 
         $inner = '';
@@ -86,7 +84,7 @@ trait RenderCallbackTrait
      */
     public static function render_badge($advanced)
     {
-        $badge_text = DynamicValue::resolve($advanced['badgeText']['desktop']['value'] ?? '');
+        $badge_text = $advanced['badgeText']['desktop']['value'] ?? '';
 
         if (empty($badge_text)) {
             return '';
@@ -94,28 +92,19 @@ trait RenderCallbackTrait
 
         return sprintf(
             '<div class="dtq-iconbox__badge">%1$s</div>',
-            esc_html($badge_text)
+            et_core_esc_previously($badge_text)
         );
     }
 
     /**
      * Server-side render for the IconBox module.
      *
-     * `normal` and `absolute` mirror the D4 markup and the VB edit component
-     * exactly:
+     * Mirrors the D4 markup and the VB edit component:
      *   <div class="dtq-module dtq-iconbox">
      *     [badge] [absolute icon]
      *     <div class="dtq-iconbox-inner dtq-bg-support">
      *       [normal icon] [title] [description]
      *     </div>
-     *   </div>
-     *
-     * `left`/`right` are a deliberate D5-only extension (D4 never had this
-     * placement). They reuse the same markup but wrap title+description in a
-     * `.dtq-iconbox__content` column so the icon can sit beside it in a flex
-     * row (see edit.jsx for the matching VB markup):
-     *   <div class="dtq-iconbox-inner dtq-bg-support dtq-iconbox--left|right">
-     *     [icon] <div class="dtq-iconbox__content">[title][description]</div>
      *   </div>
      *
      * @param array          $attrs    Block attributes.
@@ -133,26 +122,15 @@ trait RenderCallbackTrait
         $badge       = self::render_badge($advanced);
         $icon        = self::render_icon($advanced);
         $title       = $elements->render(['attrName' => 'title']);
-        // Divi skips an empty string itself, but a cleared rich text field can
-        // leave "<p></p>" or "<p>&nbsp;</p>", which printed an empty
-        // .dtq-iconbox__desc that kept its margin (#112).
-        $description = TextValue::any_visible($attrs['description']['innerContent'] ?? [])
-            ? $elements->render(['attrName' => 'description'])
-            : '';
-
-        $is_row      = 'left' === $placement || 'right' === $placement;
-        $inner_class = 'dtq-iconbox-inner dtq-bg-support' . ($is_row ? ' dtq-iconbox--' . $placement : '');
-        $content     = $is_row
-            ? sprintf('<div class="dtq-iconbox__content">%1$s%2$s</div>', $title, $description)
-            : $title . $description;
+        $description = $elements->render(['attrName' => 'description']);
 
         $children = sprintf(
-            '<div class="dtq-module dtq-iconbox">%1$s%2$s<div class="%3$s">%4$s%5$s</div></div>',
+            '<div class="dtq-module dtq-iconbox">%1$s%2$s<div class="dtq-iconbox-inner dtq-bg-support">%3$s%4$s%5$s</div></div>',
             $badge,
             'absolute' === $placement ? $icon : '',
-            esc_attr($inner_class),
             'absolute' !== $placement ? $icon : '',
-            $content
+            $title,
+            $description
         );
 
         return Module::render(
@@ -167,14 +145,7 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => [
-                    // Background pattern/mask and the box-shadow overlay are DOM,
-                    // not CSS. Without this call Divi renders them in the builder
-                    // and nowhere else, so the options silently do nothing on the
-                    // front end.
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

@@ -7,7 +7,6 @@
   "titles": "Logo Grid Items",
   "moduleIcon": "divitorque/logo-grid-item",
   "category": "child-module",
-  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",

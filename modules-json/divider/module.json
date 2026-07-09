@@ -7,7 +7,6 @@
   "titles": "Separators",
   "moduleIcon": "divitorque/divider",
   "category": "module",
-  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -65,7 +64,7 @@
           },
           "shapeMargin": {
             "desktop": {
-              "value": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+              "value": "0px|0px|0px|0px"
             }
           },
           "iconColor": {

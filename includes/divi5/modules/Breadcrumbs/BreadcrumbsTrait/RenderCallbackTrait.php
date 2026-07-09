@@ -49,25 +49,20 @@ trait RenderCallbackTrait
                     $cat       = $cats[0];
                     $ancestors = array_reverse(get_ancestors($cat->term_id, 'category'));
                     foreach ($ancestors as $aid) {
-                        $term = get_term($aid, 'category');
-                        if ($term && !is_wp_error($term)) {
-                            $tlink    = get_term_link($term);
-                            $crumbs[] = ['label' => $term->name, 'url' => is_wp_error($tlink) ? '' : $tlink];
-                        }
+                        $term     = get_term($aid, 'category');
+                        $crumbs[] = ['label' => $term->name, 'url' => get_term_link($term)];
                     }
-                    $clink    = get_term_link($cat);
-                    $crumbs[] = ['label' => $cat->name, 'url' => is_wp_error($clink) ? '' : $clink];
+                    $crumbs[] = ['label' => $cat->name, 'url' => get_term_link($cat)];
                 }
             } elseif ('page' !== $post_type) {
                 $pto = get_post_type_object($post_type);
                 if ($pto && !empty($pto->has_archive)) {
-                    // Can be false (e.g. rewrite disabled); '' renders as plain text.
-                    $crumbs[] = ['label' => $pto->labels->name, 'url' => (string) get_post_type_archive_link($post_type)];
+                    $crumbs[] = ['label' => $pto->labels->name, 'url' => get_post_type_archive_link($post_type)];
                 }
             }
 
             foreach (array_reverse(get_post_ancestors($post_id)) as $aid) {
-                $crumbs[] = ['label' => get_the_title($aid), 'url' => (string) get_permalink($aid)];
+                $crumbs[] = ['label' => get_the_title($aid), 'url' => get_permalink($aid)];
             }
 
             $crumbs[] = ['label' => get_the_title($post_id), 'url' => ''];
@@ -78,11 +73,8 @@ trait RenderCallbackTrait
             $term = get_queried_object();
             if ($term && isset($term->taxonomy)) {
                 foreach (array_reverse(get_ancestors($term->term_id, $term->taxonomy)) as $aid) {
-                    $t = get_term($aid, $term->taxonomy);
-                    if ($t && !is_wp_error($t)) {
-                        $tl       = get_term_link($t);
-                        $crumbs[] = ['label' => $t->name, 'url' => is_wp_error($tl) ? '' : $tl];
-                    }
+                    $t        = get_term($aid, $term->taxonomy);
+                    $crumbs[] = ['label' => $t->name, 'url' => get_term_link($t)];
                 }
                 $crumbs[] = ['label' => $term->name, 'url' => ''];
             }
@@ -90,8 +82,7 @@ trait RenderCallbackTrait
         }
 
         if (is_search()) {
-            /* translators: %s: the visitor's search query. */
-            $crumbs[] = ['label' => sprintf(__('Search: %s', 'addons-for-divi'), get_search_query()), 'url' => ''];
+            $crumbs[] = ['label' => sprintf(__('Search: %s', 'divi-torque-lite'), get_search_query()), 'url' => ''];
             return $crumbs;
         }
         if (is_author()) {
@@ -99,7 +90,7 @@ trait RenderCallbackTrait
             return $crumbs;
         }
         if (is_404()) {
-            $crumbs[] = ['label' => __('404 Not Found', 'addons-for-divi'), 'url' => ''];
+            $crumbs[] = ['label' => __('404 Not Found', 'divi-torque-lite'), 'url' => ''];
             return $crumbs;
         }
         if (is_post_type_archive()) {
@@ -113,7 +104,7 @@ trait RenderCallbackTrait
 
         // Visual Builder / unknown context fallback.
         $title    = get_the_title();
-        $crumbs[] = ['label' => '' !== $title ? $title : __('Current Page', 'addons-for-divi'), 'url' => ''];
+        $crumbs[] = ['label' => '' !== $title ? $title : __('Current Page', 'divi-torque-lite'), 'url' => ''];
         return $crumbs;
     }
 
@@ -165,8 +156,7 @@ trait RenderCallbackTrait
             }
         }
 
-        // No trail, no schema: an empty itemListElement is invalid structured data.
-        $schema_html = ($schema && !empty($trail)) ? self::schema_json($trail) : '';
+        $schema_html = $schema ? self::schema_json($trail) : '';
 
         $nav_html = sprintf(
             '<nav class="dtq-breadcrumbs" aria-label="Breadcrumb">%1$s</nav>%2$s',
@@ -226,8 +216,7 @@ trait RenderCallbackTrait
 
         return sprintf(
             '<script type="application/ld+json">%1$s</script>',
-            // HEX_TAG/HEX_AMP: a title containing </script> must not end the element.
-            wp_json_encode($data, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP)
+            wp_json_encode($data, JSON_UNESCAPED_SLASHES)
         );
     }
 }

@@ -12,33 +12,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-use DiviTorqueLite\Modules\Shared\DynamicValue;
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Packages\Module\Layout\Components\ModuleElements\ModuleElements;
 use WP_Block;
 
 trait RenderCallbackTrait
 {
-    /**
-     * Normalize an upload value to its URL.
-     *
-     * An upload can arrive as a plain URL or as an image object (`{ src }`, or
-     * `{ url }` from some upload fields). The icon image used to be passed
-     * straight to esc_url(), which on an object printed a broken src and
-     * raised an "Array to string conversion" notice.
-     *
-     * @param mixed $value Upload attr value (already through DynamicValue).
-     * @return string
-     */
-    public static function image_url($value)
-    {
-        if (is_array($value)) {
-            $value = $value['src'] ?? ($value['url'] ?? '');
-        }
-
-        return is_string($value) ? $value : '';
-    }
-
     /**
      * Render the direction icon (or icon image) markup.
      *
@@ -53,7 +32,7 @@ trait RenderCallbackTrait
         $show_icon  = ($advanced['showIcon']['desktop']['value'] ?? 'off') === 'on';
         $use_image  = ($advanced['useImage']['desktop']['value'] ?? 'off') === 'on';
         $icon_value = $advanced['icon']['desktop']['value'] ?? '';
-        $icon_image = self::image_url(DynamicValue::resolve($advanced['iconImage']['desktop']['value'] ?? ''));
+        $icon_image = $advanced['iconImage']['desktop']['value'] ?? '';
 
         if (!$show_icon) {
             return '';
@@ -146,14 +125,13 @@ trait RenderCallbackTrait
 
         // Migrated uploads come through as D5 image objects (`{ src, ... }`);
         // accept both that and a plain URL string.
-        // A dynamic image is a structure with no src until resolved (#86).
-        $image_val = DynamicValue::resolve($attrs['image']['innerContent']['desktop']['value'] ?? '');
+        $image_val = $attrs['image']['innerContent']['desktop']['value'] ?? '';
         $image_src = is_array($image_val) ? ($image_val['src'] ?? '') : $image_val;
         $image_alt = $attrs['image']['advanced']['alt']['desktop']['value'] ?? '';
 
         if (!empty($image_src)) {
             $children = sprintf(
-                '<div class="dtq-module dtq-scroll-image dtq-d5" data-dir-hover="%5$s" data-dir-scroll="%6$s">%1$s<div class="scroll-figure-wrap">%2$s<img class="dtq-scroll-image-el" src="%3$s" alt="%4$s" /></div></div>',
+                '<div class="dtq-module dtq-scroll-image" data-dir-hover="%5$s" data-dir-scroll="%6$s">%1$s<div class="scroll-figure-wrap">%2$s<img class="dtq-scroll-image-el" src="%3$s" alt="%4$s" /></div></div>',
                 self::render_icon($advanced),
                 self::render_overlay($advanced),
                 esc_url($image_src),
@@ -162,7 +140,7 @@ trait RenderCallbackTrait
                 esc_attr('on_scroll' === $scroll_type ? $scroll_dir_scroll : 'none')
             );
         } else {
-            $children = '<div class="dtq-module dtq-scroll-image dtq-d5"></div>';
+            $children = '<div class="dtq-module dtq-scroll-image"></div>';
         }
 
         return Module::render(
@@ -177,10 +155,7 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => [
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

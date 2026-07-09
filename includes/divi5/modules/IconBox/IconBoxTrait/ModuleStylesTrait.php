@@ -14,10 +14,31 @@ if (!defined('ABSPATH')) {
 
 use ET\Builder\FrontEnd\Module\Style;
 use ET\Builder\Packages\Module\Options\Css\CssStyle;
-use DiviTorqueLite\Modules\Shared\Spacing;
 
 trait ModuleStylesTrait
 {
+    /**
+     * Normalize a spacing value to a CSS shorthand.
+     *
+     * After a D4→D5 migration, convertSpacing fields become D5 spacing objects
+     * `{top,right,bottom,left}` instead of the legacy `"a|b|c|d"` pipe string.
+     * Accept both formats and emit identical CSS for the string case.
+     *
+     * @param mixed $val The spacing value (object array or pipe string).
+     * @return string CSS shorthand, or '' when empty.
+     */
+    public static function dtq_spacing($val)
+    {
+        if (empty($val)) {
+            return '';
+        }
+        if (is_array($val)) {
+            return sprintf('%s %s %s %s', $val['top'] ?? '0px', $val['right'] ?? '0px', $val['bottom'] ?? '0px', $val['left'] ?? '0px');
+        }
+        $p = explode('|', (string) $val);
+        return 4 === count($p) ? implode(' ', $p) : (string) $val;
+    }
+
     /**
      * Build absolute-placement declarations for an element (icon or badge).
      *
@@ -115,6 +136,7 @@ trait ModuleStylesTrait
         $icon_height   = $advanced['iconHeight']['desktop']['value'] ?? 'auto';
         $icon_size     = $advanced['iconSize']['desktop']['value'] ?? '60px';
         $icon_spacing  = $advanced['iconSpacing']['desktop']['value'] ?? '10px';
+        $icon_padding  = $advanced['iconPadding']['desktop']['value'] ?? '';
         $title_spacing = $advanced['titleSpacing']['desktop']['value'] ?? '10px';
 
         $is_negative = '-' === substr((string) $icon_rotate, 0, 1);
@@ -141,18 +163,12 @@ trait ModuleStylesTrait
             ];
         }
 
-        // Icon spacing: bottom margin when stacked (normal), row gap when beside content (left/right).
+        // Icon bottom spacing (normal placement only).
         if ('normal' === $placement) {
             $styles[] = [
                 'atRules'     => false,
                 'selector'    => $order_class . ' .dtq-iconbox__icon-wrap',
                 'declaration' => sprintf('margin-bottom: %1$s;', $icon_spacing),
-            ];
-        } elseif ('left' === $placement || 'right' === $placement) {
-            $styles[] = [
-                'atRules'     => false,
-                'selector'    => $order_class . ' .dtq-iconbox-inner',
-                'declaration' => sprintf('gap: %1$s;', $icon_spacing),
             ];
         }
 
@@ -193,23 +209,6 @@ trait ModuleStylesTrait
             ];
         }
 
-        // Icon padding applies to both modes. It lands on .dtq-iconbox__icon,
-        // which is inline-flex and so hugs its content — with a background and a
-        // radius but no padding you get a shape tight to the glyph instead of a
-        // chip, and an icon chip is the most common Icon Box design there is.
-        // module.json puts no useImage condition on the control, so it reads as
-        // universal; it used to be emitted in the image branch only.
-        // Spacing fields read every stored shape (Shared\Spacing). No
-        // default: unset sides keep the stylesheet's.
-        $icon_pad_css = Spacing::css('padding', $advanced['iconPadding'] ?? null, 'desktop');
-        if ('' !== $icon_pad_css) {
-            $styles[] = [
-                'atRules'     => false,
-                'selector'    => $order_class . ' .dtq-iconbox__icon',
-                'declaration' => $icon_pad_css,
-            ];
-        }
-
         if (!$use_image) {
             // Icon font.
             $icon_attr   = $advanced['icon']['desktop']['value'] ?? [];
@@ -223,6 +222,14 @@ trait ModuleStylesTrait
             ];
         } else {
             // Image icon.
+            $icon_pad_css = self::dtq_spacing($icon_padding);
+            if ('' !== $icon_pad_css) {
+                $styles[] = [
+                    'atRules'     => false,
+                    'selector'    => $order_class . ' .dtq-iconbox__icon',
+                    'declaration' => sprintf('padding: %1$s;', $icon_pad_css),
+                ];
+            }
             $styles[] = [
                 'atRules'     => false,
                 'selector'    => $order_class . ' .dtq-iconbox__icon img',
@@ -258,13 +265,15 @@ trait ModuleStylesTrait
             $styles[] = $s;
         }
 
-        // Unset sides come from the default, which Divi also merges into the
-        // attrs before this runs.
-        $styles[] = [
-            'atRules'     => false,
-            'selector'    => $order_class . ' .dtq-iconbox__badge',
-            'declaration' => Spacing::css('padding', $advanced['badgePadding'] ?? null, 'desktop', '5px|15px|5px|15px'),
-        ];
+        $badge_padding = $advanced['badgePadding']['desktop']['value'] ?? '';
+        $badge_pad_css = self::dtq_spacing($badge_padding);
+        if ('' !== $badge_pad_css) {
+            $styles[] = [
+                'atRules'     => false,
+                'selector'    => $order_class . ' .dtq-iconbox__badge',
+                'declaration' => sprintf('padding: %1$s;', $badge_pad_css),
+            ];
+        }
 
         // ---------------------------------------------------------------
         // Additive responsive (tablet/phone) output. Desktop entries above
@@ -295,7 +304,7 @@ trait ModuleStylesTrait
                 return $val;
             };
 
-            // Icon spacing (normal → margin-bottom, left/right → gap) — iconSpacing.
+            // Icon bottom spacing (normal placement only) — iconSpacing.
             if ('normal' === $placement) {
                 $val = $bp('iconSpacing');
                 if (null !== $val) {
@@ -303,15 +312,6 @@ trait ModuleStylesTrait
                         'atRules'     => $at_rule,
                         'selector'    => $order_class . ' .dtq-iconbox__icon-wrap',
                         'declaration' => sprintf('margin-bottom: %1$s;', $val),
-                    ];
-                }
-            } elseif ('left' === $placement || 'right' === $placement) {
-                $val = $bp('iconSpacing');
-                if (null !== $val) {
-                    $styles[] = [
-                        'atRules'     => $at_rule,
-                        'selector'    => $order_class . ' .dtq-iconbox-inner',
-                        'declaration' => sprintf('gap: %1$s;', $val),
                     ];
                 }
             }
@@ -337,19 +337,6 @@ trait ModuleStylesTrait
                 ];
             }
 
-            // Icon padding — iconPadding. Both modes, same as the static block.
-            $val = $bp('iconPadding');
-            if (null !== $val) {
-                $pad_css = Spacing::css('padding', $advanced['iconPadding'] ?? null, $breakpoint);
-                if ('' !== $pad_css) {
-                    $styles[] = [
-                        'atRules'     => $at_rule,
-                        'selector'    => $order_class . ' .dtq-iconbox__icon',
-                        'declaration' => $pad_css,
-                    ];
-                }
-            }
-
             if (!$use_image) {
                 // Icon font size — iconSize (font icon branch).
                 $val = $bp('iconSize');
@@ -361,6 +348,18 @@ trait ModuleStylesTrait
                     ];
                 }
             } else {
+                // Image icon padding — iconPadding (image branch).
+                $val = $bp('iconPadding');
+                if (null !== $val) {
+                    $pad_css = self::dtq_spacing($val);
+                    if ('' !== $pad_css) {
+                        $styles[] = [
+                            'atRules'     => $at_rule,
+                            'selector'    => $order_class . ' .dtq-iconbox__icon',
+                            'declaration' => sprintf('padding: %1$s;', $pad_css),
+                        ];
+                    }
+                }
                 // Image icon size — iconSize (image width branch).
                 $val = $bp('iconSize');
                 if (null !== $val) {

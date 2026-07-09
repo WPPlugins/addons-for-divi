@@ -12,56 +12,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-use DiviTorqueLite\Modules\Shared\DynamicValue;
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Packages\Module\Layout\Components\ModuleElements\ModuleElements;
 use WP_Block;
 
 trait RenderCallbackTrait
 {
-    /**
-     * Read the Link Options value in every shape it is stored in.
-     *
-     * The Divi 5 field (divi/checkboxes) stores an array of the ticked values,
-     * `['linkTarget', 'linkRel']`. Divi 4's multiple_checkboxes stored a pipe
-     * string in option order, `link_target|link_rel` as on/off ("on|off" is
-     * new window without nofollow), and the conversion outline copies that
-     * string as it is. Reading the array only dropped every migrated choice
-     * (#79). JS twin: linkOptions() in
-     * src/divi5/modules/gradient-heading/link-options.js.
-     *
-     * @param mixed $value Raw linkOptions attribute value.
-     *
-     * @return array{new_window: bool, nofollow: bool}
-     */
-    public static function link_options($value)
-    {
-        $tokens = [];
-        if (is_array($value)) {
-            $tokens = array_values(array_filter($value, 'is_string'));
-        } elseif (is_string($value) && '' !== trim($value)) {
-            $tokens = array_map('trim', preg_split('/[|,]/', $value));
-        }
-
-        // Named values: the Divi 5 array, or the same names in a string.
-        if (in_array('linkTarget', $tokens, true) || in_array('linkRel', $tokens, true)) {
-            return [
-                'new_window' => in_array('linkTarget', $tokens, true),
-                'nofollow'   => in_array('linkRel', $tokens, true),
-            ];
-        }
-
-        // Divi 4 positional on/off flags, only from a string.
-        if (is_string($value)) {
-            return [
-                'new_window' => 'on' === strtolower($tokens[0] ?? ''),
-                'nofollow'   => 'on' === strtolower($tokens[1] ?? ''),
-            ];
-        }
-
-        return ['new_window' => false, 'nofollow' => false];
-    }
-
     /**
      * Server-side render for the GradientHeading module.
      *
@@ -77,8 +33,7 @@ trait RenderCallbackTrait
      */
     public static function render_callback($attrs, $content, $block, $elements)
     {
-        // Printed below, so resolve a dynamic-content binding first (#86).
-        $title_value = DynamicValue::resolve($attrs['title']['innerContent']['desktop']['value'] ?? '');
+        $title_value = $attrs['title']['innerContent']['desktop']['value'] ?? '';
 
         $tag = $attrs['title']['decoration']['font']['font']['desktop']['value']['headingLevel'] ?? '';
         if (empty($tag)) {
@@ -90,11 +45,15 @@ trait RenderCallbackTrait
         }
 
         $use_link = ($attrs['module']['advanced']['useLink']['desktop']['value'] ?? 'off') === 'on';
-        $link_url = DynamicValue::resolve($attrs['module']['advanced']['linkUrl']['desktop']['value'] ?? '');
+        $link_url = $attrs['module']['advanced']['linkUrl']['desktop']['value'] ?? '';
 
-        $link_options    = self::link_options($attrs['module']['advanced']['linkOptions']['desktop']['value'] ?? []);
-        $link_target_new = $link_options['new_window'];
-        $link_nofollow   = $link_options['nofollow'];
+        $link_options    = $attrs['module']['advanced']['linkOptions']['desktop']['value'] ?? [];
+        $link_target_new = false;
+        $link_nofollow   = false;
+        if (is_array($link_options)) {
+            $link_target_new = in_array('linkTarget', $link_options, true);
+            $link_nofollow   = in_array('linkRel', $link_options, true);
+        }
 
         $inner_html = $title_value;
 
@@ -126,14 +85,7 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => [
-                    // Background pattern/mask and the box-shadow overlay are DOM,
-                    // not CSS. Without this call Divi renders them in the builder
-                    // and nowhere else, so the options silently do nothing on the
-                    // front end.
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

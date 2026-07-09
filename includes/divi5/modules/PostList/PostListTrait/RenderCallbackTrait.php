@@ -55,10 +55,8 @@ trait RenderCallbackTrait
      */
     protected static function list_icon_glyph($icon_value)
     {
-        $empty = ['glyph' => '', 'font' => 'ETmodules', 'weight' => '400'];
-
         if (empty($icon_value)) {
-            return $empty;
+            return '';
         }
 
         if (is_array($icon_value)) {
@@ -73,23 +71,14 @@ trait RenderCallbackTrait
         }
 
         if (empty($uni)) {
-            return $empty;
+            return '';
         }
 
         if (function_exists('dtq_inject_fa_icons')) {
             dtq_inject_fa_icons($uni . '||' . $type . '||' . $wt);
         }
 
-        // The font has to travel with the glyph. This module marks its icon up
-        // as a bare .dtq-et-font-icon, and that class hard-sets ETmodules — so a
-        // FontAwesome pick used to request the FA font correctly and then get
-        // drawn in the Divi font anyway, producing the wrong glyph. Every other
-        // module emits font-family inline on the icon element; do the same here.
-        return [
-            'glyph'  => function_exists('dtq_resolve_icon_unicode') ? dtq_resolve_icon_unicode($uni) : $uni,
-            'font'   => 'fa' === $type ? 'FontAwesome' : 'ETmodules',
-            'weight' => $wt,
-        ];
+        return function_exists('dtq_resolve_icon_unicode') ? dtq_resolve_icon_unicode($uni) : $uni;
     }
 
     /**
@@ -105,9 +94,7 @@ trait RenderCallbackTrait
         $post_type      = self::get_attr($attrs, 'module.advanced.postType', 'post');
         $categories     = self::get_attr($attrs, 'module.advanced.includeCategories', '');
         $order_by       = self::get_attr($attrs, 'module.advanced.orderBy', 'date');
-        // Newest first, matching WP_Query and divi/blog. Keep in step with the
-        // `order` default in module.json — see the note in PostCarousel.
-        $order          = self::get_attr($attrs, 'module.advanced.order', 'DESC');
+        $order          = self::get_attr($attrs, 'module.advanced.order', 'ASC');
         $posts_number   = (int) self::get_attr($attrs, 'module.advanced.postsNumber', '6');
         $offset         = (int) self::get_attr($attrs, 'module.advanced.postOffset', '0');
         $exclude        = self::get_attr($attrs, 'module.advanced.excludePosts', '');
@@ -161,13 +148,8 @@ trait RenderCallbackTrait
                             esc_url(get_the_post_thumbnail_url())
                         );
                     }
-                } elseif ('on' === $show_icon && '' !== $glyph['glyph']) {
-                    $figure = sprintf(
-                        '<div class="dtq-post-list-icon"><i class="dtq-et-font-icon" style="font-family:\'%2$s\';font-weight:%3$s">%1$s</i></div>',
-                        $glyph['glyph'],
-                        esc_attr($glyph['font']),
-                        esc_attr($glyph['weight'])
-                    );
+                } elseif ('on' === $show_icon && '' !== $glyph) {
+                    $figure = sprintf('<div class="dtq-post-list-icon"><i class="dtq-et-font-icon">%1$s</i></div>', $glyph);
                 }
 
                 // Meta (author + date).
@@ -184,7 +166,7 @@ trait RenderCallbackTrait
 
                 // Excerpt.
                 $excerpt = ('on' === $show_excerpt)
-                    ? sprintf('<p class="dtq-post-list-excerpt">%1$s</p>', esc_html(dtq_strimwidth(get_the_excerpt(), 0, $excerpt_length > 0 ? $excerpt_length : 150, '...')))
+                    ? sprintf('<p class="dtq-post-list-excerpt">%1$s</p>', esc_html(mb_strimwidth(get_the_excerpt(), 0, $excerpt_length > 0 ? $excerpt_length : 150, '...')))
                     : '';
 
                 $output .= sprintf(
@@ -239,10 +221,7 @@ trait RenderCallbackTrait
                 'classnamesFunction'  => [self::class, 'module_classnames'],
                 'stylesComponent'     => [self::class, 'module_styles'],
                 'scriptDataComponent' => [self::class, 'module_script_data'],
-                'children'            => [
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

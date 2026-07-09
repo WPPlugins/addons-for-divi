@@ -45,11 +45,7 @@ trait RenderCallbackTrait {
 		$taxonomy        = $get( 'module.advanced.customTaxonomy', '' );
 		$taxonomy_terms  = $get( 'module.advanced.customTaxonomyTerms', '' );
 		$order_by        = $get( 'module.advanced.orderBy', 'date' );
-		// Newest first, matching WP_Query and divi/blog. Must stay in step with
-		// the `order` default in module.json: a saved layout falls back to this
-		// value while a fresh one takes the JSON default, so the two disagreeing
-		// means the same module orders differently depending on its age.
-		$order           = $get( 'module.advanced.order', 'DESC' );
+		$order           = $get( 'module.advanced.order', 'ASC' );
 		$post_count      = (int) ( $get( 'module.advanced.postCount', '6' ) ?: 6 );
 		$offset_number   = (int) $get( 'module.advanced.offsetNumber', '0' );
 		$include_posts   = $get( 'module.advanced.includePosts', '' );
@@ -137,11 +133,7 @@ trait RenderCallbackTrait {
 
 				$post_id   = get_the_ID();
 				$permalink = esc_url( get_the_permalink() );
-				// Kept raw here and escaped at each output site instead. Escaping
-				// up front double-escaped it: el_thumbnail() passes it to
-				// get_the_post_thumbnail()/esc_attr(), which escape again, so a
-				// title like "Bob's Guide" surfaced as "Bob&#039;s Guide".
-				$title     = get_the_title();
+				$title     = esc_html( get_the_title() );
 
 				$cats_html = self::el_categories( $post_id, $show_categories, $show_first_cat );
 
@@ -214,20 +206,16 @@ trait RenderCallbackTrait {
 		$wrap_cls  = CarouselEngine::base_wrapper_classes( $advanced, 'dtq-post-carousel' );
 		$nav_html  = $show_nav ? ( CarouselEngine::render_arrow( $advanced, 'prev' ) . CarouselEngine::render_arrow( $advanced, 'next' ) ) : '';
 		$pagi_html = $show_pagi ? '<div class="swiper-pagination"></div>' : '';
-		$controls  = CarouselEngine::render_controls( $advanced );
 
 		$children = sprintf(
-			'%s<div class="%s"><div class="%s"><div class="swiper"%s data-swiper-init="lite" data-swiper-config="%s"><div class="swiper-wrapper">%s</div>%s</div>%s%s%s</div>%s</div>',
+			'%s<div class="%s"><div class="%s"><div class="swiper" data-swiper-config="%s"><div class="swiper-wrapper">%s</div></div>%s%s</div>%s</div>',
 			$style_components,
 			esc_attr( implode( ' ', $classes ) ),
 			esc_attr( implode( ' ', $wrap_cls ) ),
-			CarouselEngine::pre_init_style( $built['config'] ),
 			esc_attr( wp_json_encode( $built['config'] ) ),
 			$posts_html,
-			$controls['inner'],
 			$nav_html,
 			$pagi_html,
-			$controls['after'],
 			$pagination_html
 		);
 
@@ -254,8 +242,8 @@ trait RenderCallbackTrait {
 		$inner = '';
 
 		if ( 'prev_next' === $type ) {
-			$older = get_next_posts_link( __( '&laquo; Older Entries', 'addons-for-divi' ), $max_num_pages );
-			$newer = get_previous_posts_link( __( 'Newer Entries &raquo;', 'addons-for-divi' ) );
+			$older = get_next_posts_link( __( '&laquo; Older Entries', 'divi-torque-lite' ), $max_num_pages );
+			$newer = get_previous_posts_link( __( 'Newer Entries &raquo;', 'divi-torque-lite' ) );
 			$inner = (string) $older . (string) $newer;
 		} elseif ( 'numbers' === $type ) {
 			$paginate_args = array(
@@ -281,7 +269,7 @@ trait RenderCallbackTrait {
 
 		return sprintf(
 			'<nav class="dtq-pagination" role="navigation" aria-label="%s">%s</nav>',
-			esc_attr__( 'Pagination', 'addons-for-divi' ),
+			esc_attr__( 'Pagination', 'divi-torque-lite' ),
 			wp_kses_post( $inner )
 		);
 	}

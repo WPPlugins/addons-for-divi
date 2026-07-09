@@ -7,7 +7,6 @@
   "titles": "Post Lists",
   "moduleIcon": "divitorque/post-list",
   "category": "module",
-  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -16,7 +15,7 @@
         "advanced": {
           "postType": { "desktop": { "value": "post" } },
           "orderBy": { "desktop": { "value": "date" } },
-          "order": { "desktop": { "value": "DESC" } },
+          "order": { "desktop": { "value": "ASC" } },
           "postsNumber": { "desktop": { "value": "6" } },
           "excludePosts": { "desktop": { "value": "" } },
           "includeCategories": { "desktop": { "value": "" } },

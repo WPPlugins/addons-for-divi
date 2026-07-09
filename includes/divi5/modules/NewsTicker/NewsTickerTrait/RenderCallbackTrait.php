@@ -12,8 +12,6 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-use DiviTorqueLite\Modules\Shared\DynamicValue;
-use DiviTorqueLite\Modules\Shared\TextValue;
 use ET\Builder\Packages\Module\Module;
 
 trait RenderCallbackTrait
@@ -60,9 +58,7 @@ trait RenderCallbackTrait
         $post_type  = self::get_attr($attrs, 'module.advanced.postType', 'post');
         $categories = self::get_attr($attrs, 'module.advanced.includeCategories', '');
         $order_by   = self::get_attr($attrs, 'module.advanced.orderBy', 'date');
-        // Newest first, matching WP_Query and divi/blog. Keep in step with the
-        // `order` default in module.json — see the note in PostCarousel.
-        $order      = self::get_attr($attrs, 'module.advanced.order', 'DESC');
+        $order      = self::get_attr($attrs, 'module.advanced.order', 'ASC');
         $news_count = (int) self::get_attr($attrs, 'module.advanced.newsCount', '5');
         $offset     = (int) self::get_attr($attrs, 'module.advanced.postOffset', '0');
         $exclude    = self::get_attr($attrs, 'module.advanced.excludePosts', '');
@@ -123,29 +119,17 @@ trait RenderCallbackTrait
     public static function render_callback($attrs, $content, $block, $elements)
     {
         $use_title  = self::get_attr($attrs, 'module.advanced.useTitle', 'on');
-        $title_text = DynamicValue::resolve(self::get_attr($attrs, 'module.advanced.titleText', ''));
+        $title_text = self::get_attr($attrs, 'module.advanced.titleText', '');
 
-        // A cleared Title Text printed an empty title box, which keeps its
-        // padding and background (#112). The builder showed "Breaking News"
-        // in the same case (#91). Both now leave the box out.
         $title_html = '';
-        if ('on' === $use_title && TextValue::visible($title_text)) {
+        if ('on' === $use_title) {
             $title_html = sprintf('<div class="dtq-news-title">%1$s</div>', esc_html($title_text));
         }
 
-        // WCAG 2.2.2 (Pause, Stop, Hide): the ticker scrolls automatically and
-        // indefinitely, so it must offer a way to stop it. frontend.js toggles
-        // `.dtq-news-tricker--paused`, which halts the CSS animation.
-        $pause_html = sprintf(
-            '<button type="button" class="dtq-news-pause" aria-pressed="false" aria-label="%1$s"><span class="dtq-news-pause__icon" aria-hidden="true"></span></button>',
-            esc_attr__('Pause the scrolling news ticker', 'addons-for-divi')
-        );
-
         $children = sprintf(
-            '<div class="dtq-module dtq-news-tricker">%1$s<div class="dtq-news-container"><ul class="dtq-news-wrap">%2$s</ul></div>%3$s</div>',
+            '<div class="dtq-module dtq-news-tricker">%1$s<div class="dtq-news-container"><ul class="dtq-news-wrap">%2$s</ul></div></div>',
             $title_html,
-            self::render_news($attrs),
-            $pause_html
+            self::render_news($attrs)
         );
 
         return Module::render(
@@ -160,10 +144,7 @@ trait RenderCallbackTrait
                 'classnamesFunction'  => [self::class, 'module_classnames'],
                 'stylesComponent'     => [self::class, 'module_styles'],
                 'scriptDataComponent' => [self::class, 'module_script_data'],
-                'children'            => [
-                    $elements->style_components(['attrName' => 'module']),
-                    $children,
-                ],
+                'children'            => $children,
             ]
         );
     }

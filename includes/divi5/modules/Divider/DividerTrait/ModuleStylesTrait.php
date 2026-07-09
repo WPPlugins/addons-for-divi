@@ -14,7 +14,6 @@ if (!defined('ABSPATH')) {
 
 use ET\Builder\FrontEnd\Module\Style;
 use ET\Builder\Packages\Module\Options\Css\CssStyle;
-use DiviTorqueLite\Modules\Shared\Spacing;
 
 trait ModuleStylesTrait
 {
@@ -39,6 +38,27 @@ trait ModuleStylesTrait
         ];
 
         return $patterns[$name] ?? $patterns['curved'];
+    }
+
+    /**
+     * Convert a spacing field value into a CSS shorthand, accepting BOTH the
+     * legacy D4 pipe-string (`top|right|bottom|left`) and the D5 spacing object
+     * (`{top,right,bottom,left}`) that a D4->D5 migration produces.
+     *
+     * @param mixed $val Spacing value (object array or pipe string).
+     *
+     * @return string CSS shorthand, or empty string when nothing to emit.
+     */
+    public static function dtq_spacing($val)
+    {
+        if (empty($val)) {
+            return '';
+        }
+        if (is_array($val)) {
+            return sprintf('%s %s %s %s', $val['top'] ?? '0px', $val['right'] ?? '0px', $val['bottom'] ?? '0px', $val['left'] ?? '0px');
+        }
+        $p = explode('|', (string) $val);
+        return 4 === count($p) ? implode(' ', $p) : (string) $val;
     }
 
     /**
@@ -186,11 +206,10 @@ trait ModuleStylesTrait
             $add($root, 'flex-direction: column;');
             $add($root, sprintf('align-items: %1$s;', $content_align));
 
-            // Shape margin, only when set. Spacing fields read every stored
-            // shape and fill unset sides from the larger breakpoint, then the
-            // default (Shared\Spacing).
-            if (Spacing::has($advanced['shapeMargin'] ?? null, 'desktop')) {
-                $add($root . '__shape', Spacing::css('margin', $advanced['shapeMargin'], 'desktop', '0px|0px|0px|0px'));
+            // Shape margin (pipe string or D5 spacing object -> shorthand).
+            $shape_margin_css = self::dtq_spacing($shape_margin);
+            if ('' !== $shape_margin_css) {
+                $add($root . '__shape', sprintf('margin: %1$s;', $shape_margin_css));
             }
 
             // Shape width.
@@ -209,8 +228,11 @@ trait ModuleStylesTrait
             $add($root . '__icon i', sprintf('font-family: "%1$s";', $icon_font_family));
             $add($root . '__icon i', sprintf('font-size: %1$s;', $icon_size));
 
-            // Icon padding. No default: unset sides keep the stylesheet's.
-            $add($root . '__icon i', Spacing::css('padding', $advanced['iconPadding'] ?? null, 'desktop'));
+            // Icon padding (pipe string or D5 spacing object -> shorthand).
+            $icon_pad = self::dtq_spacing($icon_padding);
+            if ('' !== $icon_pad) {
+                $add($root . '__icon i', sprintf('padding: %1$s;', $icon_pad));
+            }
 
             if ('off' === $use_mask) {
                 if (!empty($icon_bg)) {
@@ -225,8 +247,11 @@ trait ModuleStylesTrait
             $add($root . '__element img', sprintf('width: %1$s;', $img_width));
         }
 
-        // Text padding. No default: unset sides keep the stylesheet's.
-        $add($root . '__text span', Spacing::css('padding', $advanced['textPadding'] ?? null, 'desktop'));
+        // Text padding (pipe string or D5 spacing object -> shorthand).
+        $text_pad = self::dtq_spacing($text_padding);
+        if ('' !== $text_pad) {
+            $add($root . '__text span', sprintf('padding: %1$s;', $text_pad));
+        }
 
         // Text box background.
         if (!empty($text_background)) {
@@ -319,7 +344,10 @@ trait ModuleStylesTrait
                     ? $shape_margin
                     : $bp_value('shapeMargin', $larger);
                 if (null !== $margin_raw && $margin_raw !== $margin_prev) {
-                    $add_media($at_rules, $root . '__shape', Spacing::css('margin', $advanced['shapeMargin'], $breakpoint, '0px|0px|0px|0px'));
+                    $margin_css = self::dtq_spacing($bp_value('shapeMargin', $breakpoint));
+                    if ('' !== $margin_css) {
+                        $add_media($at_rules, $root . '__shape', sprintf('margin: %1$s;', $margin_css));
+                    }
                 }
 
                 // shapeWidth (responsive) -> width.
@@ -355,7 +383,10 @@ trait ModuleStylesTrait
                     ? $icon_padding
                     : $bp_value('iconPadding', $larger);
                 if (null !== $icon_pad_raw && $icon_pad_raw !== $icon_pad_prev) {
-                    $add_media($at_rules, $root . '__icon i', Spacing::css('padding', $advanced['iconPadding'], $breakpoint));
+                    $icon_pad_val = self::dtq_spacing($bp_value('iconPadding', $breakpoint));
+                    if ('' !== $icon_pad_val) {
+                        $add_media($at_rules, $root . '__icon i', sprintf('padding: %1$s;', $icon_pad_val));
+                    }
                 }
             }
 
@@ -365,7 +396,10 @@ trait ModuleStylesTrait
                 ? $text_padding
                 : $bp_value('textPadding', $larger);
             if (null !== $text_pad_raw && $text_pad_raw !== $text_pad_prev) {
-                $add_media($at_rules, $root . '__text span', Spacing::css('padding', $advanced['textPadding'], $breakpoint));
+                $text_pad_val = self::dtq_spacing($bp_value('textPadding', $breakpoint));
+                if ('' !== $text_pad_val) {
+                    $add_media($at_rules, $root . '__text span', sprintf('padding: %1$s;', $text_pad_val));
+                }
             }
         }
 

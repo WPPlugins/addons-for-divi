@@ -12,7 +12,7 @@
       "submit_button": "submitButton.decoration.boxShadow"
     },
     "button": {
-      "submit_button": "submitButton"
+      "submit_button": "submitButton.decoration.button"
     },
     "disabled_on": "module.decoration.disabledOn",
     "filters": {
@@ -36,7 +36,6 @@
   "css": {
     "before": "css.*.before",
     "after": "css.*.after",
-    "free_form": "css.*.freeForm",
     "main_element": "css.*.mainElement",
     "form_id": "css.*.formField",
     "cf7_labels": "css.*.label",

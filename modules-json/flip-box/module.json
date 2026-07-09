@@ -7,7 +7,6 @@
   "titles": "Flip Cards",
   "moduleIcon": "divitorque/flip-box",
   "category": "module",
-  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -94,12 +93,7 @@
           },
           "frontImgPadding": {
             "desktop": {
-              "value": {
-                "top": "0px",
-                "right": "0px",
-                "bottom": "0px",
-                "left": "0px"
-              }
+              "value": "0px|0px|0px|0px"
             }
           },
           "frontIconSize": {
@@ -114,12 +108,7 @@
           },
           "backImgPadding": {
             "desktop": {
-              "value": {
-                "top": "0px",
-                "right": "0px",
-                "bottom": "0px",
-                "left": "0px"
-              }
+              "value": "0px|0px|0px|0px"
             }
           },
           "backIconSize": {
@@ -139,22 +128,12 @@
           },
           "frontPadding": {
             "desktop": {
-              "value": {
-                "top": "30px",
-                "right": "30px",
-                "bottom": "30px",
-                "left": "30px"
-              }
+              "value": "30px|30px|30px|30px"
             }
           },
           "frontCtPadding": {
             "desktop": {
-              "value": {
-                "top": "0px",
-                "right": "0px",
-                "bottom": "0px",
-                "left": "0px"
-              }
+              "value": "0px|0px|0px|0px"
             }
           },
           "backAlignment": {
@@ -169,22 +148,12 @@
           },
           "backPadding": {
             "desktop": {
-              "value": {
-                "top": "30px",
-                "right": "30px",
-                "bottom": "30px",
-                "left": "30px"
-              }
+              "value": "30px|30px|30px|30px"
             }
           },
           "backCtPadding": {
             "desktop": {
-              "value": {
-                "top": "0px",
-                "right": "0px",
-                "bottom": "0px",
-                "left": "0px"
-              }
+              "value": "0px|0px|0px|0px"
             }
           },
           "frontSubtitleSpacing": {
@@ -220,6 +189,7 @@
         },
         "advanced": {
           "htmlAttributes": {},
+          "text": {},
           "frontMediaType": {
             "groupType": "group-item",
             "item": {
@@ -1249,6 +1219,8 @@
           "animation": {},
           "layout": {},
           "background": {},
+          "border": {},
+          "boxShadow": {},
           "filters": {},
           "overflow": {},
           "position": {},
@@ -2007,38 +1979,44 @@
       },
       "settings": {
         "innerContent": {
-          "groupType": "group-items",
-          "items": {
-            "buttonText": {
-              "groupSlug": "contentBack",
-              "attrName": "button.innerContent",
-              "subName": "text",
-              "label": "Button Text",
-              "description": "Here you can define the button text.",
-              "priority": 90,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false,
-                "dynamicContent": true
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/text"
+          "groupType": "into-multiple-groups",
+          "groups": {
+            "text": {
+              "groupType": "group-item",
+              "item": {
+                "groupSlug": "contentBack",
+                "attrName": "button.innerContent",
+                "subName": "text",
+                "label": "Button Text",
+                "description": "Here you can define the button text.",
+                "priority": 90,
+                "render": true,
+                "features": {
+                  "sticky": false,
+                  "responsive": false,
+                  "hover": false,
+                  "dynamicContent": true
+                },
+                "component": {
+                  "type": "field",
+                  "name": "divi/text"
+                }
               }
             },
-            "buttonLink": {
-              "groupSlug": "contentBack",
-              "priority": 100,
-              "render": true,
-              "component": {
-                "name": "divi/button-link",
-                "type": "group",
-                "props": {
-                  "grouped": false,
-                  "attrName": "button.innerContent",
-                  "fieldLabel": "Button"
+            "link": {
+              "groupType": "group-item",
+              "item": {
+                "groupSlug": "contentBack",
+                "priority": 100,
+                "render": true,
+                "component": {
+                  "name": "divi/button-link",
+                  "type": "group",
+                  "props": {
+                    "grouped": false,
+                    "attrName": "button.innerContent",
+                    "fieldLabel": "Button"
+                  }
                 }
               }
             }
@@ -2049,14 +2027,12 @@
             "groupType": "group-item",
             "item": {
               "groupSlug": "designButton",
+              "attrName": "button.decoration.button",
               "priority": 20,
               "render": true,
               "component": {
                 "name": "divi/button",
-                "type": "group",
-                "props": {
-                  "attrName": "button"
-                }
+                "type": "group"
               }
             }
           }
@@ -2161,7 +2137,7 @@
       },
       "designBack": {
         "panel": "design",
-        "priority": 15,
+        "priority": 20,
         "groupName": "backSide",
         "component": {
           "name": "divi/composite",
@@ -2172,7 +2148,7 @@
       },
       "designFrontMedia": {
         "panel": "design",
-        "priority": 20,
+        "priority": 30,
         "groupName": "frontMedia",
         "component": {
           "name": "divi/composite",
@@ -2183,7 +2159,7 @@
       },
       "designBackMedia": {
         "panel": "design",
-        "priority": 25,
+        "priority": 40,
         "groupName": "backMedia",
         "component": {
           "name": "divi/composite",
@@ -2194,7 +2170,7 @@
       },
       "designFrontTitle": {
         "panel": "design",
-        "priority": 30,
+        "priority": 50,
         "groupName": "frontTitle",
         "multiElements": true,
         "component": {
@@ -2208,7 +2184,7 @@
       },
       "designFrontSubtitle": {
         "panel": "design",
-        "priority": 35,
+        "priority": 55,
         "groupName": "frontSubtitle",
         "multiElements": true,
         "component": {
@@ -2222,7 +2198,7 @@
       },
       "designFrontDescription": {
         "panel": "design",
-        "priority": 40,
+        "priority": 60,
         "groupName": "frontDescription",
         "multiElements": true,
         "component": {
@@ -2236,7 +2212,7 @@
       },
       "designBackTitle": {
         "panel": "design",
-        "priority": 45,
+        "priority": 65,
         "groupName": "backTitle",
         "multiElements": true,
         "component": {
@@ -2250,7 +2226,7 @@
       },
       "designBackSubtitle": {
         "panel": "design",
-        "priority": 50,
+        "priority": 70,
         "groupName": "backSubtitle",
         "multiElements": true,
         "component": {
@@ -2264,7 +2240,7 @@
       },
       "designBackDescription": {
         "panel": "design",
-        "priority": 55,
+        "priority": 75,
         "groupName": "backDescription",
         "multiElements": true,
         "component": {
@@ -2278,7 +2254,7 @@
       },
       "designButton": {
         "panel": "design",
-        "priority": 58,
+        "priority": 80,
         "groupName": "button",
         "component": {
           "name": "divi/composite",

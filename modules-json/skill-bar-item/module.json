@@ -7,7 +7,6 @@
   "titles": "Skill Bar Items",
   "moduleIcon": "divitorque/skill-bar-item",
   "category": "child-module",
-  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -181,11 +180,9 @@
           "border": {},
           "boxShadow": {},
           "filters": {},
-          "sizing": {},
           "spacing": {},
           "transform": {},
           "transition": {},
-          "zIndex": {},
           "disabledOn": {}
         }
       }

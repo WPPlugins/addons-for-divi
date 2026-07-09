@@ -7,7 +7,6 @@
   "titles": "Review Boxes",
   "moduleIcon": "divitorque/review",
   "category": "module",
-  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -101,7 +100,7 @@
           },
           "imgPadding": {
             "desktop": {
-              "value": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
+              "value": "0px|0px|0px|0px"
             }
           },
           "btnSpacingTop": {
@@ -121,7 +120,7 @@
           },
           "contentPadding": {
             "desktop": {
-              "value": { "top": "15px", "right": "0px", "bottom": "0px", "left": "0px" }
+              "value": "15px|0px|0px|0px"
             }
           },
           "overlayOnHover": {
@@ -186,7 +185,7 @@
           },
           "badgePadding": {
             "desktop": {
-              "value": { "top": "5px", "right": "15px", "bottom": "5px", "left": "15px" }
+              "value": "5px|15px|5px|15px"
             }
           },
           "badgeBgColor": {
@@ -1519,38 +1518,44 @@
       },
       "settings": {
         "innerContent": {
-          "groupType": "group-items",
-          "items": {
-            "buttonText": {
-              "groupSlug": "contentButton",
-              "attrName": "button.innerContent",
-              "subName": "text",
-              "label": "Button Text",
-              "description": "Define the button text for your button.",
-              "priority": 20,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false,
-                "dynamicContent": true
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/text"
+          "groupType": "into-multiple-groups",
+          "groups": {
+            "text": {
+              "groupType": "group-item",
+              "item": {
+                "groupSlug": "contentButton",
+                "attrName": "button.innerContent",
+                "subName": "text",
+                "label": "Button Text",
+                "description": "Define the button text for your button.",
+                "priority": 20,
+                "render": true,
+                "features": {
+                  "sticky": false,
+                  "responsive": false,
+                  "hover": false,
+                  "dynamicContent": true
+                },
+                "component": {
+                  "type": "field",
+                  "name": "divi/text"
+                }
               }
             },
-            "buttonLink": {
-              "groupSlug": "contentButton",
-              "priority": 30,
-              "render": true,
-              "component": {
-                "name": "divi/button-link",
-                "type": "group",
-                "props": {
-                  "grouped": false,
-                  "attrName": "button.innerContent",
-                  "fieldLabel": "Button"
+            "link": {
+              "groupType": "group-item",
+              "item": {
+                "groupSlug": "contentButton",
+                "priority": 30,
+                "render": true,
+                "component": {
+                  "name": "divi/button-link",
+                  "type": "group",
+                  "props": {
+                    "grouped": false,
+                    "attrName": "button.innerContent",
+                    "fieldLabel": "Button"
+                  }
                 }
               }
             }
@@ -1561,14 +1566,12 @@
             "groupType": "group-item",
             "item": {
               "groupSlug": "designButton",
+              "attrName": "button.decoration.button",
               "priority": 20,
               "render": true,
               "component": {
                 "name": "divi/button",
-                "type": "group",
-                "props": {
-                  "attrName": "button"
-                }
+                "type": "group"
               }
             }
           }
