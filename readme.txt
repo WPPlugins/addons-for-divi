@@ -4,7 +4,7 @@ Tags: divi, divi 5, divi modules, divi builder, divi carousel
 Requires at least: 7.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.12.0
+Stable tag: 4.12.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -176,6 +176,10 @@ Updates are made to keep existing pages working. We still recommend a backup bef
 3. Image Carousel module
 
 == Changelog ==
+
+= Version 4.12.1 =
+* Fix: With Divi Torque Pro 1.11 or older active, every wp-admin page showed a critical error after updating to Lite 4.9.0 or later. With Pro 1.12, the Sharing Buttons page did. Lite now leaves its screens to Pro only when that Pro version can show them.
+* Fix: Divi 4 carousels (Image Carousel, Logo Carousel and Twitter Feed Carousel) no longer show every slide stacked at full size while the page loads. The first slides show in a row until the carousel starts.
 
 = Version 4.12.0 =
 * New: A short welcome tour after activation shows what Divi Torque Lite adds, where to find the modules in the Visual Builder, how an AI agent can build Divi pages for you, and what Pro includes. You can skip it, and reopen it any time from the dashboard.
@@ -389,6 +393,9 @@ Updates are made to keep existing pages working. We still recommend a backup bef
 * Public beta release
 
 == Upgrade Notice ==
+
+= 4.12.1 =
+Fixes a critical error on every wp-admin page when an older Divi Torque Pro is active, and stops Divi 4 carousels showing every slide at full size while the page loads.
 
 = 4.12.0 =
 Adds a welcome tour and Left/Right icon placement for Icon Box. Fixes Image Carousel on phones, the Image Accordion last image height, a double Before and After Slider with Pro active, Breadcrumbs styling and schema, Twitter Feed API calls on every page view, and dynamic content in several modules.
