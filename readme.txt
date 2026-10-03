@@ -4,7 +4,7 @@ Tags: divi, divi 5, divi modules, divi builder, divi carousel
 Requires at least: 7.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.14.0
+Stable tag: 4.14.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -176,6 +176,9 @@ Updates are made to keep existing pages working. We still recommend a backup bef
 3. Image Carousel module
 
 == Changelog ==
+
+= Version 4.14.1 =
+* Fix: On sites with an image lazy-loading plugin, Image Carousel thumbnails and the repeating slides of Continuous Scroll could stay blank. They now show their images.
 
 = Version 4.14.0 =
 * New: Image Carousel has a Continuous Scroll autoplay style. The slides move at a steady speed without stopping, like a film strip. They pause the moment the pointer moves over them and continue from the same spot.
@@ -417,6 +420,9 @@ Updates are made to keep existing pages working. We still recommend a backup bef
 * Public beta release
 
 == Upgrade Notice ==
+
+= 4.14.1 =
+Fixes blank Image Carousel thumbnails and Continuous Scroll slides on sites that use an image lazy-loading plugin.
 
 = 4.14.0 =
 Adds Continuous Scroll to the Image Carousel, plus a pause button, progress bars, free scroll, mouse wheel, transition effects, thumbnails, pinch to zoom and rows. Fixes extra space under Divi 5 carousels on desktop and looping carousels with too few slides.
