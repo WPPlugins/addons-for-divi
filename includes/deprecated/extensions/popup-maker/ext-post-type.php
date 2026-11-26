@@ -82,7 +82,7 @@ class Popup_Post_Type
      */
     public static function metabox()
     {
-        require_once DIVI_TORQUE_PLUGIN_DIR . 'includes/metabox/popup-metabox.php';
+        require_once DIVI_TORQUE_LITE_DIR . 'includes/deprecated/metabox/popup-metabox.php';
 
         Metabox::instance();
     }

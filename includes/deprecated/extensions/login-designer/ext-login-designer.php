@@ -729,12 +729,12 @@ class Login_Designer
 
     public function login_enqueue_scripts()
     {
-        $path = DIVI_TORQUE_PLUGIN_URL . '/includes/customizer/';
+        $path = DIVI_TORQUE_LITE_URL . '/includes/deprecated/customizer';
         wp_enqueue_style(
             'brainaddons-customizer-preview',
             $path . 'css/brainaddons-customizer-preview.css',
             false,
-            DIVI_TORQUE_PLUGIN_VERSION
+            DIVI_TORQUE_LITE_VERSION
         );
     }
 }
