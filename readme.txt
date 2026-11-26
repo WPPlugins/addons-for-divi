@@ -4,7 +4,7 @@ Tags: divi, divi 5, divi modules, divi builder, divi carousel
 Requires at least: 7.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 4.17.0
+Stable tag: 4.17.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -191,6 +191,9 @@ The X (Twitter) Feed and X (Twitter) Carousel modules connect to the X API (`api
 
 == Changelog ==
 
+= Version 4.17.1 =
+* Updated Black Friday card on the overview, with the right dates and link.
+
 = Version 4.17.0 =
 * New Divi 5 MCP page in the Divi Torque menu, and a cleaner overview.
 
@@ -222,5 +225,5 @@ Older versions: [full changelog](https://divitorque.com/changelog/?product=lite-
 
 == Upgrade Notice ==
 
-= 4.17.0 =
-Adds a Divi 5 MCP page and tidies the overview.
+= 4.17.1 =
+Updates the Black Friday card on the overview.
