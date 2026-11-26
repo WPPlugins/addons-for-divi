@@ -8,10 +8,13 @@
 ( function () {
 	if ( window.divi && window.divi.moduleLibrary && window.divi.moduleLibrary.registerFolder ) {
 		window.divi.moduleLibrary.registerFolder( {
-			name: 'divi-torque',
+			name: 'divi-torque-lite',
 			path: '',
-			title: 'Divi Torque',
-			icon: '',
+			title: 'Divi Torque Lite',
+			// Must be a name Divi's icon library knows: it resolves icons through
+			// the `divi.iconLibrary.icon.map` filter and renders null for anything
+			// unregistered, which is what left this folder icon-less.
+			icon: 'divi/folder',
 			category: 'module',
 		} );
 	} else {

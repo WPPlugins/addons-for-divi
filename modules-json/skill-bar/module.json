@@ -7,6 +7,7 @@
   "titles": "Skill Bars",
   "moduleIcon": "divitorque/skill-bar",
   "category": "module",
+  "folder": "divi-torque-lite",
   "childModuleName": "divitorque/skill-bar-item",
   "childModuleTitle": "Skill Bar Item",
   "childrenName": [
@@ -28,6 +29,7 @@
         "meta": { "adminLabel": {} },
         "advanced": {
           "htmlAttributes": {},
+          "text": {},
           "titleSpacingBottom": {
             "groupType": "group-item",
             "item": {

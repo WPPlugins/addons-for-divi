@@ -14,6 +14,7 @@ if (!defined('ABSPATH')) {
 
 use ET\Builder\FrontEnd\Module\Style;
 use ET\Builder\Packages\Module\Options\Css\CssStyle;
+use DiviTorqueLite\Modules\Shared\Spacing;
 
 trait ModuleStylesTrait
 {
@@ -33,6 +34,13 @@ trait ModuleStylesTrait
             return $styles;
         }
 
+        // Desktop value or fallback. The overlay block below was ported from
+        // the Image Card module and calls this; without it, any Feature Box
+        // with Image Overlay on was a fatal error that took down the page.
+        $val = function ($key, $fallback) use ($advanced) {
+            return $advanced[$key]['desktop']['value'] ?? $fallback;
+        };
+
         $main_figure       = $advanced['mainFigure']['desktop']['value']         ?? 'image';
         $figure_placement  = $advanced['figurePlacement']['desktop']['value']    ?? 'top';
         $equalize_content  = $advanced['equalizeContent']['desktop']['value']    ?? 'off';
@@ -48,36 +56,15 @@ trait ModuleStylesTrait
         $btn_spacing_top   = $advanced['btnSpacingTop']['desktop']['value']      ?? '15px';
         $title_spacing     = $advanced['titleBottomSpacing']['desktop']['value'] ?? '10px';
         $content_alignment = $advanced['contentAlignment']['desktop']['value']   ?? 'left';
-        $content_padding   = $advanced['contentPadding']['desktop']['value']     ?? '15px|0px|0px|0px';
-        $icon_padding      = $advanced['iconPadding']['desktop']['value']        ?? '0px|0px|0px|0px';
         $vo_icon_color     = $advanced['voIconColor']['desktop']['value']        ?? '';
         $vo_icon_size      = $advanced['voIconSize']['desktop']['value']         ?? '';
         $vo_bg             = $advanced['voBg']['desktop']['value']               ?? '';
 
-        // Convert a D4 "top|right|bottom|left" spacing string OR a migrated D5
-        // spacing object {top,right,bottom,left} into a CSS `padding`
-        // shorthand. Empty segments fall back to 0.
-        $padding_css = function ($value) {
-            if (is_array($value)) {
-                if (empty($value)) {
-                    return '';
-                }
-                $top    = ('' !== ($value['top'] ?? ''))    ? $value['top']    : '0px';
-                $right  = ('' !== ($value['right'] ?? ''))  ? $value['right']  : '0px';
-                $bottom = ('' !== ($value['bottom'] ?? '')) ? $value['bottom'] : '0px';
-                $left   = ('' !== ($value['left'] ?? ''))   ? $value['left']   : '0px';
-                return sprintf('%1$s %2$s %3$s %4$s', $top, $right, $bottom, $left);
-            }
-            if (!is_string($value) || '' === $value) {
-                return '';
-            }
-            $parts = explode('|', $value);
-            $top    = ('' !== ($parts[0] ?? '')) ? $parts[0] : '0px';
-            $right  = ('' !== ($parts[1] ?? '')) ? $parts[1] : '0px';
-            $bottom = ('' !== ($parts[2] ?? '')) ? $parts[2] : '0px';
-            $left   = ('' !== ($parts[3] ?? '')) ? $parts[3] : '0px';
-            return sprintf('%1$s %2$s %3$s %4$s', $top, $right, $bottom, $left);
-        };
+        // Spacing fields read every stored shape (pipe string, spacing
+        // object, the raw {side, value} edit) and fill missing sides from the
+        // default (Shared\Spacing).
+        $content_padding_css = Spacing::css('padding', $advanced['contentPadding'] ?? null, 'desktop', '15px|0px|0px|0px');
+        $icon_padding_css    = Spacing::css('padding', $advanced['iconPadding'] ?? null, 'desktop', '0px|0px|0px|0px');
 
         $push = function ($selector, $declaration) use (&$styles) {
             $styles[] = [
@@ -101,7 +88,7 @@ trait ModuleStylesTrait
         // Media image sizing.
         if ('image' === $main_figure) {
             $push($order_class . ' .dtq-info-box .dtq-info-box-figure', sprintf('width: %1$s !important;', $image_width));
-            $push($order_class . ' .dtq-info-box .dtq-info-box-figure', sprintf('flex: %1$s !important;', $image_width));
+            $push($order_class . ' .dtq-info-box .dtq-info-box-figure', sprintf('flex: 0 0 %1$s !important;', $image_width));
 
             if ('off' === $equalize_content) {
                 if ('top' !== $figure_placement && 'auto' !== $image_height) {
@@ -124,9 +111,8 @@ trait ModuleStylesTrait
         $push($order_class, sprintf('text-align: %1$s;', $content_alignment));
 
         // Content padding.
-        $content_padding_css = $padding_css($content_padding);
         if ('' !== $content_padding_css) {
-            $push($order_class . ' .dtq-info-box-content', sprintf('padding: %1$s;', $content_padding_css));
+            $push($order_class . ' .dtq-info-box-content', $content_padding_css);
         }
 
         // Icon.
@@ -138,14 +124,37 @@ trait ModuleStylesTrait
             }
 
             // Icon padding.
-            $icon_padding_css = $padding_css($icon_padding);
             if ('' !== $icon_padding_css) {
-                $push($order_class . ' .dtq-info-box-icon', sprintf('padding: %1$s;', $icon_padding_css));
+                $push($order_class . ' .dtq-info-box-icon', $icon_padding_css);
             }
         }
 
         $push($order_class . ' .dtq-info-box-icon i', sprintf('color: %1$s;', $icon_color));
         $push($order_class . ' .dtq-info-box-icon i', sprintf('font-size: %1$s;', $icon_size));
+
+        // Image hover overlay (designOverlay group). Mirrors the Image Card
+        // module; keep in lockstep with the JS twin in styles.jsx.
+        if (($advanced['useOverlay']['desktop']['value'] ?? 'off') === 'on') {
+            $overlay_color    = dtq_css_color(dtq_resolve_css_value($val('overlayColor', '#2EA3F2')), '#2EA3F2');
+            $overlay_icon_col = dtq_css_color(dtq_resolve_css_value($val('overlayIconColor', '#2EA3F2')), '#2EA3F2');
+            $overlay_icon_sz  = dtq_css_length($val('overlayIconSize', '32px'), '32px');
+            $overlay_icon_op  = dtq_css_length($val('overlayIconOpacity', '1'), '1');
+            $overlay_speed    = dtq_css_length($val('overlayHoverSpeed', '500ms'), '500ms');
+
+            $push(
+                $order_class . ' .dtq-overlay',
+                sprintf('background-color: %1$s; transition: all %2$s;', $overlay_color, $overlay_speed)
+            );
+            $push(
+                $order_class . ' .dtq-overlay .dtq-overlay-icon',
+                sprintf('color: %1$s; font-size: %2$s; opacity: %3$s;', $overlay_icon_col, $overlay_icon_sz, $overlay_icon_op)
+            );
+
+            // "Show overlay only on hover" off => keep it permanently visible.
+            if (($advanced['overlayOnHover']['desktop']['value'] ?? 'on') !== 'on') {
+                $push($order_class . ' .dtq-info-box-figure .dtq-overlay', 'opacity: 1;');
+            }
+        }
 
         // Video overlay.
         if (!empty($vo_icon_color)) {
@@ -198,7 +207,7 @@ trait ModuleStylesTrait
                 $r_image_width = $bp_value('imageWidth', $breakpoint);
                 if (null !== $r_image_width) {
                     $push_media($at_rule, $order_class . ' .dtq-info-box .dtq-info-box-figure', sprintf('width: %1$s !important;', $r_image_width));
-                    $push_media($at_rule, $order_class . ' .dtq-info-box .dtq-info-box-figure', sprintf('flex: %1$s !important;', $r_image_width));
+                    $push_media($at_rule, $order_class . ' .dtq-info-box .dtq-info-box-figure', sprintf('flex: 0 0 %1$s !important;', $r_image_width));
                 }
 
                 // Image height (only in the same branch desktop emits it).
@@ -293,6 +302,12 @@ trait ModuleStylesTrait
 
             // Button decoration styles.
             $elements->style(['attrName' => 'button']),
+
+            // Box Border: the whole box. The module's own Border group is
+            // drawn on the image, icon or video (module.styleProps.border), so
+            // a Divi 4 `box` border needs its own attribute or it turns into a
+            // frame around the image (support SU-CE4E7B).
+            $elements->style(['attrName' => 'box']),
         ];
 
         if (!empty($custom_styles)) {

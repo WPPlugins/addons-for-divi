@@ -1,0 +1,1844 @@
+{
+	"generated_from": "dt-website inc/icons.php @ 80d3bcb",
+	"generator": "scripts/sync-module-catalog.mjs — do not edit by hand",
+	"categories": {
+		"content": {
+			"label": "Content"
+		},
+		"media": {
+			"label": "Media"
+		},
+		"social": {
+			"label": "Social"
+		},
+		"posts": {
+			"label": "Posts"
+		},
+		"forms": {
+			"label": "Forms"
+		},
+		"nav": {
+			"label": "Navigation"
+		},
+		"commerce": {
+			"label": "Commerce"
+		},
+		"woo": {
+			"label": "WooCommerce"
+		},
+		"utility": {
+			"label": "Utility"
+		}
+	},
+	"fallback_glyphs": {
+		"content": "<path d=\"M5 5h14M12 5v14M8 19h8\"/>",
+		"media": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><circle cx=\"9\" cy=\"10\" r=\"1.6\"/><path d=\"m4 18 5-4 4 3 3-2 4 3\"/>",
+		"social": "<path d=\"M20 11.5a7.5 7.5 0 0 1-10.8 6.7L4 19.5l1.3-4A7.5 7.5 0 1 1 20 11.5Z\"/>",
+		"posts": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"5\" rx=\"1.5\"/><rect x=\"3\" y=\"11\" width=\"18\" height=\"5\" rx=\"1.5\"/><path d=\"M3 19h12\"/>",
+		"forms": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 8h8M8 12h8M8 16h4\"/>",
+		"nav": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m15.5 8.5-2.2 5.3-4.8 1.7 2.2-5.3z\"/>",
+		"commerce": "<path d=\"M4 7h11l-1 7H6Z\"/><path d=\"M9 7V5a3 3 0 0 1 6 0v2\"/>",
+		"woo": "<path d=\"M3 4h2.5l2 10.5h10L20 7H6.6\"/><circle cx=\"9\" cy=\"19\" r=\"1.4\"/><circle cx=\"16.5\" cy=\"19\" r=\"1.4\"/>",
+		"utility": "<circle cx=\"12\" cy=\"12\" r=\"3.2\"/><path d=\"M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4\"/>"
+	},
+	"extra_glyphs": {
+		"menu": "<path d=\"M4 7h16M4 12h16M4 17h10\"/>",
+		"price-list": "<path d=\"M4 7h9M16 7h4M4 12h9M16 12h4M4 17h9M16 17h4\"/>"
+	},
+	"modules": {
+		"icon-box": {
+			"label": "Icon Box",
+			"desc": "Pair icons with text to present services and features clearly.",
+			"desc_short": "Icon + text feature boxes.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3\"/><circle cx=\"12\" cy=\"10\" r=\"2.2\"/><path d=\"M9 15.5h6\"/>",
+			"grad": [
+				"#2FB6D0",
+				"#34D08C",
+				"#E0F7F0"
+			],
+			"demo_url": "https://divitorque.com/features/icon-box/",
+			"docs_url": "https://divitorque.com/docs/icon-box/"
+		},
+		"info-box": {
+			"label": "Feature Box",
+			"desc": "Highlight key information with icon-and-text boxes.",
+			"desc_short": "Key-info highlight boxes.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><circle cx=\"7\" cy=\"9\" r=\"1.3\"/><path d=\"M11 8.5h6M7 13h10M7 16.5h7\"/>",
+			"grad": [
+				"#5BA8FF",
+				"#8FC5FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/info-box/",
+			"docs_url": "https://divitorque.com/docs/info-box/"
+		},
+		"dual-button": {
+			"label": "Dual Buttons",
+			"desc": "Offer two clear calls to action side by side.",
+			"desc_short": "Two CTAs side by side.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"9\" width=\"8\" height=\"6\" rx=\"3\"/><rect x=\"13\" y=\"9\" width=\"8\" height=\"6\" rx=\"3\"/>",
+			"grad": [
+				"#FF8E4F",
+				"#FF6F91",
+				"#FFE3D0"
+			],
+			"demo_url": "https://divitorque.com/features/dual-button/",
+			"docs_url": "https://divitorque.com/docs/dual-button/"
+		},
+		"gradient-heading": {
+			"label": "Gradient Heading",
+			"desc": "Gradient headings without writing any CSS.",
+			"desc_short": "Gradient headings, no CSS.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M6 6v12M16 6v12M6 12h10\"/><path d=\"M4 21h16\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": "https://divitorque.com/features/gradient-heading/",
+			"docs_url": "https://divitorque.com/docs/gradient-heading/"
+		},
+		"animated-text": {
+			"label": "Animated Text",
+			"desc": "Text that animates in as the page loads.",
+			"desc_short": "Dynamic text animations.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M5 7h12M11 7v11\"/><path d=\"M18 4.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#E879C9",
+				"#9B6CFF",
+				"#FBE4FF"
+			],
+			"demo_url": "https://divitorque.com/features/animated-text/",
+			"docs_url": "https://divitorque.com/docs/animated-text/"
+		},
+		"inline-notice": {
+			"label": "Alert Box",
+			"desc": "Highlight important notes with ready-to-use boxes.",
+			"desc_short": "Ready-made alert boxes.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\"/><circle cx=\"7\" cy=\"12\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M10 12h8\"/>",
+			"grad": [
+				"#2FB6D0",
+				"#34D08C",
+				"#E0F7F0"
+			],
+			"demo_url": "https://divitorque.com/features/inline-notice/",
+			"docs_url": "https://divitorque.com/docs/alert-box/"
+		},
+		"divider": {
+			"label": "Separator",
+			"desc": "Dividers between sections, in the shape you want.",
+			"desc_short": "Custom section dividers.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M3 12h6M15 12h6\"/><circle cx=\"12\" cy=\"12\" r=\"1.6\"/>",
+			"grad": [
+				"#4F8BFF",
+				"#6E72FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/divider/",
+			"docs_url": "https://divitorque.com/docs/separator/"
+		},
+		"news-ticker": {
+			"label": "News Ticker",
+			"desc": "Display live updates and announcements.",
+			"desc_short": "Scrolling news ticker.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"8\" width=\"18\" height=\"8\" rx=\"2\"/><path d=\"M6 12h6\"/><path d=\"M15 10.5l2 1.5-2 1.5z\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/news-ticker/",
+			"docs_url": "https://divitorque.com/docs/news-ticker/"
+		},
+		"image-carousel": {
+			"label": "Image Carousel",
+			"desc": "Build responsive image sliders with full controls.",
+			"desc_short": "Responsive image carousels.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"7\" y=\"6\" width=\"10\" height=\"12\" rx=\"2\"/><path d=\"M3 9v6M21 9v6\"/>",
+			"grad": [
+				"#5BA8FF",
+				"#8FC5FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/image-carousel/",
+			"docs_url": "https://divitorque.com/docs/image-carousel/"
+		},
+		"logo-carousel": {
+			"label": "Logo Carousel",
+			"desc": "Rotate client and partner logos in a strip.",
+			"desc_short": "Rotating logo showcase.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M3 12h3M18 12h3\"/>",
+			"grad": [
+				"#9C7CFF",
+				"#6E8BFF",
+				"#ECECFF"
+			],
+			"demo_url": "https://divitorque.com/features/logo-carousel/",
+			"docs_url": "https://divitorque.com/docs/logo-carousel/"
+		},
+		"logo-grid": {
+			"label": "Logo Grid",
+			"desc": "Lay out client and sponsor logos in a grid.",
+			"desc_short": "Clean logo grids.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/>",
+			"grad": [
+				"#5BA8FF",
+				"#8FC5FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/logo-grid/",
+			"docs_url": "https://divitorque.com/docs/logo-grid/"
+		},
+		"compare-image": {
+			"label": "Before & After Slider",
+			"desc": "Compare two images with an interactive slider.",
+			"desc_short": "Before/after image slider.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M12 3v18\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": "https://divitorque.com/features/compare-image/",
+			"docs_url": "https://divitorque.com/docs/compare-image/"
+		},
+		"scroll-image": {
+			"label": "Scroll Image",
+			"desc": "Reveal a tall image by scrolling it on hover.",
+			"desc_short": "Scrolling image effects.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\"/><path d=\"M12 8v8\"/><path d=\"M9.5 13.5l2.5 2.5 2.5-2.5\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/scroll-image/",
+			"docs_url": "https://divitorque.com/docs/scroll-image/"
+		},
+		"video-modal": {
+			"label": "Video Modal",
+			"desc": "Open YouTube and Vimeo videos in a popup.",
+			"desc_short": "Videos in a popup.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2.5\"/><path d=\"M10 9.5l5 2.5-5 2.5z\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#E879C9",
+				"#9B6CFF",
+				"#FBE4FF"
+			],
+			"demo_url": "https://divitorque.com/features/video-modal/",
+			"docs_url": "https://divitorque.com/docs/video-modal/"
+		},
+		"flip-box": {
+			"label": "Flip Card",
+			"desc": "Reveal extra content with an interactive flip.",
+			"desc_short": "Flip-to-reveal cards.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M12 5v14\"/><path d=\"M8.5 9.5L12 12l-3.5 2.5\"/>",
+			"grad": [
+				"#FF6FAE",
+				"#9B6CFF",
+				"#FFE0EE"
+			],
+			"demo_url": "https://divitorque.com/features/flip-box/",
+			"docs_url": "https://divitorque.com/docs/flip-box/"
+		},
+		"testimonial": {
+			"label": "Testimonial Card",
+			"desc": "Customer quotes, laid out as cards.",
+			"desc_short": "Reviews and quote cards.",
+			"cat": "social",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M6 8h4v4c0 2-1.4 3.4-3.4 3.6M14 8h4v4c0 2-1.4 3.4-3.4 3.6\"/>",
+			"grad": [
+				"#9C7CFF",
+				"#6E8BFF",
+				"#ECECFF"
+			],
+			"demo_url": "https://divitorque.com/features/testimonial/",
+			"docs_url": "https://divitorque.com/docs/testimonial-2/"
+		},
+		"review": {
+			"label": "Review Box",
+			"desc": "Customer ratings and written feedback.",
+			"desc_short": "Customer feedback boxes.",
+			"cat": "social",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M12 4l2.2 4.6 5 .6-3.7 3.5 1 5L12 15.8 7.5 18.2l1-5L4.8 9.7l5-.6z\"/>",
+			"grad": [
+				"#7FCB45",
+				"#22C09A",
+				"#EAF7D6"
+			],
+			"demo_url": "https://divitorque.com/features/review/",
+			"docs_url": "https://divitorque.com/docs/review-box/"
+		},
+		"twitter-feed": {
+			"label": "X (Twitter) Feed",
+			"desc": "Your latest X posts, in a live feed.",
+			"desc_short": "Live X post feed.",
+			"cat": "social",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M5 5l14 14M19 5L5 19\"/>",
+			"grad": [
+				"#5BA8FF",
+				"#8FC5FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/twitter-feed/",
+			"docs_url": "https://divitorque.com/docs/twitter-feed/"
+		},
+		"post-list": {
+			"label": "Post List",
+			"desc": "List blog posts and articles so readers can browse them.",
+			"desc_short": "Simple blog post lists.",
+			"cat": "posts",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M12 6h9M12 9.5h6\"/><rect x=\"3\" y=\"14\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M12 15h9M12 18.5h6\"/>",
+			"grad": [
+				"#FF6FAE",
+				"#9B6CFF",
+				"#FFE0EE"
+			],
+			"demo_url": "https://divitorque.com/features/post-list/",
+			"docs_url": "https://divitorque.com/docs/post-list/"
+		},
+		"contact-form-7": {
+			"label": "Contact Form 7 Styler",
+			"desc": "Make Contact Form 7 match your design.",
+			"desc_short": "Style Contact Form 7.",
+			"cat": "forms",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 8h8M8 12h8M8 16h4\"/>",
+			"grad": [
+				"#FFB13F",
+				"#FF7A4D",
+				"#FFE7C2"
+			],
+			"demo_url": "https://divitorque.com/features/contact-form-7/",
+			"docs_url": "https://divitorque.com/docs/contact-form-7/"
+		},
+		"number-counter": {
+			"label": "Animated Counter",
+			"desc": "Animate statistics and key figures.",
+			"desc_short": "Animated stat counters.",
+			"cat": "commerce",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M6 9l2.5-1.5V17\"/><path d=\"M13 9.5a2.6 2.6 0 1 1 4.2 2L13 17h5\"/>",
+			"grad": [
+				"#4F8BFF",
+				"#6E72FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/number-counter/",
+			"docs_url": "https://divitorque.com/docs/number-counter/"
+		},
+		"skill-bar": {
+			"label": "Skill Bar",
+			"desc": "Progress bars that fill as they scroll into view.",
+			"desc_short": "Animated progress bars.",
+			"cat": "commerce",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"4\" rx=\"2\"/><rect x=\"3\" y=\"14\" width=\"12\" height=\"4\" rx=\"2\"/>",
+			"grad": [
+				"#2FB6D0",
+				"#34D08C",
+				"#E0F7F0"
+			],
+			"demo_url": "https://divitorque.com/features/skill-bar/",
+			"docs_url": "https://divitorque.com/docs/skill-bar/"
+		},
+		"business-hour": {
+			"label": "Business Hours",
+			"desc": "Opening times, laid out so they read clearly.",
+			"desc_short": "Tidy opening-hours tables.",
+			"cat": "commerce",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 8v4l3 2\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": "https://divitorque.com/features/business-hour/",
+			"docs_url": "https://divitorque.com/docs/business-hour/"
+		},
+		"team-box": {
+			"label": "Team Member",
+			"desc": "Introduce team members with photos, bios, and social links.",
+			"desc_short": "Team member profiles.",
+			"cat": "commerce",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"9\" r=\"3.4\"/><path d=\"M5.5 19a6.5 6.5 0 0 1 13 0\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/team-box/",
+			"docs_url": "https://divitorque.com/docs/team-box/"
+		},
+		"accordion": {
+			"label": "Accordion Pro",
+			"desc": "Panels that open and close when clicked.",
+			"desc_short": "Collapsible content panels.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M5 5h14M12 5v14M8 19h8\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/accordion/",
+			"docs_url": "https://divitorque.com/docs/accordion/"
+		},
+		"tabs": {
+			"label": "Tabs Pro",
+			"desc": "Split content into tabs people can switch between.",
+			"desc_short": "Switchable content tabs.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M5 5h14M12 5v14M8 19h8\"/>",
+			"grad": [
+				"#FF8E4F",
+				"#FF6F91",
+				"#FFE3D0"
+			],
+			"demo_url": "https://divitorque.com/features/tabs/",
+			"docs_url": "https://divitorque.com/docs/tabs/"
+		},
+		"modal-popup": {
+			"label": "Modal Popup",
+			"desc": "Open any content in a click-triggered modal popup.",
+			"desc_short": "Click-triggered modals.",
+			"cat": "utility",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"12\" r=\"3.2\"/><path d=\"M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/modal-popup/",
+			"docs_url": "https://divitorque.com/docs/modal-popup/"
+		},
+		"post-carousel": {
+			"label": "Post Carousel",
+			"desc": "Slide through posts with six ready-made card presets.",
+			"desc_short": "Sliding post carousel.",
+			"cat": "posts",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"7\" y=\"5\" width=\"10\" height=\"14\" rx=\"2\"/><path d=\"M3 9v6M21 9v6\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/post-carousel/",
+			"docs_url": "https://divitorque.com/docs/post-carousel/"
+		},
+		"table-of-contents": {
+			"label": "Table of Contents",
+			"desc": "Auto-build a table of contents from your page headings.",
+			"desc_short": "Auto page table of contents.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M5 5h14M12 5v14M8 19h8\"/>",
+			"grad": [
+				"#5BA8FF",
+				"#8FC5FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/table-of-contents/",
+			"docs_url": "https://divitorque.com/docs/table-of-contents/"
+		},
+		"fancy-text": {
+			"label": "Fancy Text",
+			"desc": "Animate rotating, gradient, and typed text effects.",
+			"desc_short": "Rotating and typed text.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M5 5h14M12 5v14M8 19h8\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": "https://divitorque.com/features/fancy-text/",
+			"docs_url": "https://divitorque.com/docs/fancy-text/"
+		},
+		"faq": {
+			"label": "FAQ",
+			"desc": "Build FAQ sections with schema.org rich-result markup.",
+			"desc_short": "FAQs with schema markup.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M5 5h14M12 5v14M8 19h8\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": "https://divitorque.com/features/faq/",
+			"docs_url": "https://divitorque.com/docs/faq/"
+		},
+		"breadcrumbs": {
+			"label": "Breadcrumb Trail",
+			"desc": "A breadcrumb trail, with schema markup built in.",
+			"desc_short": "Schema breadcrumb trails.",
+			"cat": "nav",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m15.5 8.5-2.2 5.3-4.8 1.7 2.2-5.3z\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/breadcrumbs/",
+			"docs_url": "https://divitorque.com/docs/breadcrumbs/"
+		},
+		"info-card": {
+			"label": "Image Card",
+			"desc": "An image card with an icon and a badge.",
+			"desc_short": "Rich image feature cards.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M3 9h18M7 13h10M7 16h6\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/info-card/",
+			"docs_url": "https://divitorque.com/docs/info-card/"
+		},
+		"twitter-feed-carousel": {
+			"label": "X (Twitter) Carousel",
+			"desc": "Your X posts in a carousel instead of a list.",
+			"desc_short": "Sliding X post carousel.",
+			"cat": "social",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M7 7l10 10M17 7L7 17\"/><path d=\"M3 12h1.5M19.5 12H21\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/twitter-feed-carousel/",
+			"docs_url": "https://divitorque.com/docs/twitter-feed-carousel/"
+		},
+		"cta-box": {
+			"label": "Call To Action",
+			"desc": "Pair a headline with one or two buttons to drive the next step.",
+			"desc_short": "Headline + button CTAs.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"2.5\" y=\"4.5\" width=\"19\" height=\"15\" rx=\"2\"/><path d=\"M7 8.5h10M9 12h6\"/><rect x=\"8\" y=\"14.6\" width=\"8\" height=\"3.2\" rx=\"1.6\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#9C7CFF",
+				"#6E8BFF",
+				"#ECECFF"
+			],
+			"demo_url": "https://divitorque.com/features/cta-box/",
+			"docs_url": "https://divitorque.com/docs/cta-box/"
+		},
+		"creative-button": {
+			"label": "Creative Button",
+			"desc": "Buttons with ten hover effects, keyboard friendly.",
+			"desc_short": "Buttons with hover effects.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"2.5\" y=\"8.5\" width=\"19\" height=\"7\" rx=\"3.5\"/><path d=\"M6.5 8.5h4v7h-4a3.5 3.5 0 0 1 0-7z\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M14 12h5\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/creative-button/",
+			"docs_url": "https://divitorque.com/docs/creative-button/"
+		},
+		"tooltip": {
+			"label": "Tooltip",
+			"desc": "Attach a styled tooltip to text, an icon, or an image.",
+			"desc_short": "Styled hover tooltips.",
+			"cat": "content",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"3.5\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 7.5h10M7 11h6\"/><path d=\"m9.5 14.5 2.5 3.5 2.5-3.5\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#22C3BE",
+				"#4F8BFF",
+				"#DBF5F1"
+			],
+			"demo_url": "https://divitorque.com/features/tooltip/",
+			"docs_url": "https://divitorque.com/docs/tooltip/"
+		},
+		"image-accordion": {
+			"label": "Image Accordion",
+			"desc": "Expanding image panels that open on hover or click.",
+			"desc_short": "Expanding image panels.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"2.5\" y=\"4.5\" width=\"4\" height=\"15\" rx=\"1.4\"/><rect x=\"8.5\" y=\"4.5\" width=\"7\" height=\"15\" rx=\"1.4\"/><rect x=\"17.5\" y=\"4.5\" width=\"4\" height=\"15\" rx=\"1.4\"/><circle cx=\"11\" cy=\"9\" r=\"1.2\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": "https://divitorque.com/features/image-accordion/",
+			"docs_url": "https://divitorque.com/docs/image-accordion/"
+		},
+		"svg-draw": {
+			"label": "SVG Draw",
+			"desc": "Animate an SVG being drawn stroke by stroke as it scrolls in.",
+			"desc_short": "Stroke-drawn SVG on scroll.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<path d=\"M3 16c3-9 7-11 9-5s5 6 9-4\"/><path d=\"M3 20.5h8\" stroke-dasharray=\"0.1 3.4\"/><circle cx=\"12.6\" cy=\"10.4\" r=\"1.7\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#5BA8FF",
+				"#8FC5FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/svg-draw/",
+			"docs_url": "https://divitorque.com/docs/svg-draw/"
+		},
+		"code-snippet": {
+			"label": "Code Snippet",
+			"desc": "Syntax-highlighted code blocks with line numbers and copy.",
+			"desc_short": "Highlighted code blocks.",
+			"cat": "utility",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"2.5\" y=\"4.5\" width=\"19\" height=\"15\" rx=\"2\"/><path d=\"m8.4 10.6-2.2 2.2 2.2 2.2M15.6 10.6l2.2 2.2-2.2 2.2M13 9.6l-2 6.4\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/code-snippet/",
+			"docs_url": "https://divitorque.com/docs/code-snippet/"
+		},
+		"sticky-video": {
+			"label": "Sticky Video",
+			"desc": "Video that docks to a corner when it scrolls out of view.",
+			"desc_short": "Corner-docking video.",
+			"cat": "media",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"2.5\" y=\"4.5\" width=\"19\" height=\"12\" rx=\"2\"/><path d=\"m10 8.4 4.6 2.6-4.6 2.6z\" fill=\"currentColor\" stroke=\"none\"/><rect x=\"13.5\" y=\"15.5\" width=\"8\" height=\"5.5\" rx=\"1.2\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/sticky-video/",
+			"docs_url": "https://divitorque.com/docs/sticky-video/"
+		},
+		"filterable-gallery": {
+			"label": "Filterable Gallery",
+			"desc": "Filter a portfolio without reloading the page.",
+			"desc_short": "Filterable portfolio grids.",
+			"cat": "media",
+			"pro": true,
+			"flagship": true,
+			"glyph": "<path d=\"M4 5h16\"/><rect x=\"3\" y=\"8\" width=\"8\" height=\"6\" rx=\"1.5\"/><rect x=\"13\" y=\"8\" width=\"8\" height=\"6\" rx=\"1.5\"/><rect x=\"3\" y=\"16\" width=\"8\" height=\"5\" rx=\"1.5\"/><rect x=\"13\" y=\"16\" width=\"8\" height=\"5\" rx=\"1.5\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/filterable-gallery/",
+			"docs_url": "https://divitorque.com/docs/filterable-gallery/"
+		},
+		"masonry-gallery": {
+			"label": "Masonry Gallery",
+			"desc": "Pinterest-style masonry image galleries.",
+			"desc_short": "Masonry image galleries.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"3\" width=\"8\" height=\"11\" rx=\"1.5\"/><rect x=\"13\" y=\"3\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"16\" width=\"8\" height=\"5\" rx=\"1.5\"/><rect x=\"13\" y=\"12\" width=\"8\" height=\"9\" rx=\"1.5\"/>",
+			"grad": [
+				"#4F8BFF",
+				"#6E72FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/masonry-gallery/",
+			"docs_url": "https://divitorque.com/docs/masonry-gallery/"
+		},
+		"image-marquee": {
+			"label": "Image Marquee",
+			"desc": "Scroll a strip of images continuously, with speed, direction and edge fade.",
+			"desc_short": "Continuously scrolling image strip.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"2.5\" y=\"7\" width=\"7\" height=\"10\" rx=\"1.5\"/><rect x=\"11.5\" y=\"7\" width=\"7\" height=\"10\" rx=\"1.5\"/><path d=\"M20.5 9.5v5\"/><path d=\"M22.5 11v2\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/image-marquee/",
+			"docs_url": "https://divitorque.com/docs/image-marquee/"
+		},
+		"image-magnifier": {
+			"label": "Image Zoom",
+			"desc": "Zoom into image detail on hover.",
+			"desc_short": "Hover zoom for images.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"4\" width=\"13\" height=\"11\" rx=\"2\"/><circle cx=\"15\" cy=\"15\" r=\"4\"/><path d=\"M18 18l3 3\"/>",
+			"grad": [
+				"#FF6FAE",
+				"#9B6CFF",
+				"#FFE0EE"
+			],
+			"demo_url": "https://divitorque.com/features/image-magnifier/",
+			"docs_url": "https://divitorque.com/docs/image-magnifier/"
+		},
+		"hotspots": {
+			"label": "Hotspots",
+			"desc": "Interactive pins and tooltips on images.",
+			"desc_short": "Interactive image pins.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"4.6\" opacity=\".5\"/>",
+			"grad": [
+				"#4F8BFF",
+				"#6E72FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/hotspots/",
+			"docs_url": "https://divitorque.com/docs/hotspots/"
+		},
+		"lottie": {
+			"label": "Lottie Animation",
+			"desc": "Lightweight, interactive Lottie animations.",
+			"desc_short": "Lightweight Lottie animations.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M10 8.5l5 3.5-5 3.5z\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/lottie/",
+			"docs_url": "https://divitorque.com/docs/lottie/"
+		},
+		"random-image": {
+			"label": "Random Image",
+			"desc": "Shows one image from a set, picked at random.",
+			"desc_short": "Random image per page load.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><circle cx=\"8\" cy=\"9\" r=\"1.3\"/><path d=\"M14 7l2 2-2 2M14 17l2-2-2-2\"/>",
+			"grad": [
+				"#2FB6D0",
+				"#34D08C",
+				"#E0F7F0"
+			],
+			"demo_url": "https://divitorque.com/features/random-image/",
+			"docs_url": "https://divitorque.com/docs/random-image/"
+		},
+		"google-reviews": {
+			"label": "Google Reviews",
+			"desc": "Your Google reviews, styled to match your site.",
+			"desc_short": "Real Google reviews on-site.",
+			"cat": "social",
+			"pro": true,
+			"flagship": true,
+			"glyph": "<path d=\"M21 12a9 9 0 1 1-3.2-6.9\"/><path d=\"M21 11.5h-8\"/>",
+			"grad": [
+				"#4F8BFF",
+				"#6E72FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/google-reviews/",
+			"docs_url": "https://divitorque.com/docs/google-reviews/"
+		},
+		"yelp-reviews": {
+			"label": "Yelp Reviews",
+			"desc": "Turn your Yelp reviews into on-page social proof.",
+			"desc_short": "Yelp reviews as social proof.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M12 4v7\"/><path d=\"M12 13l3.5 4.5M12 13l-3.5 4.5M12 13l5.5-1M12 13l-5.5-1\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/yelp-reviews/",
+			"docs_url": "https://divitorque.com/docs/yelp-reviews/"
+		},
+		"instagram-feed": {
+			"label": "Instagram Feed",
+			"desc": "Your Instagram posts, pulled in and styled to match.",
+			"desc_short": "Live on-brand Instagram feed.",
+			"cat": "social",
+			"pro": true,
+			"flagship": true,
+			"glyph": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"16.6\" cy=\"7.4\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/instagram-feed/",
+			"docs_url": "https://divitorque.com/docs/instagram-feed/"
+		},
+		"instagram-chat": {
+			"label": "Instagram Chat",
+			"desc": "A button that opens a chat in Instagram.",
+			"desc_short": "Instagram chat button.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"3\" width=\"14\" height=\"14\" rx=\"4.5\"/><circle cx=\"10\" cy=\"10\" r=\"3\"/><circle cx=\"13.6\" cy=\"6.6\" r=\".8\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M9 17l1 3.5 3-2.5\"/>",
+			"grad": [
+				"#E879C9",
+				"#9B6CFF",
+				"#FBE4FF"
+			],
+			"demo_url": "https://divitorque.com/features/instagram-chat/",
+			"docs_url": "https://divitorque.com/docs/instagram-chat/"
+		},
+		"whatsapp-chat": {
+			"label": "WhatsApp Chat",
+			"desc": "One tap to start a WhatsApp chat with you.",
+			"desc_short": "WhatsApp chat button.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M20 11.5a7.5 7.5 0 0 1-11 6.6L4 19.5l1.4-4.8A7.5 7.5 0 1 1 20 11.5Z\"/><path d=\"M9.5 9.5c0 2.8 2.2 5 5 5\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": "https://divitorque.com/features/whatsapp-chat/",
+			"docs_url": "https://divitorque.com/docs/whatsapp-chat/"
+		},
+		"telegram-chat": {
+			"label": "Telegram Chat",
+			"desc": "Opens Telegram so visitors can message you.",
+			"desc_short": "Telegram chat button.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M21 4L3 11l5 2 2 6 3-3.5 4 3z\"/><path d=\"M8 13l8-5\"/>",
+			"grad": [
+				"#FFB13F",
+				"#FF7A4D",
+				"#FFE7C2"
+			],
+			"demo_url": "https://divitorque.com/features/telegram-chat/",
+			"docs_url": "https://divitorque.com/docs/telegram-chat/"
+		},
+		"facebook-page": {
+			"label": "Facebook Page",
+			"desc": "Embed your Facebook page feed.",
+			"desc_short": "Embedded Facebook feed.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"4\"/><path d=\"M15 8.5h-1.8A1.7 1.7 0 0 0 11.5 10v2.2M9.5 12.2h4.2M12.5 12.2V18\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": "https://divitorque.com/features/facebook-page/",
+			"docs_url": "https://divitorque.com/docs/facebook-page/"
+		},
+		"social-share": {
+			"label": "Social Share",
+			"desc": "Let readers share any page in one click.",
+			"desc_short": "One-click page sharing.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"6\" cy=\"12\" r=\"2.5\"/><circle cx=\"18\" cy=\"6\" r=\"2.5\"/><circle cx=\"18\" cy=\"18\" r=\"2.5\"/><path d=\"m8.2 10.8 7.6-3.6M8.2 13.2l7.6 3.6\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/social-share/",
+			"docs_url": "https://divitorque.com/docs/social-share/"
+		},
+		"testimonial-slider": {
+			"label": "Testimonial Slider",
+			"desc": "Rotate customer testimonials in an auto-playing slider.",
+			"desc_short": "Auto-playing testimonials.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M6 6h4v3.5c0 1.8-1.3 3-3 3.2M14 6h4v3.5c0 1.8-1.3 3-3 3.2\"/><circle cx=\"9\" cy=\"19\" r=\".9\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12\" cy=\"19\" r=\".9\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"15\" cy=\"19\" r=\".9\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#22C3BE",
+				"#4F8BFF",
+				"#DBF5F1"
+			],
+			"demo_url": "https://divitorque.com/features/testimonial-slider/",
+			"docs_url": "https://divitorque.com/docs/divi-testimonial-slider/"
+		},
+		"basic-list": {
+			"label": "Styled List",
+			"desc": "Styled bullet and numbered lists.",
+			"desc_short": "Styled bullet lists.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M8 6h12M8 12h12M8 18h12\"/><circle cx=\"4\" cy=\"6\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"4\" cy=\"12\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"4\" cy=\"18\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#4F8BFF",
+				"#6E72FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/basic-list/",
+			"docs_url": "https://divitorque.com/docs/basic-list-7/"
+		},
+		"checkmark-list": {
+			"label": "Checkmark List",
+			"desc": "Tick-marked feature and benefit lists.",
+			"desc_short": "Tick-marked benefit lists.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M10 6h10M10 12h10M10 18h10\"/><path d=\"M3 6l1.3 1.3L6.8 5M3 12l1.3 1.3L6.8 11M3 18l1.3 1.3L6.8 17\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": "https://divitorque.com/features/checkmark-list/",
+			"docs_url": "https://divitorque.com/docs/checkmark-list/"
+		},
+		"icon-list": {
+			"label": "Icon List",
+			"desc": "Lists with a custom icon on every item.",
+			"desc_short": "Custom-icon lists.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M10 6h10M10 12h10M10 18h10\"/><rect x=\"3\" y=\"4.5\" width=\"3.2\" height=\"3.2\" rx=\".8\"/><rect x=\"3\" y=\"10.4\" width=\"3.2\" height=\"3.2\" rx=\".8\"/><rect x=\"3\" y=\"16.4\" width=\"3.2\" height=\"3.2\" rx=\".8\"/>",
+			"grad": [
+				"#7FCB45",
+				"#22C09A",
+				"#EAF7D6"
+			],
+			"demo_url": "https://divitorque.com/features/icon-list/",
+			"docs_url": "https://divitorque.com/docs/icon-list/"
+		},
+		"content-toggle": {
+			"label": "Content Switcher",
+			"desc": "Switch between two views, like monthly and yearly pricing.",
+			"desc_short": "Two-view content switcher.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"5\"/><circle cx=\"9\" cy=\"12\" r=\"3\"/>",
+			"grad": [
+				"#9C7CFF",
+				"#6E8BFF",
+				"#ECECFF"
+			],
+			"demo_url": "https://divitorque.com/features/content-toggle/",
+			"docs_url": "https://divitorque.com/docs/content-toggle/"
+		},
+		"heading": {
+			"label": "Smart Heading",
+			"desc": "Headings with gradients, borders and a background word.",
+			"desc_short": "Fine-grained heading styles.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M6 5v14M18 5v14M6 12h12\"/>",
+			"grad": [
+				"#9C7CFF",
+				"#6E8BFF",
+				"#ECECFF"
+			],
+			"demo_url": "https://divitorque.com/features/heading/",
+			"docs_url": "https://divitorque.com/docs/heading/"
+		},
+		"inline-svg": {
+			"label": "Inline SVG",
+			"desc": "Embed and recolor SVG graphics that stay crisp at any size.",
+			"desc_short": "Crisp recolorable SVGs.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M9 8l-4 4 4 4M15 8l4 4-4 4\"/>",
+			"grad": [
+				"#22C3BE",
+				"#4F8BFF",
+				"#DBF5F1"
+			],
+			"demo_url": "https://divitorque.com/features/inline-svg/",
+			"docs_url": "https://divitorque.com/docs/inline-svg/"
+		},
+		"horizontal-timeline": {
+			"label": "Horizontal Timeline",
+			"desc": "Lay out events on a horizontal timeline.",
+			"desc_short": "Horizontal event timelines.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M4 12h16\"/><circle cx=\"8\" cy=\"12\" r=\"2\"/><circle cx=\"16\" cy=\"12\" r=\"2\"/><path d=\"M8 10V6M16 14v4\"/>",
+			"grad": [
+				"#22C3BE",
+				"#4F8BFF",
+				"#DBF5F1"
+			],
+			"demo_url": "https://divitorque.com/features/horizontal-timeline/",
+			"docs_url": "https://divitorque.com/docs/horizontal-timeline/"
+		},
+		"timeline": {
+			"label": "Timeline",
+			"desc": "Tell a story on a vertical timeline.",
+			"desc_short": "Vertical story timelines.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M12 4v16\"/><circle cx=\"12\" cy=\"8\" r=\"2\"/><circle cx=\"12\" cy=\"16\" r=\"2\"/><path d=\"M14 8h5M14 16h5\"/>",
+			"grad": [
+				"#22C3BE",
+				"#4F8BFF",
+				"#DBF5F1"
+			],
+			"demo_url": "https://divitorque.com/features/timeline/",
+			"docs_url": "https://divitorque.com/docs/timeline/"
+		},
+		"post-grid": {
+			"label": "Post Grid",
+			"desc": "Post grids that visitors can filter.",
+			"desc_short": "Filterable post grids.",
+			"cat": "posts",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"4\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"13\" y=\"4\" width=\"8\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"8\" height=\"6\" rx=\"1.5\"/><rect x=\"13\" y=\"14\" width=\"8\" height=\"6\" rx=\"1.5\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/post-grid/",
+			"docs_url": "https://divitorque.com/docs/post-grid/"
+		},
+		"related-posts": {
+			"label": "Related Posts",
+			"desc": "Keep readers on-site with automatic related-post blocks.",
+			"desc_short": "Automatic related posts.",
+			"cat": "posts",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"7\" height=\"14\" rx=\"1.5\"/><path d=\"M13 7h8M13 11h8M13 15h5\"/>",
+			"grad": [
+				"#FF8E4F",
+				"#FF6F91",
+				"#FFE3D0"
+			],
+			"demo_url": "https://divitorque.com/features/related-posts/",
+			"docs_url": "https://divitorque.com/docs/related-posts/"
+		},
+		"fluent-forms": {
+			"label": "Fluent Forms Styler",
+			"desc": "Fluent Forms, restyled to fit your site.",
+			"desc_short": "Style Fluent Forms.",
+			"cat": "forms",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 8h8M8 12h4\"/><path d=\"M13.5 15.5l2 2 3.5-3.5\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": "https://divitorque.com/features/fluent-forms/",
+			"docs_url": "https://divitorque.com/docs/fluent-forms/"
+		},
+		"gravity-forms": {
+			"label": "Gravity Forms Styler",
+			"desc": "Restyle Gravity Forms without touching CSS.",
+			"desc_short": "Style Gravity Forms.",
+			"cat": "forms",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 8h8M8 12h8\"/><circle cx=\"9\" cy=\"16.5\" r=\"1.3\"/><path d=\"M12 16.5h4\"/>",
+			"grad": [
+				"#5BA8FF",
+				"#8FC5FF",
+				"#FFFFFF"
+			],
+			"demo_url": "https://divitorque.com/features/gravity-forms/",
+			"docs_url": "https://divitorque.com/docs/gravity-forms/"
+		},
+		"ajax-search": {
+			"label": "Ajax Search",
+			"desc": "Instant, live search results as visitors type.",
+			"desc_short": "Live search-as-you-type.",
+			"cat": "nav",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"11\" cy=\"11\" r=\"6\"/><path d=\"m20 20-3.5-3.5\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": "https://divitorque.com/features/ajax-search/",
+			"docs_url": "https://divitorque.com/docs/ajax-search/"
+		},
+		"nav-menu": {
+			"label": "Menu Maker",
+			"desc": "Design custom navigation menus visually inside Divi.",
+			"desc_short": "Visual custom nav menus.",
+			"cat": "nav",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M4 7h16M4 12h16M4 17h16\"/>",
+			"grad": [
+				"#2FB6D0",
+				"#34D08C",
+				"#E0F7F0"
+			],
+			"demo_url": "https://divitorque.com/features/nav-menu/",
+			"docs_url": "https://divitorque.com/docs/menu-maker/"
+		},
+		"countdown": {
+			"label": "Evergreen Countdown",
+			"desc": "Evergreen and fixed-date countdown timers.",
+			"desc_short": "Evergreen countdown timers.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"13\" r=\"8\"/><path d=\"M12 9.5v3.5l2.5 1.5\"/><path d=\"M9.5 3h5\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": "https://divitorque.com/features/countdown/",
+			"docs_url": "https://divitorque.com/docs/countdown/"
+		},
+		"pricing-table": {
+			"label": "Pricing Cards",
+			"desc": "Compare plans side by side in a pricing table.",
+			"desc_short": "Side-by-side pricing tables.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><path d=\"M9 7h6\"/><path d=\"M8 11h8M8 14.5h8M8 18h5\"/>",
+			"grad": [
+				"#E879C9",
+				"#9B6CFF",
+				"#FBE4FF"
+			],
+			"demo_url": "https://divitorque.com/features/pricing-table/",
+			"docs_url": "https://divitorque.com/docs/pricing-table/"
+		},
+		"restro-menu": {
+			"label": "Restaurant Menu",
+			"desc": "Menu-style price lists for restaurants and services.",
+			"desc_short": "Menu-style price lists.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M4 7h11l-1 7H6Z\"/><path d=\"M9 7V5a3 3 0 0 1 6 0v2\"/>",
+			"grad": [
+				"#FFB13F",
+				"#FF7A4D",
+				"#FFE7C2"
+			],
+			"demo_url": "https://divitorque.com/features/restro-menu/",
+			"docs_url": "https://divitorque.com/docs/restro-menu/"
+		},
+		"blurb": {
+			"label": "Advanced Blurb",
+			"desc": "An icon or image beside a heading and some text.",
+			"desc_short": "The classic blurb, upgraded.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M5 5h14M12 5v14M8 19h8\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": "https://divitorque.com/features/blurb/",
+			"docs_url": "https://divitorque.com/docs/blurb/"
+		},
+		"circle-info": {
+			"label": "Circle Info",
+			"desc": "Stats or steps arranged around a circle.",
+			"desc_short": "Animated circular stats.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M5 5h14M12 5v14M8 19h8\"/>",
+			"grad": [
+				"#FF6FAE",
+				"#9B6CFF",
+				"#FFE0EE"
+			],
+			"demo_url": "https://divitorque.com/features/circle-info/",
+			"docs_url": "https://divitorque.com/docs/circle-info/"
+		},
+		"stats-grid": {
+			"label": "Stats Grid",
+			"desc": "A grid of animated stats and KPIs.",
+			"desc_short": "Animated KPI grids.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M4 20h16\"/><rect x=\"5\" y=\"12\" width=\"3.2\" height=\"6\" rx=\"1\"/><rect x=\"10.4\" y=\"8\" width=\"3.2\" height=\"10\" rx=\"1\"/><rect x=\"15.8\" y=\"14\" width=\"3.2\" height=\"4\" rx=\"1\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": "https://divitorque.com/features/stats-grid/",
+			"docs_url": "https://divitorque.com/docs/stats-grid/"
+		},
+		"star-rating": {
+			"label": "Star Rating",
+			"desc": "A star rating for a product, service or review.",
+			"desc_short": "Star ratings anywhere.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M9 4l1.6 3.4 3.6.4-2.7 2.5.8 3.6L9 12.6 5.7 14.4l.8-3.6L3.8 8.2l3.6-.4z\"/><path d=\"M15 14h6M15 18h4\"/>",
+			"grad": [
+				"#2FB6D0",
+				"#34D08C",
+				"#E0F7F0"
+			],
+			"demo_url": "https://divitorque.com/features/star-rating/",
+			"docs_url": "https://divitorque.com/docs/star-rating/"
+		},
+		"table-maker": {
+			"label": "Table Maker",
+			"desc": "Data tables that stay readable on a phone.",
+			"desc_short": "Responsive data tables.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M3 10h18M3 15h18M9 4v16M15 4v16\"/>",
+			"grad": [
+				"#22C3BE",
+				"#4F8BFF",
+				"#DBF5F1"
+			],
+			"demo_url": "https://divitorque.com/features/table-maker/",
+			"docs_url": "https://divitorque.com/docs/table-maker/"
+		},
+		"advanced-icon-box": {
+			"label": "Advanced Icon Box",
+			"desc": "The Pro icon box, with more layout and hover controls.",
+			"desc_short": "Icon box with more controls.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"4\" y=\"4\" width=\"16\" height=\"16\" rx=\"3\"/><circle cx=\"12\" cy=\"10\" r=\"2.2\"/><path d=\"M9 15.5h6\"/>",
+			"grad": [
+				"#9C7CFF",
+				"#6E8BFF",
+				"#ECECFF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-gradient-heading": {
+			"label": "Advanced Gradient Heading",
+			"desc": "Gradient headings with extra text styling options.",
+			"desc_short": "Gradient headings, more options.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M6 6v12M16 6v12M6 12h10\"/><path d=\"M4 21h16\"/>",
+			"grad": [
+				"#E879C9",
+				"#9B6CFF",
+				"#FBE4FF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-inline-notice": {
+			"label": "Advanced Alert Box",
+			"desc": "Alert boxes with more styles and layout control.",
+			"desc_short": "Alert boxes with more styles.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\"/><circle cx=\"7\" cy=\"12\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M10 12h8\"/>",
+			"grad": [
+				"#2FB6D0",
+				"#34D08C",
+				"#E0F7F0"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-divider": {
+			"label": "Advanced Separator",
+			"desc": "Section dividers with extra shapes and styling.",
+			"desc_short": "Dividers with more shapes.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M3 12h6M15 12h6\"/><circle cx=\"12\" cy=\"12\" r=\"1.6\"/>",
+			"grad": [
+				"#FF8E4F",
+				"#FF6F91",
+				"#FFE3D0"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-logo-carousel": {
+			"label": "Advanced Logo Carousel",
+			"desc": "The logo carousel with deeper slider controls.",
+			"desc_short": "Logo carousel, deeper controls.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M3 12h3M18 12h3\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-compare-image": {
+			"label": "Advanced Before & After Slider",
+			"desc": "Before and after comparisons with more slider options.",
+			"desc_short": "Before/after with more options.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M12 3v18\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>",
+			"grad": [
+				"#4F8BFF",
+				"#6E72FF",
+				"#FFFFFF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-scroll-image": {
+			"label": "Advanced Scroll Image",
+			"desc": "Scrolling image reveals with finer control.",
+			"desc_short": "Scroll reveals, finer control.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\"/><path d=\"M12 8v8\"/><path d=\"M9.5 13.5l2.5 2.5 2.5-2.5\"/>",
+			"grad": [
+				"#7FCB45",
+				"#22C09A",
+				"#EAF7D6"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-video-modal": {
+			"label": "Advanced Video Modal",
+			"desc": "Video popups with more trigger and layout options.",
+			"desc_short": "Video popups, more options.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2.5\"/><path d=\"M10 9.5l5 2.5-5 2.5z\" fill=\"currentColor\" stroke=\"none\"/>",
+			"grad": [
+				"#E879C9",
+				"#9B6CFF",
+				"#FBE4FF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-flip-box": {
+			"label": "Advanced Flip Card",
+			"desc": "Flip cards with extra transitions and controls.",
+			"desc_short": "Flip cards, extra transitions.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M12 5v14\"/><path d=\"M8.5 9.5L12 12l-3.5 2.5\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-testimonial": {
+			"label": "Advanced Testimonial Card",
+			"desc": "Testimonial cards with more layouts and styling.",
+			"desc_short": "Testimonials, more layouts.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M6 8h4v4c0 2-1.4 3.4-3.4 3.6M14 8h4v4c0 2-1.4 3.4-3.4 3.6\"/>",
+			"grad": [
+				"#FF8E4F",
+				"#FF6F91",
+				"#FFE3D0"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-contact-form-7": {
+			"label": "Advanced Contact Form 7 Styler",
+			"desc": "Style Contact Form 7 with the full Pro control set.",
+			"desc_short": "CF7 styling, full control set.",
+			"cat": "forms",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 8h8M8 12h8M8 16h4\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-business-hour": {
+			"label": "Advanced Business Hours",
+			"desc": "Opening hours with more layout and highlight options.",
+			"desc_short": "Opening hours, more options.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M12 8v4l3 2\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-post-carousel": {
+			"label": "Advanced Post Carousel",
+			"desc": "Post carousels with extra card and slider settings.",
+			"desc_short": "Post carousel, extra settings.",
+			"cat": "posts",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"7\" y=\"5\" width=\"10\" height=\"14\" rx=\"2\"/><path d=\"M3 9v6M21 9v6\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"advanced-info-card": {
+			"label": "Advanced Image Card",
+			"desc": "Image cards with more badge and layout options.",
+			"desc_short": "Image cards, more options.",
+			"cat": "content",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M3 9h18M7 13h10M7 16h6\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"carousel": {
+			"label": "Advanced Carousel",
+			"desc": "The image carousel with the full Pro slider engine.",
+			"desc_short": "Image carousel, full engine.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"8\" y=\"6\" width=\"8\" height=\"12\" rx=\"2\"/><path d=\"M4 12h2M18 12h2\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"logo-list": {
+			"label": "Logo List",
+			"desc": "Logo grids with extra hover and layout controls.",
+			"desc_short": "Logo grids, extra controls.",
+			"cat": "media",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/>",
+			"grad": [
+				"#FF6FAE",
+				"#9B6CFF",
+				"#FFE0EE"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"progress-bar": {
+			"label": "Progress Bars",
+			"desc": "Progress bars with more shapes and animations.",
+			"desc_short": "Progress bars, more shapes.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"4\" rx=\"2\"/><rect x=\"3\" y=\"14\" width=\"12\" height=\"4\" rx=\"2\"/>",
+			"grad": [
+				"#9C7CFF",
+				"#6E8BFF",
+				"#ECECFF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"review-card": {
+			"label": "Advanced Review Box",
+			"desc": "Review boxes with more rating and layout options.",
+			"desc_short": "Review boxes, more options.",
+			"cat": "social",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M12 4l2.2 4.6 5 .6-3.7 3.5 1 5L12 15.8 7.5 18.2l1-5L4.8 9.7l5-.6z\"/>",
+			"grad": [
+				"#7FCB45",
+				"#22C09A",
+				"#EAF7D6"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"team": {
+			"label": "Advanced Team Member",
+			"desc": "Team profiles with extra social and layout options.",
+			"desc_short": "Team profiles, extra options.",
+			"cat": "commerce",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"12\" cy=\"9\" r=\"3.4\"/><path d=\"M5.5 19a6.5 6.5 0 0 1 13 0\"/>",
+			"grad": [
+				"#9C7CFF",
+				"#6E8BFF",
+				"#ECECFF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"woo-product-badges": {
+			"label": "Product Badges",
+			"desc": "Sale, new, low-stock and best-seller badges from real store data.",
+			"desc_short": "Rule-based product badges.",
+			"cat": "woo",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M12.6 3.4 20.6 11.4a2 2 0 0 1 0 2.8l-6.4 6.4a2 2 0 0 1-2.8 0l-8-8V4.4a1 1 0 0 1 1-1z\"/><circle cx=\"8\" cy=\"8\" r=\"1.4\"/>",
+			"grad": [
+				"#7FCB45",
+				"#22C09A",
+				"#EAF7D6"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"woo-stock-bar": {
+			"label": "Stock Progress Bar",
+			"desc": "A stock bar that reads real stock and follows the picked variation.",
+			"desc_short": "Live stock progress bar.",
+			"cat": "woo",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"9\" width=\"18\" height=\"6\" rx=\"3\"/><path d=\"M6 12h7\"/>",
+			"grad": [
+				"#22C3BE",
+				"#4F8BFF",
+				"#DBF5F1"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"woo-buy-now": {
+			"label": "Buy Now Button",
+			"desc": "Send shoppers straight to checkout with the product they picked.",
+			"desc_short": "Straight-to-checkout button.",
+			"cat": "woo",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M3 4h2.5l2 10.5h10L20 7H6.6\"/><circle cx=\"9\" cy=\"19\" r=\"1.4\"/><circle cx=\"16.5\" cy=\"19\" r=\"1.4\"/>",
+			"grad": [
+				"#FFB13F",
+				"#FF7A4D",
+				"#FFE7C2"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"woo-variation-swatches": {
+			"label": "Variation Swatches",
+			"desc": "Color, image and text swatches in place of variation dropdowns.",
+			"desc_short": "Swatches for variations.",
+			"cat": "woo",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"6.5\" cy=\"12\" r=\"3\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/><circle cx=\"17.5\" cy=\"12\" r=\"3\"/>",
+			"grad": [
+				"#5BA8FF",
+				"#8FC5FF",
+				"#FFFFFF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		},
+		"woo-size-chart": {
+			"label": "Size Chart",
+			"desc": "Size charts in a popup, drawer or inline, with a cm and inch switch.",
+			"desc_short": "Popup and inline size charts.",
+			"cat": "woo",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"2.5\" y=\"8\" width=\"19\" height=\"8\" rx=\"1.5\"/><path d=\"M6.5 8v3M10.5 8v4.5M14.5 8v3M18.5 8v4.5\"/>",
+			"grad": [
+				"#6E8BFF",
+				"#A77CFF",
+				"#E6E9FF"
+			],
+			"demo_url": null,
+			"docs_url": null
+		}
+	},
+	"extensions": {
+		"popup-maker": {
+			"label": "Popup Maker",
+			"desc": "Popups that fire on scroll, exit, a timer or a click.",
+			"desc_short": "Popups that convert.",
+			"cat": "utility",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"4\" y=\"4\" width=\"13\" height=\"10\" rx=\"2\"/><rect x=\"9\" y=\"10\" width=\"11\" height=\"10\" rx=\"2\"/>",
+			"grad": [
+				"#FF8E4F",
+				"#FF6F91",
+				"#FFE3D0"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/divi-popup-maker/"
+		},
+		"mega-menu": {
+			"label": "Mega Menu",
+			"desc": "A mega menu that can hold any Divi module inside it.",
+			"desc_short": "Mega menus with any module.",
+			"cat": "nav",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M4 6h16\"/><rect x=\"4\" y=\"10\" width=\"7\" height=\"9\" rx=\"1.5\"/><rect x=\"13\" y=\"10\" width=\"7\" height=\"9\" rx=\"1.5\"/>",
+			"grad": [
+				"#FF6F91",
+				"#FF9E6B",
+				"#FFE6DC"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/mega-menu/"
+		},
+		"dark-mode": {
+			"label": "Dark Mode",
+			"desc": "A dark mode your visitors can switch on themselves.",
+			"desc_short": "One-click dark mode.",
+			"cat": "utility",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M20 14.5A8 8 0 1 1 9.5 4 6.3 6.3 0 0 0 20 14.5Z\"/>",
+			"grad": [
+				"#7FCB45",
+				"#22C09A",
+				"#EAF7D6"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/dark-mode/"
+		},
+		"mailer": {
+			"label": "SMTP Mailer",
+			"desc": "Sends WordPress email through SMTP so it reaches inboxes.",
+			"desc_short": "Reliable SMTP email.",
+			"cat": "utility",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m3 7 9 6 9-6\"/>",
+			"grad": [
+				"#FF8E4F",
+				"#FF6F91",
+				"#FFE3D0"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/mailer/"
+		},
+		"maintenance-mode": {
+			"label": "Site Visibility",
+			"desc": "A coming-soon or maintenance page with honest HTTP status codes.",
+			"desc_short": "Coming-soon and maintenance modes.",
+			"cat": "utility",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"M14.7 6.3a3.6 3.6 0 0 0-4.8 4.8l-5.3 5.3a1.6 1.6 0 0 0 2.3 2.3l5.3-5.3a3.6 3.6 0 0 0 4.8-4.8l-2.1 2.1-1.8-.5-.5-1.8z\"/>",
+			"grad": [
+				"#7FCB45",
+				"#22C09A",
+				"#EAF7D6"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/maintenance-mode/"
+		},
+		"site-launch-audit": {
+			"label": "Site Launch Audit",
+			"desc": "Scans your site for launch blockers: missing alt text, placeholder content, debug flags and more.",
+			"desc_short": "Pre-launch readiness scan.",
+			"cat": "utility",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<rect x=\"5\" y=\"4\" width=\"14\" height=\"17\" rx=\"2\"/><path d=\"M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1\"/><path d=\"m8.5 13 2.2 2.2L15.5 10\"/><path d=\"M8.5 17.5h7\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/site-launch-audit/"
+		},
+		"accessibility-inspector": {
+			"label": "Accessibility Inspector",
+			"desc": "Flags structural accessibility problems in your pages: autoplay carousels with no pause, missing alt text, skipped headings and unlabelled controls.",
+			"desc_short": "Structural accessibility checks.",
+			"cat": "utility",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<circle cx=\"16\" cy=\"4\" r=\"1\"/><path d=\"m18 19 1-7-6 1\"/><path d=\"m5 8 3-3 5.5 3-2.36 3.5\"/><path d=\"M4.24 14.5a5 5 0 0 0 6.88 6\"/><path d=\"M13.76 17.5a5 5 0 0 0-6.88-6\"/>",
+			"grad": [
+				"#2FC684",
+				"#2FAFC6",
+				"#DAF6E7"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/accessibility-inspector/"
+		},
+		"performance-inspector": {
+			"label": "Performance Inspector",
+			"desc": "Measures the real asset weight of each page and flags unused modules, oversized bundles and stale feed caches.",
+			"desc_short": "Real asset weight, per page.",
+			"cat": "utility",
+			"pro": true,
+			"flagship": false,
+			"glyph": "<path d=\"m12 14 4-4\"/><path d=\"M3.34 19a10 10 0 1 1 17.32 0\"/>",
+			"grad": [
+				"#FF8A5B",
+				"#FF5FA2",
+				"#FFD9C2"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/performance-inspector/"
+		},
+		"sharing-buttons": {
+			"label": "Sharing Buttons",
+			"desc": "Share buttons that match the rest of your design.",
+			"desc_short": "Social sharing buttons.",
+			"cat": "social",
+			"pro": false,
+			"flagship": false,
+			"glyph": "<rect x=\"2.5\" y=\"9\" width=\"6\" height=\"6\" rx=\"1.8\"/><rect x=\"9\" y=\"9\" width=\"6\" height=\"6\" rx=\"1.8\"/><rect x=\"15.5\" y=\"9\" width=\"6\" height=\"6\" rx=\"1.8\"/>",
+			"grad": [
+				"#2FB6D0",
+				"#34D08C",
+				"#E0F7F0"
+			],
+			"demo_url": null,
+			"docs_url": "https://divitorque.com/docs/sharing-buttons/"
+		}
+	}
+}

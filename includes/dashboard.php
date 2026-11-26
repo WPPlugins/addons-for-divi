@@ -12,6 +12,46 @@ class Dashboard
     private $menu_slug = 'divitorque';
     private $capability = 'manage_options';
 
+    /**
+     * Dashboard UI mode. 'v2' (default) is the @plugpress/ui app under
+     * admin/; 'legacy' is the v1 SPA built by webpack.config.js into
+     * assets/admin. Legacy
+     * ships unchanged until its removal release.
+     */
+    const UI_OPTION = 'divitorque_lite_dashboard_ui';
+
+    /**
+     * First-run onboarding. The transient is set on activation and consumed by
+     * the next admin_init; the user meta marks a finished or skipped tour so
+     * the wizard never forces itself on anyone twice.
+     */
+    const ONBOARDING_TRANSIENT = 'divitorque_lite_do_onboarding';
+    const ONBOARDING_META      = 'divitorque_lite_onboarding_done';
+
+    /**
+     * Pro discount shown on the onboarding's last step, in percent. divitorque.com
+     * applies it at checkout, so this is display only; 0 hides the line.
+     * Must equal dt_lifetime_discount() on the site: 0 while it is off
+     * (switched off 2026-11-02 ahead of the Black Friday sale).
+     */
+    const PRO_DISCOUNT = 0;
+
+    /**
+     * Set on a fresh install (Plugin::activation), deleted when the tour is
+     * finished or skipped. While set, every Lite dashboard screen opens the tour.
+     */
+    const SETUP_OPTION = 'divitorque_lite_setup_pending';
+
+    /**
+     * The welcome offer on the tour's last step, in percent (display only):
+     * Starter yearly off its first year, and Starter and Unlimited Lifetime.
+     * divitorque.com/upgrade-pricing/ applies them at checkout and must show the
+     * same numbers (dt_upgrade_offer() in the dt-website theme). 0 hides the
+     * offer and the step falls back to the plain Pro plans.
+     */
+    const OFFER_YEARLY_PERCENT   = 50;
+    const OFFER_LIFETIME_PERCENT = 30;
+
     public static function get_instance()
     {
         if (!isset(self::$instance)) {
@@ -23,7 +63,81 @@ class Dashboard
     public function __construct()
     {
         add_action('admin_menu', [$this, 'add_menu']);
-        add_action('admin_enqueue_scripts', [$this, 'admin_enqueue_scripts'], 100);
+        add_action('admin_head', [$this, 'print_menu_separator_css']);
+        add_action('rest_api_init', [$this, 'register_switch_route']);
+        add_action('admin_init', [$this, 'handle_switch_link']);
+        add_action('admin_init', [$this, 'maybe_redirect_to_onboarding']);
+        add_filter('admin_body_class', [$this, 'body_class']);
+        add_filter('submenu_file', [$this, 'highlight_submenu'], 10, 2);
+    }
+
+    public function is_v2()
+    {
+        return get_option(self::UI_OPTION, 'v2') !== 'legacy';
+    }
+
+    /**
+     * Whether Pro's v2 dashboard is active. When it is, Pro owns EVERY app
+     * screen (one dashboard, never two): extension pages render inside Pro's
+     * bundle, and Lite must not enqueue or scope anything.
+     *
+     * Older Pro builds still in the wild have a DiviTorque\Dashboard without
+     * the methods this relies on: is_v2() arrived in Pro 1.12.0 and
+     * render_extension_page() in 2.0.0. is_our_screen() runs on
+     * admin_body_class, so calling a missing method fatals every wp-admin
+     * screen (Pro 1.4.1 + Lite 4.9.0+). Without both, Pro cannot host Lite's
+     * screens, so Lite keeps its own.
+     *
+     * @return bool
+     */
+    public function pro_owns_dashboard()
+    {
+        return class_exists('\DiviTorque\Dashboard')
+            && method_exists('\DiviTorque\Dashboard', 'get_instance')
+            && method_exists('\DiviTorque\Dashboard', 'is_v2')
+            && method_exists('\DiviTorque\Dashboard', 'render_extension_page')
+            && \DiviTorque\Dashboard::get_instance()->is_v2();
+    }
+
+    private function is_our_screen()
+    {
+        // phpcs:ignore WordPress.Security.NonceVerification
+        $page = isset($_GET['page']) ? $_GET['page'] : '';
+
+        if ($this->pro_owns_dashboard()) {
+            return false;
+        }
+
+        // Extension pages are ours whether or not Pro is active — they have no
+        // Pro counterpart. Without this the page would render without the
+        // `pp-scope` body class and @plugpress/ui would be completely unstyled.
+        // Iterate the filter (like Pro does) so any future Lite extension is
+        // covered without touching this method.
+        foreach (apply_filters('divitorque/dashboard_extensions', []) as $ext) {
+            if (!empty($ext['slug']) && $ext['slug'] === $page) {
+                return true;
+            }
+        }
+
+        return $page === $this->menu_slug && !AdminHelper::is_pro_installed();
+    }
+
+    /**
+     * Render a standalone extension settings page inside the v2 app.
+     *
+     * Extensions register their own top-level slug rather than
+     * `divitorque&path=…`, because with Pro active that slug routes to Pro's
+     * dashboard, whose bundle has no route for them. Booting the app with an
+     * explicit `initialPath` is what makes the same bundle serve both.
+     *
+     * @param string $path Route to open, e.g. 'share-my-post'.
+     *
+     * @return void
+     */
+    public function render_extension_page($path)
+    {
+        $this->enqueue_v2($path);
+        echo '<div id="divitorque-root"></div>';
     }
 
     public function add_menu()
@@ -39,8 +153,8 @@ class Dashboard
 ');
 
         add_menu_page(
-            __('Divi Torque', 'divitorque'),
-            __('Divi Torque', 'divitorque'),
+            __('Divi Torque', 'addons-for-divi'),
+            __('Divi Torque', 'addons-for-divi'),
             $this->capability,
             $this->menu_slug,
             [$this, 'render_app'],
@@ -48,55 +162,571 @@ class Dashboard
             130
         );
 
-        add_submenu_page(
-            $this->menu_slug,
-            __('Dashboard', 'divitorque'),
-            __('Dashboard', 'divitorque'),
-            $this->capability,
-            $this->menu_slug,
-            array($this, 'render_app')
-        );
+        foreach ($this->v2_submenus() as $item) {
+            if (isset($item['slug'])) {
+                $slug     = $item['slug'];
+                $callback = null;
+            } elseif ('' === $item['path']) {
+                $slug     = $this->menu_slug;
+                $callback = [$this, 'render_app'];
+            } else {
+                $slug     = "{$this->menu_slug}&path={$item['path']}";
+                $callback = [$this, 'render_app'];
+            }
 
-        add_submenu_page(
-            $this->menu_slug,
-            __('Modules', 'divitorque'),
-            __('Modules', 'divitorque'),
-            $this->capability,
-            "{$this->menu_slug}&path=module-manager",
-            [$this, 'render_app']
-        );
+            add_submenu_page(
+                $this->menu_slug,
+                $item['label'],
+                $item['label'],
+                $this->capability,
+                $slug,
+                $callback
+            );
+        }
+    }
 
-        // add_submenu_page(
-        //     $this->menu_slug,
-        //     __('Free vs Pro', 'divitorque'),
-        //     __('Free vs Pro', 'divitorque'),
-        //     $this->capability,
-        //     "{$this->menu_slug}&path=free-vs-pro",
-        //     [$this, 'render_app']
-        // );
+    /**
+     * Dashboard v2 submenu map — one entry per app destination, mirroring
+     * the PageDefs in admin/src/index.js. The WP menu is the app's ONLY
+     * navigation; the app's top bar carries brand, versions and docs.
+     * (Sharing Buttons registers its own slug in share-my-post/admin.php.)
+     *
+     * In legacy mode only the two v1 destinations exist.
+     *
+     * @return array[]
+     */
+    /**
+     * Boot data for the "Divi 5 MCP" page (admin/src/pages/Divi5Mcp.jsx), or
+     * null once SaddleWP Pro is active. Says whether SaddleWP is missing,
+     * installed or active, so the page offers the one action that fits.
+     * Local only: nothing here calls a remote server.
+     *
+     * @return array|null
+     */
+    private static function divi5_mcp_data()
+    {
+        if (defined('SADDLE_PRO_VERSION')) {
+            return null;
+        }
+
+        if (defined('SADDLE_VERSION')) {
+            $status = 'active';
+        } else {
+            if (!function_exists('get_plugins')) {
+                require_once ABSPATH . 'wp-admin/includes/plugin.php';
+            }
+            $status = array_key_exists('saddle/saddle.php', get_plugins()) ? 'installed' : 'missing';
+        }
+
+        $utm = 'utm_source=addons-for-divi&utm_medium=plugin-page&utm_campaign=divi-5-mcp';
+
+        return [
+            'saddle'     => $status,
+            'installUrl' => admin_url('plugin-install.php?s=saddle&tab=search&type=term'),
+            'pluginsUrl' => admin_url('plugins.php'),
+            'openUrl'    => admin_url('admin.php?page=saddle'),
+            'url'        => 'https://saddle.to/divi-5-mcp/?' . $utm,
+            'pricingUrl' => 'https://saddle.to/pricing/?' . $utm,
+        ];
+    }
+
+    private function v2_submenus()
+    {
+        $items = [
+            [
+                'label' => __('Overview', 'addons-for-divi'),
+                'path'  => '',
+            ],
+            [
+                'label' => __('Modules', 'addons-for-divi'),
+                'path'  => 'module-manager',
+            ],
+        ];
+
+        if ($this->is_v2()) {
+            $items[] = [
+                'label' => '',
+                'path'  => null,
+                'slug'  => 'divitorque-lite-sep-1',
+            ];
+            // Sharing Buttons registers its own slug at admin_menu 20, landing
+            // after Extensions — together they form the extensions group.
+            $items[] = [
+                'label' => __('Extensions', 'addons-for-divi'),
+                'path'  => 'extensions',
+            ];
+
+            // How an AI agent builds Divi 5 pages with SaddleWP, until
+            // SaddleWP Pro is active (Divi5Mcp.jsx).
+            if (null !== self::divi5_mcp_data()) {
+                $items[] = [
+                    'label' => __('Divi 5 MCP', 'addons-for-divi'),
+                    'path'  => 'divi-5-mcp',
+                ];
+            }
+
+            // A page about Snapback, PlugPress's backup plugin, until Snapback
+            // is installed, once per site.
+            if (Snapback_Card::owns_page()) {
+                $items[] = [
+                    'label' => __('Get Snapback', 'addons-for-divi'),
+                    'path'  => 'get-snapback',
+                ];
+            }
+        }
+
+        return $items;
+    }
+
+    /**
+     * Group separators: the dummy `divitorque-lite-sep-N` submenu entries
+     * render as thin unclickable rules. The menu is printed on every admin
+     * screen, so this rides admin_head globally.
+     *
+     * @return void
+     */
+    public function print_menu_separator_css()
+    {
+        if (!$this->is_v2() || AdminHelper::is_pro_installed()) {
+            return;
+        }
+
+        echo '<style>#adminmenu .wp-submenu a[href*="divitorque-lite-sep-"]{pointer-events:none;cursor:default;height:1px;padding:0;margin:6px 12px;overflow:hidden;background:rgba(255,255,255,.2);font-size:0;line-height:1px;}</style>';
+    }
+
+    /**
+     * Highlight the submenu entry matching the app's `?path=` arg.
+     *
+     * The v2 slugs embed the path ("divitorque&path=extensions") but WP only
+     * auto-highlights the entry whose slug equals $plugin_page ('divitorque'),
+     * so every deep link lit up "Dashboard". Map the request back to the
+     * registered slug; the Sharing Buttons route maps to the extension's own
+     * registered submenu.
+     *
+     * @param string|null $submenu_file Submenu file WP computed.
+     * @param string      $parent_file  Parent menu file.
+     *
+     * @return string|null
+     */
+    public function highlight_submenu($submenu_file, $parent_file)
+    {
+        // phpcs:ignore WordPress.Security.NonceVerification
+        $page = isset($_GET['page']) ? $_GET['page'] : '';
+
+        if (!$this->is_v2() || $page !== $this->menu_slug || AdminHelper::is_pro_installed()) {
+            return $submenu_file;
+        }
+
+        $path = isset($_GET['path']) ? sanitize_key(wp_unslash($_GET['path'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+
+        if ('' === $path) {
+            return $submenu_file;
+        }
+
+        if ('share-my-post' === $path) {
+            return Share_My_Post_Admin::SLUG;
+        }
+
+        foreach ($this->v2_submenus() as $item) {
+            if ($item['path'] === $path) {
+                return "{$this->menu_slug}&path={$path}";
+            }
+        }
+
+        return $submenu_file;
     }
 
     public function render_app()
     {
+        if ($this->is_v2()) {
+            $this->enqueue_v2();
+            echo '<div id="divitorque-root"></div>';
+            return;
+        }
+
         $this->enqueue_scripts();
         echo '<div id="divitorque-root"></div>';
     }
 
+    /* ─── Dashboard v2 ─────────────────────────────────────────────── */
+
+    private function enqueue_v2($initial_path = '')
+    {
+        $base = DIVI_TORQUE_LITE_URL . 'admin/build/';
+        $dir  = DIVI_TORQUE_LITE_DIR . 'admin/build/';
+
+        // Version by file mtime so a rebuilt bundle always busts the browser/page
+        // cache, even within the same plugin version. A static ?ver lets a stale
+        // cached bundle load against a fresh runtime.
+        $css_ver = is_readable($dir . 'index.css') ? (string) filemtime($dir . 'index.css') : DIVI_TORQUE_LITE_VERSION;
+        $js_ver  = is_readable($dir . 'index.js') ? (string) filemtime($dir . 'index.js') : DIVI_TORQUE_LITE_VERSION;
+
+        wp_enqueue_style('divi-torque-lite-admin-v2', $base . 'index.css', [], $css_ver);
+
+        wp_enqueue_script(
+            'divi-torque-lite-admin-v2',
+            $base . 'index.js',
+            ['wp-api-fetch', 'wp-i18n'],
+            $js_ver,
+            true
+        );
+
+        wp_add_inline_script(
+            'divi-torque-lite-admin-v2',
+            'window.divitorqueData = ' . wp_json_encode($this->get_v2_data($initial_path)) . ';',
+            'before'
+        );
+    }
+
+    private function get_v2_data($initial_path = '')
+    {
+        return [
+            // Set only on extension pages, which have their own WP menu slug and
+            // so cannot use the `?path=` bridge the dashboard tabs use.
+            'initialPath'   => $initial_path,
+            // The app hides the dashboard/module routes when Pro owns them, so
+            // an extension page opened under Pro shows only itself.
+            'proActive'     => AdminHelper::is_pro_installed(),
+            // Extension pages' REST namespace + server data — same shape Pro's
+            // boot data carries, fed by the same filter.
+            'extensions'    => apply_filters('divitorque/dashboard_extensions', []),
+            'root'        => esc_url_raw(get_rest_url()),
+            'nonce'       => wp_create_nonce('wp_rest'),
+            'ns'          => 'divitorque-lite/v1',
+            'version'     => DIVI_TORQUE_LITE_VERSION,
+            'adminUrl'    => esc_url_raw(admin_url()),
+            'docsUrl'     => 'https://divitorque.com/docs/',
+            'upgradeUrl'  => 'https://divitorque.com/pricing/?utm_source=divi-torque-lite&utm_medium=wp-admin&utm_campaign=upgrade-to-pro',
+            'rollbackUrl' => esc_url_raw(admin_url('admin.php?page=divitorque-rollback')),
+            'moduleInfo'  => ModulesManager::get_all_modules(),
+            // Welcome tour (admin/src/pages/Onboarding.jsx).
+            'isDivi5'            => function_exists('divitorque_lite_d5_enabled') && divitorque_lite_d5_enabled(),
+            'hasDivi'            => self::has_divi(),
+            'onboardingDone'     => self::onboarding_done(),
+            'setupRequired'      => self::setup_required(),
+            // Plain admin link that ends the tour when the REST call cannot
+            // (maybe_redirect_to_onboarding()). Raw URL: the app navigates to it.
+            'setupDoneUrl'       => esc_url_raw(
+                add_query_arg(
+                    [
+                        'page'      => $this->menu_slug,
+                        'dtl_setup' => 'done',
+                        '_wpnonce'  => wp_create_nonce('dtl_setup_done'),
+                    ],
+                    admin_url('admin.php')
+                )
+            ),
+            'offer'              => [
+                'yearly'   => (int) self::OFFER_YEARLY_PERCENT,
+                'lifetime' => (int) self::OFFER_LIFETIME_PERCENT,
+                'url'      => 'https://divitorque.com/upgrade-pricing/?utm_source=divi-torque-lite&utm_medium=wp-admin&utm_campaign=onboarding',
+            ],
+            // Lite's own extensions (the catalog lists only the marketed ones).
+            'freeExtensions'     => class_exists(__NAMESPACE__ . '\Extensions_Manager')
+                ? count(array_filter(Extensions_Manager::all(), function ($ext) {
+                    return empty($ext['locked']);
+                }))
+                : 0,
+            'proDiscountPercent' => (int) self::PRO_DISCOUNT,
+            'pricingUrl'         => 'https://divitorque.com/pricing/?utm_source=divi-torque-lite&utm_medium=wp-admin&utm_campaign=onboarding',
+            'saddleUrl'          => 'https://saddle.to/?utm_source=divi-torque-lite&utm_medium=wp-admin&utm_campaign=onboarding',
+            // Saddle + Saddle Analytics offer (Overview band, welcome tour).
+            'recommended'        => Recommended_Plugins::boot_data(),
+            // Snapback banner on the Overview and the "Get Snapback" page.
+            'snapback'           => Snapback_Card::boot_data(),
+            'snapbackPage'       => Snapback_Card::page_data(),
+            // The "Divi 5 MCP" page; null once SaddleWP Pro is active.
+            'divi5Mcp'           => self::divi5_mcp_data(),
+            // Black Friday 2026 banner on the Overview, null outside the sale.
+            'blackFriday'        => self::black_friday(),
+        ];
+    }
+
+    /**
+     * Black Friday 2026 banner (admin/src/components/BlackFridayBanner.jsx).
+     *
+     * Shown on Lite's own Overview only, never in a WP admin notice. The phase
+     * dates mirror dt_bf() in the dt-website theme (inc/black-friday.php), in
+     * Dhaka time (GMT+6). Sale v3 (owner 2026-11-26): 70% off every Divi Torque
+     * Pro plan to Nov 30, then 60% from Dec 1 to Dec 30, applied at checkout by
+     * a hidden coupon on divitorque.com. The percent is shown (owner asked for a
+     * "70% discount card"); a dollar amount, a coupon code and a countdown never
+     * are. Each phase states its one real end date. Returns null from Dec 31, so
+     * the banner removes itself.
+     *
+     * Every phase links the Black Friday page: the theme moves the campaign to
+     * /cyber-monday-2026/ only once that page exists, and that URL was a 404 on
+     * 2026-11-26. `id` keys the hide button per offer, so hiding the 70% card
+     * still shows the 60% one on Dec 1.
+     *
+     * @param int|null $now Unix time to test against; defaults to now.
+     * @return array|null { phase, id, title, description, cta, url }
+     */
+    public static function black_friday($now = null)
+    {
+        $tz  = new \DateTimeZone('Asia/Dhaka');
+        $now = null === $now ? time() : (int) $now;
+        $at  = function ($date) use ($tz) {
+            return (new \DateTimeImmutable($date, $tz))->getTimestamp();
+        };
+
+        if ($now < $at('2026-11-02 00:00')) {
+            return null;
+        }
+
+        $utm    = '?utm_source=divi-torque-lite&utm_medium=wp-admin&utm_campaign=black-friday-2026';
+        $bf_url = 'https://divitorque.com/black-friday-2026/' . $utm . '#plans';
+
+        $phases = [
+            [
+                'phase'       => 'early',
+                'id'          => 'bf26',
+                'to'          => '2026-11-13 18:00',
+                'title'       => __('Black Friday starts Nov 13', 'addons-for-divi'),
+                'description' => __('Join the early-access list to see the Divi Torque Pro deal first.', 'addons-for-divi'),
+                'cta'         => __('Get early access', 'addons-for-divi'),
+                'url'         => $bf_url,
+            ],
+            [
+                'phase'       => 'bf',
+                'id'          => 'sale70',
+                'to'          => '2026-12-01 00:00',
+                'title'       => __('Black Friday: 70% off Divi Torque Pro', 'addons-for-divi'),
+                'description' => __('Every plan, yearly or Lifetime, applied at checkout. No code needed. Ends Nov 30, then 60% off until Dec 30.', 'addons-for-divi'),
+                'cta'         => __('Get 70% off', 'addons-for-divi'),
+                'url'         => $bf_url,
+            ],
+            [
+                'phase'       => 'cm',
+                'id'          => 'sale60',
+                'to'          => '2026-12-31 00:00',
+                'title'       => __('Cyber Monday & Holiday: 60% off Divi Torque Pro', 'addons-for-divi'),
+                'description' => __('Every plan, yearly or Lifetime, applied at checkout. No code needed. Ends Dec 30.', 'addons-for-divi'),
+                'cta'         => __('Get 60% off', 'addons-for-divi'),
+                'url'         => $bf_url,
+            ],
+        ];
+
+        foreach ($phases as $phase) {
+            if ($now < $at($phase['to'])) {
+                unset($phase['to']);
+                return $phase;
+            }
+        }
+
+        return null;
+    }
+
+    public function body_class($classes)
+    {
+        if ($this->is_v2() && $this->is_our_screen()) {
+            $classes .= ' pp-scope';
+        }
+        return $classes;
+    }
+
+    /* ─── v1 ⇄ v2 switching ────────────────────────────────────────── */
+
+    public function register_switch_route()
+    {
+        register_rest_route('divitorque-lite/v1', '/switch_dashboard_ui', [
+            'methods'             => 'POST',
+            'callback'            => function ($request) {
+                $ui = $request->get_param('ui') === 'legacy' ? 'legacy' : 'v2';
+                update_option(self::UI_OPTION, $ui);
+                return rest_ensure_response(['ui' => $ui]);
+            },
+            'permission_callback' => function () {
+                return current_user_can($this->capability);
+            },
+        ]);
+    }
+
+    /** Nonce link on the legacy banner: admin.php?page=divitorque&dtl_ui=v2 */
+    public function handle_switch_link()
+    {
+        if (!isset($_GET['dtl_ui']) || !$this->is_our_screen()) {
+            return;
+        }
+        if (!current_user_can($this->capability)) {
+            return;
+        }
+        check_admin_referer('dtl_switch_ui');
+
+        update_option(self::UI_OPTION, $_GET['dtl_ui'] === 'legacy' ? 'legacy' : 'v2');
+        wp_safe_redirect(admin_url('admin.php?page=' . $this->menu_slug));
+        exit;
+    }
+
+    /**
+     * Send the admin who just activated Lite to the welcome tour, once.
+     *
+     * The transient is deleted before any other check, so a skipped redirect
+     * (bulk activation, Pro present, tour already done) is never retried on a
+     * later page load.
+     */
+    public function maybe_redirect_to_onboarding()
+    {
+        // Fresh install, tour not done yet: any Lite dashboard screen opens it
+        // (server-side, so the WP submenu highlights the right entry; the app's
+        // gated() pages cover in-app navigation).
+        // phpcs:disable WordPress.Security.NonceVerification
+        $on_our_page = is_admin() && isset($_GET['page']) && $this->menu_slug === $_GET['page'];
+        $path        = isset($_GET['path']) ? sanitize_key(wp_unslash($_GET['path'])) : '';
+        // phpcs:enable
+
+        // The tour's way out when its REST call fails (a security plugin or a
+        // firewall blocking /wp-json/). Until 4.16.1 a failed call left the
+        // setup flag in place, so every Divi Torque screen sent the admin back
+        // to the tour they had just finished or skipped.
+        if ($on_our_page && isset($_GET['dtl_setup']) && 'done' === $_GET['dtl_setup']) {
+            check_admin_referer('dtl_setup_done');
+            if (current_user_can($this->capability)) {
+                self::finish_onboarding();
+            }
+            wp_safe_redirect(admin_url('admin.php?page=' . $this->menu_slug));
+            exit;
+        }
+
+        // A redirect after output has started fails silently, and the exit
+        // that follows it would leave a blank screen.
+        if (headers_sent()) {
+            return;
+        }
+
+        if ($on_our_page && 'welcome' !== $path && self::setup_required()) {
+            wp_safe_redirect(admin_url('admin.php?page=' . $this->menu_slug . '&path=welcome'));
+            exit;
+        }
+
+        if (!get_transient(self::ONBOARDING_TRANSIENT)) {
+            return;
+        }
+        delete_transient(self::ONBOARDING_TRANSIENT);
+
+        if (!self::should_redirect_to_onboarding()) {
+            return;
+        }
+
+        wp_safe_redirect(admin_url('admin.php?page=' . $this->menu_slug . '&path=welcome'));
+        exit;
+    }
+
+    /**
+     * Whether the current request may be taken over by the onboarding redirect.
+     *
+     * @return bool
+     */
+    public static function should_redirect_to_onboarding()
+    {
+        // phpcs:ignore WordPress.Security.NonceVerification
+        if (isset($_GET['activate-multi'])) {
+            return false;
+        }
+        if (wp_doing_ajax() || wp_doing_cron() || (defined('WP_CLI') && WP_CLI) || is_network_admin()) {
+            return false;
+        }
+        if (!current_user_can('manage_options') || AdminHelper::is_pro_installed()) {
+            return false;
+        }
+        if (get_option(self::UI_OPTION, 'v2') === 'legacy') {
+            return false;
+        }
+
+        return !self::onboarding_done();
+    }
+
+    /**
+     * Whether a Divi builder is active: the Divi or Extra theme (or a child
+     * of either) or the Divi Builder plugin. The welcome tour says so when
+     * not, instead of pointing at a builder the site does not have.
+     *
+     * @return bool
+     */
+    public static function has_divi()
+    {
+        if (defined('ET_BUILDER_PLUGIN_ACTIVE') || function_exists('et_setup_theme')) {
+            return true;
+        }
+
+        return in_array(strtolower((string) get_template()), array('divi', 'extra'), true);
+    }
+
+    /**
+     * Whether this screen must open the welcome tour: a fresh install whose
+     * tour nobody has finished or skipped, seen by an admin the tour is for.
+     *
+     * @return bool
+     */
+    public static function setup_required()
+    {
+        return (bool) get_option(self::SETUP_OPTION) && self::should_redirect_to_onboarding();
+    }
+
+    /**
+     * Whether Lite has never been active on this site (Plugin::activation()).
+     *
+     * Until 4.16.1 only `divitorque_lite_version` was checked. Lite has only
+     * written it since May 2024, so a site that had Lite before then and
+     * turned it back on was treated as new and held in the tour. Any option
+     * an earlier Lite left behind now counts; Lite has no uninstall routine,
+     * so they survive deactivation.
+     *
+     * @since 4.16.1
+     *
+     * @return bool
+     */
+    public static function is_fresh_install()
+    {
+        $left_by_earlier_lite = [
+            'divitorque_lite_version',
+            'divitorque_lite_activation_time',
+            'divitorque_lite_install_date',
+            '_divitorque_lite_modules',
+            'divitorque_version',
+        ];
+
+        foreach ($left_by_earlier_lite as $option) {
+            if (false !== get_option($option)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * End the welcome tour: for this admin, and the required tour for the site.
+     *
+     * Used by `POST onboarding/done` and by the plain-link fallback in
+     * maybe_redirect_to_onboarding().
+     *
+     * @since 4.16.1
+     */
+    public static function finish_onboarding()
+    {
+        update_user_meta(get_current_user_id(), self::ONBOARDING_META, 1);
+        // Finished or skipped once is enough for the whole site.
+        delete_option(self::SETUP_OPTION);
+    }
+
+    /**
+     * Whether the current user finished or skipped the welcome tour.
+     *
+     * @return bool
+     */
+    public static function onboarding_done()
+    {
+        return (bool) get_user_meta(get_current_user_id(), self::ONBOARDING_META, true);
+    }
+
+    /* ─── Legacy v1 enqueue — unchanged ────────────────────────────── */
+
     public function enqueue_scripts()
     {
-        $manifest_path = DIVI_TORQUE_LITE_DIR . 'assets/mix-manifest.json';
-        if (!file_exists($manifest_path)) {
-            return;
-        }
-
-        $manifest = json_decode(file_get_contents($manifest_path), true);
-        if (!$manifest) {
-            return;
-        }
-
         $assets_url = DIVI_TORQUE_LITE_URL . 'assets';
-        $dashboard_js = $assets_url . $manifest['/admin/js/dashboard.js'];
-        $dashboard_css = $assets_url . $manifest['/admin/css/dashboard.css'];
+        $dashboard_js = $assets_url . '/admin/js/dashboard.js';
+        $dashboard_css = $assets_url . '/admin/css/dashboard.css';
 
         wp_enqueue_script(
             'divi-torque-lite-dashboard',
@@ -120,7 +750,6 @@ class Dashboard
             'assetsPath'        => esc_url_raw($assets_url),
             'version'           => DIVI_TORQUE_LITE_VERSION,
             'module_info'       => ModulesManager::get_all_modules(),
-            'pro_module_info'   => ModulesManager::get_all_pro_modules(),
             'module_icon_path'  => DIVI_TORQUE_LITE_URL . 'assets/imgs/icons',
             'isProInstalled'    => AdminHelper::is_pro_installed(),
             'upgradeLink'       => 'https://divitorque.com/pricing-lifetime/?utm_source=divi-torque-lite&utm_medium=wp-admin&utm_campaign=upgrade-to-pro&utm_content=menu-button',
@@ -128,16 +757,6 @@ class Dashboard
         ];
 
         wp_localize_script('divi-torque-lite-dashboard', 'diviTorqueLite', $localize);
-    }
-
-    public function admin_enqueue_scripts()
-    {
-        wp_enqueue_style(
-            'divi-torque-lite-admin',
-            DIVI_TORQUE_LITE_URL . 'assets/admin/css/admin.css',
-            [],
-            DIVI_TORQUE_LITE_VERSION
-        );
     }
 
     public function wp_deps()
@@ -154,10 +773,5 @@ class Dashboard
             'wp-data',
             'wp-dom-ready',
         ];
-    }
-
-    private function icon_url()
-    {
-        return 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCA1MDAgNTAwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yNTAgMEMzODguMDcxIDAgNTAwIDExMS45MjkgNTAwIDI1MEM1MDAgMzg4LjA3MSAzODguMDcxIDUwMCAyNTAgNTAwQzExMS45MjkgNTAwIDAgMzg4LjA3MSAwIDI1MEMwIDExMS45MjkgMTExLjkyOSAwIDI1MCAwWk0yNDguMTA5IDExMEMyMTkuOTUyIDExMCAxOTQuMDA0IDExOC4xNTUgMTcxLjkyIDEzMS43NDdDMTQ3LjA3NiAxNDcuNTE0IDEyNy4yIDE3MC4zNDkgMTE2LjE1OCAxOTcuNTMzQzExNC41MDIgMjAyLjQyNiAxMTEuNzQxIDIxMC41ODIgMTEwLjA4NSAyMTYuNTYyQzEwOS41MzMgMjE5LjI4MSAxMTEuNzQxIDIyMS45OTkgMTE0LjUwMiAyMjIuNTQzQzExNy44MTUgMjIzLjA4NyAxMjAuNTc1IDIyMS40NTYgMTIxLjEyNyAyMTguNzM3QzEyMS42NzkgMjE2LjU2MyAxMjMuMzM1IDIxMi4yMTUgMTIzLjMzNiAyMTEuNjdDMTI0LjQ0IDIwOC45NTEgMTI3LjIgMjA3LjMyIDEyOS45NjEgMjA4LjQwN0MxMzIuMTY5IDIwOS40OTUgMTMzLjgyNSAyMTEuNjcgMTMzLjgyNSAyMTMuODQ1QzEzMy4yNzMgMjE0LjM4OCAxMzMuMjczIDIxNC4zODggMTMzLjI3MyAyMTQuOTMyQzEzMS4wNjUgMjIzLjA4NyAxMjguODU3IDIzMi44NzMgMTI4LjMwNSAyNDIuMTE2QzEyNy43NTMgMjQ0LjgzNCAxMjkuOTYxIDI0Ny41NTMgMTMzLjI3MyAyNDcuNTUzQzEzNi4wMzQgMjQ4LjA5NiAxMzguNzk0IDI0NS4zNzggMTM4Ljc5NCAyNDIuNjZDMTM4Ljc5NCAyNDIuMTE2IDEzOS4zNDcgMjM3LjIyMiAxMzkuMzQ3IDIzNi42NzlDMTQxLjAwMyAyMjYuODkzIDE0My43NjQgMjE3LjEwNyAxNDcuNjI4IDIwNy44NjRDMTQ4LjE4IDIwNi4yMzMgMTQ5LjI4NCAyMDUuMTQ2IDE0OS44MzYgMjAzLjUxNUMxNTAuOTQgMjAxLjM0IDE1NC4yNTMgMjAwLjI1MiAxNTcuMDE0IDIwMS4zNEgxNTcuNTY1QzE2MC4zMjYgMjAyLjQyNyAxNjEuNDMgMjA1LjE0NiAxNjAuMzI2IDIwNy44NjRDMTU5Ljc3NCAyMDguNDA5IDE1Ni40NjEgMjE0LjM4OSAxNTQuMjUzIDIyMy42MzFDMTUzLjE0OSAyMjYuMzQ5IDE1NS4zNTggMjI5LjYxMiAxNTguNjcgMjMwLjE1NUMxNjEuNDMgMjMwLjY5OSAxNjMuNjM5IDIyOS4wNjggMTY0Ljc0MyAyMjYuMzVDMTY2Ljk1MSAyMTkuMjgyIDE3MC4yNjMgMjEyLjIxNCAxNzAuODE1IDIxMS4xMjZDMTc4LjU0NSAxOTUuOTAzIDE5MC42OTEgMTgzLjM5OCAyMDUuNTk4IDE3NS4yNDJDMjE3Ljc0NCAxNjguMTc0IDIzMi4wOTkgMTY0LjM2OSAyNDcuNTU4IDE2NC4zNjlDMjk1LjU5IDE2NC4zNjkgMzM0LjIzNyAyMDIuNDI3IDMzNC4yMzcgMjQ5LjcyOEMzMzQuMjM3IDI5My4yMjIgMzAxLjY2MyAzMjguNTYyIDI1OS43MDQgMzM0LjU0M1YyNDEuMDI4QzI1OS43MDQgMjI1LjgwNSAyNDcuNTU3IDIxMy44NDUgMjMyLjA5OSAyMTMuODQ1QzIxNi42NCAyMTMuODQ1IDIwNC40OTQgMjI1LjgwNSAyMDQuNDk0IDI0MS4wMjhWMzYyLjgxNUMyMDQuNDk0IDM3OC4wMzggMjE2LjY0IDM5MCAyMzIuMDk5IDM5MEgyNDcuNTU4QzMyNS45NTUgMzkwIDM5MCAzMjcuNDc1IDM5MCAyNTAuMjcxQzM5MCAxNzMuMDY4IDMyNi41MDcgMTEwIDI0OC4xMDkgMTEwWiIgZmlsbD0iI2E3YWFhZCIvPjwvc3ZnPg==';
     }
 }

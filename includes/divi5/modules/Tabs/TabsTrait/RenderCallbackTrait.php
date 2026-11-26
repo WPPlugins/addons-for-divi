@@ -17,6 +17,42 @@ use ET\Builder\Packages\Module\Module;
 trait RenderCallbackTrait
 {
     /**
+     * The Tabs wrapper class list (mirrors wrapper-class.js).
+     *
+     * Tab Alignment is responsive, but only the desktop value used to be read,
+     * so tablet and phone settings did nothing. A breakpoint with its own value
+     * now gets a `dtq-tabs--align-{breakpoint}-{value}` class, which
+     * module.scss applies inside that breakpoint's media query.
+     *
+     * @param array $advanced The `module.advanced` attrs.
+     *
+     * @return string
+     */
+    public static function wrapper_class($advanced)
+    {
+        $advanced = is_array($advanced) ? $advanced : [];
+
+        $style = $advanced['tabStyle']['desktop']['value'] ?? 'line';
+        $align = $advanced['tabAlign']['desktop']['value'] ?? 'left';
+
+        $classes = [
+            'dtq-module',
+            'dtq-tabs',
+            'dtq-tabs--style-' . $style,
+            'dtq-tabs--align-' . $align,
+        ];
+
+        foreach (['tablet', 'phone'] as $breakpoint) {
+            $bp_align = $advanced['tabAlign'][$breakpoint]['value'] ?? '';
+            if (in_array($bp_align, ['left', 'center', 'right', 'justify'], true)) {
+                $classes[] = 'dtq-tabs--align-' . $breakpoint . '-' . $bp_align;
+            }
+        }
+
+        return implode(' ', $classes);
+    }
+
+    /**
      * Server-side render for the Tabs parent.
      *
      * Pre-builds the nav row from the child tab titles (SEO-friendly, no layout
@@ -37,18 +73,7 @@ trait RenderCallbackTrait
     {
         $advanced = $attrs['module']['advanced'] ?? [];
 
-        $style = $advanced['tabStyle']['desktop']['value'] ?? 'line';
-        $align = $advanced['tabAlign']['desktop']['value'] ?? 'left';
-
-        $wrapper_class = implode(
-            ' ',
-            [
-                'dtq-module',
-                'dtq-tabs',
-                'dtq-tabs--style-' . $style,
-                'dtq-tabs--align-' . $align,
-            ]
-        );
+        $wrapper_class = self::wrapper_class($advanced);
 
         // Build the nav from the child tab titles.
         $inner_blocks = $block->parsed_block['innerBlocks'] ?? [];
@@ -59,12 +84,20 @@ trait RenderCallbackTrait
             if ('' === $title) {
                 $title = sprintf('Tab %d', $index + 1);
             }
-            $active = 0 === $index ? ' dtq-tabs__nav-item--active' : '';
+            $is_active = 0 === $index;
+            $active    = $is_active ? ' dtq-tabs__nav-item--active' : '';
+            // Roving tabindex: only the selected tab is in the tab order; the
+            // rest are reached with the arrow keys (handled in frontend.js).
+            // aria-controls / aria-labelledby are wired up there too, because the
+            // panels are rendered by the child modules and their ids are not
+            // known here.
             $nav_items .= sprintf(
-                '<li class="dtq-tabs__nav-item%1$s" role="tab" tabindex="0" data-dtq-index="%2$d">%3$s</li>',
+                '<li class="dtq-tabs__nav-item%1$s" role="tab" tabindex="%4$s" aria-selected="%5$s" data-dtq-index="%2$d">%3$s</li>',
                 $active,
                 (int) $index,
-                esc_html(wp_strip_all_tags($title))
+                esc_html(wp_strip_all_tags($title)),
+                $is_active ? '0' : '-1',
+                $is_active ? 'true' : 'false'
             );
             $index++;
         }

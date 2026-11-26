@@ -8,11 +8,12 @@ class BackendHelpers
     private function dummyData()
     {
         return array(
-            'title'    => _x('Your Title Goes Here', 'Modules dummy content', 'divitorque'),
-            'subtitle' => _x('Subtitle goes Here', 'divitorque'),
+            'title'    => _x('Your Title Goes Here', 'Modules dummy content', 'addons-for-divi'),
+            'subtitle' => _x('Subtitle goes Here', 'Modules dummy content', 'addons-for-divi'),
             'body'     => _x(
                 '<p>Edit or remove this text inline or in the module Content settings. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan ipsum placerat lectus placerat ultricies.</p>',
-                'divitorque'
+                'Modules dummy content',
+                'addons-for-divi'
             ),
             'text_color' => '#354559',
             'background_color' => '#3979ff',
@@ -185,7 +186,7 @@ class BackendHelpers
                 'ba_flipbox' => [
                     'front_media_type' => 'image',
                     'front_img' => DIVI_TORQUE_LITE_ASSETS . 'imgs/demo/dog1.jpg',
-                    'front_title' => __('Flip Box', 'addons-for-divi'),
+                    'front_title' => __('Flip Card', 'addons-for-divi'),
                     'front_description' => __('This is a flip box module', 'addons-for-divi'),
                     'front_padding' => '0px|0px|0px|0px',
                     'front_img_width' => '120px',

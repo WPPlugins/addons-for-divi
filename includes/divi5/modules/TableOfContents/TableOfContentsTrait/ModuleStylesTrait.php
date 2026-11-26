@@ -58,12 +58,13 @@ trait ModuleStylesTrait {
 	public static function module_styles( $args ) {
 		$attrs       = $args['attrs'] ?? array();
 		$elements    = $args['elements'];
+		$settings    = $args['settings'] ?? array();
 		$order_class = $args['orderClass'] ?? '';
 
 		$advanced = $attrs['module']['advanced'] ?? array();
 
 		$title_spacing = self::with_unit( self::get_responsive_value( $advanced['titleSpacing'] ?? array(), 'desktop', '15px' ) );
-		$item_spacing  = self::with_unit( self::get_responsive_value( $advanced['itemSpacing'] ?? array(), 'desktop', '8px' ) );
+		$item_spacing  = self::with_unit( self::get_responsive_value( $advanced['itemSpacing'] ?? array(), 'desktop', '6px' ) );
 		$level_indent  = self::with_unit( self::get_responsive_value( $advanced['levelIndent'] ?? array(), 'desktop', '16px' ) );
 		$link_color    = self::get_responsive_value( $advanced['linkColor'] ?? array(), 'desktop', '' );
 		$active_color  = self::get_responsive_value( $advanced['activeColor'] ?? array(), 'desktop', '#2ea3f2' );
@@ -153,7 +154,18 @@ trait ModuleStylesTrait {
 		}
 
 		$all_styles = array(
-			$elements->style( array( 'attrName' => 'module' ) ),
+			// styleProps.disabledOn must be passed here as well as in styles.jsx,
+			// or "Disable On" is honoured in the builder and ignored on the front end.
+			$elements->style(
+				array(
+					'attrName'   => 'module',
+					'styleProps' => array(
+						'disabledOn' => array(
+							'disabledModuleVisibility' => $settings['disabledModuleVisibility'] ?? null,
+						),
+					),
+				)
+			),
 			$elements->style( array( 'attrName' => 'titleFont' ) ),
 			$elements->style( array( 'attrName' => 'linkFont' ) ),
 			$custom_styles,

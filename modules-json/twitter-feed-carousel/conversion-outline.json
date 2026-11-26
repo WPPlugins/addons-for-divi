@@ -14,7 +14,9 @@
       "avatar": "avatar.decoration.boxShadow"
     },
     "disabled_on": "module.decoration.disabledOn",
-    "filters": { "default": "module.decoration.filters" },
+    "filters": {
+      "default": "module.decoration.filters"
+    },
     "fonts": {
       "name": "nameFont.decoration.font",
       "username": "usernameFont.decoration.font",
@@ -33,6 +35,7 @@
   "css": {
     "before": "css.*.before",
     "after": "css.*.after",
+    "free_form": "css.*.freeForm",
     "main_element": "css.*.mainElement",
     "tweet_item": "css.*.tweetItem",
     "avatar": "css.*.avatar",
@@ -90,7 +93,8 @@
     "retweet_color": "module.advanced.retweetColor.*",
     "retweet_font_size": "module.advanced.retweetFontSize.*",
     "retweet_icon_color": "module.advanced.retweetIconColor.*",
-    "retweet_icon_size": "module.advanced.retweetIconSize.*"
+    "retweet_icon_size": "module.advanced.retweetIconSize.*",
+    "tweets_item_bg_color": "module.advanced.tweetsItemBgColor.*"
   },
   "valueExpansionFunctionMap": {
     "icon_left": "convertFontIcon",

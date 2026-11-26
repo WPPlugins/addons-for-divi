@@ -3,10 +3,11 @@
   "d4Shortcode": "ba_advanced_team",
   "moduleClassName": "dtq_team_box",
   "moduleOrderClassName": "dtq_team_box",
-  "title": "Team Box",
-  "titles": "Team Boxes",
+  "title": "Team Member",
+  "titles": "Team Members",
   "moduleIcon": "divitorque/team-box",
   "category": "module",
+  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -195,6 +196,7 @@
         },
         "advanced": {
           "htmlAttributes": {},
+          "text": {},
           "contentOnHover": {
             "groupType": "group-item",
             "item": {
@@ -641,8 +643,8 @@
               "groupSlug": "designContent",
               "attrName": "module.advanced.contentBgColor",
               "label": "Content Background",
-              "description": "Pick a background color for the content area.",
-              "priority": 30,
+              "description": "Background color for the content area. This paints on top of the module Background, so set it to transparent if you want the module Background to show through.",
+              "priority": 5,
               "render": true,
               "features": {
                 "sticky": false,

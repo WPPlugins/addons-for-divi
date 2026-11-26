@@ -15,6 +15,7 @@ if (!defined('ABSPATH')) {
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Packages\Module\Layout\Components\ModuleElements\ModuleElements;
 use WP_Block;
+use DiviTorqueLite\Modules\Shared\DynamicValue;
 
 trait RenderCallbackTrait
 {
@@ -58,9 +59,10 @@ trait RenderCallbackTrait
 
         // The D5 upload field stores the image as an object (`{ src, ... }`);
         // accept both that and a plain URL string.
-        $before_val = $attrs['beforeImage']['innerContent']['desktop']['value'] ?? '';
+        // A dynamic image (e.g. Featured Image) is a structure with no src until resolved (#86).
+        $before_val = DynamicValue::resolve($attrs['beforeImage']['innerContent']['desktop']['value'] ?? '');
         $before_img = is_array($before_val) ? ($before_val['src'] ?? '') : $before_val;
-        $after_val  = $attrs['afterImage']['innerContent']['desktop']['value'] ?? '';
+        $after_val  = DynamicValue::resolve($attrs['afterImage']['innerContent']['desktop']['value'] ?? '');
         $after_img  = is_array($after_val) ? ($after_val['src'] ?? '') : $after_val;
 
         $children = '';
@@ -107,7 +109,14 @@ trait RenderCallbackTrait
                 'scriptDataComponent' => [self::class, 'module_script_data'],
                 'orderIndex'          => $block->parsed_block['orderIndex'] ?? 0,
                 'storeInstance'       => $block->parsed_block['storeInstance'] ?? null,
-                'children'            => $children,
+                'children'            => [
+                    // Background pattern/mask and the box-shadow overlay are DOM,
+                    // not CSS. Without this call Divi renders them in the builder
+                    // and nowhere else, so the options silently do nothing on the
+                    // front end.
+                    $elements->style_components(['attrName' => 'module']),
+                    $children,
+                ],
             ]
         );
     }

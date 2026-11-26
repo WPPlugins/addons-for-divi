@@ -7,6 +7,7 @@
   "titles": "Gradient Headings",
   "moduleIcon": "divitorque/gradient-heading",
   "category": "module",
+  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -61,6 +62,7 @@
         },
         "advanced": {
           "htmlAttributes": {},
+          "text": {},
           "useLink": {
             "groupType": "group-item",
             "item": {
@@ -119,14 +121,10 @@
                 "type": "field",
                 "name": "divi/checkboxes",
                 "props": {
-                  "options": {
-                    "linkTarget": {
-                      "label": "Open in new window"
-                    },
-                    "linkRel": {
-                      "label": "Add nofollow"
-                    }
-                  }
+                  "options": [
+                    { "value": "linkTarget", "label": "Open in new window" },
+                    { "value": "linkRel", "label": "Add nofollow" }
+                  ]
                 }
               }
             }

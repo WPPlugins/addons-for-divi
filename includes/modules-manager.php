@@ -79,6 +79,45 @@ class ModulesManager
                 'child_directory' => $has_child ? $child_dir : '',
             ];
         }
+
+        // Native Divi 5-only free modules — no divi-4 directory, so the scan
+        // above can't find them. Same toggle option gates them; the D5 loader
+        // (includes/divi5/Modules.php) reads it too. Titles match the website
+        // catalog (assets/module-catalog.json).
+        $d5_only = [
+            'accordion'         => 'Accordion Pro',
+            'tabs'              => 'Tabs Pro',
+            'modal-popup'       => 'Modal Popup',
+            'post-carousel'     => 'Post Carousel',
+            'table-of-contents' => 'Table of Contents',
+            'fancy-text'        => 'Fancy Text',
+            'faq'               => 'FAQ',
+            'breadcrumbs'       => 'Breadcrumb Trail',
+            'cta-box'           => 'Call To Action',
+            'creative-button'   => 'Creative Button',
+            'tooltip'           => 'Tooltip',
+            'image-accordion'   => 'Image Accordion',
+            'svg-draw'          => 'SVG Draw',
+            'code-snippet'      => 'Code Snippet',
+            'sticky-video'      => 'Sticky Video',
+        ];
+        foreach ($d5_only as $name => $title) {
+            if (!isset($this->discovered_modules[$name])) {
+                $this->discovered_modules[$name] = [
+                    'name'            => $name,
+                    'title'           => $title,
+                    'directory'       => '',
+                    'has_child'       => false,
+                    'child_directory' => '',
+                    'd5_only'         => true,
+                ];
+            }
+        }
+
+        // Website-catalog slug where it differs from the module name.
+        if (isset($this->discovered_modules['contact-form7'])) {
+            $this->discovered_modules['contact-form7']['catalog_slug'] = 'contact-form-7';
+        }
     }
 
     /**
@@ -96,6 +135,27 @@ class ModulesManager
      */
     private function dir_to_title($dir)
     {
+        // Canonical display names — mirror each module's registered $this->name so
+        // the admin list matches the builder (and avoids core-Divi name clashes).
+        $overrides = [
+            'BusinessHour'        => 'Business Hours',
+            'CompareImage'        => 'Before & After Slider',
+            'ContactForm7'        => 'Contact Form 7',
+            'Divider'             => 'Separator',
+            'DualButton'          => 'Dual Buttons',
+            'FlipBox'             => 'Flip Card',
+            'InfoCard'            => 'Image Card',
+            'InlineNotice'        => 'Alert Box',
+            'NumberCounter'       => 'Animated Counter',
+            'Review'              => 'Review Box',
+            'TeamBox'             => 'Team Member',
+            'Testimonial'         => 'Testimonial Card',
+            'TwitterFeed'         => 'X (Twitter) Feed',
+            'TwitterFeedCarousel' => 'X (Twitter) Carousel',
+        ];
+        if (isset($overrides[$dir])) {
+            return $overrides[$dir];
+        }
         return preg_replace('/(?<!^)([A-Z])/', ' $1', $dir);
     }
 
@@ -105,14 +165,6 @@ class ModulesManager
     public static function get_all_modules()
     {
         return array_values(self::get_instance()->discovered_modules);
-    }
-
-    /**
-     * Get all pro modules (for dashboard)
-     */
-    public static function get_all_pro_modules()
-    {
-        return [];
     }
 
     /**
@@ -127,8 +179,10 @@ class ModulesManager
         $saved_modules = AdminHelper::get_modules();
 
         foreach ($this->discovered_modules as $module_name => $module) {
-            // Check if module is enabled in database
-            if (!isset($saved_modules[$module_name])) {
+            // Skip disabled modules. (The old `isset` check was a no-op:
+            // AdminHelper::get_modules() merges defaults so every name is
+            // always set — disabled modules kept loading in D4.)
+            if (($saved_modules[$module_name] ?? $module_name) === 'disabled') {
                 continue;
             }
 
@@ -160,12 +214,13 @@ class ModulesManager
     }
 
     /**
-     * Check if module is active
+     * Check if module is active. (get_modules() merges defaults, so every
+     * name is always set — the old isset() check was always true.)
      */
     public static function is_module_active($module_name)
     {
         $saved_modules = AdminHelper::get_modules();
-        return isset($saved_modules[$module_name]);
+        return ($saved_modules[$module_name] ?? $module_name) !== 'disabled';
     }
 
     /**

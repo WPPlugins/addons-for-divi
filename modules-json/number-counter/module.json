@@ -3,10 +3,11 @@
   "d4Shortcode": "ba_number",
   "moduleClassName": "dtq_number_counter",
   "moduleOrderClassName": "dtq_number_counter",
-  "title": "Number Counter",
-  "titles": "Number Counters",
+  "title": "Animated Counter",
+  "titles": "Animated Counters",
   "moduleIcon": "divitorque/number-counter",
   "category": "module",
+  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -34,6 +35,7 @@
         },
         "advanced": {
           "htmlAttributes": {},
+          "text": {},
           "useCounter": {
             "groupType": "group-item",
             "item": {

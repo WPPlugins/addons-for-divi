@@ -2,10 +2,11 @@
   "name": "divitorque/breadcrumbs",
   "moduleClassName": "dtq_breadcrumbs",
   "moduleOrderClassName": "dtq_breadcrumbs",
-  "title": "Breadcrumbs",
-  "titles": "Breadcrumbs",
+  "title": "Breadcrumb Trail",
+  "titles": "Breadcrumb Trail",
   "moduleIcon": "divitorque/breadcrumbs",
   "category": "module",
+  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",

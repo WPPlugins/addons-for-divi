@@ -7,6 +7,7 @@
   "titles": "Image Cards",
   "moduleIcon": "divitorque/info-card",
   "category": "module",
+  "folder": "divi-torque-lite",
   "attributes": {
     "module": {
       "type": "object",
@@ -38,16 +39,6 @@
             }
           },
           "useButton": {
-            "desktop": {
-              "value": "off"
-            }
-          },
-          "buttonUrl": {
-            "desktop": {
-              "value": ""
-            }
-          },
-          "buttonNewWindow": {
             "desktop": {
               "value": "off"
             }
@@ -94,12 +85,12 @@
           },
           "imagePadding": {
             "desktop": {
-              "value": "0px|0px|0px|0px"
+              "value": { "top": "0px", "right": "0px", "bottom": "0px", "left": "0px" }
             }
           },
           "iconPadding": {
             "desktop": {
-              "value": "25px|25px|25px|25px"
+              "value": { "top": "25px", "right": "25px", "bottom": "25px", "left": "25px" }
             }
           },
           "btnSpacingTop": {
@@ -124,7 +115,7 @@
           },
           "contentPadding": {
             "desktop": {
-              "value": "25px|25px|25px|25px"
+              "value": { "top": "25px", "right": "25px", "bottom": "25px", "left": "25px" }
             }
           },
           "iconBgColor": {
@@ -194,7 +185,7 @@
           },
           "badgePadding": {
             "desktop": {
-              "value": "5px|15px|5px|15px"
+              "value": { "top": "5px", "right": "15px", "bottom": "5px", "left": "15px" }
             }
           },
           "badgeBgColor": {
@@ -210,6 +201,7 @@
         },
         "advanced": {
           "htmlAttributes": {},
+          "text": {},
           "useIcon": {
             "groupType": "group-item",
             "item": {
@@ -297,47 +289,6 @@
               "label": "Use Button",
               "description": "Here you can choose whether button should be used.",
               "priority": 10,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/toggle"
-              }
-            }
-          },
-          "buttonUrl": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "contentButton",
-              "attrName": "module.advanced.buttonUrl",
-              "label": "Button Link",
-              "description": "Define the button link url for your button.",
-              "priority": 30,
-              "render": true,
-              "features": {
-                "sticky": false,
-                "responsive": false,
-                "hover": false,
-                "dynamicContent": true
-              },
-              "component": {
-                "type": "field",
-                "name": "divi/text"
-              }
-            }
-          },
-          "buttonNewWindow": {
-            "groupType": "group-item",
-            "item": {
-              "groupSlug": "contentButton",
-              "attrName": "module.advanced.buttonNewWindow",
-              "label": "Open Button link in new window",
-              "description": "Here you can choose whether button URL should be opened in new window.",
-              "priority": 40,
               "render": true,
               "features": {
                 "sticky": false,
@@ -1519,23 +1470,36 @@
       },
       "settings": {
         "innerContent": {
-          "groupType": "group-item",
-          "item": {
-            "groupSlug": "contentButton",
-            "attrName": "button.innerContent",
-            "label": "Button Text",
-            "description": "Define the button text for your button.",
-            "priority": 20,
-            "render": true,
-            "features": {
-              "sticky": false,
-              "responsive": false,
-              "hover": false,
-              "dynamicContent": true
+          "groupType": "group-items",
+          "items": {
+            "buttonText": {
+              "groupSlug": "contentButton",
+              "attrName": "button.innerContent",
+              "subName": "text",
+              "label": "Button Text",
+              "description": "Define the button text for your button.",
+              "priority": 20,
+              "render": true,
+              "features": {
+                "sticky": false,
+                "responsive": false,
+                "hover": false,
+                "dynamicContent": true
+              },
+              "component": {
+                "type": "field",
+                "name": "divi/text"
+              }
             },
-            "component": {
-              "type": "field",
-              "name": "divi/text"
+            "buttonLink": {
+              "groupSlug": "contentButton",
+              "priority": 30,
+              "render": true,
+              "component": {
+                "name": "divi/button-link",
+                "type": "group",
+                "props": { "grouped": false, "attrName": "button.innerContent", "fieldLabel": "Button" }
+              }
             }
           }
         },
@@ -1544,12 +1508,14 @@
             "groupType": "group-item",
             "item": {
               "groupSlug": "designButton",
-              "attrName": "button.decoration.button",
               "priority": 20,
               "render": true,
               "component": {
                 "name": "divi/button",
-                "type": "group"
+                "type": "group",
+                "props": {
+                  "attrName": "button"
+                }
               }
             }
           }
